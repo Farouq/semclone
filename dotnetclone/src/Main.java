@@ -12,7 +12,9 @@ public class Main {
 	 * @throws Exception 
 	 */
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
+		
+		
+		//iman teswt
 		runCommandWithOutput("your command", "C:/Users/faa634/Documents/Visual Studio 2010/Projects/ConsoleApplication1/ConsoleApplication1/bin/Debug/ConsoleApplication1.exe");
 	}
 	
