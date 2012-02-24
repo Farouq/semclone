@@ -13,7 +13,7 @@ public class Main {
 	 */
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		runCommandWithOutput("your command", "text file address");
+		runCommandWithOutput("your command", "C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe");
 	}
 	
 	private static void runCommandWithOutput(String command, String outputFile) throws Exception
