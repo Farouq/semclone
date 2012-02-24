@@ -14,7 +14,7 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		
 		
-		//iman teswt
+		//iman test
 		//Farouq Test
 		runCommandWithOutput("your command", "C:/Users/faa634/Documents/Visual Studio 2010/Projects/ConsoleApplication1/ConsoleApplication1/bin/Debug/ConsoleApplication1.exe");
 	}
