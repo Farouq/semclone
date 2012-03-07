@@ -1,0 +1,124 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\iman\Desktop\imanvs\ConsoleApplication1\ConsoleApplication1\ClassTest.cs" startline="11" endline="16"><![CDATA[
+         int j = 100;
+         //test comment
+ 
+           
+     }
+ }
+]]></source>
+<source file="C:\Users\iman\Desktop\imanvs\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="13" endline="25"><![CDATA[
+             Console.Write("One ");     // <-- This writes the word only.
+             Console.Write("Two ");     // <-- This is on the same line.
+             Console.Write("Three");    // <-- Also on the same line.
+             Console.WriteLine();       // <-- This writes a newline.
+ 
+             Console.WriteLine("Four");
+ 
+             int i = 0;
+             i++;
+ 
+             Console.WriteLine(i++);
+ 
+         }
+]]></source>
+<source file="C:\Users\iman\Desktop\imanvs\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="26" endline="31"><![CDATA[
+ 
+ 
+         void m1()
+         {
+             int j = 0;
+         }
+]]></source>
+<source file="C:\Users\iman\Desktop\imanvs\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="32" endline="39"><![CDATA[
+ 
+ 
+         public int m2(int j)
+         {
+ 
+             j = j + 10;
+             j = j + j;
+             return(j);
+]]></source>
+<source file="C:\Users\iman\Desktop\imanvs\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\iman\Desktop\imanvs\ConsoleApplication1\ConsoleApplication1\Test.cs" startline="7" endline="8"><![CDATA[
+         Console.WriteLine(s);
+     }
+]]></source>
+<source file="C:\Users\iman\Desktop\imanvs\ConsoleApplication1\ConsoleApplication1\Test.cs" startline="9" endline="34"><![CDATA[
+ 
+     static void imanm(string[] args)
+     {
+         // Original delegate syntax required 
+         // initialization with a named method.
+         TestDelegate testDelA = new TestDelegate(M);
+ 
+         // C# 2.0
+         // inline code, called an "anonymous method." This
+         // method takes a string as an input parameter.
+         TestDelegate testDelB = delegate(string s) { Console.WriteLine(s); };
+ 
+         // C# 3.0. A delegate can be initialized with
+         // a lambda expression. The lambda also takes a string
+         // as an input parameter (x). The type of x is inferred by the compiler.
+         TestDelegate testDelC = (x) => { Console.WriteLine(x); };
+ 
+         // Invoke the delegates.
+         testDelA("Hello. My name is M and I write lines.");
+         testDelB("That's nothing. I'm anonymous and ");
+         testDelC("I'm a famous author.");
+ 
+         // Keep console window open in debug mode.
+         Console.WriteLine("Press any key to exit.");
+         Console.ReadKey();
+     }
+]]></source>
+<source file="C:\Users\iman\Desktop\imanvs\ConsoleApplication1\ConsoleApplication1\Test.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\iman\Desktop\imanvs\ConsoleApplication1\ConsoleApplication1\Test.cs" startline="19" endline="41"><![CDATA[
+         TestDelegate testDelB = delegate(string s) { Console.WriteLine(s); };
+ 
+         // C# 3.0. A delegate can be initialized with
+         // a lambda expression. The lambda also takes a string
+         // as an input parameter (x). The type of x is inferred by the compiler.
+         TestDelegate testDelC = (x) => { Console.WriteLine(x); };
+ 
+         // Invoke the delegates.
+         testDelA("Hello. My name is M and I write lines.");
+         testDelB("That's nothing. I'm anonymous and ");
+         testDelC("I'm a famous author.");
+ 
+         // Keep console window open in debug mode.
+         Console.WriteLine("Press any key to exit.");
+         Console.ReadKey();
+     }
+ }
+ /* Output
+     Hello. My name is M and I write lines.
+     That's nothing. I'm anonymous and
+     I'm a famous author.
+     Press any key to exit.
+  */
+]]></source>
+<source file="C:\Users\iman\Desktop\imanvs\ConsoleApplication1\ConsoleApplication1\Test.cs" startline="24" endline="41"><![CDATA[
+         TestDelegate testDelC = (x) => { Console.WriteLine(x); };
+ 
+         // Invoke the delegates.
+         testDelA("Hello. My name is M and I write lines.");
+         testDelB("That's nothing. I'm anonymous and ");
+         testDelC("I'm a famous author.");
+ 
+         // Keep console window open in debug mode.
+         Console.WriteLine("Press any key to exit.");
+         Console.ReadKey();
+     }
+ }
+ /* Output
+     Hello. My name is M and I write lines.
+     That's nothing. I'm anonymous and
+     I'm a famous author.
+     Press any key to exit.
+  */
+]]></source>
+</source_elements></project>
