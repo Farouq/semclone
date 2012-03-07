@@ -14,7 +14,6 @@ public class Starter_FactExtraction_Step2 {
 		
 		Configuration config=Configuration.loadFromFile();
 		StarterPublisher.start(config);
-		
 	}
 	
 	
