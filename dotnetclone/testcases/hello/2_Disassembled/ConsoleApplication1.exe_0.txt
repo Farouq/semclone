@@ -49,7 +49,7 @@
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000003    //  ILONLY 32BITREQUIRED
-// Image base: 0x005E0000
+// Image base: 0x011C0000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -64,16 +64,10 @@
     // Code size       15 (0xf)
     .maxstack  8
     .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
-// Source File 'C:\Users\iman\Desktop\imanvs\ConsoleApplication1\ConsoleApplication1\ClassTest.cs' 
-//000011:         int j = 100;
+// Source File 'C:\Users\iman\Desktop\imanvs\ConsoleApplication1\ConsoleApplication1\ClassTest.cs' not found
     IL_0000:  ldarg.0
     IL_0001:  ldc.i4.s   100
     IL_0003:  stfld      int32 ConsoleApplication1.ClassTest::j
-//000012:         //test comment
-//000013: 
-//000014:           
-//000015:     }
-//000016: }
     IL_0008:  ldarg.0
     IL_0009:  call       instance void [mscorlib]System.Object::.ctor()
     IL_000e:  ret
@@ -90,41 +84,28 @@
     // Code size       62 (0x3e)
     .maxstack  3
     .locals init ([0] int32 i)
-// Source File 'C:\Users\iman\Desktop\imanvs\ConsoleApplication1\ConsoleApplication1\Program.cs' 
-//000013:             Console.Write("One ");     // <-- This writes the word only.
+// Source File 'C:\Users\iman\Desktop\imanvs\ConsoleApplication1\ConsoleApplication1\Program.cs' not found
     IL_0000:  ldstr      "One "
     IL_0005:  call       void [mscorlib]System.Console::Write(string)
-//000014:             Console.Write("Two ");     // <-- This is on the same line.
     IL_000a:  ldstr      "Two "
     IL_000f:  call       void [mscorlib]System.Console::Write(string)
-//000015:             Console.Write("Three");    // <-- Also on the same line.
     IL_0014:  ldstr      "Three"
     IL_0019:  call       void [mscorlib]System.Console::Write(string)
-//000016:             Console.WriteLine();       // <-- This writes a newline.
     IL_001e:  call       void [mscorlib]System.Console::WriteLine()
-//000017: 
-//000018:             Console.WriteLine("Four");
     IL_0023:  ldstr      "Four"
     IL_0028:  call       void [mscorlib]System.Console::WriteLine(string)
-//000019: 
-//000020:             int i = 0;
     IL_002d:  ldc.i4.0
     IL_002e:  stloc.0
-//000021:             i++;
     IL_002f:  ldloc.0
     IL_0030:  ldc.i4.1
     IL_0031:  add
     IL_0032:  stloc.0
-//000022: 
-//000023:             Console.WriteLine(i++);
     IL_0033:  ldloc.0
     IL_0034:  dup
     IL_0035:  ldc.i4.1
     IL_0036:  add
     IL_0037:  stloc.0
     IL_0038:  call       void [mscorlib]System.Console::WriteLine(int32)
-//000024: 
-//000025:         }
     IL_003d:  ret
   } // end of method Program::Main
 
@@ -133,12 +114,6 @@
   {
     // Code size       1 (0x1)
     .maxstack  8
-//000026: 
-//000027: 
-//000028:         void m1()
-//000029:         {
-//000030:             int j = 0;
-//000031:         }
     IL_0000:  ret
   } // end of method Program::m1
 
@@ -147,22 +122,14 @@
   {
     // Code size       13 (0xd)
     .maxstack  8
-//000032: 
-//000033: 
-//000034:         public int m2(int j)
-//000035:         {
-//000036: 
-//000037:             j = j + 10;
     IL_0000:  ldarg.1
     IL_0001:  ldc.i4.s   10
     IL_0003:  add
     IL_0004:  starg.s    j
-//000038:             j = j + j;
     IL_0006:  ldarg.1
     IL_0007:  ldarg.1
     IL_0008:  add
     IL_0009:  starg.s    j
-//000039:             return(j);
     IL_000b:  ldarg.1
     IL_000c:  ret
   } // end of method Program::m2
@@ -219,11 +186,9 @@
   {
     // Code size       7 (0x7)
     .maxstack  8
-// Source File 'C:\Users\iman\Desktop\imanvs\ConsoleApplication1\ConsoleApplication1\Test.cs' 
-//000007:         Console.WriteLine(s);
+// Source File 'C:\Users\iman\Desktop\imanvs\ConsoleApplication1\ConsoleApplication1\Test.cs' not found
     IL_0000:  ldarg.0
     IL_0001:  call       void [mscorlib]System.Console::WriteLine(string)
-//000008:     }
     IL_0006:  ret
   } // end of method Test::M
 
@@ -234,22 +199,11 @@
     .locals init ([0] class Test/TestDelegate testDelA,
              [1] class Test/TestDelegate testDelB,
              [2] class Test/TestDelegate testDelC)
-//000009: 
-//000010:     static void imanm(string[] args)
-//000011:     {
-//000012:         // Original delegate syntax required 
-//000013:         // initialization with a named method.
-//000014:         TestDelegate testDelA = new TestDelegate(M);
     IL_0000:  ldnull
     IL_0001:  ldftn      void Test::M(string)
     IL_0007:  newobj     instance void Test/TestDelegate::.ctor(object,
                                                                 native int)
     IL_000c:  stloc.0
-//000015: 
-//000016:         // C# 2.0: A delegate can be initialized with
-//000017:         // inline code, called an "anonymous method." This
-//000018:         // method takes a string as an input parameter.
-//000019:         TestDelegate testDelB = delegate(string s) { Console.WriteLine(s); };
     IL_000d:  ldsfld     class Test/TestDelegate Test::'CS$<>9__CachedAnonymousMethodDelegate2'
     IL_0012:  brtrue.s   IL_0025
 
@@ -260,11 +214,6 @@
     IL_0020:  stsfld     class Test/TestDelegate Test::'CS$<>9__CachedAnonymousMethodDelegate2'
     IL_0025:  ldsfld     class Test/TestDelegate Test::'CS$<>9__CachedAnonymousMethodDelegate2'
     IL_002a:  stloc.1
-//000020: 
-//000021:         // C# 3.0. A delegate can be initialized with
-//000022:         // a lambda expression. The lambda also takes a string
-//000023:         // as an input parameter (x). The type of x is inferred by the compiler.
-//000024:         TestDelegate testDelC = (x) => { Console.WriteLine(x); };
     IL_002b:  ldsfld     class Test/TestDelegate Test::'CS$<>9__CachedAnonymousMethodDelegate3'
     IL_0030:  brtrue.s   IL_0043
 
@@ -275,29 +224,19 @@
     IL_003e:  stsfld     class Test/TestDelegate Test::'CS$<>9__CachedAnonymousMethodDelegate3'
     IL_0043:  ldsfld     class Test/TestDelegate Test::'CS$<>9__CachedAnonymousMethodDelegate3'
     IL_0048:  stloc.2
-//000025: 
-//000026:         // Invoke the delegates.
-//000027:         testDelA("Hello. My name is M and I write lines.");
     IL_0049:  ldloc.0
     IL_004a:  ldstr      "Hello. My name is M and I write lines."
     IL_004f:  callvirt   instance void Test/TestDelegate::Invoke(string)
-//000028:         testDelB("That's nothing. I'm anonymous and ");
     IL_0054:  ldloc.1
     IL_0055:  ldstr      "That's nothing. I'm anonymous and "
     IL_005a:  callvirt   instance void Test/TestDelegate::Invoke(string)
-//000029:         testDelC("I'm a famous author.");
     IL_005f:  ldloc.2
     IL_0060:  ldstr      "I'm a famous author."
     IL_0065:  callvirt   instance void Test/TestDelegate::Invoke(string)
-//000030: 
-//000031:         // Keep console window open in debug mode.
-//000032:         Console.WriteLine("Press any key to exit.");
     IL_006a:  ldstr      "Press any key to exit."
     IL_006f:  call       void [mscorlib]System.Console::WriteLine(string)
-//000033:         Console.ReadKey();
     IL_0074:  call       valuetype [mscorlib]System.ConsoleKeyInfo [mscorlib]System.Console::ReadKey()
     IL_0079:  pop
-//000034:     }
     IL_007a:  ret
   } // end of method Test::imanm
 
@@ -316,31 +255,8 @@
     .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
     // Code size       7 (0x7)
     .maxstack  8
-//000019:         TestDelegate testDelB = delegate(string s) { Console.WriteLine(s); };
     IL_0000:  ldarg.0
     IL_0001:  call       void [mscorlib]System.Console::WriteLine(string)
-//000020: 
-//000021:         // C# 3.0. A delegate can be initialized with
-//000022:         // a lambda expression. The lambda also takes a string
-//000023:         // as an input parameter (x). The type of x is inferred by the compiler.
-//000024:         TestDelegate testDelC = (x) => { Console.WriteLine(x); };
-//000025: 
-//000026:         // Invoke the delegates.
-//000027:         testDelA("Hello. My name is M and I write lines.");
-//000028:         testDelB("That's nothing. I'm anonymous and ");
-//000029:         testDelC("I'm a famous author.");
-//000030: 
-//000031:         // Keep console window open in debug mode.
-//000032:         Console.WriteLine("Press any key to exit.");
-//000033:         Console.ReadKey();
-//000034:     }
-//000035: }
-//000036: /* Output:
-//000037:     Hello. My name is M and I write lines.
-//000038:     That's nothing. I'm anonymous and
-//000039:     I'm a famous author.
-//000040:     Press any key to exit.
-//000041:  */
     IL_0006:  ret
   } // end of method Test::'<imanm>b__0'
 
@@ -349,26 +265,8 @@
     .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
     // Code size       7 (0x7)
     .maxstack  8
-//000024:         TestDelegate testDelC = (x) => { Console.WriteLine(x); };
     IL_0000:  ldarg.0
     IL_0001:  call       void [mscorlib]System.Console::WriteLine(string)
-//000025: 
-//000026:         // Invoke the delegates.
-//000027:         testDelA("Hello. My name is M and I write lines.");
-//000028:         testDelB("That's nothing. I'm anonymous and ");
-//000029:         testDelC("I'm a famous author.");
-//000030: 
-//000031:         // Keep console window open in debug mode.
-//000032:         Console.WriteLine("Press any key to exit.");
-//000033:         Console.ReadKey();
-//000034:     }
-//000035: }
-//000036: /* Output:
-//000037:     Hello. My name is M and I write lines.
-//000038:     That's nothing. I'm anonymous and
-//000039:     I'm a famous author.
-//000040:     Press any key to exit.
-//000041:  */
     IL_0006:  ret
   } // end of method Test::'<imanm>b__1'
 
