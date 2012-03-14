@@ -1,4 +1,4 @@
 "C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\ildasm.exe"
 0.5
 5.0
-testcases/hello
+testcases/test

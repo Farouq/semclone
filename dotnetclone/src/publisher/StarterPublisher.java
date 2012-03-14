@@ -40,6 +40,9 @@ public class StarterPublisher {
 		
 		System.out.println("step4");
 		step4_exportToXML(config,files,disassembledCodeList);
+		
+		System.out.println("step5");
+		step5_Filter_ExportAllToXML(config,files,disassembledCodeList);
 	 
  
 		System.out.println("ver plusma");
@@ -209,8 +212,7 @@ public class StarterPublisher {
 					{
 						
 					}
-				
-					
+								
 					
 				}
 				
@@ -248,6 +250,111 @@ public class StarterPublisher {
 		}
 		
 	}
+	
+	private static void step5_Filter_ExportAllToXML(Configuration config,ArrayList<String> files,ArrayList<ArrayList<String>> disassembledCodeList) throws Exception
+	{
+		String currentSourceFileAddress="NULL";
+		ArrayList<String> out_lines_binary=new ArrayList<String>();
+		out_lines_binary.add("<project><name></name><description></description><prog_language></prog_language><source_elements>");
+
+		for(int i=0;i< files.size();i++)	
+		{			
+			
+			ArrayList<String> in_lines=disassembledCodeList.get(i);
+			ArrayList<String> methodBlockBuffer_binary=new ArrayList<String>();
+			boolean bInsideMethodBlock=false;
+			int methoBlockStartLine=Integer.MAX_VALUE;
+			int methoBlockEndLine=Integer.MAX_VALUE;
+			
+			for(int j=0;j<in_lines.size();j++)
+			{
+				if(in_lines.get(j).startsWith("// Source File '"))
+				{
+					String t=in_lines.get(j).replace("// Source File '", "");
+					t=t.substring(0,t.lastIndexOf("'"));
+					currentSourceFileAddress=t;
+				}
+				
+				if(in_lines.get(j).startsWith("  .method"))
+				{
+					while(!in_lines.get(j).trim().equals("{"))
+					{
+						j++;
+					}
+					bInsideMethodBlock=true;
+					methoBlockStartLine=Integer.MAX_VALUE;
+					methoBlockEndLine=Integer.MAX_VALUE;
+				}
+				
+				if(in_lines.get(j).startsWith("//"))
+				{
+					try
+					{
+					String[] cols= in_lines.get(j).split(":");
+					int ln=Integer.parseInt(cols[0].replace("//",""));
+					
+					if(bInsideMethodBlock)
+					{
+						if(methoBlockStartLine==Integer.MAX_VALUE)
+						{
+							methoBlockStartLine=ln;
+							
+						}
+						methoBlockEndLine=ln;
+					}
+					}
+					catch(Exception ex)
+					{
+						
+					}
+				}
+				
+				if((bInsideMethodBlock && !(in_lines.get(j).startsWith("//")  || in_lines.get(j).trim().startsWith("} // end of method")))
+						 && !(in_lines.get(j).trim().startsWith("// Code size")) && !(in_lines.get(j).trim().startsWith(".maxstack"))
+						 && !(in_lines.get(j).trim().startsWith(".language")) && !(in_lines.get(j).trim().startsWith(".custom instance"))
+						 && !(in_lines.get(j).trim().startsWith(".entrypoint")))
+				{
+					
+					if(in_lines.get(j).trim().startsWith(".locals init"))
+					{
+						while(!in_lines.get(j).trim().endsWith(")"))
+						{
+							j++;
+						}
+						j++;
+					} 
+					
+					methodBlockBuffer_binary.add(in_lines.get(j));
+				}
+				
+							
+				
+				if(bInsideMethodBlock && in_lines.get(j).trim().startsWith("} // end of method") )
+				{
+					out_lines_binary.add("<source file=\""+currentSourceFileAddress+"\" startline=\""+methoBlockStartLine+"\" endline=\""+methoBlockEndLine+"\"><![CDATA[");
+					for(String llll : methodBlockBuffer_binary)
+					{
+						out_lines_binary.add(llll);
+					}
+					
+					out_lines_binary.add("]]></source>");
+					
+					methodBlockBuffer_binary.clear();
+					bInsideMethodBlock=false;
+					methoBlockStartLine=Integer.MAX_VALUE;
+					methoBlockEndLine=Integer.MAX_VALUE;
+				}
+								
+			}
+		
+		}
+		
+		out_lines_binary.add("</source_elements></project>");
+		
+		writeToXMLFile(config,"allFiles.xml",00,"binary",out_lines_binary);
+		
+	}
+	
 	private static void writeToXMLFile(Configuration config,String filename,int fileID,String format,ArrayList<String> lines) throws Exception
 	{
 	  

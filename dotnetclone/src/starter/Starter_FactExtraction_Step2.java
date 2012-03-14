@@ -16,7 +16,7 @@ public class Starter_FactExtraction_Step2 {
 		
 		Configuration config=Configuration.loadFromFile();
 		StarterPublisher.start(config);
-		SimhashCloneTest6e.findClone(config.disassebledAddress+"\\ConsoleApplication1.exe_0_source.xml");
+		//SimhashCloneTest6e.findClone(config.disassebledAddress+"\\ConsoleApplication3.exe_0_binarymerged.xml");
 	}
 	
 	
