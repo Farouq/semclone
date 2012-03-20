@@ -1,0 +1,471 @@
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+{
+}
+  .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
+.assembly extern System.Xml.Linq
+  .ver 4:0:0:0
+{
+}
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+.assembly ConsoleApplication2
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 13 43 6F 6E 73 6F 6C 65 41 70 70 6C 69 63   // ...ConsoleApplic
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+
+
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 2C 50 72   // ,Version=v4.0,Pr
+                                                                                                        79 4E 61 6D 65 1F 2E 4E 45 54 20 46 72 61 6D 65   // yName..NET Frame
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+                                                                                                  63 62 61 34 38 34 35 00 00 )                      // cba4845..
+  .hash algorithm 0x00008004
+.mresource public ConsoleApplication2.Resources.resources
+  // WARNING: managed resource file ConsoleApplication2.Resources.resources created
+// MVID: {6DEAC42F-56C0-435A-A8F2-643222C09ECA}
+.stackreserve 0x00100000
+// Image base: 0x005C0000
+// =============== CLASS MEMBERS DECLARATION ===================
+       extends [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+  .method public specialname rtspecialname 
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    IL_0000:  ldarg.0
+    IL_0007:  nop
+
+.class private auto ansi ConsoleApplication2.My.MyComputer
+  .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+                                                                                                  2E 30 2E 30 2E 30 00 00 )                         // .0.0.0..
+  {
+    // Code size       10 (0xa)
+    IL_0001:  ldarg.0
+    IL_0008:  nop
+
+.class private auto ansi sealed beforefieldinit ConsoleApplication2.My.MyProject
+  .custom instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.HideModuleNameAttribute::.ctor() = ( 01 00 00 00 ) 
+                                                                                      string) = ( 01 00 0A 4D 79 54 65 6D 70 6C 61 74 65 08 31 30   // ...MyTemplate.10
+         extends [mscorlib]System.Object
+                                                                                                         string,
+                                                                                                                     72 76 69 63 65 73 2E 50 72 6F 74 6F 63 6F 6C 73   // rvices.Protocols
+                                                                                                                     49 6E 73 74 61 6E 63 65 5F 5F 13 44 69 73 70 6F   // Instance__.Dispo
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    {
+      // Code size       18 (0x12)
+      IL_0000:  nop
+      IL_0003:  call       object [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+      IL_000e:  br.s       IL_0010
+      IL_0011:  ret
+    .method public strict virtual instance int32 
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      .maxstack  1
+      IL_0001:  ldarg.0
+      IL_0008:  br.s       IL_000a
+      IL_000b:  ret
+    .method assembly hidebysig instance class [mscorlib]System.Type 
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      .maxstack  1
+      IL_0001:  ldtoken    ConsoleApplication2.My.MyProject/MyWebServices
+      IL_000c:  br.s       IL_000e
+      IL_000f:  ret
+    .method public strict virtual instance string 
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      .maxstack  1
+      IL_0001:  ldarg.0
+      IL_0008:  br.s       IL_000a
+      IL_000b:  ret
+    .method private static !!T  Create__Instance__<.ctor T>(!!T 'instance') cil managed
+      // Code size       32 (0x20)
+               [1] bool VB$CG$t_bool$S0)
+      IL_0002:  box        !!T
+      IL_000a:  stloc.1
+
+      IL_0014:  br.s       IL_001e
+
+      IL_001a:  stloc.0
+      IL_001d:  nop
+    } // end of method MyWebServices::Create__Instance__
+    {
+      .maxstack  2
+      IL_0001:  ldarg.1
+      IL_000a:  ldloc.0
+      IL_0011:  ret
+    .method public specialname rtspecialname 
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      .maxstack  8
+      IL_0002:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0009:  ret
+  } // end of class MyWebServices
+         extends [mscorlib]System.Object
+    .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+    .custom instance void [mscorlib]System.ThreadStaticAttribute::.ctor() = ( 01 00 00 00 ) 
+    {
+      .maxstack  2
+      IL_0000:  nop
+      IL_000b:  ldnull
+      IL_000f:  ldloc.1
+      IL_0012:  call       !!0 [mscorlib]System.Activator::CreateInstance<!T>()
+      IL_0021:  stloc.0
+      IL_0024:  ldloc.0
+
+    {
+      // Code size       10 (0xa)
+      IL_0001:  ldarg.0
+      IL_0008:  nop
+
+      .get instance !T ConsoleApplication2.My.MyProject/ThreadSafeObjectProvider`1::get_GetInstance()
+
+  .field private static initonly class ConsoleApplication2.My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User> m_UserObjectProvider
+          void  .cctor() cil managed
+    // Code size       42 (0x2a)
+    IL_0005:  stsfld     class ConsoleApplication2.My.MyProject/ThreadSafeObjectProvider`1<class ConsoleApplication2.My.MyComputer> ConsoleApplication2.My.MyProject::m_ComputerObjectProvider
+    IL_0014:  newobj     instance void class ConsoleApplication2.My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User>::.ctor()
+    IL_0023:  stsfld     class ConsoleApplication2.My.MyProject/ThreadSafeObjectProvider`1<class ConsoleApplication2.My.MyProject/MyWebServices> ConsoleApplication2.My.MyProject::m_MyWebServicesObjectProvider
+  } // end of method MyProject::.cctor
+          get_Computer() cil managed
+    // Code size       16 (0x10)
+    IL_0000:  nop
+    IL_000b:  stloc.0
+    IL_000e:  ldloc.0
+
+  {
+    .maxstack  1
+    IL_0001:  ldsfld     class ConsoleApplication2.My.MyProject/ThreadSafeObjectProvider`1<class ConsoleApplication2.My.MyApplication> ConsoleApplication2.My.MyProject::m_AppObjectProvider
+    IL_000c:  br.s       IL_000e
+    IL_000f:  ret
+  .method assembly specialname static class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User 
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    .locals init ([0] class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User User)
+    IL_0006:  callvirt   instance !0 class ConsoleApplication2.My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User>::get_GetInstance()
+
+  } // end of method MyProject::get_User
+          get_WebServices() cil managed
+    // Code size       16 (0x10)
+    IL_0000:  nop
+    IL_000b:  stloc.0
+    IL_000e:  ldloc.0
+
+  {
+  } // end of property MyProject::Computer
+  {
+    .get class ConsoleApplication2.My.MyApplication ConsoleApplication2.My.MyProject::get_Application()
+          User()
+    .get class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User ConsoleApplication2.My.MyProject::get_User()
+          WebServices()
+                                                                                                       73 00 00 )                                        // s..
+} // end of class ConsoleApplication2.My.MyProject
+       extends [mscorlib]System.Object
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+         extends [mscorlib]System.Object
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .field private initonly class [System.Xml.Linq]System.Xml.Linq.XNamespace[] m_inScopeNs
+            instance void  .ctor(string[] inScopePrefixes,
+    {
+      .maxstack  8
+      IL_0002:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0009:  ldarg.1
+      IL_0010:  ldarg.2
+      IL_0017:  ldarg.3
+      IL_001e:  ret
+    .method assembly instance class [System.Xml.Linq]System.Xml.Linq.XElement 
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      .locals init ([0] class [System.Xml.Linq]System.Xml.Linq.XElement ProcessXElement)
+      IL_0002:  ldfld      string[] ConsoleApplication2.My.InternalXmlHelper/RemoveNamespaceAttributesClosure::m_inScopePrefixes
+      IL_000d:  ldarg.0
+      IL_0014:  call       class [System.Xml.Linq]System.Xml.Linq.XElement ConsoleApplication2.My.InternalXmlHelper::RemoveNamespaceAttributes(string[],
+                                                                                                                                               class [System.Xml.Linq]System.Xml.Linq.XElement)
+
+    } // end of method RemoveNamespaceAttributesClosure::ProcessXElement
+    {
+      .maxstack  4
+               [2] bool VB$CG$t_bool$S0)
+      IL_0002:  isinst     [System.Xml.Linq]System.Xml.Linq.XElement
+      IL_0009:  ldnull
+      IL_000d:  ceq
+      IL_0011:  brfalse.s  IL_0030
+      IL_0014:  ldfld      string[] ConsoleApplication2.My.InternalXmlHelper/RemoveNamespaceAttributesClosure::m_inScopePrefixes
+      IL_001f:  ldarg.0
+      IL_0026:  call       class [System.Xml.Linq]System.Xml.Linq.XElement ConsoleApplication2.My.InternalXmlHelper::RemoveNamespaceAttributes(string[],
+                                                                                                                                               class [System.Xml.Linq]System.Xml.Linq.XElement)
+
+      IL_0030:  nop
+      IL_0033:  br.s       IL_0036
+      IL_0036:  ldloc.1
+
+  .method private specialname rtspecialname 
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    IL_0000:  nop
+    IL_0007:  nop
+  } // end of method InternalXmlHelper::.ctor
+          get_Value(class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement> source) cil managed
+    .maxstack  2
+             [2] class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement> VB$t_ref$L0,
+    IL_0001:  nop
+      IL_0002:  ldarg.0
+      IL_0009:  br.s       IL_001c
+      IL_000c:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::get_Current()
+      IL_0013:  callvirt   instance string [System.Xml.Linq]System.Xml.Linq.XElement::get_Value()
+
+      IL_001d:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0024:  brtrue.s   IL_000b
+      IL_0027:  leave.s    IL_003d
+    finally
+      IL_002a:  ldnull
+      IL_002e:  ceq
+      IL_0032:  brfalse.s  IL_003b
+      IL_0035:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_003c:  endfinally
+    IL_003e:  stloc.0
+    IL_0041:  ldloc.0
+
+                    string 'value') cil managed
+    .maxstack  2
+             [2] bool VB$CG$t_bool$S0)
+    .try
+      IL_0003:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::GetEnumerator()
+
+      IL_0011:  stloc.0
+      IL_0014:  callvirt   instance void [System.Xml.Linq]System.Xml.Linq.XElement::set_Value(string)
+      IL_001b:  br.s       IL_0028
+      IL_001e:  ldloc.1
+      IL_0025:  ldloc.2
+      IL_0028:  nop
+    }  // end .try
+      IL_002b:  ldloc.1
+      IL_002f:  ldc.i4.0
+      IL_0033:  ldloc.2
+      IL_0036:  ldloc.1
+      IL_003d:  nop
+    IL_003f:  nop
+
+                             class [System.Xml.Linq]System.Xml.Linq.XName name) cil managed
+    .maxstack  2
+             [2] class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement> VB$t_ref$L0,
+    IL_0001:  nop
+      IL_0002:  ldarg.0
+      IL_0009:  br.s       IL_0022
+      IL_000c:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::get_Current()
+      IL_0013:  ldarg.1
+      IL_001e:  stloc.0
+      IL_0021:  nop
+      IL_0028:  stloc.3
+
+
+    {
+      IL_0031:  ceq
+      IL_0036:  stloc.3
+
+      IL_0040:  nop
+    }  // end handler
+    IL_0045:  br.s       IL_0047
+    IL_0048:  ret
+  .method public specialname static void 
+                             string 'value') cil managed
+    .maxstack  3
+             [2] bool VB$CG$t_bool$S0)
+    .try
+      IL_0003:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::GetEnumerator()
+
+      IL_0011:  stloc.0
+      IL_0014:  ldarg.2
+      IL_001a:  nop
+
+      IL_0020:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0027:  brtrue.s   IL_000b
+      IL_002a:  leave.s    IL_0040
+    finally
+      IL_002d:  ldnull
+      IL_0031:  ceq
+      IL_0035:  brfalse.s  IL_003e
+      IL_0038:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_003f:  endfinally
+    IL_0041:  ret
+  .method public specialname static string 
+  {
+    .locals init ([0] string AttributeValue)
+    IL_0002:  ldarg.1
+    IL_000d:  stloc.0
+    IL_0010:  ldloc.0
+
+                             class [System.Xml.Linq]System.Xml.Linq.XName name,
+    // Code size       12 (0xc)
+    IL_0001:  ldarg.0
+    IL_0004:  callvirt   instance void [System.Xml.Linq]System.Xml.Linq.XElement::SetAttributeValue(class [System.Xml.Linq]System.Xml.Linq.XName,
+    IL_000a:  nop
+
+                          object 'value') cil managed
+    // Code size       31 (0x1f)
+             [1] bool VB$CG$t_bool$S0)
+    IL_0002:  ldnull
+    IL_0006:  ldloc.1
+    IL_0009:  ldnull
+
+    IL_000f:  ldarg.1
+                                                                                          object)
+
+  } // end of method InternalXmlHelper::CreateAttribute
+          CreateNamespaceAttribute(class [System.Xml.Linq]System.Xml.Linq.XName name,
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .locals init ([0] class [System.Xml.Linq]System.Xml.Linq.XAttribute a,
+    IL_0001:  ldarg.0
+    IL_0008:  newobj     instance void [System.Xml.Linq]System.Xml.Linq.XAttribute::.ctor(class [System.Xml.Linq]System.Xml.Linq.XName,
+    IL_000e:  ldloc.0
+    IL_0015:  nop
+    IL_0018:  br.s       IL_001a
+    IL_001b:  ret
+  .method public static object  RemoveNamespaceAttributes(string[] inScopePrefixes,
+                                                          object obj) cil managed
+    // Code size       84 (0x54)
+             [1] class [System.Xml.Linq]System.Xml.Linq.XElement elem,
+    IL_0000:  nop
+    IL_0003:  ceq
+    IL_0008:  stloc.3
+
+    IL_0012:  stloc.1
+    IL_0015:  ceq
+    IL_001a:  stloc.3
+
+    IL_0020:  ldarg.2
+                                                                                                                                             class [System.Xml.Linq]System.Xml.Linq.XNamespace[],
+    IL_0027:  stloc.0
+    IL_002a:  br.s       IL_004c
+    IL_002d:  ldarg.3
+    IL_0034:  ldloc.2
+    IL_0038:  ldc.i4.0
+    IL_003c:  ldloc.3
+    IL_003f:  ldarg.0
+    IL_0042:  ldloc.2
+                                                                                                                                            class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>,
+    IL_0049:  br.s       IL_0052
+    IL_004c:  nop
+    IL_004f:  stloc.0
+    IL_0052:  ldloc.0
+
+                                    class [System.Xml.Linq]System.Xml.Linq.XNamespace[] inScopeNs,
+  {
+    .maxstack  4
+             [2] bool VB$CG$t_bool$S0)
+    IL_0002:  ldnull
+    IL_0006:  ceq
+    IL_000a:  brfalse.s  IL_0061
+    IL_000d:  isinst     class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>
+    IL_0014:  ldnull
+    IL_0018:  ceq
+    IL_001c:  brfalse.s  IL_003d
+    IL_001f:  ldarg.0
+    IL_0022:  newobj     instance void ConsoleApplication2.My.InternalXmlHelper/RemoveNamespaceAttributesClosure::.ctor(string[],
+    IL_0027:  dup
+                                                                                                                                                                             native int)
+    IL_0038:  stloc.0
+    IL_003b:  br.s       IL_0060
+    IL_003e:  ldarg.3
+    IL_0045:  ldarg.1
+                                                                                                                        class [System.Xml.Linq]System.Xml.Linq.XNamespace[],
+    IL_004d:  ldvirtftn  instance object ConsoleApplication2.My.InternalXmlHelper/RemoveNamespaceAttributesClosure::ProcessObject(object)
+    IL_0058:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<object,object>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+    IL_005e:  br.s       IL_0066
+    IL_0061:  nop
+    IL_0064:  br.s       IL_0066
+    IL_0067:  ret
+  .method public static class [System.Xml.Linq]System.Xml.Linq.XElement 
+                                    class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute> attributes,
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .locals init ([0] class [System.Xml.Linq]System.Xml.Linq.XElement RemoveNamespaceAttributes,
+             [3] class [System.Xml.Linq]System.Xml.Linq.XNamespace ns,
+             [6] class [System.Xml.Linq]System.Xml.Linq.XNamespace currentInScopeNs,
+             [9] int32 V_9,
+             [12] string V_12,
+             [15] int32 VB$t_i4$L1,
+             [18] int32 VB$CG$t_i4$S0,
+    IL_0001:  ldarg.3
+    IL_0005:  ldc.i4.0
+    IL_000a:  ldloc.s    VB$CG$t_bool$S0
+    IL_0011:  ldarg.3
+    IL_0018:  br         IL_0180
+    IL_001e:  callvirt   instance class [System.Xml.Linq]System.Xml.Linq.XAttribute [System.Xml.Linq]System.Xml.Linq.XAttribute::get_NextAttribute()
+    IL_0025:  callvirt   instance bool [System.Xml.Linq]System.Xml.Linq.XAttribute::get_IsNamespaceDeclaration()
+    IL_002e:  brfalse    IL_017c
+    IL_0034:  callvirt   instance !!0 [System.Xml.Linq]System.Xml.Linq.XObject::Annotation<class [System.Xml.Linq]System.Xml.Linq.XNamespace>()
+    IL_003b:  callvirt   instance class [System.Xml.Linq]System.Xml.Linq.XName [System.Xml.Linq]System.Xml.Linq.XAttribute::get_Name()
+    IL_0047:  ldloc.3
+    IL_004b:  ldc.i4.0
+    IL_0050:  ldloc.s    VB$CG$t_bool$S0
+    IL_0057:  ldarg.0
+    IL_005a:  ldarg.1
+    IL_005d:  ldc.i4.0
+    IL_0060:  ldc.i4.1
+    IL_0065:  brfalse.s  IL_00bf
+    IL_0068:  ldlen
+    IL_006b:  sub.ovf
+    IL_006f:  ldloc.s    lastIndex
+    IL_0075:  br.s       IL_00b5
+    IL_0078:  ldloc.s    i
+    IL_007d:  ldarg.1
+    IL_0081:  stloc.s    currentInScopeNs
+    IL_0087:  callvirt   instance bool [mscorlib]System.String::Equals(string)
+    IL_0090:  brfalse.s  IL_00ad
+    IL_0093:  ldloc.s    currentInScopeNs
+    IL_009a:  stloc.s    VB$CG$t_bool$S0
+
+    IL_00a6:  nop
+    IL_00a9:  stloc.1
+
+    IL_00af:  ldloc.s    i
+    IL_00b3:  stloc.s    i
+    IL_00b9:  stloc.s    VB$CG$t_i4$S0
+
+    IL_00c1:  ldnull
+    IL_00c5:  ceq
+    IL_00cb:  brfalse    IL_017a
+    IL_00d1:  ldnull
+    IL_00d5:  ceq
+    IL_00db:  brfalse.s  IL_015c
+    IL_00de:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>::get_Count()
+    IL_00e5:  stloc.s    V_9
+    IL_00ea:  stloc.s    VB$t_i4$L1
+
+    IL_00f3:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>::get_Item(int32)
+    IL_00fc:  callvirt   instance class [System.Xml.Linq]System.Xml.Linq.XName [System.Xml.Linq]System.Xml.Linq.XAttribute::get_Name()
+    IL_0108:  ldloc.s    currentA
+    IL_0111:  ldloc.s    V_11
+    IL_0116:  ldc.i4.0
+    IL_011b:  ldloc.s    VB$CG$t_bool$S1
+    IL_011f:  ldloc.s    prefix
+    IL_0128:  stloc.s    VB$CG$t_bool$S0
+
+    IL_0131:  call       bool [System.Xml.Linq]System.Xml.Linq.XNamespace::op_Equality(class [System.Xml.Linq]System.Xml.Linq.XNamespace,
+    IL_0138:  ldloc.s    VB$CG$t_bool$S2
+    IL_013c:  ldloc.1
+    IL_0143:  nop
+    IL_0146:  nop
+    IL_0149:  nop
+    IL_014c:  ldloc.s    V_13
+    IL_0150:  stloc.s    V_13
+    IL_0156:  stloc.s    VB$CG$t_i4$S0
+
+    IL_015e:  ldnull
+    IL_0162:  ceq
+    IL_0168:  brfalse.s  IL_0179
+    IL_016b:  callvirt   instance void [System.Xml.Linq]System.Xml.Linq.XAttribute::Remove()
+    IL_0172:  ldloc.1
+    IL_0179:  nop
+    IL_017c:  nop
+    IL_017f:  nop
+    IL_0182:  ceq
+    IL_0187:  stloc.s    VB$CG$t_bool$S2
+
+    IL_0192:  stloc.0
+    IL_0195:  ldloc.0
+
+    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 ) 
+                                                                  string)
+                                  class [System.Xml.Linq]System.Xml.Linq.XName)
+    .get string ConsoleApplication2.My.InternalXmlHelper::get_AttributeValue(class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>,
+                                                                           class [System.Xml.Linq]System.Xml.Linq.XName,
+  .property string AttributeValue(class [System.Xml.Linq]System.Xml.Linq.XElement,
+    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 ) 
+    .set void ConsoleApplication2.My.InternalXmlHelper::set_AttributeValue(class [System.Xml.Linq]System.Xml.Linq.XElement,
+  } // end of property InternalXmlHelper::AttributeValue
+.class private auto ansi sealed ConsoleApplication2.Module1
+  .custom instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.StandardModuleAttribute::.ctor() = ( 01 00 00 00 ) 
+    .entrypoint
+    .maxstack  8
+    + "llo Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello H"
