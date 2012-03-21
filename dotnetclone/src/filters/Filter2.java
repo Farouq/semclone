@@ -9,11 +9,12 @@ import java.io.PrintWriter;
 public class Filter2 {
 	/**
 	 * @param args
+	 * To filter out the printed constants
 	 */
 
 	public static void filter(String fileName) throws Exception {
 
-		String newFileName = fileName.subSequence(0, fileName.lastIndexOf('.'))+ "_filtered2.xml";
+		String newFileName = fileName.subSequence(0, fileName.lastIndexOf('.'))+ "_f2.xml";
 		File newf = new File(newFileName);
 		if (newf.exists())
 			newf.delete();
