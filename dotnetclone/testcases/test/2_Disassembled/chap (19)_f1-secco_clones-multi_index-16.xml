@@ -1,0 +1,114 @@
+<clones hamthreshold="16" nfragments="3" ngroups="1">
+<clone_group groupid="0" nfragments="3">
+<clone_fragment endline="24" file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" hamdist="0" pcid="5" startline="15"><![CDATA[
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldstr      "Chapter 8 example 1: Hello World"
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc.0
+  .try
+  {
+  ldloc.0
+  ldstr      "Chap0801.rtf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iTextdotNET]com.lowagie.text.rtf.RtfWriter [iTextdotNET]com.lowagie.text.rtf.RtfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+  pop
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  ldloc.0
+  ldstr      "Hello World"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+leave.s
+  }  // end .try
+  catch [iTextdotNET]com.lowagie.text.DocumentException 
+  {
+  dup
+  stloc.3
+  stloc.1
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc.1
+  callvirt   instance string [iTextdotNET]com.lowagie.text.DocumentException::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+leave.s
+  }  // end handler
+  catch [vjslib]java.io.IOException 
+  {
+  dup
+  stloc.s    V_4
+  stloc.2
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc.2
+  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+leave.s
+  }  // end handler
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+br.s
+  ret
+
+]]></clone_fragment>
+<clone_fragment endline="20" file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" hamdist="15" pcid="1" startline="11"><![CDATA[
+  nop
+  ldstr      "Chapter 8 example 1: Hello World"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  newobj     instance void [iText]com.lowagie.text.Document::.ctor()
+  stloc.0
+  ldstr      "Chap0801.rtf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  stloc.1
+  ldloc.0
+  ldloc.1
+  call       class [iText]com.lowagie.text.rtf.RtfWriter [iText]com.lowagie.text.rtf.RtfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  pop
+  ldloc.0
+  callvirt   instance void [iText]com.lowagie.text.Document::open()
+  nop
+  ldloc.0
+  ldstr      "Hello World"
+  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  callvirt   instance void [iText]com.lowagie.text.Document::close()
+  nop
+  nop
+  ret
+
+]]></clone_fragment>
+<clone_fragment endline="50" file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" hamdist="12" pcid="3" startline="20"><![CDATA[
+  nop
+  ldstr      "Chapter 8 example 1: Hello World"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc.0
+  ldloc.0
+  ldstr      "Chap0801.rtf"
+  ldc.i4.2
+  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  call       class [iTextdotNET]com.lowagie.text.rtf.RtfWriter [iTextdotNET]com.lowagie.text.rtf.RtfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  pop
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  nop
+  ldloc.0
+  ldstr      "Hello World"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  nop
+  ret
+
+]]></clone_fragment>
+</clone_group>
+</clones>

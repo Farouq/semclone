@@ -1,0 +1,78 @@
+<clones hamthreshold="12" nfragments="2" ngroups="1">
+<clone_group groupid="0" nfragments="2">
+<clone_fragment endline="24" file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" hamdist="0" pcid="5" startline="15"><![CDATA[
+  ldarg.s    ck
+brtrue.s
+  ldarg.s    cc
+  ldarg.2
+  ldelem.u2
+  stloc.0
+br.s
+  ldarg.s    ck
+  ldarg.2
+  ldarg.s    ck
+  ldlen
+  ldc.i4.1
+  sub
+  call       int32 [vjslib]java.lang.Math::min(int32,
+                                                         int32)
+  ldelem.ref
+  ldarg.s    cc
+  ldarg.2
+  ldelem.u2
+  callvirt   instance char [iTextdotNET]com.lowagie.text.pdf.PdfChunk::getUnicodeEquivalent(char)
+  stloc.0
+  ldloc.0
+  conv.i4
+ldc.i4.s
+  beq.s      IL_002c
+  ldc.i4.0
+br.s
+  ldc.i4.1
+  stloc.1
+br.s
+  ldloc.1
+  ret
+
+]]></clone_fragment>
+<clone_fragment endline="50" file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" hamdist="9" pcid="3" startline="20"><![CDATA[
+  nop
+  ldarg.s    ck
+  ldnull
+  ceq
+  ldc.i4.0
+  ceq
+  stloc.2
+  ldloc.2
+brtrue.s
+  ldarg.s    cc
+  ldarg.2
+  ldelem.u2
+  stloc.0
+br.s
+  ldarg.s    ck
+  ldarg.2
+  ldarg.s    ck
+  ldlen
+  conv.i4
+  ldc.i4.1
+  sub
+  call       int32 [mscorlib]System.Math::Min(int32,
+                                                        int32)
+  ldelem.ref
+  ldarg.s    cc
+  ldarg.2
+  ldelem.u2
+  callvirt   instance char [iTextdotNET]com.lowagie.text.pdf.PdfChunk::getUnicodeEquivalent(char)
+  stloc.0
+  ldloc.0
+ldc.i4.s
+  ceq
+  stloc.1
+br.s
+  ldloc.1
+  ret
+
+]]></clone_fragment>
+</clone_group>
+</clones>

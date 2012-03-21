@@ -32,7 +32,7 @@ public class SimhashCloneTest6e {
 	static int simThreshold = 13;
 	
 	static boolean strictOnMembership = false;
-	static double clusterMembershipRatio = 0.8;	//for a candidate item, it is the ratio of how many items are matched are matched vs total items in a cluster 
+	static double clusterMembershipRatio = 0.9;	//for a candidate item, it is the ratio of how many items are matched are matched vs total items in a cluster 
 	static double locTolerance = 1;
 	
 	static int minClusterSize = 2;

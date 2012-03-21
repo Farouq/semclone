@@ -1,0 +1,61 @@
+<clones hamthreshold="13" nfragments="2" ngroups="1">
+<clone_group groupid="0" nfragments="2">
+<clone_fragment endline="20" file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" hamdist="0" pcid="1" startline="11"><![CDATA[
+  nop
+  ldstr      "Chapter 1 example 1: Hello World"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  newobj     instance void [iText]com.lowagie.text.Document::.ctor()
+  stloc.0
+  ldloc.0
+  ldstr      "Chap0101.pdf"
+  ldc.i4.2
+  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [mscorlib]System.IO.Stream)
+  pop
+  ldloc.0
+  callvirt   instance void [iText]com.lowagie.text.Document::open()
+  nop
+  ldloc.0
+  ldstr      "Hello World"
+  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  callvirt   instance void [iText]com.lowagie.text.Document::close()
+  nop
+  nop
+  ret
+]]></clone_fragment>
+<clone_fragment endline="50" file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" hamdist="11" pcid="3" startline="20"><![CDATA[
+  nop
+  ldstr      "Chapter 1 example 1: Hello World"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc.0
+  ldloc.0
+  ldstr      "Chap0101.pdf"
+  ldc.i4.2
+  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  pop
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  nop
+  ldloc.0
+  ldstr      "Hello World"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  nop
+  ret
+]]></clone_fragment>
+</clone_group>
+</clones>
