@@ -19,11 +19,11 @@ public class Starter_FactExtraction_Step2 {
 		Configuration config=Configuration.loadFromFile();
 		//StarterPublisher.start(config);
 		
-		for(int i=1;i<=22;i++){
-		//filters.Filter1.filter(config.disassebledAddress+"\\chap ("+i+").xml");
-		//filters.Filter4.filter(config.disassebledAddress+"\\chap ("+i+")_f1.xml");
+		for(int i=1;i<=10;i++){
+		//filters.Filter1.filter(config.disassebledAddress+"\\F ("+i+").xml");
+		//filters.Filter4.filter(config.disassebledAddress+"\\F ("+i+")_f1.xml");
 		System.out.println(" file number iiiii"+i+"------------------------------------------------------"+i);
-		SimhashCloneTest6e.findClone(config.disassebledAddress+"\\chap ("+i+")_f1_f4.xml");
+		SimhashCloneTest6e.findClone(config.disassebledAddress+"\\F ("+i+")_f1_f4.xml");
 		}
 		
 		
