@@ -13,7 +13,7 @@ public class Filter1 {
 	 * To filter the prefix IL_xxxx: from IL statements 
 	 */
 
-	public static void filter(String fileName) throws Exception {
+	public static void filter1(String fileName) throws Exception {
 
 		String newFileName = fileName.subSequence(0, fileName.lastIndexOf('.'))+ "_f1.xml";
 		File newf = new File(newFileName);

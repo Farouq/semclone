@@ -15,9 +15,9 @@ public class Filter3 {
 	 * ldloc.n— Loada a variable into the stack
 	 */
 
-	public static void filter(String fileName) throws Exception {
+	public static void filter3(String fileName) throws Exception {
 
-		String newFileName = fileName.subSequence(0, fileName.lastIndexOf('.'))+ "_f3.xml";
+		String newFileName = fileName.subSequence(0, fileName.lastIndexOf('.'))+ "_3.xml";
 		File newf = new File(newFileName);
 		if (newf.exists())
 			newf.delete();
