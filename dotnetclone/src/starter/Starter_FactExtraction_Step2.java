@@ -43,7 +43,7 @@ public class Starter_FactExtraction_Step2 {
 			break;
 		default:
 			
-		System.out.println("");
+		System.out.println(" wrong comparison method entry");
 		}
 
 		/*	
