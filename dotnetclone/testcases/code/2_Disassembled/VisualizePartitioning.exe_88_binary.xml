@@ -1,0 +1,2882 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.ApplicationBase::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  8
+    .language '{3A12D0B8-C26C-11D0-B442-00A0244A1DD2}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.Devices.Computer::.ctor()
+    IL_0007:  nop
+    IL_0008:  nop
+    IL_0009:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       42 (0x2a)
+    .maxstack  8
+    IL_0000:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer>::.ctor()
+    IL_0005:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer> My.MyProject::m_ComputerObjectProvider
+    IL_000a:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication>::.ctor()
+    IL_000f:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication> My.MyProject::m_AppObjectProvider
+    IL_0014:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User>::.ctor()
+    IL_0019:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User> My.MyProject::m_UserObjectProvider
+    IL_001e:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices>::.ctor()
+    IL_0023:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices> My.MyProject::m_MyWebServicesObjectProvider
+    IL_0028:  nop
+    IL_0029:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class My.MyComputer Computer)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer> My.MyProject::m_ComputerObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class My.MyApplication Application)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication> My.MyProject::m_AppObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User User)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User> My.MyProject::m_UserObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class My.MyProject/MyWebServices WebServices)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices> My.MyProject::m_MyWebServicesObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       243 (0xf3)
+    .maxstack  4
+    .locals init (int32 V_0,
+             int32 V_1,
+             class [mscorlib]System.WeakReference V_2,
+             class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> V_3,
+             bool V_4,
+             int32 V_5,
+             bool V_6,
+             bool V_7,
+             int32 V_8)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> VisualizePartitioning.MainForm::__ENCList
+    IL_0006:  stloc.3
+    IL_0007:  ldc.i4.0
+    IL_0008:  stloc.s    V_4
+    IL_000a:  nop
+    .try
+    {
+      IL_000b:  ldloc.3
+      IL_000c:  ldloca.s   V_4
+      IL_000e:  call       void [mscorlib]System.Threading.Monitor::Enter(object,
+                                                                          bool&)
+      IL_0013:  nop
+      IL_0014:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> VisualizePartitioning.MainForm::__ENCList
+      IL_0019:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_001e:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> VisualizePartitioning.MainForm::__ENCList
+      IL_0023:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Capacity()
+      IL_0028:  ceq
+      IL_002a:  stloc.s    V_6
+      IL_002c:  ldloc.s    V_6
+      IL_002e:  brfalse    IL_00c4
+
+      IL_0033:  ldc.i4.0
+      IL_0034:  stloc.0
+      IL_0035:  ldc.i4.0
+      IL_0036:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> VisualizePartitioning.MainForm::__ENCList
+      IL_003b:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_0040:  ldc.i4.1
+      IL_0041:  sub.ovf
+      IL_0042:  stloc.s    V_5
+      IL_0044:  stloc.1
+      IL_0045:  br.s       IL_008e
+
+      IL_0047:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> VisualizePartitioning.MainForm::__ENCList
+      IL_004c:  ldloc.1
+      IL_004d:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Item(int32)
+      IL_0052:  stloc.2
+      IL_0053:  ldloc.2
+      IL_0054:  callvirt   instance bool [mscorlib]System.WeakReference::get_IsAlive()
+      IL_0059:  stloc.s    V_6
+      IL_005b:  ldloc.s    V_6
+      IL_005d:  brfalse.s  IL_0088
+
+      IL_005f:  ldloc.1
+      IL_0060:  ldloc.0
+      IL_0061:  ceq
+      IL_0063:  ldc.i4.0
+      IL_0064:  ceq
+      IL_0066:  stloc.s    V_7
+      IL_0068:  ldloc.s    V_7
+      IL_006a:  brfalse.s  IL_0083
+
+      IL_006c:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> VisualizePartitioning.MainForm::__ENCList
+      IL_0071:  ldloc.0
+      IL_0072:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> VisualizePartitioning.MainForm::__ENCList
+      IL_0077:  ldloc.1
+      IL_0078:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Item(int32)
+      IL_007d:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::set_Item(int32,
+                                                                                                                                           !0)
+      IL_0082:  nop
+      IL_0083:  nop
+      IL_0084:  ldloc.0
+      IL_0085:  ldc.i4.1
+      IL_0086:  add.ovf
+      IL_0087:  stloc.0
+      IL_0088:  nop
+      IL_0089:  nop
+      IL_008a:  ldloc.1
+      IL_008b:  ldc.i4.1
+      IL_008c:  add.ovf
+      IL_008d:  stloc.1
+      IL_008e:  ldloc.1
+      IL_008f:  ldloc.s    V_5
+      IL_0091:  stloc.s    V_8
+      IL_0093:  ldloc.s    V_8
+      IL_0095:  ble.s      IL_0047
+
+      IL_0097:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> VisualizePartitioning.MainForm::__ENCList
+      IL_009c:  ldloc.0
+      IL_009d:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> VisualizePartitioning.MainForm::__ENCList
+      IL_00a2:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_00a7:  ldloc.0
+      IL_00a8:  sub.ovf
+      IL_00a9:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::RemoveRange(int32,
+                                                                                                                                              int32)
+      IL_00ae:  nop
+      IL_00af:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> VisualizePartitioning.MainForm::__ENCList
+      IL_00b4:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> VisualizePartitioning.MainForm::__ENCList
+      IL_00b9:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_00be:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::set_Capacity(int32)
+      IL_00c3:  nop
+      IL_00c4:  nop
+      IL_00c5:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> VisualizePartitioning.MainForm::__ENCList
+      IL_00ca:  ldarg.0
+      IL_00cb:  call       object [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+      IL_00d0:  newobj     instance void [mscorlib]System.WeakReference::.ctor(object)
+      IL_00d5:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::Add(!0)
+      IL_00da:  nop
+      IL_00db:  nop
+      IL_00dc:  leave.s    IL_00f0
+
+    }  // end .try
+    finally
+    {
+      IL_00de:  nop
+      IL_00df:  ldloc.s    V_4
+      IL_00e1:  stloc.s    V_7
+      IL_00e3:  ldloc.s    V_7
+      IL_00e5:  brfalse.s  IL_00ee
+
+      IL_00e7:  ldloc.3
+      IL_00e8:  call       void [mscorlib]System.Threading.Monitor::Exit(object)
+      IL_00ed:  nop
+      IL_00ee:  nop
+      IL_00ef:  endfinally
+    }  // end handler
+    IL_00f0:  nop
+    IL_00f1:  nop
+    IL_00f2:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.Designer.vb" startline="12" endline="17"><![CDATA[
+  {
+    // Code size       43 (0x2b)
+    .maxstack  2
+    .locals init ([0] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  brfalse.s  IL_000c
+
+    IL_0004:  ldarg.0
+    IL_0005:  ldfld      class [System]System.ComponentModel.IContainer VisualizePartitioning.MainForm::components
+    IL_000a:  brtrue.s   IL_000f
+
+    IL_000c:  ldc.i4.0
+    IL_000d:  br.s       IL_0010
+
+    IL_000f:  ldc.i4.1
+    IL_0010:  stloc.0
+    IL_0011:  ldloc.0
+    IL_0012:  brfalse.s  IL_0020
+
+    IL_0014:  ldarg.0
+    IL_0015:  ldfld      class [System]System.ComponentModel.IContainer VisualizePartitioning.MainForm::components
+    IL_001a:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+    IL_001f:  nop
+    IL_0020:  nop
+    IL_0021:  ldarg.0
+    IL_0022:  ldarg.1
+    IL_0023:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::Dispose(bool)
+    IL_0028:  nop
+    IL_0029:  nop
+    IL_002a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.Designer.vb" startline="18" endline="266"><![CDATA[
+  {
+    // Code size       3041 (0xbe1)
+    .maxstack  4
+    .locals init ([0] valuetype [System.Drawing]System.Drawing.Color VB$t_struct$N0,
+             [1] valuetype [System.Drawing]System.Drawing.Point VB$t_struct$N1,
+             [2] valuetype [System.Drawing]System.Drawing.Point VB$t_struct$S2,
+             [3] valuetype [System.Drawing]System.Drawing.Size VB$t_struct$N3,
+             [4] valuetype [System.Drawing]System.Drawing.Size VB$t_struct$S4,
+             [5] valuetype [System.Drawing]System.Drawing.SizeF VB$t_struct$N5,
+             [6] valuetype [System.Drawing]System.Drawing.SizeF VB$t_struct$S6)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  newobj     instance void [System]System.ComponentModel.Container::.ctor()
+    IL_0007:  stfld      class [System]System.ComponentModel.IContainer VisualizePartitioning.MainForm::components
+    IL_000c:  ldarg.0
+    IL_000d:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::.ctor()
+    IL_0012:  stfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox VisualizePartitioning.MainForm::pbPartitionedImage
+    IL_0017:  ldarg.0
+    IL_0018:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Button::.ctor()
+    IL_001d:  callvirt   instance void VisualizePartitioning.MainForm::set_btnVisualize(class [System.Windows.Forms]System.Windows.Forms.Button)
+    IL_0022:  nop
+    IL_0023:  ldarg.0
+    IL_0024:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.ListView::.ctor()
+    IL_0029:  stfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_002e:  ldarg.0
+    IL_002f:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.ListView::.ctor()
+    IL_0034:  stfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_0039:  ldarg.0
+    IL_003a:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_003f:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label1
+    IL_0044:  ldarg.0
+    IL_0045:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_004a:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label2
+    IL_004f:  ldarg.0
+    IL_0050:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_0055:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::lblTime
+    IL_005a:  ldarg.0
+    IL_005b:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::.ctor()
+    IL_0060:  callvirt   instance void VisualizePartitioning.MainForm::set_tbWorkFactor(class [System.Windows.Forms]System.Windows.Forms.TrackBar)
+    IL_0065:  nop
+    IL_0066:  ldarg.0
+    IL_0067:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_006c:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label3
+    IL_0071:  ldarg.0
+    IL_0072:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.RadioButton::.ctor()
+    IL_0077:  callvirt   instance void VisualizePartitioning.MainForm::set_rbParallelFor(class [System.Windows.Forms]System.Windows.Forms.RadioButton)
+    IL_007c:  nop
+    IL_007d:  ldarg.0
+    IL_007e:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.RadioButton::.ctor()
+    IL_0083:  callvirt   instance void VisualizePartitioning.MainForm::set_rbParallelForEach(class [System.Windows.Forms]System.Windows.Forms.RadioButton)
+    IL_0088:  nop
+    IL_0089:  ldarg.0
+    IL_008a:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.RadioButton::.ctor()
+    IL_008f:  callvirt   instance void VisualizePartitioning.MainForm::set_rbPLINQ(class [System.Windows.Forms]System.Windows.Forms.RadioButton)
+    IL_0094:  nop
+    IL_0095:  ldarg.0
+    IL_0096:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.GroupBox::.ctor()
+    IL_009b:  stfld      class [System.Windows.Forms]System.Windows.Forms.GroupBox VisualizePartitioning.MainForm::groupBox1
+    IL_00a0:  ldarg.0
+    IL_00a1:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_00a6:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label4
+    IL_00ab:  ldarg.0
+    IL_00ac:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::.ctor()
+    IL_00b1:  callvirt   instance void VisualizePartitioning.MainForm::set_tbCores(class [System.Windows.Forms]System.Windows.Forms.TrackBar)
+    IL_00b6:  nop
+    IL_00b7:  ldarg.0
+    IL_00b8:  ldarg.0
+    IL_00b9:  ldfld      class [System]System.ComponentModel.IContainer VisualizePartitioning.MainForm::components
+    IL_00be:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.ToolTip::.ctor(class [System]System.ComponentModel.IContainer)
+    IL_00c3:  stfld      class [System.Windows.Forms]System.Windows.Forms.ToolTip VisualizePartitioning.MainForm::toolTip1
+    IL_00c8:  ldarg.0
+    IL_00c9:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox VisualizePartitioning.MainForm::pbPartitionedImage
+    IL_00ce:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::BeginInit()
+    IL_00d3:  nop
+    IL_00d4:  ldarg.0
+    IL_00d5:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbWorkFactor()
+    IL_00da:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::BeginInit()
+    IL_00df:  nop
+    IL_00e0:  ldarg.0
+    IL_00e1:  ldfld      class [System.Windows.Forms]System.Windows.Forms.GroupBox VisualizePartitioning.MainForm::groupBox1
+    IL_00e6:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::SuspendLayout()
+    IL_00eb:  nop
+    IL_00ec:  ldarg.0
+    IL_00ed:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_00f2:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::BeginInit()
+    IL_00f7:  nop
+    IL_00f8:  ldarg.0
+    IL_00f9:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::SuspendLayout()
+    IL_00fe:  nop
+    IL_00ff:  ldarg.0
+    IL_0100:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox VisualizePartitioning.MainForm::pbPartitionedImage
+    IL_0105:  ldc.i4.s   15
+    IL_0107:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_010c:  nop
+    IL_010d:  ldarg.0
+    IL_010e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox VisualizePartitioning.MainForm::pbPartitionedImage
+    IL_0113:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_Black()
+    IL_0118:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_BackColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_011d:  nop
+    IL_011e:  ldarg.0
+    IL_011f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox VisualizePartitioning.MainForm::pbPartitionedImage
+    IL_0124:  ldc.i4.2
+    IL_0125:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_BorderStyle(valuetype [System.Windows.Forms]System.Windows.Forms.BorderStyle)
+    IL_012a:  nop
+    IL_012b:  ldarg.0
+    IL_012c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox VisualizePartitioning.MainForm::pbPartitionedImage
+    IL_0131:  ldloca.s   VB$t_struct$S2
+    IL_0133:  ldc.i4.s   12
+    IL_0135:  ldc.i4.s   12
+    IL_0137:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_013c:  nop
+    IL_013d:  ldloc.2
+    IL_013e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0143:  nop
+    IL_0144:  ldarg.0
+    IL_0145:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox VisualizePartitioning.MainForm::pbPartitionedImage
+    IL_014a:  ldstr      "pbPartitionedImage"
+    IL_014f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0154:  nop
+    IL_0155:  ldarg.0
+    IL_0156:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox VisualizePartitioning.MainForm::pbPartitionedImage
+    IL_015b:  ldloca.s   VB$t_struct$S4
+    IL_015d:  ldc.i4     0x21b
+    IL_0162:  ldc.i4     0x20a
+    IL_0167:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_016c:  nop
+    IL_016d:  ldloc.s    VB$t_struct$S4
+    IL_016f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0174:  nop
+    IL_0175:  ldarg.0
+    IL_0176:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox VisualizePartitioning.MainForm::pbPartitionedImage
+    IL_017b:  ldc.i4.1
+    IL_017c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_SizeMode(valuetype [System.Windows.Forms]System.Windows.Forms.PictureBoxSizeMode)
+    IL_0181:  nop
+    IL_0182:  ldarg.0
+    IL_0183:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox VisualizePartitioning.MainForm::pbPartitionedImage
+    IL_0188:  ldc.i4.0
+    IL_0189:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_TabIndex(int32)
+    IL_018e:  nop
+    IL_018f:  ldarg.0
+    IL_0190:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox VisualizePartitioning.MainForm::pbPartitionedImage
+    IL_0195:  ldc.i4.0
+    IL_0196:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_TabStop(bool)
+    IL_019b:  nop
+    IL_019c:  ldarg.0
+    IL_019d:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button VisualizePartitioning.MainForm::get_btnVisualize()
+    IL_01a2:  ldc.i4.s   9
+    IL_01a4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_01a9:  nop
+    IL_01aa:  ldarg.0
+    IL_01ab:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button VisualizePartitioning.MainForm::get_btnVisualize()
+    IL_01b0:  ldloca.s   VB$t_struct$S2
+    IL_01b2:  ldc.i4     0x22d
+    IL_01b7:  ldc.i4     0x1ea
+    IL_01bc:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_01c1:  nop
+    IL_01c2:  ldloc.2
+    IL_01c3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_01c8:  nop
+    IL_01c9:  ldarg.0
+    IL_01ca:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button VisualizePartitioning.MainForm::get_btnVisualize()
+    IL_01cf:  ldstr      "btnVisualize"
+    IL_01d4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_01d9:  nop
+    IL_01da:  ldarg.0
+    IL_01db:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button VisualizePartitioning.MainForm::get_btnVisualize()
+    IL_01e0:  ldloca.s   VB$t_struct$S4
+    IL_01e2:  ldc.i4.s   75
+    IL_01e4:  ldc.i4.s   23
+    IL_01e6:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_01eb:  nop
+    IL_01ec:  ldloc.s    VB$t_struct$S4
+    IL_01ee:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_01f3:  nop
+    IL_01f4:  ldarg.0
+    IL_01f5:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button VisualizePartitioning.MainForm::get_btnVisualize()
+    IL_01fa:  ldc.i4.1
+    IL_01fb:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0200:  nop
+    IL_0201:  ldarg.0
+    IL_0202:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button VisualizePartitioning.MainForm::get_btnVisualize()
+    IL_0207:  ldstr      "Visualize"
+    IL_020c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_Text(string)
+    IL_0211:  nop
+    IL_0212:  ldarg.0
+    IL_0213:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button VisualizePartitioning.MainForm::get_btnVisualize()
+    IL_0218:  ldc.i4.1
+    IL_0219:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_UseVisualStyleBackColor(bool)
+    IL_021e:  nop
+    IL_021f:  ldarg.0
+    IL_0220:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_0225:  ldc.i4.1
+    IL_0226:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_Activation(valuetype [System.Windows.Forms]System.Windows.Forms.ItemActivation)
+    IL_022b:  nop
+    IL_022c:  ldarg.0
+    IL_022d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_0232:  ldc.i4.0
+    IL_0233:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_Alignment(valuetype [System.Windows.Forms]System.Windows.Forms.ListViewAlignment)
+    IL_0238:  nop
+    IL_0239:  ldarg.0
+    IL_023a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_023f:  ldc.i4.s   9
+    IL_0241:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_0246:  nop
+    IL_0247:  ldarg.0
+    IL_0248:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_024d:  ldc.i4.0
+    IL_024e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_AutoArrange(bool)
+    IL_0253:  nop
+    IL_0254:  ldarg.0
+    IL_0255:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_025a:  ldc.i4.0
+    IL_025b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Enabled(bool)
+    IL_0260:  nop
+    IL_0261:  ldarg.0
+    IL_0262:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_0267:  ldc.i4.1
+    IL_0268:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_FullRowSelect(bool)
+    IL_026d:  nop
+    IL_026e:  ldarg.0
+    IL_026f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_0274:  ldc.i4.1
+    IL_0275:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_GridLines(bool)
+    IL_027a:  nop
+    IL_027b:  ldarg.0
+    IL_027c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_0281:  ldc.i4.0
+    IL_0282:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_HeaderStyle(valuetype [System.Windows.Forms]System.Windows.Forms.ColumnHeaderStyle)
+    IL_0287:  nop
+    IL_0288:  ldarg.0
+    IL_0289:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_028e:  ldloca.s   VB$t_struct$S2
+    IL_0290:  ldc.i4     0x22f
+    IL_0295:  ldc.i4.s   127
+    IL_0297:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_029c:  nop
+    IL_029d:  ldloc.2
+    IL_029e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_02a3:  nop
+    IL_02a4:  ldarg.0
+    IL_02a5:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_02aa:  ldc.i4.0
+    IL_02ab:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_MultiSelect(bool)
+    IL_02b0:  nop
+    IL_02b1:  ldarg.0
+    IL_02b2:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_02b7:  ldstr      "lvPartitioningMethods"
+    IL_02bc:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_02c1:  nop
+    IL_02c2:  ldarg.0
+    IL_02c3:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_02c8:  ldc.i4.0
+    IL_02c9:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_ShowGroups(bool)
+    IL_02ce:  nop
+    IL_02cf:  ldarg.0
+    IL_02d0:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_02d5:  ldloca.s   VB$t_struct$S4
+    IL_02d7:  ldc.i4.s   126
+    IL_02d9:  ldc.i4     0x96
+    IL_02de:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_02e3:  nop
+    IL_02e4:  ldloc.s    VB$t_struct$S4
+    IL_02e6:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_02eb:  nop
+    IL_02ec:  ldarg.0
+    IL_02ed:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_02f2:  ldc.i4.2
+    IL_02f3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_02f8:  nop
+    IL_02f9:  ldarg.0
+    IL_02fa:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_02ff:  ldc.i4.0
+    IL_0300:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_UseCompatibleStateImageBehavior(bool)
+    IL_0305:  nop
+    IL_0306:  ldarg.0
+    IL_0307:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_030c:  ldc.i4.3
+    IL_030d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_View(valuetype [System.Windows.Forms]System.Windows.Forms.View)
+    IL_0312:  nop
+    IL_0313:  ldarg.0
+    IL_0314:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_0319:  ldc.i4.1
+    IL_031a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_Activation(valuetype [System.Windows.Forms]System.Windows.Forms.ItemActivation)
+    IL_031f:  nop
+    IL_0320:  ldarg.0
+    IL_0321:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_0326:  ldc.i4.0
+    IL_0327:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_Alignment(valuetype [System.Windows.Forms]System.Windows.Forms.ListViewAlignment)
+    IL_032c:  nop
+    IL_032d:  ldarg.0
+    IL_032e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_0333:  ldc.i4.s   9
+    IL_0335:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_033a:  nop
+    IL_033b:  ldarg.0
+    IL_033c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_0341:  ldc.i4.0
+    IL_0342:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_AutoArrange(bool)
+    IL_0347:  nop
+    IL_0348:  ldarg.0
+    IL_0349:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_034e:  ldc.i4.1
+    IL_034f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_FullRowSelect(bool)
+    IL_0354:  nop
+    IL_0355:  ldarg.0
+    IL_0356:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_035b:  ldc.i4.1
+    IL_035c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_GridLines(bool)
+    IL_0361:  nop
+    IL_0362:  ldarg.0
+    IL_0363:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_0368:  ldc.i4.0
+    IL_0369:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_HeaderStyle(valuetype [System.Windows.Forms]System.Windows.Forms.ColumnHeaderStyle)
+    IL_036e:  nop
+    IL_036f:  ldarg.0
+    IL_0370:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_0375:  ldc.i4.0
+    IL_0376:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_HideSelection(bool)
+    IL_037b:  nop
+    IL_037c:  ldarg.0
+    IL_037d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_0382:  ldloca.s   VB$t_struct$S2
+    IL_0384:  ldc.i4     0x22f
+    IL_0389:  ldc.i4     0x128
+    IL_038e:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0393:  nop
+    IL_0394:  ldloc.2
+    IL_0395:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_039a:  nop
+    IL_039b:  ldarg.0
+    IL_039c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_03a1:  ldc.i4.0
+    IL_03a2:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_MultiSelect(bool)
+    IL_03a7:  nop
+    IL_03a8:  ldarg.0
+    IL_03a9:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_03ae:  ldstr      "lvWorkloads"
+    IL_03b3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_03b8:  nop
+    IL_03b9:  ldarg.0
+    IL_03ba:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_03bf:  ldc.i4.0
+    IL_03c0:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_ShowGroups(bool)
+    IL_03c5:  nop
+    IL_03c6:  ldarg.0
+    IL_03c7:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_03cc:  ldloca.s   VB$t_struct$S4
+    IL_03ce:  ldc.i4.s   126
+    IL_03d0:  ldc.i4.s   77
+    IL_03d2:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_03d7:  nop
+    IL_03d8:  ldloc.s    VB$t_struct$S4
+    IL_03da:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_03df:  nop
+    IL_03e0:  ldarg.0
+    IL_03e1:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_03e6:  ldc.i4.3
+    IL_03e7:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_03ec:  nop
+    IL_03ed:  ldarg.0
+    IL_03ee:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_03f3:  ldc.i4.0
+    IL_03f4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_UseCompatibleStateImageBehavior(bool)
+    IL_03f9:  nop
+    IL_03fa:  ldarg.0
+    IL_03fb:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_0400:  ldc.i4.3
+    IL_0401:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_View(valuetype [System.Windows.Forms]System.Windows.Forms.View)
+    IL_0406:  nop
+    IL_0407:  ldarg.0
+    IL_0408:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label1
+    IL_040d:  ldc.i4.s   9
+    IL_040f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_0414:  nop
+    IL_0415:  ldarg.0
+    IL_0416:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label1
+    IL_041b:  ldc.i4.1
+    IL_041c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_AutoSize(bool)
+    IL_0421:  nop
+    IL_0422:  ldarg.0
+    IL_0423:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label1
+    IL_0428:  ldloca.s   VB$t_struct$S2
+    IL_042a:  ldc.i4     0x22c
+    IL_042f:  ldc.i4     0x118
+    IL_0434:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0439:  nop
+    IL_043a:  ldloc.2
+    IL_043b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0440:  nop
+    IL_0441:  ldarg.0
+    IL_0442:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label1
+    IL_0447:  ldstr      "label1"
+    IL_044c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0451:  nop
+    IL_0452:  ldarg.0
+    IL_0453:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label1
+    IL_0458:  ldloca.s   VB$t_struct$S4
+    IL_045a:  ldc.i4.s   53
+    IL_045c:  ldc.i4.s   13
+    IL_045e:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0463:  nop
+    IL_0464:  ldloc.s    VB$t_struct$S4
+    IL_0466:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_046b:  nop
+    IL_046c:  ldarg.0
+    IL_046d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label1
+    IL_0472:  ldc.i4.4
+    IL_0473:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0478:  nop
+    IL_0479:  ldarg.0
+    IL_047a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label1
+    IL_047f:  ldstr      "Workload"
+    IL_0484:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_0489:  nop
+    IL_048a:  ldarg.0
+    IL_048b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label2
+    IL_0490:  ldc.i4.s   9
+    IL_0492:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_0497:  nop
+    IL_0498:  ldarg.0
+    IL_0499:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label2
+    IL_049e:  ldc.i4.1
+    IL_049f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_AutoSize(bool)
+    IL_04a4:  nop
+    IL_04a5:  ldarg.0
+    IL_04a6:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label2
+    IL_04ab:  ldloca.s   VB$t_struct$S2
+    IL_04ad:  ldc.i4     0x22d
+    IL_04b2:  ldc.i4.s   111
+    IL_04b4:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_04b9:  nop
+    IL_04ba:  ldloc.2
+    IL_04bb:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_04c0:  nop
+    IL_04c1:  ldarg.0
+    IL_04c2:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label2
+    IL_04c7:  ldstr      "label2"
+    IL_04cc:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_04d1:  nop
+    IL_04d2:  ldarg.0
+    IL_04d3:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label2
+    IL_04d8:  ldloca.s   VB$t_struct$S4
+    IL_04da:  ldc.i4.s   59
+    IL_04dc:  ldc.i4.s   13
+    IL_04de:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_04e3:  nop
+    IL_04e4:  ldloc.s    VB$t_struct$S4
+    IL_04e6:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_04eb:  nop
+    IL_04ec:  ldarg.0
+    IL_04ed:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label2
+    IL_04f2:  ldc.i4.5
+    IL_04f3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_04f8:  nop
+    IL_04f9:  ldarg.0
+    IL_04fa:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label2
+    IL_04ff:  ldstr      "Partitioning"
+    IL_0504:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_0509:  nop
+    IL_050a:  ldarg.0
+    IL_050b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::lblTime
+    IL_0510:  ldc.i4.s   9
+    IL_0512:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_0517:  nop
+    IL_0518:  ldarg.0
+    IL_0519:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::lblTime
+    IL_051e:  ldc.i4.1
+    IL_051f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_AutoSize(bool)
+    IL_0524:  nop
+    IL_0525:  ldarg.0
+    IL_0526:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::lblTime
+    IL_052b:  ldloca.s   VB$t_struct$S2
+    IL_052d:  ldc.i4     0x22c
+    IL_0532:  ldc.i4     0x204
+    IL_0537:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_053c:  nop
+    IL_053d:  ldloc.2
+    IL_053e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0543:  nop
+    IL_0544:  ldarg.0
+    IL_0545:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::lblTime
+    IL_054a:  ldstr      "lblTime"
+    IL_054f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0554:  nop
+    IL_0555:  ldarg.0
+    IL_0556:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::lblTime
+    IL_055b:  ldloca.s   VB$t_struct$S4
+    IL_055d:  ldc.i4.s   36
+    IL_055f:  ldc.i4.s   13
+    IL_0561:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0566:  nop
+    IL_0567:  ldloc.s    VB$t_struct$S4
+    IL_0569:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_056e:  nop
+    IL_056f:  ldarg.0
+    IL_0570:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::lblTime
+    IL_0575:  ldc.i4.6
+    IL_0576:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_057b:  nop
+    IL_057c:  ldarg.0
+    IL_057d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::lblTime
+    IL_0582:  ldstr      "Time: "
+    IL_0587:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_058c:  nop
+    IL_058d:  ldarg.0
+    IL_058e:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbWorkFactor()
+    IL_0593:  ldc.i4.s   9
+    IL_0595:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_059a:  nop
+    IL_059b:  ldarg.0
+    IL_059c:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbWorkFactor()
+    IL_05a1:  ldc.i4.1
+    IL_05a2:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_LargeChange(int32)
+    IL_05a7:  nop
+    IL_05a8:  ldarg.0
+    IL_05a9:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbWorkFactor()
+    IL_05ae:  ldloca.s   VB$t_struct$S2
+    IL_05b0:  ldc.i4     0x22e
+    IL_05b5:  ldc.i4     0x198
+    IL_05ba:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_05bf:  nop
+    IL_05c0:  ldloc.2
+    IL_05c1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_05c6:  nop
+    IL_05c7:  ldarg.0
+    IL_05c8:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbWorkFactor()
+    IL_05cd:  ldc.i4     0x3e8
+    IL_05d2:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_Maximum(int32)
+    IL_05d7:  nop
+    IL_05d8:  ldarg.0
+    IL_05d9:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbWorkFactor()
+    IL_05de:  ldc.i4.1
+    IL_05df:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_Minimum(int32)
+    IL_05e4:  nop
+    IL_05e5:  ldarg.0
+    IL_05e6:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbWorkFactor()
+    IL_05eb:  ldstr      "tbWorkFactor"
+    IL_05f0:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_05f5:  nop
+    IL_05f6:  ldarg.0
+    IL_05f7:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbWorkFactor()
+    IL_05fc:  ldloca.s   VB$t_struct$S4
+    IL_05fe:  ldc.i4.s   123
+    IL_0600:  ldc.i4.s   45
+    IL_0602:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0607:  nop
+    IL_0608:  ldloc.s    VB$t_struct$S4
+    IL_060a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_060f:  nop
+    IL_0610:  ldarg.0
+    IL_0611:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbWorkFactor()
+    IL_0616:  ldc.i4.7
+    IL_0617:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_061c:  nop
+    IL_061d:  ldarg.0
+    IL_061e:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbWorkFactor()
+    IL_0623:  ldc.i4.s   100
+    IL_0625:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_TickFrequency(int32)
+    IL_062a:  nop
+    IL_062b:  ldarg.0
+    IL_062c:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbWorkFactor()
+    IL_0631:  ldc.i4.0
+    IL_0632:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_TickStyle(valuetype [System.Windows.Forms]System.Windows.Forms.TickStyle)
+    IL_0637:  nop
+    IL_0638:  ldarg.0
+    IL_0639:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbWorkFactor()
+    IL_063e:  ldc.i4.1
+    IL_063f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_Value(int32)
+    IL_0644:  nop
+    IL_0645:  ldarg.0
+    IL_0646:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label3
+    IL_064b:  ldc.i4.s   9
+    IL_064d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_0652:  nop
+    IL_0653:  ldarg.0
+    IL_0654:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label3
+    IL_0659:  ldc.i4.1
+    IL_065a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_AutoSize(bool)
+    IL_065f:  nop
+    IL_0660:  ldarg.0
+    IL_0661:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label3
+    IL_0666:  ldloca.s   VB$t_struct$S2
+    IL_0668:  ldc.i4     0x22d
+    IL_066d:  ldc.i4     0x181
+    IL_0672:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0677:  nop
+    IL_0678:  ldloc.2
+    IL_0679:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_067e:  nop
+    IL_067f:  ldarg.0
+    IL_0680:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label3
+    IL_0685:  ldstr      "label3"
+    IL_068a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_068f:  nop
+    IL_0690:  ldarg.0
+    IL_0691:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label3
+    IL_0696:  ldloca.s   VB$t_struct$S4
+    IL_0698:  ldc.i4.s   66
+    IL_069a:  ldc.i4.s   13
+    IL_069c:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_06a1:  nop
+    IL_06a2:  ldloc.s    VB$t_struct$S4
+    IL_06a4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_06a9:  nop
+    IL_06aa:  ldarg.0
+    IL_06ab:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label3
+    IL_06b0:  ldc.i4.8
+    IL_06b1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_06b6:  nop
+    IL_06b7:  ldarg.0
+    IL_06b8:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label3
+    IL_06bd:  ldstr      "Work Factor"
+    IL_06c2:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_06c7:  nop
+    IL_06c8:  ldarg.0
+    IL_06c9:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelFor()
+    IL_06ce:  ldc.i4.1
+    IL_06cf:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_AutoSize(bool)
+    IL_06d4:  nop
+    IL_06d5:  ldarg.0
+    IL_06d6:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelFor()
+    IL_06db:  ldc.i4.1
+    IL_06dc:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.RadioButton::set_Checked(bool)
+    IL_06e1:  nop
+    IL_06e2:  ldarg.0
+    IL_06e3:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelFor()
+    IL_06e8:  ldloca.s   VB$t_struct$S2
+    IL_06ea:  ldc.i4.7
+    IL_06eb:  ldc.i4.s   18
+    IL_06ed:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_06f2:  nop
+    IL_06f3:  ldloc.2
+    IL_06f4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_06f9:  nop
+    IL_06fa:  ldarg.0
+    IL_06fb:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelFor()
+    IL_0700:  ldstr      "rbParallelFor"
+    IL_0705:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_070a:  nop
+    IL_070b:  ldarg.0
+    IL_070c:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelFor()
+    IL_0711:  ldloca.s   VB$t_struct$S4
+    IL_0713:  ldc.i4.s   77
+    IL_0715:  ldc.i4.s   17
+    IL_0717:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_071c:  nop
+    IL_071d:  ldloc.s    VB$t_struct$S4
+    IL_071f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0724:  nop
+    IL_0725:  ldarg.0
+    IL_0726:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelFor()
+    IL_072b:  ldc.i4.s   9
+    IL_072d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0732:  nop
+    IL_0733:  ldarg.0
+    IL_0734:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelFor()
+    IL_0739:  ldc.i4.1
+    IL_073a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.RadioButton::set_TabStop(bool)
+    IL_073f:  nop
+    IL_0740:  ldarg.0
+    IL_0741:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelFor()
+    IL_0746:  ldstr      "Parallel.For"
+    IL_074b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_Text(string)
+    IL_0750:  nop
+    IL_0751:  ldarg.0
+    IL_0752:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelFor()
+    IL_0757:  ldc.i4.1
+    IL_0758:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_UseVisualStyleBackColor(bool)
+    IL_075d:  nop
+    IL_075e:  ldarg.0
+    IL_075f:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelForEach()
+    IL_0764:  ldc.i4.1
+    IL_0765:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_AutoSize(bool)
+    IL_076a:  nop
+    IL_076b:  ldarg.0
+    IL_076c:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelForEach()
+    IL_0771:  ldloca.s   VB$t_struct$S2
+    IL_0773:  ldc.i4.6
+    IL_0774:  ldc.i4.s   41
+    IL_0776:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_077b:  nop
+    IL_077c:  ldloc.2
+    IL_077d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0782:  nop
+    IL_0783:  ldarg.0
+    IL_0784:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelForEach()
+    IL_0789:  ldstr      "rbParallelForEach"
+    IL_078e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0793:  nop
+    IL_0794:  ldarg.0
+    IL_0795:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelForEach()
+    IL_079a:  ldloca.s   VB$t_struct$S4
+    IL_079c:  ldc.i4.s   102
+    IL_079e:  ldc.i4.s   17
+    IL_07a0:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_07a5:  nop
+    IL_07a6:  ldloc.s    VB$t_struct$S4
+    IL_07a8:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_07ad:  nop
+    IL_07ae:  ldarg.0
+    IL_07af:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelForEach()
+    IL_07b4:  ldc.i4.s   10
+    IL_07b6:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_07bb:  nop
+    IL_07bc:  ldarg.0
+    IL_07bd:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelForEach()
+    IL_07c2:  ldc.i4.1
+    IL_07c3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.RadioButton::set_TabStop(bool)
+    IL_07c8:  nop
+    IL_07c9:  ldarg.0
+    IL_07ca:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelForEach()
+    IL_07cf:  ldstr      "Parallel.ForEach"
+    IL_07d4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_Text(string)
+    IL_07d9:  nop
+    IL_07da:  ldarg.0
+    IL_07db:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelForEach()
+    IL_07e0:  ldc.i4.1
+    IL_07e1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_UseVisualStyleBackColor(bool)
+    IL_07e6:  nop
+    IL_07e7:  ldarg.0
+    IL_07e8:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbPLINQ()
+    IL_07ed:  ldc.i4.1
+    IL_07ee:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_AutoSize(bool)
+    IL_07f3:  nop
+    IL_07f4:  ldarg.0
+    IL_07f5:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbPLINQ()
+    IL_07fa:  ldloca.s   VB$t_struct$S2
+    IL_07fc:  ldc.i4.6
+    IL_07fd:  ldc.i4.s   64
+    IL_07ff:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0804:  nop
+    IL_0805:  ldloc.2
+    IL_0806:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_080b:  nop
+    IL_080c:  ldarg.0
+    IL_080d:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbPLINQ()
+    IL_0812:  ldstr      "rbPLINQ"
+    IL_0817:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_081c:  nop
+    IL_081d:  ldarg.0
+    IL_081e:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbPLINQ()
+    IL_0823:  ldloca.s   VB$t_struct$S4
+    IL_0825:  ldc.i4.s   57
+    IL_0827:  ldc.i4.s   17
+    IL_0829:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_082e:  nop
+    IL_082f:  ldloc.s    VB$t_struct$S4
+    IL_0831:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0836:  nop
+    IL_0837:  ldarg.0
+    IL_0838:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbPLINQ()
+    IL_083d:  ldc.i4.s   11
+    IL_083f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0844:  nop
+    IL_0845:  ldarg.0
+    IL_0846:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbPLINQ()
+    IL_084b:  ldc.i4.1
+    IL_084c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.RadioButton::set_TabStop(bool)
+    IL_0851:  nop
+    IL_0852:  ldarg.0
+    IL_0853:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbPLINQ()
+    IL_0858:  ldstr      "PLINQ"
+    IL_085d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_Text(string)
+    IL_0862:  nop
+    IL_0863:  ldarg.0
+    IL_0864:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbPLINQ()
+    IL_0869:  ldc.i4.1
+    IL_086a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_UseVisualStyleBackColor(bool)
+    IL_086f:  nop
+    IL_0870:  ldarg.0
+    IL_0871:  ldfld      class [System.Windows.Forms]System.Windows.Forms.GroupBox VisualizePartitioning.MainForm::groupBox1
+    IL_0876:  ldc.i4.s   9
+    IL_0878:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_087d:  nop
+    IL_087e:  ldarg.0
+    IL_087f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.GroupBox VisualizePartitioning.MainForm::groupBox1
+    IL_0884:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0889:  ldarg.0
+    IL_088a:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelForEach()
+    IL_088f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0894:  nop
+    IL_0895:  ldarg.0
+    IL_0896:  ldfld      class [System.Windows.Forms]System.Windows.Forms.GroupBox VisualizePartitioning.MainForm::groupBox1
+    IL_089b:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_08a0:  ldarg.0
+    IL_08a1:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbPLINQ()
+    IL_08a6:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_08ab:  nop
+    IL_08ac:  ldarg.0
+    IL_08ad:  ldfld      class [System.Windows.Forms]System.Windows.Forms.GroupBox VisualizePartitioning.MainForm::groupBox1
+    IL_08b2:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_08b7:  ldarg.0
+    IL_08b8:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelFor()
+    IL_08bd:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_08c2:  nop
+    IL_08c3:  ldarg.0
+    IL_08c4:  ldfld      class [System.Windows.Forms]System.Windows.Forms.GroupBox VisualizePartitioning.MainForm::groupBox1
+    IL_08c9:  ldloca.s   VB$t_struct$S2
+    IL_08cb:  ldc.i4     0x22d
+    IL_08d0:  ldc.i4.s   12
+    IL_08d2:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_08d7:  nop
+    IL_08d8:  ldloc.2
+    IL_08d9:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_08de:  nop
+    IL_08df:  ldarg.0
+    IL_08e0:  ldfld      class [System.Windows.Forms]System.Windows.Forms.GroupBox VisualizePartitioning.MainForm::groupBox1
+    IL_08e5:  ldstr      "groupBox1"
+    IL_08ea:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_08ef:  nop
+    IL_08f0:  ldarg.0
+    IL_08f1:  ldfld      class [System.Windows.Forms]System.Windows.Forms.GroupBox VisualizePartitioning.MainForm::groupBox1
+    IL_08f6:  ldloca.s   VB$t_struct$S4
+    IL_08f8:  ldc.i4     0x82
+    IL_08fd:  ldc.i4.s   91
+    IL_08ff:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0904:  nop
+    IL_0905:  ldloc.s    VB$t_struct$S4
+    IL_0907:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_090c:  nop
+    IL_090d:  ldarg.0
+    IL_090e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.GroupBox VisualizePartitioning.MainForm::groupBox1
+    IL_0913:  ldc.i4.s   12
+    IL_0915:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_091a:  nop
+    IL_091b:  ldarg.0
+    IL_091c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.GroupBox VisualizePartitioning.MainForm::groupBox1
+    IL_0921:  ldc.i4.0
+    IL_0922:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.GroupBox::set_TabStop(bool)
+    IL_0927:  nop
+    IL_0928:  ldarg.0
+    IL_0929:  ldfld      class [System.Windows.Forms]System.Windows.Forms.GroupBox VisualizePartitioning.MainForm::groupBox1
+    IL_092e:  ldstr      "API"
+    IL_0933:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.GroupBox::set_Text(string)
+    IL_0938:  nop
+    IL_0939:  ldarg.0
+    IL_093a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label4
+    IL_093f:  ldc.i4.s   9
+    IL_0941:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_0946:  nop
+    IL_0947:  ldarg.0
+    IL_0948:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label4
+    IL_094d:  ldc.i4.1
+    IL_094e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_AutoSize(bool)
+    IL_0953:  nop
+    IL_0954:  ldarg.0
+    IL_0955:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label4
+    IL_095a:  ldloca.s   VB$t_struct$S2
+    IL_095c:  ldc.i4     0x22c
+    IL_0961:  ldc.i4     0x1b4
+    IL_0966:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_096b:  nop
+    IL_096c:  ldloc.2
+    IL_096d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0972:  nop
+    IL_0973:  ldarg.0
+    IL_0974:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label4
+    IL_0979:  ldstr      "label4"
+    IL_097e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0983:  nop
+    IL_0984:  ldarg.0
+    IL_0985:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label4
+    IL_098a:  ldloca.s   VB$t_struct$S4
+    IL_098c:  ldc.i4.s   34
+    IL_098e:  ldc.i4.s   13
+    IL_0990:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0995:  nop
+    IL_0996:  ldloc.s    VB$t_struct$S4
+    IL_0998:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_099d:  nop
+    IL_099e:  ldarg.0
+    IL_099f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label4
+    IL_09a4:  ldc.i4.s   14
+    IL_09a6:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_09ab:  nop
+    IL_09ac:  ldarg.0
+    IL_09ad:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label4
+    IL_09b2:  ldstr      "Cores"
+    IL_09b7:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_09bc:  nop
+    IL_09bd:  ldarg.0
+    IL_09be:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_09c3:  ldc.i4.s   9
+    IL_09c5:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_09ca:  nop
+    IL_09cb:  ldarg.0
+    IL_09cc:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_09d1:  ldc.i4.1
+    IL_09d2:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_LargeChange(int32)
+    IL_09d7:  nop
+    IL_09d8:  ldarg.0
+    IL_09d9:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_09de:  ldloca.s   VB$t_struct$S2
+    IL_09e0:  ldc.i4     0x22d
+    IL_09e5:  ldc.i4     0x1cb
+    IL_09ea:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_09ef:  nop
+    IL_09f0:  ldloc.2
+    IL_09f1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_09f6:  nop
+    IL_09f7:  ldarg.0
+    IL_09f8:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_09fd:  ldc.i4.s   100
+    IL_09ff:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_Maximum(int32)
+    IL_0a04:  nop
+    IL_0a05:  ldarg.0
+    IL_0a06:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_0a0b:  ldc.i4.0
+    IL_0a0c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_Minimum(int32)
+    IL_0a11:  nop
+    IL_0a12:  ldarg.0
+    IL_0a13:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_0a18:  ldstr      "tbCores"
+    IL_0a1d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0a22:  nop
+    IL_0a23:  ldarg.0
+    IL_0a24:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_0a29:  ldloca.s   VB$t_struct$S4
+    IL_0a2b:  ldc.i4.s   123
+    IL_0a2d:  ldc.i4.s   45
+    IL_0a2f:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0a34:  nop
+    IL_0a35:  ldloc.s    VB$t_struct$S4
+    IL_0a37:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0a3c:  nop
+    IL_0a3d:  ldarg.0
+    IL_0a3e:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_0a43:  ldc.i4.s   13
+    IL_0a45:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0a4a:  nop
+    IL_0a4b:  ldarg.0
+    IL_0a4c:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_0a51:  ldc.i4.0
+    IL_0a52:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_TickStyle(valuetype [System.Windows.Forms]System.Windows.Forms.TickStyle)
+    IL_0a57:  nop
+    IL_0a58:  ldarg.0
+    IL_0a59:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_0a5e:  ldc.i4.0
+    IL_0a5f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_Value(int32)
+    IL_0a64:  nop
+    IL_0a65:  ldarg.0
+    IL_0a66:  ldloca.s   VB$t_struct$S6
+    IL_0a68:  ldc.r4     6.
+    IL_0a6d:  ldc.r4     13.
+    IL_0a72:  call       instance void [System.Drawing]System.Drawing.SizeF::.ctor(float32,
+                                                                                   float32)
+    IL_0a77:  nop
+    IL_0a78:  ldloc.s    VB$t_struct$S6
+    IL_0a7a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::set_AutoScaleDimensions(valuetype [System.Drawing]System.Drawing.SizeF)
+    IL_0a7f:  nop
+    IL_0a80:  ldarg.0
+    IL_0a81:  ldc.i4.1
+    IL_0a82:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::set_AutoScaleMode(valuetype [System.Windows.Forms]System.Windows.Forms.AutoScaleMode)
+    IL_0a87:  nop
+    IL_0a88:  ldarg.0
+    IL_0a89:  ldloca.s   VB$t_struct$S4
+    IL_0a8b:  ldc.i4     0x2b7
+    IL_0a90:  ldc.i4     0x223
+    IL_0a95:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0a9a:  nop
+    IL_0a9b:  ldloc.s    VB$t_struct$S4
+    IL_0a9d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Form::set_ClientSize(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0aa2:  nop
+    IL_0aa3:  ldarg.0
+    IL_0aa4:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0aa9:  ldarg.0
+    IL_0aaa:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button VisualizePartitioning.MainForm::get_btnVisualize()
+    IL_0aaf:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0ab4:  nop
+    IL_0ab5:  ldarg.0
+    IL_0ab6:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0abb:  ldarg.0
+    IL_0abc:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label4
+    IL_0ac1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0ac6:  nop
+    IL_0ac7:  ldarg.0
+    IL_0ac8:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0acd:  ldarg.0
+    IL_0ace:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_0ad3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0ad8:  nop
+    IL_0ad9:  ldarg.0
+    IL_0ada:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0adf:  ldarg.0
+    IL_0ae0:  ldfld      class [System.Windows.Forms]System.Windows.Forms.GroupBox VisualizePartitioning.MainForm::groupBox1
+    IL_0ae5:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0aea:  nop
+    IL_0aeb:  ldarg.0
+    IL_0aec:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0af1:  ldarg.0
+    IL_0af2:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label3
+    IL_0af7:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0afc:  nop
+    IL_0afd:  ldarg.0
+    IL_0afe:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0b03:  ldarg.0
+    IL_0b04:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbWorkFactor()
+    IL_0b09:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0b0e:  nop
+    IL_0b0f:  ldarg.0
+    IL_0b10:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0b15:  ldarg.0
+    IL_0b16:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::lblTime
+    IL_0b1b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0b20:  nop
+    IL_0b21:  ldarg.0
+    IL_0b22:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0b27:  ldarg.0
+    IL_0b28:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label2
+    IL_0b2d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0b32:  nop
+    IL_0b33:  ldarg.0
+    IL_0b34:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0b39:  ldarg.0
+    IL_0b3a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label VisualizePartitioning.MainForm::label1
+    IL_0b3f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0b44:  nop
+    IL_0b45:  ldarg.0
+    IL_0b46:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0b4b:  ldarg.0
+    IL_0b4c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_0b51:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0b56:  nop
+    IL_0b57:  ldarg.0
+    IL_0b58:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0b5d:  ldarg.0
+    IL_0b5e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_0b63:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0b68:  nop
+    IL_0b69:  ldarg.0
+    IL_0b6a:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0b6f:  ldarg.0
+    IL_0b70:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox VisualizePartitioning.MainForm::pbPartitionedImage
+    IL_0b75:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0b7a:  nop
+    IL_0b7b:  ldarg.0
+    IL_0b7c:  ldstr      "MainForm"
+    IL_0b81:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0b86:  nop
+    IL_0b87:  ldarg.0
+    IL_0b88:  ldstr      "Visualize Partitioning"
+    IL_0b8d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Form::set_Text(string)
+    IL_0b92:  nop
+    IL_0b93:  ldarg.0
+    IL_0b94:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox VisualizePartitioning.MainForm::pbPartitionedImage
+    IL_0b99:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::EndInit()
+    IL_0b9e:  nop
+    IL_0b9f:  ldarg.0
+    IL_0ba0:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbWorkFactor()
+    IL_0ba5:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::EndInit()
+    IL_0baa:  nop
+    IL_0bab:  ldarg.0
+    IL_0bac:  ldfld      class [System.Windows.Forms]System.Windows.Forms.GroupBox VisualizePartitioning.MainForm::groupBox1
+    IL_0bb1:  ldc.i4.0
+    IL_0bb2:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::ResumeLayout(bool)
+    IL_0bb7:  nop
+    IL_0bb8:  ldarg.0
+    IL_0bb9:  ldfld      class [System.Windows.Forms]System.Windows.Forms.GroupBox VisualizePartitioning.MainForm::groupBox1
+    IL_0bbe:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::PerformLayout()
+    IL_0bc3:  nop
+    IL_0bc4:  ldarg.0
+    IL_0bc5:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_0bca:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::EndInit()
+    IL_0bcf:  nop
+    IL_0bd0:  ldarg.0
+    IL_0bd1:  ldc.i4.0
+    IL_0bd2:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::ResumeLayout(bool)
+    IL_0bd7:  nop
+    IL_0bd8:  ldarg.0
+    IL_0bd9:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::PerformLayout()
+    IL_0bde:  nop
+    IL_0bdf:  nop
+    IL_0be0:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [System.Windows.Forms]System.Windows.Forms.Button V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button VisualizePartitioning.MainForm::_btnVisualize
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       83 (0x53)
+    .maxstack  2
+    .locals init (class [mscorlib]System.EventHandler V_0,
+             bool V_1)
+    IL_0000:  ldarg.0
+    IL_0001:  dup
+    IL_0002:  ldvirtftn  instance void VisualizePartitioning.MainForm::btnVisualize_Click(object,
+                                                                                          class [mscorlib]System.EventArgs)
+    IL_0008:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_000d:  stloc.0
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button VisualizePartitioning.MainForm::_btnVisualize
+    IL_0014:  ldnull
+    IL_0015:  ceq
+    IL_0017:  ldc.i4.0
+    IL_0018:  ceq
+    IL_001a:  stloc.1
+    IL_001b:  ldloc.1
+    IL_001c:  brfalse.s  IL_002b
+
+    IL_001e:  ldarg.0
+    IL_001f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button VisualizePartitioning.MainForm::_btnVisualize
+    IL_0024:  ldloc.0
+    IL_0025:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::remove_Click(class [mscorlib]System.EventHandler)
+    IL_002a:  nop
+    IL_002b:  nop
+    IL_002c:  ldarg.0
+    IL_002d:  ldarg.1
+    IL_002e:  stfld      class [System.Windows.Forms]System.Windows.Forms.Button VisualizePartitioning.MainForm::_btnVisualize
+    IL_0033:  ldarg.0
+    IL_0034:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button VisualizePartitioning.MainForm::_btnVisualize
+    IL_0039:  ldnull
+    IL_003a:  ceq
+    IL_003c:  ldc.i4.0
+    IL_003d:  ceq
+    IL_003f:  stloc.1
+    IL_0040:  ldloc.1
+    IL_0041:  brfalse.s  IL_0050
+
+    IL_0043:  ldarg.0
+    IL_0044:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button VisualizePartitioning.MainForm::_btnVisualize
+    IL_0049:  ldloc.0
+    IL_004a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::add_Click(class [mscorlib]System.EventHandler)
+    IL_004f:  nop
+    IL_0050:  nop
+    IL_0051:  nop
+    IL_0052:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [System.Windows.Forms]System.Windows.Forms.TrackBar V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::_tbWorkFactor
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       83 (0x53)
+    .maxstack  2
+    .locals init (class [mscorlib]System.EventHandler V_0,
+             bool V_1)
+    IL_0000:  ldarg.0
+    IL_0001:  dup
+    IL_0002:  ldvirtftn  instance void VisualizePartitioning.MainForm::tbWorkFactor_ValueChanged(object,
+                                                                                                 class [mscorlib]System.EventArgs)
+    IL_0008:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_000d:  stloc.0
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::_tbWorkFactor
+    IL_0014:  ldnull
+    IL_0015:  ceq
+    IL_0017:  ldc.i4.0
+    IL_0018:  ceq
+    IL_001a:  stloc.1
+    IL_001b:  ldloc.1
+    IL_001c:  brfalse.s  IL_002b
+
+    IL_001e:  ldarg.0
+    IL_001f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::_tbWorkFactor
+    IL_0024:  ldloc.0
+    IL_0025:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::remove_ValueChanged(class [mscorlib]System.EventHandler)
+    IL_002a:  nop
+    IL_002b:  nop
+    IL_002c:  ldarg.0
+    IL_002d:  ldarg.1
+    IL_002e:  stfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::_tbWorkFactor
+    IL_0033:  ldarg.0
+    IL_0034:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::_tbWorkFactor
+    IL_0039:  ldnull
+    IL_003a:  ceq
+    IL_003c:  ldc.i4.0
+    IL_003d:  ceq
+    IL_003f:  stloc.1
+    IL_0040:  ldloc.1
+    IL_0041:  brfalse.s  IL_0050
+
+    IL_0043:  ldarg.0
+    IL_0044:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::_tbWorkFactor
+    IL_0049:  ldloc.0
+    IL_004a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::add_ValueChanged(class [mscorlib]System.EventHandler)
+    IL_004f:  nop
+    IL_0050:  nop
+    IL_0051:  nop
+    IL_0052:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [System.Windows.Forms]System.Windows.Forms.RadioButton V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbParallelFor
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       83 (0x53)
+    .maxstack  2
+    .locals init (class [mscorlib]System.EventHandler V_0,
+             bool V_1)
+    IL_0000:  ldarg.0
+    IL_0001:  dup
+    IL_0002:  ldvirtftn  instance void VisualizePartitioning.MainForm::rbAPI_CheckedChanged(object,
+                                                                                            class [mscorlib]System.EventArgs)
+    IL_0008:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_000d:  stloc.0
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbParallelFor
+    IL_0014:  ldnull
+    IL_0015:  ceq
+    IL_0017:  ldc.i4.0
+    IL_0018:  ceq
+    IL_001a:  stloc.1
+    IL_001b:  ldloc.1
+    IL_001c:  brfalse.s  IL_002b
+
+    IL_001e:  ldarg.0
+    IL_001f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbParallelFor
+    IL_0024:  ldloc.0
+    IL_0025:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.RadioButton::remove_CheckedChanged(class [mscorlib]System.EventHandler)
+    IL_002a:  nop
+    IL_002b:  nop
+    IL_002c:  ldarg.0
+    IL_002d:  ldarg.1
+    IL_002e:  stfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbParallelFor
+    IL_0033:  ldarg.0
+    IL_0034:  ldfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbParallelFor
+    IL_0039:  ldnull
+    IL_003a:  ceq
+    IL_003c:  ldc.i4.0
+    IL_003d:  ceq
+    IL_003f:  stloc.1
+    IL_0040:  ldloc.1
+    IL_0041:  brfalse.s  IL_0050
+
+    IL_0043:  ldarg.0
+    IL_0044:  ldfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbParallelFor
+    IL_0049:  ldloc.0
+    IL_004a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.RadioButton::add_CheckedChanged(class [mscorlib]System.EventHandler)
+    IL_004f:  nop
+    IL_0050:  nop
+    IL_0051:  nop
+    IL_0052:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [System.Windows.Forms]System.Windows.Forms.RadioButton V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbParallelForEach
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       83 (0x53)
+    .maxstack  2
+    .locals init (class [mscorlib]System.EventHandler V_0,
+             bool V_1)
+    IL_0000:  ldarg.0
+    IL_0001:  dup
+    IL_0002:  ldvirtftn  instance void VisualizePartitioning.MainForm::rbAPI_CheckedChanged(object,
+                                                                                            class [mscorlib]System.EventArgs)
+    IL_0008:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_000d:  stloc.0
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbParallelForEach
+    IL_0014:  ldnull
+    IL_0015:  ceq
+    IL_0017:  ldc.i4.0
+    IL_0018:  ceq
+    IL_001a:  stloc.1
+    IL_001b:  ldloc.1
+    IL_001c:  brfalse.s  IL_002b
+
+    IL_001e:  ldarg.0
+    IL_001f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbParallelForEach
+    IL_0024:  ldloc.0
+    IL_0025:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.RadioButton::remove_CheckedChanged(class [mscorlib]System.EventHandler)
+    IL_002a:  nop
+    IL_002b:  nop
+    IL_002c:  ldarg.0
+    IL_002d:  ldarg.1
+    IL_002e:  stfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbParallelForEach
+    IL_0033:  ldarg.0
+    IL_0034:  ldfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbParallelForEach
+    IL_0039:  ldnull
+    IL_003a:  ceq
+    IL_003c:  ldc.i4.0
+    IL_003d:  ceq
+    IL_003f:  stloc.1
+    IL_0040:  ldloc.1
+    IL_0041:  brfalse.s  IL_0050
+
+    IL_0043:  ldarg.0
+    IL_0044:  ldfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbParallelForEach
+    IL_0049:  ldloc.0
+    IL_004a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.RadioButton::add_CheckedChanged(class [mscorlib]System.EventHandler)
+    IL_004f:  nop
+    IL_0050:  nop
+    IL_0051:  nop
+    IL_0052:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [System.Windows.Forms]System.Windows.Forms.RadioButton V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbPLINQ
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       83 (0x53)
+    .maxstack  2
+    .locals init (class [mscorlib]System.EventHandler V_0,
+             bool V_1)
+    IL_0000:  ldarg.0
+    IL_0001:  dup
+    IL_0002:  ldvirtftn  instance void VisualizePartitioning.MainForm::rbAPI_CheckedChanged(object,
+                                                                                            class [mscorlib]System.EventArgs)
+    IL_0008:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_000d:  stloc.0
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbPLINQ
+    IL_0014:  ldnull
+    IL_0015:  ceq
+    IL_0017:  ldc.i4.0
+    IL_0018:  ceq
+    IL_001a:  stloc.1
+    IL_001b:  ldloc.1
+    IL_001c:  brfalse.s  IL_002b
+
+    IL_001e:  ldarg.0
+    IL_001f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbPLINQ
+    IL_0024:  ldloc.0
+    IL_0025:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.RadioButton::remove_CheckedChanged(class [mscorlib]System.EventHandler)
+    IL_002a:  nop
+    IL_002b:  nop
+    IL_002c:  ldarg.0
+    IL_002d:  ldarg.1
+    IL_002e:  stfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbPLINQ
+    IL_0033:  ldarg.0
+    IL_0034:  ldfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbPLINQ
+    IL_0039:  ldnull
+    IL_003a:  ceq
+    IL_003c:  ldc.i4.0
+    IL_003d:  ceq
+    IL_003f:  stloc.1
+    IL_0040:  ldloc.1
+    IL_0041:  brfalse.s  IL_0050
+
+    IL_0043:  ldarg.0
+    IL_0044:  ldfld      class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::_rbPLINQ
+    IL_0049:  ldloc.0
+    IL_004a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.RadioButton::add_CheckedChanged(class [mscorlib]System.EventHandler)
+    IL_004f:  nop
+    IL_0050:  nop
+    IL_0051:  nop
+    IL_0052:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [System.Windows.Forms]System.Windows.Forms.TrackBar V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::_tbCores
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       83 (0x53)
+    .maxstack  2
+    .locals init (class [mscorlib]System.EventHandler V_0,
+             bool V_1)
+    IL_0000:  ldarg.0
+    IL_0001:  dup
+    IL_0002:  ldvirtftn  instance void VisualizePartitioning.MainForm::tbCores_ValueChanged(object,
+                                                                                            class [mscorlib]System.EventArgs)
+    IL_0008:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_000d:  stloc.0
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::_tbCores
+    IL_0014:  ldnull
+    IL_0015:  ceq
+    IL_0017:  ldc.i4.0
+    IL_0018:  ceq
+    IL_001a:  stloc.1
+    IL_001b:  ldloc.1
+    IL_001c:  brfalse.s  IL_002b
+
+    IL_001e:  ldarg.0
+    IL_001f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::_tbCores
+    IL_0024:  ldloc.0
+    IL_0025:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::remove_ValueChanged(class [mscorlib]System.EventHandler)
+    IL_002a:  nop
+    IL_002b:  nop
+    IL_002c:  ldarg.0
+    IL_002d:  ldarg.1
+    IL_002e:  stfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::_tbCores
+    IL_0033:  ldarg.0
+    IL_0034:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::_tbCores
+    IL_0039:  ldnull
+    IL_003a:  ceq
+    IL_003c:  ldc.i4.0
+    IL_003d:  ceq
+    IL_003f:  stloc.1
+    IL_0040:  ldloc.1
+    IL_0041:  brfalse.s  IL_0050
+
+    IL_0043:  ldarg.0
+    IL_0044:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::_tbCores
+    IL_0049:  ldloc.0
+    IL_004a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::add_ValueChanged(class [mscorlib]System.EventHandler)
+    IL_004f:  nop
+    IL_0050:  nop
+    IL_0051:  nop
+    IL_0052:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="267" endline="31"><![CDATA[
+  {
+    // Code size       44 (0x2c)
+    .maxstack  8
+    IL_0000:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::.ctor()
+    IL_0005:  stsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> VisualizePartitioning.MainForm::__ENCList
+    IL_000a:  newobj     instance void [mscorlib]System.Random::.ctor()
+    IL_000f:  stsfld     class [mscorlib]System.Random VisualizePartitioning.MainForm::_randomnessSeed
+    IL_0014:  ldnull
+    IL_0015:  ldftn      class [mscorlib]System.Random VisualizePartitioning.MainForm::_Lambda$__1()
+    IL_001b:  newobj     instance void class [mscorlib]System.Func`1<class [mscorlib]System.Random>::.ctor(object,
+                                                                                                           native int)
+    IL_0020:  newobj     instance void class [mscorlib]System.Threading.ThreadLocal`1<class [mscorlib]System.Random>::.ctor(class [mscorlib]System.Func`1<!0>)
+    IL_0025:  stsfld     class [mscorlib]System.Threading.ThreadLocal`1<class [mscorlib]System.Random> VisualizePartitioning.MainForm::_localRandom
+    IL_002a:  nop
+    IL_002b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="32" endline="52"><![CDATA[
+  {
+    // Code size       81 (0x51)
+    .maxstack  3
+    .locals init ([0] class [System.Windows.Forms]System.Windows.Forms.TrackBar VB$t_ref$L0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::.ctor()
+    IL_0007:  nop
+    IL_0008:  ldarg.0
+    IL_0009:  call       void VisualizePartitioning.MainForm::__ENCAddToList(object)
+    IL_000e:  nop
+    IL_000f:  ldarg.0
+    IL_0010:  ldnull
+    IL_0011:  stfld      class [System]System.ComponentModel.IContainer VisualizePartitioning.MainForm::components
+    IL_0016:  ldarg.0
+    IL_0017:  callvirt   instance void VisualizePartitioning.MainForm::InitializeComponent()
+    IL_001c:  nop
+    IL_001d:  ldarg.0
+    IL_001e:  callvirt   instance void VisualizePartitioning.MainForm::InitializeWorkloads()
+    IL_0023:  nop
+    IL_0024:  ldarg.0
+    IL_0025:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_002a:  stloc.0
+    IL_002b:  ldloc.0
+    IL_002c:  ldc.i4.1
+    IL_002d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_Minimum(int32)
+    IL_0032:  nop
+    IL_0033:  ldloc.0
+    IL_0034:  call       int32 [mscorlib]System.Environment::get_ProcessorCount()
+    IL_0039:  ldc.i4.2
+    IL_003a:  mul.ovf
+    IL_003b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_Maximum(int32)
+    IL_0040:  nop
+    IL_0041:  ldloc.0
+    IL_0042:  call       int32 [mscorlib]System.Environment::get_ProcessorCount()
+    IL_0047:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_Value(int32)
+    IL_004c:  nop
+    IL_004d:  ldnull
+    IL_004e:  stloc.0
+    IL_004f:  nop
+    IL_0050:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="53" endline="60"><![CDATA[
+  {
+    // Code size       67 (0x43)
+    .maxstack  4
+    .locals init ([0] class VisualizePartitioning.MainForm/_Closure$__1 $VB$Closure_ClosureVariable_36_2C)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void VisualizePartitioning.MainForm/_Closure$__1::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  ldc.i4.8
+    IL_0009:  newobj     instance void [mscorlib]System.Random::.ctor(int32)
+    IL_000e:  stfld      class [mscorlib]System.Random VisualizePartitioning.MainForm/_Closure$__1::$VB$Local_random
+    IL_0013:  ldarg.0
+    IL_0014:  ldc.i4.0
+    IL_0015:  ldarg.0
+    IL_0016:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_001b:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.TrackBar::get_Value()
+    IL_0020:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> [System.Core]System.Linq.Enumerable::Range(int32,
+                                                                                                                                    int32)
+    IL_0025:  ldloc.0
+    IL_0026:  dup
+    IL_0027:  ldvirtftn  instance valuetype [System.Drawing]System.Drawing.Color VisualizePartitioning.MainForm/_Closure$__1::_Lambda$__2(int32)
+    IL_002d:  newobj     instance void class [mscorlib]System.Func`2<int32,valuetype [System.Drawing]System.Drawing.Color>::.ctor(object,
+                                                                                                                                  native int)
+    IL_0032:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<int32,valuetype [System.Drawing]System.Drawing.Color>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                         class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_0037:  call       !!0[] [System.Core]System.Linq.Enumerable::ToArray<valuetype [System.Drawing]System.Drawing.Color>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_003c:  stfld      valuetype [System.Drawing]System.Drawing.Color[] VisualizePartitioning.MainForm::_colors
+    IL_0041:  nop
+    IL_0042:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="61" endline="78"><![CDATA[
+  {
+    // Code size       265 (0x109)
+    .maxstack  4
+    .locals init ([0] class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`3<int32,int32,int32>>> workloads,
+             [1] class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`3<int32,int32,int32>> workload,
+             [2] class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`3<int32,int32,int32>>> VB$t_ref$L0,
+             [3] valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`3<int32,int32,int32>>> VB$t_struct$L0,
+             [4] class [System.Windows.Forms]System.Windows.Forms.ListViewItem VB$t_ref$S1,
+             [5] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_0007:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ListView/ListViewItemCollection [System.Windows.Forms]System.Windows.Forms.ListView::get_Items()
+    IL_000c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView/ListViewItemCollection::Clear()
+    IL_0011:  nop
+    IL_0012:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`3<int32,int32,int32>>>::.ctor()
+    IL_0017:  stloc.0
+    IL_0018:  ldloc.0
+    IL_0019:  stloc.2
+    IL_001a:  ldloc.2
+    IL_001b:  ldstr      "Constant"
+    IL_0020:  ldarg.0
+    IL_0021:  dup
+    IL_0022:  ldvirtftn  instance int32 VisualizePartitioning.MainForm::_Lambda$__3(int32,
+                                                                                    int32)
+    IL_0028:  newobj     instance void class [mscorlib]System.Func`3<int32,int32,int32>::.ctor(object,
+                                                                                               native int)
+    IL_002d:  call       class [mscorlib]System.Tuple`2<!!0,!!1> [mscorlib]System.Tuple::Create<string,class [mscorlib]System.Func`3<int32,int32,int32>>(!!0,
+                                                                                                                                                         !!1)
+    IL_0032:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`3<int32,int32,int32>>>::Add(!0)
+    IL_0037:  nop
+    IL_0038:  ldloc.2
+    IL_0039:  ldstr      "Increasing Linear"
+    IL_003e:  ldarg.0
+    IL_003f:  dup
+    IL_0040:  ldvirtftn  instance int32 VisualizePartitioning.MainForm::_Lambda$__4(int32,
+                                                                                    int32)
+    IL_0046:  newobj     instance void class [mscorlib]System.Func`3<int32,int32,int32>::.ctor(object,
+                                                                                               native int)
+    IL_004b:  call       class [mscorlib]System.Tuple`2<!!0,!!1> [mscorlib]System.Tuple::Create<string,class [mscorlib]System.Func`3<int32,int32,int32>>(!!0,
+                                                                                                                                                         !!1)
+    IL_0050:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`3<int32,int32,int32>>>::Add(!0)
+    IL_0055:  nop
+    IL_0056:  ldloc.2
+    IL_0057:  ldstr      "Decreasing Linear"
+    IL_005c:  ldarg.0
+    IL_005d:  dup
+    IL_005e:  ldvirtftn  instance int32 VisualizePartitioning.MainForm::_Lambda$__5(int32,
+                                                                                    int32)
+    IL_0064:  newobj     instance void class [mscorlib]System.Func`3<int32,int32,int32>::.ctor(object,
+                                                                                               native int)
+    IL_0069:  call       class [mscorlib]System.Tuple`2<!!0,!!1> [mscorlib]System.Tuple::Create<string,class [mscorlib]System.Func`3<int32,int32,int32>>(!!0,
+                                                                                                                                                         !!1)
+    IL_006e:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`3<int32,int32,int32>>>::Add(!0)
+    IL_0073:  nop
+    IL_0074:  ldloc.2
+    IL_0075:  ldstr      "Random"
+    IL_007a:  ldarg.0
+    IL_007b:  dup
+    IL_007c:  ldvirtftn  instance int32 VisualizePartitioning.MainForm::_Lambda$__6(int32,
+                                                                                    int32)
+    IL_0082:  newobj     instance void class [mscorlib]System.Func`3<int32,int32,int32>::.ctor(object,
+                                                                                               native int)
+    IL_0087:  call       class [mscorlib]System.Tuple`2<!!0,!!1> [mscorlib]System.Tuple::Create<string,class [mscorlib]System.Func`3<int32,int32,int32>>(!!0,
+                                                                                                                                                         !!1)
+    IL_008c:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`3<int32,int32,int32>>>::Add(!0)
+    IL_0091:  nop
+    IL_0092:  ldnull
+    IL_0093:  stloc.2
+    IL_0094:  nop
+    .try
+    {
+      IL_0095:  ldloc.0
+      IL_0096:  callvirt   instance valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<!0> class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`3<int32,int32,int32>>>::GetEnumerator()
+      IL_009b:  stloc.3
+      IL_009c:  br.s       IL_00d0
+
+      IL_009e:  ldloca.s   VB$t_struct$L0
+      IL_00a0:  call       instance !0 valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`3<int32,int32,int32>>>::get_Current()
+      IL_00a5:  stloc.1
+      IL_00a6:  ldarg.0
+      IL_00a7:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+      IL_00ac:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ListView/ListViewItemCollection [System.Windows.Forms]System.Windows.Forms.ListView::get_Items()
+      IL_00b1:  ldloc.1
+      IL_00b2:  callvirt   instance !0 class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`3<int32,int32,int32>>::get_Item1()
+      IL_00b7:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.ListViewItem::.ctor(string)
+      IL_00bc:  stloc.s    VB$t_ref$S1
+      IL_00be:  ldloc.s    VB$t_ref$S1
+      IL_00c0:  ldloc.1
+      IL_00c1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListViewItem::set_Tag(object)
+      IL_00c6:  nop
+      IL_00c7:  ldloc.s    VB$t_ref$S1
+      IL_00c9:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ListViewItem [System.Windows.Forms]System.Windows.Forms.ListView/ListViewItemCollection::Add(class [System.Windows.Forms]System.Windows.Forms.ListViewItem)
+      IL_00ce:  pop
+      IL_00cf:  nop
+      IL_00d0:  ldloca.s   VB$t_struct$L0
+      IL_00d2:  call       instance bool valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`3<int32,int32,int32>>>::MoveNext()
+      IL_00d7:  stloc.s    VB$CG$t_bool$S0
+      IL_00d9:  ldloc.s    VB$CG$t_bool$S0
+      IL_00db:  brtrue.s   IL_009e
+
+      IL_00dd:  nop
+      IL_00de:  leave.s    IL_00ef
+
+    }  // end .try
+    finally
+    {
+      IL_00e0:  ldloca.s   VB$t_struct$L0
+      IL_00e2:  constrained. valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`3<int32,int32,int32>>>
+      IL_00e8:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_00ed:  nop
+      IL_00ee:  endfinally
+    }  // end handler
+    IL_00ef:  ldarg.0
+    IL_00f0:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_00f5:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ListView/ListViewItemCollection [System.Windows.Forms]System.Windows.Forms.ListView::get_Items()
+    IL_00fa:  ldc.i4.0
+    IL_00fb:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ListViewItem [System.Windows.Forms]System.Windows.Forms.ListView/ListViewItemCollection::get_Item(int32)
+    IL_0100:  ldc.i4.1
+    IL_0101:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListViewItem::set_Selected(bool)
+    IL_0106:  nop
+    IL_0107:  nop
+    IL_0108:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="79" endline="128"><![CDATA[
+  {
+    // Code size       451 (0x1c3)
+    .maxstack  4
+    .locals init ([0] class VisualizePartitioning.MainForm/_Closure$__2 $VB$Closure_ClosureVariable_50_33,
+             [1] class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>> partitioningMethods,
+             [2] bool usingPLINQ,
+             [3] class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>> 'method',
+             [4] class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>> VB$t_ref$L0,
+             [5] valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>> VB$t_struct$L0,
+             [6] class [System.Windows.Forms]System.Windows.Forms.ListViewItem VB$t_ref$S1,
+             [7] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void VisualizePartitioning.MainForm/_Closure$__2::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldarg.0
+    IL_0008:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_000d:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ListView/ListViewItemCollection [System.Windows.Forms]System.Windows.Forms.ListView::get_Items()
+    IL_0012:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView/ListViewItemCollection::Clear()
+    IL_0017:  nop
+    IL_0018:  ldarg.0
+    IL_0019:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbPLINQ()
+    IL_001e:  callvirt   instance bool [System.Windows.Forms]System.Windows.Forms.RadioButton::get_Checked()
+    IL_0023:  stloc.2
+    IL_0024:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>>::.ctor()
+    IL_0029:  stloc.1
+    IL_002a:  ldloc.2
+    IL_002b:  stloc.s    VB$CG$t_bool$S0
+    IL_002d:  ldloc.s    VB$CG$t_bool$S0
+    IL_002f:  brfalse.s  IL_004e
+
+    IL_0031:  ldloc.1
+    IL_0032:  ldstr      "Static"
+    IL_0037:  ldnull
+    IL_0038:  ldftn      class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32> VisualizePartitioning.MainForm::_Lambda$__7(int32[])
+    IL_003e:  newobj     instance void class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>::.ctor(object,
+                                                                                                                                                        native int)
+    IL_0043:  call       class [mscorlib]System.Tuple`2<!!0,!!1> [mscorlib]System.Tuple::Create<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>(!!0,
+                                                                                                                                                                                                                  !!1)
+    IL_0048:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>>::Add(!0)
+    IL_004d:  nop
+    IL_004e:  nop
+    IL_004f:  ldloc.1
+    IL_0050:  stloc.s    VB$t_ref$L0
+    IL_0052:  ldloc.s    VB$t_ref$L0
+    IL_0054:  ldstr      "Load Balance"
+    IL_0059:  ldnull
+    IL_005a:  ldftn      class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32> VisualizePartitioning.MainForm::_Lambda$__8(int32[])
+    IL_0060:  newobj     instance void class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>::.ctor(object,
+                                                                                                                                                        native int)
+    IL_0065:  call       class [mscorlib]System.Tuple`2<!!0,!!1> [mscorlib]System.Tuple::Create<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>(!!0,
+                                                                                                                                                                                                                  !!1)
+    IL_006a:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>>::Add(!0)
+    IL_006f:  nop
+    IL_0070:  ldloc.s    VB$t_ref$L0
+    IL_0072:  ldstr      "Dynamic(1)"
+    IL_0077:  ldnull
+    IL_0078:  ldftn      class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32> VisualizePartitioning.MainForm::_Lambda$__9(int32[])
+    IL_007e:  newobj     instance void class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>::.ctor(object,
+                                                                                                                                                        native int)
+    IL_0083:  call       class [mscorlib]System.Tuple`2<!!0,!!1> [mscorlib]System.Tuple::Create<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>(!!0,
+                                                                                                                                                                                                                  !!1)
+    IL_0088:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>>::Add(!0)
+    IL_008d:  nop
+    IL_008e:  ldloc.s    VB$t_ref$L0
+    IL_0090:  ldstr      "Dynamic(16)"
+    IL_0095:  ldnull
+    IL_0096:  ldftn      class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32> VisualizePartitioning.MainForm::_Lambda$__10(int32[])
+    IL_009c:  newobj     instance void class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>::.ctor(object,
+                                                                                                                                                        native int)
+    IL_00a1:  call       class [mscorlib]System.Tuple`2<!!0,!!1> [mscorlib]System.Tuple::Create<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>(!!0,
+                                                                                                                                                                                                                  !!1)
+    IL_00a6:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>>::Add(!0)
+    IL_00ab:  nop
+    IL_00ac:  ldloc.s    VB$t_ref$L0
+    IL_00ae:  ldstr      "Guided"
+    IL_00b3:  ldloc.0
+    IL_00b4:  dup
+    IL_00b5:  ldvirtftn  instance class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32> VisualizePartitioning.MainForm/_Closure$__2::_Lambda$__11(int32[])
+    IL_00bb:  newobj     instance void class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>::.ctor(object,
+                                                                                                                                                        native int)
+    IL_00c0:  call       class [mscorlib]System.Tuple`2<!!0,!!1> [mscorlib]System.Tuple::Create<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>(!!0,
+                                                                                                                                                                                                                  !!1)
+    IL_00c5:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>>::Add(!0)
+    IL_00ca:  nop
+    IL_00cb:  ldloc.s    VB$t_ref$L0
+    IL_00cd:  ldstr      "Grow Exponential"
+    IL_00d2:  ldnull
+    IL_00d3:  ldftn      class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32> VisualizePartitioning.MainForm::_Lambda$__13(int32[])
+    IL_00d9:  newobj     instance void class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>::.ctor(object,
+                                                                                                                                                        native int)
+    IL_00de:  call       class [mscorlib]System.Tuple`2<!!0,!!1> [mscorlib]System.Tuple::Create<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>(!!0,
+                                                                                                                                                                                                                  !!1)
+    IL_00e3:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>>::Add(!0)
+    IL_00e8:  nop
+    IL_00e9:  ldloc.s    VB$t_ref$L0
+    IL_00eb:  ldstr      "Random"
+    IL_00f0:  ldloc.0
+    IL_00f1:  dup
+    IL_00f2:  ldvirtftn  instance class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32> VisualizePartitioning.MainForm/_Closure$__2::_Lambda$__15(int32[])
+    IL_00f8:  newobj     instance void class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>::.ctor(object,
+                                                                                                                                                        native int)
+    IL_00fd:  call       class [mscorlib]System.Tuple`2<!!0,!!1> [mscorlib]System.Tuple::Create<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>(!!0,
+                                                                                                                                                                                                                  !!1)
+    IL_0102:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>>::Add(!0)
+    IL_0107:  nop
+    IL_0108:  ldnull
+    IL_0109:  stloc.s    VB$t_ref$L0
+    IL_010b:  ldloc.2
+    IL_010c:  stloc.s    VB$CG$t_bool$S0
+    IL_010e:  ldloc.s    VB$CG$t_bool$S0
+    IL_0110:  brfalse.s  IL_014c
+
+    IL_0112:  ldloc.1
+    IL_0113:  ldstr      "Stripe"
+    IL_0118:  ldnull
+    IL_0119:  ldftn      class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32> VisualizePartitioning.MainForm::_Lambda$__17(int32[])
+    IL_011f:  newobj     instance void class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>::.ctor(object,
+                                                                                                                                                        native int)
+    IL_0124:  call       class [mscorlib]System.Tuple`2<!!0,!!1> [mscorlib]System.Tuple::Create<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>(!!0,
+                                                                                                                                                                                                                  !!1)
+    IL_0129:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>>::Add(!0)
+    IL_012e:  nop
+    IL_012f:  ldloc.1
+    IL_0130:  ldstr      "Hash"
+    IL_0135:  ldnull
+    IL_0136:  ldftn      class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32> VisualizePartitioning.MainForm::_Lambda$__18(int32[])
+    IL_013c:  newobj     instance void class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>::.ctor(object,
+                                                                                                                                                        native int)
+    IL_0141:  call       class [mscorlib]System.Tuple`2<!!0,!!1> [mscorlib]System.Tuple::Create<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>(!!0,
+                                                                                                                                                                                                                  !!1)
+    IL_0146:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>>::Add(!0)
+    IL_014b:  nop
+    IL_014c:  nop
+    IL_014d:  nop
+    .try
+    {
+      IL_014e:  ldloc.1
+      IL_014f:  callvirt   instance valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<!0> class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>>::GetEnumerator()
+      IL_0154:  stloc.s    VB$t_struct$L0
+      IL_0156:  br.s       IL_018a
+
+      IL_0158:  ldloca.s   VB$t_struct$L0
+      IL_015a:  call       instance !0 valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>>::get_Current()
+      IL_015f:  stloc.3
+      IL_0160:  ldarg.0
+      IL_0161:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+      IL_0166:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ListView/ListViewItemCollection [System.Windows.Forms]System.Windows.Forms.ListView::get_Items()
+      IL_016b:  ldloc.3
+      IL_016c:  callvirt   instance !0 class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>::get_Item1()
+      IL_0171:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.ListViewItem::.ctor(string)
+      IL_0176:  stloc.s    VB$t_ref$S1
+      IL_0178:  ldloc.s    VB$t_ref$S1
+      IL_017a:  ldloc.3
+      IL_017b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListViewItem::set_Tag(object)
+      IL_0180:  nop
+      IL_0181:  ldloc.s    VB$t_ref$S1
+      IL_0183:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ListViewItem [System.Windows.Forms]System.Windows.Forms.ListView/ListViewItemCollection::Add(class [System.Windows.Forms]System.Windows.Forms.ListViewItem)
+      IL_0188:  pop
+      IL_0189:  nop
+      IL_018a:  ldloca.s   VB$t_struct$L0
+      IL_018c:  call       instance bool valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>>::MoveNext()
+      IL_0191:  stloc.s    VB$CG$t_bool$S0
+      IL_0193:  ldloc.s    VB$CG$t_bool$S0
+      IL_0195:  brtrue.s   IL_0158
+
+      IL_0197:  nop
+      IL_0198:  leave.s    IL_01a9
+
+    }  // end .try
+    finally
+    {
+      IL_019a:  ldloca.s   VB$t_struct$L0
+      IL_019c:  constrained. valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>>
+      IL_01a2:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_01a7:  nop
+      IL_01a8:  endfinally
+    }  // end handler
+    IL_01a9:  ldarg.0
+    IL_01aa:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_01af:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ListView/ListViewItemCollection [System.Windows.Forms]System.Windows.Forms.ListView::get_Items()
+    IL_01b4:  ldc.i4.0
+    IL_01b5:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ListViewItem [System.Windows.Forms]System.Windows.Forms.ListView/ListViewItemCollection::get_Item(int32)
+    IL_01ba:  ldc.i4.1
+    IL_01bb:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListViewItem::set_Selected(bool)
+    IL_01c0:  nop
+    IL_01c1:  nop
+    IL_01c2:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="129" endline="229"><![CDATA[
+  {
+    // Code size       348 (0x15c)
+    .maxstack  3
+    .locals init ([0] class VisualizePartitioning.MainForm/_Closure$__5 $VB$Closure_ClosureVariable_82_6F,
+             [1] bool VB$CG$t_bool$S0,
+             [2] bool VB$CG$t_bool$S1)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void VisualizePartitioning.MainForm/_Closure$__5::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  ldarg.0
+    IL_0009:  stfld      class VisualizePartitioning.MainForm VisualizePartitioning.MainForm/_Closure$__5::$VB$Me
+    IL_000e:  ldloc.0
+    IL_000f:  ldarg.0
+    IL_0010:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_0015:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.TrackBar::get_Value()
+    IL_001a:  stfld      int32 VisualizePartitioning.MainForm/_Closure$__5::$VB$Local_numProcs
+    IL_001f:  ldloc.0
+    IL_0020:  ldarg.0
+    IL_0021:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox VisualizePartitioning.MainForm::pbPartitionedImage
+    IL_0026:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Width()
+    IL_002b:  stfld      int32 VisualizePartitioning.MainForm/_Closure$__5::$VB$Local_width
+    IL_0030:  ldloc.0
+    IL_0031:  ldarg.0
+    IL_0032:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox VisualizePartitioning.MainForm::pbPartitionedImage
+    IL_0037:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Height()
+    IL_003c:  stfld      int32 VisualizePartitioning.MainForm/_Closure$__5::$VB$Local_height
+    IL_0041:  ldloc.0
+    IL_0042:  ldarg.0
+    IL_0043:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelFor()
+    IL_0048:  callvirt   instance bool [System.Windows.Forms]System.Windows.Forms.RadioButton::get_Checked()
+    IL_004d:  stfld      bool VisualizePartitioning.MainForm/_Closure$__5::$VB$Local_useParallelFor
+    IL_0052:  ldloc.0
+    IL_0053:  ldarg.0
+    IL_0054:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelForEach()
+    IL_0059:  callvirt   instance bool [System.Windows.Forms]System.Windows.Forms.RadioButton::get_Checked()
+    IL_005e:  stfld      bool VisualizePartitioning.MainForm/_Closure$__5::$VB$Local_useParallelForEach
+    IL_0063:  ldarg.0
+    IL_0064:  ldarg.0
+    IL_0065:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbWorkFactor()
+    IL_006a:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.TrackBar::get_Value()
+    IL_006f:  stfld      int32 VisualizePartitioning.MainForm::_workFactor
+    IL_0074:  ldloc.0
+    IL_0075:  ldnull
+    IL_0076:  stfld      class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>> VisualizePartitioning.MainForm/_Closure$__5::$VB$Local_selectedMethod
+    IL_007b:  ldloc.0
+    IL_007c:  ldfld      bool VisualizePartitioning.MainForm/_Closure$__5::$VB$Local_useParallelFor
+    IL_0081:  ldc.i4.0
+    IL_0082:  ceq
+    IL_0084:  stloc.1
+    IL_0085:  ldloc.1
+    IL_0086:  brfalse.s  IL_00ca
+
+    IL_0088:  ldarg.0
+    IL_0089:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_008e:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ListView/SelectedIndexCollection [System.Windows.Forms]System.Windows.Forms.ListView::get_SelectedIndices()
+    IL_0093:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.ListView/SelectedIndexCollection::get_Count()
+    IL_0098:  ldc.i4.0
+    IL_0099:  ceq
+    IL_009b:  stloc.2
+    IL_009c:  ldloc.2
+    IL_009d:  brfalse.s  IL_00a7
+
+    IL_009f:  nop
+    IL_00a0:  br         IL_015a
+
+    IL_00a5:  br.s       IL_00c9
+
+    IL_00a7:  nop
+    IL_00a8:  ldloc.0
+    IL_00a9:  ldarg.0
+    IL_00aa:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_00af:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ListView/SelectedListViewItemCollection [System.Windows.Forms]System.Windows.Forms.ListView::get_SelectedItems()
+    IL_00b4:  ldc.i4.0
+    IL_00b5:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ListViewItem [System.Windows.Forms]System.Windows.Forms.ListView/SelectedListViewItemCollection::get_Item(int32)
+    IL_00ba:  callvirt   instance object [System.Windows.Forms]System.Windows.Forms.ListViewItem::get_Tag()
+    IL_00bf:  castclass  class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>>
+    IL_00c4:  stfld      class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`2<int32[],class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32>>> VisualizePartitioning.MainForm/_Closure$__5::$VB$Local_selectedMethod
+    IL_00c9:  nop
+    IL_00ca:  nop
+    IL_00cb:  ldarg.0
+    IL_00cc:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_00d1:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ListView/SelectedListViewItemCollection [System.Windows.Forms]System.Windows.Forms.ListView::get_SelectedItems()
+    IL_00d6:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.ListView/SelectedListViewItemCollection::get_Count()
+    IL_00db:  ldc.i4.0
+    IL_00dc:  ceq
+    IL_00de:  stloc.2
+    IL_00df:  ldloc.2
+    IL_00e0:  brfalse.s  IL_00e5
+
+    IL_00e2:  nop
+    IL_00e3:  br.s       IL_015a
+
+    IL_00e5:  nop
+    IL_00e6:  ldloc.0
+    IL_00e7:  ldarg.0
+    IL_00e8:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvWorkloads
+    IL_00ed:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ListView/SelectedListViewItemCollection [System.Windows.Forms]System.Windows.Forms.ListView::get_SelectedItems()
+    IL_00f2:  ldc.i4.0
+    IL_00f3:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ListViewItem [System.Windows.Forms]System.Windows.Forms.ListView/SelectedListViewItemCollection::get_Item(int32)
+    IL_00f8:  callvirt   instance object [System.Windows.Forms]System.Windows.Forms.ListViewItem::get_Tag()
+    IL_00fd:  castclass  class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`3<int32,int32,int32>>
+    IL_0102:  stfld      class [mscorlib]System.Tuple`2<string,class [mscorlib]System.Func`3<int32,int32,int32>> VisualizePartitioning.MainForm/_Closure$__5::$VB$Local_selectedWorkload
+    IL_0107:  ldloc.0
+    IL_0108:  ldloc.0
+    IL_0109:  ldfld      int32 VisualizePartitioning.MainForm/_Closure$__5::$VB$Local_width
+    IL_010e:  ldloc.0
+    IL_010f:  ldfld      int32 VisualizePartitioning.MainForm/_Closure$__5::$VB$Local_height
+    IL_0114:  newobj     instance void [System.Drawing]System.Drawing.Bitmap::.ctor(int32,
+                                                                                    int32)
+    IL_0119:  stfld      class [System.Drawing]System.Drawing.Bitmap VisualizePartitioning.MainForm/_Closure$__5::$VB$Local_bmp
+    IL_011e:  ldarg.0
+    IL_011f:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button VisualizePartitioning.MainForm::get_btnVisualize()
+    IL_0124:  ldc.i4.0
+    IL_0125:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Enabled(bool)
+    IL_012a:  nop
+    IL_012b:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_0130:  ldloc.0
+    IL_0131:  dup
+    IL_0132:  ldvirtftn  instance valuetype [mscorlib]System.TimeSpan VisualizePartitioning.MainForm/_Closure$__5::_Lambda$__20()
+    IL_0138:  newobj     instance void class [mscorlib]System.Func`1<valuetype [mscorlib]System.TimeSpan>::.ctor(object,
+                                                                                                                 native int)
+    IL_013d:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.TaskFactory::StartNew<valuetype [mscorlib]System.TimeSpan>(class [mscorlib]System.Func`1<!!0>)
+    IL_0142:  ldloc.0
+    IL_0143:  dup
+    IL_0144:  ldvirtftn  instance void VisualizePartitioning.MainForm/_Closure$__5::_Lambda$__19(class [mscorlib]System.Threading.Tasks.Task`1<valuetype [mscorlib]System.TimeSpan>)
+    IL_014a:  newobj     instance void class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<valuetype [mscorlib]System.TimeSpan>>::.ctor(object,
+                                                                                                                                                                  native int)
+    IL_014f:  call       class [mscorlib]System.Threading.Tasks.TaskScheduler [mscorlib]System.Threading.Tasks.TaskScheduler::FromCurrentSynchronizationContext()
+    IL_0154:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task class [mscorlib]System.Threading.Tasks.Task`1<valuetype [mscorlib]System.TimeSpan>::ContinueWith(class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<!0>>,
+                                                                                                                                                                               class [mscorlib]System.Threading.Tasks.TaskScheduler)
+    IL_0159:  pop
+    IL_015a:  nop
+    IL_015b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="230" endline="244"><![CDATA[
+  {
+    // Code size       60 (0x3c)
+    .maxstack  3
+    .locals init ([0] int32 DoWork,
+             [1] int32 'value',
+             [2] int32 i,
+             [3] int32 VB$t_i4$L0,
+             [4] int32 VB$CG$t_i4$S0)
+    IL_0000:  nop
+    IL_0001:  nop
+    .try
+    {
+      IL_0002:  ldc.i4.1
+      IL_0003:  stloc.1
+      IL_0004:  ldc.i4.0
+      IL_0005:  ldarg.0
+      IL_0006:  ldc.i4.1
+      IL_0007:  sub.ovf
+      IL_0008:  stloc.3
+      IL_0009:  stloc.2
+      IL_000a:  br.s       IL_0015
+
+      IL_000c:  ldloc.1
+      IL_000d:  ldarg.0
+      IL_000e:  mul.ovf
+      IL_000f:  stloc.1
+      IL_0010:  nop
+      IL_0011:  ldloc.2
+      IL_0012:  ldc.i4.1
+      IL_0013:  add.ovf
+      IL_0014:  stloc.2
+      IL_0015:  ldloc.2
+      IL_0016:  ldloc.3
+      IL_0017:  stloc.s    VB$CG$t_i4$S0
+      IL_0019:  ldloc.s    VB$CG$t_i4$S0
+      IL_001b:  ble.s      IL_000c
+
+      IL_001d:  ldloc.1
+      IL_001e:  stloc.0
+      IL_001f:  leave.s    IL_003a
+
+      IL_0021:  leave.s    IL_0039
+
+    }  // end .try
+    catch [mscorlib]System.Exception 
+    {
+      IL_0023:  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::SetProjectError(class [mscorlib]System.Exception)
+      IL_0028:  nop
+      IL_0029:  ldc.i4.0
+      IL_002a:  stloc.0
+      IL_002b:  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::ClearProjectError()
+      IL_0030:  leave.s    IL_003a
+
+      IL_0032:  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::ClearProjectError()
+      IL_0037:  leave.s    IL_0039
+
+    }  // end handler
+    IL_0039:  nop
+    IL_003a:  ldloc.0
+    IL_003b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="245" endline="257"><![CDATA[
+  {
+    // Code size       62 (0x3e)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_0007:  ldarg.0
+    IL_0008:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton VisualizePartitioning.MainForm::get_rbParallelFor()
+    IL_000d:  callvirt   instance bool [System.Windows.Forms]System.Windows.Forms.RadioButton::get_Checked()
+    IL_0012:  ldc.i4.0
+    IL_0013:  ceq
+    IL_0015:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Enabled(bool)
+    IL_001a:  nop
+    IL_001b:  ldarg.0
+    IL_001c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_0021:  ldarg.0
+    IL_0022:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ListView VisualizePartitioning.MainForm::lvPartitioningMethods
+    IL_0027:  callvirt   instance bool [System.Windows.Forms]System.Windows.Forms.Control::get_Enabled()
+    IL_002c:  ldc.i4.0
+    IL_002d:  ceq
+    IL_002f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListView::set_HideSelection(bool)
+    IL_0034:  nop
+    IL_0035:  ldarg.0
+    IL_0036:  callvirt   instance void VisualizePartitioning.MainForm::InitializePartitioningMethods()
+    IL_003b:  nop
+    IL_003c:  nop
+    IL_003d:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="258" endline="266"><![CDATA[
+  {
+    // Code size       75 (0x4b)
+    .maxstack  3
+    .locals init ([0] int32 io,
+             [1] int32 worker,
+             [2] int32 VB$t_i4$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ToolTip VisualizePartitioning.MainForm::toolTip1
+    IL_0007:  ldarg.0
+    IL_0008:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_000d:  ldarg.0
+    IL_000e:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_0013:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.TrackBar::get_Value()
+    IL_0018:  stloc.2
+    IL_0019:  ldloca.s   VB$t_i4$S0
+    IL_001b:  call       instance string [mscorlib]System.Int32::ToString()
+    IL_0020:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ToolTip::SetToolTip(class [System.Windows.Forms]System.Windows.Forms.Control,
+                                                                                                      string)
+    IL_0025:  nop
+    IL_0026:  ldarg.0
+    IL_0027:  callvirt   instance void VisualizePartitioning.MainForm::InitializeColorPalette()
+    IL_002c:  nop
+    IL_002d:  ldloca.s   worker
+    IL_002f:  ldloca.s   io
+    IL_0031:  call       void [mscorlib]System.Threading.ThreadPool::GetMinThreads(int32&,
+                                                                                   int32&)
+    IL_0036:  nop
+    IL_0037:  ldarg.0
+    IL_0038:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbCores()
+    IL_003d:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.TrackBar::get_Value()
+    IL_0042:  ldloc.0
+    IL_0043:  call       bool [mscorlib]System.Threading.ThreadPool::SetMinThreads(int32,
+                                                                                   int32)
+    IL_0048:  pop
+    IL_0049:  nop
+    IL_004a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="267" endline="270"><![CDATA[
+  {
+    // Code size       40 (0x28)
+    .maxstack  3
+    .locals init ([0] int32 VB$t_i4$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ToolTip VisualizePartitioning.MainForm::toolTip1
+    IL_0007:  ldarg.0
+    IL_0008:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbWorkFactor()
+    IL_000d:  ldarg.0
+    IL_000e:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar VisualizePartitioning.MainForm::get_tbWorkFactor()
+    IL_0013:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.TrackBar::get_Value()
+    IL_0018:  stloc.0
+    IL_0019:  ldloca.s   VB$t_i4$S0
+    IL_001b:  call       instance string [mscorlib]System.Int32::ToString()
+    IL_0020:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ToolTip::SetToolTip(class [System.Windows.Forms]System.Windows.Forms.Control,
+                                                                                                      string)
+    IL_0025:  nop
+    IL_0026:  nop
+    IL_0027:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="31" endline="35"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       57 (0x39)
+    .maxstack  2
+    .locals init ([0] class [mscorlib]System.Random _Lambda$__1,
+             [1] class [mscorlib]System.Random VB$t_ref$L0,
+             [2] bool VB$t_bool$L0,
+             [3] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  nop
+    IL_0002:  ldsfld     class [mscorlib]System.Random VisualizePartitioning.MainForm::_randomnessSeed
+    IL_0007:  stloc.1
+    IL_0008:  ldc.i4.0
+    IL_0009:  stloc.2
+    IL_000a:  nop
+    .try
+    {
+      IL_000b:  ldloc.1
+      IL_000c:  ldloca.s   VB$t_bool$L0
+      IL_000e:  call       void [mscorlib]System.Threading.Monitor::Enter(object,
+                                                                          bool&)
+      IL_0013:  nop
+      IL_0014:  ldsfld     class [mscorlib]System.Random VisualizePartitioning.MainForm::_randomnessSeed
+      IL_0019:  callvirt   instance int32 [mscorlib]System.Random::Next()
+      IL_001e:  newobj     instance void [mscorlib]System.Random::.ctor(int32)
+      IL_0023:  stloc.0
+      IL_0024:  leave.s    IL_0037
+
+      IL_0026:  nop
+      IL_0027:  leave.s    IL_0037
+
+    }  // end .try
+    finally
+    {
+      IL_0029:  ldloc.2
+      IL_002a:  stloc.3
+      IL_002b:  ldloc.3
+      IL_002c:  brfalse.s  IL_0035
+
+      IL_002e:  ldloc.1
+      IL_002f:  call       void [mscorlib]System.Threading.Monitor::Exit(object)
+      IL_0034:  nop
+      IL_0035:  nop
+      IL_0036:  endfinally
+    }  // end handler
+    IL_0037:  ldloc.0
+    IL_0038:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="36" endline="68"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       17 (0x11)
+    .maxstack  2
+    .locals init ([0] int32 _Lambda$__3)
+    IL_0000:  ldc.i4     0x3e8
+    IL_0005:  ldarg.0
+    IL_0006:  ldfld      int32 VisualizePartitioning.MainForm::_workFactor
+    IL_000b:  mul.ovf
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="69" endline="69"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       19 (0x13)
+    .maxstack  2
+    .locals init ([0] int32 _Lambda$__4)
+    IL_0000:  ldc.i4     0xc8
+    IL_0005:  ldarg.2
+    IL_0006:  mul.ovf
+    IL_0007:  ldarg.0
+    IL_0008:  ldfld      int32 VisualizePartitioning.MainForm::_workFactor
+    IL_000d:  mul.ovf
+    IL_000e:  stloc.0
+    IL_000f:  br.s       IL_0011
+
+    IL_0011:  ldloc.0
+    IL_0012:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="70" endline="70"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       21 (0x15)
+    .maxstack  3
+    .locals init ([0] int32 _Lambda$__5)
+    IL_0000:  ldc.i4     0xc8
+    IL_0005:  ldarg.1
+    IL_0006:  ldarg.2
+    IL_0007:  sub.ovf
+    IL_0008:  mul.ovf
+    IL_0009:  ldarg.0
+    IL_000a:  ldfld      int32 VisualizePartitioning.MainForm::_workFactor
+    IL_000f:  mul.ovf
+    IL_0010:  stloc.0
+    IL_0011:  br.s       IL_0013
+
+    IL_0013:  ldloc.0
+    IL_0014:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="71" endline="71"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       34 (0x22)
+    .maxstack  3
+    .locals init ([0] int32 _Lambda$__6)
+    IL_0000:  ldsfld     class [mscorlib]System.Threading.ThreadLocal`1<class [mscorlib]System.Random> VisualizePartitioning.MainForm::_localRandom
+    IL_0005:  callvirt   instance !0 class [mscorlib]System.Threading.ThreadLocal`1<class [mscorlib]System.Random>::get_Value()
+    IL_000a:  ldc.i4.s   100
+    IL_000c:  ldc.i4     0x2710
+    IL_0011:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_0016:  ldarg.0
+    IL_0017:  ldfld      int32 VisualizePartitioning.MainForm::_workFactor
+    IL_001c:  mul.ovf
+    IL_001d:  stloc.0
+    IL_001e:  br.s       IL_0020
+
+    IL_0020:  ldloc.0
+    IL_0021:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="72" endline="89"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       12 (0xc)
+    .maxstack  2
+    .locals init ([0] class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32> _Lambda$__7)
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.0
+    IL_0002:  call       class [mscorlib]System.Collections.Concurrent.OrderablePartitioner`1<!!0> [mscorlib]System.Collections.Concurrent.Partitioner::Create<int32>(!!0[],
+                                                                                                                                                                      bool)
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="90" endline="94"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       12 (0xc)
+    .maxstack  2
+    .locals init ([0] class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32> _Lambda$__8)
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.1
+    IL_0002:  call       class [mscorlib]System.Collections.Concurrent.OrderablePartitioner`1<!!0> [mscorlib]System.Collections.Concurrent.Partitioner::Create<int32>(!!0[],
+                                                                                                                                                                      bool)
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="95" endline="95"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       12 (0xc)
+    .maxstack  2
+    .locals init ([0] class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32> _Lambda$__9)
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.1
+    IL_0002:  call       class [mscorlib]System.Collections.Concurrent.OrderablePartitioner`1<!!0> [ParallelExtensionsExtras]System.Collections.Concurrent.Partitioners.ChunkPartitioner::Create<int32>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                                        int32)
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="96" endline="96"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       13 (0xd)
+    .maxstack  2
+    .locals init ([0] class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32> _Lambda$__10)
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.s   16
+    IL_0003:  call       class [mscorlib]System.Collections.Concurrent.OrderablePartitioner`1<!!0> [ParallelExtensionsExtras]System.Collections.Concurrent.Partitioners.ChunkPartitioner::Create<int32>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                                        int32)
+    IL_0008:  stloc.0
+    IL_0009:  br.s       IL_000b
+
+    IL_000b:  ldloc.0
+    IL_000c:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="97" endline="109"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       23 (0x17)
+    .maxstack  3
+    .locals init ([0] class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32> _Lambda$__13)
+    IL_0000:  ldarg.0
+    IL_0001:  ldnull
+    IL_0002:  ldftn      int32 VisualizePartitioning.MainForm::_Lambda$__14(int32)
+    IL_0008:  newobj     instance void class [mscorlib]System.Func`2<int32,int32>::.ctor(object,
+                                                                                         native int)
+    IL_000d:  call       class [mscorlib]System.Collections.Concurrent.OrderablePartitioner`1<!!0> [ParallelExtensionsExtras]System.Collections.Concurrent.Partitioners.ChunkPartitioner::Create<int32>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                                        class [mscorlib]System.Func`2<int32,int32>)
+    IL_0012:  stloc.0
+    IL_0013:  br.s       IL_0015
+
+    IL_0015:  ldloc.0
+    IL_0016:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       15 (0xf)
+    .maxstack  2
+    .locals init ([0] int32 _Lambda$__14)
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.0
+    IL_0002:  ble.s      IL_0009
+
+    IL_0004:  ldarg.0
+    IL_0005:  ldc.i4.2
+    IL_0006:  mul.ovf
+    IL_0007:  br.s       IL_000a
+
+    IL_0009:  ldc.i4.1
+    IL_000a:  stloc.0
+    IL_000b:  br.s       IL_000d
+
+    IL_000d:  ldloc.0
+    IL_000e:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="110" endline="119"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32> _Lambda$__17)
+    IL_0000:  ldarg.0
+    IL_0001:  call       class [mscorlib]System.Collections.Concurrent.OrderablePartitioner`1<!!0> [mscorlib]System.Collections.Concurrent.Partitioner::Create<int32>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="120" endline="120"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Collections.Concurrent.Partitioner`1<int32> _Lambda$__18)
+    IL_0000:  ldarg.0
+    IL_0001:  call       class [mscorlib]System.Collections.Concurrent.OrderablePartitioner`1<!!0> [mscorlib]System.Collections.Concurrent.Partitioner::Create<int32>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="121" endline="202"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       6 (0x6)
+    .maxstack  1
+    .locals init ([0] bool _Lambda$__24)
+    IL_0000:  ldc.i4.1
+    IL_0001:  stloc.0
+    IL_0002:  br.s       IL_0004
+
+    IL_0004:  ldloc.0
+    IL_0005:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="203" endline="204"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       6 (0x6)
+    .maxstack  1
+    .locals init ([0] int32 _Lambda$__25)
+    IL_0000:  ldarg.0
+    IL_0001:  stloc.0
+    IL_0002:  br.s       IL_0004
+
+    IL_0004:  ldloc.0
+    IL_0005:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       6 (0x6)
+    .maxstack  1
+    .locals init ([0] int32 _Lambda$__26)
+    IL_0000:  ldarg.0
+    IL_0001:  stloc.0
+    IL_0002:  br.s       IL_0004
+
+    IL_0004:  ldloc.0
+    IL_0005:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\MainForm.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       6 (0x6)
+    .maxstack  1
+    .locals init ([0] int32 _Lambda$__27)
+    IL_0000:  ldarg.0
+    IL_0001:  stloc.0
+    IL_0002:  br.s       IL_0004
+
+    IL_0004:  ldloc.0
+    IL_0005:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\Module1.vb" startline="7" endline="11"><![CDATA[
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.STAThreadAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       27 (0x1b)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  call       void [System.Windows.Forms]System.Windows.Forms.Application::EnableVisualStyles()
+    IL_0006:  nop
+    IL_0007:  ldc.i4.0
+    IL_0008:  call       void [System.Windows.Forms]System.Windows.Forms.Application::SetCompatibleTextRenderingDefault(bool)
+    IL_000d:  nop
+    IL_000e:  newobj     instance void VisualizePartitioning.MainForm::.ctor()
+    IL_0013:  call       void [System.Windows.Forms]System.Windows.Forms.Application::Run(class [System.Windows.Forms]System.Windows.Forms.Form)
+    IL_0018:  nop
+    IL_0019:  nop
+    IL_001a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\My Project\Resources.Designer.vb" startline="38" endline="44"><![CDATA[
+  {
+    // Code size       56 (0x38)
+    .maxstack  2
+    .locals init ([0] class [mscorlib]System.Resources.ResourceManager ResourceManager,
+             [1] class [mscorlib]System.Resources.ResourceManager temp,
+             [2] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Resources.ResourceManager My.Resources.Resources::resourceMan
+    IL_0006:  ldnull
+    IL_0007:  ceq
+    IL_0009:  stloc.2
+    IL_000a:  ldloc.2
+    IL_000b:  brfalse.s  IL_002d
+
+    IL_000d:  ldstr      "Resources"
+    IL_0012:  ldtoken    My.Resources.Resources
+    IL_0017:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_001c:  callvirt   instance class [mscorlib]System.Reflection.Assembly [mscorlib]System.Type::get_Assembly()
+    IL_0021:  newobj     instance void [mscorlib]System.Resources.ResourceManager::.ctor(string,
+                                                                                         class [mscorlib]System.Reflection.Assembly)
+    IL_0026:  stloc.1
+    IL_0027:  ldloc.1
+    IL_0028:  stsfld     class [mscorlib]System.Resources.ResourceManager My.Resources.Resources::resourceMan
+    IL_002d:  nop
+    IL_002e:  ldsfld     class [mscorlib]System.Resources.ResourceManager My.Resources.Resources::resourceMan
+    IL_0033:  stloc.0
+    IL_0034:  br.s       IL_0036
+
+    IL_0036:  ldloc.0
+    IL_0037:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\My Project\Resources.Designer.vb" startline="45" endline="55"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Globalization.CultureInfo Culture)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Globalization.CultureInfo My.Resources.Resources::resourceCulture
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\My Project\Resources.Designer.vb" startline="56" endline="58"><![CDATA[
+  {
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  stsfld     class [mscorlib]System.Globalization.CultureInfo My.Resources.Resources::resourceCulture
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\My Project\Settings.Designer.vb" startline="19" endline="19"><![CDATA[
+  {
+    // Code size       22 (0x16)
+    .maxstack  8
+    IL_0000:  newobj     instance void My.Settings::.ctor()
+    IL_0005:  call       class [System]System.Configuration.SettingsBase [System]System.Configuration.SettingsBase::Synchronized(class [System]System.Configuration.SettingsBase)
+    IL_000a:  castclass  My.Settings
+    IL_000f:  stsfld     class My.Settings My.Settings::defaultInstance
+    IL_0014:  nop
+    IL_0015:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [System]System.Configuration.ApplicationSettingsBase::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_VisualBasic\My Project\Settings.Designer.vb" startline="20" endline="24"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class My.Settings Default)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.Settings My.Settings::defaultInstance
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+</source_elements></project>

@@ -1,0 +1,5 @@
+C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\XMLActivePatterns\bin\Debug\XML.exe
+C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\XMLActivePatterns\bin\Debug\XML.pdb
+C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\XMLActivePatterns\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\XMLActivePatterns\obj\Debug\XML.exe
+C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\XMLActivePatterns\obj\Debug\XML.pdb

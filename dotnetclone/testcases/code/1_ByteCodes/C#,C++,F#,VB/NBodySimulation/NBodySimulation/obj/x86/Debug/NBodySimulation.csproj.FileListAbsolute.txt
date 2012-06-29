@@ -1,0 +1,15 @@
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\bin\Debug\NBodySimulation.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\bin\Debug\NBodySimulation.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\bin\Debug\NBodySimulationBackend.dll
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\bin\Debug\NBodySimulationBackend.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\MainWindow.baml
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\MainWindow.g.cs
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\App.g.cs
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\NBodySimulation_MarkupCompile.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\NBodySimulation.g.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\NBodySimulation.Properties.Resources.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\NBodySimulation.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\NBodySimulation.pdb

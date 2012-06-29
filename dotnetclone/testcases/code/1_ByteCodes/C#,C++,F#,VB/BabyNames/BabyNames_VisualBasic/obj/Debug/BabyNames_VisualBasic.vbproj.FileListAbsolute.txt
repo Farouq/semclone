@@ -1,0 +1,17 @@
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_VisualBasic\bin\Debug\BabyNames.exe.config
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_VisualBasic\bin\Debug\BabyNames.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_VisualBasic\bin\Debug\BabyNames.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_VisualBasic\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_VisualBasic\obj\Debug\MainWindow.g.vb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_VisualBasic\obj\Debug\Application.g.vb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_VisualBasic\obj\Debug\GeneratedInternalTypeHelper.g.vb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_VisualBasic\obj\Debug\BabyNames_MarkupCompile.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_VisualBasic\obj\Debug\BabyNames_MarkupCompile.lref
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_VisualBasic\obj\Debug\MainWindow.baml
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_VisualBasic\obj\Debug\Themes\Generic.baml
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_VisualBasic\obj\Debug\BabyNames.g.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_VisualBasic\obj\Debug\Resources.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_VisualBasic\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_VisualBasic\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_VisualBasic\obj\Debug\BabyNames.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_VisualBasic\obj\Debug\BabyNames.pdb

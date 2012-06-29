@@ -1,0 +1,518 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\Reflection\Program.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       6 (0x6)
+    .maxstack  4
+    IL_0000:  ldsfld     class [System.Xml]System.Xml.XmlDocument '<StartupCode$XML>'.$Program::xmlDoc@6
+    IL_0005:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\Reflection\Program.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       23 (0x17)
+    .maxstack  4
+    .locals init (object V_0,
+             class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [System.Xml]System.Xml.XmlNode,class [FSharp.Core]Microsoft.FSharp.Core.Unit> V_1)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void Program/'|Node|Leaf|@52'::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  newobj     instance void Program/printXml@59::.ctor(object)
+    IL_000d:  stloc.1
+    IL_000e:  ldloc.1
+    IL_000f:  ldarg.0
+    IL_0010:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [System.Xml]System.Xml.XmlNode,class [FSharp.Core]Microsoft.FSharp.Core.Unit>::Invoke(!0)
+    IL_0015:  pop
+    IL_0016:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\Reflection\Program.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       23 (0x17)
+    .maxstack  4
+    .locals init (object V_0,
+             class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [System.Xml]System.Xml.XmlNode,class [FSharp.Core]Microsoft.FSharp.Core.Unit> V_1)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void Program/'|Node|Leaf|Person|@77'::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  newobj     instance void Program/'printXml@91-6'::.ctor(object)
+    IL_000d:  stloc.1
+    IL_000e:  ldloc.1
+    IL_000f:  ldarg.0
+    IL_0010:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [System.Xml]System.Xml.XmlNode,class [FSharp.Core]Microsoft.FSharp.Core.Unit>::Invoke(!0)
+    IL_0015:  pop
+    IL_0016:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\Reflection\Program.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       23 (0x17)
+    .maxstack  4
+    .locals init (object V_0,
+             class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [System.Xml]System.Xml.XmlNode,class [FSharp.Core]Microsoft.FSharp.Core.Unit> V_1)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void Program/'|Node|Person|@112'::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  newobj     instance void Program/'printXml@125-17'::.ctor(object)
+    IL_000d:  stloc.1
+    IL_000e:  ldloc.1
+    IL_000f:  ldarg.0
+    IL_0010:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [System.Xml]System.Xml.XmlNode,class [FSharp.Core]Microsoft.FSharp.Core.Unit>::Invoke(!0)
+    IL_0015:  pop
+    IL_0016:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\Reflection\Program.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       104 (0x68)
+    .maxstack  4
+    .locals init (object V_0,
+             class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [System.Xml]System.Xml.XmlNode,class [mscorlib]System.Collections.Generic.IEnumerable`1<class [FSharp.Core]System.Tuple`4<string,string,int32,class [mscorlib]System.Collections.Generic.IEnumerable`1<string>>>> V_1,
+             class [mscorlib]System.Collections.Generic.IEnumerable`1<class [FSharp.Core]System.Tuple`4<string,string,int32,class [mscorlib]System.Collections.Generic.IEnumerable`1<string>>> V_2,
+             class [mscorlib]System.Collections.Generic.IEnumerable`1<class [FSharp.Core]System.Tuple`4<string,string,int32,class [mscorlib]System.Collections.Generic.IEnumerable`1<string>>> V_3,
+             class [mscorlib]System.Collections.Generic.IEnumerator`1<class [FSharp.Core]System.Tuple`4<string,string,int32,class [mscorlib]System.Collections.Generic.IEnumerable`1<string>>> V_4,
+             class [FSharp.Core]Microsoft.FSharp.Core.Unit V_5,
+             class [FSharp.Core]System.Tuple`4<string,string,int32,class [mscorlib]System.Collections.Generic.IEnumerable`1<string>> V_6,
+             class [mscorlib]System.IDisposable V_7)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void Program/'|Node|Person|@143-6'::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  newobj     instance void Program/extract@156::.ctor(object)
+    IL_000d:  stloc.1
+    IL_000e:  ldloc.1
+    IL_000f:  ldarg.0
+    IL_0010:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [System.Xml]System.Xml.XmlNode,class [mscorlib]System.Collections.Generic.IEnumerable`1<class [FSharp.Core]System.Tuple`4<string,string,int32,class [mscorlib]System.Collections.Generic.IEnumerable`1<string>>>>::Invoke(!0)
+    IL_0015:  stloc.2
+    IL_0016:  ldloc.2
+    IL_0017:  stloc.3
+    IL_0018:  ldloc.3
+    IL_0019:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<class [FSharp.Core]System.Tuple`4<string,string,int32,class [mscorlib]System.Collections.Generic.IEnumerable`1<string>>>::GetEnumerator()
+    IL_001e:  stloc.s    V_4
+    .try
+    {
+      IL_0020:  ldloc.s    V_4
+      IL_0022:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0027:  brfalse.s  IL_0041
+
+      IL_0029:  ldloc.s    V_4
+      IL_002b:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<class [FSharp.Core]System.Tuple`4<string,string,int32,class [mscorlib]System.Collections.Generic.IEnumerable`1<string>>>::get_Current()
+      IL_0030:  stloc.s    V_6
+      IL_0032:  ldstr      "Result: {0}"
+      IL_0037:  ldloc.s    V_6
+      IL_0039:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                    object)
+      IL_003e:  nop
+      IL_003f:  br.s       IL_0020
+
+      IL_0041:  ldnull
+      IL_0042:  stloc.s    V_5
+      IL_0044:  leave.s    IL_0064
+
+    }  // end .try
+    finally
+    {
+      IL_0046:  ldloc.s    V_4
+      IL_0048:  isinst     [mscorlib]System.IDisposable
+      IL_004d:  stloc.s    V_7
+      IL_004f:  ldloc.s    V_7
+      IL_0051:  brfalse.s  IL_0055
+
+      IL_0053:  br.s       IL_0057
+
+      IL_0055:  br.s       IL_0061
+
+      IL_0057:  ldloc.s    V_7
+      IL_0059:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_005e:  ldnull
+      IL_005f:  pop
+      IL_0060:  endfinally
+      IL_0061:  ldnull
+      IL_0062:  pop
+      IL_0063:  endfinally
+    }  // end handler
+    IL_0064:  ldloc.s    V_5
+    IL_0066:  pop
+    IL_0067:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\Reflection\Program.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       104 (0x68)
+    .maxstack  4
+    .locals init (object V_0,
+             class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [System.Xml]System.Xml.XmlNode,class [mscorlib]System.Collections.Generic.IEnumerable`1<class Program/Person>> V_1,
+             class [mscorlib]System.Collections.Generic.IEnumerable`1<class Program/Person> V_2,
+             class [mscorlib]System.Collections.Generic.IEnumerable`1<class Program/Person> V_3,
+             class [mscorlib]System.Collections.Generic.IEnumerator`1<class Program/Person> V_4,
+             class [FSharp.Core]Microsoft.FSharp.Core.Unit V_5,
+             class Program/Person V_6,
+             class [mscorlib]System.IDisposable V_7)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void Program/'|Node|Person|@189-12'::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  newobj     instance void Program/'extract@202-3'::.ctor(object)
+    IL_000d:  stloc.1
+    IL_000e:  ldloc.1
+    IL_000f:  ldarg.0
+    IL_0010:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [System.Xml]System.Xml.XmlNode,class [mscorlib]System.Collections.Generic.IEnumerable`1<class Program/Person>>::Invoke(!0)
+    IL_0015:  stloc.2
+    IL_0016:  ldloc.2
+    IL_0017:  stloc.3
+    IL_0018:  ldloc.3
+    IL_0019:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<class Program/Person>::GetEnumerator()
+    IL_001e:  stloc.s    V_4
+    .try
+    {
+      IL_0020:  ldloc.s    V_4
+      IL_0022:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0027:  brfalse.s  IL_0041
+
+      IL_0029:  ldloc.s    V_4
+      IL_002b:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<class Program/Person>::get_Current()
+      IL_0030:  stloc.s    V_6
+      IL_0032:  ldstr      "Result: {0}"
+      IL_0037:  ldloc.s    V_6
+      IL_0039:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                    object)
+      IL_003e:  nop
+      IL_003f:  br.s       IL_0020
+
+      IL_0041:  ldnull
+      IL_0042:  stloc.s    V_5
+      IL_0044:  leave.s    IL_0064
+
+    }  // end .try
+    finally
+    {
+      IL_0046:  ldloc.s    V_4
+      IL_0048:  isinst     [mscorlib]System.IDisposable
+      IL_004d:  stloc.s    V_7
+      IL_004f:  ldloc.s    V_7
+      IL_0051:  brfalse.s  IL_0055
+
+      IL_0053:  br.s       IL_0057
+
+      IL_0055:  br.s       IL_0061
+
+      IL_0057:  ldloc.s    V_7
+      IL_0059:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_005e:  ldnull
+      IL_005f:  pop
+      IL_0060:  endfinally
+      IL_0061:  ldnull
+      IL_0062:  pop
+      IL_0063:  endfinally
+    }  // end handler
+    IL_0064:  ldloc.s    V_5
+    IL_0066:  pop
+    IL_0067:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\Reflection\Program.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       104 (0x68)
+    .maxstack  4
+    .locals init (object V_0,
+             class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [System.Xml]System.Xml.XmlNode,class [mscorlib]System.Collections.Generic.IEnumerable`1<object>> V_1,
+             class [mscorlib]System.Collections.Generic.IEnumerable`1<object> V_2,
+             class [mscorlib]System.Collections.Generic.IEnumerable`1<object> V_3,
+             class [mscorlib]System.Collections.Generic.IEnumerator`1<object> V_4,
+             class [FSharp.Core]Microsoft.FSharp.Core.Unit V_5,
+             object V_6,
+             class [mscorlib]System.IDisposable V_7)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void Program/'|Node|Person|Ship|@279'::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  newobj     instance void Program/'extract@296-6'::.ctor(object)
+    IL_000d:  stloc.1
+    IL_000e:  ldloc.1
+    IL_000f:  ldarg.0
+    IL_0010:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [System.Xml]System.Xml.XmlNode,class [mscorlib]System.Collections.Generic.IEnumerable`1<object>>::Invoke(!0)
+    IL_0015:  stloc.2
+    IL_0016:  ldloc.2
+    IL_0017:  stloc.3
+    IL_0018:  ldloc.3
+    IL_0019:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<object>::GetEnumerator()
+    IL_001e:  stloc.s    V_4
+    .try
+    {
+      IL_0020:  ldloc.s    V_4
+      IL_0022:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0027:  brfalse.s  IL_0041
+
+      IL_0029:  ldloc.s    V_4
+      IL_002b:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<object>::get_Current()
+      IL_0030:  stloc.s    V_6
+      IL_0032:  ldstr      "Result: {0}"
+      IL_0037:  ldloc.s    V_6
+      IL_0039:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                    object)
+      IL_003e:  nop
+      IL_003f:  br.s       IL_0020
+
+      IL_0041:  ldnull
+      IL_0042:  stloc.s    V_5
+      IL_0044:  leave.s    IL_0064
+
+    }  // end .try
+    finally
+    {
+      IL_0046:  ldloc.s    V_4
+      IL_0048:  isinst     [mscorlib]System.IDisposable
+      IL_004d:  stloc.s    V_7
+      IL_004f:  ldloc.s    V_7
+      IL_0051:  brfalse.s  IL_0055
+
+      IL_0053:  br.s       IL_0057
+
+      IL_0055:  br.s       IL_0061
+
+      IL_0057:  ldloc.s    V_7
+      IL_0059:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_005e:  ldnull
+      IL_005f:  pop
+      IL_0060:  endfinally
+      IL_0061:  ldnull
+      IL_0062:  pop
+      IL_0063:  endfinally
+    }  // end handler
+    IL_0064:  ldloc.s    V_5
+    IL_0066:  pop
+    IL_0067:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\Reflection\Program.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       225 (0xe1)
+    .maxstack  6
+    .locals init (object V_0,
+             object V_1,
+             class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [System.Xml]System.Xml.XmlNode,class [mscorlib]System.Collections.Generic.IEnumerable`1<object>> V_2,
+             class [mscorlib]System.Collections.Generic.IEnumerable`1<object> V_3,
+             class [mscorlib]System.Collections.Generic.IEnumerable`1<object> V_4,
+             class [mscorlib]System.Collections.Generic.IEnumerator`1<object> V_5,
+             class [FSharp.Core]Microsoft.FSharp.Core.Unit V_6,
+             object V_7,
+             object V_8,
+             class Program/Ship V_9,
+             class Program/Ship V_10,
+             class Program/Person V_11,
+             class Program/Person V_12,
+             class [mscorlib]System.IDisposable V_13)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void Program/'|Person|_|@377'::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  newobj     instance void Program/'|Ship|_|@387'::.ctor()
+    IL_000c:  stloc.1
+    IL_000d:  ldloc.0
+    IL_000e:  ldloc.1
+    IL_000f:  newobj     instance void Program/'extract@396-9'::.ctor(object,
+                                                                      object)
+    IL_0014:  stloc.2
+    IL_0015:  ldloc.2
+    IL_0016:  ldarg.0
+    IL_0017:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [System.Xml]System.Xml.XmlNode,class [mscorlib]System.Collections.Generic.IEnumerable`1<object>>::Invoke(!0)
+    IL_001c:  stloc.3
+    IL_001d:  ldloc.3
+    IL_001e:  stloc.s    V_4
+    IL_0020:  ldloc.s    V_4
+    IL_0022:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<object>::GetEnumerator()
+    IL_0027:  stloc.s    V_5
+    .try
+    {
+      IL_0029:  ldloc.s    V_5
+      IL_002b:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0030:  brfalse    IL_00ba
+
+      IL_0035:  ldloc.s    V_5
+      IL_0037:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<object>::get_Current()
+      IL_003c:  stloc.s    V_7
+      IL_003e:  ldloc.s    V_7
+      IL_0040:  stloc.s    V_8
+      IL_0042:  ldloc.s    V_8
+      IL_0044:  isinst     Program/Ship
+      IL_0049:  stloc.s    V_9
+      IL_004b:  ldloc.s    V_9
+      IL_004d:  brfalse.s  IL_0051
+
+      IL_004f:  br.s       IL_0062
+
+      IL_0051:  ldloc.s    V_8
+      IL_0053:  isinst     Program/Person
+      IL_0058:  stloc.s    V_11
+      IL_005a:  ldloc.s    V_11
+      IL_005c:  brfalse.s  IL_0060
+
+      IL_005e:  br.s       IL_0099
+
+      IL_0060:  br.s       IL_00b4
+
+      IL_0062:  ldloc.s    V_9
+      IL_0064:  stloc.s    V_10
+      IL_0066:  ldstr      "The ship {0} {1}"
+      IL_006b:  ldloc.s    V_10
+      IL_006d:  call       instance string Program/Ship::get_Name()
+      IL_0072:  ldloc.s    V_10
+      IL_0074:  call       instance bool Program/Ship::get_Jump()
+      IL_0079:  ldc.i4.1
+      IL_007a:  bne.un.s   IL_007e
+
+      IL_007c:  br.s       IL_0080
+
+      IL_007e:  br.s       IL_0088
+
+      IL_0080:  ldstr      "is jump-capable"
+      IL_0085:  nop
+      IL_0086:  br.s       IL_008e
+
+      IL_0088:  ldstr      "is slower-than-light"
+      IL_008d:  nop
+      IL_008e:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                    object,
+                                                                    object)
+      IL_0093:  nop
+      IL_0094:  br         IL_0029
+
+      IL_0099:  ldloc.s    V_11
+      IL_009b:  stloc.s    V_12
+      IL_009d:  ldstr      "Found {0}"
+      IL_00a2:  ldloc.s    V_12
+      IL_00a4:  call       instance string Program/Person::get_Name()
+      IL_00a9:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                    object)
+      IL_00ae:  nop
+      IL_00af:  br         IL_0029
+
+      IL_00b4:  nop
+      IL_00b5:  br         IL_0029
+
+      IL_00ba:  ldnull
+      IL_00bb:  stloc.s    V_6
+      IL_00bd:  leave.s    IL_00dd
+
+    }  // end .try
+    finally
+    {
+      IL_00bf:  ldloc.s    V_5
+      IL_00c1:  isinst     [mscorlib]System.IDisposable
+      IL_00c6:  stloc.s    V_13
+      IL_00c8:  ldloc.s    V_13
+      IL_00ca:  brfalse.s  IL_00ce
+
+      IL_00cc:  br.s       IL_00d0
+
+      IL_00ce:  br.s       IL_00da
+
+      IL_00d0:  ldloc.s    V_13
+      IL_00d2:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_00d7:  ldnull
+      IL_00d8:  pop
+      IL_00d9:  endfinally
+      IL_00da:  ldnull
+      IL_00db:  pop
+      IL_00dc:  endfinally
+    }  // end handler
+    IL_00dd:  ldloc.s    V_6
+    IL_00df:  pop
+    IL_00e0:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\Reflection\Program.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .entrypoint
+    // Code size       236 (0xec)
+    .maxstack  4
+    .locals init (class [System.Xml]System.Xml.XmlDocument V_0)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void [System.Xml]System.Xml.XmlDocument::.ctor()
+    IL_0006:  dup
+    IL_0007:  stsfld     class [System.Xml]System.Xml.XmlDocument '<StartupCode$XML>'.$Program::xmlDoc@6
+    IL_000c:  stloc.0
+    IL_000d:  ldstr      "===========> Loading XML v1..."
+    IL_0012:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0017:  call       class [System.Xml]System.Xml.XmlDocument Program::get_xmlDoc()
+    IL_001c:  ldstr      "<data>\r\n\t<item>\r\n\t\t<person gender=\"male\">\r\n\t\t\t<nam"
+    + "e>Ted Neward</name>\r\n\t\t\t<age>38</age>\r\n\t\t\t<languages>\r\n\t\t\t\t<language>En"
+    + "glish</language>\r\n\t\t\t\t<language>French</language>\r\n\t\t\t\t<language>C#</la"
+    + "nguage>\r\n\t\t\t\t<language>Java</language>\r\n\t\t\t\t<language>F#</language>\r\n\t\t"
+    + "\t\t<language>Scala</language>\r\n\t\t\t</languages>\r\n\t\t</person>\r\n\t</item>\r\n\t"
+    + "<item>\r\n\t\t<person gender=\"male\">\r\n\t\t\t<name>Han Solo</name>\r\n\t\t\t<age>35<"
+    + "/age>\r\n\t\t\t<languages>\r\n\t\t\t\t<language>Imperial Standard</language>\r\n\t\t\t\t"
+    + "<language>Wookiee</language>\r\n\t\t\t</languages>\r\n\t\t</person>\r\n\t</item>\r\n\t"
+    + "<item>\r\n\t\t<person gender=\"male\">\r\n\t\t\t<name>Gaius Baltar</name>\r\n\t\t\t<age"
+    + ">35</age>\r\n\t\t\t<languages>\r\n\t\t\t\t<language>English</language>\r\n\t\t\t\t<langu"
+    + "age>Cylon</language>\r\n\t\t\t</languages>\r\n\t\t</person>\r\n\t</item>\r\n</data>"
+    IL_0021:  callvirt   instance void [System.Xml]System.Xml.XmlDocument::LoadXml(string)
+    IL_0026:  ldstr      "===========> nodesleafs_print xmlDoc:"
+    IL_002b:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0030:  call       class [System.Xml]System.Xml.XmlDocument Program::get_xmlDoc()
+    IL_0035:  call       void Program::nodesleafs_print(class [System.Xml]System.Xml.XmlNode)
+    IL_003a:  nop
+    IL_003b:  ldstr      "===========> personnodesleafs_print xmlDoc:"
+    IL_0040:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0045:  call       class [System.Xml]System.Xml.XmlDocument Program::get_xmlDoc()
+    IL_004a:  call       void Program::personnodesleafs_print(class [System.Xml]System.Xml.XmlNode)
+    IL_004f:  nop
+    IL_0050:  ldstr      "===========> person_print xmlDoc:"
+    IL_0055:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_005a:  call       class [System.Xml]System.Xml.XmlDocument Program::get_xmlDoc()
+    IL_005f:  call       void Program::person_print(class [System.Xml]System.Xml.XmlNode)
+    IL_0064:  nop
+    IL_0065:  ldstr      "===========> person_tuples xmlDoc:"
+    IL_006a:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_006f:  call       class [System.Xml]System.Xml.XmlDocument Program::get_xmlDoc()
+    IL_0074:  call       void Program::person_tuples(class [System.Xml]System.Xml.XmlNode)
+    IL_0079:  nop
+    IL_007a:  ldstr      "===========> person_objs xmlDoc:"
+    IL_007f:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0084:  call       class [System.Xml]System.Xml.XmlDocument Program::get_xmlDoc()
+    IL_0089:  call       void Program::person_objs(class [System.Xml]System.Xml.XmlNode)
+    IL_008e:  nop
+    IL_008f:  ldstr      "===========> Loading XML v2 (with ships)..."
+    IL_0094:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0099:  call       class [System.Xml]System.Xml.XmlDocument Program::get_xmlDoc()
+    IL_009e:  ldstr      "<data>\r\n\t<item>\r\n\t\t<person gender=\"male\">\r\n\t\t\t<nam"
+    + "e>Ted Neward</name>\r\n\t\t\t<age>38</age>\r\n\t\t\t<languages>\r\n\t\t\t\t<language>En"
+    + "glish</language>\r\n\t\t\t\t<language>French</language>\r\n\t\t\t\t<language>C#</la"
+    + "nguage>\r\n\t\t\t\t<language>Java</language>\r\n\t\t\t\t<language>F#</language>\r\n\t\t"
+    + "\t\t<language>Scala</language>\r\n\t\t\t</languages>\r\n\t\t</person>\r\n\t</item>\r\n\t"
+    + "<item>\r\n\t\t<person gender=\"male\">\r\n\t\t\t<name>Han Solo</name>\r\n\t\t\t<age>35<"
+    + "/age>\r\n\t\t\t<languages>\r\n\t\t\t\t<language>Imperial Standard</language>\r\n\t\t\t\t"
+    + "<language>Wookiee</language>\r\n\t\t\t</languages>\r\n\t\t</person>\r\n\t</item>\r\n\t"
+    + "<ship jump=\"true\">\r\n\t    <name>Millenium Falcon</name>\r\n\t</ship>\r\n\t<ite"
+    + "m>\r\n\t\t<person gender=\"male\">\r\n\t\t\t<name>Gaius Baltar</name>\r\n\t\t\t<age>35<"
+    + "/age>\r\n\t\t\t<languages>\r\n\t\t\t\t<language>English</language>\r\n\t\t\t\t<language>"
+    + "Cylon</language>\r\n\t\t\t</languages>\r\n\t\t</person>\r\n\t</item>\r\n\t<item>\r\n    "
+    + "\t<ship jump=\"true\">\r\n\t        <name>Galactica</name>\r\n\t    </ship>\r\n\t</"
+    + "item>\r\n</data>"
+    IL_00a3:  callvirt   instance void [System.Xml]System.Xml.XmlDocument::LoadXml(string)
+    IL_00a8:  ldstr      "===========> personship_objs xmlDoc:"
+    IL_00ad:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_00b2:  call       class [System.Xml]System.Xml.XmlDocument Program::get_xmlDoc()
+    IL_00b7:  call       void Program::personship_objs(class [System.Xml]System.Xml.XmlNode)
+    IL_00bc:  nop
+    IL_00bd:  ldstr      "===========> Loading XML v3 (with unknowns)..."
+    IL_00c2:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_00c7:  call       class [System.Xml]System.Xml.XmlDocument Program::get_xmlDoc()
+    IL_00cc:  ldstr      "<data>\r\n\t<item>\r\n\t\t<person gender=\"male\">\r\n\t\t\t<nam"
+    + "e>Ted Neward</name>\r\n\t\t\t<age>38</age>\r\n\t\t\t<languages>\r\n\t\t\t\t<language>En"
+    + "glish</language>\r\n\t\t\t\t<language>French</language>\r\n\t\t\t\t<language>C#</la"
+    + "nguage>\r\n\t\t\t\t<language>Java</language>\r\n\t\t\t\t<language>F#</language>\r\n\t\t"
+    + "\t\t<language>Scala</language>\r\n\t\t\t</languages>\r\n\t\t</person>\r\n\t</item>\r\n\t"
+    + "<item>\r\n\t\t<person gender=\"male\">\r\n\t\t\t<name>Han Solo</name>\r\n\t\t\t<age>35<"
+    + "/age>\r\n\t\t\t<languages>\r\n\t\t\t\t<language>Imperial Standard</language>\r\n\t\t\t\t"
+    + "<language>Wookiee</language>\r\n\t\t\t</languages>\r\n\t\t</person>\r\n\t</item>\r\n\t"
+    + "<ship jump=\"true\">\r\n\t    <name>Millenium Falcon</name>\r\n\t</ship>\r\n\t<fai"
+    + "ryTalePrincess>\r\n\t    <name>Sleeping Beauty</name>\r\n\t    <ending>Happy<"
+    + "/ending>\r\n\t</fairyTalePrincess>\r\n\t<fairyTalePrincess>\r\n\t    <name>Cinde"
+    + "rella</name>\r\n\t    <ending>Happy</ending>\r\n\t</fairyTalePrincess>\r\n\t<ite"
+    + "m>\r\n\t\t<person gender=\"male\">\r\n\t\t\t<name>Gaius Baltar</name>\r\n\t\t\t<age>35<"
+    + "/age>\r\n\t\t\t<languages>\r\n\t\t\t\t<language>English</language>\r\n\t\t\t\t<language>"
+    + "Cylon</language>\r\n\t\t\t</languages>\r\n\t\t</person>\r\n\t    <ship jump=\"true\">"
+    + "\r\n\t        <name>Galactica</name>\r\n\t    </ship>\r\n\t</item>\r\n</data>"
+    IL_00d1:  callvirt   instance void [System.Xml]System.Xml.XmlDocument::LoadXml(string)
+    IL_00d6:  ldstr      "===========> partialmatch_personship_objs xmlDoc:"
+    IL_00db:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_00e0:  call       class [System.Xml]System.Xml.XmlDocument Program::get_xmlDoc()
+    IL_00e5:  call       void Program::partialmatch_personship_objs(class [System.Xml]System.Xml.XmlNode)
+    IL_00ea:  nop
+    IL_00eb:  ret
+]]></source>
+</source_elements></project>

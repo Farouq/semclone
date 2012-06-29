@@ -1,0 +1,9 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             x:Class="FSharpSilverlightDemo.App"
+             xmlns:sampleData="clr-namespace:ProFSharp.SeriesData;assembly=ProFSharp.SeriesData"
+             >
+    <Application.Resources>
+        <sampleData:SampleDataSet x:Key="SampleDataSet"/>
+    </Application.Resources>
+</Application>

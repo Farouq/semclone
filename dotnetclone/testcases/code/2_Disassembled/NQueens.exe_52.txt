@@ -1,0 +1,3087 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.0.30319.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern System.Windows.Forms
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern System
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern System.Windows.Forms.DataVisualization
+{
+  .publickeytoken = (31 BF 38 56 AD 36 4E 35 )                         // 1.8V.6N5
+  .ver 4:0:0:0
+}
+.assembly extern System.Drawing
+{
+  .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
+  .ver 4:0:0:0
+}
+.assembly extern System.Core
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly NQueens
+{
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 1A 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 01 00 54   // ,Version=v4.0..T
+                                                                                                        0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C   // ..FrameworkDispl
+                                                                                                        61 79 4E 61 6D 65 10 2E 4E 45 54 20 46 72 61 6D   // ayName..NET Fram
+                                                                                                        65 77 6F 72 6B 20 34 )                            // ework 4
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 0E 4E 51 75 65 65 6E 73 5F 43 53 68 61 72   // ...NQueens_CShar
+                                                                                                70 00 00 )                                        // p..
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 15 4D 69 63 72 6F 73 6F 66 74 20 43 6F 72   // ...Microsoft Cor
+                                                                                                70 6F 72 61 74 69 6F 6E 00 00 )                   // poration..
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 0E 4E 51 75 65 65 6E 73 5F 43 53 68 61 72   // ...NQueens_CShar
+                                                                                              70 00 00 )                                        // p..
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 39 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ..9Copyright .. 
+                                                                                                  4D 69 63 72 6F 73 6F 66 74 20 43 6F 72 70 6F 72   // Microsoft Corpor
+                                                                                                  61 74 69 6F 6E 2E 20 20 41 6C 6C 20 72 69 67 68   // ation.  All righ
+                                                                                                  74 73 20 72 65 73 65 72 76 65 64 2E 00 00 )       // ts reserved...
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 35 65 61 36 32 62 66 64 2D 39 34 35 33   // ..$5ea62bfd-9453
+                                                                                                  2D 34 64 62 63 2D 39 34 30 66 2D 30 39 66 32 61   // -4dbc-940f-09f2a
+                                                                                                  36 37 33 65 63 64 64 00 00 )                      // 673ecdd..
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.mresource public NQueens_CSharp.Properties.Resources.resources
+{
+  // Offset: 0x00000000 Length: 0x000000B4
+}
+.mresource public NQueens_CSharp.MainForm.resources
+{
+  // Offset: 0x000000B8 Length: 0x000000B4
+}
+.module NQueens.exe
+// MVID: {D0CFA210-339E-49A7-B076-FFD0BFA15D11}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0002       // WINDOWS_GUI
+.corflags 0x00000001    //  ILONLY
+// Image base: 0x00480000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class public auto ansi beforefieldinit NQueens_CSharp.MainForm
+       extends [System.Windows.Forms]System.Windows.Forms.Form
+{
+  .class auto ansi sealed nested private beforefieldinit '<>c__DisplayClass4'
+         extends [mscorlib]System.Object
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    .field public int32 numQueens
+    .field public class NQueens_CSharp.MainForm '<>4__this'
+    .method public hidebysig specialname rtspecialname 
+            instance void  .ctor() cil managed
+    {
+      // Code size       7 (0x7)
+      .maxstack  8
+      IL_0000:  ldarg.0
+      IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0006:  ret
+    } // end of method '<>c__DisplayClass4'::.ctor
+
+    .method public hidebysig instance void 
+            '<btnSolve_Click>b__1'() cil managed
+    {
+      // Code size       98 (0x62)
+      .maxstack  3
+      .locals init ([0] valuetype [mscorlib]System.TimeSpan elapsed)
+      .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\MainForm.cs' 
+//000072:             {
+      IL_0000:  nop
+//000073:                 TimeSpan elapsed;
+//000074: 
+//000075:                 elapsed = Time(() => NQueensSolver.Sequential(numQueens));
+      IL_0001:  ldarg.0
+      IL_0002:  ldftn      instance void NQueens_CSharp.MainForm/'<>c__DisplayClass4'::'<btnSolve_Click>b__2'()
+      IL_0008:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                        native int)
+      IL_000d:  call       valuetype [mscorlib]System.TimeSpan NQueens_CSharp.MainForm::Time(class [mscorlib]System.Action)
+      IL_0012:  stloc.0
+//000076:                 SetPoint(_serial, elapsed.TotalSeconds);
+      IL_0013:  ldarg.0
+      IL_0014:  ldfld      class NQueens_CSharp.MainForm NQueens_CSharp.MainForm/'<>c__DisplayClass4'::'<>4__this'
+      IL_0019:  ldarg.0
+      IL_001a:  ldfld      class NQueens_CSharp.MainForm NQueens_CSharp.MainForm/'<>c__DisplayClass4'::'<>4__this'
+      IL_001f:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint NQueens_CSharp.MainForm::_serial
+      IL_0024:  ldloca.s   elapsed
+      IL_0026:  call       instance float64 [mscorlib]System.TimeSpan::get_TotalSeconds()
+      IL_002b:  call       instance void NQueens_CSharp.MainForm::SetPoint(class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint,
+                                                                           float64)
+      IL_0030:  nop
+//000077: 
+//000078:                 elapsed = Time(() => NQueensSolver.Parallel(numQueens));
+      IL_0031:  ldarg.0
+      IL_0032:  ldftn      instance void NQueens_CSharp.MainForm/'<>c__DisplayClass4'::'<btnSolve_Click>b__3'()
+      IL_0038:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                        native int)
+      IL_003d:  call       valuetype [mscorlib]System.TimeSpan NQueens_CSharp.MainForm::Time(class [mscorlib]System.Action)
+      IL_0042:  stloc.0
+//000079:                 SetPoint(_parallel, elapsed.TotalSeconds);
+      IL_0043:  ldarg.0
+      IL_0044:  ldfld      class NQueens_CSharp.MainForm NQueens_CSharp.MainForm/'<>c__DisplayClass4'::'<>4__this'
+      IL_0049:  ldarg.0
+      IL_004a:  ldfld      class NQueens_CSharp.MainForm NQueens_CSharp.MainForm/'<>c__DisplayClass4'::'<>4__this'
+      IL_004f:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint NQueens_CSharp.MainForm::_parallel
+      IL_0054:  ldloca.s   elapsed
+      IL_0056:  call       instance float64 [mscorlib]System.TimeSpan::get_TotalSeconds()
+      IL_005b:  call       instance void NQueens_CSharp.MainForm::SetPoint(class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint,
+                                                                           float64)
+      IL_0060:  nop
+//000080: 
+//000081:             }, TaskCreationOptions.AttachedToParent).ContinueWith(t =>
+//000082:             {
+//000083:                 progressBar1.Visible = false;
+//000084:                 btnSolve.Enabled = true;
+//000085:                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+//000086:             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+//000087:         }
+//000088: 
+//000089:         private void SetPoint(DataPoint point, double seconds)
+//000090:         {
+//000091:             Task.Factory.StartNew(() =>
+//000092:             {
+//000093:                 if (seconds > _max)
+//000094:                 {
+//000095:                     _max = seconds;
+//000096:                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+//000097:                 }
+//000098:                 point.SetValueY(seconds);
+//000099:                 point.ToolTip = seconds.ToString("F3");
+//000100:                 point.Label = string.Format("{0:F3} secs  ({1:F2}x)", seconds, (_max / seconds));
+//000101:                 chart1.Invalidate();
+//000102:             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+//000103:         }
+//000104: 
+//000105:         static TimeSpan Time(Action action)
+//000106:         {
+//000107:             var sw = Stopwatch.StartNew();
+//000108:             action();
+//000109:             return sw.Elapsed;
+//000110:         }
+//000111:     }
+//000112: }
+      IL_0061:  ret
+    } // end of method '<>c__DisplayClass4'::'<btnSolve_Click>b__1'
+
+    .method public hidebysig instance void 
+            '<btnSolve_Click>b__2'() cil managed
+    {
+      // Code size       13 (0xd)
+      .maxstack  8
+//000075:                 elapsed = Time(() => NQueensSolver.Sequential(numQueens));
+      IL_0000:  ldarg.0
+      IL_0001:  ldfld      int32 NQueens_CSharp.MainForm/'<>c__DisplayClass4'::numQueens
+      IL_0006:  call       int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver::Sequential(int32)
+      IL_000b:  pop
+//000076:                 SetPoint(_serial, elapsed.TotalSeconds);
+//000077: 
+//000078:                 elapsed = Time(() => NQueensSolver.Parallel(numQueens));
+//000079:                 SetPoint(_parallel, elapsed.TotalSeconds);
+//000080: 
+//000081:             }, TaskCreationOptions.AttachedToParent).ContinueWith(t =>
+//000082:             {
+//000083:                 progressBar1.Visible = false;
+//000084:                 btnSolve.Enabled = true;
+//000085:                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+//000086:             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+//000087:         }
+//000088: 
+//000089:         private void SetPoint(DataPoint point, double seconds)
+//000090:         {
+//000091:             Task.Factory.StartNew(() =>
+//000092:             {
+//000093:                 if (seconds > _max)
+//000094:                 {
+//000095:                     _max = seconds;
+//000096:                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+//000097:                 }
+//000098:                 point.SetValueY(seconds);
+//000099:                 point.ToolTip = seconds.ToString("F3");
+//000100:                 point.Label = string.Format("{0:F3} secs  ({1:F2}x)", seconds, (_max / seconds));
+//000101:                 chart1.Invalidate();
+//000102:             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+//000103:         }
+//000104: 
+//000105:         static TimeSpan Time(Action action)
+//000106:         {
+//000107:             var sw = Stopwatch.StartNew();
+//000108:             action();
+//000109:             return sw.Elapsed;
+//000110:         }
+//000111:     }
+//000112: }
+      IL_000c:  ret
+    } // end of method '<>c__DisplayClass4'::'<btnSolve_Click>b__2'
+
+    .method public hidebysig instance void 
+            '<btnSolve_Click>b__3'() cil managed
+    {
+      // Code size       13 (0xd)
+      .maxstack  8
+//000078:                 elapsed = Time(() => NQueensSolver.Parallel(numQueens));
+      IL_0000:  ldarg.0
+      IL_0001:  ldfld      int32 NQueens_CSharp.MainForm/'<>c__DisplayClass4'::numQueens
+      IL_0006:  call       int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver::Parallel(int32)
+      IL_000b:  pop
+//000079:                 SetPoint(_parallel, elapsed.TotalSeconds);
+//000080: 
+//000081:             }, TaskCreationOptions.AttachedToParent).ContinueWith(t =>
+//000082:             {
+//000083:                 progressBar1.Visible = false;
+//000084:                 btnSolve.Enabled = true;
+//000085:                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+//000086:             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+//000087:         }
+//000088: 
+//000089:         private void SetPoint(DataPoint point, double seconds)
+//000090:         {
+//000091:             Task.Factory.StartNew(() =>
+//000092:             {
+//000093:                 if (seconds > _max)
+//000094:                 {
+//000095:                     _max = seconds;
+//000096:                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+//000097:                 }
+//000098:                 point.SetValueY(seconds);
+//000099:                 point.ToolTip = seconds.ToString("F3");
+//000100:                 point.Label = string.Format("{0:F3} secs  ({1:F2}x)", seconds, (_max / seconds));
+//000101:                 chart1.Invalidate();
+//000102:             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+//000103:         }
+//000104: 
+//000105:         static TimeSpan Time(Action action)
+//000106:         {
+//000107:             var sw = Stopwatch.StartNew();
+//000108:             action();
+//000109:             return sw.Elapsed;
+//000110:         }
+//000111:     }
+//000112: }
+      IL_000c:  ret
+    } // end of method '<>c__DisplayClass4'::'<btnSolve_Click>b__3'
+
+  } // end of class '<>c__DisplayClass4'
+
+  .class auto ansi sealed nested private beforefieldinit '<>c__DisplayClass7'
+         extends [mscorlib]System.Object
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    .field public class NQueens_CSharp.MainForm '<>4__this'
+    .field public class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint point
+    .field public float64 seconds
+    .method public hidebysig specialname rtspecialname 
+            instance void  .ctor() cil managed
+    {
+      // Code size       7 (0x7)
+      .maxstack  8
+      IL_0000:  ldarg.0
+      IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0006:  ret
+    } // end of method '<>c__DisplayClass7'::.ctor
+
+    .method public hidebysig instance void 
+            '<SetPoint>b__6'() cil managed
+    {
+      // Code size       236 (0xec)
+      .maxstack  5
+      .locals init ([0] bool CS$4$0000,
+               [1] object[] CS$0$0001)
+//000092:             {
+      IL_0000:  nop
+//000093:                 if (seconds > _max)
+      IL_0001:  ldarg.0
+      IL_0002:  ldfld      float64 NQueens_CSharp.MainForm/'<>c__DisplayClass7'::seconds
+      IL_0007:  ldarg.0
+      IL_0008:  ldfld      class NQueens_CSharp.MainForm NQueens_CSharp.MainForm/'<>c__DisplayClass7'::'<>4__this'
+      IL_000d:  ldfld      float64 NQueens_CSharp.MainForm::_max
+      IL_0012:  cgt
+      IL_0014:  ldc.i4.0
+      IL_0015:  ceq
+      IL_0017:  stloc.0
+//000094:                 {
+//000095:                     _max = seconds;
+//000096:                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+//000097:                 }
+//000098:                 point.SetValueY(seconds);
+//000099:                 point.ToolTip = seconds.ToString("F3");
+//000100:                 point.Label = string.Format("{0:F3} secs  ({1:F2}x)", seconds, (_max / seconds));
+//000101:                 chart1.Invalidate();
+//000102:             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+//000103:         }
+//000104: 
+//000105:         static TimeSpan Time(Action action)
+//000106:         {
+//000107:             var sw = Stopwatch.StartNew();
+//000108:             action();
+//000109:             return sw.Elapsed;
+//000110:         }
+//000111:     }
+//000112: }
+      IL_0018:  ldloc.0
+      IL_0019:  brtrue.s   IL_0064
+
+//000094:                 {
+      IL_001b:  nop
+//000095:                     _max = seconds;
+      IL_001c:  ldarg.0
+      IL_001d:  ldfld      class NQueens_CSharp.MainForm NQueens_CSharp.MainForm/'<>c__DisplayClass7'::'<>4__this'
+      IL_0022:  ldarg.0
+      IL_0023:  ldfld      float64 NQueens_CSharp.MainForm/'<>c__DisplayClass7'::seconds
+      IL_0028:  stfld      float64 NQueens_CSharp.MainForm::_max
+//000096:                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+      IL_002d:  ldarg.0
+      IL_002e:  ldfld      class NQueens_CSharp.MainForm NQueens_CSharp.MainForm/'<>c__DisplayClass7'::'<>4__this'
+      IL_0033:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+      IL_0038:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartAreaCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_ChartAreas()
+      IL_003d:  ldc.i4.0
+      IL_003e:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea>::get_Item(int32)
+      IL_0043:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisY()
+      IL_0048:  ldarg.0
+      IL_0049:  ldfld      class NQueens_CSharp.MainForm NQueens_CSharp.MainForm/'<>c__DisplayClass7'::'<>4__this'
+      IL_004e:  ldfld      float64 NQueens_CSharp.MainForm::_max
+      IL_0053:  ldc.r8     1.1000000000000001
+      IL_005c:  mul
+      IL_005d:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::set_Maximum(float64)
+      IL_0062:  nop
+//000097:                 }
+      IL_0063:  nop
+//000098:                 point.SetValueY(seconds);
+      IL_0064:  ldarg.0
+      IL_0065:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint NQueens_CSharp.MainForm/'<>c__DisplayClass7'::point
+      IL_006a:  ldc.i4.1
+      IL_006b:  newarr     [mscorlib]System.Object
+      IL_0070:  stloc.1
+      IL_0071:  ldloc.1
+      IL_0072:  ldc.i4.0
+      IL_0073:  ldarg.0
+      IL_0074:  ldfld      float64 NQueens_CSharp.MainForm/'<>c__DisplayClass7'::seconds
+      IL_0079:  box        [mscorlib]System.Double
+      IL_007e:  stelem.ref
+      IL_007f:  ldloc.1
+      IL_0080:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint::SetValueY(object[])
+      IL_0085:  nop
+//000099:                 point.ToolTip = seconds.ToString("F3");
+      IL_0086:  ldarg.0
+      IL_0087:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint NQueens_CSharp.MainForm/'<>c__DisplayClass7'::point
+      IL_008c:  ldarg.0
+      IL_008d:  ldflda     float64 NQueens_CSharp.MainForm/'<>c__DisplayClass7'::seconds
+      IL_0092:  ldstr      "F3"
+      IL_0097:  call       instance string [mscorlib]System.Double::ToString(string)
+      IL_009c:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_ToolTip(string)
+      IL_00a1:  nop
+//000100:                 point.Label = string.Format("{0:F3} secs  ({1:F2}x)", seconds, (_max / seconds));
+      IL_00a2:  ldarg.0
+      IL_00a3:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint NQueens_CSharp.MainForm/'<>c__DisplayClass7'::point
+      IL_00a8:  ldstr      "{0:F3} secs  ({1:F2}x)"
+      IL_00ad:  ldarg.0
+      IL_00ae:  ldfld      float64 NQueens_CSharp.MainForm/'<>c__DisplayClass7'::seconds
+      IL_00b3:  box        [mscorlib]System.Double
+      IL_00b8:  ldarg.0
+      IL_00b9:  ldfld      class NQueens_CSharp.MainForm NQueens_CSharp.MainForm/'<>c__DisplayClass7'::'<>4__this'
+      IL_00be:  ldfld      float64 NQueens_CSharp.MainForm::_max
+      IL_00c3:  ldarg.0
+      IL_00c4:  ldfld      float64 NQueens_CSharp.MainForm/'<>c__DisplayClass7'::seconds
+      IL_00c9:  div
+      IL_00ca:  box        [mscorlib]System.Double
+      IL_00cf:  call       string [mscorlib]System.String::Format(string,
+                                                                  object,
+                                                                  object)
+      IL_00d4:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_Label(string)
+      IL_00d9:  nop
+//000101:                 chart1.Invalidate();
+      IL_00da:  ldarg.0
+      IL_00db:  ldfld      class NQueens_CSharp.MainForm NQueens_CSharp.MainForm/'<>c__DisplayClass7'::'<>4__this'
+      IL_00e0:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+      IL_00e5:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::Invalidate()
+      IL_00ea:  nop
+//000102:             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+//000103:         }
+//000104: 
+//000105:         static TimeSpan Time(Action action)
+//000106:         {
+//000107:             var sw = Stopwatch.StartNew();
+//000108:             action();
+//000109:             return sw.Elapsed;
+//000110:         }
+//000111:     }
+//000112: }
+      IL_00eb:  ret
+    } // end of method '<>c__DisplayClass7'::'<SetPoint>b__6'
+
+  } // end of class '<>c__DisplayClass7'
+
+  .field private static literal int32 NUM_QUEENS = int32(0x00000016)
+  .field private class [mscorlib]System.Threading.Tasks.TaskScheduler _uiScheduler
+  .field private class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint _serial
+  .field private class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint _parallel
+  .field private float64 _max
+  .field private class [System]System.ComponentModel.IContainer components
+  .field private class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart chart1
+  .field private class [System.Windows.Forms]System.Windows.Forms.ProgressBar progressBar1
+  .field private class [System.Windows.Forms]System.Windows.Forms.Button btnSolve
+  .field private class [System.Windows.Forms]System.Windows.Forms.ComboBox cbNumQueens
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       39 (0x27)
+    .maxstack  8
+//000025:         private double _max = 0;
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.r8     0.0
+    IL_000a:  stfld      float64 NQueens_CSharp.MainForm::_max
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\MainForm.Designer.cs' 
+//000008:         private System.ComponentModel.IContainer components = null;
+    IL_000f:  ldarg.0
+    IL_0010:  ldnull
+    IL_0011:  stfld      class [System]System.ComponentModel.IContainer NQueens_CSharp.MainForm::components
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\MainForm.cs' 
+//000027:         public MainForm()
+    IL_0016:  ldarg.0
+    IL_0017:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::.ctor()
+    IL_001c:  nop
+//000028:         {
+    IL_001d:  nop
+//000029:             InitializeComponent();
+    IL_001e:  ldarg.0
+    IL_001f:  call       instance void NQueens_CSharp.MainForm::InitializeComponent()
+    IL_0024:  nop
+//000030:         }
+    IL_0025:  nop
+    IL_0026:  ret
+  } // end of method MainForm::.ctor
+
+  .method private hidebysig instance void 
+          Form1_Load(object sender,
+                     class [mscorlib]System.EventArgs e) cil managed
+  {
+    // Code size       20 (0x14)
+    .maxstack  8
+//000031: 
+//000032:         private void Form1_Load(object sender, EventArgs e)
+//000033:         {
+    IL_0000:  nop
+//000034:             _uiScheduler = TaskScheduler.FromCurrentSynchronizationContext();
+    IL_0001:  ldarg.0
+    IL_0002:  call       class [mscorlib]System.Threading.Tasks.TaskScheduler [mscorlib]System.Threading.Tasks.TaskScheduler::FromCurrentSynchronizationContext()
+    IL_0007:  stfld      class [mscorlib]System.Threading.Tasks.TaskScheduler NQueens_CSharp.MainForm::_uiScheduler
+//000035:             SetupPoints();
+    IL_000c:  ldarg.0
+    IL_000d:  call       instance void NQueens_CSharp.MainForm::SetupPoints()
+    IL_0012:  nop
+//000036:         }
+    IL_0013:  ret
+  } // end of method MainForm::Form1_Load
+
+  .method private hidebysig instance void 
+          SetupPoints() cil managed
+  {
+    // Code size       270 (0x10e)
+    .maxstack  7
+    .locals init ([0] object[] CS$0$0000)
+//000037: 
+//000038:         private void SetupPoints()
+//000039:         {
+    IL_0000:  nop
+//000040:             _serial = chart1.Series[0].Points[chart1.Series[0].Points.AddXY("Serial", 0.0)];
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.0
+    IL_0003:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_0008:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_000d:  ldc.i4.0
+    IL_000e:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::get_Item(int32)
+    IL_0013:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::get_Points()
+    IL_0018:  ldarg.0
+    IL_0019:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_001e:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_0023:  ldc.i4.0
+    IL_0024:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::get_Item(int32)
+    IL_0029:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::get_Points()
+    IL_002e:  ldstr      "Serial"
+    IL_0033:  ldc.i4.1
+    IL_0034:  newarr     [mscorlib]System.Object
+    IL_0039:  stloc.0
+    IL_003a:  ldloc.0
+    IL_003b:  ldc.i4.0
+    IL_003c:  ldc.r8     0.0
+    IL_0045:  box        [mscorlib]System.Double
+    IL_004a:  stelem.ref
+    IL_004b:  ldloc.0
+    IL_004c:  callvirt   instance int32 [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection::AddXY(object,
+                                                                                                                                                           object[])
+    IL_0051:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint>::get_Item(int32)
+    IL_0056:  stfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint NQueens_CSharp.MainForm::_serial
+//000041:             _parallel = chart1.Series[0].Points[chart1.Series[0].Points.AddXY("Parallel", 0.0)];
+    IL_005b:  ldarg.0
+    IL_005c:  ldarg.0
+    IL_005d:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_0062:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_0067:  ldc.i4.0
+    IL_0068:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::get_Item(int32)
+    IL_006d:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::get_Points()
+    IL_0072:  ldarg.0
+    IL_0073:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_0078:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_007d:  ldc.i4.0
+    IL_007e:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::get_Item(int32)
+    IL_0083:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::get_Points()
+    IL_0088:  ldstr      "Parallel"
+    IL_008d:  ldc.i4.1
+    IL_008e:  newarr     [mscorlib]System.Object
+    IL_0093:  stloc.0
+    IL_0094:  ldloc.0
+    IL_0095:  ldc.i4.0
+    IL_0096:  ldc.r8     0.0
+    IL_009f:  box        [mscorlib]System.Double
+    IL_00a4:  stelem.ref
+    IL_00a5:  ldloc.0
+    IL_00a6:  callvirt   instance int32 [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection::AddXY(object,
+                                                                                                                                                           object[])
+    IL_00ab:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint>::get_Item(int32)
+    IL_00b0:  stfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint NQueens_CSharp.MainForm::_parallel
+//000042:             chart1.ChartAreas[0].AxisY.Minimum = 0.0;
+    IL_00b5:  ldarg.0
+    IL_00b6:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_00bb:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartAreaCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_ChartAreas()
+    IL_00c0:  ldc.i4.0
+    IL_00c1:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea>::get_Item(int32)
+    IL_00c6:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisY()
+    IL_00cb:  ldc.r8     0.0
+    IL_00d4:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::set_Minimum(float64)
+    IL_00d9:  nop
+//000043:             chart1.ChartAreas[0].AxisY.Maximum = 10.0;
+    IL_00da:  ldarg.0
+    IL_00db:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_00e0:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartAreaCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_ChartAreas()
+    IL_00e5:  ldc.i4.0
+    IL_00e6:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea>::get_Item(int32)
+    IL_00eb:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisY()
+    IL_00f0:  ldc.r8     10.
+    IL_00f9:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::set_Maximum(float64)
+    IL_00fe:  nop
+//000044:             ClearPointValues();
+    IL_00ff:  ldarg.0
+    IL_0100:  call       instance void NQueens_CSharp.MainForm::ClearPointValues()
+    IL_0105:  nop
+//000045:             Invalidate();
+    IL_0106:  ldarg.0
+    IL_0107:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::Invalidate()
+    IL_010c:  nop
+//000046:         }
+    IL_010d:  ret
+  } // end of method MainForm::SetupPoints
+
+  .method private hidebysig instance void 
+          ClearPointValues() cil managed
+  {
+    // Code size       138 (0x8a)
+    .maxstack  4
+    .locals init ([0] class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint point,
+             [1] class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint[] CS$0$0000,
+             [2] class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint[] CS$6$0001,
+             [3] int32 CS$7$0002,
+             [4] object[] CS$0$0003,
+             [5] bool CS$4$0004)
+//000047: 
+//000048:         private void ClearPointValues()
+//000049:         {
+    IL_0000:  nop
+//000050:             foreach (var point in new[] { _serial, _parallel })
+    IL_0001:  nop
+    IL_0002:  ldc.i4.2
+    IL_0003:  newarr     [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint
+    IL_0008:  stloc.1
+    IL_0009:  ldloc.1
+    IL_000a:  ldc.i4.0
+    IL_000b:  ldarg.0
+    IL_000c:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint NQueens_CSharp.MainForm::_serial
+    IL_0011:  stelem.ref
+    IL_0012:  ldloc.1
+    IL_0013:  ldc.i4.1
+    IL_0014:  ldarg.0
+    IL_0015:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint NQueens_CSharp.MainForm::_parallel
+    IL_001a:  stelem.ref
+    IL_001b:  ldloc.1
+    IL_001c:  stloc.2
+//000051:             {
+//000052:                 point.SetValueY(0);
+//000053:                 point.ToolTip = "";
+//000054:                 point.Label = "";
+//000055:                 point.Font = new System.Drawing.Font(point.Font, System.Drawing.FontStyle.Bold);
+//000056:             }
+//000057:             chart1.Invalidate();
+//000058:         }
+//000059: 
+//000060:         private void btnSolve_Click(object sender, EventArgs e)
+//000061:         {
+//000062:             int numQueens = 0;
+//000063:             if (!Int32.TryParse(cbNumQueens.Text, out numQueens)) return;
+//000064: 
+//000065:             btnSolve.Enabled = false;
+//000066:             progressBar1.Visible = true;
+//000067: 
+//000068:             ClearPointValues();
+//000069:             _max = 0;
+//000070: 
+//000071:             Task.Factory.StartNew(() =>
+//000072:             {
+//000073:                 TimeSpan elapsed;
+//000074: 
+//000075:                 elapsed = Time(() => NQueensSolver.Sequential(numQueens));
+//000076:                 SetPoint(_serial, elapsed.TotalSeconds);
+//000077: 
+//000078:                 elapsed = Time(() => NQueensSolver.Parallel(numQueens));
+//000079:                 SetPoint(_parallel, elapsed.TotalSeconds);
+//000080: 
+//000081:             }, TaskCreationOptions.AttachedToParent).ContinueWith(t =>
+//000082:             {
+//000083:                 progressBar1.Visible = false;
+//000084:                 btnSolve.Enabled = true;
+//000085:                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+//000086:             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+//000087:         }
+//000088: 
+//000089:         private void SetPoint(DataPoint point, double seconds)
+//000090:         {
+//000091:             Task.Factory.StartNew(() =>
+//000092:             {
+//000093:                 if (seconds > _max)
+//000094:                 {
+//000095:                     _max = seconds;
+//000096:                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+//000097:                 }
+//000098:                 point.SetValueY(seconds);
+//000099:                 point.ToolTip = seconds.ToString("F3");
+//000100:                 point.Label = string.Format("{0:F3} secs  ({1:F2}x)", seconds, (_max / seconds));
+//000101:                 chart1.Invalidate();
+//000102:             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+//000103:         }
+//000104: 
+//000105:         static TimeSpan Time(Action action)
+//000106:         {
+//000107:             var sw = Stopwatch.StartNew();
+//000108:             action();
+//000109:             return sw.Elapsed;
+//000110:         }
+//000111:     }
+//000112: }
+    IL_001d:  ldc.i4.0
+    IL_001e:  stloc.3
+    IL_001f:  br.s       IL_0071
+
+//000050:             foreach (var point in new[] { _serial, _parallel })
+    IL_0021:  ldloc.2
+    IL_0022:  ldloc.3
+    IL_0023:  ldelem.ref
+    IL_0024:  stloc.0
+//000051:             {
+    IL_0025:  nop
+//000052:                 point.SetValueY(0);
+    IL_0026:  ldloc.0
+    IL_0027:  ldc.i4.1
+    IL_0028:  newarr     [mscorlib]System.Object
+    IL_002d:  stloc.s    CS$0$0003
+    IL_002f:  ldloc.s    CS$0$0003
+    IL_0031:  ldc.i4.0
+    IL_0032:  ldc.i4.0
+    IL_0033:  box        [mscorlib]System.Int32
+    IL_0038:  stelem.ref
+    IL_0039:  ldloc.s    CS$0$0003
+    IL_003b:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint::SetValueY(object[])
+    IL_0040:  nop
+//000053:                 point.ToolTip = "";
+    IL_0041:  ldloc.0
+    IL_0042:  ldstr      ""
+    IL_0047:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_ToolTip(string)
+    IL_004c:  nop
+//000054:                 point.Label = "";
+    IL_004d:  ldloc.0
+    IL_004e:  ldstr      ""
+    IL_0053:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_Label(string)
+    IL_0058:  nop
+//000055:                 point.Font = new System.Drawing.Font(point.Font, System.Drawing.FontStyle.Bold);
+    IL_0059:  ldloc.0
+    IL_005a:  ldloc.0
+    IL_005b:  callvirt   instance class [System.Drawing]System.Drawing.Font [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::get_Font()
+    IL_0060:  ldc.i4.1
+    IL_0061:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(class [System.Drawing]System.Drawing.Font,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle)
+    IL_0066:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_006b:  nop
+//000056:             }
+    IL_006c:  nop
+//000057:             chart1.Invalidate();
+//000058:         }
+//000059: 
+//000060:         private void btnSolve_Click(object sender, EventArgs e)
+//000061:         {
+//000062:             int numQueens = 0;
+//000063:             if (!Int32.TryParse(cbNumQueens.Text, out numQueens)) return;
+//000064: 
+//000065:             btnSolve.Enabled = false;
+//000066:             progressBar1.Visible = true;
+//000067: 
+//000068:             ClearPointValues();
+//000069:             _max = 0;
+//000070: 
+//000071:             Task.Factory.StartNew(() =>
+//000072:             {
+//000073:                 TimeSpan elapsed;
+//000074: 
+//000075:                 elapsed = Time(() => NQueensSolver.Sequential(numQueens));
+//000076:                 SetPoint(_serial, elapsed.TotalSeconds);
+//000077: 
+//000078:                 elapsed = Time(() => NQueensSolver.Parallel(numQueens));
+//000079:                 SetPoint(_parallel, elapsed.TotalSeconds);
+//000080: 
+//000081:             }, TaskCreationOptions.AttachedToParent).ContinueWith(t =>
+//000082:             {
+//000083:                 progressBar1.Visible = false;
+//000084:                 btnSolve.Enabled = true;
+//000085:                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+//000086:             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+//000087:         }
+//000088: 
+//000089:         private void SetPoint(DataPoint point, double seconds)
+//000090:         {
+//000091:             Task.Factory.StartNew(() =>
+//000092:             {
+//000093:                 if (seconds > _max)
+//000094:                 {
+//000095:                     _max = seconds;
+//000096:                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+//000097:                 }
+//000098:                 point.SetValueY(seconds);
+//000099:                 point.ToolTip = seconds.ToString("F3");
+//000100:                 point.Label = string.Format("{0:F3} secs  ({1:F2}x)", seconds, (_max / seconds));
+//000101:                 chart1.Invalidate();
+//000102:             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+//000103:         }
+//000104: 
+//000105:         static TimeSpan Time(Action action)
+//000106:         {
+//000107:             var sw = Stopwatch.StartNew();
+//000108:             action();
+//000109:             return sw.Elapsed;
+//000110:         }
+//000111:     }
+//000112: }
+    IL_006d:  ldloc.3
+    IL_006e:  ldc.i4.1
+    IL_006f:  add
+    IL_0070:  stloc.3
+//000050:             foreach (var point in new[] { _serial, _parallel })
+    IL_0071:  ldloc.3
+    IL_0072:  ldloc.2
+    IL_0073:  ldlen
+    IL_0074:  conv.i4
+    IL_0075:  clt
+    IL_0077:  stloc.s    CS$4$0004
+//000051:             {
+//000052:                 point.SetValueY(0);
+//000053:                 point.ToolTip = "";
+//000054:                 point.Label = "";
+//000055:                 point.Font = new System.Drawing.Font(point.Font, System.Drawing.FontStyle.Bold);
+//000056:             }
+//000057:             chart1.Invalidate();
+//000058:         }
+//000059: 
+//000060:         private void btnSolve_Click(object sender, EventArgs e)
+//000061:         {
+//000062:             int numQueens = 0;
+//000063:             if (!Int32.TryParse(cbNumQueens.Text, out numQueens)) return;
+//000064: 
+//000065:             btnSolve.Enabled = false;
+//000066:             progressBar1.Visible = true;
+//000067: 
+//000068:             ClearPointValues();
+//000069:             _max = 0;
+//000070: 
+//000071:             Task.Factory.StartNew(() =>
+//000072:             {
+//000073:                 TimeSpan elapsed;
+//000074: 
+//000075:                 elapsed = Time(() => NQueensSolver.Sequential(numQueens));
+//000076:                 SetPoint(_serial, elapsed.TotalSeconds);
+//000077: 
+//000078:                 elapsed = Time(() => NQueensSolver.Parallel(numQueens));
+//000079:                 SetPoint(_parallel, elapsed.TotalSeconds);
+//000080: 
+//000081:             }, TaskCreationOptions.AttachedToParent).ContinueWith(t =>
+//000082:             {
+//000083:                 progressBar1.Visible = false;
+//000084:                 btnSolve.Enabled = true;
+//000085:                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+//000086:             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+//000087:         }
+//000088: 
+//000089:         private void SetPoint(DataPoint point, double seconds)
+//000090:         {
+//000091:             Task.Factory.StartNew(() =>
+//000092:             {
+//000093:                 if (seconds > _max)
+//000094:                 {
+//000095:                     _max = seconds;
+//000096:                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+//000097:                 }
+//000098:                 point.SetValueY(seconds);
+//000099:                 point.ToolTip = seconds.ToString("F3");
+//000100:                 point.Label = string.Format("{0:F3} secs  ({1:F2}x)", seconds, (_max / seconds));
+//000101:                 chart1.Invalidate();
+//000102:             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+//000103:         }
+//000104: 
+//000105:         static TimeSpan Time(Action action)
+//000106:         {
+//000107:             var sw = Stopwatch.StartNew();
+//000108:             action();
+//000109:             return sw.Elapsed;
+//000110:         }
+//000111:     }
+//000112: }
+    IL_0079:  ldloc.s    CS$4$0004
+    IL_007b:  brtrue.s   IL_0021
+
+//000057:             chart1.Invalidate();
+    IL_007d:  ldarg.0
+    IL_007e:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_0083:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::Invalidate()
+    IL_0088:  nop
+//000058:         }
+    IL_0089:  ret
+  } // end of method MainForm::ClearPointValues
+
+  .method private hidebysig instance void 
+          btnSolve_Click(object sender,
+                         class [mscorlib]System.EventArgs e) cil managed
+  {
+    // Code size       152 (0x98)
+    .maxstack  5
+    .locals init ([0] class NQueens_CSharp.MainForm/'<>c__DisplayClass4' 'CS$<>8__locals5',
+             [1] bool CS$4$0000)
+//000059: 
+//000060:         private void btnSolve_Click(object sender, EventArgs e)
+//000061:         {
+//000062:             int numQueens = 0;
+//000063:             if (!Int32.TryParse(cbNumQueens.Text, out numQueens)) return;
+//000064: 
+//000065:             btnSolve.Enabled = false;
+//000066:             progressBar1.Visible = true;
+//000067: 
+//000068:             ClearPointValues();
+//000069:             _max = 0;
+//000070: 
+//000071:             Task.Factory.StartNew(() =>
+//000072:             {
+//000073:                 TimeSpan elapsed;
+//000074: 
+//000075:                 elapsed = Time(() => NQueensSolver.Sequential(numQueens));
+//000076:                 SetPoint(_serial, elapsed.TotalSeconds);
+//000077: 
+//000078:                 elapsed = Time(() => NQueensSolver.Parallel(numQueens));
+//000079:                 SetPoint(_parallel, elapsed.TotalSeconds);
+//000080: 
+//000081:             }, TaskCreationOptions.AttachedToParent).ContinueWith(t =>
+//000082:             {
+//000083:                 progressBar1.Visible = false;
+//000084:                 btnSolve.Enabled = true;
+//000085:                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+//000086:             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+//000087:         }
+//000088: 
+//000089:         private void SetPoint(DataPoint point, double seconds)
+//000090:         {
+//000091:             Task.Factory.StartNew(() =>
+//000092:             {
+//000093:                 if (seconds > _max)
+//000094:                 {
+//000095:                     _max = seconds;
+//000096:                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+//000097:                 }
+//000098:                 point.SetValueY(seconds);
+//000099:                 point.ToolTip = seconds.ToString("F3");
+//000100:                 point.Label = string.Format("{0:F3} secs  ({1:F2}x)", seconds, (_max / seconds));
+//000101:                 chart1.Invalidate();
+//000102:             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+//000103:         }
+//000104: 
+//000105:         static TimeSpan Time(Action action)
+//000106:         {
+//000107:             var sw = Stopwatch.StartNew();
+//000108:             action();
+//000109:             return sw.Elapsed;
+//000110:         }
+//000111:     }
+//000112: }
+    IL_0000:  newobj     instance void NQueens_CSharp.MainForm/'<>c__DisplayClass4'::.ctor()
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldarg.0
+    IL_0008:  stfld      class NQueens_CSharp.MainForm NQueens_CSharp.MainForm/'<>c__DisplayClass4'::'<>4__this'
+//000061:         {
+    IL_000d:  nop
+//000062:             int numQueens = 0;
+    IL_000e:  ldloc.0
+    IL_000f:  ldc.i4.0
+    IL_0010:  stfld      int32 NQueens_CSharp.MainForm/'<>c__DisplayClass4'::numQueens
+//000063:             if (!Int32.TryParse(cbNumQueens.Text, out numQueens)) return;
+    IL_0015:  ldarg.0
+    IL_0016:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_CSharp.MainForm::cbNumQueens
+    IL_001b:  callvirt   instance string [System.Windows.Forms]System.Windows.Forms.Control::get_Text()
+    IL_0020:  ldloc.0
+    IL_0021:  ldflda     int32 NQueens_CSharp.MainForm/'<>c__DisplayClass4'::numQueens
+    IL_0026:  call       bool [mscorlib]System.Int32::TryParse(string,
+                                                               int32&)
+    IL_002b:  stloc.1
+//000064: 
+//000065:             btnSolve.Enabled = false;
+//000066:             progressBar1.Visible = true;
+//000067: 
+//000068:             ClearPointValues();
+//000069:             _max = 0;
+//000070: 
+//000071:             Task.Factory.StartNew(() =>
+//000072:             {
+//000073:                 TimeSpan elapsed;
+//000074: 
+//000075:                 elapsed = Time(() => NQueensSolver.Sequential(numQueens));
+//000076:                 SetPoint(_serial, elapsed.TotalSeconds);
+//000077: 
+//000078:                 elapsed = Time(() => NQueensSolver.Parallel(numQueens));
+//000079:                 SetPoint(_parallel, elapsed.TotalSeconds);
+//000080: 
+//000081:             }, TaskCreationOptions.AttachedToParent).ContinueWith(t =>
+//000082:             {
+//000083:                 progressBar1.Visible = false;
+//000084:                 btnSolve.Enabled = true;
+//000085:                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+//000086:             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+//000087:         }
+//000088: 
+//000089:         private void SetPoint(DataPoint point, double seconds)
+//000090:         {
+//000091:             Task.Factory.StartNew(() =>
+//000092:             {
+//000093:                 if (seconds > _max)
+//000094:                 {
+//000095:                     _max = seconds;
+//000096:                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+//000097:                 }
+//000098:                 point.SetValueY(seconds);
+//000099:                 point.ToolTip = seconds.ToString("F3");
+//000100:                 point.Label = string.Format("{0:F3} secs  ({1:F2}x)", seconds, (_max / seconds));
+//000101:                 chart1.Invalidate();
+//000102:             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+//000103:         }
+//000104: 
+//000105:         static TimeSpan Time(Action action)
+//000106:         {
+//000107:             var sw = Stopwatch.StartNew();
+//000108:             action();
+//000109:             return sw.Elapsed;
+//000110:         }
+//000111:     }
+//000112: }
+    IL_002c:  ldloc.1
+    IL_002d:  brtrue.s   IL_0031
+
+//000063:             if (!Int32.TryParse(cbNumQueens.Text, out numQueens)) return;
+    IL_002f:  br.s       IL_0097
+
+//000064: 
+//000065:             btnSolve.Enabled = false;
+    IL_0031:  ldarg.0
+    IL_0032:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_CSharp.MainForm::btnSolve
+    IL_0037:  ldc.i4.0
+    IL_0038:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Enabled(bool)
+    IL_003d:  nop
+//000066:             progressBar1.Visible = true;
+    IL_003e:  ldarg.0
+    IL_003f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_CSharp.MainForm::progressBar1
+    IL_0044:  ldc.i4.1
+    IL_0045:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Visible(bool)
+    IL_004a:  nop
+//000067: 
+//000068:             ClearPointValues();
+    IL_004b:  ldarg.0
+    IL_004c:  call       instance void NQueens_CSharp.MainForm::ClearPointValues()
+    IL_0051:  nop
+//000069:             _max = 0;
+    IL_0052:  ldarg.0
+    IL_0053:  ldc.r8     0.0
+    IL_005c:  stfld      float64 NQueens_CSharp.MainForm::_max
+//000070: 
+//000071:             Task.Factory.StartNew(() =>
+    IL_0061:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_0066:  ldloc.0
+    IL_0067:  ldftn      instance void NQueens_CSharp.MainForm/'<>c__DisplayClass4'::'<btnSolve_Click>b__1'()
+    IL_006d:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_0072:  ldc.i4.4
+    IL_0073:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.Tasks.TaskCreationOptions)
+    IL_0078:  ldarg.0
+    IL_0079:  ldftn      instance void NQueens_CSharp.MainForm::'<btnSolve_Click>b__0'(class [mscorlib]System.Threading.Tasks.Task)
+    IL_007f:  newobj     instance void class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task>::.ctor(object,
+                                                                                                                           native int)
+    IL_0084:  call       valuetype [mscorlib]System.Threading.CancellationToken [mscorlib]System.Threading.CancellationToken::get_None()
+    IL_0089:  ldc.i4.4
+    IL_008a:  ldarg.0
+    IL_008b:  ldfld      class [mscorlib]System.Threading.Tasks.TaskScheduler NQueens_CSharp.MainForm::_uiScheduler
+    IL_0090:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.Task::ContinueWith(class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task>,
+                                                                                                                                  valuetype [mscorlib]System.Threading.CancellationToken,
+                                                                                                                                  valuetype [mscorlib]System.Threading.Tasks.TaskContinuationOptions,
+                                                                                                                                  class [mscorlib]System.Threading.Tasks.TaskScheduler)
+    IL_0095:  pop
+//000072:             {
+//000073:                 TimeSpan elapsed;
+//000074: 
+//000075:                 elapsed = Time(() => NQueensSolver.Sequential(numQueens));
+//000076:                 SetPoint(_serial, elapsed.TotalSeconds);
+//000077: 
+//000078:                 elapsed = Time(() => NQueensSolver.Parallel(numQueens));
+//000079:                 SetPoint(_parallel, elapsed.TotalSeconds);
+//000080: 
+//000081:             }, TaskCreationOptions.AttachedToParent).ContinueWith(t =>
+//000082:             {
+//000083:                 progressBar1.Visible = false;
+//000084:                 btnSolve.Enabled = true;
+//000085:                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+//000086:             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+//000087:         }
+    IL_0096:  nop
+    IL_0097:  ret
+  } // end of method MainForm::btnSolve_Click
+
+  .method private hidebysig instance void 
+          SetPoint(class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint point,
+                   float64 seconds) cil managed
+  {
+    // Code size       65 (0x41)
+    .maxstack  5
+    .locals init ([0] class NQueens_CSharp.MainForm/'<>c__DisplayClass7' 'CS$<>8__locals8')
+//000088: 
+//000089:         private void SetPoint(DataPoint point, double seconds)
+//000090:         {
+//000091:             Task.Factory.StartNew(() =>
+//000092:             {
+//000093:                 if (seconds > _max)
+//000094:                 {
+//000095:                     _max = seconds;
+//000096:                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+//000097:                 }
+//000098:                 point.SetValueY(seconds);
+//000099:                 point.ToolTip = seconds.ToString("F3");
+//000100:                 point.Label = string.Format("{0:F3} secs  ({1:F2}x)", seconds, (_max / seconds));
+//000101:                 chart1.Invalidate();
+//000102:             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+//000103:         }
+//000104: 
+//000105:         static TimeSpan Time(Action action)
+//000106:         {
+//000107:             var sw = Stopwatch.StartNew();
+//000108:             action();
+//000109:             return sw.Elapsed;
+//000110:         }
+//000111:     }
+//000112: }
+    IL_0000:  newobj     instance void NQueens_CSharp.MainForm/'<>c__DisplayClass7'::.ctor()
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldarg.1
+    IL_0008:  stfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint NQueens_CSharp.MainForm/'<>c__DisplayClass7'::point
+    IL_000d:  ldloc.0
+    IL_000e:  ldarg.2
+    IL_000f:  stfld      float64 NQueens_CSharp.MainForm/'<>c__DisplayClass7'::seconds
+    IL_0014:  ldloc.0
+    IL_0015:  ldarg.0
+    IL_0016:  stfld      class NQueens_CSharp.MainForm NQueens_CSharp.MainForm/'<>c__DisplayClass7'::'<>4__this'
+//000090:         {
+    IL_001b:  nop
+//000091:             Task.Factory.StartNew(() =>
+    IL_001c:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_0021:  ldloc.0
+    IL_0022:  ldftn      instance void NQueens_CSharp.MainForm/'<>c__DisplayClass7'::'<SetPoint>b__6'()
+    IL_0028:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_002d:  call       valuetype [mscorlib]System.Threading.CancellationToken [mscorlib]System.Threading.CancellationToken::get_None()
+    IL_0032:  ldc.i4.4
+    IL_0033:  ldarg.0
+    IL_0034:  ldfld      class [mscorlib]System.Threading.Tasks.TaskScheduler NQueens_CSharp.MainForm::_uiScheduler
+    IL_0039:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.CancellationToken,
+                                                                                                                                     valuetype [mscorlib]System.Threading.Tasks.TaskCreationOptions,
+                                                                                                                                     class [mscorlib]System.Threading.Tasks.TaskScheduler)
+    IL_003e:  pop
+//000092:             {
+//000093:                 if (seconds > _max)
+//000094:                 {
+//000095:                     _max = seconds;
+//000096:                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+//000097:                 }
+//000098:                 point.SetValueY(seconds);
+//000099:                 point.ToolTip = seconds.ToString("F3");
+//000100:                 point.Label = string.Format("{0:F3} secs  ({1:F2}x)", seconds, (_max / seconds));
+//000101:                 chart1.Invalidate();
+//000102:             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+//000103:         }
+    IL_003f:  nop
+    IL_0040:  ret
+  } // end of method MainForm::SetPoint
+
+  .method private hidebysig static valuetype [mscorlib]System.TimeSpan 
+          Time(class [mscorlib]System.Action action) cil managed
+  {
+    // Code size       25 (0x19)
+    .maxstack  1
+    .locals init ([0] class [System]System.Diagnostics.Stopwatch sw,
+             [1] valuetype [mscorlib]System.TimeSpan CS$1$0000)
+//000104: 
+//000105:         static TimeSpan Time(Action action)
+//000106:         {
+    IL_0000:  nop
+//000107:             var sw = Stopwatch.StartNew();
+    IL_0001:  call       class [System]System.Diagnostics.Stopwatch [System]System.Diagnostics.Stopwatch::StartNew()
+    IL_0006:  stloc.0
+//000108:             action();
+    IL_0007:  ldarg.0
+    IL_0008:  callvirt   instance void [mscorlib]System.Action::Invoke()
+    IL_000d:  nop
+//000109:             return sw.Elapsed;
+    IL_000e:  ldloc.0
+    IL_000f:  callvirt   instance valuetype [mscorlib]System.TimeSpan [System]System.Diagnostics.Stopwatch::get_Elapsed()
+    IL_0014:  stloc.1
+    IL_0015:  br.s       IL_0017
+
+//000110:         }
+    IL_0017:  ldloc.1
+    IL_0018:  ret
+  } // end of method MainForm::Time
+
+  .method family hidebysig virtual instance void 
+          Dispose(bool disposing) cil managed
+  {
+    // Code size       43 (0x2b)
+    .maxstack  2
+    .locals init ([0] bool CS$4$0000)
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\MainForm.Designer.cs' 
+//000015:         {
+    IL_0000:  nop
+//000016:             if (disposing && (components != null))
+    IL_0001:  ldarg.1
+    IL_0002:  brfalse.s  IL_000f
+
+    IL_0004:  ldarg.0
+    IL_0005:  ldfld      class [System]System.ComponentModel.IContainer NQueens_CSharp.MainForm::components
+    IL_000a:  ldnull
+    IL_000b:  ceq
+    IL_000d:  br.s       IL_0010
+
+    IL_000f:  ldc.i4.1
+    IL_0010:  stloc.0
+//000017:             {
+//000018:                 components.Dispose();
+//000019:             }
+//000020:             base.Dispose(disposing);
+//000021:         }
+//000022: 
+//000023:         #region Windows Form Designer generated code
+//000024: 
+//000025:         /// <summary>
+//000026:         /// Required method for Designer support - do not modify
+//000027:         /// the contents of this method with the code editor.
+//000028:         /// </summary>
+//000029:         private void InitializeComponent()
+//000030:         {
+//000031:             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+//000032:             System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+//000033:             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+//000034:             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+//000035:             this.btnSolve = new System.Windows.Forms.Button();
+//000036:             this.cbNumQueens = new System.Windows.Forms.ComboBox();
+//000037:             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+//000038:             this.SuspendLayout();
+//000039:             // 
+//000040:             // chart1
+//000041:             // 
+//000042:             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+//000043:                         | System.Windows.Forms.AnchorStyles.Left)
+//000044:                         | System.Windows.Forms.AnchorStyles.Right)));
+//000045:             this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
+//000046:             this.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter;
+//000047:             chartArea6.AxisX.IsLabelAutoFit = false;
+//000048:             chartArea6.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+//000049:             chartArea6.AxisY.IsLabelAutoFit = false;
+//000050:             chartArea6.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+//000051:             chartArea6.AxisY.LabelStyle.Format = "F2";
+//000052:             chartArea6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+//000053:             chartArea6.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
+//000054:             chartArea6.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+//000055:             chartArea6.Name = "ChartArea1";
+//000056:             this.chart1.ChartAreas.Add(chartArea6);
+//000057:             this.chart1.Location = new System.Drawing.Point(13, 59);
+//000058:             this.chart1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+//000059:             this.chart1.Name = "chart1";
+//000060:             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+//000061:             series6.BackSecondaryColor = System.Drawing.Color.MintCream;
+//000062:             series6.ChartArea = "ChartArea1";
+//000063:             series6.CustomProperties = "DrawingStyle=Cylinder, LabelStyle=Top";
+//000064:             series6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+//000065:             series6.Name = "chartSeries1";
+//000066:             series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+//000067:             series6.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+//000068:             this.chart1.Series.Add(series6);
+//000069:             this.chart1.Size = new System.Drawing.Size(691, 417);
+//000070:             this.chart1.TabIndex = 1;
+//000071:             this.chart1.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
+//000072:             // 
+//000073:             // progressBar1
+//000074:             // 
+//000075:             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+//000076:                         | System.Windows.Forms.AnchorStyles.Right)));
+//000077:             this.progressBar1.Location = new System.Drawing.Point(197, 14);
+//000078:             this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+//000079:             this.progressBar1.Name = "progressBar1";
+//000080:             this.progressBar1.Size = new System.Drawing.Size(507, 35);
+//000081:             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+//000082:             this.progressBar1.TabIndex = 5;
+//000083:             this.progressBar1.Visible = false;
+//000084:             // 
+//000085:             // btnSolve
+//000086:             // 
+//000087:             this.btnSolve.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+//000088:             this.btnSolve.Location = new System.Drawing.Point(77, 14);
+//000089:             this.btnSolve.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+//000090:             this.btnSolve.Name = "btnSolve";
+//000091:             this.btnSolve.Size = new System.Drawing.Size(112, 35);
+//000092:             this.btnSolve.TabIndex = 4;
+//000093:             this.btnSolve.Text = "Solve";
+//000094:             this.btnSolve.UseVisualStyleBackColor = true;
+//000095:             this.btnSolve.Click += new System.EventHandler(this.btnSolve_Click);
+//000096:             // 
+//000097:             // cbNumQueens
+//000098:             // 
+//000099:             this.cbNumQueens.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+//000100:             this.cbNumQueens.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+//000101:             this.cbNumQueens.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+//000102:             this.cbNumQueens.FormattingEnabled = true;
+//000103:             this.cbNumQueens.Items.AddRange(new object[] {
+//000104:             "8",
+//000105:             "9",
+//000106:             "10",
+//000107:             "11",
+//000108:             "12",
+//000109:             "13",
+//000110:             "14",
+//000111:             "15"});
+//000112:             this.cbNumQueens.Location = new System.Drawing.Point(13, 14);
+//000113:             this.cbNumQueens.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+//000114:             this.cbNumQueens.Name = "cbNumQueens";
+//000115:             this.cbNumQueens.Size = new System.Drawing.Size(56, 32);
+//000116:             this.cbNumQueens.TabIndex = 6;
+//000117:             this.cbNumQueens.Text = "12";
+//000118:             // 
+//000119:             // MainForm
+//000120:             // 
+//000121:             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+//000122:             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+//000123:             this.ClientSize = new System.Drawing.Size(717, 490);
+//000124:             this.Controls.Add(this.cbNumQueens);
+//000125:             this.Controls.Add(this.progressBar1);
+//000126:             this.Controls.Add(this.btnSolve);
+//000127:             this.Controls.Add(this.chart1);
+//000128:             this.Name = "MainForm";
+//000129:             this.Text = "NQueens";
+//000130:             this.Load += new System.EventHandler(this.Form1_Load);
+//000131:             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+//000132:             this.ResumeLayout(false);
+//000133: 
+//000134:         }
+//000135: 
+//000136:         #endregion
+//000137: 
+//000138:         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+//000139:         private System.Windows.Forms.ProgressBar progressBar1;
+//000140:         private System.Windows.Forms.Button btnSolve;
+//000141:         private System.Windows.Forms.ComboBox cbNumQueens;
+//000142:     }
+//000143: }
+//000144: 
+    IL_0011:  ldloc.0
+    IL_0012:  brtrue.s   IL_0022
+
+//000017:             {
+    IL_0014:  nop
+//000018:                 components.Dispose();
+    IL_0015:  ldarg.0
+    IL_0016:  ldfld      class [System]System.ComponentModel.IContainer NQueens_CSharp.MainForm::components
+    IL_001b:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+    IL_0020:  nop
+//000019:             }
+    IL_0021:  nop
+//000020:             base.Dispose(disposing);
+    IL_0022:  ldarg.0
+    IL_0023:  ldarg.1
+    IL_0024:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::Dispose(bool)
+    IL_0029:  nop
+//000021:         }
+    IL_002a:  ret
+  } // end of method MainForm::Dispose
+
+  .method private hidebysig instance void 
+          InitializeComponent() cil managed
+  {
+    // Code size       1329 (0x531)
+    .maxstack  7
+    .locals init ([0] class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6,
+             [1] class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series series6,
+             [2] object[] CS$0$0000)
+//000022: 
+//000023:         #region Windows Form Designer generated code
+//000024: 
+//000025:         /// <summary>
+//000026:         /// Required method for Designer support - do not modify
+//000027:         /// the contents of this method with the code editor.
+//000028:         /// </summary>
+//000029:         private void InitializeComponent()
+//000030:         {
+    IL_0000:  nop
+//000031:             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+    IL_0001:  newobj     instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::.ctor()
+    IL_0006:  stloc.0
+//000032:             System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+    IL_0007:  newobj     instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::.ctor()
+    IL_000c:  stloc.1
+//000033:             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+    IL_000d:  ldarg.0
+    IL_000e:  newobj     instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::.ctor()
+    IL_0013:  stfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+//000034:             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+    IL_0018:  ldarg.0
+    IL_0019:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.ProgressBar::.ctor()
+    IL_001e:  stfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_CSharp.MainForm::progressBar1
+//000035:             this.btnSolve = new System.Windows.Forms.Button();
+    IL_0023:  ldarg.0
+    IL_0024:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Button::.ctor()
+    IL_0029:  stfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_CSharp.MainForm::btnSolve
+//000036:             this.cbNumQueens = new System.Windows.Forms.ComboBox();
+    IL_002e:  ldarg.0
+    IL_002f:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::.ctor()
+    IL_0034:  stfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_CSharp.MainForm::cbNumQueens
+//000037:             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+    IL_0039:  ldarg.0
+    IL_003a:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_003f:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::BeginInit()
+    IL_0044:  nop
+//000038:             this.SuspendLayout();
+    IL_0045:  ldarg.0
+    IL_0046:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::SuspendLayout()
+    IL_004b:  nop
+//000039:             // 
+//000040:             // chart1
+//000041:             // 
+//000042:             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+    IL_004c:  ldarg.0
+    IL_004d:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_0052:  ldc.i4.s   15
+    IL_0054:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_0059:  nop
+//000043:                         | System.Windows.Forms.AnchorStyles.Left)
+//000044:                         | System.Windows.Forms.AnchorStyles.Right)));
+//000045:             this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
+    IL_005a:  ldarg.0
+    IL_005b:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_0060:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_WhiteSmoke()
+    IL_0065:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_BackColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_006a:  nop
+//000046:             this.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter;
+    IL_006b:  ldarg.0
+    IL_006c:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_0071:  ldc.i4.6
+    IL_0072:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::set_BackGradientStyle(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.GradientStyle)
+    IL_0077:  nop
+//000047:             chartArea6.AxisX.IsLabelAutoFit = false;
+    IL_0078:  ldloc.0
+    IL_0079:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisX()
+    IL_007e:  ldc.i4.0
+    IL_007f:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::set_IsLabelAutoFit(bool)
+    IL_0084:  nop
+//000048:             chartArea6.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+    IL_0085:  ldloc.0
+    IL_0086:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisX()
+    IL_008b:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::get_LabelStyle()
+    IL_0090:  ldstr      "Microsoft Sans Serif"
+    IL_0095:  ldc.r4     12.
+    IL_009a:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32)
+    IL_009f:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_00a4:  nop
+//000049:             chartArea6.AxisY.IsLabelAutoFit = false;
+    IL_00a5:  ldloc.0
+    IL_00a6:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisY()
+    IL_00ab:  ldc.i4.0
+    IL_00ac:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::set_IsLabelAutoFit(bool)
+    IL_00b1:  nop
+//000050:             chartArea6.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+    IL_00b2:  ldloc.0
+    IL_00b3:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisY()
+    IL_00b8:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::get_LabelStyle()
+    IL_00bd:  ldstr      "Microsoft Sans Serif"
+    IL_00c2:  ldc.r4     12.
+    IL_00c7:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32)
+    IL_00cc:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_00d1:  nop
+//000051:             chartArea6.AxisY.LabelStyle.Format = "F2";
+    IL_00d2:  ldloc.0
+    IL_00d3:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisY()
+    IL_00d8:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::get_LabelStyle()
+    IL_00dd:  ldstr      "F2"
+    IL_00e2:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle::set_Format(string)
+    IL_00e7:  nop
+//000052:             chartArea6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+    IL_00e8:  ldloc.0
+    IL_00e9:  ldc.i4     0xff
+    IL_00ee:  ldc.i4     0xff
+    IL_00f3:  ldc.i4     0xc0
+    IL_00f8:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::FromArgb(int32,
+                                                                                                                       int32,
+                                                                                                                       int32)
+    IL_00fd:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::set_BackColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_0102:  nop
+//000053:             chartArea6.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
+    IL_0103:  ldloc.0
+    IL_0104:  ldc.i4.4
+    IL_0105:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::set_BackGradientStyle(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.GradientStyle)
+    IL_010a:  nop
+//000054:             chartArea6.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+    IL_010b:  ldloc.0
+    IL_010c:  ldc.i4     0xff
+    IL_0111:  ldc.i4     0xe0
+    IL_0116:  ldc.i4     0xc0
+    IL_011b:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::FromArgb(int32,
+                                                                                                                       int32,
+                                                                                                                       int32)
+    IL_0120:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::set_BackSecondaryColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_0125:  nop
+//000055:             chartArea6.Name = "ChartArea1";
+    IL_0126:  ldloc.0
+    IL_0127:  ldstr      "ChartArea1"
+    IL_012c:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartNamedElement::set_Name(string)
+    IL_0131:  nop
+//000056:             this.chart1.ChartAreas.Add(chartArea6);
+    IL_0132:  ldarg.0
+    IL_0133:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_0138:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartAreaCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_ChartAreas()
+    IL_013d:  ldloc.0
+    IL_013e:  callvirt   instance void class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea>::Add(!0)
+    IL_0143:  nop
+//000057:             this.chart1.Location = new System.Drawing.Point(13, 59);
+    IL_0144:  ldarg.0
+    IL_0145:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_014a:  ldc.i4.s   13
+    IL_014c:  ldc.i4.s   59
+    IL_014e:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0153:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0158:  nop
+//000058:             this.chart1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+    IL_0159:  ldarg.0
+    IL_015a:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_015f:  ldc.i4.4
+    IL_0160:  ldc.i4.5
+    IL_0161:  ldc.i4.4
+    IL_0162:  ldc.i4.5
+    IL_0163:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Padding::.ctor(int32,
+                                                                                                 int32,
+                                                                                                 int32,
+                                                                                                 int32)
+    IL_0168:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Margin(valuetype [System.Windows.Forms]System.Windows.Forms.Padding)
+    IL_016d:  nop
+//000059:             this.chart1.Name = "chart1";
+    IL_016e:  ldarg.0
+    IL_016f:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_0174:  ldstr      "chart1"
+    IL_0179:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_017e:  nop
+//000060:             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+    IL_017f:  ldarg.0
+    IL_0180:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_0185:  ldc.i4.0
+    IL_0186:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::set_Palette(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartColorPalette)
+    IL_018b:  nop
+//000061:             series6.BackSecondaryColor = System.Drawing.Color.MintCream;
+    IL_018c:  ldloc.1
+    IL_018d:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_MintCream()
+    IL_0192:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_BackSecondaryColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_0197:  nop
+//000062:             series6.ChartArea = "ChartArea1";
+    IL_0198:  ldloc.1
+    IL_0199:  ldstr      "ChartArea1"
+    IL_019e:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::set_ChartArea(string)
+    IL_01a3:  nop
+//000063:             series6.CustomProperties = "DrawingStyle=Cylinder, LabelStyle=Top";
+    IL_01a4:  ldloc.1
+    IL_01a5:  ldstr      "DrawingStyle=Cylinder, LabelStyle=Top"
+    IL_01aa:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_CustomProperties(string)
+    IL_01af:  nop
+//000064:             series6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+    IL_01b0:  ldloc.1
+    IL_01b1:  ldstr      "Microsoft Sans Serif"
+    IL_01b6:  ldc.r4     12.
+    IL_01bb:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32)
+    IL_01c0:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_01c5:  nop
+//000065:             series6.Name = "chartSeries1";
+    IL_01c6:  ldloc.1
+    IL_01c7:  ldstr      "chartSeries1"
+    IL_01cc:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartNamedElement::set_Name(string)
+    IL_01d1:  nop
+//000066:             series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+    IL_01d2:  ldloc.1
+    IL_01d3:  ldc.i4.7
+    IL_01d4:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::set_XValueType(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartValueType)
+    IL_01d9:  nop
+//000067:             series6.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+    IL_01da:  ldloc.1
+    IL_01db:  ldc.i4.1
+    IL_01dc:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::set_YValueType(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartValueType)
+    IL_01e1:  nop
+//000068:             this.chart1.Series.Add(series6);
+    IL_01e2:  ldarg.0
+    IL_01e3:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_01e8:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_01ed:  ldloc.1
+    IL_01ee:  callvirt   instance void class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::Add(!0)
+    IL_01f3:  nop
+//000069:             this.chart1.Size = new System.Drawing.Size(691, 417);
+    IL_01f4:  ldarg.0
+    IL_01f5:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_01fa:  ldc.i4     0x2b3
+    IL_01ff:  ldc.i4     0x1a1
+    IL_0204:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0209:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_020e:  nop
+//000070:             this.chart1.TabIndex = 1;
+    IL_020f:  ldarg.0
+    IL_0210:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_0215:  ldc.i4.1
+    IL_0216:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_021b:  nop
+//000071:             this.chart1.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
+    IL_021c:  ldarg.0
+    IL_021d:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_0222:  ldc.i4.2
+    IL_0223:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::set_TextAntiAliasingQuality(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality)
+    IL_0228:  nop
+//000072:             // 
+//000073:             // progressBar1
+//000074:             // 
+//000075:             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+    IL_0229:  ldarg.0
+    IL_022a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_CSharp.MainForm::progressBar1
+    IL_022f:  ldc.i4.s   13
+    IL_0231:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_0236:  nop
+//000076:                         | System.Windows.Forms.AnchorStyles.Right)));
+//000077:             this.progressBar1.Location = new System.Drawing.Point(197, 14);
+    IL_0237:  ldarg.0
+    IL_0238:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_CSharp.MainForm::progressBar1
+    IL_023d:  ldc.i4     0xc5
+    IL_0242:  ldc.i4.s   14
+    IL_0244:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0249:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_024e:  nop
+//000078:             this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+    IL_024f:  ldarg.0
+    IL_0250:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_CSharp.MainForm::progressBar1
+    IL_0255:  ldc.i4.4
+    IL_0256:  ldc.i4.5
+    IL_0257:  ldc.i4.4
+    IL_0258:  ldc.i4.5
+    IL_0259:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Padding::.ctor(int32,
+                                                                                                 int32,
+                                                                                                 int32,
+                                                                                                 int32)
+    IL_025e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Margin(valuetype [System.Windows.Forms]System.Windows.Forms.Padding)
+    IL_0263:  nop
+//000079:             this.progressBar1.Name = "progressBar1";
+    IL_0264:  ldarg.0
+    IL_0265:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_CSharp.MainForm::progressBar1
+    IL_026a:  ldstr      "progressBar1"
+    IL_026f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0274:  nop
+//000080:             this.progressBar1.Size = new System.Drawing.Size(507, 35);
+    IL_0275:  ldarg.0
+    IL_0276:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_CSharp.MainForm::progressBar1
+    IL_027b:  ldc.i4     0x1fb
+    IL_0280:  ldc.i4.s   35
+    IL_0282:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0287:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_028c:  nop
+//000081:             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+    IL_028d:  ldarg.0
+    IL_028e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_CSharp.MainForm::progressBar1
+    IL_0293:  ldc.i4.2
+    IL_0294:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ProgressBar::set_Style(valuetype [System.Windows.Forms]System.Windows.Forms.ProgressBarStyle)
+    IL_0299:  nop
+//000082:             this.progressBar1.TabIndex = 5;
+    IL_029a:  ldarg.0
+    IL_029b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_CSharp.MainForm::progressBar1
+    IL_02a0:  ldc.i4.5
+    IL_02a1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_02a6:  nop
+//000083:             this.progressBar1.Visible = false;
+    IL_02a7:  ldarg.0
+    IL_02a8:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_CSharp.MainForm::progressBar1
+    IL_02ad:  ldc.i4.0
+    IL_02ae:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Visible(bool)
+    IL_02b3:  nop
+//000084:             // 
+//000085:             // btnSolve
+//000086:             // 
+//000087:             this.btnSolve.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+    IL_02b4:  ldarg.0
+    IL_02b5:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_CSharp.MainForm::btnSolve
+    IL_02ba:  ldstr      "Microsoft Sans Serif"
+    IL_02bf:  ldc.r4     14.
+    IL_02c4:  ldc.i4.0
+    IL_02c5:  ldc.i4.3
+    IL_02c6:  ldc.i4.0
+    IL_02c7:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle,
+                                                                                  valuetype [System.Drawing]System.Drawing.GraphicsUnit,
+                                                                                  uint8)
+    IL_02cc:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_02d1:  nop
+//000088:             this.btnSolve.Location = new System.Drawing.Point(77, 14);
+    IL_02d2:  ldarg.0
+    IL_02d3:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_CSharp.MainForm::btnSolve
+    IL_02d8:  ldc.i4.s   77
+    IL_02da:  ldc.i4.s   14
+    IL_02dc:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_02e1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_02e6:  nop
+//000089:             this.btnSolve.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+    IL_02e7:  ldarg.0
+    IL_02e8:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_CSharp.MainForm::btnSolve
+    IL_02ed:  ldc.i4.4
+    IL_02ee:  ldc.i4.5
+    IL_02ef:  ldc.i4.4
+    IL_02f0:  ldc.i4.5
+    IL_02f1:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Padding::.ctor(int32,
+                                                                                                 int32,
+                                                                                                 int32,
+                                                                                                 int32)
+    IL_02f6:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Margin(valuetype [System.Windows.Forms]System.Windows.Forms.Padding)
+    IL_02fb:  nop
+//000090:             this.btnSolve.Name = "btnSolve";
+    IL_02fc:  ldarg.0
+    IL_02fd:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_CSharp.MainForm::btnSolve
+    IL_0302:  ldstr      "btnSolve"
+    IL_0307:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_030c:  nop
+//000091:             this.btnSolve.Size = new System.Drawing.Size(112, 35);
+    IL_030d:  ldarg.0
+    IL_030e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_CSharp.MainForm::btnSolve
+    IL_0313:  ldc.i4.s   112
+    IL_0315:  ldc.i4.s   35
+    IL_0317:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_031c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0321:  nop
+//000092:             this.btnSolve.TabIndex = 4;
+    IL_0322:  ldarg.0
+    IL_0323:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_CSharp.MainForm::btnSolve
+    IL_0328:  ldc.i4.4
+    IL_0329:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_032e:  nop
+//000093:             this.btnSolve.Text = "Solve";
+    IL_032f:  ldarg.0
+    IL_0330:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_CSharp.MainForm::btnSolve
+    IL_0335:  ldstr      "Solve"
+    IL_033a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_033f:  nop
+//000094:             this.btnSolve.UseVisualStyleBackColor = true;
+    IL_0340:  ldarg.0
+    IL_0341:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_CSharp.MainForm::btnSolve
+    IL_0346:  ldc.i4.1
+    IL_0347:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_UseVisualStyleBackColor(bool)
+    IL_034c:  nop
+//000095:             this.btnSolve.Click += new System.EventHandler(this.btnSolve_Click);
+    IL_034d:  ldarg.0
+    IL_034e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_CSharp.MainForm::btnSolve
+    IL_0353:  ldarg.0
+    IL_0354:  ldftn      instance void NQueens_CSharp.MainForm::btnSolve_Click(object,
+                                                                               class [mscorlib]System.EventArgs)
+    IL_035a:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_035f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::add_Click(class [mscorlib]System.EventHandler)
+    IL_0364:  nop
+//000096:             // 
+//000097:             // cbNumQueens
+//000098:             // 
+//000099:             this.cbNumQueens.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+    IL_0365:  ldarg.0
+    IL_0366:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_CSharp.MainForm::cbNumQueens
+    IL_036b:  ldc.i4.3
+    IL_036c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::set_AutoCompleteMode(valuetype [System.Windows.Forms]System.Windows.Forms.AutoCompleteMode)
+    IL_0371:  nop
+//000100:             this.cbNumQueens.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+    IL_0372:  ldarg.0
+    IL_0373:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_CSharp.MainForm::cbNumQueens
+    IL_0378:  ldc.i4     0x100
+    IL_037d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::set_AutoCompleteSource(valuetype [System.Windows.Forms]System.Windows.Forms.AutoCompleteSource)
+    IL_0382:  nop
+//000101:             this.cbNumQueens.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+    IL_0383:  ldarg.0
+    IL_0384:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_CSharp.MainForm::cbNumQueens
+    IL_0389:  ldstr      "Microsoft Sans Serif"
+    IL_038e:  ldc.r4     14.
+    IL_0393:  ldc.i4.0
+    IL_0394:  ldc.i4.3
+    IL_0395:  ldc.i4.0
+    IL_0396:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle,
+                                                                                  valuetype [System.Drawing]System.Drawing.GraphicsUnit,
+                                                                                  uint8)
+    IL_039b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_03a0:  nop
+//000102:             this.cbNumQueens.FormattingEnabled = true;
+    IL_03a1:  ldarg.0
+    IL_03a2:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_CSharp.MainForm::cbNumQueens
+    IL_03a7:  ldc.i4.1
+    IL_03a8:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListControl::set_FormattingEnabled(bool)
+    IL_03ad:  nop
+//000103:             this.cbNumQueens.Items.AddRange(new object[] {
+    IL_03ae:  ldarg.0
+    IL_03af:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_CSharp.MainForm::cbNumQueens
+    IL_03b4:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox/ObjectCollection [System.Windows.Forms]System.Windows.Forms.ComboBox::get_Items()
+    IL_03b9:  ldc.i4.8
+    IL_03ba:  newarr     [mscorlib]System.Object
+    IL_03bf:  stloc.2
+    IL_03c0:  ldloc.2
+    IL_03c1:  ldc.i4.0
+    IL_03c2:  ldstr      "8"
+    IL_03c7:  stelem.ref
+    IL_03c8:  ldloc.2
+    IL_03c9:  ldc.i4.1
+    IL_03ca:  ldstr      "9"
+    IL_03cf:  stelem.ref
+    IL_03d0:  ldloc.2
+    IL_03d1:  ldc.i4.2
+    IL_03d2:  ldstr      "10"
+    IL_03d7:  stelem.ref
+    IL_03d8:  ldloc.2
+    IL_03d9:  ldc.i4.3
+    IL_03da:  ldstr      "11"
+    IL_03df:  stelem.ref
+    IL_03e0:  ldloc.2
+    IL_03e1:  ldc.i4.4
+    IL_03e2:  ldstr      "12"
+    IL_03e7:  stelem.ref
+    IL_03e8:  ldloc.2
+    IL_03e9:  ldc.i4.5
+    IL_03ea:  ldstr      "13"
+    IL_03ef:  stelem.ref
+    IL_03f0:  ldloc.2
+    IL_03f1:  ldc.i4.6
+    IL_03f2:  ldstr      "14"
+    IL_03f7:  stelem.ref
+    IL_03f8:  ldloc.2
+    IL_03f9:  ldc.i4.7
+    IL_03fa:  ldstr      "15"
+    IL_03ff:  stelem.ref
+    IL_0400:  ldloc.2
+    IL_0401:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox/ObjectCollection::AddRange(object[])
+    IL_0406:  nop
+//000104:             "8",
+//000105:             "9",
+//000106:             "10",
+//000107:             "11",
+//000108:             "12",
+//000109:             "13",
+//000110:             "14",
+//000111:             "15"});
+//000112:             this.cbNumQueens.Location = new System.Drawing.Point(13, 14);
+    IL_0407:  ldarg.0
+    IL_0408:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_CSharp.MainForm::cbNumQueens
+    IL_040d:  ldc.i4.s   13
+    IL_040f:  ldc.i4.s   14
+    IL_0411:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0416:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_041b:  nop
+//000113:             this.cbNumQueens.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+    IL_041c:  ldarg.0
+    IL_041d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_CSharp.MainForm::cbNumQueens
+    IL_0422:  ldc.i4.4
+    IL_0423:  ldc.i4.5
+    IL_0424:  ldc.i4.4
+    IL_0425:  ldc.i4.5
+    IL_0426:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Padding::.ctor(int32,
+                                                                                                 int32,
+                                                                                                 int32,
+                                                                                                 int32)
+    IL_042b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Margin(valuetype [System.Windows.Forms]System.Windows.Forms.Padding)
+    IL_0430:  nop
+//000114:             this.cbNumQueens.Name = "cbNumQueens";
+    IL_0431:  ldarg.0
+    IL_0432:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_CSharp.MainForm::cbNumQueens
+    IL_0437:  ldstr      "cbNumQueens"
+    IL_043c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0441:  nop
+//000115:             this.cbNumQueens.Size = new System.Drawing.Size(56, 32);
+    IL_0442:  ldarg.0
+    IL_0443:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_CSharp.MainForm::cbNumQueens
+    IL_0448:  ldc.i4.s   56
+    IL_044a:  ldc.i4.s   32
+    IL_044c:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0451:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0456:  nop
+//000116:             this.cbNumQueens.TabIndex = 6;
+    IL_0457:  ldarg.0
+    IL_0458:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_CSharp.MainForm::cbNumQueens
+    IL_045d:  ldc.i4.6
+    IL_045e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0463:  nop
+//000117:             this.cbNumQueens.Text = "12";
+    IL_0464:  ldarg.0
+    IL_0465:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_CSharp.MainForm::cbNumQueens
+    IL_046a:  ldstr      "12"
+    IL_046f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_0474:  nop
+//000118:             // 
+//000119:             // MainForm
+//000120:             // 
+//000121:             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+    IL_0475:  ldarg.0
+    IL_0476:  ldc.r4     6.
+    IL_047b:  ldc.r4     13.
+    IL_0480:  newobj     instance void [System.Drawing]System.Drawing.SizeF::.ctor(float32,
+                                                                                   float32)
+    IL_0485:  call       instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::set_AutoScaleDimensions(valuetype [System.Drawing]System.Drawing.SizeF)
+    IL_048a:  nop
+//000122:             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+    IL_048b:  ldarg.0
+    IL_048c:  ldc.i4.1
+    IL_048d:  call       instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::set_AutoScaleMode(valuetype [System.Windows.Forms]System.Windows.Forms.AutoScaleMode)
+    IL_0492:  nop
+//000123:             this.ClientSize = new System.Drawing.Size(717, 490);
+    IL_0493:  ldarg.0
+    IL_0494:  ldc.i4     0x2cd
+    IL_0499:  ldc.i4     0x1ea
+    IL_049e:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_04a3:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::set_ClientSize(valuetype [System.Drawing]System.Drawing.Size)
+    IL_04a8:  nop
+//000124:             this.Controls.Add(this.cbNumQueens);
+    IL_04a9:  ldarg.0
+    IL_04aa:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_04af:  ldarg.0
+    IL_04b0:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_CSharp.MainForm::cbNumQueens
+    IL_04b5:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_04ba:  nop
+//000125:             this.Controls.Add(this.progressBar1);
+    IL_04bb:  ldarg.0
+    IL_04bc:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_04c1:  ldarg.0
+    IL_04c2:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_CSharp.MainForm::progressBar1
+    IL_04c7:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_04cc:  nop
+//000126:             this.Controls.Add(this.btnSolve);
+    IL_04cd:  ldarg.0
+    IL_04ce:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_04d3:  ldarg.0
+    IL_04d4:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_CSharp.MainForm::btnSolve
+    IL_04d9:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_04de:  nop
+//000127:             this.Controls.Add(this.chart1);
+    IL_04df:  ldarg.0
+    IL_04e0:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_04e5:  ldarg.0
+    IL_04e6:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_04eb:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_04f0:  nop
+//000128:             this.Name = "MainForm";
+    IL_04f1:  ldarg.0
+    IL_04f2:  ldstr      "MainForm"
+    IL_04f7:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_04fc:  nop
+//000129:             this.Text = "NQueens";
+    IL_04fd:  ldarg.0
+    IL_04fe:  ldstr      "NQueens"
+    IL_0503:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_0508:  nop
+//000130:             this.Load += new System.EventHandler(this.Form1_Load);
+    IL_0509:  ldarg.0
+    IL_050a:  ldarg.0
+    IL_050b:  ldftn      instance void NQueens_CSharp.MainForm::Form1_Load(object,
+                                                                           class [mscorlib]System.EventArgs)
+    IL_0511:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_0516:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::add_Load(class [mscorlib]System.EventHandler)
+    IL_051b:  nop
+//000131:             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+    IL_051c:  ldarg.0
+    IL_051d:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_CSharp.MainForm::chart1
+    IL_0522:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::EndInit()
+    IL_0527:  nop
+//000132:             this.ResumeLayout(false);
+    IL_0528:  ldarg.0
+    IL_0529:  ldc.i4.0
+    IL_052a:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::ResumeLayout(bool)
+    IL_052f:  nop
+//000133: 
+//000134:         }
+    IL_0530:  ret
+  } // end of method MainForm::InitializeComponent
+
+  .method private hidebysig instance void 
+          '<btnSolve_Click>b__0'(class [mscorlib]System.Threading.Tasks.Task t) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       58 (0x3a)
+    .maxstack  2
+    .locals init ([0] bool CS$4$0000)
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\MainForm.cs' 
+//000082:             {
+    IL_0000:  nop
+//000083:                 progressBar1.Visible = false;
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_CSharp.MainForm::progressBar1
+    IL_0007:  ldc.i4.0
+    IL_0008:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Visible(bool)
+    IL_000d:  nop
+//000084:                 btnSolve.Enabled = true;
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_CSharp.MainForm::btnSolve
+    IL_0014:  ldc.i4.1
+    IL_0015:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Enabled(bool)
+    IL_001a:  nop
+//000085:                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+    IL_001b:  ldarg.1
+    IL_001c:  callvirt   instance bool [mscorlib]System.Threading.Tasks.Task::get_IsFaulted()
+    IL_0021:  ldc.i4.0
+    IL_0022:  ceq
+    IL_0024:  stloc.0
+//000086:             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+//000087:         }
+//000088: 
+//000089:         private void SetPoint(DataPoint point, double seconds)
+//000090:         {
+//000091:             Task.Factory.StartNew(() =>
+//000092:             {
+//000093:                 if (seconds > _max)
+//000094:                 {
+//000095:                     _max = seconds;
+//000096:                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+//000097:                 }
+//000098:                 point.SetValueY(seconds);
+//000099:                 point.ToolTip = seconds.ToString("F3");
+//000100:                 point.Label = string.Format("{0:F3} secs  ({1:F2}x)", seconds, (_max / seconds));
+//000101:                 chart1.Invalidate();
+//000102:             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+//000103:         }
+//000104: 
+//000105:         static TimeSpan Time(Action action)
+//000106:         {
+//000107:             var sw = Stopwatch.StartNew();
+//000108:             action();
+//000109:             return sw.Elapsed;
+//000110:         }
+//000111:     }
+//000112: }
+    IL_0025:  ldloc.0
+    IL_0026:  brtrue.s   IL_0039
+
+//000085:                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+    IL_0028:  ldarg.1
+    IL_0029:  callvirt   instance class [mscorlib]System.AggregateException [mscorlib]System.Threading.Tasks.Task::get_Exception()
+    IL_002e:  callvirt   instance string [mscorlib]System.Object::ToString()
+    IL_0033:  call       valuetype [System.Windows.Forms]System.Windows.Forms.DialogResult [System.Windows.Forms]System.Windows.Forms.MessageBox::Show(string)
+    IL_0038:  pop
+//000086:             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+//000087:         }
+//000088: 
+//000089:         private void SetPoint(DataPoint point, double seconds)
+//000090:         {
+//000091:             Task.Factory.StartNew(() =>
+//000092:             {
+//000093:                 if (seconds > _max)
+//000094:                 {
+//000095:                     _max = seconds;
+//000096:                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+//000097:                 }
+//000098:                 point.SetValueY(seconds);
+//000099:                 point.ToolTip = seconds.ToString("F3");
+//000100:                 point.Label = string.Format("{0:F3} secs  ({1:F2}x)", seconds, (_max / seconds));
+//000101:                 chart1.Invalidate();
+//000102:             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+//000103:         }
+//000104: 
+//000105:         static TimeSpan Time(Action action)
+//000106:         {
+//000107:             var sw = Stopwatch.StartNew();
+//000108:             action();
+//000109:             return sw.Elapsed;
+//000110:         }
+//000111:     }
+//000112: }
+    IL_0039:  ret
+  } // end of method MainForm::'<btnSolve_Click>b__0'
+
+} // end of class NQueens_CSharp.MainForm
+
+.class private auto ansi sealed beforefieldinit NQueens_CSharp.Properties.Settings
+       extends [System]System.Configuration.ApplicationSettingsBase
+{
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 4B 4D 69 63 72 6F 73 6F 66 74 2E 56 69 73   // ..KMicrosoft.Vis
+                                                                                                  75 61 6C 53 74 75 64 69 6F 2E 45 64 69 74 6F 72   // ualStudio.Editor
+                                                                                                  73 2E 53 65 74 74 69 6E 67 73 44 65 73 69 67 6E   // s.SettingsDesign
+                                                                                                  65 72 2E 53 65 74 74 69 6E 67 73 53 69 6E 67 6C   // er.SettingsSingl
+                                                                                                  65 46 69 6C 65 47 65 6E 65 72 61 74 6F 72 08 31   // eFileGenerator.1
+                                                                                                  30 2E 30 2E 30 2E 30 00 00 )                      // 0.0.0.0..
+  .field private static class NQueens_CSharp.Properties.Settings defaultInstance
+  .method public hidebysig specialname static 
+          class NQueens_CSharp.Properties.Settings 
+          get_Default() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class NQueens_CSharp.Properties.Settings CS$1$0000)
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\Properties\Settings.Designer.cs' 
+//000021:             get {
+    IL_0000:  nop
+//000022:                 return defaultInstance;
+    IL_0001:  ldsfld     class NQueens_CSharp.Properties.Settings NQueens_CSharp.Properties.Settings::defaultInstance
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000023:             }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Settings::get_Default
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [System]System.Configuration.ApplicationSettingsBase::.ctor()
+    IL_0006:  ret
+  } // end of method Settings::.ctor
+
+  .method private hidebysig specialname rtspecialname static 
+          void  .cctor() cil managed
+  {
+    // Code size       21 (0x15)
+    .maxstack  8
+//000018:         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+    IL_0000:  newobj     instance void NQueens_CSharp.Properties.Settings::.ctor()
+    IL_0005:  call       class [System]System.Configuration.SettingsBase [System]System.Configuration.SettingsBase::Synchronized(class [System]System.Configuration.SettingsBase)
+    IL_000a:  castclass  NQueens_CSharp.Properties.Settings
+    IL_000f:  stsfld     class NQueens_CSharp.Properties.Settings NQueens_CSharp.Properties.Settings::defaultInstance
+//000019:         
+//000020:         public static Settings Default {
+//000021:             get {
+//000022:                 return defaultInstance;
+//000023:             }
+//000024:         }
+//000025:     }
+//000026: }
+    IL_0014:  ret
+  } // end of method Settings::.cctor
+
+  .property class NQueens_CSharp.Properties.Settings
+          Default()
+  {
+    .get class NQueens_CSharp.Properties.Settings NQueens_CSharp.Properties.Settings::get_Default()
+  } // end of property Settings::Default
+} // end of class NQueens_CSharp.Properties.Settings
+
+.class public auto ansi beforefieldinit Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver
+       extends [mscorlib]System.Object
+{
+  .class auto ansi nested private beforefieldinit NQueensState
+         extends [mscorlib]System.Object
+  {
+    .field private bool[] m_rows
+    .field private bool[] m_fwDiagonals
+    .field private bool[] m_bwDiagonals
+    .field private int32 m_size
+    .field private int32 m_col
+    .method public hidebysig specialname rtspecialname 
+            instance void  .ctor(int32 size) cil managed
+    {
+      // Code size       68 (0x44)
+      .maxstack  3
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\NQueens.cs' 
+//000049:             public NQueensState(int size)
+      IL_0000:  ldarg.0
+      IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0006:  nop
+//000050:             {
+      IL_0007:  nop
+//000051:                 m_size = size;
+      IL_0008:  ldarg.0
+      IL_0009:  ldarg.1
+      IL_000a:  stfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_size
+//000052:                 m_rows = new bool[size];
+      IL_000f:  ldarg.0
+      IL_0010:  ldarg.1
+      IL_0011:  newarr     [mscorlib]System.Boolean
+      IL_0016:  stfld      bool[] Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_rows
+//000053:                 m_fwDiagonals = new bool[2 * size - 1];
+      IL_001b:  ldarg.0
+      IL_001c:  ldc.i4.2
+      IL_001d:  ldarg.1
+      IL_001e:  mul
+      IL_001f:  ldc.i4.1
+      IL_0020:  sub
+      IL_0021:  newarr     [mscorlib]System.Boolean
+      IL_0026:  stfld      bool[] Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_fwDiagonals
+//000054:                 m_bwDiagonals = new bool[2 * size - 1];
+      IL_002b:  ldarg.0
+      IL_002c:  ldc.i4.2
+      IL_002d:  ldarg.1
+      IL_002e:  mul
+      IL_002f:  ldc.i4.1
+      IL_0030:  sub
+      IL_0031:  newarr     [mscorlib]System.Boolean
+      IL_0036:  stfld      bool[] Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_bwDiagonals
+//000055:                 m_col = 0;
+      IL_003b:  ldarg.0
+      IL_003c:  ldc.i4.0
+      IL_003d:  stfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_col
+//000056:             }
+      IL_0042:  nop
+      IL_0043:  ret
+    } // end of method NQueensState::.ctor
+
+    .method public hidebysig instance int32 
+            CountSolutions() cil managed
+    {
+      // Code size       90 (0x5a)
+      .maxstack  2
+      .locals init ([0] int32 answer,
+               [1] int32 row,
+               [2] int32 CS$1$0000,
+               [3] bool CS$4$0001)
+//000057: 
+//000058:             public int CountSolutions()
+//000059:             {
+      IL_0000:  nop
+//000060:                 if (m_col == m_size) return 1;
+      IL_0001:  ldarg.0
+      IL_0002:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_col
+      IL_0007:  ldarg.0
+      IL_0008:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_size
+      IL_000d:  ceq
+      IL_000f:  ldc.i4.0
+      IL_0010:  ceq
+      IL_0012:  stloc.3
+//000061: 
+//000062:                 int answer = 0;
+//000063:                 for (int row = 0; row < m_size; row++)
+//000064:                 {
+//000065:                     if (PlaceQueen(row))
+//000066:                     {
+//000067:                         answer += CountSolutions();
+//000068:                         RemoveQueen(row);
+//000069:                     }
+//000070:                 }
+//000071:                 return answer;
+//000072:             }
+//000073: 
+//000074:             public bool PlaceQueen(int row)
+//000075:             {
+//000076:                 if (!m_rows[row] && !m_fwDiagonals[row + m_col] && !m_bwDiagonals[row - m_col + m_size - 1])
+//000077:                 {
+//000078:                     m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = true;
+//000079:                     m_col++;
+//000080: 
+//000081:                     return true;
+//000082:                 }
+//000083:                 return false;
+//000084:             }
+//000085: 
+//000086:             private void RemoveQueen(int row)
+//000087:             {
+//000088:                 m_col--;
+//000089:                 m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = false;
+//000090:             }
+//000091:         }
+//000092:     }
+//000093: }
+      IL_0013:  ldloc.3
+      IL_0014:  brtrue.s   IL_001a
+
+//000060:                 if (m_col == m_size) return 1;
+      IL_0016:  ldc.i4.1
+      IL_0017:  stloc.2
+      IL_0018:  br.s       IL_0058
+
+//000061: 
+//000062:                 int answer = 0;
+      IL_001a:  ldc.i4.0
+      IL_001b:  stloc.0
+//000063:                 for (int row = 0; row < m_size; row++)
+      IL_001c:  ldc.i4.0
+      IL_001d:  stloc.1
+//000064:                 {
+//000065:                     if (PlaceQueen(row))
+//000066:                     {
+//000067:                         answer += CountSolutions();
+//000068:                         RemoveQueen(row);
+//000069:                     }
+//000070:                 }
+//000071:                 return answer;
+//000072:             }
+//000073: 
+//000074:             public bool PlaceQueen(int row)
+//000075:             {
+//000076:                 if (!m_rows[row] && !m_fwDiagonals[row + m_col] && !m_bwDiagonals[row - m_col + m_size - 1])
+//000077:                 {
+//000078:                     m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = true;
+//000079:                     m_col++;
+//000080: 
+//000081:                     return true;
+//000082:                 }
+//000083:                 return false;
+//000084:             }
+//000085: 
+//000086:             private void RemoveQueen(int row)
+//000087:             {
+//000088:                 m_col--;
+//000089:                 m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = false;
+//000090:             }
+//000091:         }
+//000092:     }
+//000093: }
+      IL_001e:  br.s       IL_0047
+
+//000064:                 {
+      IL_0020:  nop
+//000065:                     if (PlaceQueen(row))
+      IL_0021:  ldarg.0
+      IL_0022:  ldloc.1
+      IL_0023:  call       instance bool Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::PlaceQueen(int32)
+      IL_0028:  ldc.i4.0
+      IL_0029:  ceq
+      IL_002b:  stloc.3
+//000066:                     {
+//000067:                         answer += CountSolutions();
+//000068:                         RemoveQueen(row);
+//000069:                     }
+//000070:                 }
+//000071:                 return answer;
+//000072:             }
+//000073: 
+//000074:             public bool PlaceQueen(int row)
+//000075:             {
+//000076:                 if (!m_rows[row] && !m_fwDiagonals[row + m_col] && !m_bwDiagonals[row - m_col + m_size - 1])
+//000077:                 {
+//000078:                     m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = true;
+//000079:                     m_col++;
+//000080: 
+//000081:                     return true;
+//000082:                 }
+//000083:                 return false;
+//000084:             }
+//000085: 
+//000086:             private void RemoveQueen(int row)
+//000087:             {
+//000088:                 m_col--;
+//000089:                 m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = false;
+//000090:             }
+//000091:         }
+//000092:     }
+//000093: }
+      IL_002c:  ldloc.3
+      IL_002d:  brtrue.s   IL_0042
+
+//000066:                     {
+      IL_002f:  nop
+//000067:                         answer += CountSolutions();
+      IL_0030:  ldloc.0
+      IL_0031:  ldarg.0
+      IL_0032:  call       instance int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::CountSolutions()
+      IL_0037:  add
+      IL_0038:  stloc.0
+//000068:                         RemoveQueen(row);
+      IL_0039:  ldarg.0
+      IL_003a:  ldloc.1
+      IL_003b:  call       instance void Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::RemoveQueen(int32)
+      IL_0040:  nop
+//000069:                     }
+      IL_0041:  nop
+//000070:                 }
+      IL_0042:  nop
+//000063:                 for (int row = 0; row < m_size; row++)
+      IL_0043:  ldloc.1
+      IL_0044:  ldc.i4.1
+      IL_0045:  add
+      IL_0046:  stloc.1
+      IL_0047:  ldloc.1
+      IL_0048:  ldarg.0
+      IL_0049:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_size
+      IL_004e:  clt
+      IL_0050:  stloc.3
+//000064:                 {
+//000065:                     if (PlaceQueen(row))
+//000066:                     {
+//000067:                         answer += CountSolutions();
+//000068:                         RemoveQueen(row);
+//000069:                     }
+//000070:                 }
+//000071:                 return answer;
+//000072:             }
+//000073: 
+//000074:             public bool PlaceQueen(int row)
+//000075:             {
+//000076:                 if (!m_rows[row] && !m_fwDiagonals[row + m_col] && !m_bwDiagonals[row - m_col + m_size - 1])
+//000077:                 {
+//000078:                     m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = true;
+//000079:                     m_col++;
+//000080: 
+//000081:                     return true;
+//000082:                 }
+//000083:                 return false;
+//000084:             }
+//000085: 
+//000086:             private void RemoveQueen(int row)
+//000087:             {
+//000088:                 m_col--;
+//000089:                 m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = false;
+//000090:             }
+//000091:         }
+//000092:     }
+//000093: }
+      IL_0051:  ldloc.3
+      IL_0052:  brtrue.s   IL_0020
+
+//000071:                 return answer;
+      IL_0054:  ldloc.0
+      IL_0055:  stloc.2
+      IL_0056:  br.s       IL_0058
+
+//000072:             }
+      IL_0058:  ldloc.2
+      IL_0059:  ret
+    } // end of method NQueensState::CountSolutions
+
+    .method public hidebysig instance bool 
+            PlaceQueen(int32 row) cil managed
+    {
+      // Code size       138 (0x8a)
+      .maxstack  8
+      .locals init ([0] bool CS$1$0000,
+               [1] bool CS$4$0001,
+               [2] bool CS$0$0002)
+//000073: 
+//000074:             public bool PlaceQueen(int row)
+//000075:             {
+      IL_0000:  nop
+//000076:                 if (!m_rows[row] && !m_fwDiagonals[row + m_col] && !m_bwDiagonals[row - m_col + m_size - 1])
+      IL_0001:  ldarg.0
+      IL_0002:  ldfld      bool[] Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_rows
+      IL_0007:  ldarg.1
+      IL_0008:  ldelem.i1
+      IL_0009:  brtrue.s   IL_0036
+
+      IL_000b:  ldarg.0
+      IL_000c:  ldfld      bool[] Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_fwDiagonals
+      IL_0011:  ldarg.1
+      IL_0012:  ldarg.0
+      IL_0013:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_col
+      IL_0018:  add
+      IL_0019:  ldelem.i1
+      IL_001a:  brtrue.s   IL_0036
+
+      IL_001c:  ldarg.0
+      IL_001d:  ldfld      bool[] Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_bwDiagonals
+      IL_0022:  ldarg.1
+      IL_0023:  ldarg.0
+      IL_0024:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_col
+      IL_0029:  sub
+      IL_002a:  ldarg.0
+      IL_002b:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_size
+      IL_0030:  add
+      IL_0031:  ldc.i4.1
+      IL_0032:  sub
+      IL_0033:  ldelem.i1
+      IL_0034:  br.s       IL_0037
+
+      IL_0036:  ldc.i4.1
+      IL_0037:  stloc.1
+//000077:                 {
+//000078:                     m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = true;
+//000079:                     m_col++;
+//000080: 
+//000081:                     return true;
+//000082:                 }
+//000083:                 return false;
+//000084:             }
+//000085: 
+//000086:             private void RemoveQueen(int row)
+//000087:             {
+//000088:                 m_col--;
+//000089:                 m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = false;
+//000090:             }
+//000091:         }
+//000092:     }
+//000093: }
+      IL_0038:  ldloc.1
+      IL_0039:  brtrue.s   IL_0084
+
+//000077:                 {
+      IL_003b:  nop
+//000078:                     m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = true;
+      IL_003c:  ldarg.0
+      IL_003d:  ldfld      bool[] Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_rows
+      IL_0042:  ldarg.1
+      IL_0043:  ldarg.0
+      IL_0044:  ldfld      bool[] Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_fwDiagonals
+      IL_0049:  ldarg.1
+      IL_004a:  ldarg.0
+      IL_004b:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_col
+      IL_0050:  add
+      IL_0051:  ldarg.0
+      IL_0052:  ldfld      bool[] Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_bwDiagonals
+      IL_0057:  ldarg.1
+      IL_0058:  ldarg.0
+      IL_0059:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_col
+      IL_005e:  sub
+      IL_005f:  ldarg.0
+      IL_0060:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_size
+      IL_0065:  add
+      IL_0066:  ldc.i4.1
+      IL_0067:  sub
+      IL_0068:  ldc.i4.1
+      IL_0069:  dup
+      IL_006a:  stloc.2
+      IL_006b:  stelem.i1
+      IL_006c:  ldloc.2
+      IL_006d:  dup
+      IL_006e:  stloc.2
+      IL_006f:  stelem.i1
+      IL_0070:  ldloc.2
+      IL_0071:  stelem.i1
+//000079:                     m_col++;
+      IL_0072:  ldarg.0
+      IL_0073:  dup
+      IL_0074:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_col
+      IL_0079:  ldc.i4.1
+      IL_007a:  add
+      IL_007b:  stfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_col
+//000080: 
+//000081:                     return true;
+      IL_0080:  ldc.i4.1
+      IL_0081:  stloc.0
+      IL_0082:  br.s       IL_0088
+
+//000082:                 }
+//000083:                 return false;
+      IL_0084:  ldc.i4.0
+      IL_0085:  stloc.0
+      IL_0086:  br.s       IL_0088
+
+//000084:             }
+      IL_0088:  ldloc.0
+      IL_0089:  ret
+    } // end of method NQueensState::PlaceQueen
+
+    .method private hidebysig instance void 
+            RemoveQueen(int32 row) cil managed
+    {
+      // Code size       70 (0x46)
+      .maxstack  8
+      .locals init ([0] bool CS$0$0000)
+//000085: 
+//000086:             private void RemoveQueen(int row)
+//000087:             {
+      IL_0000:  nop
+//000088:                 m_col--;
+      IL_0001:  ldarg.0
+      IL_0002:  dup
+      IL_0003:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_col
+      IL_0008:  ldc.i4.1
+      IL_0009:  sub
+      IL_000a:  stfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_col
+//000089:                 m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = false;
+      IL_000f:  ldarg.0
+      IL_0010:  ldfld      bool[] Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_rows
+      IL_0015:  ldarg.1
+      IL_0016:  ldarg.0
+      IL_0017:  ldfld      bool[] Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_fwDiagonals
+      IL_001c:  ldarg.1
+      IL_001d:  ldarg.0
+      IL_001e:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_col
+      IL_0023:  add
+      IL_0024:  ldarg.0
+      IL_0025:  ldfld      bool[] Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_bwDiagonals
+      IL_002a:  ldarg.1
+      IL_002b:  ldarg.0
+      IL_002c:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_col
+      IL_0031:  sub
+      IL_0032:  ldarg.0
+      IL_0033:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::m_size
+      IL_0038:  add
+      IL_0039:  ldc.i4.1
+      IL_003a:  sub
+      IL_003b:  ldc.i4.0
+      IL_003c:  dup
+      IL_003d:  stloc.0
+      IL_003e:  stelem.i1
+      IL_003f:  ldloc.0
+      IL_0040:  dup
+      IL_0041:  stloc.0
+      IL_0042:  stelem.i1
+      IL_0043:  ldloc.0
+      IL_0044:  stelem.i1
+//000090:             }
+      IL_0045:  ret
+    } // end of method NQueensState::RemoveQueen
+
+  } // end of class NQueensState
+
+  .field private static class [mscorlib]System.Func`2<class Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState,int32> 'CS$<>9__CachedAnonymousMethodDelegate1'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .method public hidebysig static int32  Sequential(int32 n) cil managed
+  {
+    // Code size       17 (0x11)
+    .maxstack  2
+    .locals init ([0] int32 CS$1$0000)
+//000024:         {
+    IL_0000:  nop
+//000025:             return new NQueensState(n).CountSolutions();
+    IL_0001:  ldarg.0
+    IL_0002:  newobj     instance void Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::.ctor(int32)
+    IL_0007:  call       instance int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::CountSolutions()
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+//000026:         }
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+  } // end of method NQueensSolver::Sequential
+
+  .method public hidebysig static int32  Parallel(int32 n) cil managed
+  {
+    // Code size       97 (0x61)
+    .maxstack  4
+    .locals init ([0] class Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState[] statesAfterOneMove,
+             [1] int32 row,
+             [2] int32 CS$1$0000,
+             [3] bool CS$4$0001)
+//000027: 
+//000028:         public static int Parallel(int n)
+//000029:         {
+    IL_0000:  nop
+//000030:             NQueensState[] statesAfterOneMove = new NQueensState[n];
+    IL_0001:  ldarg.0
+    IL_0002:  newarr     Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState
+    IL_0007:  stloc.0
+//000031:             for (int row = 0; row < n; row++)
+    IL_0008:  ldc.i4.0
+    IL_0009:  stloc.1
+//000032:             {
+//000033:                 statesAfterOneMove[row] = new NQueensState(n);
+//000034:                 statesAfterOneMove[row].PlaceQueen(row);
+//000035:             };
+//000036: 
+//000037:             return (from q in statesAfterOneMove.AsParallel()
+//000038:                     select q.CountSolutions()).Sum();
+//000039:         }
+//000040: 
+//000041:         class NQueensState
+//000042:         {
+//000043:             private bool[] m_rows;        // m_rows[i] = does row i contain a queen?
+//000044:             private bool[] m_fwDiagonals; // m_fwDiagonals[i] = does forward diagonal i contain a queen?
+//000045:             private bool[] m_bwDiagonals; // m_bwDiagonals[i] = does backward diagonal i contain a queen?
+//000046:             int m_size;  // Size of the chessboard
+//000047:             int m_col;   // Column with the smallest index that does not contain a queen, 0 <= m_col < m_size
+//000048: 
+//000049:             public NQueensState(int size)
+//000050:             {
+//000051:                 m_size = size;
+//000052:                 m_rows = new bool[size];
+//000053:                 m_fwDiagonals = new bool[2 * size - 1];
+//000054:                 m_bwDiagonals = new bool[2 * size - 1];
+//000055:                 m_col = 0;
+//000056:             }
+//000057: 
+//000058:             public int CountSolutions()
+//000059:             {
+//000060:                 if (m_col == m_size) return 1;
+//000061: 
+//000062:                 int answer = 0;
+//000063:                 for (int row = 0; row < m_size; row++)
+//000064:                 {
+//000065:                     if (PlaceQueen(row))
+//000066:                     {
+//000067:                         answer += CountSolutions();
+//000068:                         RemoveQueen(row);
+//000069:                     }
+//000070:                 }
+//000071:                 return answer;
+//000072:             }
+//000073: 
+//000074:             public bool PlaceQueen(int row)
+//000075:             {
+//000076:                 if (!m_rows[row] && !m_fwDiagonals[row + m_col] && !m_bwDiagonals[row - m_col + m_size - 1])
+//000077:                 {
+//000078:                     m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = true;
+//000079:                     m_col++;
+//000080: 
+//000081:                     return true;
+//000082:                 }
+//000083:                 return false;
+//000084:             }
+//000085: 
+//000086:             private void RemoveQueen(int row)
+//000087:             {
+//000088:                 m_col--;
+//000089:                 m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = false;
+//000090:             }
+//000091:         }
+//000092:     }
+//000093: }
+    IL_000a:  br.s       IL_0025
+
+//000032:             {
+    IL_000c:  nop
+//000033:                 statesAfterOneMove[row] = new NQueensState(n);
+    IL_000d:  ldloc.0
+    IL_000e:  ldloc.1
+    IL_000f:  ldarg.0
+    IL_0010:  newobj     instance void Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::.ctor(int32)
+    IL_0015:  stelem.ref
+//000034:                 statesAfterOneMove[row].PlaceQueen(row);
+    IL_0016:  ldloc.0
+    IL_0017:  ldloc.1
+    IL_0018:  ldelem.ref
+    IL_0019:  ldloc.1
+    IL_001a:  callvirt   instance bool Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::PlaceQueen(int32)
+    IL_001f:  pop
+//000035:             };
+    IL_0020:  nop
+//000031:             for (int row = 0; row < n; row++)
+    IL_0021:  ldloc.1
+    IL_0022:  ldc.i4.1
+    IL_0023:  add
+    IL_0024:  stloc.1
+    IL_0025:  ldloc.1
+    IL_0026:  ldarg.0
+    IL_0027:  clt
+    IL_0029:  stloc.3
+//000032:             {
+//000033:                 statesAfterOneMove[row] = new NQueensState(n);
+//000034:                 statesAfterOneMove[row].PlaceQueen(row);
+//000035:             };
+//000036: 
+//000037:             return (from q in statesAfterOneMove.AsParallel()
+//000038:                     select q.CountSolutions()).Sum();
+//000039:         }
+//000040: 
+//000041:         class NQueensState
+//000042:         {
+//000043:             private bool[] m_rows;        // m_rows[i] = does row i contain a queen?
+//000044:             private bool[] m_fwDiagonals; // m_fwDiagonals[i] = does forward diagonal i contain a queen?
+//000045:             private bool[] m_bwDiagonals; // m_bwDiagonals[i] = does backward diagonal i contain a queen?
+//000046:             int m_size;  // Size of the chessboard
+//000047:             int m_col;   // Column with the smallest index that does not contain a queen, 0 <= m_col < m_size
+//000048: 
+//000049:             public NQueensState(int size)
+//000050:             {
+//000051:                 m_size = size;
+//000052:                 m_rows = new bool[size];
+//000053:                 m_fwDiagonals = new bool[2 * size - 1];
+//000054:                 m_bwDiagonals = new bool[2 * size - 1];
+//000055:                 m_col = 0;
+//000056:             }
+//000057: 
+//000058:             public int CountSolutions()
+//000059:             {
+//000060:                 if (m_col == m_size) return 1;
+//000061: 
+//000062:                 int answer = 0;
+//000063:                 for (int row = 0; row < m_size; row++)
+//000064:                 {
+//000065:                     if (PlaceQueen(row))
+//000066:                     {
+//000067:                         answer += CountSolutions();
+//000068:                         RemoveQueen(row);
+//000069:                     }
+//000070:                 }
+//000071:                 return answer;
+//000072:             }
+//000073: 
+//000074:             public bool PlaceQueen(int row)
+//000075:             {
+//000076:                 if (!m_rows[row] && !m_fwDiagonals[row + m_col] && !m_bwDiagonals[row - m_col + m_size - 1])
+//000077:                 {
+//000078:                     m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = true;
+//000079:                     m_col++;
+//000080: 
+//000081:                     return true;
+//000082:                 }
+//000083:                 return false;
+//000084:             }
+//000085: 
+//000086:             private void RemoveQueen(int row)
+//000087:             {
+//000088:                 m_col--;
+//000089:                 m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = false;
+//000090:             }
+//000091:         }
+//000092:     }
+//000093: }
+    IL_002a:  ldloc.3
+    IL_002b:  brtrue.s   IL_000c
+
+//000037:             return (from q in statesAfterOneMove.AsParallel()
+    IL_002d:  ldloc.0
+    IL_002e:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::AsParallel<class Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_0033:  ldsfld     class [mscorlib]System.Func`2<class Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState,int32> Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver::'CS$<>9__CachedAnonymousMethodDelegate1'
+    IL_0038:  brtrue.s   IL_004d
+
+    IL_003a:  ldnull
+    IL_003b:  ldftn      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver::'<Parallel>b__0'(class Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState)
+    IL_0041:  newobj     instance void class [mscorlib]System.Func`2<class Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState,int32>::.ctor(object,
+                                                                                                                                                                                   native int)
+    IL_0046:  stsfld     class [mscorlib]System.Func`2<class Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState,int32> Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver::'CS$<>9__CachedAnonymousMethodDelegate1'
+    IL_004b:  br.s       IL_004d
+
+    IL_004d:  ldsfld     class [mscorlib]System.Func`2<class Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState,int32> Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver::'CS$<>9__CachedAnonymousMethodDelegate1'
+    IL_0052:  call       class [System.Core]System.Linq.ParallelQuery`1<!!1> [System.Core]System.Linq.ParallelEnumerable::Select<class Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState,int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                                                                                                        class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_0057:  call       int32 [System.Core]System.Linq.ParallelEnumerable::Sum(class [System.Core]System.Linq.ParallelQuery`1<int32>)
+    IL_005c:  stloc.2
+    IL_005d:  br.s       IL_005f
+
+//000038:                     select q.CountSolutions()).Sum();
+//000039:         }
+    IL_005f:  ldloc.2
+    IL_0060:  ret
+  } // end of method NQueensSolver::Parallel
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method NQueensSolver::.ctor
+
+  .method private hidebysig static int32 
+          '<Parallel>b__0'(class Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState q) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] int32 CS$1$0000)
+//000038:                     select q.CountSolutions()).Sum();
+    IL_0000:  ldarg.0
+    IL_0001:  callvirt   instance int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver/NQueensState::CountSolutions()
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000039:         }
+//000040: 
+//000041:         class NQueensState
+//000042:         {
+//000043:             private bool[] m_rows;        // m_rows[i] = does row i contain a queen?
+//000044:             private bool[] m_fwDiagonals; // m_fwDiagonals[i] = does forward diagonal i contain a queen?
+//000045:             private bool[] m_bwDiagonals; // m_bwDiagonals[i] = does backward diagonal i contain a queen?
+//000046:             int m_size;  // Size of the chessboard
+//000047:             int m_col;   // Column with the smallest index that does not contain a queen, 0 <= m_col < m_size
+//000048: 
+//000049:             public NQueensState(int size)
+//000050:             {
+//000051:                 m_size = size;
+//000052:                 m_rows = new bool[size];
+//000053:                 m_fwDiagonals = new bool[2 * size - 1];
+//000054:                 m_bwDiagonals = new bool[2 * size - 1];
+//000055:                 m_col = 0;
+//000056:             }
+//000057: 
+//000058:             public int CountSolutions()
+//000059:             {
+//000060:                 if (m_col == m_size) return 1;
+//000061: 
+//000062:                 int answer = 0;
+//000063:                 for (int row = 0; row < m_size; row++)
+//000064:                 {
+//000065:                     if (PlaceQueen(row))
+//000066:                     {
+//000067:                         answer += CountSolutions();
+//000068:                         RemoveQueen(row);
+//000069:                     }
+//000070:                 }
+//000071:                 return answer;
+//000072:             }
+//000073: 
+//000074:             public bool PlaceQueen(int row)
+//000075:             {
+//000076:                 if (!m_rows[row] && !m_fwDiagonals[row + m_col] && !m_bwDiagonals[row - m_col + m_size - 1])
+//000077:                 {
+//000078:                     m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = true;
+//000079:                     m_col++;
+//000080: 
+//000081:                     return true;
+//000082:                 }
+//000083:                 return false;
+//000084:             }
+//000085: 
+//000086:             private void RemoveQueen(int row)
+//000087:             {
+//000088:                 m_col--;
+//000089:                 m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = false;
+//000090:             }
+//000091:         }
+//000092:     }
+//000093: }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method NQueensSolver::'<Parallel>b__0'
+
+} // end of class Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.NQueensSolver
+
+.class private auto ansi beforefieldinit NQueens_CSharp.Properties.Resources
+       extends [mscorlib]System.Object
+{
+  .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 33 53 79 73 74 65 6D 2E 52 65 73 6F 75 72   // ..3System.Resour
+                                                                                                  63 65 73 2E 54 6F 6F 6C 73 2E 53 74 72 6F 6E 67   // ces.Tools.Strong
+                                                                                                  6C 79 54 79 70 65 64 52 65 73 6F 75 72 63 65 42   // lyTypedResourceB
+                                                                                                  75 69 6C 64 65 72 07 34 2E 30 2E 30 2E 30 00 00 ) // uilder.4.0.0.0..
+  .field private static class [mscorlib]System.Resources.ResourceManager resourceMan
+  .field private static class [mscorlib]System.Globalization.CultureInfo resourceCulture
+  .method assembly hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       10 (0xa)
+    .maxstack  8
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\Properties\Resources.Designer.cs' 
+//000031:         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+//000032:         internal Resources() {
+    IL_0007:  nop
+//000033:         }
+    IL_0008:  nop
+    IL_0009:  ret
+  } // end of method Resources::.ctor
+
+  .method assembly hidebysig specialname static 
+          class [mscorlib]System.Resources.ResourceManager 
+          get_ResourceManager() cil managed
+  {
+    // Code size       63 (0x3f)
+    .maxstack  3
+    .locals init ([0] class [mscorlib]System.Resources.ResourceManager temp,
+             [1] class [mscorlib]System.Resources.ResourceManager CS$1$0000,
+             [2] bool CS$4$0001)
+//000034:         
+//000035:         /// <summary>
+//000036:         ///   Returns the cached ResourceManager instance used by this class.
+//000037:         /// </summary>
+//000038:         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+//000039:         internal static global::System.Resources.ResourceManager ResourceManager {
+//000040:             get {
+    IL_0000:  nop
+//000041:                 if (object.ReferenceEquals(resourceMan, null)) {
+    IL_0001:  ldsfld     class [mscorlib]System.Resources.ResourceManager NQueens_CSharp.Properties.Resources::resourceMan
+    IL_0006:  ldnull
+    IL_0007:  call       bool [mscorlib]System.Object::ReferenceEquals(object,
+                                                                       object)
+    IL_000c:  ldc.i4.0
+    IL_000d:  ceq
+    IL_000f:  stloc.2
+//000042:                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NQueens_CSharp.Properties.Resources", typeof(Resources).Assembly);
+//000043:                     resourceMan = temp;
+//000044:                 }
+//000045:                 return resourceMan;
+//000046:             }
+//000047:         }
+//000048:         
+//000049:         /// <summary>
+//000050:         ///   Overrides the current thread's CurrentUICulture property for all
+//000051:         ///   resource lookups using this strongly typed resource class.
+//000052:         /// </summary>
+//000053:         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+//000054:         internal static global::System.Globalization.CultureInfo Culture {
+//000055:             get {
+//000056:                 return resourceCulture;
+//000057:             }
+//000058:             set {
+//000059:                 resourceCulture = value;
+//000060:             }
+//000061:         }
+//000062:     }
+//000063: }
+    IL_0010:  ldloc.2
+    IL_0011:  brtrue.s   IL_0035
+
+//000041:                 if (object.ReferenceEquals(resourceMan, null)) {
+    IL_0013:  nop
+//000042:                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NQueens_CSharp.Properties.Resources", typeof(Resources).Assembly);
+    IL_0014:  ldstr      "NQueens_CSharp.Properties.Resources"
+    IL_0019:  ldtoken    NQueens_CSharp.Properties.Resources
+    IL_001e:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_0023:  callvirt   instance class [mscorlib]System.Reflection.Assembly [mscorlib]System.Type::get_Assembly()
+    IL_0028:  newobj     instance void [mscorlib]System.Resources.ResourceManager::.ctor(string,
+                                                                                         class [mscorlib]System.Reflection.Assembly)
+    IL_002d:  stloc.0
+//000043:                     resourceMan = temp;
+    IL_002e:  ldloc.0
+    IL_002f:  stsfld     class [mscorlib]System.Resources.ResourceManager NQueens_CSharp.Properties.Resources::resourceMan
+//000044:                 }
+    IL_0034:  nop
+//000045:                 return resourceMan;
+    IL_0035:  ldsfld     class [mscorlib]System.Resources.ResourceManager NQueens_CSharp.Properties.Resources::resourceMan
+    IL_003a:  stloc.1
+    IL_003b:  br.s       IL_003d
+
+//000046:             }
+    IL_003d:  ldloc.1
+    IL_003e:  ret
+  } // end of method Resources::get_ResourceManager
+
+  .method assembly hidebysig specialname static 
+          class [mscorlib]System.Globalization.CultureInfo 
+          get_Culture() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Globalization.CultureInfo CS$1$0000)
+//000047:         }
+//000048:         
+//000049:         /// <summary>
+//000050:         ///   Overrides the current thread's CurrentUICulture property for all
+//000051:         ///   resource lookups using this strongly typed resource class.
+//000052:         /// </summary>
+//000053:         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+//000054:         internal static global::System.Globalization.CultureInfo Culture {
+//000055:             get {
+    IL_0000:  nop
+//000056:                 return resourceCulture;
+    IL_0001:  ldsfld     class [mscorlib]System.Globalization.CultureInfo NQueens_CSharp.Properties.Resources::resourceCulture
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000057:             }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Resources::get_Culture
+
+  .method assembly hidebysig specialname static 
+          void  set_Culture(class [mscorlib]System.Globalization.CultureInfo 'value') cil managed
+  {
+    // Code size       8 (0x8)
+    .maxstack  8
+//000058:             set {
+    IL_0000:  nop
+//000059:                 resourceCulture = value;
+    IL_0001:  ldarg.0
+    IL_0002:  stsfld     class [mscorlib]System.Globalization.CultureInfo NQueens_CSharp.Properties.Resources::resourceCulture
+//000060:             }
+    IL_0007:  ret
+  } // end of method Resources::set_Culture
+
+  .property class [mscorlib]System.Resources.ResourceManager
+          ResourceManager()
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 02 00 00 00 00 00 ) 
+    .get class [mscorlib]System.Resources.ResourceManager NQueens_CSharp.Properties.Resources::get_ResourceManager()
+  } // end of property Resources::ResourceManager
+  .property class [mscorlib]System.Globalization.CultureInfo
+          Culture()
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 02 00 00 00 00 00 ) 
+    .get class [mscorlib]System.Globalization.CultureInfo NQueens_CSharp.Properties.Resources::get_Culture()
+    .set void NQueens_CSharp.Properties.Resources::set_Culture(class [mscorlib]System.Globalization.CultureInfo)
+  } // end of property Resources::Culture
+} // end of class NQueens_CSharp.Properties.Resources
+
+.class private abstract auto ansi sealed beforefieldinit NQueens_CSharp.Program
+       extends [mscorlib]System.Object
+{
+  .method private hidebysig static void  Main() cil managed
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.STAThreadAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       26 (0x1a)
+    .maxstack  8
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\Program.cs' 
+//000019:         {
+    IL_0000:  nop
+//000020:             Application.EnableVisualStyles();
+    IL_0001:  call       void [System.Windows.Forms]System.Windows.Forms.Application::EnableVisualStyles()
+    IL_0006:  nop
+//000021:             Application.SetCompatibleTextRenderingDefault(false);
+    IL_0007:  ldc.i4.0
+    IL_0008:  call       void [System.Windows.Forms]System.Windows.Forms.Application::SetCompatibleTextRenderingDefault(bool)
+    IL_000d:  nop
+//000022:             Application.Run(new MainForm());
+    IL_000e:  newobj     instance void NQueens_CSharp.MainForm::.ctor()
+    IL_0013:  call       void [System.Windows.Forms]System.Windows.Forms.Application::Run(class [System.Windows.Forms]System.Windows.Forms.Form)
+    IL_0018:  nop
+//000023:         }
+    IL_0019:  ret
+  } // end of method Program::Main
+
+} // end of class NQueens_CSharp.Program
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

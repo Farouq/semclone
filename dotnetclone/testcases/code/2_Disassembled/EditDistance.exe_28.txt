@@ -1,0 +1,1501 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.0.30319.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern System
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern ParallelExtensionsExtras
+{
+  .ver 1:2:0:0
+}
+.assembly EditDistance
+{
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 39 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ..9Copyright .. 
+                                                                                                  4D 69 63 72 6F 73 6F 66 74 20 43 6F 72 70 6F 72   // Microsoft Corpor
+                                                                                                  61 74 69 6F 6E 2E 20 20 41 6C 6C 20 72 69 67 68   // ation.  All righ
+                                                                                                  74 73 20 72 65 73 65 72 76 65 64 2E 00 00 )       // ts reserved...
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 0C 45 64 69 74 44 69 73 74 61 6E 63 65 00   // ...EditDistance.
+                                                                                              00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 0C 45 64 69 74 44 69 73 74 61 6E 63 65 00   // ...EditDistance.
+                                                                                                00 ) 
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 29 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ..).NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 2C 50 72   // ,Version=v4.0,Pr
+                                                                                                        6F 66 69 6C 65 3D 43 6C 69 65 6E 74 01 00 54 0E   // ofile=Client..T.
+                                                                                                        14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C 61   // .FrameworkDispla
+                                                                                                        79 4E 61 6D 65 1F 2E 4E 45 54 20 46 72 61 6D 65   // yName..NET Frame
+                                                                                                        77 6F 72 6B 20 34 20 43 6C 69 65 6E 74 20 50 72   // work 4 Client Pr
+                                                                                                        6F 66 69 6C 65 )                                  // ofile
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 32 34 36 34 32 35 30 31 2D 63 66 32 34   // ..$24642501-cf24
+                                                                                                  2D 34 37 33 34 2D 39 37 65 35 2D 64 38 65 38 32   // -4734-97e5-d8e82
+                                                                                                  63 33 37 39 36 35 37 00 00 )                      // c379657..
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 32 2E 30 2E 30 00 00 )             // ...1.2.0.0..
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .hash algorithm 0x00008004
+  .ver 1:2:0:0
+}
+.module EditDistance.exe
+// MVID: {1959E613-7719-4A64-B6E3-013A24755D6E}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000001    //  ILONLY
+// Image base: 0x00410000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi beforefieldinit EditDistance.Program
+       extends [mscorlib]System.Object
+{
+  .class auto ansi sealed nested private beforefieldinit '<>c__DisplayClass1'
+         extends [mscorlib]System.Object
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    .field public int32[0...,0...] dist
+    .field public string s1
+    .field public string s2
+    .method public hidebysig specialname rtspecialname 
+            instance void  .ctor() cil managed
+    {
+      // Code size       7 (0x7)
+      .maxstack  8
+      IL_0000:  ldarg.0
+      IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0006:  ret
+    } // end of method '<>c__DisplayClass1'::.ctor
+
+    .method public hidebysig instance void 
+            '<ParallelEditDistance>b__0'(int32 start_i,
+                                         int32 end_i,
+                                         int32 start_j,
+                                         int32 end_j) cil managed
+    {
+      // Code size       179 (0xb3)
+      .maxstack  10
+      .locals init ([0] int32 i,
+               [1] int32 j,
+               [2] bool CS$4$0000)
+      .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_CSharp\EditDistance.cs' 
+//000079:             {
+      IL_0000:  nop
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+      IL_0001:  ldarg.1
+      IL_0002:  ldc.i4.1
+      IL_0003:  add
+      IL_0004:  stloc.0
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+      IL_0005:  br         IL_00a4
+
+//000081:                 {
+      IL_000a:  nop
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+      IL_000b:  ldarg.3
+      IL_000c:  ldc.i4.1
+      IL_000d:  add
+      IL_000e:  stloc.1
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+      IL_000f:  br.s       IL_0090
+
+//000083:                     {
+      IL_0011:  nop
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+      IL_0012:  ldarg.0
+      IL_0013:  ldfld      int32[0...,0...] EditDistance.Program/'<>c__DisplayClass1'::dist
+      IL_0018:  ldloc.0
+      IL_0019:  ldloc.1
+      IL_001a:  ldarg.0
+      IL_001b:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s1
+      IL_0020:  ldloc.0
+      IL_0021:  ldc.i4.1
+      IL_0022:  sub
+      IL_0023:  callvirt   instance char [mscorlib]System.String::get_Chars(int32)
+      IL_0028:  ldarg.0
+      IL_0029:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s2
+      IL_002e:  ldloc.1
+      IL_002f:  ldc.i4.1
+      IL_0030:  sub
+      IL_0031:  callvirt   instance char [mscorlib]System.String::get_Chars(int32)
+      IL_0036:  beq.s      IL_0075
+
+      IL_0038:  ldc.i4.1
+      IL_0039:  ldarg.0
+      IL_003a:  ldfld      int32[0...,0...] EditDistance.Program/'<>c__DisplayClass1'::dist
+      IL_003f:  ldloc.0
+      IL_0040:  ldc.i4.1
+      IL_0041:  sub
+      IL_0042:  ldloc.1
+      IL_0043:  call       instance int32 int32[0...,0...]::Get(int32,
+                                                                int32)
+      IL_0048:  ldarg.0
+      IL_0049:  ldfld      int32[0...,0...] EditDistance.Program/'<>c__DisplayClass1'::dist
+      IL_004e:  ldloc.0
+      IL_004f:  ldloc.1
+      IL_0050:  ldc.i4.1
+      IL_0051:  sub
+      IL_0052:  call       instance int32 int32[0...,0...]::Get(int32,
+                                                                int32)
+      IL_0057:  ldarg.0
+      IL_0058:  ldfld      int32[0...,0...] EditDistance.Program/'<>c__DisplayClass1'::dist
+      IL_005d:  ldloc.0
+      IL_005e:  ldc.i4.1
+      IL_005f:  sub
+      IL_0060:  ldloc.1
+      IL_0061:  ldc.i4.1
+      IL_0062:  sub
+      IL_0063:  call       instance int32 int32[0...,0...]::Get(int32,
+                                                                int32)
+      IL_0068:  call       int32 [mscorlib]System.Math::Min(int32,
+                                                            int32)
+      IL_006d:  call       int32 [mscorlib]System.Math::Min(int32,
+                                                            int32)
+      IL_0072:  add
+      IL_0073:  br.s       IL_0086
+
+      IL_0075:  ldarg.0
+      IL_0076:  ldfld      int32[0...,0...] EditDistance.Program/'<>c__DisplayClass1'::dist
+      IL_007b:  ldloc.0
+      IL_007c:  ldc.i4.1
+      IL_007d:  sub
+      IL_007e:  ldloc.1
+      IL_007f:  ldc.i4.1
+      IL_0080:  sub
+      IL_0081:  call       instance int32 int32[0...,0...]::Get(int32,
+                                                                int32)
+      IL_0086:  call       instance void int32[0...,0...]::Set(int32,
+                                                               int32,
+                                                               int32)
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+      IL_008b:  nop
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+      IL_008c:  ldloc.1
+      IL_008d:  ldc.i4.1
+      IL_008e:  add
+      IL_008f:  stloc.1
+      IL_0090:  ldloc.1
+      IL_0091:  ldarg.s    end_j
+      IL_0093:  cgt
+      IL_0095:  ldc.i4.0
+      IL_0096:  ceq
+      IL_0098:  stloc.2
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+      IL_0099:  ldloc.2
+      IL_009a:  brtrue     IL_0011
+
+//000090:                 }
+      IL_009f:  nop
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+      IL_00a0:  ldloc.0
+      IL_00a1:  ldc.i4.1
+      IL_00a2:  add
+      IL_00a3:  stloc.0
+      IL_00a4:  ldloc.0
+      IL_00a5:  ldarg.2
+      IL_00a6:  cgt
+      IL_00a8:  ldc.i4.0
+      IL_00a9:  ceq
+      IL_00ab:  stloc.2
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+      IL_00ac:  ldloc.2
+      IL_00ad:  brtrue     IL_000a
+
+      IL_00b2:  ret
+    } // end of method '<>c__DisplayClass1'::'<ParallelEditDistance>b__0'
+
+  } // end of class '<>c__DisplayClass1'
+
+  .method private hidebysig static void  Main(string[] args) cil managed
+  {
+    .entrypoint
+    // Code size       162 (0xa2)
+    .maxstack  3
+    .locals init ([0] class [mscorlib]System.Random rand,
+             [1] class [System]System.Diagnostics.Stopwatch sw,
+             [2] int32 result,
+             [3] string s1,
+             [4] string s2,
+             [5] bool CS$4$0000)
+//000019:         {
+    IL_0000:  nop
+//000020:             Random rand = new Random();
+    IL_0001:  newobj     instance void [mscorlib]System.Random::.ctor()
+    IL_0006:  stloc.0
+//000021:             Stopwatch sw = new Stopwatch();
+    IL_0007:  newobj     instance void [System]System.Diagnostics.Stopwatch::.ctor()
+    IL_000c:  stloc.1
+//000022:             int result;
+//000023:             while (true)
+//000024:             {
+//000025:                 string s1 = GenerateRandomString(rand);
+//000026:                 string s2 = GenerateRandomString(rand);
+//000027: 
+//000028:                 sw.Restart();
+//000029:                 result = SerialEditDistance(s1, s2);
+//000030:                 sw.Stop();
+//000031:                 Console.WriteLine("Serial  :\t{0}\t{1}", result, sw.Elapsed);
+//000032: 
+//000033:                 sw.Restart();
+//000034:                 result = ParallelEditDistance(s1, s2);
+//000035:                 sw.Stop();
+//000036:                 Console.WriteLine("Parallel:\t{0}\t{1}", result, sw.Elapsed);
+//000037: 
+//000038:                 Console.WriteLine("-------------------------------------------------------");
+//000039:                 GC.Collect();
+//000040:             }
+//000041:         }
+//000042: 
+//000043:         private static string GenerateRandomString(Random rand)
+//000044:         {
+//000045:             const int LEN = 10000;
+//000046:             StringBuilder sb = new StringBuilder(LEN);
+//000047:             for (int i = 0; i < LEN; i++) sb.Append((char)('a' + rand.Next(0, 26)));
+//000048:             return sb.ToString();
+//000049:         }
+//000050: 
+//000051:         private static int SerialEditDistance(string s1, string s2)
+//000052:         {
+//000053:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+//000054:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+//000055:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000056: 
+//000057:             for (int i = 1; i <= s1.Length; i++)
+//000058:             {
+//000059:                 for (int j = 1; j <= s2.Length; j++)
+//000060:                 {
+//000061:                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000062:                         dist[i - 1, j - 1] :
+//000063:                         1 + Math.Min(dist[i - 1, j],
+//000064:                             Math.Min(dist[i, j - 1],
+//000065:                                      dist[i - 1, j - 1]));
+//000066:                 }
+//000067:             }
+//000068:             return dist[s1.Length, s2.Length];
+//000069:         }
+//000070: 
+//000071:         private static int ParallelEditDistance(string s1, string s2)
+//000072:         {
+//000073:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+//000074:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+//000075:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+    IL_000d:  br         IL_009a
+
+//000024:             {
+    IL_0012:  nop
+//000025:                 string s1 = GenerateRandomString(rand);
+    IL_0013:  ldloc.0
+    IL_0014:  call       string EditDistance.Program::GenerateRandomString(class [mscorlib]System.Random)
+    IL_0019:  stloc.3
+//000026:                 string s2 = GenerateRandomString(rand);
+    IL_001a:  ldloc.0
+    IL_001b:  call       string EditDistance.Program::GenerateRandomString(class [mscorlib]System.Random)
+    IL_0020:  stloc.s    s2
+//000027: 
+//000028:                 sw.Restart();
+    IL_0022:  ldloc.1
+    IL_0023:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Restart()
+    IL_0028:  nop
+//000029:                 result = SerialEditDistance(s1, s2);
+    IL_0029:  ldloc.3
+    IL_002a:  ldloc.s    s2
+    IL_002c:  call       int32 EditDistance.Program::SerialEditDistance(string,
+                                                                        string)
+    IL_0031:  stloc.2
+//000030:                 sw.Stop();
+    IL_0032:  ldloc.1
+    IL_0033:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Stop()
+    IL_0038:  nop
+//000031:                 Console.WriteLine("Serial  :\t{0}\t{1}", result, sw.Elapsed);
+    IL_0039:  ldstr      "Serial  :\t{0}\t{1}"
+    IL_003e:  ldloc.2
+    IL_003f:  box        [mscorlib]System.Int32
+    IL_0044:  ldloc.1
+    IL_0045:  callvirt   instance valuetype [mscorlib]System.TimeSpan [System]System.Diagnostics.Stopwatch::get_Elapsed()
+    IL_004a:  box        [mscorlib]System.TimeSpan
+    IL_004f:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object,
+                                                                  object)
+    IL_0054:  nop
+//000032: 
+//000033:                 sw.Restart();
+    IL_0055:  ldloc.1
+    IL_0056:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Restart()
+    IL_005b:  nop
+//000034:                 result = ParallelEditDistance(s1, s2);
+    IL_005c:  ldloc.3
+    IL_005d:  ldloc.s    s2
+    IL_005f:  call       int32 EditDistance.Program::ParallelEditDistance(string,
+                                                                          string)
+    IL_0064:  stloc.2
+//000035:                 sw.Stop();
+    IL_0065:  ldloc.1
+    IL_0066:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Stop()
+    IL_006b:  nop
+//000036:                 Console.WriteLine("Parallel:\t{0}\t{1}", result, sw.Elapsed);
+    IL_006c:  ldstr      "Parallel:\t{0}\t{1}"
+    IL_0071:  ldloc.2
+    IL_0072:  box        [mscorlib]System.Int32
+    IL_0077:  ldloc.1
+    IL_0078:  callvirt   instance valuetype [mscorlib]System.TimeSpan [System]System.Diagnostics.Stopwatch::get_Elapsed()
+    IL_007d:  box        [mscorlib]System.TimeSpan
+    IL_0082:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object,
+                                                                  object)
+    IL_0087:  nop
+//000037: 
+//000038:                 Console.WriteLine("-------------------------------------------------------");
+    IL_0088:  ldstr      "--------------------------------------------------"
+    + "-----"
+    IL_008d:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0092:  nop
+//000039:                 GC.Collect();
+    IL_0093:  call       void [mscorlib]System.GC::Collect()
+    IL_0098:  nop
+//000040:             }
+    IL_0099:  nop
+//000023:             while (true)
+    IL_009a:  ldc.i4.1
+    IL_009b:  stloc.s    CS$4$0000
+//000024:             {
+//000025:                 string s1 = GenerateRandomString(rand);
+//000026:                 string s2 = GenerateRandomString(rand);
+//000027: 
+//000028:                 sw.Restart();
+//000029:                 result = SerialEditDistance(s1, s2);
+//000030:                 sw.Stop();
+//000031:                 Console.WriteLine("Serial  :\t{0}\t{1}", result, sw.Elapsed);
+//000032: 
+//000033:                 sw.Restart();
+//000034:                 result = ParallelEditDistance(s1, s2);
+//000035:                 sw.Stop();
+//000036:                 Console.WriteLine("Parallel:\t{0}\t{1}", result, sw.Elapsed);
+//000037: 
+//000038:                 Console.WriteLine("-------------------------------------------------------");
+//000039:                 GC.Collect();
+//000040:             }
+//000041:         }
+//000042: 
+//000043:         private static string GenerateRandomString(Random rand)
+//000044:         {
+//000045:             const int LEN = 10000;
+//000046:             StringBuilder sb = new StringBuilder(LEN);
+//000047:             for (int i = 0; i < LEN; i++) sb.Append((char)('a' + rand.Next(0, 26)));
+//000048:             return sb.ToString();
+//000049:         }
+//000050: 
+//000051:         private static int SerialEditDistance(string s1, string s2)
+//000052:         {
+//000053:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+//000054:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+//000055:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000056: 
+//000057:             for (int i = 1; i <= s1.Length; i++)
+//000058:             {
+//000059:                 for (int j = 1; j <= s2.Length; j++)
+//000060:                 {
+//000061:                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000062:                         dist[i - 1, j - 1] :
+//000063:                         1 + Math.Min(dist[i - 1, j],
+//000064:                             Math.Min(dist[i, j - 1],
+//000065:                                      dist[i - 1, j - 1]));
+//000066:                 }
+//000067:             }
+//000068:             return dist[s1.Length, s2.Length];
+//000069:         }
+//000070: 
+//000071:         private static int ParallelEditDistance(string s1, string s2)
+//000072:         {
+//000073:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+//000074:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+//000075:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+    IL_009d:  br         IL_0012
+  } // end of method Program::Main
+
+  .method private hidebysig static string 
+          GenerateRandomString(class [mscorlib]System.Random rand) cil managed
+  {
+    // Code size       63 (0x3f)
+    .maxstack  5
+    .locals init ([0] class [mscorlib]System.Text.StringBuilder sb,
+             [1] int32 i,
+             [2] string CS$1$0000,
+             [3] bool CS$4$0001)
+//000044:         {
+    IL_0000:  nop
+//000045:             const int LEN = 10000;
+//000046:             StringBuilder sb = new StringBuilder(LEN);
+    IL_0001:  ldc.i4     0x2710
+    IL_0006:  newobj     instance void [mscorlib]System.Text.StringBuilder::.ctor(int32)
+    IL_000b:  stloc.0
+//000047:             for (int i = 0; i < LEN; i++) sb.Append((char)('a' + rand.Next(0, 26)));
+    IL_000c:  ldc.i4.0
+    IL_000d:  stloc.1
+//000048:             return sb.ToString();
+//000049:         }
+//000050: 
+//000051:         private static int SerialEditDistance(string s1, string s2)
+//000052:         {
+//000053:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+//000054:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+//000055:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000056: 
+//000057:             for (int i = 1; i <= s1.Length; i++)
+//000058:             {
+//000059:                 for (int j = 1; j <= s2.Length; j++)
+//000060:                 {
+//000061:                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000062:                         dist[i - 1, j - 1] :
+//000063:                         1 + Math.Min(dist[i - 1, j],
+//000064:                             Math.Min(dist[i, j - 1],
+//000065:                                      dist[i - 1, j - 1]));
+//000066:                 }
+//000067:             }
+//000068:             return dist[s1.Length, s2.Length];
+//000069:         }
+//000070: 
+//000071:         private static int ParallelEditDistance(string s1, string s2)
+//000072:         {
+//000073:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+//000074:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+//000075:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+    IL_000e:  br.s       IL_0028
+
+//000047:             for (int i = 0; i < LEN; i++) sb.Append((char)('a' + rand.Next(0, 26)));
+    IL_0010:  ldloc.0
+    IL_0011:  ldc.i4.s   97
+    IL_0013:  ldarg.0
+    IL_0014:  ldc.i4.0
+    IL_0015:  ldc.i4.s   26
+    IL_0017:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_001c:  add
+    IL_001d:  conv.u2
+    IL_001e:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(char)
+    IL_0023:  pop
+    IL_0024:  ldloc.1
+    IL_0025:  ldc.i4.1
+    IL_0026:  add
+    IL_0027:  stloc.1
+    IL_0028:  ldloc.1
+    IL_0029:  ldc.i4     0x2710
+    IL_002e:  clt
+    IL_0030:  stloc.3
+//000048:             return sb.ToString();
+//000049:         }
+//000050: 
+//000051:         private static int SerialEditDistance(string s1, string s2)
+//000052:         {
+//000053:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+//000054:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+//000055:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000056: 
+//000057:             for (int i = 1; i <= s1.Length; i++)
+//000058:             {
+//000059:                 for (int j = 1; j <= s2.Length; j++)
+//000060:                 {
+//000061:                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000062:                         dist[i - 1, j - 1] :
+//000063:                         1 + Math.Min(dist[i - 1, j],
+//000064:                             Math.Min(dist[i, j - 1],
+//000065:                                      dist[i - 1, j - 1]));
+//000066:                 }
+//000067:             }
+//000068:             return dist[s1.Length, s2.Length];
+//000069:         }
+//000070: 
+//000071:         private static int ParallelEditDistance(string s1, string s2)
+//000072:         {
+//000073:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+//000074:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+//000075:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+    IL_0031:  ldloc.3
+    IL_0032:  brtrue.s   IL_0010
+
+//000048:             return sb.ToString();
+    IL_0034:  ldloc.0
+    IL_0035:  callvirt   instance string [mscorlib]System.Object::ToString()
+    IL_003a:  stloc.2
+    IL_003b:  br.s       IL_003d
+
+//000049:         }
+    IL_003d:  ldloc.2
+    IL_003e:  ret
+  } // end of method Program::GenerateRandomString
+
+  .method private hidebysig static int32 
+          SerialEditDistance(string s1,
+                             string s2) cil managed
+  {
+    // Code size       261 (0x105)
+    .maxstack  10
+    .locals init ([0] int32[0...,0...] dist,
+             [1] int32 i,
+             [2] int32 j,
+             [3] int32 CS$1$0000,
+             [4] bool CS$4$0001)
+//000050: 
+//000051:         private static int SerialEditDistance(string s1, string s2)
+//000052:         {
+    IL_0000:  nop
+//000053:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_0007:  ldc.i4.1
+    IL_0008:  add
+    IL_0009:  ldarg.1
+    IL_000a:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_000f:  ldc.i4.1
+    IL_0010:  add
+    IL_0011:  newobj     instance void int32[0...,0...]::.ctor(int32,
+                                                               int32)
+    IL_0016:  stloc.0
+//000054:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+    IL_0017:  ldc.i4.0
+    IL_0018:  stloc.1
+//000055:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000056: 
+//000057:             for (int i = 1; i <= s1.Length; i++)
+//000058:             {
+//000059:                 for (int j = 1; j <= s2.Length; j++)
+//000060:                 {
+//000061:                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000062:                         dist[i - 1, j - 1] :
+//000063:                         1 + Math.Min(dist[i - 1, j],
+//000064:                             Math.Min(dist[i, j - 1],
+//000065:                                      dist[i - 1, j - 1]));
+//000066:                 }
+//000067:             }
+//000068:             return dist[s1.Length, s2.Length];
+//000069:         }
+//000070: 
+//000071:         private static int ParallelEditDistance(string s1, string s2)
+//000072:         {
+//000073:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+//000074:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+//000075:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+    IL_0019:  br.s       IL_0028
+
+//000054:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+    IL_001b:  ldloc.0
+    IL_001c:  ldloc.1
+    IL_001d:  ldc.i4.0
+    IL_001e:  ldloc.1
+    IL_001f:  call       instance void int32[0...,0...]::Set(int32,
+                                                             int32,
+                                                             int32)
+    IL_0024:  ldloc.1
+    IL_0025:  ldc.i4.1
+    IL_0026:  add
+    IL_0027:  stloc.1
+    IL_0028:  ldloc.1
+    IL_0029:  ldarg.0
+    IL_002a:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_002f:  cgt
+    IL_0031:  ldc.i4.0
+    IL_0032:  ceq
+    IL_0034:  stloc.s    CS$4$0001
+//000055:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000056: 
+//000057:             for (int i = 1; i <= s1.Length; i++)
+//000058:             {
+//000059:                 for (int j = 1; j <= s2.Length; j++)
+//000060:                 {
+//000061:                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000062:                         dist[i - 1, j - 1] :
+//000063:                         1 + Math.Min(dist[i - 1, j],
+//000064:                             Math.Min(dist[i, j - 1],
+//000065:                                      dist[i - 1, j - 1]));
+//000066:                 }
+//000067:             }
+//000068:             return dist[s1.Length, s2.Length];
+//000069:         }
+//000070: 
+//000071:         private static int ParallelEditDistance(string s1, string s2)
+//000072:         {
+//000073:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+//000074:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+//000075:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+    IL_0036:  ldloc.s    CS$4$0001
+    IL_0038:  brtrue.s   IL_001b
+
+//000055:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+    IL_003a:  ldc.i4.0
+    IL_003b:  stloc.2
+//000056: 
+//000057:             for (int i = 1; i <= s1.Length; i++)
+//000058:             {
+//000059:                 for (int j = 1; j <= s2.Length; j++)
+//000060:                 {
+//000061:                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000062:                         dist[i - 1, j - 1] :
+//000063:                         1 + Math.Min(dist[i - 1, j],
+//000064:                             Math.Min(dist[i, j - 1],
+//000065:                                      dist[i - 1, j - 1]));
+//000066:                 }
+//000067:             }
+//000068:             return dist[s1.Length, s2.Length];
+//000069:         }
+//000070: 
+//000071:         private static int ParallelEditDistance(string s1, string s2)
+//000072:         {
+//000073:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+//000074:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+//000075:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+    IL_003c:  br.s       IL_004b
+
+//000055:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+    IL_003e:  ldloc.0
+    IL_003f:  ldc.i4.0
+    IL_0040:  ldloc.2
+    IL_0041:  ldloc.2
+    IL_0042:  call       instance void int32[0...,0...]::Set(int32,
+                                                             int32,
+                                                             int32)
+    IL_0047:  ldloc.2
+    IL_0048:  ldc.i4.1
+    IL_0049:  add
+    IL_004a:  stloc.2
+    IL_004b:  ldloc.2
+    IL_004c:  ldarg.1
+    IL_004d:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_0052:  cgt
+    IL_0054:  ldc.i4.0
+    IL_0055:  ceq
+    IL_0057:  stloc.s    CS$4$0001
+//000056: 
+//000057:             for (int i = 1; i <= s1.Length; i++)
+//000058:             {
+//000059:                 for (int j = 1; j <= s2.Length; j++)
+//000060:                 {
+//000061:                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000062:                         dist[i - 1, j - 1] :
+//000063:                         1 + Math.Min(dist[i - 1, j],
+//000064:                             Math.Min(dist[i, j - 1],
+//000065:                                      dist[i - 1, j - 1]));
+//000066:                 }
+//000067:             }
+//000068:             return dist[s1.Length, s2.Length];
+//000069:         }
+//000070: 
+//000071:         private static int ParallelEditDistance(string s1, string s2)
+//000072:         {
+//000073:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+//000074:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+//000075:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+    IL_0059:  ldloc.s    CS$4$0001
+    IL_005b:  brtrue.s   IL_003e
+
+//000057:             for (int i = 1; i <= s1.Length; i++)
+    IL_005d:  ldc.i4.1
+    IL_005e:  stloc.1
+//000058:             {
+//000059:                 for (int j = 1; j <= s2.Length; j++)
+//000060:                 {
+//000061:                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000062:                         dist[i - 1, j - 1] :
+//000063:                         1 + Math.Min(dist[i - 1, j],
+//000064:                             Math.Min(dist[i, j - 1],
+//000065:                                      dist[i - 1, j - 1]));
+//000066:                 }
+//000067:             }
+//000068:             return dist[s1.Length, s2.Length];
+//000069:         }
+//000070: 
+//000071:         private static int ParallelEditDistance(string s1, string s2)
+//000072:         {
+//000073:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+//000074:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+//000075:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+    IL_005f:  br.s       IL_00d9
+
+//000058:             {
+    IL_0061:  nop
+//000059:                 for (int j = 1; j <= s2.Length; j++)
+    IL_0062:  ldc.i4.1
+    IL_0063:  stloc.2
+//000060:                 {
+//000061:                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000062:                         dist[i - 1, j - 1] :
+//000063:                         1 + Math.Min(dist[i - 1, j],
+//000064:                             Math.Min(dist[i, j - 1],
+//000065:                                      dist[i - 1, j - 1]));
+//000066:                 }
+//000067:             }
+//000068:             return dist[s1.Length, s2.Length];
+//000069:         }
+//000070: 
+//000071:         private static int ParallelEditDistance(string s1, string s2)
+//000072:         {
+//000073:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+//000074:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+//000075:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+    IL_0064:  br.s       IL_00c2
+
+//000060:                 {
+    IL_0066:  nop
+//000061:                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+    IL_0067:  ldloc.0
+    IL_0068:  ldloc.1
+    IL_0069:  ldloc.2
+    IL_006a:  ldarg.0
+    IL_006b:  ldloc.1
+    IL_006c:  ldc.i4.1
+    IL_006d:  sub
+    IL_006e:  callvirt   instance char [mscorlib]System.String::get_Chars(int32)
+    IL_0073:  ldarg.1
+    IL_0074:  ldloc.2
+    IL_0075:  ldc.i4.1
+    IL_0076:  sub
+    IL_0077:  callvirt   instance char [mscorlib]System.String::get_Chars(int32)
+    IL_007c:  beq.s      IL_00ac
+
+    IL_007e:  ldc.i4.1
+    IL_007f:  ldloc.0
+    IL_0080:  ldloc.1
+    IL_0081:  ldc.i4.1
+    IL_0082:  sub
+    IL_0083:  ldloc.2
+    IL_0084:  call       instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_0089:  ldloc.0
+    IL_008a:  ldloc.1
+    IL_008b:  ldloc.2
+    IL_008c:  ldc.i4.1
+    IL_008d:  sub
+    IL_008e:  call       instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_0093:  ldloc.0
+    IL_0094:  ldloc.1
+    IL_0095:  ldc.i4.1
+    IL_0096:  sub
+    IL_0097:  ldloc.2
+    IL_0098:  ldc.i4.1
+    IL_0099:  sub
+    IL_009a:  call       instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_009f:  call       int32 [mscorlib]System.Math::Min(int32,
+                                                          int32)
+    IL_00a4:  call       int32 [mscorlib]System.Math::Min(int32,
+                                                          int32)
+    IL_00a9:  add
+    IL_00aa:  br.s       IL_00b8
+
+    IL_00ac:  ldloc.0
+    IL_00ad:  ldloc.1
+    IL_00ae:  ldc.i4.1
+    IL_00af:  sub
+    IL_00b0:  ldloc.2
+    IL_00b1:  ldc.i4.1
+    IL_00b2:  sub
+    IL_00b3:  call       instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_00b8:  call       instance void int32[0...,0...]::Set(int32,
+                                                             int32,
+                                                             int32)
+//000062:                         dist[i - 1, j - 1] :
+//000063:                         1 + Math.Min(dist[i - 1, j],
+//000064:                             Math.Min(dist[i, j - 1],
+//000065:                                      dist[i - 1, j - 1]));
+//000066:                 }
+    IL_00bd:  nop
+//000059:                 for (int j = 1; j <= s2.Length; j++)
+    IL_00be:  ldloc.2
+    IL_00bf:  ldc.i4.1
+    IL_00c0:  add
+    IL_00c1:  stloc.2
+    IL_00c2:  ldloc.2
+    IL_00c3:  ldarg.1
+    IL_00c4:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_00c9:  cgt
+    IL_00cb:  ldc.i4.0
+    IL_00cc:  ceq
+    IL_00ce:  stloc.s    CS$4$0001
+//000060:                 {
+//000061:                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000062:                         dist[i - 1, j - 1] :
+//000063:                         1 + Math.Min(dist[i - 1, j],
+//000064:                             Math.Min(dist[i, j - 1],
+//000065:                                      dist[i - 1, j - 1]));
+//000066:                 }
+//000067:             }
+//000068:             return dist[s1.Length, s2.Length];
+//000069:         }
+//000070: 
+//000071:         private static int ParallelEditDistance(string s1, string s2)
+//000072:         {
+//000073:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+//000074:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+//000075:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+    IL_00d0:  ldloc.s    CS$4$0001
+    IL_00d2:  brtrue.s   IL_0066
+
+//000067:             }
+    IL_00d4:  nop
+//000057:             for (int i = 1; i <= s1.Length; i++)
+    IL_00d5:  ldloc.1
+    IL_00d6:  ldc.i4.1
+    IL_00d7:  add
+    IL_00d8:  stloc.1
+    IL_00d9:  ldloc.1
+    IL_00da:  ldarg.0
+    IL_00db:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_00e0:  cgt
+    IL_00e2:  ldc.i4.0
+    IL_00e3:  ceq
+    IL_00e5:  stloc.s    CS$4$0001
+//000058:             {
+//000059:                 for (int j = 1; j <= s2.Length; j++)
+//000060:                 {
+//000061:                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000062:                         dist[i - 1, j - 1] :
+//000063:                         1 + Math.Min(dist[i - 1, j],
+//000064:                             Math.Min(dist[i, j - 1],
+//000065:                                      dist[i - 1, j - 1]));
+//000066:                 }
+//000067:             }
+//000068:             return dist[s1.Length, s2.Length];
+//000069:         }
+//000070: 
+//000071:         private static int ParallelEditDistance(string s1, string s2)
+//000072:         {
+//000073:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+//000074:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+//000075:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+    IL_00e7:  ldloc.s    CS$4$0001
+    IL_00e9:  brtrue     IL_0061
+
+//000068:             return dist[s1.Length, s2.Length];
+    IL_00ee:  ldloc.0
+    IL_00ef:  ldarg.0
+    IL_00f0:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_00f5:  ldarg.1
+    IL_00f6:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_00fb:  call       instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_0100:  stloc.3
+    IL_0101:  br.s       IL_0103
+
+//000069:         }
+    IL_0103:  ldloc.3
+    IL_0104:  ret
+  } // end of method Program::SerialEditDistance
+
+  .method private hidebysig static int32 
+          ParallelEditDistance(string s1,
+                               string s2) cil managed
+  {
+    // Code size       238 (0xee)
+    .maxstack  7
+    .locals init ([0] int32 i,
+             [1] int32 j,
+             [2] int32 numBlocks,
+             [3] class EditDistance.Program/'<>c__DisplayClass1' 'CS$<>8__locals2',
+             [4] int32 CS$1$0000,
+             [5] bool CS$4$0001)
+//000070: 
+//000071:         private static int ParallelEditDistance(string s1, string s2)
+//000072:         {
+//000073:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+//000074:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+//000075:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+    IL_0000:  newobj     instance void EditDistance.Program/'<>c__DisplayClass1'::.ctor()
+    IL_0005:  stloc.3
+    IL_0006:  ldloc.3
+    IL_0007:  ldarg.0
+    IL_0008:  stfld      string EditDistance.Program/'<>c__DisplayClass1'::s1
+    IL_000d:  ldloc.3
+    IL_000e:  ldarg.1
+    IL_000f:  stfld      string EditDistance.Program/'<>c__DisplayClass1'::s2
+//000072:         {
+    IL_0014:  nop
+//000073:             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+    IL_0015:  ldloc.3
+    IL_0016:  ldloc.3
+    IL_0017:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s1
+    IL_001c:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_0021:  ldc.i4.1
+    IL_0022:  add
+    IL_0023:  ldloc.3
+    IL_0024:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s2
+    IL_0029:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_002e:  ldc.i4.1
+    IL_002f:  add
+    IL_0030:  newobj     instance void int32[0...,0...]::.ctor(int32,
+                                                               int32)
+    IL_0035:  stfld      int32[0...,0...] EditDistance.Program/'<>c__DisplayClass1'::dist
+//000074:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+    IL_003a:  ldc.i4.0
+    IL_003b:  stloc.0
+//000075:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+    IL_003c:  br.s       IL_0050
+
+//000074:             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+    IL_003e:  ldloc.3
+    IL_003f:  ldfld      int32[0...,0...] EditDistance.Program/'<>c__DisplayClass1'::dist
+    IL_0044:  ldloc.0
+    IL_0045:  ldc.i4.0
+    IL_0046:  ldloc.0
+    IL_0047:  call       instance void int32[0...,0...]::Set(int32,
+                                                             int32,
+                                                             int32)
+    IL_004c:  ldloc.0
+    IL_004d:  ldc.i4.1
+    IL_004e:  add
+    IL_004f:  stloc.0
+    IL_0050:  ldloc.0
+    IL_0051:  ldloc.3
+    IL_0052:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s1
+    IL_0057:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_005c:  cgt
+    IL_005e:  ldc.i4.0
+    IL_005f:  ceq
+    IL_0061:  stloc.s    CS$4$0001
+//000075:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+    IL_0063:  ldloc.s    CS$4$0001
+    IL_0065:  brtrue.s   IL_003e
+
+//000075:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+    IL_0067:  ldc.i4.0
+    IL_0068:  stloc.1
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+    IL_0069:  br.s       IL_007d
+
+//000075:             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+    IL_006b:  ldloc.3
+    IL_006c:  ldfld      int32[0...,0...] EditDistance.Program/'<>c__DisplayClass1'::dist
+    IL_0071:  ldc.i4.0
+    IL_0072:  ldloc.1
+    IL_0073:  ldloc.1
+    IL_0074:  call       instance void int32[0...,0...]::Set(int32,
+                                                             int32,
+                                                             int32)
+    IL_0079:  ldloc.1
+    IL_007a:  ldc.i4.1
+    IL_007b:  add
+    IL_007c:  stloc.1
+    IL_007d:  ldloc.1
+    IL_007e:  ldloc.3
+    IL_007f:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s2
+    IL_0084:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_0089:  cgt
+    IL_008b:  ldc.i4.0
+    IL_008c:  ceq
+    IL_008e:  stloc.s    CS$4$0001
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+//000094:         }
+//000095:     }
+//000096: }
+    IL_0090:  ldloc.s    CS$4$0001
+    IL_0092:  brtrue.s   IL_006b
+
+//000076:             int numBlocks = Environment.ProcessorCount * 4;
+    IL_0094:  call       int32 [mscorlib]System.Environment::get_ProcessorCount()
+    IL_0099:  ldc.i4.4
+    IL_009a:  mul
+    IL_009b:  stloc.2
+//000077: 
+//000078:             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+    IL_009c:  ldloc.3
+    IL_009d:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s1
+    IL_00a2:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_00a7:  ldloc.3
+    IL_00a8:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s2
+    IL_00ad:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_00b2:  ldloc.2
+    IL_00b3:  ldloc.2
+    IL_00b4:  ldloc.3
+    IL_00b5:  ldftn      instance void EditDistance.Program/'<>c__DisplayClass1'::'<ParallelEditDistance>b__0'(int32,
+                                                                                                               int32,
+                                                                                                               int32,
+                                                                                                               int32)
+    IL_00bb:  newobj     instance void class [mscorlib]System.Action`4<int32,int32,int32,int32>::.ctor(object,
+                                                                                                       native int)
+    IL_00c0:  call       void [ParallelExtensionsExtras]System.Threading.Algorithms.ParallelAlgorithms::Wavefront(int32,
+                                                                                                                  int32,
+                                                                                                                  int32,
+                                                                                                                  int32,
+                                                                                                                  class [mscorlib]System.Action`4<int32,int32,int32,int32>)
+    IL_00c5:  nop
+//000079:             {
+//000080:                 for (int i = start_i+1; i <= end_i; i++)
+//000081:                 {
+//000082:                     for (int j = start_j+1; j <= end_j; j++)
+//000083:                     {
+//000084:                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+//000085:                             dist[i - 1, j - 1] :
+//000086:                             1 + Math.Min(dist[i - 1, j],
+//000087:                                 Math.Min(dist[i, j - 1],
+//000088:                                          dist[i - 1, j - 1]));
+//000089:                     }
+//000090:                 }
+//000091:             });
+//000092: 
+//000093:             return dist[s1.Length, s2.Length];
+    IL_00c6:  ldloc.3
+    IL_00c7:  ldfld      int32[0...,0...] EditDistance.Program/'<>c__DisplayClass1'::dist
+    IL_00cc:  ldloc.3
+    IL_00cd:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s1
+    IL_00d2:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_00d7:  ldloc.3
+    IL_00d8:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s2
+    IL_00dd:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_00e2:  call       instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_00e7:  stloc.s    CS$1$0000
+    IL_00e9:  br.s       IL_00eb
+
+//000094:         }
+    IL_00eb:  ldloc.s    CS$1$0000
+    IL_00ed:  ret
+  } // end of method Program::ParallelEditDistance
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Program::.ctor
+
+} // end of class EditDistance.Program
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

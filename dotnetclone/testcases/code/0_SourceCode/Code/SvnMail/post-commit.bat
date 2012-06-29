@@ -1,0 +1,1 @@
+C:\Repositories\ProFsharp\hooks\ProFSharp.SvnMail.exe %1 %2

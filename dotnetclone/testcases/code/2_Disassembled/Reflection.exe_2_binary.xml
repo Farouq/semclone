@@ -1,0 +1,94 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\Reflection\Program.fs" startline="30" endline="42"><![CDATA[
+  {
+    .entrypoint
+    .custom instance void [FSharp.Core]Microsoft.FSharp.Core.EntryPointAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       172 (0xac)
+    .maxstack  5
+    .locals init ([0] class Program/Person p,
+             [1] class [mscorlib]System.Type pt1,
+             [2] class [mscorlib]System.Type pt2,
+             [3] class [mscorlib]System.Type pt3,
+             [4] class [mscorlib]System.Reflection.MemberInfo[] V_4,
+             [5] class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [mscorlib]System.Reflection.MemberInfo,class [FSharp.Core]Microsoft.FSharp.Core.Unit> V_5,
+             [6] class [mscorlib]System.Reflection.MemberInfo[] V_6,
+             [7] int32 V_7,
+             [8] int32 V_8,
+             [9] int32 V_9)
+    IL_0000:  nop
+    IL_0001:  ldstr      "Katie"
+    IL_0006:  ldstr      "Ellison"
+    IL_000b:  ldc.i4.s   30
+    IL_000d:  newobj     instance void Program/Person::.ctor(string,
+                                                             string,
+                                                             int32)
+    IL_0012:  stloc.0
+    IL_0013:  ldloc.0
+    IL_0014:  call       instance class [mscorlib]System.Type [mscorlib]System.Object::GetType()
+    IL_0019:  stloc.1
+    IL_001a:  ldstr      "System.Object"
+    IL_001f:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetType(string)
+    IL_0024:  stloc.2
+    IL_0025:  ldtoken    Program/Person
+    IL_002a:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_002f:  stloc.3
+    IL_0030:  newobj     instance void Program/main@36::.ctor()
+    IL_0035:  ldloc.1
+    IL_0036:  callvirt   instance class [mscorlib]System.Reflection.MemberInfo[] [mscorlib]System.Type::GetMembers()
+    IL_003b:  call       !!0[] [FSharp.Core]Microsoft.FSharp.Collections.ArrayModule::Filter<class [mscorlib]System.Reflection.MemberInfo>(class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<!!0,bool>,
+                                                                                                                                           !!0[])
+    IL_0040:  stloc.s    V_4
+    IL_0042:  newobj     instance void Program/'main@39-1'::.ctor()
+    IL_0047:  stloc.s    V_5
+    IL_0049:  ldloc.s    V_4
+    IL_004b:  stloc.s    V_6
+    IL_004d:  ldloc.s    V_6
+    IL_004f:  box        class [mscorlib]System.Reflection.MemberInfo[]
+    IL_0054:  brfalse.s  IL_0058
+
+    IL_0056:  br.s       IL_006b
+
+    IL_0058:  ldstr      "array"
+    IL_005d:  newobj     instance void [mscorlib]System.ArgumentNullException::.ctor(string)
+    IL_0062:  call       !!0 [FSharp.Core]Microsoft.FSharp.Core.Operators::Raise<class [FSharp.Core]Microsoft.FSharp.Core.Unit>(class [mscorlib]System.Exception)
+    IL_0067:  pop
+    IL_0068:  nop
+    IL_0069:  br.s       IL_006c
+
+    IL_006b:  nop
+    IL_006c:  ldloc.s    V_6
+    IL_006e:  ldlen
+    IL_006f:  conv.i4
+    IL_0070:  stloc.s    V_7
+    IL_0072:  ldc.i4.0
+    IL_0073:  stloc.s    V_9
+    IL_0075:  ldloc.s    V_7
+    IL_0077:  ldc.i4.1
+    IL_0078:  sub
+    IL_0079:  stloc.s    V_8
+    IL_007b:  ldloc.s    V_8
+    IL_007d:  ldloc.s    V_9
+    IL_007f:  blt.s      IL_00a0
+
+    IL_0081:  ldloc.s    V_5
+    IL_0083:  ldloc.s    V_6
+    IL_0085:  ldloc.s    V_9
+    IL_0087:  ldelem     [mscorlib]System.Reflection.MemberInfo
+    IL_008c:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [mscorlib]System.Reflection.MemberInfo,class [FSharp.Core]Microsoft.FSharp.Core.Unit>::Invoke(!0)
+    IL_0091:  pop
+    IL_0092:  ldloc.s    V_9
+    IL_0094:  ldc.i4.1
+    IL_0095:  add
+    IL_0096:  stloc.s    V_9
+    IL_0098:  ldloc.s    V_9
+    IL_009a:  ldloc.s    V_8
+    IL_009c:  ldc.i4.1
+    IL_009d:  add
+    IL_009e:  bne.un.s   IL_0081
+
+    IL_00a0:  ldstr      "Done"
+    IL_00a5:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_00aa:  ldc.i4.0
+    IL_00ab:  ret
+]]></source>
+</source_elements></project>

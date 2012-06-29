@@ -1,0 +1,3555 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.0.30319.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern System.Core
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern System
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly PlinqKnobs
+{
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 0A 50 6C 69 6E 71 4B 6E 6F 62 73 00 00 )    // ...PlinqKnobs..
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 1A 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 01 00 54   // ,Version=v4.0..T
+                                                                                                        0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C   // ..FrameworkDispl
+                                                                                                        61 79 4E 61 6D 65 10 2E 4E 45 54 20 46 72 61 6D   // ayName..NET Fram
+                                                                                                        65 77 6F 72 6B 20 34 )                            // ework 4
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 0A 50 6C 69 6E 71 4B 6E 6F 62 73 00 00 )    // ...PlinqKnobs..
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 15 4D 69 63 72 6F 73 6F 66 74 20 43 6F 72   // ...Microsoft Cor
+                                                                                                70 6F 72 61 74 69 6F 6E 00 00 )                   // poration..
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 39 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ..9Copyright .. 
+                                                                                                  4D 69 63 72 6F 73 6F 66 74 20 43 6F 72 70 6F 72   // Microsoft Corpor
+                                                                                                  61 74 69 6F 6E 2E 20 20 41 6C 6C 20 72 69 67 68   // ation.  All righ
+                                                                                                  74 73 20 72 65 73 65 72 76 65 64 2E 00 00 )       // ts reserved...
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 61 34 39 64 33 33 64 61 2D 34 35 61 62   // ..$a49d33da-45ab
+                                                                                                  2D 34 38 38 38 2D 62 64 35 66 2D 64 39 30 62 61   // -4888-bd5f-d90ba
+                                                                                                  30 63 64 66 34 34 66 00 00 )                      // 0cdf44f..
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.module PlinqKnobs.exe
+// MVID: {8EAC06CE-F6D7-40BF-B9FC-74A3B6050229}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000003    //  ILONLY 32BITREQUIRED
+// Image base: 0x00630000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi beforefieldinit Program
+       extends [mscorlib]System.Object
+{
+  .class auto ansi sealed nested private beforefieldinit '<>c__DisplayClassb'
+         extends [mscorlib]System.Object
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    .field public class [mscorlib]System.Threading.CancellationTokenSource cts
+    .method public hidebysig specialname rtspecialname 
+            instance void  .ctor() cil managed
+    {
+      // Code size       7 (0x7)
+      .maxstack  8
+      IL_0000:  ldarg.0
+      IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0006:  ret
+    } // end of method '<>c__DisplayClassb'::.ctor
+
+    .method public hidebysig instance void 
+            '<WithCancellation>b__9'() cil managed
+    {
+      // Code size       25 (0x19)
+      .maxstack  8
+      .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\PlinqKnobs\PlinqKnobs_CSharp\Program.cs' 
+//000124:         {
+      IL_0000:  nop
+//000125:             Thread.Sleep(300);
+      IL_0001:  ldc.i4     0x12c
+      IL_0006:  call       void [mscorlib]System.Threading.Thread::Sleep(int32)
+      IL_000b:  nop
+//000126:             cts.Cancel();
+      IL_000c:  ldarg.0
+      IL_000d:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource Program/'<>c__DisplayClassb'::cts
+      IL_0012:  callvirt   instance void [mscorlib]System.Threading.CancellationTokenSource::Cancel()
+      IL_0017:  nop
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+      IL_0018:  ret
+    } // end of method '<>c__DisplayClassb'::'<WithCancellation>b__9'
+
+  } // end of class '<>c__DisplayClassb'
+
+  .field private static class [mscorlib]System.Func`2<int32,bool> 'CS$<>9__CachedAnonymousMethodDelegate3'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`2<int32,bool> 'CS$<>9__CachedAnonymousMethodDelegate4'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`2<int32,bool> 'CS$<>9__CachedAnonymousMethodDelegate5'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`2<int32,int32> 'CS$<>9__CachedAnonymousMethodDelegate7'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`2<int32,int32> 'CS$<>9__CachedAnonymousMethodDelegatea'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`2<int32,int32> 'CS$<>9__CachedAnonymousMethodDelegatef'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`2<int32,int32> 'CS$<>9__CachedAnonymousMethodDelegate10'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .method private hidebysig static void  Main(string[] args) cil managed
+  {
+    .entrypoint
+    // Code size       8 (0x8)
+    .maxstack  8
+//000018:     {
+    IL_0000:  nop
+//000019:         // ... Uncomment each of the below four lines one-by-one to test the relevant PLINQ "knob" ...
+//000020: 
+//000021:         AsOrdered();
+    IL_0001:  call       void Program::AsOrdered()
+    IL_0006:  nop
+//000022:         //WithMergeOptions();
+//000023:         //WithCancellation();
+//000024:         //WithDegreeOfParallelism();
+//000025:     }
+    IL_0007:  ret
+  } // end of method Program::Main
+
+  .method private hidebysig static void  AsOrdered() cil managed
+  {
+    // Code size       382 (0x17e)
+    .maxstack  4
+    .locals init ([0] class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> items,
+             [1] class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> q,
+             [2] int32 e,
+             [3] class [System.Core]System.Linq.ParallelQuery`1<int32> items2,
+             [4] class [mscorlib]System.Collections.Generic.IEnumerator`1<int32> CS$5$0000,
+             [5] bool CS$4$0001)
+//000026: 
+//000027:     private static void AsOrdered()
+//000028:     {
+    IL_0000:  nop
+//000029:         #region Sequential
+//000030:         var items = Enumerable.Range(1, 100);
+    IL_0001:  ldc.i4.1
+    IL_0002:  ldc.i4.s   100
+    IL_0004:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> [System.Core]System.Linq.Enumerable::Range(int32,
+                                                                                                                                    int32)
+    IL_0009:  stloc.0
+//000031:         var q = from e in items
+    IL_000a:  ldloc.0
+    IL_000b:  ldsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate3'
+    IL_0010:  brtrue.s   IL_0025
+
+    IL_0012:  ldnull
+    IL_0013:  ldftn      bool Program::'<AsOrdered>b__0'(int32)
+    IL_0019:  newobj     instance void class [mscorlib]System.Func`2<int32,bool>::.ctor(object,
+                                                                                        native int)
+    IL_001e:  stsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate3'
+    IL_0023:  br.s       IL_0025
+
+    IL_0025:  ldsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate3'
+    IL_002a:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0> [System.Core]System.Linq.Enumerable::Where<int32>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                         class [mscorlib]System.Func`2<!!0,bool>)
+    IL_002f:  stloc.1
+//000032:                 where (e % 2 == 0) // is even
+//000033:                 select e;
+//000034: 
+//000035:         foreach (var e in q)
+    IL_0030:  nop
+    IL_0031:  ldloc.1
+    IL_0032:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<int32>::GetEnumerator()
+    IL_0037:  stloc.s    CS$5$0000
+//000036:         {
+//000037:             Console.WriteLine(e);
+//000038:         }
+//000039:         Console.Write("Complete: Sequential");
+//000040:         Console.ReadLine();
+//000041:         #endregion
+//000042: 
+//000043:         #region Parallel
+//000044:         var items2 = ParallelEnumerable.Range(1, 100);
+//000045:         q = from e in items2
+//000046:             where (e % 2 == 0) // is even
+//000047:             select e;
+//000048: 
+//000049:         foreach (var e in q)
+//000050:         {
+//000051:             Console.WriteLine(e);
+//000052:         }
+//000053:         Console.Write("Complete: Parallel");
+//000054:         Console.ReadLine();
+//000055:         #endregion
+//000056: 
+//000057:         #region Parallel with Ordering
+//000058:         q = from e in items2.AsOrdered()
+//000059:             where (e % 2 == 0) // is even
+//000060:             select e;
+//000061: 
+//000062:         foreach (var e in q)
+//000063:         {
+//000064:             Console.WriteLine(e);
+//000065:         }
+//000066: 
+//000067:         Console.Write("Complete: Parallel with Ordering");
+//000068:         Console.ReadLine();
+//000069:         #endregion
+//000070:     }
+//000071: 
+//000072:     private static void WithMergeOptions()
+//000073:     {
+//000074:         #region Define the query
+//000075:         var items = ParallelEnumerable.Range(1, 1000);
+//000076:         var q = from e in items
+//000077:                 select DoWork(e);
+//000078:         #endregion
+//000079: 
+//000080:         #region Auto Buffered
+//000081:         foreach (var e in q)
+//000082:         {
+//000083:             Console.WriteLine(e);
+//000084:         }
+//000085: 
+//000086:         Console.Write("Complete: Auto buffered");
+//000087:         Console.ReadLine();
+//000088:         #endregion
+//000089: 
+//000090:         #region Fully Buffered
+//000091:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.FullyBuffered))
+//000092:         {
+//000093:             Console.WriteLine(e);
+//000094:         }
+//000095: 
+//000096:         Console.Write("Complete: Fully buffered");
+//000097:         Console.ReadLine();
+//000098:         #endregion
+//000099: 
+//000100:         #region Not buffered
+//000101:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.NotBuffered))
+//000102:         {
+//000103:             Console.WriteLine(e);
+//000104:         }
+//000105: 
+//000106:         Console.Write("Complete: Not buffered");
+//000107:         Console.ReadLine();
+//000108:         #endregion
+//000109:     }
+//000110: 
+//000111:     private static void WithCancellation()
+//000112:     {
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+    .try
+    {
+      IL_0039:  br.s       IL_004c
+
+//000035:         foreach (var e in q)
+      IL_003b:  ldloc.s    CS$5$0000
+      IL_003d:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<int32>::get_Current()
+      IL_0042:  stloc.2
+//000036:         {
+      IL_0043:  nop
+//000037:             Console.WriteLine(e);
+      IL_0044:  ldloc.2
+      IL_0045:  call       void [mscorlib]System.Console::WriteLine(int32)
+      IL_004a:  nop
+//000038:         }
+      IL_004b:  nop
+//000035:         foreach (var e in q)
+      IL_004c:  ldloc.s    CS$5$0000
+      IL_004e:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0053:  stloc.s    CS$4$0001
+//000036:         {
+//000037:             Console.WriteLine(e);
+//000038:         }
+//000039:         Console.Write("Complete: Sequential");
+//000040:         Console.ReadLine();
+//000041:         #endregion
+//000042: 
+//000043:         #region Parallel
+//000044:         var items2 = ParallelEnumerable.Range(1, 100);
+//000045:         q = from e in items2
+//000046:             where (e % 2 == 0) // is even
+//000047:             select e;
+//000048: 
+//000049:         foreach (var e in q)
+//000050:         {
+//000051:             Console.WriteLine(e);
+//000052:         }
+//000053:         Console.Write("Complete: Parallel");
+//000054:         Console.ReadLine();
+//000055:         #endregion
+//000056: 
+//000057:         #region Parallel with Ordering
+//000058:         q = from e in items2.AsOrdered()
+//000059:             where (e % 2 == 0) // is even
+//000060:             select e;
+//000061: 
+//000062:         foreach (var e in q)
+//000063:         {
+//000064:             Console.WriteLine(e);
+//000065:         }
+//000066: 
+//000067:         Console.Write("Complete: Parallel with Ordering");
+//000068:         Console.ReadLine();
+//000069:         #endregion
+//000070:     }
+//000071: 
+//000072:     private static void WithMergeOptions()
+//000073:     {
+//000074:         #region Define the query
+//000075:         var items = ParallelEnumerable.Range(1, 1000);
+//000076:         var q = from e in items
+//000077:                 select DoWork(e);
+//000078:         #endregion
+//000079: 
+//000080:         #region Auto Buffered
+//000081:         foreach (var e in q)
+//000082:         {
+//000083:             Console.WriteLine(e);
+//000084:         }
+//000085: 
+//000086:         Console.Write("Complete: Auto buffered");
+//000087:         Console.ReadLine();
+//000088:         #endregion
+//000089: 
+//000090:         #region Fully Buffered
+//000091:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.FullyBuffered))
+//000092:         {
+//000093:             Console.WriteLine(e);
+//000094:         }
+//000095: 
+//000096:         Console.Write("Complete: Fully buffered");
+//000097:         Console.ReadLine();
+//000098:         #endregion
+//000099: 
+//000100:         #region Not buffered
+//000101:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.NotBuffered))
+//000102:         {
+//000103:             Console.WriteLine(e);
+//000104:         }
+//000105: 
+//000106:         Console.Write("Complete: Not buffered");
+//000107:         Console.ReadLine();
+//000108:         #endregion
+//000109:     }
+//000110: 
+//000111:     private static void WithCancellation()
+//000112:     {
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+      IL_0055:  ldloc.s    CS$4$0001
+      IL_0057:  brtrue.s   IL_003b
+
+      IL_0059:  leave.s    IL_006f
+
+    }  // end .try
+    finally
+    {
+      IL_005b:  ldloc.s    CS$5$0000
+      IL_005d:  ldnull
+      IL_005e:  ceq
+      IL_0060:  stloc.s    CS$4$0001
+      IL_0062:  ldloc.s    CS$4$0001
+      IL_0064:  brtrue.s   IL_006e
+
+      IL_0066:  ldloc.s    CS$5$0000
+      IL_0068:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_006d:  nop
+      IL_006e:  endfinally
+    }  // end handler
+    IL_006f:  nop
+//000039:         Console.Write("Complete: Sequential");
+    IL_0070:  ldstr      "Complete: Sequential"
+    IL_0075:  call       void [mscorlib]System.Console::Write(string)
+    IL_007a:  nop
+//000040:         Console.ReadLine();
+    IL_007b:  call       string [mscorlib]System.Console::ReadLine()
+    IL_0080:  pop
+//000041:         #endregion
+//000042: 
+//000043:         #region Parallel
+//000044:         var items2 = ParallelEnumerable.Range(1, 100);
+    IL_0081:  ldc.i4.1
+    IL_0082:  ldc.i4.s   100
+    IL_0084:  call       class [System.Core]System.Linq.ParallelQuery`1<int32> [System.Core]System.Linq.ParallelEnumerable::Range(int32,
+                                                                                                                                  int32)
+    IL_0089:  stloc.3
+//000045:         q = from e in items2
+    IL_008a:  ldloc.3
+    IL_008b:  ldsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate4'
+    IL_0090:  brtrue.s   IL_00a5
+
+    IL_0092:  ldnull
+    IL_0093:  ldftn      bool Program::'<AsOrdered>b__1'(int32)
+    IL_0099:  newobj     instance void class [mscorlib]System.Func`2<int32,bool>::.ctor(object,
+                                                                                        native int)
+    IL_009e:  stsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate4'
+    IL_00a3:  br.s       IL_00a5
+
+    IL_00a5:  ldsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate4'
+    IL_00aa:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::Where<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                       class [mscorlib]System.Func`2<!!0,bool>)
+    IL_00af:  stloc.1
+//000046:             where (e % 2 == 0) // is even
+//000047:             select e;
+//000048: 
+//000049:         foreach (var e in q)
+    IL_00b0:  nop
+    IL_00b1:  ldloc.1
+    IL_00b2:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<int32>::GetEnumerator()
+    IL_00b7:  stloc.s    CS$5$0000
+//000050:         {
+//000051:             Console.WriteLine(e);
+//000052:         }
+//000053:         Console.Write("Complete: Parallel");
+//000054:         Console.ReadLine();
+//000055:         #endregion
+//000056: 
+//000057:         #region Parallel with Ordering
+//000058:         q = from e in items2.AsOrdered()
+//000059:             where (e % 2 == 0) // is even
+//000060:             select e;
+//000061: 
+//000062:         foreach (var e in q)
+//000063:         {
+//000064:             Console.WriteLine(e);
+//000065:         }
+//000066: 
+//000067:         Console.Write("Complete: Parallel with Ordering");
+//000068:         Console.ReadLine();
+//000069:         #endregion
+//000070:     }
+//000071: 
+//000072:     private static void WithMergeOptions()
+//000073:     {
+//000074:         #region Define the query
+//000075:         var items = ParallelEnumerable.Range(1, 1000);
+//000076:         var q = from e in items
+//000077:                 select DoWork(e);
+//000078:         #endregion
+//000079: 
+//000080:         #region Auto Buffered
+//000081:         foreach (var e in q)
+//000082:         {
+//000083:             Console.WriteLine(e);
+//000084:         }
+//000085: 
+//000086:         Console.Write("Complete: Auto buffered");
+//000087:         Console.ReadLine();
+//000088:         #endregion
+//000089: 
+//000090:         #region Fully Buffered
+//000091:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.FullyBuffered))
+//000092:         {
+//000093:             Console.WriteLine(e);
+//000094:         }
+//000095: 
+//000096:         Console.Write("Complete: Fully buffered");
+//000097:         Console.ReadLine();
+//000098:         #endregion
+//000099: 
+//000100:         #region Not buffered
+//000101:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.NotBuffered))
+//000102:         {
+//000103:             Console.WriteLine(e);
+//000104:         }
+//000105: 
+//000106:         Console.Write("Complete: Not buffered");
+//000107:         Console.ReadLine();
+//000108:         #endregion
+//000109:     }
+//000110: 
+//000111:     private static void WithCancellation()
+//000112:     {
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+    .try
+    {
+      IL_00b9:  br.s       IL_00cc
+
+//000049:         foreach (var e in q)
+      IL_00bb:  ldloc.s    CS$5$0000
+      IL_00bd:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<int32>::get_Current()
+      IL_00c2:  stloc.2
+//000050:         {
+      IL_00c3:  nop
+//000051:             Console.WriteLine(e);
+      IL_00c4:  ldloc.2
+      IL_00c5:  call       void [mscorlib]System.Console::WriteLine(int32)
+      IL_00ca:  nop
+//000052:         }
+      IL_00cb:  nop
+//000049:         foreach (var e in q)
+      IL_00cc:  ldloc.s    CS$5$0000
+      IL_00ce:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_00d3:  stloc.s    CS$4$0001
+//000050:         {
+//000051:             Console.WriteLine(e);
+//000052:         }
+//000053:         Console.Write("Complete: Parallel");
+//000054:         Console.ReadLine();
+//000055:         #endregion
+//000056: 
+//000057:         #region Parallel with Ordering
+//000058:         q = from e in items2.AsOrdered()
+//000059:             where (e % 2 == 0) // is even
+//000060:             select e;
+//000061: 
+//000062:         foreach (var e in q)
+//000063:         {
+//000064:             Console.WriteLine(e);
+//000065:         }
+//000066: 
+//000067:         Console.Write("Complete: Parallel with Ordering");
+//000068:         Console.ReadLine();
+//000069:         #endregion
+//000070:     }
+//000071: 
+//000072:     private static void WithMergeOptions()
+//000073:     {
+//000074:         #region Define the query
+//000075:         var items = ParallelEnumerable.Range(1, 1000);
+//000076:         var q = from e in items
+//000077:                 select DoWork(e);
+//000078:         #endregion
+//000079: 
+//000080:         #region Auto Buffered
+//000081:         foreach (var e in q)
+//000082:         {
+//000083:             Console.WriteLine(e);
+//000084:         }
+//000085: 
+//000086:         Console.Write("Complete: Auto buffered");
+//000087:         Console.ReadLine();
+//000088:         #endregion
+//000089: 
+//000090:         #region Fully Buffered
+//000091:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.FullyBuffered))
+//000092:         {
+//000093:             Console.WriteLine(e);
+//000094:         }
+//000095: 
+//000096:         Console.Write("Complete: Fully buffered");
+//000097:         Console.ReadLine();
+//000098:         #endregion
+//000099: 
+//000100:         #region Not buffered
+//000101:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.NotBuffered))
+//000102:         {
+//000103:             Console.WriteLine(e);
+//000104:         }
+//000105: 
+//000106:         Console.Write("Complete: Not buffered");
+//000107:         Console.ReadLine();
+//000108:         #endregion
+//000109:     }
+//000110: 
+//000111:     private static void WithCancellation()
+//000112:     {
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+      IL_00d5:  ldloc.s    CS$4$0001
+      IL_00d7:  brtrue.s   IL_00bb
+
+      IL_00d9:  leave.s    IL_00ef
+
+    }  // end .try
+    finally
+    {
+      IL_00db:  ldloc.s    CS$5$0000
+      IL_00dd:  ldnull
+      IL_00de:  ceq
+      IL_00e0:  stloc.s    CS$4$0001
+      IL_00e2:  ldloc.s    CS$4$0001
+      IL_00e4:  brtrue.s   IL_00ee
+
+      IL_00e6:  ldloc.s    CS$5$0000
+      IL_00e8:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_00ed:  nop
+      IL_00ee:  endfinally
+    }  // end handler
+    IL_00ef:  nop
+//000053:         Console.Write("Complete: Parallel");
+    IL_00f0:  ldstr      "Complete: Parallel"
+    IL_00f5:  call       void [mscorlib]System.Console::Write(string)
+    IL_00fa:  nop
+//000054:         Console.ReadLine();
+    IL_00fb:  call       string [mscorlib]System.Console::ReadLine()
+    IL_0100:  pop
+//000055:         #endregion
+//000056: 
+//000057:         #region Parallel with Ordering
+//000058:         q = from e in items2.AsOrdered()
+    IL_0101:  ldloc.3
+    IL_0102:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::AsOrdered<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>)
+    IL_0107:  ldsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate5'
+    IL_010c:  brtrue.s   IL_0121
+
+    IL_010e:  ldnull
+    IL_010f:  ldftn      bool Program::'<AsOrdered>b__2'(int32)
+    IL_0115:  newobj     instance void class [mscorlib]System.Func`2<int32,bool>::.ctor(object,
+                                                                                        native int)
+    IL_011a:  stsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate5'
+    IL_011f:  br.s       IL_0121
+
+    IL_0121:  ldsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate5'
+    IL_0126:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::Where<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                       class [mscorlib]System.Func`2<!!0,bool>)
+    IL_012b:  stloc.1
+//000059:             where (e % 2 == 0) // is even
+//000060:             select e;
+//000061: 
+//000062:         foreach (var e in q)
+    IL_012c:  nop
+    IL_012d:  ldloc.1
+    IL_012e:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<int32>::GetEnumerator()
+    IL_0133:  stloc.s    CS$5$0000
+//000063:         {
+//000064:             Console.WriteLine(e);
+//000065:         }
+//000066: 
+//000067:         Console.Write("Complete: Parallel with Ordering");
+//000068:         Console.ReadLine();
+//000069:         #endregion
+//000070:     }
+//000071: 
+//000072:     private static void WithMergeOptions()
+//000073:     {
+//000074:         #region Define the query
+//000075:         var items = ParallelEnumerable.Range(1, 1000);
+//000076:         var q = from e in items
+//000077:                 select DoWork(e);
+//000078:         #endregion
+//000079: 
+//000080:         #region Auto Buffered
+//000081:         foreach (var e in q)
+//000082:         {
+//000083:             Console.WriteLine(e);
+//000084:         }
+//000085: 
+//000086:         Console.Write("Complete: Auto buffered");
+//000087:         Console.ReadLine();
+//000088:         #endregion
+//000089: 
+//000090:         #region Fully Buffered
+//000091:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.FullyBuffered))
+//000092:         {
+//000093:             Console.WriteLine(e);
+//000094:         }
+//000095: 
+//000096:         Console.Write("Complete: Fully buffered");
+//000097:         Console.ReadLine();
+//000098:         #endregion
+//000099: 
+//000100:         #region Not buffered
+//000101:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.NotBuffered))
+//000102:         {
+//000103:             Console.WriteLine(e);
+//000104:         }
+//000105: 
+//000106:         Console.Write("Complete: Not buffered");
+//000107:         Console.ReadLine();
+//000108:         #endregion
+//000109:     }
+//000110: 
+//000111:     private static void WithCancellation()
+//000112:     {
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+    .try
+    {
+      IL_0135:  br.s       IL_0148
+
+//000062:         foreach (var e in q)
+      IL_0137:  ldloc.s    CS$5$0000
+      IL_0139:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<int32>::get_Current()
+      IL_013e:  stloc.2
+//000063:         {
+      IL_013f:  nop
+//000064:             Console.WriteLine(e);
+      IL_0140:  ldloc.2
+      IL_0141:  call       void [mscorlib]System.Console::WriteLine(int32)
+      IL_0146:  nop
+//000065:         }
+      IL_0147:  nop
+//000062:         foreach (var e in q)
+      IL_0148:  ldloc.s    CS$5$0000
+      IL_014a:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_014f:  stloc.s    CS$4$0001
+//000063:         {
+//000064:             Console.WriteLine(e);
+//000065:         }
+//000066: 
+//000067:         Console.Write("Complete: Parallel with Ordering");
+//000068:         Console.ReadLine();
+//000069:         #endregion
+//000070:     }
+//000071: 
+//000072:     private static void WithMergeOptions()
+//000073:     {
+//000074:         #region Define the query
+//000075:         var items = ParallelEnumerable.Range(1, 1000);
+//000076:         var q = from e in items
+//000077:                 select DoWork(e);
+//000078:         #endregion
+//000079: 
+//000080:         #region Auto Buffered
+//000081:         foreach (var e in q)
+//000082:         {
+//000083:             Console.WriteLine(e);
+//000084:         }
+//000085: 
+//000086:         Console.Write("Complete: Auto buffered");
+//000087:         Console.ReadLine();
+//000088:         #endregion
+//000089: 
+//000090:         #region Fully Buffered
+//000091:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.FullyBuffered))
+//000092:         {
+//000093:             Console.WriteLine(e);
+//000094:         }
+//000095: 
+//000096:         Console.Write("Complete: Fully buffered");
+//000097:         Console.ReadLine();
+//000098:         #endregion
+//000099: 
+//000100:         #region Not buffered
+//000101:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.NotBuffered))
+//000102:         {
+//000103:             Console.WriteLine(e);
+//000104:         }
+//000105: 
+//000106:         Console.Write("Complete: Not buffered");
+//000107:         Console.ReadLine();
+//000108:         #endregion
+//000109:     }
+//000110: 
+//000111:     private static void WithCancellation()
+//000112:     {
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+      IL_0151:  ldloc.s    CS$4$0001
+      IL_0153:  brtrue.s   IL_0137
+
+      IL_0155:  leave.s    IL_016b
+
+    }  // end .try
+    finally
+    {
+      IL_0157:  ldloc.s    CS$5$0000
+      IL_0159:  ldnull
+      IL_015a:  ceq
+      IL_015c:  stloc.s    CS$4$0001
+      IL_015e:  ldloc.s    CS$4$0001
+      IL_0160:  brtrue.s   IL_016a
+
+      IL_0162:  ldloc.s    CS$5$0000
+      IL_0164:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_0169:  nop
+      IL_016a:  endfinally
+    }  // end handler
+    IL_016b:  nop
+//000067:         Console.Write("Complete: Parallel with Ordering");
+    IL_016c:  ldstr      "Complete: Parallel with Ordering"
+    IL_0171:  call       void [mscorlib]System.Console::Write(string)
+    IL_0176:  nop
+//000068:         Console.ReadLine();
+    IL_0177:  call       string [mscorlib]System.Console::ReadLine()
+    IL_017c:  pop
+//000069:         #endregion
+//000070:     }
+    IL_017d:  ret
+  } // end of method Program::AsOrdered
+
+  .method private hidebysig static void  WithMergeOptions() cil managed
+  {
+    // Code size       292 (0x124)
+    .maxstack  4
+    .locals init ([0] class [System.Core]System.Linq.ParallelQuery`1<int32> items,
+             [1] class [System.Core]System.Linq.ParallelQuery`1<int32> q,
+             [2] int32 e,
+             [3] class [mscorlib]System.Collections.Generic.IEnumerator`1<int32> CS$5$0000,
+             [4] bool CS$4$0001)
+//000071: 
+//000072:     private static void WithMergeOptions()
+//000073:     {
+    IL_0000:  nop
+//000074:         #region Define the query
+//000075:         var items = ParallelEnumerable.Range(1, 1000);
+    IL_0001:  ldc.i4.1
+    IL_0002:  ldc.i4     0x3e8
+    IL_0007:  call       class [System.Core]System.Linq.ParallelQuery`1<int32> [System.Core]System.Linq.ParallelEnumerable::Range(int32,
+                                                                                                                                  int32)
+    IL_000c:  stloc.0
+//000076:         var q = from e in items
+    IL_000d:  ldloc.0
+    IL_000e:  ldsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegate7'
+    IL_0013:  brtrue.s   IL_0028
+
+    IL_0015:  ldnull
+    IL_0016:  ldftn      int32 Program::'<WithMergeOptions>b__6'(int32)
+    IL_001c:  newobj     instance void class [mscorlib]System.Func`2<int32,int32>::.ctor(object,
+                                                                                         native int)
+    IL_0021:  stsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegate7'
+    IL_0026:  br.s       IL_0028
+
+    IL_0028:  ldsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegate7'
+    IL_002d:  call       class [System.Core]System.Linq.ParallelQuery`1<!!1> [System.Core]System.Linq.ParallelEnumerable::Select<int32,int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                              class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_0032:  stloc.1
+//000077:                 select DoWork(e);
+//000078:         #endregion
+//000079: 
+//000080:         #region Auto Buffered
+//000081:         foreach (var e in q)
+    IL_0033:  nop
+    IL_0034:  ldloc.1
+    IL_0035:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [System.Core]System.Linq.ParallelQuery`1<int32>::GetEnumerator()
+    IL_003a:  stloc.3
+//000082:         {
+//000083:             Console.WriteLine(e);
+//000084:         }
+//000085: 
+//000086:         Console.Write("Complete: Auto buffered");
+//000087:         Console.ReadLine();
+//000088:         #endregion
+//000089: 
+//000090:         #region Fully Buffered
+//000091:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.FullyBuffered))
+//000092:         {
+//000093:             Console.WriteLine(e);
+//000094:         }
+//000095: 
+//000096:         Console.Write("Complete: Fully buffered");
+//000097:         Console.ReadLine();
+//000098:         #endregion
+//000099: 
+//000100:         #region Not buffered
+//000101:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.NotBuffered))
+//000102:         {
+//000103:             Console.WriteLine(e);
+//000104:         }
+//000105: 
+//000106:         Console.Write("Complete: Not buffered");
+//000107:         Console.ReadLine();
+//000108:         #endregion
+//000109:     }
+//000110: 
+//000111:     private static void WithCancellation()
+//000112:     {
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+    .try
+    {
+      IL_003b:  br.s       IL_004d
+
+//000081:         foreach (var e in q)
+      IL_003d:  ldloc.3
+      IL_003e:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<int32>::get_Current()
+      IL_0043:  stloc.2
+//000082:         {
+      IL_0044:  nop
+//000083:             Console.WriteLine(e);
+      IL_0045:  ldloc.2
+      IL_0046:  call       void [mscorlib]System.Console::WriteLine(int32)
+      IL_004b:  nop
+//000084:         }
+      IL_004c:  nop
+//000081:         foreach (var e in q)
+      IL_004d:  ldloc.3
+      IL_004e:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0053:  stloc.s    CS$4$0001
+//000082:         {
+//000083:             Console.WriteLine(e);
+//000084:         }
+//000085: 
+//000086:         Console.Write("Complete: Auto buffered");
+//000087:         Console.ReadLine();
+//000088:         #endregion
+//000089: 
+//000090:         #region Fully Buffered
+//000091:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.FullyBuffered))
+//000092:         {
+//000093:             Console.WriteLine(e);
+//000094:         }
+//000095: 
+//000096:         Console.Write("Complete: Fully buffered");
+//000097:         Console.ReadLine();
+//000098:         #endregion
+//000099: 
+//000100:         #region Not buffered
+//000101:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.NotBuffered))
+//000102:         {
+//000103:             Console.WriteLine(e);
+//000104:         }
+//000105: 
+//000106:         Console.Write("Complete: Not buffered");
+//000107:         Console.ReadLine();
+//000108:         #endregion
+//000109:     }
+//000110: 
+//000111:     private static void WithCancellation()
+//000112:     {
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+      IL_0055:  ldloc.s    CS$4$0001
+      IL_0057:  brtrue.s   IL_003d
+
+      IL_0059:  leave.s    IL_006d
+
+    }  // end .try
+    finally
+    {
+      IL_005b:  ldloc.3
+      IL_005c:  ldnull
+      IL_005d:  ceq
+      IL_005f:  stloc.s    CS$4$0001
+      IL_0061:  ldloc.s    CS$4$0001
+      IL_0063:  brtrue.s   IL_006c
+
+      IL_0065:  ldloc.3
+      IL_0066:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_006b:  nop
+      IL_006c:  endfinally
+    }  // end handler
+    IL_006d:  nop
+//000086:         Console.Write("Complete: Auto buffered");
+    IL_006e:  ldstr      "Complete: Auto buffered"
+    IL_0073:  call       void [mscorlib]System.Console::Write(string)
+    IL_0078:  nop
+//000087:         Console.ReadLine();
+    IL_0079:  call       string [mscorlib]System.Console::ReadLine()
+    IL_007e:  pop
+//000088:         #endregion
+//000089: 
+//000090:         #region Fully Buffered
+//000091:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.FullyBuffered))
+    IL_007f:  nop
+    IL_0080:  ldloc.1
+    IL_0081:  ldc.i4.3
+    IL_0082:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::WithMergeOptions<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                  valuetype [System.Core]System.Linq.ParallelMergeOptions)
+    IL_0087:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [System.Core]System.Linq.ParallelQuery`1<int32>::GetEnumerator()
+    IL_008c:  stloc.3
+//000092:         {
+//000093:             Console.WriteLine(e);
+//000094:         }
+//000095: 
+//000096:         Console.Write("Complete: Fully buffered");
+//000097:         Console.ReadLine();
+//000098:         #endregion
+//000099: 
+//000100:         #region Not buffered
+//000101:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.NotBuffered))
+//000102:         {
+//000103:             Console.WriteLine(e);
+//000104:         }
+//000105: 
+//000106:         Console.Write("Complete: Not buffered");
+//000107:         Console.ReadLine();
+//000108:         #endregion
+//000109:     }
+//000110: 
+//000111:     private static void WithCancellation()
+//000112:     {
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+    .try
+    {
+      IL_008d:  br.s       IL_009f
+
+//000091:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.FullyBuffered))
+      IL_008f:  ldloc.3
+      IL_0090:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<int32>::get_Current()
+      IL_0095:  stloc.2
+//000092:         {
+      IL_0096:  nop
+//000093:             Console.WriteLine(e);
+      IL_0097:  ldloc.2
+      IL_0098:  call       void [mscorlib]System.Console::WriteLine(int32)
+      IL_009d:  nop
+//000094:         }
+      IL_009e:  nop
+//000091:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.FullyBuffered))
+      IL_009f:  ldloc.3
+      IL_00a0:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_00a5:  stloc.s    CS$4$0001
+//000092:         {
+//000093:             Console.WriteLine(e);
+//000094:         }
+//000095: 
+//000096:         Console.Write("Complete: Fully buffered");
+//000097:         Console.ReadLine();
+//000098:         #endregion
+//000099: 
+//000100:         #region Not buffered
+//000101:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.NotBuffered))
+//000102:         {
+//000103:             Console.WriteLine(e);
+//000104:         }
+//000105: 
+//000106:         Console.Write("Complete: Not buffered");
+//000107:         Console.ReadLine();
+//000108:         #endregion
+//000109:     }
+//000110: 
+//000111:     private static void WithCancellation()
+//000112:     {
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+      IL_00a7:  ldloc.s    CS$4$0001
+      IL_00a9:  brtrue.s   IL_008f
+
+      IL_00ab:  leave.s    IL_00bf
+
+    }  // end .try
+    finally
+    {
+      IL_00ad:  ldloc.3
+      IL_00ae:  ldnull
+      IL_00af:  ceq
+      IL_00b1:  stloc.s    CS$4$0001
+      IL_00b3:  ldloc.s    CS$4$0001
+      IL_00b5:  brtrue.s   IL_00be
+
+      IL_00b7:  ldloc.3
+      IL_00b8:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_00bd:  nop
+      IL_00be:  endfinally
+    }  // end handler
+    IL_00bf:  nop
+//000096:         Console.Write("Complete: Fully buffered");
+    IL_00c0:  ldstr      "Complete: Fully buffered"
+    IL_00c5:  call       void [mscorlib]System.Console::Write(string)
+    IL_00ca:  nop
+//000097:         Console.ReadLine();
+    IL_00cb:  call       string [mscorlib]System.Console::ReadLine()
+    IL_00d0:  pop
+//000098:         #endregion
+//000099: 
+//000100:         #region Not buffered
+//000101:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.NotBuffered))
+    IL_00d1:  nop
+    IL_00d2:  ldloc.1
+    IL_00d3:  ldc.i4.1
+    IL_00d4:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::WithMergeOptions<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                  valuetype [System.Core]System.Linq.ParallelMergeOptions)
+    IL_00d9:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [System.Core]System.Linq.ParallelQuery`1<int32>::GetEnumerator()
+    IL_00de:  stloc.3
+//000102:         {
+//000103:             Console.WriteLine(e);
+//000104:         }
+//000105: 
+//000106:         Console.Write("Complete: Not buffered");
+//000107:         Console.ReadLine();
+//000108:         #endregion
+//000109:     }
+//000110: 
+//000111:     private static void WithCancellation()
+//000112:     {
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+    .try
+    {
+      IL_00df:  br.s       IL_00f1
+
+//000101:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.NotBuffered))
+      IL_00e1:  ldloc.3
+      IL_00e2:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<int32>::get_Current()
+      IL_00e7:  stloc.2
+//000102:         {
+      IL_00e8:  nop
+//000103:             Console.WriteLine(e);
+      IL_00e9:  ldloc.2
+      IL_00ea:  call       void [mscorlib]System.Console::WriteLine(int32)
+      IL_00ef:  nop
+//000104:         }
+      IL_00f0:  nop
+//000101:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.NotBuffered))
+      IL_00f1:  ldloc.3
+      IL_00f2:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_00f7:  stloc.s    CS$4$0001
+//000102:         {
+//000103:             Console.WriteLine(e);
+//000104:         }
+//000105: 
+//000106:         Console.Write("Complete: Not buffered");
+//000107:         Console.ReadLine();
+//000108:         #endregion
+//000109:     }
+//000110: 
+//000111:     private static void WithCancellation()
+//000112:     {
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+      IL_00f9:  ldloc.s    CS$4$0001
+      IL_00fb:  brtrue.s   IL_00e1
+
+      IL_00fd:  leave.s    IL_0111
+
+    }  // end .try
+    finally
+    {
+      IL_00ff:  ldloc.3
+      IL_0100:  ldnull
+      IL_0101:  ceq
+      IL_0103:  stloc.s    CS$4$0001
+      IL_0105:  ldloc.s    CS$4$0001
+      IL_0107:  brtrue.s   IL_0110
+
+      IL_0109:  ldloc.3
+      IL_010a:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_010f:  nop
+      IL_0110:  endfinally
+    }  // end handler
+    IL_0111:  nop
+//000106:         Console.Write("Complete: Not buffered");
+    IL_0112:  ldstr      "Complete: Not buffered"
+    IL_0117:  call       void [mscorlib]System.Console::Write(string)
+    IL_011c:  nop
+//000107:         Console.ReadLine();
+    IL_011d:  call       string [mscorlib]System.Console::ReadLine()
+    IL_0122:  pop
+//000108:         #endregion
+//000109:     }
+    IL_0123:  ret
+  } // end of method Program::WithMergeOptions
+
+  .method private hidebysig static void  WithCancellation() cil managed
+  {
+    // Code size       206 (0xce)
+    .maxstack  4
+    .locals init ([0] class [System.Core]System.Linq.ParallelQuery`1<int32> items,
+             [1] class [System.Core]System.Linq.ParallelQuery`1<int32> q,
+             [2] int32 e,
+             [3] class Program/'<>c__DisplayClassb' 'CS$<>8__localsc',
+             [4] class [mscorlib]System.Collections.Generic.IEnumerator`1<int32> CS$5$0000,
+             [5] bool CS$4$0001)
+//000110: 
+//000111:     private static void WithCancellation()
+//000112:     {
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+    IL_0000:  newobj     instance void Program/'<>c__DisplayClassb'::.ctor()
+    IL_0005:  stloc.3
+//000112:     {
+    IL_0006:  nop
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+    IL_0007:  ldc.i4.1
+    IL_0008:  ldc.i4     0x3e8
+    IL_000d:  call       class [System.Core]System.Linq.ParallelQuery`1<int32> [System.Core]System.Linq.ParallelEnumerable::Range(int32,
+                                                                                                                                  int32)
+    IL_0012:  stloc.0
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+    IL_0013:  ldloc.0
+    IL_0014:  ldc.i4.1
+    IL_0015:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::WithMergeOptions<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                  valuetype [System.Core]System.Linq.ParallelMergeOptions)
+    IL_001a:  ldsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegatea'
+    IL_001f:  brtrue.s   IL_0034
+
+    IL_0021:  ldnull
+    IL_0022:  ldftn      int32 Program::'<WithCancellation>b__8'(int32)
+    IL_0028:  newobj     instance void class [mscorlib]System.Func`2<int32,int32>::.ctor(object,
+                                                                                         native int)
+    IL_002d:  stsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegatea'
+    IL_0032:  br.s       IL_0034
+
+    IL_0034:  ldsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegatea'
+    IL_0039:  call       class [System.Core]System.Linq.ParallelQuery`1<!!1> [System.Core]System.Linq.ParallelEnumerable::Select<int32,int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                              class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_003e:  stloc.1
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+    IL_003f:  ldloc.3
+    IL_0040:  newobj     instance void [mscorlib]System.Threading.CancellationTokenSource::.ctor()
+    IL_0045:  stfld      class [mscorlib]System.Threading.CancellationTokenSource Program/'<>c__DisplayClassb'::cts
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+    IL_004a:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_004f:  ldloc.3
+    IL_0050:  ldftn      instance void Program/'<>c__DisplayClassb'::'<WithCancellation>b__9'()
+    IL_0056:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_005b:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action)
+    IL_0060:  pop
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+    .try
+    {
+      IL_0061:  nop
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+      IL_0062:  nop
+      IL_0063:  ldloc.1
+      IL_0064:  ldloc.3
+      IL_0065:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource Program/'<>c__DisplayClassb'::cts
+      IL_006a:  callvirt   instance valuetype [mscorlib]System.Threading.CancellationToken [mscorlib]System.Threading.CancellationTokenSource::get_Token()
+      IL_006f:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::WithCancellation<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                    valuetype [mscorlib]System.Threading.CancellationToken)
+      IL_0074:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [System.Core]System.Linq.ParallelQuery`1<int32>::GetEnumerator()
+      IL_0079:  stloc.s    CS$5$0000
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+      .try
+      {
+        IL_007b:  br.s       IL_008e
+
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+        IL_007d:  ldloc.s    CS$5$0000
+        IL_007f:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<int32>::get_Current()
+        IL_0084:  stloc.2
+//000134:             {
+        IL_0085:  nop
+//000135:                 Console.WriteLine(e);
+        IL_0086:  ldloc.2
+        IL_0087:  call       void [mscorlib]System.Console::WriteLine(int32)
+        IL_008c:  nop
+//000136:             }
+        IL_008d:  nop
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+        IL_008e:  ldloc.s    CS$5$0000
+        IL_0090:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+        IL_0095:  stloc.s    CS$4$0001
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+        IL_0097:  ldloc.s    CS$4$0001
+        IL_0099:  brtrue.s   IL_007d
+
+        IL_009b:  leave.s    IL_00b1
+
+      }  // end .try
+      finally
+      {
+        IL_009d:  ldloc.s    CS$5$0000
+        IL_009f:  ldnull
+        IL_00a0:  ceq
+        IL_00a2:  stloc.s    CS$4$0001
+        IL_00a4:  ldloc.s    CS$4$0001
+        IL_00a6:  brtrue.s   IL_00b0
+
+        IL_00a8:  ldloc.s    CS$5$0000
+        IL_00aa:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+        IL_00af:  nop
+        IL_00b0:  endfinally
+      }  // end handler
+      IL_00b1:  nop
+//000137:         }
+      IL_00b2:  nop
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+      IL_00b3:  leave.s    IL_00c5
+
+//000138:         catch (OperationCanceledException)
+    }  // end .try
+    catch [mscorlib]System.OperationCanceledException 
+    {
+      IL_00b5:  pop
+//000139:         {
+      IL_00b6:  nop
+//000140:             Console.WriteLine("Cancelled!");
+      IL_00b7:  ldstr      "Cancelled!"
+      IL_00bc:  call       void [mscorlib]System.Console::WriteLine(string)
+      IL_00c1:  nop
+//000141:         }
+      IL_00c2:  nop
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+      IL_00c3:  leave.s    IL_00c5
+
+    }  // end handler
+    IL_00c5:  nop
+//000142:         Console.ReadLine();
+    IL_00c6:  call       string [mscorlib]System.Console::ReadLine()
+    IL_00cb:  pop
+//000143:         #endregion
+//000144:     }
+    IL_00cc:  nop
+    IL_00cd:  ret
+  } // end of method Program::WithCancellation
+
+  .method private hidebysig static void  WithDegreeOfParallelism() cil managed
+  {
+    // Code size       211 (0xd3)
+    .maxstack  4
+    .locals init ([0] class [System.Core]System.Linq.ParallelQuery`1<int32> items,
+             [1] class [System]System.Diagnostics.Stopwatch sw)
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+    IL_0000:  nop
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+    IL_0001:  ldc.i4.1
+    IL_0002:  ldc.i4     0xc8
+    IL_0007:  call       class [System.Core]System.Linq.ParallelQuery`1<int32> [System.Core]System.Linq.ParallelEnumerable::Range(int32,
+                                                                                                                                  int32)
+    IL_000c:  stloc.0
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+    IL_000d:  newobj     instance void [System]System.Diagnostics.Stopwatch::.ctor()
+    IL_0012:  stloc.1
+//000152:         sw.Start();
+    IL_0013:  ldloc.1
+    IL_0014:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Start()
+    IL_0019:  nop
+//000153:         Console.Write("Default DOP: ");
+    IL_001a:  ldstr      "Default DOP: "
+    IL_001f:  call       void [mscorlib]System.Console::Write(string)
+    IL_0024:  nop
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+    IL_0025:  ldloc.0
+    IL_0026:  ldsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegatef'
+    IL_002b:  brtrue.s   IL_0040
+
+    IL_002d:  ldnull
+    IL_002e:  ldftn      int32 Program::'<WithDegreeOfParallelism>b__d'(int32)
+    IL_0034:  newobj     instance void class [mscorlib]System.Func`2<int32,int32>::.ctor(object,
+                                                                                         native int)
+    IL_0039:  stsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegatef'
+    IL_003e:  br.s       IL_0040
+
+    IL_0040:  ldsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegatef'
+    IL_0045:  call       float64 [System.Core]System.Linq.ParallelEnumerable::Average<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                             class [mscorlib]System.Func`2<!!0,int32>)
+    IL_004a:  pop
+//000156: 
+//000157:         sw.Stop();
+    IL_004b:  ldloc.1
+    IL_004c:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Stop()
+    IL_0051:  nop
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+    IL_0052:  ldloc.1
+    IL_0053:  callvirt   instance int64 [System]System.Diagnostics.Stopwatch::get_ElapsedMilliseconds()
+    IL_0058:  call       void [mscorlib]System.Console::WriteLine(int64)
+    IL_005d:  nop
+//000159:         Console.WriteLine("Complete: Default DOP");
+    IL_005e:  ldstr      "Complete: Default DOP"
+    IL_0063:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0068:  nop
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+    IL_0069:  ldloc.1
+    IL_006a:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Reset()
+    IL_006f:  nop
+//000164:         sw.Start();
+    IL_0070:  ldloc.1
+    IL_0071:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Start()
+    IL_0076:  nop
+//000165:         Console.Write("DOP = 2: ");
+    IL_0077:  ldstr      "DOP = 2: "
+    IL_007c:  call       void [mscorlib]System.Console::Write(string)
+    IL_0081:  nop
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+    IL_0082:  ldloc.0
+    IL_0083:  ldc.i4.2
+    IL_0084:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::WithDegreeOfParallelism<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                         int32)
+    IL_0089:  ldsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegate10'
+    IL_008e:  brtrue.s   IL_00a3
+
+    IL_0090:  ldnull
+    IL_0091:  ldftn      int32 Program::'<WithDegreeOfParallelism>b__e'(int32)
+    IL_0097:  newobj     instance void class [mscorlib]System.Func`2<int32,int32>::.ctor(object,
+                                                                                         native int)
+    IL_009c:  stsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegate10'
+    IL_00a1:  br.s       IL_00a3
+
+    IL_00a3:  ldsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegate10'
+    IL_00a8:  call       float64 [System.Core]System.Linq.ParallelEnumerable::Average<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                             class [mscorlib]System.Func`2<!!0,int32>)
+    IL_00ad:  pop
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+    IL_00ae:  ldloc.1
+    IL_00af:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Stop()
+    IL_00b4:  nop
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+    IL_00b5:  ldloc.1
+    IL_00b6:  callvirt   instance int64 [System]System.Diagnostics.Stopwatch::get_ElapsedMilliseconds()
+    IL_00bb:  call       void [mscorlib]System.Console::WriteLine(int64)
+    IL_00c0:  nop
+//000172:         Console.Write("Complete: DOP = 2");
+    IL_00c1:  ldstr      "Complete: DOP = 2"
+    IL_00c6:  call       void [mscorlib]System.Console::Write(string)
+    IL_00cb:  nop
+//000173:         Console.ReadLine();
+    IL_00cc:  call       string [mscorlib]System.Console::ReadLine()
+    IL_00d1:  pop
+//000174:         #endregion
+//000175:     }
+    IL_00d2:  ret
+  } // end of method Program::WithDegreeOfParallelism
+
+  .method private hidebysig static int32 
+          DoWork(int32 input) cil managed
+  {
+    // Code size       17 (0x11)
+    .maxstack  2
+    .locals init ([0] int32 CS$1$0000)
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+    IL_0000:  nop
+//000180:         Thread.Sleep(20);
+    IL_0001:  ldc.i4.s   20
+    IL_0003:  call       void [mscorlib]System.Threading.Thread::Sleep(int32)
+    IL_0008:  nop
+//000181:         return input * 2;
+    IL_0009:  ldarg.0
+    IL_000a:  ldc.i4.2
+    IL_000b:  mul
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+//000182:     }
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+  } // end of method Program::DoWork
+
+  .method private hidebysig static int32 
+          DoWork2(int32 input) cil managed
+  {
+    // Code size       20 (0x14)
+    .maxstack  2
+    .locals init ([0] int32 CS$1$0000)
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+    IL_0000:  nop
+//000186:         Thread.SpinWait(5000000);
+    IL_0001:  ldc.i4     0x4c4b40
+    IL_0006:  call       void [mscorlib]System.Threading.Thread::SpinWait(int32)
+    IL_000b:  nop
+//000187:         return input * 2;
+    IL_000c:  ldarg.0
+    IL_000d:  ldc.i4.2
+    IL_000e:  mul
+    IL_000f:  stloc.0
+    IL_0010:  br.s       IL_0012
+
+//000188:     }
+    IL_0012:  ldloc.0
+    IL_0013:  ret
+  } // end of method Program::DoWork2
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Program::.ctor
+
+  .method private hidebysig static bool  '<AsOrdered>b__0'(int32 e) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  2
+    .locals init ([0] bool CS$1$0000)
+//000032:                 where (e % 2 == 0) // is even
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.2
+    IL_0002:  rem
+    IL_0003:  ldc.i4.0
+    IL_0004:  ceq
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000033:                 select e;
+//000034: 
+//000035:         foreach (var e in q)
+//000036:         {
+//000037:             Console.WriteLine(e);
+//000038:         }
+//000039:         Console.Write("Complete: Sequential");
+//000040:         Console.ReadLine();
+//000041:         #endregion
+//000042: 
+//000043:         #region Parallel
+//000044:         var items2 = ParallelEnumerable.Range(1, 100);
+//000045:         q = from e in items2
+//000046:             where (e % 2 == 0) // is even
+//000047:             select e;
+//000048: 
+//000049:         foreach (var e in q)
+//000050:         {
+//000051:             Console.WriteLine(e);
+//000052:         }
+//000053:         Console.Write("Complete: Parallel");
+//000054:         Console.ReadLine();
+//000055:         #endregion
+//000056: 
+//000057:         #region Parallel with Ordering
+//000058:         q = from e in items2.AsOrdered()
+//000059:             where (e % 2 == 0) // is even
+//000060:             select e;
+//000061: 
+//000062:         foreach (var e in q)
+//000063:         {
+//000064:             Console.WriteLine(e);
+//000065:         }
+//000066: 
+//000067:         Console.Write("Complete: Parallel with Ordering");
+//000068:         Console.ReadLine();
+//000069:         #endregion
+//000070:     }
+//000071: 
+//000072:     private static void WithMergeOptions()
+//000073:     {
+//000074:         #region Define the query
+//000075:         var items = ParallelEnumerable.Range(1, 1000);
+//000076:         var q = from e in items
+//000077:                 select DoWork(e);
+//000078:         #endregion
+//000079: 
+//000080:         #region Auto Buffered
+//000081:         foreach (var e in q)
+//000082:         {
+//000083:             Console.WriteLine(e);
+//000084:         }
+//000085: 
+//000086:         Console.Write("Complete: Auto buffered");
+//000087:         Console.ReadLine();
+//000088:         #endregion
+//000089: 
+//000090:         #region Fully Buffered
+//000091:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.FullyBuffered))
+//000092:         {
+//000093:             Console.WriteLine(e);
+//000094:         }
+//000095: 
+//000096:         Console.Write("Complete: Fully buffered");
+//000097:         Console.ReadLine();
+//000098:         #endregion
+//000099: 
+//000100:         #region Not buffered
+//000101:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.NotBuffered))
+//000102:         {
+//000103:             Console.WriteLine(e);
+//000104:         }
+//000105: 
+//000106:         Console.Write("Complete: Not buffered");
+//000107:         Console.ReadLine();
+//000108:         #endregion
+//000109:     }
+//000110: 
+//000111:     private static void WithCancellation()
+//000112:     {
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Program::'<AsOrdered>b__0'
+
+  .method private hidebysig static bool  '<AsOrdered>b__1'(int32 e) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  2
+    .locals init ([0] bool CS$1$0000)
+//000046:             where (e % 2 == 0) // is even
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.2
+    IL_0002:  rem
+    IL_0003:  ldc.i4.0
+    IL_0004:  ceq
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000047:             select e;
+//000048: 
+//000049:         foreach (var e in q)
+//000050:         {
+//000051:             Console.WriteLine(e);
+//000052:         }
+//000053:         Console.Write("Complete: Parallel");
+//000054:         Console.ReadLine();
+//000055:         #endregion
+//000056: 
+//000057:         #region Parallel with Ordering
+//000058:         q = from e in items2.AsOrdered()
+//000059:             where (e % 2 == 0) // is even
+//000060:             select e;
+//000061: 
+//000062:         foreach (var e in q)
+//000063:         {
+//000064:             Console.WriteLine(e);
+//000065:         }
+//000066: 
+//000067:         Console.Write("Complete: Parallel with Ordering");
+//000068:         Console.ReadLine();
+//000069:         #endregion
+//000070:     }
+//000071: 
+//000072:     private static void WithMergeOptions()
+//000073:     {
+//000074:         #region Define the query
+//000075:         var items = ParallelEnumerable.Range(1, 1000);
+//000076:         var q = from e in items
+//000077:                 select DoWork(e);
+//000078:         #endregion
+//000079: 
+//000080:         #region Auto Buffered
+//000081:         foreach (var e in q)
+//000082:         {
+//000083:             Console.WriteLine(e);
+//000084:         }
+//000085: 
+//000086:         Console.Write("Complete: Auto buffered");
+//000087:         Console.ReadLine();
+//000088:         #endregion
+//000089: 
+//000090:         #region Fully Buffered
+//000091:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.FullyBuffered))
+//000092:         {
+//000093:             Console.WriteLine(e);
+//000094:         }
+//000095: 
+//000096:         Console.Write("Complete: Fully buffered");
+//000097:         Console.ReadLine();
+//000098:         #endregion
+//000099: 
+//000100:         #region Not buffered
+//000101:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.NotBuffered))
+//000102:         {
+//000103:             Console.WriteLine(e);
+//000104:         }
+//000105: 
+//000106:         Console.Write("Complete: Not buffered");
+//000107:         Console.ReadLine();
+//000108:         #endregion
+//000109:     }
+//000110: 
+//000111:     private static void WithCancellation()
+//000112:     {
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Program::'<AsOrdered>b__1'
+
+  .method private hidebysig static bool  '<AsOrdered>b__2'(int32 e) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  2
+    .locals init ([0] bool CS$1$0000)
+//000059:             where (e % 2 == 0) // is even
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.2
+    IL_0002:  rem
+    IL_0003:  ldc.i4.0
+    IL_0004:  ceq
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000060:             select e;
+//000061: 
+//000062:         foreach (var e in q)
+//000063:         {
+//000064:             Console.WriteLine(e);
+//000065:         }
+//000066: 
+//000067:         Console.Write("Complete: Parallel with Ordering");
+//000068:         Console.ReadLine();
+//000069:         #endregion
+//000070:     }
+//000071: 
+//000072:     private static void WithMergeOptions()
+//000073:     {
+//000074:         #region Define the query
+//000075:         var items = ParallelEnumerable.Range(1, 1000);
+//000076:         var q = from e in items
+//000077:                 select DoWork(e);
+//000078:         #endregion
+//000079: 
+//000080:         #region Auto Buffered
+//000081:         foreach (var e in q)
+//000082:         {
+//000083:             Console.WriteLine(e);
+//000084:         }
+//000085: 
+//000086:         Console.Write("Complete: Auto buffered");
+//000087:         Console.ReadLine();
+//000088:         #endregion
+//000089: 
+//000090:         #region Fully Buffered
+//000091:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.FullyBuffered))
+//000092:         {
+//000093:             Console.WriteLine(e);
+//000094:         }
+//000095: 
+//000096:         Console.Write("Complete: Fully buffered");
+//000097:         Console.ReadLine();
+//000098:         #endregion
+//000099: 
+//000100:         #region Not buffered
+//000101:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.NotBuffered))
+//000102:         {
+//000103:             Console.WriteLine(e);
+//000104:         }
+//000105: 
+//000106:         Console.Write("Complete: Not buffered");
+//000107:         Console.ReadLine();
+//000108:         #endregion
+//000109:     }
+//000110: 
+//000111:     private static void WithCancellation()
+//000112:     {
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Program::'<AsOrdered>b__2'
+
+  .method private hidebysig static int32 
+          '<WithMergeOptions>b__6'(int32 e) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] int32 CS$1$0000)
+//000077:                 select DoWork(e);
+    IL_0000:  ldarg.0
+    IL_0001:  call       int32 Program::DoWork(int32)
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000078:         #endregion
+//000079: 
+//000080:         #region Auto Buffered
+//000081:         foreach (var e in q)
+//000082:         {
+//000083:             Console.WriteLine(e);
+//000084:         }
+//000085: 
+//000086:         Console.Write("Complete: Auto buffered");
+//000087:         Console.ReadLine();
+//000088:         #endregion
+//000089: 
+//000090:         #region Fully Buffered
+//000091:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.FullyBuffered))
+//000092:         {
+//000093:             Console.WriteLine(e);
+//000094:         }
+//000095: 
+//000096:         Console.Write("Complete: Fully buffered");
+//000097:         Console.ReadLine();
+//000098:         #endregion
+//000099: 
+//000100:         #region Not buffered
+//000101:         foreach (var e in q.WithMergeOptions(ParallelMergeOptions.NotBuffered))
+//000102:         {
+//000103:             Console.WriteLine(e);
+//000104:         }
+//000105: 
+//000106:         Console.Write("Complete: Not buffered");
+//000107:         Console.ReadLine();
+//000108:         #endregion
+//000109:     }
+//000110: 
+//000111:     private static void WithCancellation()
+//000112:     {
+//000113:         #region Define the query
+//000114:         var items = ParallelEnumerable.Range(1, 1000);
+//000115:         var q = from e in items.WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000116:                 select DoWork(e);
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Program::'<WithMergeOptions>b__6'
+
+  .method private hidebysig static int32 
+          '<WithCancellation>b__8'(int32 e) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] int32 CS$1$0000)
+//000116:                 select DoWork(e);
+    IL_0000:  ldarg.0
+    IL_0001:  call       int32 Program::DoWork(int32)
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000117: 
+//000118:         var cts = new CancellationTokenSource();
+//000119: 
+//000120:         #endregion
+//000121: 
+//000122:         #region Kick off the asynchronous cancellation
+//000123:         Task.Factory.StartNew(() =>
+//000124:         {
+//000125:             Thread.Sleep(300);
+//000126:             cts.Cancel();
+//000127:         });
+//000128:         #endregion
+//000129: 
+//000130:         #region Enumerate the query
+//000131:         try
+//000132:         {
+//000133:             foreach (var e in q.WithCancellation(cts.Token))
+//000134:             {
+//000135:                 Console.WriteLine(e);
+//000136:             }
+//000137:         }
+//000138:         catch (OperationCanceledException)
+//000139:         {
+//000140:             Console.WriteLine("Cancelled!");
+//000141:         }
+//000142:         Console.ReadLine();
+//000143:         #endregion
+//000144:     }
+//000145: 
+//000146:     private static void WithDegreeOfParallelism()
+//000147:     {
+//000148:         var items = ParallelEnumerable.Range(1, 200);
+//000149: 
+//000150:         #region Default DOP
+//000151:         var sw = new Stopwatch();
+//000152:         sw.Start();
+//000153:         Console.Write("Default DOP: ");
+//000154: 
+//000155:         items.Average(e => DoWork2(e));
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Program::'<WithCancellation>b__8'
+
+  .method private hidebysig static int32 
+          '<WithDegreeOfParallelism>b__d'(int32 e) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] int32 CS$1$0000)
+//000155:         items.Average(e => DoWork2(e));
+    IL_0000:  ldarg.0
+    IL_0001:  call       int32 Program::DoWork2(int32)
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000156: 
+//000157:         sw.Stop();
+//000158:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000159:         Console.WriteLine("Complete: Default DOP");
+//000160:         #endregion
+//000161: 
+//000162:         #region DOP = 2
+//000163:         sw.Reset();
+//000164:         sw.Start();
+//000165:         Console.Write("DOP = 2: ");
+//000166: 
+//000167:         items.WithDegreeOfParallelism(2)
+//000168:              .Average(e => DoWork2(e));
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Program::'<WithDegreeOfParallelism>b__d'
+
+  .method private hidebysig static int32 
+          '<WithDegreeOfParallelism>b__e'(int32 e) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] int32 CS$1$0000)
+//000168:              .Average(e => DoWork2(e));
+    IL_0000:  ldarg.0
+    IL_0001:  call       int32 Program::DoWork2(int32)
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000169: 
+//000170:         sw.Stop();
+//000171:         Console.WriteLine(sw.ElapsedMilliseconds);
+//000172:         Console.Write("Complete: DOP = 2");
+//000173:         Console.ReadLine();
+//000174:         #endregion
+//000175:     }
+//000176: 
+//000177:     #region Helper functions
+//000178:     private static int DoWork(int input)
+//000179:     {
+//000180:         Thread.Sleep(20);
+//000181:         return input * 2;
+//000182:     }
+//000183: 
+//000184:     private static int DoWork2(int input)
+//000185:     {
+//000186:         Thread.SpinWait(5000000);
+//000187:         return input * 2;
+//000188:     }
+//000189:     #endregion
+//000190: }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Program::'<WithDegreeOfParallelism>b__e'
+
+} // end of class Program
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

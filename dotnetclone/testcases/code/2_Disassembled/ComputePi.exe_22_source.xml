@@ -1,0 +1,752 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\My Project\Resources.Designer.vb" startline="39" endline="45"><![CDATA[
+             Get
+                 If Object.ReferenceEquals(resourceMan, Nothing) Then
+                     Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("ComputePi.Resources", GetType(Resources).Assembly)
+                     resourceMan = temp
+                 End If
+                 Return resourceMan
+             End Get
+         End Property
+ 
+         '''<summary>
+         '''  Overrides the current thread's CurrentUICulture property for all
+         '''  resource lookups using this strongly typed resource class.
+         '''</summary>
+         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>
+         Friend Property Culture() As Global.System.Globalization.CultureInfo
+             Get
+                 Return resourceCulture
+             End Get
+             Set(ByVal value As Global.System.Globalization.CultureInfo)
+                 resourceCulture = value
+             End Set
+         End Property
+     End Module
+ End Namespace
+                     Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("ComputePi.Resources", GetType(Resources).Assembly)
+                     resourceMan = temp
+                 End If
+                 Return resourceMan
+             End Get
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\My Project\Resources.Designer.vb" startline="46" endline="56"><![CDATA[
+         End Property
+ 
+         '''<summary>
+         '''  Overrides the current thread's CurrentUICulture property for all
+         '''  resource lookups using this strongly typed resource class.
+         '''</summary>
+         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>
+         Friend Property Culture() As Global.System.Globalization.CultureInfo
+             Get
+                 Return resourceCulture
+             End Get
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\My Project\Resources.Designer.vb" startline="57" endline="59"><![CDATA[
+             Set(ByVal value As Global.System.Globalization.CultureInfo)
+                 resourceCulture = value
+             End Set
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\My Project\Settings.Designer.vb" startline="23" endline="23"><![CDATA[
+         Private Shared defaultInstance As MySettings = CType(Global.System.Configuration.ApplicationSettingsBase.Synchronized(New MySettings), MySettings)
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\My Project\Settings.Designer.vb" startline="24" endline="54"><![CDATA[
+ 
+ #Region "My.Settings Auto-Save Functionality"
+ #If _MyType = "WindowsForms" Then
+         Private Shared addedHandler As Boolean
+ 
+         Private Shared addedHandlerLockObject As New Object
+ 
+         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+         Private Shared Sub AutoSaveSettings(ByVal sender As Global.System.Object, ByVal e As Global.System.EventArgs)
+             If My.Application.SaveMySettingsOnExit Then
+                 My.Settings.Save()
+             End If
+         End Sub
+ #End If
+ #End Region
+ 
+         Public Shared ReadOnly Property [Default]() As MySettings
+             Get
+ 
+ #If _MyType = "WindowsForms" Then
+                    If Not addedHandler Then
+                         SyncLock addedHandlerLockObject
+                             If Not addedHandler Then
+                                 AddHandler My.Application.Shutdown, AddressOf AutoSaveSettings
+                                 addedHandler = True
+                             End If
+                         End SyncLock
+                     End If
+ #End If
+                 Return defaultInstance
+             End Get
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\My Project\Settings.Designer.vb" startline="55" endline="70"><![CDATA[
+         End Property
+     End Class
+ End Namespace
+ 
+ Namespace My
+     
+     <Global.Microsoft.VisualBasic.HideModuleNameAttribute(),  _
+      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
+     Friend Module MySettingsProperty
+         
+         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
+         Friend ReadOnly Property Settings() As Global.ComputePi.My.MySettings
+             Get
+                 Return Global.ComputePi.My.MySettings.Default
+             End Get
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="17" endline="30"><![CDATA[
+     Sub Main()
+ 
+         While True
+             Time(Function() SerialLinqPi())
+             Time(Function() ParallelLinqPi())
+             Time(Function() SerialPi())
+             Time(Function() ParallelPi())
+             Time(Function() ParallelPartitionerPi())
+ 
+             Console.WriteLine("----")
+             Console.ReadLine()
+         End While
+ 
+     End Sub
+ 
+     ''' <summary>Times the execution of a function and outputs both the elapsed time and the function's result.</summary>
+     Sub Time(Of T)(ByVal work As Func(Of T))
+         Dim sw = Stopwatch.StartNew()
+         Dim result = work()
+         Console.WriteLine(sw.Elapsed.ToString() & "
+     End Sub
+ 
+     ''' <summary>Estimates the value of PI using a LINQ-based implementation.</summary>
+     Function SerialLinqPi() As Double
+         Dim stepSize = 1.0 / num_steps
+         Return (From i In Enumerable.Range(0, num_steps)
+                 Let x = (i + 0.5) * stepSize
+                 Select 4.0 / (1.0 + x * x)).Sum() * stepSize
+     End Function
+ 
+     ''' <summary>Estimates the value of PI using a PLINQ-based implementation.</summary>
+     Function ParallelLinqPi() As Double
+         Dim stepSize = 1.0 / num_steps
+         Return (From i In ParallelEnumerable.Range(0, num_steps)
+                 Let x = (i + 0.5) * stepSize
+                 Select 4.0 / (1.0 + x * x)).Sum() * stepSize
+     End Function
+ 
+ 
+     ''' <summary>Estimates the value of PI using a For loop.</summary>
+     Function SerialPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         For i = 0 To num_steps - 1
+             Dim x = (i + 0.5) * stepSize
+             sum = sum + 4.0 / (1.0 + x * x)
+         Next
+         Return stepSize * sum
+     End Function
+ 
+     ''' <summary>Estimates the value of PI using a Parallel.For.</summary>
+     Function ParallelPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         Dim monitor = New Object()
+         Parallel.For(0, num_steps, Function() 0.0, Function(i, state, local)
+                                                        Dim x = (i + 0.5) * stepSize
+                                                        Return local + 4.0 / (1.0 + x * x)
+                                                    End Function,
+                                                    Sub(local)
+                                                        SyncLock (monitor)
+                                                            sum += local
+                                                        End SyncLock
+                                                    End Sub)
+         Return stepSize * sum
+     End Function
+ 
+     ''' <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     Function ParallelPartitionerPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         Dim monitor = New Object()
+         Parallel.ForEach(Partitioner.Create(0, num_steps),
+                          Function() 0.0,
+                          Function(range, state, local)
+                              For i = range.Item1 To range.Item2 - 1
+                                  Dim x = (i + 0.5) * stepSize
+                                  local = local + 4.0 / (1.0 + x * x)
+                              Next
+                              Return local
+                          End Function,
+                          Sub(local)
+                              SyncLock (monitor)
+                                  sum += local
+                              End SyncLock
+                          End Sub)
+         Return stepSize * sum
+     End Function
+ 
+ End Module
+             Time(Function() SerialLinqPi())
+             Time(Function() ParallelLinqPi())
+             Time(Function() SerialPi())
+             Time(Function() ParallelPi())
+             Time(Function() ParallelPartitionerPi())
+ 
+             Console.WriteLine("----")
+             Console.ReadLine()
+         End While
+         While True
+             Time(Function() SerialLinqPi())
+             Time(Function() ParallelLinqPi())
+             Time(Function() SerialPi())
+             Time(Function() ParallelPi())
+             Time(Function() ParallelPartitionerPi())
+ 
+             Console.WriteLine("----")
+             Console.ReadLine()
+         End While
+ 
+     End Sub
+ 
+     ''' <summary>Times the execution of a function and outputs both the elapsed time and the function's result.</summary>
+     Sub Time(Of T)(ByVal work As Func(Of T))
+         Dim sw = Stopwatch.StartNew()
+         Dim result = work()
+         Console.WriteLine(sw.Elapsed.ToString() & "
+     End Sub
+ 
+     ''' <summary>Estimates the value of PI using a LINQ-based implementation.</summary>
+     Function SerialLinqPi() As Double
+         Dim stepSize = 1.0 / num_steps
+         Return (From i In Enumerable.Range(0, num_steps)
+                 Let x = (i + 0.5) * stepSize
+                 Select 4.0 / (1.0 + x * x)).Sum() * stepSize
+     End Function
+ 
+     ''' <summary>Estimates the value of PI using a PLINQ-based implementation.</summary>
+     Function ParallelLinqPi() As Double
+         Dim stepSize = 1.0 / num_steps
+         Return (From i In ParallelEnumerable.Range(0, num_steps)
+                 Let x = (i + 0.5) * stepSize
+                 Select 4.0 / (1.0 + x * x)).Sum() * stepSize
+     End Function
+ 
+ 
+     ''' <summary>Estimates the value of PI using a For loop.</summary>
+     Function SerialPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         For i = 0 To num_steps - 1
+             Dim x = (i + 0.5) * stepSize
+             sum = sum + 4.0 / (1.0 + x * x)
+         Next
+         Return stepSize * sum
+     End Function
+ 
+     ''' <summary>Estimates the value of PI using a Parallel.For.</summary>
+     Function ParallelPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         Dim monitor = New Object()
+         Parallel.For(0, num_steps, Function() 0.0, Function(i, state, local)
+                                                        Dim x = (i + 0.5) * stepSize
+                                                        Return local + 4.0 / (1.0 + x * x)
+                                                    End Function,
+                                                    Sub(local)
+                                                        SyncLock (monitor)
+                                                            sum += local
+                                                        End SyncLock
+                                                    End Sub)
+         Return stepSize * sum
+     End Function
+ 
+     ''' <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     Function ParallelPartitionerPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         Dim monitor = New Object()
+         Parallel.ForEach(Partitioner.Create(0, num_steps),
+                          Function() 0.0,
+                          Function(range, state, local)
+                              For i = range.Item1 To range.Item2 - 1
+                                  Dim x = (i + 0.5) * stepSize
+                                  local = local + 4.0 / (1.0 + x * x)
+                              Next
+                              Return local
+                          End Function,
+                          Sub(local)
+                              SyncLock (monitor)
+                                  sum += local
+                              End SyncLock
+                          End Sub)
+         Return stepSize * sum
+     End Function
+ 
+ End Module
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="31" endline="37"><![CDATA[
+ 
+     ''' <summary>Times the execution of a function and outputs both the elapsed time and the function's result.</summary>
+     Sub Time(Of T)(ByVal work As Func(Of T))
+         Dim sw = Stopwatch.StartNew()
+         Dim result = work()
+         Console.WriteLine(sw.Elapsed.ToString() & "
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="38" endline="45"><![CDATA[
+ 
+     ''' <summary>Estimates the value of PI using a LINQ-based implementation.</summary>
+     Function SerialLinqPi() As Double
+         Dim stepSize = 1.0 / num_steps
+         Return (From i In Enumerable.Range(0, num_steps)
+                 Let x = (i + 0.5) * stepSize
+                 Select 4.0 / (1.0 + x * x)).Sum() * stepSize
+     End Function
+ 
+     ''' <summary>Estimates the value of PI using a PLINQ-based implementation.</summary>
+     Function ParallelLinqPi() As Double
+         Dim stepSize = 1.0 / num_steps
+         Return (From i In ParallelEnumerable.Range(0, num_steps)
+                 Let x = (i + 0.5) * stepSize
+                 Select 4.0 / (1.0 + x * x)).Sum() * stepSize
+     End Function
+ 
+ 
+     ''' <summary>Estimates the value of PI using a For loop.</summary>
+     Function SerialPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         For i = 0 To num_steps - 1
+             Dim x = (i + 0.5) * stepSize
+             sum = sum + 4.0 / (1.0 + x * x)
+         Next
+         Return stepSize * sum
+     End Function
+ 
+     ''' <summary>Estimates the value of PI using a Parallel.For.</summary>
+     Function ParallelPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         Dim monitor = New Object()
+         Parallel.For(0, num_steps, Function() 0.0, Function(i, state, local)
+                                                        Dim x = (i + 0.5) * stepSize
+                                                        Return local + 4.0 / (1.0 + x * x)
+                                                    End Function,
+                                                    Sub(local)
+                                                        SyncLock (monitor)
+                                                            sum += local
+                                                        End SyncLock
+                                                    End Sub)
+         Return stepSize * sum
+     End Function
+ 
+     ''' <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     Function ParallelPartitionerPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         Dim monitor = New Object()
+         Parallel.ForEach(Partitioner.Create(0, num_steps),
+                          Function() 0.0,
+                          Function(range, state, local)
+                              For i = range.Item1 To range.Item2 - 1
+                                  Dim x = (i + 0.5) * stepSize
+                                  local = local + 4.0 / (1.0 + x * x)
+                              Next
+                              Return local
+                          End Function,
+                          Sub(local)
+                              SyncLock (monitor)
+                                  sum += local
+                              End SyncLock
+                          End Sub)
+         Return stepSize * sum
+     End Function
+ 
+ End Module
+         Dim stepSize = 1.0 / num_steps
+         Return (From i In Enumerable.Range(0, num_steps)
+                 Let x = (i + 0.5) * stepSize
+                 Select 4.0 / (1.0 + x * x)).Sum() * stepSize
+     End Function
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="46" endline="53"><![CDATA[
+ 
+     ''' <summary>Estimates the value of PI using a PLINQ-based implementation.</summary>
+     Function ParallelLinqPi() As Double
+         Dim stepSize = 1.0 / num_steps
+         Return (From i In ParallelEnumerable.Range(0, num_steps)
+                 Let x = (i + 0.5) * stepSize
+                 Select 4.0 / (1.0 + x * x)).Sum() * stepSize
+     End Function
+ 
+ 
+     ''' <summary>Estimates the value of PI using a For loop.</summary>
+     Function SerialPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         For i = 0 To num_steps - 1
+             Dim x = (i + 0.5) * stepSize
+             sum = sum + 4.0 / (1.0 + x * x)
+         Next
+         Return stepSize * sum
+     End Function
+ 
+     ''' <summary>Estimates the value of PI using a Parallel.For.</summary>
+     Function ParallelPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         Dim monitor = New Object()
+         Parallel.For(0, num_steps, Function() 0.0, Function(i, state, local)
+                                                        Dim x = (i + 0.5) * stepSize
+                                                        Return local + 4.0 / (1.0 + x * x)
+                                                    End Function,
+                                                    Sub(local)
+                                                        SyncLock (monitor)
+                                                            sum += local
+                                                        End SyncLock
+                                                    End Sub)
+         Return stepSize * sum
+     End Function
+ 
+     ''' <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     Function ParallelPartitionerPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         Dim monitor = New Object()
+         Parallel.ForEach(Partitioner.Create(0, num_steps),
+                          Function() 0.0,
+                          Function(range, state, local)
+                              For i = range.Item1 To range.Item2 - 1
+                                  Dim x = (i + 0.5) * stepSize
+                                  local = local + 4.0 / (1.0 + x * x)
+                              Next
+                              Return local
+                          End Function,
+                          Sub(local)
+                              SyncLock (monitor)
+                                  sum += local
+                              End SyncLock
+                          End Sub)
+         Return stepSize * sum
+     End Function
+ 
+ End Module
+         Dim stepSize = 1.0 / num_steps
+         Return (From i In ParallelEnumerable.Range(0, num_steps)
+                 Let x = (i + 0.5) * stepSize
+                 Select 4.0 / (1.0 + x * x)).Sum() * stepSize
+     End Function
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="54" endline="65"><![CDATA[
+ 
+ 
+     ''' <summary>Estimates the value of PI using a For loop.</summary>
+     Function SerialPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         For i = 0 To num_steps - 1
+             Dim x = (i + 0.5) * stepSize
+             sum = sum + 4.0 / (1.0 + x * x)
+         Next
+         Return stepSize * sum
+     End Function
+ 
+     ''' <summary>Estimates the value of PI using a Parallel.For.</summary>
+     Function ParallelPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         Dim monitor = New Object()
+         Parallel.For(0, num_steps, Function() 0.0, Function(i, state, local)
+                                                        Dim x = (i + 0.5) * stepSize
+                                                        Return local + 4.0 / (1.0 + x * x)
+                                                    End Function,
+                                                    Sub(local)
+                                                        SyncLock (monitor)
+                                                            sum += local
+                                                        End SyncLock
+                                                    End Sub)
+         Return stepSize * sum
+     End Function
+ 
+     ''' <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     Function ParallelPartitionerPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         Dim monitor = New Object()
+         Parallel.ForEach(Partitioner.Create(0, num_steps),
+                          Function() 0.0,
+                          Function(range, state, local)
+                              For i = range.Item1 To range.Item2 - 1
+                                  Dim x = (i + 0.5) * stepSize
+                                  local = local + 4.0 / (1.0 + x * x)
+                              Next
+                              Return local
+                          End Function,
+                          Sub(local)
+                              SyncLock (monitor)
+                                  sum += local
+                              End SyncLock
+                          End Sub)
+         Return stepSize * sum
+     End Function
+ 
+ End Module
+         Return stepSize * sum
+     End Function
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="66" endline="82"><![CDATA[
+ 
+     ''' <summary>Estimates the value of PI using a Parallel.For.</summary>
+     Function ParallelPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         Dim monitor = New Object()
+         Parallel.For(0, num_steps, Function() 0.0, Function(i, state, local)
+                                                        Dim x = (i + 0.5) * stepSize
+                                                        Return local + 4.0 / (1.0 + x * x)
+                                                    End Function,
+                                                    Sub(local)
+                                                        SyncLock (monitor)
+                                                            sum += local
+                                                        End SyncLock
+                                                    End Sub)
+         Return stepSize * sum
+     End Function
+ 
+     ''' <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     Function ParallelPartitionerPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         Dim monitor = New Object()
+         Parallel.ForEach(Partitioner.Create(0, num_steps),
+                          Function() 0.0,
+                          Function(range, state, local)
+                              For i = range.Item1 To range.Item2 - 1
+                                  Dim x = (i + 0.5) * stepSize
+                                  local = local + 4.0 / (1.0 + x * x)
+                              Next
+                              Return local
+                          End Function,
+                          Sub(local)
+                              SyncLock (monitor)
+                                  sum += local
+                              End SyncLock
+                          End Sub)
+         Return stepSize * sum
+     End Function
+ 
+ End Module
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         Dim monitor = New Object()
+         Parallel.For(0, num_steps, Function() 0.0, Function(i, state, local)
+                                                        Dim x = (i + 0.5) * stepSize
+                                                        Return local + 4.0 / (1.0 + x * x)
+                                                    End Function,
+                                                    Sub(local)
+                                                        SyncLock (monitor)
+                                                            sum += local
+                                                        End SyncLock
+                                                    End Sub)
+         Return stepSize * sum
+     End Function
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="83" endline="104"><![CDATA[
+ 
+     ''' <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     Function ParallelPartitionerPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         Dim monitor = New Object()
+         Parallel.ForEach(Partitioner.Create(0, num_steps),
+                          Function() 0.0,
+                          Function(range, state, local)
+                              For i = range.Item1 To range.Item2 - 1
+                                  Dim x = (i + 0.5) * stepSize
+                                  local = local + 4.0 / (1.0 + x * x)
+                              Next
+                              Return local
+                          End Function,
+                          Sub(local)
+                              SyncLock (monitor)
+                                  sum += local
+                              End SyncLock
+                          End Sub)
+         Return stepSize * sum
+     End Function
+ 
+ End Module
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         Dim monitor = New Object()
+         Parallel.ForEach(Partitioner.Create(0, num_steps),
+                          Function() 0.0,
+                          Function(range, state, local)
+                              For i = range.Item1 To range.Item2 - 1
+                                  Dim x = (i + 0.5) * stepSize
+                                  local = local + 4.0 / (1.0 + x * x)
+                              Next
+                              Return local
+                          End Function,
+                          Sub(local)
+                              SyncLock (monitor)
+                                  sum += local
+                              End SyncLock
+                          End Sub)
+         Return stepSize * sum
+     End Function
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="20" endline="20"><![CDATA[
+             Time(Function() SerialLinqPi())
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="21" endline="21"><![CDATA[
+             Time(Function() ParallelLinqPi())
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="22" endline="22"><![CDATA[
+             Time(Function() SerialPi())
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="23" endline="23"><![CDATA[
+             Time(Function() ParallelPi())
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="24" endline="24"><![CDATA[
+             Time(Function() ParallelPartitionerPi())
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="25" endline="44"><![CDATA[
+ 
+             Console.WriteLine("----")
+             Console.ReadLine()
+         End While
+ 
+     End Sub
+ 
+     ''' <summary>Times the execution of a function and outputs both the elapsed time and the function's result.</summary>
+     Sub Time(Of T)(ByVal work As Func(Of T))
+         Dim sw = Stopwatch.StartNew()
+         Dim result = work()
+         Console.WriteLine(sw.Elapsed.ToString() & "
+     End Sub
+ 
+     ''' <summary>Estimates the value of PI using a LINQ-based implementation.</summary>
+     Function SerialLinqPi() As Double
+         Dim stepSize = 1.0 / num_steps
+         Return (From i In Enumerable.Range(0, num_steps)
+                 Let x = (i + 0.5) * stepSize
+                 Select 4.0 / (1.0 + x * x)).Sum() * stepSize
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="45" endline="52"><![CDATA[
+     End Function
+ 
+     ''' <summary>Estimates the value of PI using a PLINQ-based implementation.</summary>
+     Function ParallelLinqPi() As Double
+         Dim stepSize = 1.0 / num_steps
+         Return (From i In ParallelEnumerable.Range(0, num_steps)
+                 Let x = (i + 0.5) * stepSize
+                 Select 4.0 / (1.0 + x * x)).Sum() * stepSize
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="53" endline="72"><![CDATA[
+     End Function
+ 
+ 
+     ''' <summary>Estimates the value of PI using a For loop.</summary>
+     Function SerialPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         For i = 0 To num_steps - 1
+             Dim x = (i + 0.5) * stepSize
+             sum = sum + 4.0 / (1.0 + x * x)
+         Next
+         Return stepSize * sum
+     End Function
+ 
+     ''' <summary>Estimates the value of PI using a Parallel.For.</summary>
+     Function ParallelPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         Dim monitor = New Object()
+         Parallel.For(0, num_steps, Function() 0.0, Function(i, state, local)
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="73" endline="90"><![CDATA[
+                                                        Dim x = (i + 0.5) * stepSize
+                                                        Return local + 4.0 / (1.0 + x * x)
+                                                    End Function,
+                                                    Sub(local)
+                                                        SyncLock (monitor)
+                                                            sum += local
+                                                        End SyncLock
+                                                    End Sub)
+         Return stepSize * sum
+     End Function
+ 
+     ''' <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     Function ParallelPartitionerPi() As Double
+         Dim sum = 0.0
+         Dim stepSize = 1.0 / num_steps
+         Dim monitor = New Object()
+         Parallel.ForEach(Partitioner.Create(0, num_steps),
+                          Function() 0.0,
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_VisualBasic\Program.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+</source_elements></project>

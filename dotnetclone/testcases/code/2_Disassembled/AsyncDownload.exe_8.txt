@@ -1,0 +1,911 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.0.30319.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern ParallelExtensionsExtras
+{
+  .ver 1:2:0:0
+}
+.assembly extern System
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern System.Core
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly AsyncDownload
+{
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 29 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ..).NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 2C 50 72   // ,Version=v4.0,Pr
+                                                                                                        6F 66 69 6C 65 3D 43 6C 69 65 6E 74 01 00 54 0E   // ofile=Client..T.
+                                                                                                        14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C 61   // .FrameworkDispla
+                                                                                                        79 4E 61 6D 65 1F 2E 4E 45 54 20 46 72 61 6D 65   // yName..NET Frame
+                                                                                                        77 6F 72 6B 20 34 20 43 6C 69 65 6E 74 20 50 72   // work 4 Client Pr
+                                                                                                        6F 66 69 6C 65 )                                  // ofile
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 0D 41 73 79 6E 63 44 6F 77 6E 6C 6F 61 64   // ...AsyncDownload
+                                                                                                00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 0D 41 73 79 6E 63 44 6F 77 6E 6C 6F 61 64   // ...AsyncDownload
+                                                                                              00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 09 4D 69 63 72 6F 73 6F 66 74 00 00 )       // ...Microsoft..
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 39 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ..9Copyright .. 
+                                                                                                  4D 69 63 72 6F 73 6F 66 74 20 43 6F 72 70 6F 72   // Microsoft Corpor
+                                                                                                  61 74 69 6F 6E 2E 20 20 41 6C 6C 20 72 69 67 68   // ation.  All righ
+                                                                                                  74 73 20 72 65 73 65 72 76 65 64 2E 00 00 )       // ts reserved...
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 62 62 34 66 63 37 36 65 2D 36 33 63 62   // ..$bb4fc76e-63cb
+                                                                                                  2D 34 33 30 63 2D 39 33 36 66 2D 65 36 39 61 65   // -430c-936f-e69ae
+                                                                                                  61 32 61 61 63 65 34 00 00 )                      // a2aace4..
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.module AsyncDownload.exe
+// MVID: {E35AD705-7C41-4A3F-B7DD-0060F8DC6056}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000001    //  ILONLY
+// Image base: 0x011D0000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi beforefieldinit Program
+       extends [mscorlib]System.Object
+{
+  .field private static class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> 'CS$<>9__CachedAnonymousMethodDelegate5'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> 'CS$<>9__CachedAnonymousMethodDelegate6'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> 'CS$<>9__CachedAnonymousMethodDelegate7'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> 'CS$<>9__CachedAnonymousMethodDelegate8'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> 'CS$<>9__CachedAnonymousMethodDelegate9'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`2<class [mscorlib]System.Threading.Tasks.Task,bool> 'CS$<>9__CachedAnonymousMethodDelegateb'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`2<class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>,bool> 'CS$<>9__CachedAnonymousMethodDelegated'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .method private hidebysig static void  Main() cil managed
+  {
+    .entrypoint
+    // Code size       418 (0x1a2)
+    .maxstack  7
+    .locals init ([0] class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task>[] CS$0$0000,
+             [1] class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>[] CS$0$0001)
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\Program.cs' 
+//000018:     {
+    IL_0000:  nop
+//000019:         // NOTE: Synchronous .Wait() calls added only for demo purposes
+//000020: 
+//000021:         // Single async request
+//000022:         Download("http://www.microsoft.com").ContinueWith(CompletedDownloadData).Wait();
+    IL_0001:  ldstr      "http://www.microsoft.com"
+    IL_0006:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> Program::Download(string)
+    IL_000b:  ldnull
+    IL_000c:  ldftn      void Program::CompletedDownloadData(class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>)
+    IL_0012:  newobj     instance void class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>>::.ctor(object,
+                                                                                                                                      native int)
+    IL_0017:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>::ContinueWith(class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<!0>>)
+    IL_001c:  callvirt   instance void [mscorlib]System.Threading.Tasks.Task::Wait()
+    IL_0021:  nop
+//000023: 
+//000024:         // Single async request with timeout
+//000025:         Download("http://www.microsoft.com").WithTimeout(new TimeSpan(0, 0, 0, 0, 1)).ContinueWith(CompletedDownloadData).Wait();
+    IL_0022:  ldstr      "http://www.microsoft.com"
+    IL_0027:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> Program::Download(string)
+    IL_002c:  ldc.i4.0
+    IL_002d:  ldc.i4.0
+    IL_002e:  ldc.i4.0
+    IL_002f:  ldc.i4.0
+    IL_0030:  ldc.i4.1
+    IL_0031:  newobj     instance void [mscorlib]System.TimeSpan::.ctor(int32,
+                                                                        int32,
+                                                                        int32,
+                                                                        int32,
+                                                                        int32)
+    IL_0036:  call       class [mscorlib]System.Threading.Tasks.Task`1<!!0> [ParallelExtensionsExtras]System.Threading.Tasks.TaskExtrasExtensions::WithTimeout<uint8[]>(class [mscorlib]System.Threading.Tasks.Task`1<!!0>,
+                                                                                                                                                                        valuetype [mscorlib]System.TimeSpan)
+    IL_003b:  ldnull
+    IL_003c:  ldftn      void Program::CompletedDownloadData(class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>)
+    IL_0042:  newobj     instance void class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>>::.ctor(object,
+                                                                                                                                      native int)
+    IL_0047:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>::ContinueWith(class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<!0>>)
+    IL_004c:  callvirt   instance void [mscorlib]System.Threading.Tasks.Task::Wait()
+    IL_0051:  nop
+//000026: 
+//000027:         // Serial async requests
+//000028:         Task.Factory.TrackedSequence(
+    IL_0052:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_0057:  ldc.i4.5
+    IL_0058:  newarr     class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task>
+    IL_005d:  stloc.0
+    IL_005e:  ldloc.0
+    IL_005f:  ldc.i4.0
+    IL_0060:  ldsfld     class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> Program::'CS$<>9__CachedAnonymousMethodDelegate5'
+    IL_0065:  brtrue.s   IL_007a
+
+    IL_0067:  ldnull
+    IL_0068:  ldftn      class [mscorlib]System.Threading.Tasks.Task Program::'<Main>b__0'()
+    IL_006e:  newobj     instance void class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task>::.ctor(object,
+                                                                                                                         native int)
+    IL_0073:  stsfld     class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> Program::'CS$<>9__CachedAnonymousMethodDelegate5'
+    IL_0078:  br.s       IL_007a
+
+    IL_007a:  ldsfld     class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> Program::'CS$<>9__CachedAnonymousMethodDelegate5'
+    IL_007f:  stelem.ref
+    IL_0080:  ldloc.0
+    IL_0081:  ldc.i4.1
+    IL_0082:  ldsfld     class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> Program::'CS$<>9__CachedAnonymousMethodDelegate6'
+    IL_0087:  brtrue.s   IL_009c
+
+    IL_0089:  ldnull
+    IL_008a:  ldftn      class [mscorlib]System.Threading.Tasks.Task Program::'<Main>b__1'()
+    IL_0090:  newobj     instance void class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task>::.ctor(object,
+                                                                                                                         native int)
+    IL_0095:  stsfld     class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> Program::'CS$<>9__CachedAnonymousMethodDelegate6'
+    IL_009a:  br.s       IL_009c
+
+    IL_009c:  ldsfld     class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> Program::'CS$<>9__CachedAnonymousMethodDelegate6'
+    IL_00a1:  stelem.ref
+    IL_00a2:  ldloc.0
+    IL_00a3:  ldc.i4.2
+    IL_00a4:  ldsfld     class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> Program::'CS$<>9__CachedAnonymousMethodDelegate7'
+    IL_00a9:  brtrue.s   IL_00be
+
+    IL_00ab:  ldnull
+    IL_00ac:  ldftn      class [mscorlib]System.Threading.Tasks.Task Program::'<Main>b__2'()
+    IL_00b2:  newobj     instance void class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task>::.ctor(object,
+                                                                                                                         native int)
+    IL_00b7:  stsfld     class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> Program::'CS$<>9__CachedAnonymousMethodDelegate7'
+    IL_00bc:  br.s       IL_00be
+
+    IL_00be:  ldsfld     class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> Program::'CS$<>9__CachedAnonymousMethodDelegate7'
+    IL_00c3:  stelem.ref
+    IL_00c4:  ldloc.0
+    IL_00c5:  ldc.i4.3
+    IL_00c6:  ldsfld     class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> Program::'CS$<>9__CachedAnonymousMethodDelegate8'
+    IL_00cb:  brtrue.s   IL_00e0
+
+    IL_00cd:  ldnull
+    IL_00ce:  ldftn      class [mscorlib]System.Threading.Tasks.Task Program::'<Main>b__3'()
+    IL_00d4:  newobj     instance void class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task>::.ctor(object,
+                                                                                                                         native int)
+    IL_00d9:  stsfld     class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> Program::'CS$<>9__CachedAnonymousMethodDelegate8'
+    IL_00de:  br.s       IL_00e0
+
+    IL_00e0:  ldsfld     class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> Program::'CS$<>9__CachedAnonymousMethodDelegate8'
+    IL_00e5:  stelem.ref
+    IL_00e6:  ldloc.0
+    IL_00e7:  ldc.i4.4
+    IL_00e8:  ldsfld     class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> Program::'CS$<>9__CachedAnonymousMethodDelegate9'
+    IL_00ed:  brtrue.s   IL_0102
+
+    IL_00ef:  ldnull
+    IL_00f0:  ldftn      class [mscorlib]System.Threading.Tasks.Task Program::'<Main>b__4'()
+    IL_00f6:  newobj     instance void class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task>::.ctor(object,
+                                                                                                                         native int)
+    IL_00fb:  stsfld     class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> Program::'CS$<>9__CachedAnonymousMethodDelegate9'
+    IL_0100:  br.s       IL_0102
+
+    IL_0102:  ldsfld     class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task> Program::'CS$<>9__CachedAnonymousMethodDelegate9'
+    IL_0107:  stelem.ref
+    IL_0108:  ldloc.0
+    IL_0109:  call       class [mscorlib]System.Threading.Tasks.Task`1<class [mscorlib]System.Collections.Generic.IList`1<class [mscorlib]System.Threading.Tasks.Task>> [ParallelExtensionsExtras]System.Threading.Tasks.TaskFactoryExtensions::TrackedSequence(class [mscorlib]System.Threading.Tasks.TaskFactory,
+                                                                                                                                                                                                                                                                class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task>[])
+    IL_010e:  ldnull
+    IL_010f:  ldftn      void Program::SerialTasksCompleted(class [mscorlib]System.Threading.Tasks.Task`1<class [mscorlib]System.Collections.Generic.IList`1<class [mscorlib]System.Threading.Tasks.Task>>)
+    IL_0115:  newobj     instance void class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<class [mscorlib]System.Collections.Generic.IList`1<class [mscorlib]System.Threading.Tasks.Task>>>::.ctor(object,
+                                                                                                                                                                                                                              native int)
+    IL_011a:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task class [mscorlib]System.Threading.Tasks.Task`1<class [mscorlib]System.Collections.Generic.IList`1<class [mscorlib]System.Threading.Tasks.Task>>::ContinueWith(class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<!0>>)
+    IL_011f:  callvirt   instance void [mscorlib]System.Threading.Tasks.Task::Wait()
+    IL_0124:  nop
+//000029:             () => Download("http://blogs.msdn.com/pfxteam"),
+//000030:             () => Download("http://blogs.msdn.com/nativeconcurrency"),
+//000031:             () => Download("http://exampleexampleexample.com"), // will fail
+//000032:             () => Download("http://msdn.com/concurrency"),
+//000033:             () => Download("http://bing.com")
+//000034:         ).ContinueWith(SerialTasksCompleted).Wait();
+//000035: 
+//000036:         // Concurrent async requests
+//000037:         Task.Factory.ContinueWhenAll(new []
+    IL_0125:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_012a:  ldc.i4.5
+    IL_012b:  newarr     class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>
+    IL_0130:  stloc.1
+    IL_0131:  ldloc.1
+    IL_0132:  ldc.i4.0
+    IL_0133:  ldstr      "http://blogs.msdn.com/pfxteam"
+    IL_0138:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> Program::Download(string)
+    IL_013d:  stelem.ref
+    IL_013e:  ldloc.1
+    IL_013f:  ldc.i4.1
+    IL_0140:  ldstr      "http://blogs.msdn.com/nativeconcurrency"
+    IL_0145:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> Program::Download(string)
+    IL_014a:  stelem.ref
+    IL_014b:  ldloc.1
+    IL_014c:  ldc.i4.2
+    IL_014d:  ldstr      "http://exampleexampleexample.com"
+    IL_0152:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> Program::Download(string)
+    IL_0157:  stelem.ref
+    IL_0158:  ldloc.1
+    IL_0159:  ldc.i4.3
+    IL_015a:  ldstr      "http://msdn.com/concurrency"
+    IL_015f:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> Program::Download(string)
+    IL_0164:  stelem.ref
+    IL_0165:  ldloc.1
+    IL_0166:  ldc.i4.4
+    IL_0167:  ldstr      "http://bing.com"
+    IL_016c:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> Program::Download(string)
+    IL_0171:  stelem.ref
+    IL_0172:  ldloc.1
+    IL_0173:  ldnull
+    IL_0174:  ldftn      void Program::ConcurrentTasksCompleted(class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>[])
+    IL_017a:  newobj     instance void class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>[]>::.ctor(object,
+                                                                                                                                        native int)
+    IL_017f:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::ContinueWhenAll<uint8[]>(class [mscorlib]System.Threading.Tasks.Task`1<!!0>[],
+                                                                                                                                                     class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<!!0>[]>)
+    IL_0184:  callvirt   instance void [mscorlib]System.Threading.Tasks.Task::Wait()
+    IL_0189:  nop
+//000038:         {
+//000039:             Download("http://blogs.msdn.com/pfxteam"),
+//000040:             Download("http://blogs.msdn.com/nativeconcurrency"),
+//000041:             Download("http://exampleexampleexample.com"), // will fail
+//000042:             Download("http://msdn.com/concurrency"),
+//000043:             Download("http://bing.com")
+//000044:         }, ConcurrentTasksCompleted).Wait();
+//000045: 
+//000046:         // Done
+//000047:         Console.WriteLine();
+    IL_018a:  call       void [mscorlib]System.Console::WriteLine()
+    IL_018f:  nop
+//000048:         Console.WriteLine("Press <enter> to exit.");
+    IL_0190:  ldstr      "Press <enter> to exit."
+    IL_0195:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_019a:  nop
+//000049:         Console.ReadLine();
+    IL_019b:  call       string [mscorlib]System.Console::ReadLine()
+    IL_01a0:  pop
+//000050:     }
+    IL_01a1:  ret
+  } // end of method Program::Main
+
+  .method private hidebysig static class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> 
+          Download(string url) cil managed
+  {
+    // Code size       17 (0x11)
+    .maxstack  2
+    .locals init ([0] class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> CS$1$0000)
+//000051: 
+//000052:     static Task<byte[]> Download(string url)
+//000053:     {
+    IL_0000:  nop
+//000054:         return new WebClient().DownloadDataTask(url);
+    IL_0001:  newobj     instance void [System]System.Net.WebClient::.ctor()
+    IL_0006:  ldarg.0
+    IL_0007:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> [ParallelExtensionsExtras]System.Net.WebClientExtensions::DownloadDataTask(class [System]System.Net.WebClient,
+                                                                                                                                                           string)
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+//000055:     }
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+  } // end of method Program::Download
+
+  .method private hidebysig static void  CompletedDownloadData(class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> task) cil managed
+  {
+    // Code size       94 (0x5e)
+    .maxstack  2
+    .locals init ([0] valuetype [mscorlib]System.Threading.Tasks.TaskStatus CS$4$0000)
+//000056: 
+//000057:     static void CompletedDownloadData(Task<byte[]> task)
+//000058:     {
+    IL_0000:  nop
+//000059:         switch (task.Status)
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance valuetype [mscorlib]System.Threading.Tasks.TaskStatus [mscorlib]System.Threading.Tasks.Task::get_Status()
+    IL_0007:  stloc.0
+//000060:         {
+//000061:             case TaskStatus.RanToCompletion:
+//000062:                 Console.WriteLine("Request succeeded: {0}", task.Result.Length);
+//000063:                 break;
+//000064:             case TaskStatus.Faulted:
+//000065:                 Console.WriteLine("Request failed: {0}", task.Exception.InnerException);
+//000066:                 break;
+//000067:             case TaskStatus.Canceled:
+//000068:                 Console.WriteLine("Request was canceled");
+//000069:                 break;
+//000070:         }
+//000071:     }
+//000072: 
+//000073:     static void SerialTasksCompleted(Task<IList<Task>> tasks)
+//000074:     {
+//000075:         int failures = tasks.Result.Where(t => t.Exception != null).Count();
+//000076:         Console.WriteLine("Serial result: {0} successes and {1} failures", tasks.Result.Count() - failures, failures);
+//000077:     }
+//000078: 
+//000079:     static void ConcurrentTasksCompleted(Task<byte[]>[] tasks)
+//000080:     {
+//000081:         int failures = tasks.Where(t => t.Exception != null).Count();
+//000082:         Console.WriteLine("Concurrent result: {0} successes and {1} failures", tasks.Length - failures, failures);
+//000083:     }
+//000084: }
+    IL_0008:  ldloc.0
+    IL_0009:  ldc.i4.5
+    IL_000a:  sub
+    IL_000b:  switch     ( 
+                          IL_001e,
+                          IL_0050,
+                          IL_0038)
+    IL_001c:  br.s       IL_005d
+
+//000062:                 Console.WriteLine("Request succeeded: {0}", task.Result.Length);
+    IL_001e:  ldstr      "Request succeeded: {0}"
+    IL_0023:  ldarg.0
+    IL_0024:  callvirt   instance !0 class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>::get_Result()
+    IL_0029:  ldlen
+    IL_002a:  conv.i4
+    IL_002b:  box        [mscorlib]System.Int32
+    IL_0030:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_0035:  nop
+//000063:                 break;
+    IL_0036:  br.s       IL_005d
+
+//000064:             case TaskStatus.Faulted:
+//000065:                 Console.WriteLine("Request failed: {0}", task.Exception.InnerException);
+    IL_0038:  ldstr      "Request failed: {0}"
+    IL_003d:  ldarg.0
+    IL_003e:  callvirt   instance class [mscorlib]System.AggregateException [mscorlib]System.Threading.Tasks.Task::get_Exception()
+    IL_0043:  callvirt   instance class [mscorlib]System.Exception [mscorlib]System.Exception::get_InnerException()
+    IL_0048:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_004d:  nop
+//000066:                 break;
+    IL_004e:  br.s       IL_005d
+
+//000067:             case TaskStatus.Canceled:
+//000068:                 Console.WriteLine("Request was canceled");
+    IL_0050:  ldstr      "Request was canceled"
+    IL_0055:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_005a:  nop
+//000069:                 break;
+    IL_005b:  br.s       IL_005d
+
+//000070:         }
+//000071:     }
+    IL_005d:  ret
+  } // end of method Program::CompletedDownloadData
+
+  .method private hidebysig static void  SerialTasksCompleted(class [mscorlib]System.Threading.Tasks.Task`1<class [mscorlib]System.Collections.Generic.IList`1<class [mscorlib]System.Threading.Tasks.Task>> tasks) cil managed
+  {
+    // Code size       85 (0x55)
+    .maxstack  4
+    .locals init ([0] int32 failures)
+//000072: 
+//000073:     static void SerialTasksCompleted(Task<IList<Task>> tasks)
+//000074:     {
+    IL_0000:  nop
+//000075:         int failures = tasks.Result.Where(t => t.Exception != null).Count();
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance !0 class [mscorlib]System.Threading.Tasks.Task`1<class [mscorlib]System.Collections.Generic.IList`1<class [mscorlib]System.Threading.Tasks.Task>>::get_Result()
+    IL_0007:  ldsfld     class [mscorlib]System.Func`2<class [mscorlib]System.Threading.Tasks.Task,bool> Program::'CS$<>9__CachedAnonymousMethodDelegateb'
+    IL_000c:  brtrue.s   IL_0021
+
+    IL_000e:  ldnull
+    IL_000f:  ldftn      bool Program::'<SerialTasksCompleted>b__a'(class [mscorlib]System.Threading.Tasks.Task)
+    IL_0015:  newobj     instance void class [mscorlib]System.Func`2<class [mscorlib]System.Threading.Tasks.Task,bool>::.ctor(object,
+                                                                                                                              native int)
+    IL_001a:  stsfld     class [mscorlib]System.Func`2<class [mscorlib]System.Threading.Tasks.Task,bool> Program::'CS$<>9__CachedAnonymousMethodDelegateb'
+    IL_001f:  br.s       IL_0021
+
+    IL_0021:  ldsfld     class [mscorlib]System.Func`2<class [mscorlib]System.Threading.Tasks.Task,bool> Program::'CS$<>9__CachedAnonymousMethodDelegateb'
+    IL_0026:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0> [System.Core]System.Linq.Enumerable::Where<class [mscorlib]System.Threading.Tasks.Task>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                               class [mscorlib]System.Func`2<!!0,bool>)
+    IL_002b:  call       int32 [System.Core]System.Linq.Enumerable::Count<class [mscorlib]System.Threading.Tasks.Task>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_0030:  stloc.0
+//000076:         Console.WriteLine("Serial result: {0} successes and {1} failures", tasks.Result.Count() - failures, failures);
+    IL_0031:  ldstr      "Serial result: {0} successes and {1} failures"
+    IL_0036:  ldarg.0
+    IL_0037:  callvirt   instance !0 class [mscorlib]System.Threading.Tasks.Task`1<class [mscorlib]System.Collections.Generic.IList`1<class [mscorlib]System.Threading.Tasks.Task>>::get_Result()
+    IL_003c:  call       int32 [System.Core]System.Linq.Enumerable::Count<class [mscorlib]System.Threading.Tasks.Task>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_0041:  ldloc.0
+    IL_0042:  sub
+    IL_0043:  box        [mscorlib]System.Int32
+    IL_0048:  ldloc.0
+    IL_0049:  box        [mscorlib]System.Int32
+    IL_004e:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object,
+                                                                  object)
+    IL_0053:  nop
+//000077:     }
+    IL_0054:  ret
+  } // end of method Program::SerialTasksCompleted
+
+  .method private hidebysig static void  ConcurrentTasksCompleted(class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>[] tasks) cil managed
+  {
+    // Code size       72 (0x48)
+    .maxstack  4
+    .locals init ([0] int32 failures)
+//000078: 
+//000079:     static void ConcurrentTasksCompleted(Task<byte[]>[] tasks)
+//000080:     {
+    IL_0000:  nop
+//000081:         int failures = tasks.Where(t => t.Exception != null).Count();
+    IL_0001:  ldarg.0
+    IL_0002:  ldsfld     class [mscorlib]System.Func`2<class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>,bool> Program::'CS$<>9__CachedAnonymousMethodDelegated'
+    IL_0007:  brtrue.s   IL_001c
+
+    IL_0009:  ldnull
+    IL_000a:  ldftn      bool Program::'<ConcurrentTasksCompleted>b__c'(class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>)
+    IL_0010:  newobj     instance void class [mscorlib]System.Func`2<class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>,bool>::.ctor(object,
+                                                                                                                                         native int)
+    IL_0015:  stsfld     class [mscorlib]System.Func`2<class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>,bool> Program::'CS$<>9__CachedAnonymousMethodDelegated'
+    IL_001a:  br.s       IL_001c
+
+    IL_001c:  ldsfld     class [mscorlib]System.Func`2<class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>,bool> Program::'CS$<>9__CachedAnonymousMethodDelegated'
+    IL_0021:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0> [System.Core]System.Linq.Enumerable::Where<class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                          class [mscorlib]System.Func`2<!!0,bool>)
+    IL_0026:  call       int32 [System.Core]System.Linq.Enumerable::Count<class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_002b:  stloc.0
+//000082:         Console.WriteLine("Concurrent result: {0} successes and {1} failures", tasks.Length - failures, failures);
+    IL_002c:  ldstr      "Concurrent result: {0} successes and {1} failures"
+    IL_0031:  ldarg.0
+    IL_0032:  ldlen
+    IL_0033:  conv.i4
+    IL_0034:  ldloc.0
+    IL_0035:  sub
+    IL_0036:  box        [mscorlib]System.Int32
+    IL_003b:  ldloc.0
+    IL_003c:  box        [mscorlib]System.Int32
+    IL_0041:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object,
+                                                                  object)
+    IL_0046:  nop
+//000083:     }
+    IL_0047:  ret
+  } // end of method Program::ConcurrentTasksCompleted
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Program::.ctor
+
+  .method private hidebysig static class [mscorlib]System.Threading.Tasks.Task 
+          '<Main>b__0'() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       15 (0xf)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Threading.Tasks.Task CS$1$0000)
+//000029:             () => Download("http://blogs.msdn.com/pfxteam"),
+    IL_0000:  ldstr      "http://blogs.msdn.com/pfxteam"
+    IL_0005:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> Program::Download(string)
+    IL_000a:  stloc.0
+    IL_000b:  br.s       IL_000d
+
+//000030:             () => Download("http://blogs.msdn.com/nativeconcurrency"),
+//000031:             () => Download("http://exampleexampleexample.com"), // will fail
+//000032:             () => Download("http://msdn.com/concurrency"),
+//000033:             () => Download("http://bing.com")
+//000034:         ).ContinueWith(SerialTasksCompleted).Wait();
+//000035: 
+//000036:         // Concurrent async requests
+//000037:         Task.Factory.ContinueWhenAll(new []
+//000038:         {
+//000039:             Download("http://blogs.msdn.com/pfxteam"),
+//000040:             Download("http://blogs.msdn.com/nativeconcurrency"),
+//000041:             Download("http://exampleexampleexample.com"), // will fail
+//000042:             Download("http://msdn.com/concurrency"),
+//000043:             Download("http://bing.com")
+//000044:         }, ConcurrentTasksCompleted).Wait();
+//000045: 
+//000046:         // Done
+//000047:         Console.WriteLine();
+//000048:         Console.WriteLine("Press <enter> to exit.");
+//000049:         Console.ReadLine();
+//000050:     }
+//000051: 
+//000052:     static Task<byte[]> Download(string url)
+//000053:     {
+//000054:         return new WebClient().DownloadDataTask(url);
+//000055:     }
+//000056: 
+//000057:     static void CompletedDownloadData(Task<byte[]> task)
+//000058:     {
+//000059:         switch (task.Status)
+//000060:         {
+//000061:             case TaskStatus.RanToCompletion:
+//000062:                 Console.WriteLine("Request succeeded: {0}", task.Result.Length);
+//000063:                 break;
+//000064:             case TaskStatus.Faulted:
+//000065:                 Console.WriteLine("Request failed: {0}", task.Exception.InnerException);
+//000066:                 break;
+//000067:             case TaskStatus.Canceled:
+//000068:                 Console.WriteLine("Request was canceled");
+//000069:                 break;
+//000070:         }
+//000071:     }
+//000072: 
+//000073:     static void SerialTasksCompleted(Task<IList<Task>> tasks)
+//000074:     {
+//000075:         int failures = tasks.Result.Where(t => t.Exception != null).Count();
+//000076:         Console.WriteLine("Serial result: {0} successes and {1} failures", tasks.Result.Count() - failures, failures);
+//000077:     }
+//000078: 
+//000079:     static void ConcurrentTasksCompleted(Task<byte[]>[] tasks)
+//000080:     {
+//000081:         int failures = tasks.Where(t => t.Exception != null).Count();
+//000082:         Console.WriteLine("Concurrent result: {0} successes and {1} failures", tasks.Length - failures, failures);
+//000083:     }
+//000084: }
+    IL_000d:  ldloc.0
+    IL_000e:  ret
+  } // end of method Program::'<Main>b__0'
+
+  .method private hidebysig static class [mscorlib]System.Threading.Tasks.Task 
+          '<Main>b__1'() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       15 (0xf)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Threading.Tasks.Task CS$1$0000)
+//000030:             () => Download("http://blogs.msdn.com/nativeconcurrency"),
+    IL_0000:  ldstr      "http://blogs.msdn.com/nativeconcurrency"
+    IL_0005:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> Program::Download(string)
+    IL_000a:  stloc.0
+    IL_000b:  br.s       IL_000d
+
+//000031:             () => Download("http://exampleexampleexample.com"), // will fail
+//000032:             () => Download("http://msdn.com/concurrency"),
+//000033:             () => Download("http://bing.com")
+//000034:         ).ContinueWith(SerialTasksCompleted).Wait();
+//000035: 
+//000036:         // Concurrent async requests
+//000037:         Task.Factory.ContinueWhenAll(new []
+//000038:         {
+//000039:             Download("http://blogs.msdn.com/pfxteam"),
+//000040:             Download("http://blogs.msdn.com/nativeconcurrency"),
+//000041:             Download("http://exampleexampleexample.com"), // will fail
+//000042:             Download("http://msdn.com/concurrency"),
+//000043:             Download("http://bing.com")
+//000044:         }, ConcurrentTasksCompleted).Wait();
+//000045: 
+//000046:         // Done
+//000047:         Console.WriteLine();
+//000048:         Console.WriteLine("Press <enter> to exit.");
+//000049:         Console.ReadLine();
+//000050:     }
+//000051: 
+//000052:     static Task<byte[]> Download(string url)
+//000053:     {
+//000054:         return new WebClient().DownloadDataTask(url);
+//000055:     }
+//000056: 
+//000057:     static void CompletedDownloadData(Task<byte[]> task)
+//000058:     {
+//000059:         switch (task.Status)
+//000060:         {
+//000061:             case TaskStatus.RanToCompletion:
+//000062:                 Console.WriteLine("Request succeeded: {0}", task.Result.Length);
+//000063:                 break;
+//000064:             case TaskStatus.Faulted:
+//000065:                 Console.WriteLine("Request failed: {0}", task.Exception.InnerException);
+//000066:                 break;
+//000067:             case TaskStatus.Canceled:
+//000068:                 Console.WriteLine("Request was canceled");
+//000069:                 break;
+//000070:         }
+//000071:     }
+//000072: 
+//000073:     static void SerialTasksCompleted(Task<IList<Task>> tasks)
+//000074:     {
+//000075:         int failures = tasks.Result.Where(t => t.Exception != null).Count();
+//000076:         Console.WriteLine("Serial result: {0} successes and {1} failures", tasks.Result.Count() - failures, failures);
+//000077:     }
+//000078: 
+//000079:     static void ConcurrentTasksCompleted(Task<byte[]>[] tasks)
+//000080:     {
+//000081:         int failures = tasks.Where(t => t.Exception != null).Count();
+//000082:         Console.WriteLine("Concurrent result: {0} successes and {1} failures", tasks.Length - failures, failures);
+//000083:     }
+//000084: }
+    IL_000d:  ldloc.0
+    IL_000e:  ret
+  } // end of method Program::'<Main>b__1'
+
+  .method private hidebysig static class [mscorlib]System.Threading.Tasks.Task 
+          '<Main>b__2'() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       15 (0xf)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Threading.Tasks.Task CS$1$0000)
+//000031:             () => Download("http://exampleexampleexample.com"), // will fail
+    IL_0000:  ldstr      "http://exampleexampleexample.com"
+    IL_0005:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> Program::Download(string)
+    IL_000a:  stloc.0
+    IL_000b:  br.s       IL_000d
+
+//000032:             () => Download("http://msdn.com/concurrency"),
+//000033:             () => Download("http://bing.com")
+//000034:         ).ContinueWith(SerialTasksCompleted).Wait();
+//000035: 
+//000036:         // Concurrent async requests
+//000037:         Task.Factory.ContinueWhenAll(new []
+//000038:         {
+//000039:             Download("http://blogs.msdn.com/pfxteam"),
+//000040:             Download("http://blogs.msdn.com/nativeconcurrency"),
+//000041:             Download("http://exampleexampleexample.com"), // will fail
+//000042:             Download("http://msdn.com/concurrency"),
+//000043:             Download("http://bing.com")
+//000044:         }, ConcurrentTasksCompleted).Wait();
+//000045: 
+//000046:         // Done
+//000047:         Console.WriteLine();
+//000048:         Console.WriteLine("Press <enter> to exit.");
+//000049:         Console.ReadLine();
+//000050:     }
+//000051: 
+//000052:     static Task<byte[]> Download(string url)
+//000053:     {
+//000054:         return new WebClient().DownloadDataTask(url);
+//000055:     }
+//000056: 
+//000057:     static void CompletedDownloadData(Task<byte[]> task)
+//000058:     {
+//000059:         switch (task.Status)
+//000060:         {
+//000061:             case TaskStatus.RanToCompletion:
+//000062:                 Console.WriteLine("Request succeeded: {0}", task.Result.Length);
+//000063:                 break;
+//000064:             case TaskStatus.Faulted:
+//000065:                 Console.WriteLine("Request failed: {0}", task.Exception.InnerException);
+//000066:                 break;
+//000067:             case TaskStatus.Canceled:
+//000068:                 Console.WriteLine("Request was canceled");
+//000069:                 break;
+//000070:         }
+//000071:     }
+//000072: 
+//000073:     static void SerialTasksCompleted(Task<IList<Task>> tasks)
+//000074:     {
+//000075:         int failures = tasks.Result.Where(t => t.Exception != null).Count();
+//000076:         Console.WriteLine("Serial result: {0} successes and {1} failures", tasks.Result.Count() - failures, failures);
+//000077:     }
+//000078: 
+//000079:     static void ConcurrentTasksCompleted(Task<byte[]>[] tasks)
+//000080:     {
+//000081:         int failures = tasks.Where(t => t.Exception != null).Count();
+//000082:         Console.WriteLine("Concurrent result: {0} successes and {1} failures", tasks.Length - failures, failures);
+//000083:     }
+//000084: }
+    IL_000d:  ldloc.0
+    IL_000e:  ret
+  } // end of method Program::'<Main>b__2'
+
+  .method private hidebysig static class [mscorlib]System.Threading.Tasks.Task 
+          '<Main>b__3'() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       15 (0xf)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Threading.Tasks.Task CS$1$0000)
+//000032:             () => Download("http://msdn.com/concurrency"),
+    IL_0000:  ldstr      "http://msdn.com/concurrency"
+    IL_0005:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> Program::Download(string)
+    IL_000a:  stloc.0
+    IL_000b:  br.s       IL_000d
+
+//000033:             () => Download("http://bing.com")
+//000034:         ).ContinueWith(SerialTasksCompleted).Wait();
+//000035: 
+//000036:         // Concurrent async requests
+//000037:         Task.Factory.ContinueWhenAll(new []
+//000038:         {
+//000039:             Download("http://blogs.msdn.com/pfxteam"),
+//000040:             Download("http://blogs.msdn.com/nativeconcurrency"),
+//000041:             Download("http://exampleexampleexample.com"), // will fail
+//000042:             Download("http://msdn.com/concurrency"),
+//000043:             Download("http://bing.com")
+//000044:         }, ConcurrentTasksCompleted).Wait();
+//000045: 
+//000046:         // Done
+//000047:         Console.WriteLine();
+//000048:         Console.WriteLine("Press <enter> to exit.");
+//000049:         Console.ReadLine();
+//000050:     }
+//000051: 
+//000052:     static Task<byte[]> Download(string url)
+//000053:     {
+//000054:         return new WebClient().DownloadDataTask(url);
+//000055:     }
+//000056: 
+//000057:     static void CompletedDownloadData(Task<byte[]> task)
+//000058:     {
+//000059:         switch (task.Status)
+//000060:         {
+//000061:             case TaskStatus.RanToCompletion:
+//000062:                 Console.WriteLine("Request succeeded: {0}", task.Result.Length);
+//000063:                 break;
+//000064:             case TaskStatus.Faulted:
+//000065:                 Console.WriteLine("Request failed: {0}", task.Exception.InnerException);
+//000066:                 break;
+//000067:             case TaskStatus.Canceled:
+//000068:                 Console.WriteLine("Request was canceled");
+//000069:                 break;
+//000070:         }
+//000071:     }
+//000072: 
+//000073:     static void SerialTasksCompleted(Task<IList<Task>> tasks)
+//000074:     {
+//000075:         int failures = tasks.Result.Where(t => t.Exception != null).Count();
+//000076:         Console.WriteLine("Serial result: {0} successes and {1} failures", tasks.Result.Count() - failures, failures);
+//000077:     }
+//000078: 
+//000079:     static void ConcurrentTasksCompleted(Task<byte[]>[] tasks)
+//000080:     {
+//000081:         int failures = tasks.Where(t => t.Exception != null).Count();
+//000082:         Console.WriteLine("Concurrent result: {0} successes and {1} failures", tasks.Length - failures, failures);
+//000083:     }
+//000084: }
+    IL_000d:  ldloc.0
+    IL_000e:  ret
+  } // end of method Program::'<Main>b__3'
+
+  .method private hidebysig static class [mscorlib]System.Threading.Tasks.Task 
+          '<Main>b__4'() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       15 (0xf)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Threading.Tasks.Task CS$1$0000)
+//000033:             () => Download("http://bing.com")
+    IL_0000:  ldstr      "http://bing.com"
+    IL_0005:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> Program::Download(string)
+    IL_000a:  stloc.0
+    IL_000b:  br.s       IL_000d
+
+//000034:         ).ContinueWith(SerialTasksCompleted).Wait();
+//000035: 
+//000036:         // Concurrent async requests
+//000037:         Task.Factory.ContinueWhenAll(new []
+//000038:         {
+//000039:             Download("http://blogs.msdn.com/pfxteam"),
+//000040:             Download("http://blogs.msdn.com/nativeconcurrency"),
+//000041:             Download("http://exampleexampleexample.com"), // will fail
+//000042:             Download("http://msdn.com/concurrency"),
+//000043:             Download("http://bing.com")
+//000044:         }, ConcurrentTasksCompleted).Wait();
+//000045: 
+//000046:         // Done
+//000047:         Console.WriteLine();
+//000048:         Console.WriteLine("Press <enter> to exit.");
+//000049:         Console.ReadLine();
+//000050:     }
+//000051: 
+//000052:     static Task<byte[]> Download(string url)
+//000053:     {
+//000054:         return new WebClient().DownloadDataTask(url);
+//000055:     }
+//000056: 
+//000057:     static void CompletedDownloadData(Task<byte[]> task)
+//000058:     {
+//000059:         switch (task.Status)
+//000060:         {
+//000061:             case TaskStatus.RanToCompletion:
+//000062:                 Console.WriteLine("Request succeeded: {0}", task.Result.Length);
+//000063:                 break;
+//000064:             case TaskStatus.Faulted:
+//000065:                 Console.WriteLine("Request failed: {0}", task.Exception.InnerException);
+//000066:                 break;
+//000067:             case TaskStatus.Canceled:
+//000068:                 Console.WriteLine("Request was canceled");
+//000069:                 break;
+//000070:         }
+//000071:     }
+//000072: 
+//000073:     static void SerialTasksCompleted(Task<IList<Task>> tasks)
+//000074:     {
+//000075:         int failures = tasks.Result.Where(t => t.Exception != null).Count();
+//000076:         Console.WriteLine("Serial result: {0} successes and {1} failures", tasks.Result.Count() - failures, failures);
+//000077:     }
+//000078: 
+//000079:     static void ConcurrentTasksCompleted(Task<byte[]>[] tasks)
+//000080:     {
+//000081:         int failures = tasks.Where(t => t.Exception != null).Count();
+//000082:         Console.WriteLine("Concurrent result: {0} successes and {1} failures", tasks.Length - failures, failures);
+//000083:     }
+//000084: }
+    IL_000d:  ldloc.0
+    IL_000e:  ret
+  } // end of method Program::'<Main>b__4'
+
+  .method private hidebysig static bool  '<SerialTasksCompleted>b__a'(class [mscorlib]System.Threading.Tasks.Task t) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       17 (0x11)
+    .maxstack  2
+    .locals init ([0] bool CS$1$0000)
+//000075:         int failures = tasks.Result.Where(t => t.Exception != null).Count();
+    IL_0000:  ldarg.0
+    IL_0001:  callvirt   instance class [mscorlib]System.AggregateException [mscorlib]System.Threading.Tasks.Task::get_Exception()
+    IL_0006:  ldnull
+    IL_0007:  ceq
+    IL_0009:  ldc.i4.0
+    IL_000a:  ceq
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+//000076:         Console.WriteLine("Serial result: {0} successes and {1} failures", tasks.Result.Count() - failures, failures);
+//000077:     }
+//000078: 
+//000079:     static void ConcurrentTasksCompleted(Task<byte[]>[] tasks)
+//000080:     {
+//000081:         int failures = tasks.Where(t => t.Exception != null).Count();
+//000082:         Console.WriteLine("Concurrent result: {0} successes and {1} failures", tasks.Length - failures, failures);
+//000083:     }
+//000084: }
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+  } // end of method Program::'<SerialTasksCompleted>b__a'
+
+  .method private hidebysig static bool  '<ConcurrentTasksCompleted>b__c'(class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> t) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       17 (0x11)
+    .maxstack  2
+    .locals init ([0] bool CS$1$0000)
+//000081:         int failures = tasks.Where(t => t.Exception != null).Count();
+    IL_0000:  ldarg.0
+    IL_0001:  callvirt   instance class [mscorlib]System.AggregateException [mscorlib]System.Threading.Tasks.Task::get_Exception()
+    IL_0006:  ldnull
+    IL_0007:  ceq
+    IL_0009:  ldc.i4.0
+    IL_000a:  ceq
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+//000082:         Console.WriteLine("Concurrent result: {0} successes and {1} failures", tasks.Length - failures, failures);
+//000083:     }
+//000084: }
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+  } // end of method Program::'<ConcurrentTasksCompleted>b__c'
+
+} // end of class Program
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

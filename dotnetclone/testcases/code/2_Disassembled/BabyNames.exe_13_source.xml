@@ -1,0 +1,3115 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\DataLoader.cs" startline="35" endline="47"><![CDATA[
+         {
+             Random rand = new Random();
+ 
+             // Enumerate all possible combinations of year, state, name, in a random-ish order
+             var allCombinations = from year in Enumerable.Range(minYear, maxYear - minYear + 1)
+                                   from state in _stateIdentifiers
+                                   from name in _commonPeopleNames
+                                   orderby rand.Next()
+                                   select new BabyInfo { Name = name, State = state, Year = year, Count = rand.Next(200, 1000) };
+ 
+             // Return a subset of size numRecords as a list
+             return allCombinations.Take(numRecords).ToList();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\DataLoader.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\DataLoader.cs" startline="40" endline="280"><![CDATA[
+                                   from state in _stateIdentifiers
+                                   from name in _commonPeopleNames
+                                   orderby rand.Next()
+                                   select new BabyInfo { Name = name, State = state, Year = year, Count = rand.Next(200, 1000) };
+ 
+             // Return a subset of size numRecords as a list
+             return allCombinations.Take(numRecords).ToList();
+         }
+ 
+         /// <summary>An array of state identifiers (plus Washington, DC).</summary>
+         private static string[] _stateIdentifiers =
+         {            
+             "AK", "AL", "AR", "AZ", "CA", "CO", "CT", 
+             "DC", "DE", "FL", "GA", "HI", "IA", "ID", 
+             "IL", "IN", "KS", "KY", "LA", "MA", "MD", 
+             "ME", "MI", "MN", "MO", "MS", "MT", "NC", 
+             "ND", "NE", "NH", "NJ", "NM", "NV", "NY", 
+             "OH", "OK", "OR", "PA", "RI", "SC", "SD", 
+             "TN", "TX", "UT", "VA", "VT", "WA", "WI", 
+             "WV", "WY"
+         };
+ 
+         /// <summary>An array of common names given to babies.</summary>
+         private static string[] _commonPeopleNames = 
+         {            
+             "Aaliyah", "Aaron", "Abbey", "Abbie", "Abby", "Abigail", "Abigale", 
+             "Abigayle", "Abraham", "Adam", "Addison", "Aden", "Adrian", "Adriana", 
+             "Adrianna", "Adrienne", "Agnes", "Aidan", "Aiden", "Aimee", "Aisha", 
+             "Alaina", "Alan", "Alana", "Albert", "Alberto", "Alec", "Alejandra", 
+             "Alejandro", "Alex", "Alexa", "Alexande", "Alexander", "Alexandr", "Alexandra", 
+             "Alexandria", "Alexia", "Alexis", "Alexus", "Alfred", "Ali", "Alice", 
+             "Alicia", "Alika", "Alisha", "Alison", "Alissa", "Alivia", "Aliyah", 
+             "Allan", "Allen", "Allie", "Allison", "Allyson", "Alondra", "Alvin", 
+             "Alyson", "Alyssa", "Amanda", "Amari", "Amaya", "Amber", "Amelia", 
+             "Amie", "Amir", "Amy", "Amya", "Ana", "Anahi", "Anastasia", 
+             "Andre", "Andrea", "Andres", "Andrew", "Andy", "Anela", "Angel", 
+             "Angela", "Angelia", "Angelica", "Angelina", "Angelique", "Angelo", "Angie", 
+             "Anita", "Aniya", "Aniyah", "Ann", "Anna", "Annabelle", "Anne", 
+             "Annette", "Annie", "Annika", "Annmarie", "Ansley", "Anthony", "Antoine", 
+             "Antoinette", "Antonio", "Antwan", "April", "Ariana", "Arianna", "Ariel", 
+             "Arielle", "Arlene", "Armando", "Arnold", "Aron", "Arthur", "Arturo", 
+             "Ashanti", "Ashlee", "Ashleigh", "Ashley", "Ashlyn", "Ashlynn", "Ashton", 
+             "Asia", "Aspen", "Aubrey", "Audra", "Audrey", "Aurora", "Austin", 
+             "Autumn", "Ava", "Avery", "Ayanna", "Ayden", "Ayla", "Baby", 
+             "Babyboy", "Babygirl", "Bailee", "Bailey", "Barbara", "Barry", "Bart", 
+             "Baylee", "Beau", "Becky", "Belinda", "Benjamin", "Bernadette", "Bernard", 
+             "Bertha", "Beth", "Bethany", "Betsy", "Betty", "Beverly", "Bianca", 
+             "Bill", "Billie", "Billy", "Blaine", "Blake", "Blaze", "Bob", 
+             "Bobbi", "Bobbie", "Bobby", "Bonnie", "Boston", "Boyd", "Brad", 
+             "Braden", "Bradford", "Bradley", "Brady", "Branden", "Brandi", "Brandie", 
+             "Brandon", "Brandy", "Braxton", "Brayden", "Breanna", "Breanne", "Brenda", 
+             "Brendan", "Brenden", "Brendon", "Brenna", "Brennan", "Brent", "Brenton", 
+             "Bret", "Brett", "Bria", "Brian", "Briana", "Brianna", "Brianne", 
+             "Bridger", "Bridget", "Brinley", "Britney", "Brittany", "Brittney", "Brock", 
+             "Brodie", "Brody", "Bronson", "Brooke", "Brooklyn", "Brooklynn", "Bruce", 
+             "Bryan", "Bryanna", "Bryant", "Bryce", "Brynlee", "Brynn", "Bryon", 
+             "Bryson", "Byron", "Cade", "Caden", "Cadence", "Cael", "Caitlin", 
+             "Caitlyn", "Caleb", "Callie", "Calvin", "Camden", "Cameron", "Cami", 
+             "Camila", "Camille", "Camryn", "Candace", "Candice", "Cara", "Carissa", 
+             "Carl", "Carla", "Carlos", "Carlton", "Carly", "Carmen", "Carol", 
+             "Carole", "Caroline", "Carolyn", "Carrie", "Carson", "Carter", "Casey", 
+             "Cassandra", "Cassidy", "Cassie", "Catherine", "Cathy", "Catina", "Cayden", 
+             "Cecilia", "Cedric", "Celeste", "Cesar", "Chad", "Chance", "Chandler", 
+             "Chanel", "Chantel", "Chantelle", "Charity", "Charlene", "Charles", "Charlie", 
+             "Charlotte", "Charmaine", "Chase", "Chasity", "Chaya", "Chelsea", "Chelsey", 
+             "Chelsie", "Cheri", "Cherie", "Cheryl", "Cheyanne", "Cheyenne", "Chiquita", 
+             "Chloe", "Chris", "Christa", "Christi", "Christian", "Christie", "Christin", 
+             "Christina", "Christine", "Christopher", "Christy", "Chuck", "Ciara", "Cierra", 
+             "Cindy", "Claire", "Clara", "Clarence", "Clarissa", "Clark", "Claudia", 
+             "Clay", "Clayton", "Clifford", "Clifton", "Clint", "Clinton", "Clyde", 
+             "Cody", "Colby", "Cole", "Colin", "Colleen", "Collin", "Colten", 
+             "Colter", "Colton", "Conner", "Connie", "Connor", "Conor", "Constance", 
+             "Cooper", "Cora", "Corbin", "Corey", "Corinne", "Cornelius", "Cortney", 
+             "Cory", "Coty", "Courtney", "Craig", "Cristian", "Cristina", "Crystal", 
+             "Curt", "Curtis", "Cynthia", "Cyrus", "Daisy", "Dakota", "Dale", 
+             "Dallas", "Dallin", "Dalton", "Damari", "Damian", "Damien", "Damon", 
+             "Dan", "Dana", "Dane", "Dangelo", "Daniel", "Daniela", "Danielle", 
+             "Danny", "Dante", "Daquan", "Darcy", "Daren", "Darian", "Darin", 
+             "Darius", "Darla", "Darlene", "Darnell", "Darrell", "Darren", "Darrin", 
+             "Darryl", "Darwin", "Daryl", "Dave", "David", "Davon", "Dawn", 
+             "Dawson", "Dayna", "Dean", "Deandre", "Deangelo", "Deann", "Deanna", 
+             "Debbie", "Debora", "Deborah", "Debra", "Declan", "Deja", "Delaney", 
+             "Delonte", "Demarcus", "Demetrius", "Denali", "Deneen", "Denis", "Denise", 
+             "Dennis", "Denzel", "Derek", "Derrick", "Desiree", "Desmond", "Destinee", 
+             "Destiny", "Devante", "Devin", "Devon", "Devonte", "Dexter", "Diamond", 
+             "Diana", "Diane", "Dianna", "Dianne", "Diego", "Dillon", "Dina", 
+             "Dionne", "Dixie", "Dolores", "Domenic", "Dominic", "Dominick", "Dominique", 
+             "Don", "Donald", "Donna", "Donnell", "Donnie", "Donovan", "Donte", 
+             "Dora", "Doreen", "Doris", "Dorothy", "Doug", "Douglas", "Drake", 
+             "Drew", "Duane", "Duke", "Dustin", "Dusty", "Dwayne", "Dwight", 
+             "Dylan", "Earl", "Earnest", "Easton", "Ebony", "Ed", "Eddie", "Eden", 
+             "Edgar", "Edmund", "Edna", "Eduardo", "Edward", "Edwin", "Eileen", 
+             "Elaine", "Eleanor", "Elena", "Eli", "Elias", "Elijah", "Elise", 
+             "Eliza", "Elizabet", "Elizabeth", "Ella", "Ellen", "Ellie", "Elton", 
+             "Emilee", "Emilio", "Emily", "Emma", "Emmanuel", "Enrique", "Eric", 
+             "Erica", "Erick", "Erik", "Erika", "Erin", "Ernest", "Esmeralda", 
+             "Esperanza", "Estevan", "Esther", "Estrella", "Ethan", "Eugene", "Eva", 
+             "Evan", "Evelyn", "Everett", "Ezekiel", "Ezra", "Fabian", "Faith", 
+             "Farrah", "Felicia", "Female", "Fernando", "Finn", "Fiona", "Floyd", 
+             "Forrest", "Frances", "Francesca", "Francine", "Francis", "Francisco", "Frank", 
+             "Franklin", "Fred", "Freddie", "Frederick", "Fredrick", "Gabriel", "Gabriela", 
+             "Gabriella", "Gabrielle", "Gage", "Gail", "Garrett", "Gary", "Gavin", 
+             "Gayla", "Gayle", "Gene", "Genesis", "Geoffrey", "George", "Gerald", 
+             "Geraldine", "Gerard", "Gerardo", "Gianna", "Gilbert", "Gillian", "Gina", 
+             "Ginger", "Giovanni", "Giselle", "Glen", "Glenda", "Glenn", "Gloria", 
+             "Gordon", "Grace", "Gracie", "Graham", "Grant", "Grayson", "Greg", 
+             "Gregg", "Gregory", "Greta", "Gretchen", "Griffin", "Guadalupe", "Guy", 
+             "Gwen", "Gwendolyn", "Hailee", "Hailey", "Haleigh", "Haley", "Halle", 
+             "Hallie", "Hanna", "Hannah", "Harley", "Harmony", "Harold", "Harrison", 
+             "Harry", "Hayden", "Haylee", "Hayley", "Heath", "Heather", "Heaven", 
+             "Hector", "Heidi", "Helen", "Henry", "Herbert", "Hilary", "Hillary", 
+             "Holly", "Hope", "Howard", "Hudson", "Hunter", "Ian", "Iesha", "Igor",
+             "Ikaika", "Imani", "India", "Infant", "Ira", "Irene", "Iris", 
+             "Irma", "Isaac", "Isabel", "Isabella", "Isabelle", "Isaiah", "Isiah", 
+             "Israel", "Ivan", "Ivy", "Jace", "Jack", "Jackie", "Jackson", 
+             "Jaclyn", "Jacob", "Jacqueline", "Jada", "Jade", "Jaden", "Jadyn", 
+             "Jaheim", "Jaime", "Jakayla", "Jake", "Jakob", "Jalen", "Jamaal", 
+             "Jamal", "Jamar", "Jamarion", "James", "Jami", "Jamia", "Jamie", 
+             "Jan", "Jana", "Janae", "Janay", "Jane", "Janelle", "Janet", 
+             "Janice", "Janiya", "Jaquan", "Jaqueline", "Jared", "Jarrod", "Jarvis", 
+             "Jasmin", "Jasmine", "Jason", "Javier", "Javon", "Jaxon", "Jay", 
+             "Jayden", "Jayla", "Jaylen", "Jaylon", "Jayme", "Jayson", "Jazmin", 
+             "Jazmine", "Jean", "Jeanette", "Jeanne", "Jeannine", "Jeff", "Jeffery", 
+             "Jeffrey", "Jenifer", "Jenna", "Jennie", "Jennifer", "Jenny", "Jeremiah", 
+             "Jeremy", "Jermaine", "Jerome", "Jerry", "Jess", "Jesse", "Jessica", 
+             "Jessie", "Jesus", "Jill", "Jillian", "Jim", "Jimmie", "Jimmy", 
+             "Jo", "Joan", "Joann", "Joanna", "Joanne", "Jocelyn", "Jodi", 
+             "Jodie", "Jody", "Joe", "Joel", "Joey", "Johanna", "John", 
+             "Johnathan", "Johnathon", "Johnnie", "Johnny", "Jolene", "Jon", "Jonah", 
+             "Jonathan", "Jonathon", "Joni", "Jordan", "Jordyn", "Jorge", "Jory", 
+             "Jose", "Joseph", "Josephine", "Josette", "Joshua", "Josiah", "Josie", 
+             "Joy", "Joyce", "Juan", "Juanita", "Judith", "Judy", "Julia", 
+             "Julian", "Juliana", "Julianna", "Julie", "Julio", "Julissa", "Julius", 
+             "June", "Justice", "Justin", "Justine", "Juwan", "Kade", "Kaden", 
+             "Kadence", "Kadijah", "Kahealani", "Kai", "Kaila", "Kailee", "Kailey", 
+             "Kaimana", "Kainalu", "Kainoa", "Kaitlin", "Kaitlyn", "Kalani", "Kaleb", 
+             "Kalena", "Kamalani", "Kameron", "Kamryn", "Kanani", "Kapena", "Kara", 
+             "Karen", "Kari", "Karin", "Karina", "Karissa", "Karl", "Karla", 
+             "Karlee", "Kasey", "Kassandra", "Kassidy", "Kate", "Katelyn", "Katelynn", 
+             "Katharine", "Katherin", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", 
+             "Katina", "Katlyn", "Katrina", "Kawena", "Kawika", "Kay", "Kaya", 
+             "Kaycee", "Kayden", "Kaydence", "Kayla", "Kaylee", "Kayleigh", "Keanu", 
+             "Keaton", "Keegan", "Keenan", "Kehaulani", "Keira", "Keisha", "Keith", 
+             "Kekoa", "Kelley", "Kelli", "Kellie", "Kelly", "Kelsey", "Kelsie", 
+             "Kelvin", "Ken", "Kendall", "Kendra", "Kendrick", "Kennedy", "Kenneth", 
+             "Kenny", "Kent", "Kenya", "Keola", "Keoni", "Keri", "Kerri", 
+             "Kerry", "Kevin", "Kevon", "Khadijah", "Khalil", "Kia", "Kiana", 
+             "Kiani", "Kiara", "Kierra", "Kim", "Kimberlee", "Kimberley", "Kimberly", 
+             "Kira", "Kirk", "Kirsten", "Kisha", "Kizzy", "Kobe", "Kody", 
+             "Kory", "Kris", "Krista", "Kristen", "Kristi", "Kristie", "Kristin", 
+             "Kristina", "Kristine", "Kristopher", "Kristy", "Krystal", "Krystle", "Kurt", 
+             "Kyla", "Kyle", "Kylee", "Kyleigh", "Kyler", "Kylie", "Kyra", 
+             "Lacey", "Laci", "Lacy", "Ladarius", "Ladonna", "Laila", "Lakeisha", 
+             "Lakesha", "Lakisha", "Lamar", "Lamont", "Lana", "Lance", "Landen", 
+             "Landon", "Lane", "Lani", "Larry", "Lashawn", "Lashonda", "Latasha", 
+             "Latisha", "Latonya", "Latoya", "Laura", "Laurel", "Lauren", "Laurie", 
+             "Lauryn", "Lawanda", "Lawrence", "Layla", "Leah", "Leann", "Lee", 
+             "Leigh", "Leila", "Leilani", "Lena", "Leo", "Leon", "Leona", 
+             "Leonard", "Leonardo", "Leroy", "Lesley", "Leslie", "Leticia", "Levi", 
+             "Lewis", "Lexi", "Liam", "Liana", "Liliana", "Lillian", "Lillie", 
+             "Lilly", "Lily", "Linda", "Lindsay", "Lindsey", "Lisa", "Liza", 
+             "Lizbeth", "Lloyd", "Logan", "Lois", "London", "Lonnie", "Lora", 
+             "Loren", "Lorena", "Lorenzo", "Loretta", "Lori", "Loriann", "Lorna", 
+             "Lorraine", "Lorrie", "Louis", "Louise", "Lucas", "Lucia", "Lucy", 
+             "Luis", "Luke", "Lydia", "Lyle", "Lynda", "Lynette", "Lynn", 
+             "Lynne", "Mackenzie", "Macy", "Maddison", "Madeleine", "Madeline", "Madelyn", 
+             "Madison", "Madisyn", "Maeve", "Maggie", "Mahealani", "Mahina", "Maia", 
+             "Maile", "Makana", "Makayla", "Makenna", "Makenzie", "Makoa", "Malachi", 
+             "Malcolm", "Male", "Malia", "Malik", "Mallory", "Mandi", "Mandy", 
+             "Manuel", "Marc", "Marcel", "Marcella", "Marci", "Marcia", "Marco", 
+             "Marcos", "Marcus", "Marcy", "Margaret", "Mari", "Maria", "Mariah", 
+             "Mariana", "Marianne", "Maribel", "Marie", "Marilyn", "Marina", "Mario", 
+             "Marion", "Marisa", "Marisol", "Marissa", "Mark", "Marlene", "Marlon", 
+             "Marquis", "Marquise", "Marquita", "Marsha", "Marshall", "Martha", "Martin", 
+             "Marty", "Marvin", "Mary", "Maryann", "Mason", "Mathew", "Matt", 
+             "Matthew", "Maureen", "Maurice", "Max", "Maxwell", "Maya", "Mayra", 
+             "Mckay", "Mckayla", "Mckenna", "Mckenzie", "Meagan", "Meaghan", "Megan", 
+             "Meghan", "Mekhi", "Melanie", "Melia", "Melinda", "Melissa", "Melody", 
+             "Melvin", "Mercedes", "Meredith", "Mia", "Micah", "Michael", "Michaela", 
+             "Micheal", "Michele", "Michelle", "Miguel", "Mikaela", "Mikayla", "Mike", 
+             "Miles", "Milton", "Mindy", "Miracle", "Miranda", "Misti", "Misty", 
+             "Mitchell", "Molly", "Monica", "Monique", "Monte", "Morgan", "Moshe", 
+             "Mya", "Myles", "Myra", "Myron", "Nadia", "Nadine", "Nainoa", 
+             "Nakia", "Nalani", "Nancy", "Nanea", "Naomi", "Nasir", "Natalia", 
+             "Natalie", "Natasha", "Nathan", "Nathaniel", "Nayeli", "Neal", "Neil", 
+             "Nelson", "Nevaeh", "Nia", "Nicholas", "Nichole", "Nick", "Nickolas", 
+             "Nicolas", "Nicole", "Nikita", "Nikki", "Nina", "Noa", "Noah", 
+             "Nolan", "Nora", "Norma", "Norman", "Normand", "Notnamed", "Nyasia", 
+             "Oliver", "Olivia", "Omar", "Omarion", "Orlando", "Oscar", "Owen", 
+             "Paige", "Pam", "Pamela", "Paris", "Parker", "Pat", "Patrice", 
+             "Patricia", "Patrick", "Patti", "Patty", "Paul", "Paula", "Pauline", 
+             "Payton", "Pedro", "Peggy", "Penny", "Perry", "Peter", "Peyton", 
+             "Philip", "Phillip", "Phoebe", "Phyllis", "Piper", "Pooja", "Porter", "Precious", 
+             "Preston", "Priscilla", "Quentin", "Quinn", "Quinton", "Rachael", "Rachel", 
+             "Rachelle", "Raekwon", "Rafael", "Raheem", "Ralph", "Ramon", "Ramona", 
+             "Randal", "Randall", "Randi", "Randy", "Raquel", "Rashad", "Raul", 
+             "Raven", "Ray", "Raymond", "Reagan", "Rebecca", "Rebekah", "Reed", 
+             "Reese", "Regina", "Reginald", "Reid", "Renae", "Renata", "Rene", 
+             "Renee", "Rex", "Rhonda", "Ricardo", "Richard", "Rick", "Rickey", 
+             "Ricky", "Riley", "Rita", "Robert", "Roberta", "Roberto", "Robin", 
+             "Robyn", "Rochelle", "Roderick", "Rodney", "Roger", "Roland", "Ron", 
+             "Ronald", "Ronda", "Ronnie", "Roosevelt", "Rory", "Rosa", "Rose", 
+             "Rosemary", "Rosie", "Ross", "Rowena", "Roxanne", "Roy", "Royce", 
+             "Ruben", "Ruby", "Rudy", "Russell", "Ruth", "Ryan", "Ryder", 
+             "Ryker", "Rylan", "Rylee", "Rylie", "Sabrina", "Sade", "Sadie", 
+             "Sage", "Sally", "Salvador", "Salvatore", "Sam", "Samantha", "Sammy", 
+             "Samuel", "Sandra", "Sandy", "Saniya", "Santana", "Santiago", "Sara", 
+             "Sarah", "Sasha", "Savanna", "Savannah", "Sawyer", "Scott", "Scottie", 
+             "Scotty", "Sean", "Sebastian", "Selena", "Serena", "Serenity", "Sergio", 
+             "Seth", "Shana", "Shane", "Shania", "Shanice", "Shaniqua", "Shanna", 
+             "Shannon", "Shantel", "Shaquille", "Shari", "Sharon", "Shaun", "Shauna", 
+             "Shawn", "Shawna", "Shayden", "Shayla", "Shaylee", "Shayna", "Sheena", 
+             "Sheila", "Shelbi", "Shelby", "Sheldon", "Shelia", "Shelley", "Shelly", 
+             "Sheri", "Sherri", "Sherrie", "Sherry", "Sheryl", "Shirley", "Shyla", 
+             "Sidney", "Sienna", "Sierra", "Silas", "Simone", "Skylar", "Skyler", 
+             "Sofia", "Sonia", "Sonja", "Sonya", "Sophia", "Sophie", "Spencer", 
+             "Stacey", "Staci", "Stacie", "Stacy", "Stanley", "Stefanie", "Stella", 
+             "Stephani", "Stephanie", "Stephen", "Stephon", "Steve", "Steven", "Stuart", 
+             "Sue", "Summer", "Susan", "Suzanne", "Sydney", "Sylvia", "Tabitha", 
+             "Talia", "Tamara", "Tameka", "Tami", "Tamia", "Tamika", "Tammie", 
+             "Tammy", "Tania", "Tanner", "Tanya", "Tara", "Taryn", "Tasha", 
+             "Tate", "Tatiana", "Tatum", "Tatyana", "Tavon", "Tayla", "Taylor", 
+             "Teagan", "Ted", "Teddy", "Tehani", "Teresa", "Teri", "Terrance", 
+             "Terrell", "Terrence", "Terri", "Terry", "Tessa", "Tevin", "Thad", 
+             "Theodore", "Theresa", "Thomas", "Tia", "Tiana", "Tiara", "Tiare", 
+             "Tierra", "Tiffany", "Tim", "Timmy", "Timothy", "Tina", "Toby", 
+             "Todd", "Tom", "Tommie", "Tommy", "Toni", "Tonia", "Tony", 
+             "Tonya", "Tori", "Tracey", "Traci", "Tracie", "Tracy", "Travis", 
+             "Trent", "Trenton", "Trevon", "Trevor", "Trey", "Tricia", "Trina", 
+             "Trinity", "Trisha", "Trista", "Tristan", "Tristen", "Troy", "Tucker", 
+             "Ty", "Tyler", "Tyra", "Tyree", "Tyrel", "Tyrell", "Tyrese", 
+             "Tyrone", "Tyson", "Unknown", "Unnamed", "Valeria", "Valerie", "Vanessa", 
+             "Vera", "Vernon", "Veronica", "Vicki", "Vickie", "Vicky", "Victor", 
+             "Victoria", "Vincent", "Virginia", "Vivian", "Wade", "Walker", "Walter", 
+             "Wanda", "Warren", "Wassillie", "Wayne", "Wendell", "Wendy", "Wesley", 
+             "Weston", "Whitney", "Willa", "William", "Willie", "Willow", "Wyatt", 
+             "Xander", "Xavier", "Yesenia", "Yolanda", "Yvette", "Yvonne", "Zachariah", 
+             "Zachary", "Zachery", "Zackary", "Zander", "Zane", "Zion", "Zoe", "Zoey"
+         };
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\DataLoader.cs" startline="40" endline="280"><![CDATA[
+                                   from state in _stateIdentifiers
+                                   from name in _commonPeopleNames
+                                   orderby rand.Next()
+                                   select new BabyInfo { Name = name, State = state, Year = year, Count = rand.Next(200, 1000) };
+ 
+             // Return a subset of size numRecords as a list
+             return allCombinations.Take(numRecords).ToList();
+         }
+ 
+         /// <summary>An array of state identifiers (plus Washington, DC).</summary>
+         private static string[] _stateIdentifiers =
+         {            
+             "AK", "AL", "AR", "AZ", "CA", "CO", "CT", 
+             "DC", "DE", "FL", "GA", "HI", "IA", "ID", 
+             "IL", "IN", "KS", "KY", "LA", "MA", "MD", 
+             "ME", "MI", "MN", "MO", "MS", "MT", "NC", 
+             "ND", "NE", "NH", "NJ", "NM", "NV", "NY", 
+             "OH", "OK", "OR", "PA", "RI", "SC", "SD", 
+             "TN", "TX", "UT", "VA", "VT", "WA", "WI", 
+             "WV", "WY"
+         };
+ 
+         /// <summary>An array of common names given to babies.</summary>
+         private static string[] _commonPeopleNames = 
+         {            
+             "Aaliyah", "Aaron", "Abbey", "Abbie", "Abby", "Abigail", "Abigale", 
+             "Abigayle", "Abraham", "Adam", "Addison", "Aden", "Adrian", "Adriana", 
+             "Adrianna", "Adrienne", "Agnes", "Aidan", "Aiden", "Aimee", "Aisha", 
+             "Alaina", "Alan", "Alana", "Albert", "Alberto", "Alec", "Alejandra", 
+             "Alejandro", "Alex", "Alexa", "Alexande", "Alexander", "Alexandr", "Alexandra", 
+             "Alexandria", "Alexia", "Alexis", "Alexus", "Alfred", "Ali", "Alice", 
+             "Alicia", "Alika", "Alisha", "Alison", "Alissa", "Alivia", "Aliyah", 
+             "Allan", "Allen", "Allie", "Allison", "Allyson", "Alondra", "Alvin", 
+             "Alyson", "Alyssa", "Amanda", "Amari", "Amaya", "Amber", "Amelia", 
+             "Amie", "Amir", "Amy", "Amya", "Ana", "Anahi", "Anastasia", 
+             "Andre", "Andrea", "Andres", "Andrew", "Andy", "Anela", "Angel", 
+             "Angela", "Angelia", "Angelica", "Angelina", "Angelique", "Angelo", "Angie", 
+             "Anita", "Aniya", "Aniyah", "Ann", "Anna", "Annabelle", "Anne", 
+             "Annette", "Annie", "Annika", "Annmarie", "Ansley", "Anthony", "Antoine", 
+             "Antoinette", "Antonio", "Antwan", "April", "Ariana", "Arianna", "Ariel", 
+             "Arielle", "Arlene", "Armando", "Arnold", "Aron", "Arthur", "Arturo", 
+             "Ashanti", "Ashlee", "Ashleigh", "Ashley", "Ashlyn", "Ashlynn", "Ashton", 
+             "Asia", "Aspen", "Aubrey", "Audra", "Audrey", "Aurora", "Austin", 
+             "Autumn", "Ava", "Avery", "Ayanna", "Ayden", "Ayla", "Baby", 
+             "Babyboy", "Babygirl", "Bailee", "Bailey", "Barbara", "Barry", "Bart", 
+             "Baylee", "Beau", "Becky", "Belinda", "Benjamin", "Bernadette", "Bernard", 
+             "Bertha", "Beth", "Bethany", "Betsy", "Betty", "Beverly", "Bianca", 
+             "Bill", "Billie", "Billy", "Blaine", "Blake", "Blaze", "Bob", 
+             "Bobbi", "Bobbie", "Bobby", "Bonnie", "Boston", "Boyd", "Brad", 
+             "Braden", "Bradford", "Bradley", "Brady", "Branden", "Brandi", "Brandie", 
+             "Brandon", "Brandy", "Braxton", "Brayden", "Breanna", "Breanne", "Brenda", 
+             "Brendan", "Brenden", "Brendon", "Brenna", "Brennan", "Brent", "Brenton", 
+             "Bret", "Brett", "Bria", "Brian", "Briana", "Brianna", "Brianne", 
+             "Bridger", "Bridget", "Brinley", "Britney", "Brittany", "Brittney", "Brock", 
+             "Brodie", "Brody", "Bronson", "Brooke", "Brooklyn", "Brooklynn", "Bruce", 
+             "Bryan", "Bryanna", "Bryant", "Bryce", "Brynlee", "Brynn", "Bryon", 
+             "Bryson", "Byron", "Cade", "Caden", "Cadence", "Cael", "Caitlin", 
+             "Caitlyn", "Caleb", "Callie", "Calvin", "Camden", "Cameron", "Cami", 
+             "Camila", "Camille", "Camryn", "Candace", "Candice", "Cara", "Carissa", 
+             "Carl", "Carla", "Carlos", "Carlton", "Carly", "Carmen", "Carol", 
+             "Carole", "Caroline", "Carolyn", "Carrie", "Carson", "Carter", "Casey", 
+             "Cassandra", "Cassidy", "Cassie", "Catherine", "Cathy", "Catina", "Cayden", 
+             "Cecilia", "Cedric", "Celeste", "Cesar", "Chad", "Chance", "Chandler", 
+             "Chanel", "Chantel", "Chantelle", "Charity", "Charlene", "Charles", "Charlie", 
+             "Charlotte", "Charmaine", "Chase", "Chasity", "Chaya", "Chelsea", "Chelsey", 
+             "Chelsie", "Cheri", "Cherie", "Cheryl", "Cheyanne", "Cheyenne", "Chiquita", 
+             "Chloe", "Chris", "Christa", "Christi", "Christian", "Christie", "Christin", 
+             "Christina", "Christine", "Christopher", "Christy", "Chuck", "Ciara", "Cierra", 
+             "Cindy", "Claire", "Clara", "Clarence", "Clarissa", "Clark", "Claudia", 
+             "Clay", "Clayton", "Clifford", "Clifton", "Clint", "Clinton", "Clyde", 
+             "Cody", "Colby", "Cole", "Colin", "Colleen", "Collin", "Colten", 
+             "Colter", "Colton", "Conner", "Connie", "Connor", "Conor", "Constance", 
+             "Cooper", "Cora", "Corbin", "Corey", "Corinne", "Cornelius", "Cortney", 
+             "Cory", "Coty", "Courtney", "Craig", "Cristian", "Cristina", "Crystal", 
+             "Curt", "Curtis", "Cynthia", "Cyrus", "Daisy", "Dakota", "Dale", 
+             "Dallas", "Dallin", "Dalton", "Damari", "Damian", "Damien", "Damon", 
+             "Dan", "Dana", "Dane", "Dangelo", "Daniel", "Daniela", "Danielle", 
+             "Danny", "Dante", "Daquan", "Darcy", "Daren", "Darian", "Darin", 
+             "Darius", "Darla", "Darlene", "Darnell", "Darrell", "Darren", "Darrin", 
+             "Darryl", "Darwin", "Daryl", "Dave", "David", "Davon", "Dawn", 
+             "Dawson", "Dayna", "Dean", "Deandre", "Deangelo", "Deann", "Deanna", 
+             "Debbie", "Debora", "Deborah", "Debra", "Declan", "Deja", "Delaney", 
+             "Delonte", "Demarcus", "Demetrius", "Denali", "Deneen", "Denis", "Denise", 
+             "Dennis", "Denzel", "Derek", "Derrick", "Desiree", "Desmond", "Destinee", 
+             "Destiny", "Devante", "Devin", "Devon", "Devonte", "Dexter", "Diamond", 
+             "Diana", "Diane", "Dianna", "Dianne", "Diego", "Dillon", "Dina", 
+             "Dionne", "Dixie", "Dolores", "Domenic", "Dominic", "Dominick", "Dominique", 
+             "Don", "Donald", "Donna", "Donnell", "Donnie", "Donovan", "Donte", 
+             "Dora", "Doreen", "Doris", "Dorothy", "Doug", "Douglas", "Drake", 
+             "Drew", "Duane", "Duke", "Dustin", "Dusty", "Dwayne", "Dwight", 
+             "Dylan", "Earl", "Earnest", "Easton", "Ebony", "Ed", "Eddie", "Eden", 
+             "Edgar", "Edmund", "Edna", "Eduardo", "Edward", "Edwin", "Eileen", 
+             "Elaine", "Eleanor", "Elena", "Eli", "Elias", "Elijah", "Elise", 
+             "Eliza", "Elizabet", "Elizabeth", "Ella", "Ellen", "Ellie", "Elton", 
+             "Emilee", "Emilio", "Emily", "Emma", "Emmanuel", "Enrique", "Eric", 
+             "Erica", "Erick", "Erik", "Erika", "Erin", "Ernest", "Esmeralda", 
+             "Esperanza", "Estevan", "Esther", "Estrella", "Ethan", "Eugene", "Eva", 
+             "Evan", "Evelyn", "Everett", "Ezekiel", "Ezra", "Fabian", "Faith", 
+             "Farrah", "Felicia", "Female", "Fernando", "Finn", "Fiona", "Floyd", 
+             "Forrest", "Frances", "Francesca", "Francine", "Francis", "Francisco", "Frank", 
+             "Franklin", "Fred", "Freddie", "Frederick", "Fredrick", "Gabriel", "Gabriela", 
+             "Gabriella", "Gabrielle", "Gage", "Gail", "Garrett", "Gary", "Gavin", 
+             "Gayla", "Gayle", "Gene", "Genesis", "Geoffrey", "George", "Gerald", 
+             "Geraldine", "Gerard", "Gerardo", "Gianna", "Gilbert", "Gillian", "Gina", 
+             "Ginger", "Giovanni", "Giselle", "Glen", "Glenda", "Glenn", "Gloria", 
+             "Gordon", "Grace", "Gracie", "Graham", "Grant", "Grayson", "Greg", 
+             "Gregg", "Gregory", "Greta", "Gretchen", "Griffin", "Guadalupe", "Guy", 
+             "Gwen", "Gwendolyn", "Hailee", "Hailey", "Haleigh", "Haley", "Halle", 
+             "Hallie", "Hanna", "Hannah", "Harley", "Harmony", "Harold", "Harrison", 
+             "Harry", "Hayden", "Haylee", "Hayley", "Heath", "Heather", "Heaven", 
+             "Hector", "Heidi", "Helen", "Henry", "Herbert", "Hilary", "Hillary", 
+             "Holly", "Hope", "Howard", "Hudson", "Hunter", "Ian", "Iesha", "Igor",
+             "Ikaika", "Imani", "India", "Infant", "Ira", "Irene", "Iris", 
+             "Irma", "Isaac", "Isabel", "Isabella", "Isabelle", "Isaiah", "Isiah", 
+             "Israel", "Ivan", "Ivy", "Jace", "Jack", "Jackie", "Jackson", 
+             "Jaclyn", "Jacob", "Jacqueline", "Jada", "Jade", "Jaden", "Jadyn", 
+             "Jaheim", "Jaime", "Jakayla", "Jake", "Jakob", "Jalen", "Jamaal", 
+             "Jamal", "Jamar", "Jamarion", "James", "Jami", "Jamia", "Jamie", 
+             "Jan", "Jana", "Janae", "Janay", "Jane", "Janelle", "Janet", 
+             "Janice", "Janiya", "Jaquan", "Jaqueline", "Jared", "Jarrod", "Jarvis", 
+             "Jasmin", "Jasmine", "Jason", "Javier", "Javon", "Jaxon", "Jay", 
+             "Jayden", "Jayla", "Jaylen", "Jaylon", "Jayme", "Jayson", "Jazmin", 
+             "Jazmine", "Jean", "Jeanette", "Jeanne", "Jeannine", "Jeff", "Jeffery", 
+             "Jeffrey", "Jenifer", "Jenna", "Jennie", "Jennifer", "Jenny", "Jeremiah", 
+             "Jeremy", "Jermaine", "Jerome", "Jerry", "Jess", "Jesse", "Jessica", 
+             "Jessie", "Jesus", "Jill", "Jillian", "Jim", "Jimmie", "Jimmy", 
+             "Jo", "Joan", "Joann", "Joanna", "Joanne", "Jocelyn", "Jodi", 
+             "Jodie", "Jody", "Joe", "Joel", "Joey", "Johanna", "John", 
+             "Johnathan", "Johnathon", "Johnnie", "Johnny", "Jolene", "Jon", "Jonah", 
+             "Jonathan", "Jonathon", "Joni", "Jordan", "Jordyn", "Jorge", "Jory", 
+             "Jose", "Joseph", "Josephine", "Josette", "Joshua", "Josiah", "Josie", 
+             "Joy", "Joyce", "Juan", "Juanita", "Judith", "Judy", "Julia", 
+             "Julian", "Juliana", "Julianna", "Julie", "Julio", "Julissa", "Julius", 
+             "June", "Justice", "Justin", "Justine", "Juwan", "Kade", "Kaden", 
+             "Kadence", "Kadijah", "Kahealani", "Kai", "Kaila", "Kailee", "Kailey", 
+             "Kaimana", "Kainalu", "Kainoa", "Kaitlin", "Kaitlyn", "Kalani", "Kaleb", 
+             "Kalena", "Kamalani", "Kameron", "Kamryn", "Kanani", "Kapena", "Kara", 
+             "Karen", "Kari", "Karin", "Karina", "Karissa", "Karl", "Karla", 
+             "Karlee", "Kasey", "Kassandra", "Kassidy", "Kate", "Katelyn", "Katelynn", 
+             "Katharine", "Katherin", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", 
+             "Katina", "Katlyn", "Katrina", "Kawena", "Kawika", "Kay", "Kaya", 
+             "Kaycee", "Kayden", "Kaydence", "Kayla", "Kaylee", "Kayleigh", "Keanu", 
+             "Keaton", "Keegan", "Keenan", "Kehaulani", "Keira", "Keisha", "Keith", 
+             "Kekoa", "Kelley", "Kelli", "Kellie", "Kelly", "Kelsey", "Kelsie", 
+             "Kelvin", "Ken", "Kendall", "Kendra", "Kendrick", "Kennedy", "Kenneth", 
+             "Kenny", "Kent", "Kenya", "Keola", "Keoni", "Keri", "Kerri", 
+             "Kerry", "Kevin", "Kevon", "Khadijah", "Khalil", "Kia", "Kiana", 
+             "Kiani", "Kiara", "Kierra", "Kim", "Kimberlee", "Kimberley", "Kimberly", 
+             "Kira", "Kirk", "Kirsten", "Kisha", "Kizzy", "Kobe", "Kody", 
+             "Kory", "Kris", "Krista", "Kristen", "Kristi", "Kristie", "Kristin", 
+             "Kristina", "Kristine", "Kristopher", "Kristy", "Krystal", "Krystle", "Kurt", 
+             "Kyla", "Kyle", "Kylee", "Kyleigh", "Kyler", "Kylie", "Kyra", 
+             "Lacey", "Laci", "Lacy", "Ladarius", "Ladonna", "Laila", "Lakeisha", 
+             "Lakesha", "Lakisha", "Lamar", "Lamont", "Lana", "Lance", "Landen", 
+             "Landon", "Lane", "Lani", "Larry", "Lashawn", "Lashonda", "Latasha", 
+             "Latisha", "Latonya", "Latoya", "Laura", "Laurel", "Lauren", "Laurie", 
+             "Lauryn", "Lawanda", "Lawrence", "Layla", "Leah", "Leann", "Lee", 
+             "Leigh", "Leila", "Leilani", "Lena", "Leo", "Leon", "Leona", 
+             "Leonard", "Leonardo", "Leroy", "Lesley", "Leslie", "Leticia", "Levi", 
+             "Lewis", "Lexi", "Liam", "Liana", "Liliana", "Lillian", "Lillie", 
+             "Lilly", "Lily", "Linda", "Lindsay", "Lindsey", "Lisa", "Liza", 
+             "Lizbeth", "Lloyd", "Logan", "Lois", "London", "Lonnie", "Lora", 
+             "Loren", "Lorena", "Lorenzo", "Loretta", "Lori", "Loriann", "Lorna", 
+             "Lorraine", "Lorrie", "Louis", "Louise", "Lucas", "Lucia", "Lucy", 
+             "Luis", "Luke", "Lydia", "Lyle", "Lynda", "Lynette", "Lynn", 
+             "Lynne", "Mackenzie", "Macy", "Maddison", "Madeleine", "Madeline", "Madelyn", 
+             "Madison", "Madisyn", "Maeve", "Maggie", "Mahealani", "Mahina", "Maia", 
+             "Maile", "Makana", "Makayla", "Makenna", "Makenzie", "Makoa", "Malachi", 
+             "Malcolm", "Male", "Malia", "Malik", "Mallory", "Mandi", "Mandy", 
+             "Manuel", "Marc", "Marcel", "Marcella", "Marci", "Marcia", "Marco", 
+             "Marcos", "Marcus", "Marcy", "Margaret", "Mari", "Maria", "Mariah", 
+             "Mariana", "Marianne", "Maribel", "Marie", "Marilyn", "Marina", "Mario", 
+             "Marion", "Marisa", "Marisol", "Marissa", "Mark", "Marlene", "Marlon", 
+             "Marquis", "Marquise", "Marquita", "Marsha", "Marshall", "Martha", "Martin", 
+             "Marty", "Marvin", "Mary", "Maryann", "Mason", "Mathew", "Matt", 
+             "Matthew", "Maureen", "Maurice", "Max", "Maxwell", "Maya", "Mayra", 
+             "Mckay", "Mckayla", "Mckenna", "Mckenzie", "Meagan", "Meaghan", "Megan", 
+             "Meghan", "Mekhi", "Melanie", "Melia", "Melinda", "Melissa", "Melody", 
+             "Melvin", "Mercedes", "Meredith", "Mia", "Micah", "Michael", "Michaela", 
+             "Micheal", "Michele", "Michelle", "Miguel", "Mikaela", "Mikayla", "Mike", 
+             "Miles", "Milton", "Mindy", "Miracle", "Miranda", "Misti", "Misty", 
+             "Mitchell", "Molly", "Monica", "Monique", "Monte", "Morgan", "Moshe", 
+             "Mya", "Myles", "Myra", "Myron", "Nadia", "Nadine", "Nainoa", 
+             "Nakia", "Nalani", "Nancy", "Nanea", "Naomi", "Nasir", "Natalia", 
+             "Natalie", "Natasha", "Nathan", "Nathaniel", "Nayeli", "Neal", "Neil", 
+             "Nelson", "Nevaeh", "Nia", "Nicholas", "Nichole", "Nick", "Nickolas", 
+             "Nicolas", "Nicole", "Nikita", "Nikki", "Nina", "Noa", "Noah", 
+             "Nolan", "Nora", "Norma", "Norman", "Normand", "Notnamed", "Nyasia", 
+             "Oliver", "Olivia", "Omar", "Omarion", "Orlando", "Oscar", "Owen", 
+             "Paige", "Pam", "Pamela", "Paris", "Parker", "Pat", "Patrice", 
+             "Patricia", "Patrick", "Patti", "Patty", "Paul", "Paula", "Pauline", 
+             "Payton", "Pedro", "Peggy", "Penny", "Perry", "Peter", "Peyton", 
+             "Philip", "Phillip", "Phoebe", "Phyllis", "Piper", "Pooja", "Porter", "Precious", 
+             "Preston", "Priscilla", "Quentin", "Quinn", "Quinton", "Rachael", "Rachel", 
+             "Rachelle", "Raekwon", "Rafael", "Raheem", "Ralph", "Ramon", "Ramona", 
+             "Randal", "Randall", "Randi", "Randy", "Raquel", "Rashad", "Raul", 
+             "Raven", "Ray", "Raymond", "Reagan", "Rebecca", "Rebekah", "Reed", 
+             "Reese", "Regina", "Reginald", "Reid", "Renae", "Renata", "Rene", 
+             "Renee", "Rex", "Rhonda", "Ricardo", "Richard", "Rick", "Rickey", 
+             "Ricky", "Riley", "Rita", "Robert", "Roberta", "Roberto", "Robin", 
+             "Robyn", "Rochelle", "Roderick", "Rodney", "Roger", "Roland", "Ron", 
+             "Ronald", "Ronda", "Ronnie", "Roosevelt", "Rory", "Rosa", "Rose", 
+             "Rosemary", "Rosie", "Ross", "Rowena", "Roxanne", "Roy", "Royce", 
+             "Ruben", "Ruby", "Rudy", "Russell", "Ruth", "Ryan", "Ryder", 
+             "Ryker", "Rylan", "Rylee", "Rylie", "Sabrina", "Sade", "Sadie", 
+             "Sage", "Sally", "Salvador", "Salvatore", "Sam", "Samantha", "Sammy", 
+             "Samuel", "Sandra", "Sandy", "Saniya", "Santana", "Santiago", "Sara", 
+             "Sarah", "Sasha", "Savanna", "Savannah", "Sawyer", "Scott", "Scottie", 
+             "Scotty", "Sean", "Sebastian", "Selena", "Serena", "Serenity", "Sergio", 
+             "Seth", "Shana", "Shane", "Shania", "Shanice", "Shaniqua", "Shanna", 
+             "Shannon", "Shantel", "Shaquille", "Shari", "Sharon", "Shaun", "Shauna", 
+             "Shawn", "Shawna", "Shayden", "Shayla", "Shaylee", "Shayna", "Sheena", 
+             "Sheila", "Shelbi", "Shelby", "Sheldon", "Shelia", "Shelley", "Shelly", 
+             "Sheri", "Sherri", "Sherrie", "Sherry", "Sheryl", "Shirley", "Shyla", 
+             "Sidney", "Sienna", "Sierra", "Silas", "Simone", "Skylar", "Skyler", 
+             "Sofia", "Sonia", "Sonja", "Sonya", "Sophia", "Sophie", "Spencer", 
+             "Stacey", "Staci", "Stacie", "Stacy", "Stanley", "Stefanie", "Stella", 
+             "Stephani", "Stephanie", "Stephen", "Stephon", "Steve", "Steven", "Stuart", 
+             "Sue", "Summer", "Susan", "Suzanne", "Sydney", "Sylvia", "Tabitha", 
+             "Talia", "Tamara", "Tameka", "Tami", "Tamia", "Tamika", "Tammie", 
+             "Tammy", "Tania", "Tanner", "Tanya", "Tara", "Taryn", "Tasha", 
+             "Tate", "Tatiana", "Tatum", "Tatyana", "Tavon", "Tayla", "Taylor", 
+             "Teagan", "Ted", "Teddy", "Tehani", "Teresa", "Teri", "Terrance", 
+             "Terrell", "Terrence", "Terri", "Terry", "Tessa", "Tevin", "Thad", 
+             "Theodore", "Theresa", "Thomas", "Tia", "Tiana", "Tiara", "Tiare", 
+             "Tierra", "Tiffany", "Tim", "Timmy", "Timothy", "Tina", "Toby", 
+             "Todd", "Tom", "Tommie", "Tommy", "Toni", "Tonia", "Tony", 
+             "Tonya", "Tori", "Tracey", "Traci", "Tracie", "Tracy", "Travis", 
+             "Trent", "Trenton", "Trevon", "Trevor", "Trey", "Tricia", "Trina", 
+             "Trinity", "Trisha", "Trista", "Tristan", "Tristen", "Troy", "Tucker", 
+             "Ty", "Tyler", "Tyra", "Tyree", "Tyrel", "Tyrell", "Tyrese", 
+             "Tyrone", "Tyson", "Unknown", "Unnamed", "Valeria", "Valerie", "Vanessa", 
+             "Vera", "Vernon", "Veronica", "Vicki", "Vickie", "Vicky", "Victor", 
+             "Victoria", "Vincent", "Virginia", "Vivian", "Wade", "Walker", "Walter", 
+             "Wanda", "Warren", "Wassillie", "Wayne", "Wendell", "Wendy", "Wesley", 
+             "Weston", "Whitney", "Willa", "William", "Willie", "Willow", "Wyatt", 
+             "Xander", "Xavier", "Yesenia", "Yolanda", "Yvette", "Yvonne", "Zachariah", 
+             "Zachary", "Zachery", "Zackary", "Zander", "Zane", "Zion", "Zoe", "Zoey"
+         };
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\DataLoader.cs" startline="41" endline="280"><![CDATA[
+                                   from name in _commonPeopleNames
+                                   orderby rand.Next()
+                                   select new BabyInfo { Name = name, State = state, Year = year, Count = rand.Next(200, 1000) };
+ 
+             // Return a subset of size numRecords as a list
+             return allCombinations.Take(numRecords).ToList();
+         }
+ 
+         /// <summary>An array of state identifiers (plus Washington, DC).</summary>
+         private static string[] _stateIdentifiers =
+         {            
+             "AK", "AL", "AR", "AZ", "CA", "CO", "CT", 
+             "DC", "DE", "FL", "GA", "HI", "IA", "ID", 
+             "IL", "IN", "KS", "KY", "LA", "MA", "MD", 
+             "ME", "MI", "MN", "MO", "MS", "MT", "NC", 
+             "ND", "NE", "NH", "NJ", "NM", "NV", "NY", 
+             "OH", "OK", "OR", "PA", "RI", "SC", "SD", 
+             "TN", "TX", "UT", "VA", "VT", "WA", "WI", 
+             "WV", "WY"
+         };
+ 
+         /// <summary>An array of common names given to babies.</summary>
+         private static string[] _commonPeopleNames = 
+         {            
+             "Aaliyah", "Aaron", "Abbey", "Abbie", "Abby", "Abigail", "Abigale", 
+             "Abigayle", "Abraham", "Adam", "Addison", "Aden", "Adrian", "Adriana", 
+             "Adrianna", "Adrienne", "Agnes", "Aidan", "Aiden", "Aimee", "Aisha", 
+             "Alaina", "Alan", "Alana", "Albert", "Alberto", "Alec", "Alejandra", 
+             "Alejandro", "Alex", "Alexa", "Alexande", "Alexander", "Alexandr", "Alexandra", 
+             "Alexandria", "Alexia", "Alexis", "Alexus", "Alfred", "Ali", "Alice", 
+             "Alicia", "Alika", "Alisha", "Alison", "Alissa", "Alivia", "Aliyah", 
+             "Allan", "Allen", "Allie", "Allison", "Allyson", "Alondra", "Alvin", 
+             "Alyson", "Alyssa", "Amanda", "Amari", "Amaya", "Amber", "Amelia", 
+             "Amie", "Amir", "Amy", "Amya", "Ana", "Anahi", "Anastasia", 
+             "Andre", "Andrea", "Andres", "Andrew", "Andy", "Anela", "Angel", 
+             "Angela", "Angelia", "Angelica", "Angelina", "Angelique", "Angelo", "Angie", 
+             "Anita", "Aniya", "Aniyah", "Ann", "Anna", "Annabelle", "Anne", 
+             "Annette", "Annie", "Annika", "Annmarie", "Ansley", "Anthony", "Antoine", 
+             "Antoinette", "Antonio", "Antwan", "April", "Ariana", "Arianna", "Ariel", 
+             "Arielle", "Arlene", "Armando", "Arnold", "Aron", "Arthur", "Arturo", 
+             "Ashanti", "Ashlee", "Ashleigh", "Ashley", "Ashlyn", "Ashlynn", "Ashton", 
+             "Asia", "Aspen", "Aubrey", "Audra", "Audrey", "Aurora", "Austin", 
+             "Autumn", "Ava", "Avery", "Ayanna", "Ayden", "Ayla", "Baby", 
+             "Babyboy", "Babygirl", "Bailee", "Bailey", "Barbara", "Barry", "Bart", 
+             "Baylee", "Beau", "Becky", "Belinda", "Benjamin", "Bernadette", "Bernard", 
+             "Bertha", "Beth", "Bethany", "Betsy", "Betty", "Beverly", "Bianca", 
+             "Bill", "Billie", "Billy", "Blaine", "Blake", "Blaze", "Bob", 
+             "Bobbi", "Bobbie", "Bobby", "Bonnie", "Boston", "Boyd", "Brad", 
+             "Braden", "Bradford", "Bradley", "Brady", "Branden", "Brandi", "Brandie", 
+             "Brandon", "Brandy", "Braxton", "Brayden", "Breanna", "Breanne", "Brenda", 
+             "Brendan", "Brenden", "Brendon", "Brenna", "Brennan", "Brent", "Brenton", 
+             "Bret", "Brett", "Bria", "Brian", "Briana", "Brianna", "Brianne", 
+             "Bridger", "Bridget", "Brinley", "Britney", "Brittany", "Brittney", "Brock", 
+             "Brodie", "Brody", "Bronson", "Brooke", "Brooklyn", "Brooklynn", "Bruce", 
+             "Bryan", "Bryanna", "Bryant", "Bryce", "Brynlee", "Brynn", "Bryon", 
+             "Bryson", "Byron", "Cade", "Caden", "Cadence", "Cael", "Caitlin", 
+             "Caitlyn", "Caleb", "Callie", "Calvin", "Camden", "Cameron", "Cami", 
+             "Camila", "Camille", "Camryn", "Candace", "Candice", "Cara", "Carissa", 
+             "Carl", "Carla", "Carlos", "Carlton", "Carly", "Carmen", "Carol", 
+             "Carole", "Caroline", "Carolyn", "Carrie", "Carson", "Carter", "Casey", 
+             "Cassandra", "Cassidy", "Cassie", "Catherine", "Cathy", "Catina", "Cayden", 
+             "Cecilia", "Cedric", "Celeste", "Cesar", "Chad", "Chance", "Chandler", 
+             "Chanel", "Chantel", "Chantelle", "Charity", "Charlene", "Charles", "Charlie", 
+             "Charlotte", "Charmaine", "Chase", "Chasity", "Chaya", "Chelsea", "Chelsey", 
+             "Chelsie", "Cheri", "Cherie", "Cheryl", "Cheyanne", "Cheyenne", "Chiquita", 
+             "Chloe", "Chris", "Christa", "Christi", "Christian", "Christie", "Christin", 
+             "Christina", "Christine", "Christopher", "Christy", "Chuck", "Ciara", "Cierra", 
+             "Cindy", "Claire", "Clara", "Clarence", "Clarissa", "Clark", "Claudia", 
+             "Clay", "Clayton", "Clifford", "Clifton", "Clint", "Clinton", "Clyde", 
+             "Cody", "Colby", "Cole", "Colin", "Colleen", "Collin", "Colten", 
+             "Colter", "Colton", "Conner", "Connie", "Connor", "Conor", "Constance", 
+             "Cooper", "Cora", "Corbin", "Corey", "Corinne", "Cornelius", "Cortney", 
+             "Cory", "Coty", "Courtney", "Craig", "Cristian", "Cristina", "Crystal", 
+             "Curt", "Curtis", "Cynthia", "Cyrus", "Daisy", "Dakota", "Dale", 
+             "Dallas", "Dallin", "Dalton", "Damari", "Damian", "Damien", "Damon", 
+             "Dan", "Dana", "Dane", "Dangelo", "Daniel", "Daniela", "Danielle", 
+             "Danny", "Dante", "Daquan", "Darcy", "Daren", "Darian", "Darin", 
+             "Darius", "Darla", "Darlene", "Darnell", "Darrell", "Darren", "Darrin", 
+             "Darryl", "Darwin", "Daryl", "Dave", "David", "Davon", "Dawn", 
+             "Dawson", "Dayna", "Dean", "Deandre", "Deangelo", "Deann", "Deanna", 
+             "Debbie", "Debora", "Deborah", "Debra", "Declan", "Deja", "Delaney", 
+             "Delonte", "Demarcus", "Demetrius", "Denali", "Deneen", "Denis", "Denise", 
+             "Dennis", "Denzel", "Derek", "Derrick", "Desiree", "Desmond", "Destinee", 
+             "Destiny", "Devante", "Devin", "Devon", "Devonte", "Dexter", "Diamond", 
+             "Diana", "Diane", "Dianna", "Dianne", "Diego", "Dillon", "Dina", 
+             "Dionne", "Dixie", "Dolores", "Domenic", "Dominic", "Dominick", "Dominique", 
+             "Don", "Donald", "Donna", "Donnell", "Donnie", "Donovan", "Donte", 
+             "Dora", "Doreen", "Doris", "Dorothy", "Doug", "Douglas", "Drake", 
+             "Drew", "Duane", "Duke", "Dustin", "Dusty", "Dwayne", "Dwight", 
+             "Dylan", "Earl", "Earnest", "Easton", "Ebony", "Ed", "Eddie", "Eden", 
+             "Edgar", "Edmund", "Edna", "Eduardo", "Edward", "Edwin", "Eileen", 
+             "Elaine", "Eleanor", "Elena", "Eli", "Elias", "Elijah", "Elise", 
+             "Eliza", "Elizabet", "Elizabeth", "Ella", "Ellen", "Ellie", "Elton", 
+             "Emilee", "Emilio", "Emily", "Emma", "Emmanuel", "Enrique", "Eric", 
+             "Erica", "Erick", "Erik", "Erika", "Erin", "Ernest", "Esmeralda", 
+             "Esperanza", "Estevan", "Esther", "Estrella", "Ethan", "Eugene", "Eva", 
+             "Evan", "Evelyn", "Everett", "Ezekiel", "Ezra", "Fabian", "Faith", 
+             "Farrah", "Felicia", "Female", "Fernando", "Finn", "Fiona", "Floyd", 
+             "Forrest", "Frances", "Francesca", "Francine", "Francis", "Francisco", "Frank", 
+             "Franklin", "Fred", "Freddie", "Frederick", "Fredrick", "Gabriel", "Gabriela", 
+             "Gabriella", "Gabrielle", "Gage", "Gail", "Garrett", "Gary", "Gavin", 
+             "Gayla", "Gayle", "Gene", "Genesis", "Geoffrey", "George", "Gerald", 
+             "Geraldine", "Gerard", "Gerardo", "Gianna", "Gilbert", "Gillian", "Gina", 
+             "Ginger", "Giovanni", "Giselle", "Glen", "Glenda", "Glenn", "Gloria", 
+             "Gordon", "Grace", "Gracie", "Graham", "Grant", "Grayson", "Greg", 
+             "Gregg", "Gregory", "Greta", "Gretchen", "Griffin", "Guadalupe", "Guy", 
+             "Gwen", "Gwendolyn", "Hailee", "Hailey", "Haleigh", "Haley", "Halle", 
+             "Hallie", "Hanna", "Hannah", "Harley", "Harmony", "Harold", "Harrison", 
+             "Harry", "Hayden", "Haylee", "Hayley", "Heath", "Heather", "Heaven", 
+             "Hector", "Heidi", "Helen", "Henry", "Herbert", "Hilary", "Hillary", 
+             "Holly", "Hope", "Howard", "Hudson", "Hunter", "Ian", "Iesha", "Igor",
+             "Ikaika", "Imani", "India", "Infant", "Ira", "Irene", "Iris", 
+             "Irma", "Isaac", "Isabel", "Isabella", "Isabelle", "Isaiah", "Isiah", 
+             "Israel", "Ivan", "Ivy", "Jace", "Jack", "Jackie", "Jackson", 
+             "Jaclyn", "Jacob", "Jacqueline", "Jada", "Jade", "Jaden", "Jadyn", 
+             "Jaheim", "Jaime", "Jakayla", "Jake", "Jakob", "Jalen", "Jamaal", 
+             "Jamal", "Jamar", "Jamarion", "James", "Jami", "Jamia", "Jamie", 
+             "Jan", "Jana", "Janae", "Janay", "Jane", "Janelle", "Janet", 
+             "Janice", "Janiya", "Jaquan", "Jaqueline", "Jared", "Jarrod", "Jarvis", 
+             "Jasmin", "Jasmine", "Jason", "Javier", "Javon", "Jaxon", "Jay", 
+             "Jayden", "Jayla", "Jaylen", "Jaylon", "Jayme", "Jayson", "Jazmin", 
+             "Jazmine", "Jean", "Jeanette", "Jeanne", "Jeannine", "Jeff", "Jeffery", 
+             "Jeffrey", "Jenifer", "Jenna", "Jennie", "Jennifer", "Jenny", "Jeremiah", 
+             "Jeremy", "Jermaine", "Jerome", "Jerry", "Jess", "Jesse", "Jessica", 
+             "Jessie", "Jesus", "Jill", "Jillian", "Jim", "Jimmie", "Jimmy", 
+             "Jo", "Joan", "Joann", "Joanna", "Joanne", "Jocelyn", "Jodi", 
+             "Jodie", "Jody", "Joe", "Joel", "Joey", "Johanna", "John", 
+             "Johnathan", "Johnathon", "Johnnie", "Johnny", "Jolene", "Jon", "Jonah", 
+             "Jonathan", "Jonathon", "Joni", "Jordan", "Jordyn", "Jorge", "Jory", 
+             "Jose", "Joseph", "Josephine", "Josette", "Joshua", "Josiah", "Josie", 
+             "Joy", "Joyce", "Juan", "Juanita", "Judith", "Judy", "Julia", 
+             "Julian", "Juliana", "Julianna", "Julie", "Julio", "Julissa", "Julius", 
+             "June", "Justice", "Justin", "Justine", "Juwan", "Kade", "Kaden", 
+             "Kadence", "Kadijah", "Kahealani", "Kai", "Kaila", "Kailee", "Kailey", 
+             "Kaimana", "Kainalu", "Kainoa", "Kaitlin", "Kaitlyn", "Kalani", "Kaleb", 
+             "Kalena", "Kamalani", "Kameron", "Kamryn", "Kanani", "Kapena", "Kara", 
+             "Karen", "Kari", "Karin", "Karina", "Karissa", "Karl", "Karla", 
+             "Karlee", "Kasey", "Kassandra", "Kassidy", "Kate", "Katelyn", "Katelynn", 
+             "Katharine", "Katherin", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", 
+             "Katina", "Katlyn", "Katrina", "Kawena", "Kawika", "Kay", "Kaya", 
+             "Kaycee", "Kayden", "Kaydence", "Kayla", "Kaylee", "Kayleigh", "Keanu", 
+             "Keaton", "Keegan", "Keenan", "Kehaulani", "Keira", "Keisha", "Keith", 
+             "Kekoa", "Kelley", "Kelli", "Kellie", "Kelly", "Kelsey", "Kelsie", 
+             "Kelvin", "Ken", "Kendall", "Kendra", "Kendrick", "Kennedy", "Kenneth", 
+             "Kenny", "Kent", "Kenya", "Keola", "Keoni", "Keri", "Kerri", 
+             "Kerry", "Kevin", "Kevon", "Khadijah", "Khalil", "Kia", "Kiana", 
+             "Kiani", "Kiara", "Kierra", "Kim", "Kimberlee", "Kimberley", "Kimberly", 
+             "Kira", "Kirk", "Kirsten", "Kisha", "Kizzy", "Kobe", "Kody", 
+             "Kory", "Kris", "Krista", "Kristen", "Kristi", "Kristie", "Kristin", 
+             "Kristina", "Kristine", "Kristopher", "Kristy", "Krystal", "Krystle", "Kurt", 
+             "Kyla", "Kyle", "Kylee", "Kyleigh", "Kyler", "Kylie", "Kyra", 
+             "Lacey", "Laci", "Lacy", "Ladarius", "Ladonna", "Laila", "Lakeisha", 
+             "Lakesha", "Lakisha", "Lamar", "Lamont", "Lana", "Lance", "Landen", 
+             "Landon", "Lane", "Lani", "Larry", "Lashawn", "Lashonda", "Latasha", 
+             "Latisha", "Latonya", "Latoya", "Laura", "Laurel", "Lauren", "Laurie", 
+             "Lauryn", "Lawanda", "Lawrence", "Layla", "Leah", "Leann", "Lee", 
+             "Leigh", "Leila", "Leilani", "Lena", "Leo", "Leon", "Leona", 
+             "Leonard", "Leonardo", "Leroy", "Lesley", "Leslie", "Leticia", "Levi", 
+             "Lewis", "Lexi", "Liam", "Liana", "Liliana", "Lillian", "Lillie", 
+             "Lilly", "Lily", "Linda", "Lindsay", "Lindsey", "Lisa", "Liza", 
+             "Lizbeth", "Lloyd", "Logan", "Lois", "London", "Lonnie", "Lora", 
+             "Loren", "Lorena", "Lorenzo", "Loretta", "Lori", "Loriann", "Lorna", 
+             "Lorraine", "Lorrie", "Louis", "Louise", "Lucas", "Lucia", "Lucy", 
+             "Luis", "Luke", "Lydia", "Lyle", "Lynda", "Lynette", "Lynn", 
+             "Lynne", "Mackenzie", "Macy", "Maddison", "Madeleine", "Madeline", "Madelyn", 
+             "Madison", "Madisyn", "Maeve", "Maggie", "Mahealani", "Mahina", "Maia", 
+             "Maile", "Makana", "Makayla", "Makenna", "Makenzie", "Makoa", "Malachi", 
+             "Malcolm", "Male", "Malia", "Malik", "Mallory", "Mandi", "Mandy", 
+             "Manuel", "Marc", "Marcel", "Marcella", "Marci", "Marcia", "Marco", 
+             "Marcos", "Marcus", "Marcy", "Margaret", "Mari", "Maria", "Mariah", 
+             "Mariana", "Marianne", "Maribel", "Marie", "Marilyn", "Marina", "Mario", 
+             "Marion", "Marisa", "Marisol", "Marissa", "Mark", "Marlene", "Marlon", 
+             "Marquis", "Marquise", "Marquita", "Marsha", "Marshall", "Martha", "Martin", 
+             "Marty", "Marvin", "Mary", "Maryann", "Mason", "Mathew", "Matt", 
+             "Matthew", "Maureen", "Maurice", "Max", "Maxwell", "Maya", "Mayra", 
+             "Mckay", "Mckayla", "Mckenna", "Mckenzie", "Meagan", "Meaghan", "Megan", 
+             "Meghan", "Mekhi", "Melanie", "Melia", "Melinda", "Melissa", "Melody", 
+             "Melvin", "Mercedes", "Meredith", "Mia", "Micah", "Michael", "Michaela", 
+             "Micheal", "Michele", "Michelle", "Miguel", "Mikaela", "Mikayla", "Mike", 
+             "Miles", "Milton", "Mindy", "Miracle", "Miranda", "Misti", "Misty", 
+             "Mitchell", "Molly", "Monica", "Monique", "Monte", "Morgan", "Moshe", 
+             "Mya", "Myles", "Myra", "Myron", "Nadia", "Nadine", "Nainoa", 
+             "Nakia", "Nalani", "Nancy", "Nanea", "Naomi", "Nasir", "Natalia", 
+             "Natalie", "Natasha", "Nathan", "Nathaniel", "Nayeli", "Neal", "Neil", 
+             "Nelson", "Nevaeh", "Nia", "Nicholas", "Nichole", "Nick", "Nickolas", 
+             "Nicolas", "Nicole", "Nikita", "Nikki", "Nina", "Noa", "Noah", 
+             "Nolan", "Nora", "Norma", "Norman", "Normand", "Notnamed", "Nyasia", 
+             "Oliver", "Olivia", "Omar", "Omarion", "Orlando", "Oscar", "Owen", 
+             "Paige", "Pam", "Pamela", "Paris", "Parker", "Pat", "Patrice", 
+             "Patricia", "Patrick", "Patti", "Patty", "Paul", "Paula", "Pauline", 
+             "Payton", "Pedro", "Peggy", "Penny", "Perry", "Peter", "Peyton", 
+             "Philip", "Phillip", "Phoebe", "Phyllis", "Piper", "Pooja", "Porter", "Precious", 
+             "Preston", "Priscilla", "Quentin", "Quinn", "Quinton", "Rachael", "Rachel", 
+             "Rachelle", "Raekwon", "Rafael", "Raheem", "Ralph", "Ramon", "Ramona", 
+             "Randal", "Randall", "Randi", "Randy", "Raquel", "Rashad", "Raul", 
+             "Raven", "Ray", "Raymond", "Reagan", "Rebecca", "Rebekah", "Reed", 
+             "Reese", "Regina", "Reginald", "Reid", "Renae", "Renata", "Rene", 
+             "Renee", "Rex", "Rhonda", "Ricardo", "Richard", "Rick", "Rickey", 
+             "Ricky", "Riley", "Rita", "Robert", "Roberta", "Roberto", "Robin", 
+             "Robyn", "Rochelle", "Roderick", "Rodney", "Roger", "Roland", "Ron", 
+             "Ronald", "Ronda", "Ronnie", "Roosevelt", "Rory", "Rosa", "Rose", 
+             "Rosemary", "Rosie", "Ross", "Rowena", "Roxanne", "Roy", "Royce", 
+             "Ruben", "Ruby", "Rudy", "Russell", "Ruth", "Ryan", "Ryder", 
+             "Ryker", "Rylan", "Rylee", "Rylie", "Sabrina", "Sade", "Sadie", 
+             "Sage", "Sally", "Salvador", "Salvatore", "Sam", "Samantha", "Sammy", 
+             "Samuel", "Sandra", "Sandy", "Saniya", "Santana", "Santiago", "Sara", 
+             "Sarah", "Sasha", "Savanna", "Savannah", "Sawyer", "Scott", "Scottie", 
+             "Scotty", "Sean", "Sebastian", "Selena", "Serena", "Serenity", "Sergio", 
+             "Seth", "Shana", "Shane", "Shania", "Shanice", "Shaniqua", "Shanna", 
+             "Shannon", "Shantel", "Shaquille", "Shari", "Sharon", "Shaun", "Shauna", 
+             "Shawn", "Shawna", "Shayden", "Shayla", "Shaylee", "Shayna", "Sheena", 
+             "Sheila", "Shelbi", "Shelby", "Sheldon", "Shelia", "Shelley", "Shelly", 
+             "Sheri", "Sherri", "Sherrie", "Sherry", "Sheryl", "Shirley", "Shyla", 
+             "Sidney", "Sienna", "Sierra", "Silas", "Simone", "Skylar", "Skyler", 
+             "Sofia", "Sonia", "Sonja", "Sonya", "Sophia", "Sophie", "Spencer", 
+             "Stacey", "Staci", "Stacie", "Stacy", "Stanley", "Stefanie", "Stella", 
+             "Stephani", "Stephanie", "Stephen", "Stephon", "Steve", "Steven", "Stuart", 
+             "Sue", "Summer", "Susan", "Suzanne", "Sydney", "Sylvia", "Tabitha", 
+             "Talia", "Tamara", "Tameka", "Tami", "Tamia", "Tamika", "Tammie", 
+             "Tammy", "Tania", "Tanner", "Tanya", "Tara", "Taryn", "Tasha", 
+             "Tate", "Tatiana", "Tatum", "Tatyana", "Tavon", "Tayla", "Taylor", 
+             "Teagan", "Ted", "Teddy", "Tehani", "Teresa", "Teri", "Terrance", 
+             "Terrell", "Terrence", "Terri", "Terry", "Tessa", "Tevin", "Thad", 
+             "Theodore", "Theresa", "Thomas", "Tia", "Tiana", "Tiara", "Tiare", 
+             "Tierra", "Tiffany", "Tim", "Timmy", "Timothy", "Tina", "Toby", 
+             "Todd", "Tom", "Tommie", "Tommy", "Toni", "Tonia", "Tony", 
+             "Tonya", "Tori", "Tracey", "Traci", "Tracie", "Tracy", "Travis", 
+             "Trent", "Trenton", "Trevon", "Trevor", "Trey", "Tricia", "Trina", 
+             "Trinity", "Trisha", "Trista", "Tristan", "Tristen", "Troy", "Tucker", 
+             "Ty", "Tyler", "Tyra", "Tyree", "Tyrel", "Tyrell", "Tyrese", 
+             "Tyrone", "Tyson", "Unknown", "Unnamed", "Valeria", "Valerie", "Vanessa", 
+             "Vera", "Vernon", "Veronica", "Vicki", "Vickie", "Vicky", "Victor", 
+             "Victoria", "Vincent", "Virginia", "Vivian", "Wade", "Walker", "Walter", 
+             "Wanda", "Warren", "Wassillie", "Wayne", "Wendell", "Wendy", "Wesley", 
+             "Weston", "Whitney", "Willa", "William", "Willie", "Willow", "Wyatt", 
+             "Xander", "Xavier", "Yesenia", "Yolanda", "Yvette", "Yvonne", "Zachariah", 
+             "Zachary", "Zachery", "Zackary", "Zander", "Zane", "Zion", "Zoe", "Zoey"
+         };
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\DataLoader.cs" startline="41" endline="280"><![CDATA[
+                                   from name in _commonPeopleNames
+                                   orderby rand.Next()
+                                   select new BabyInfo { Name = name, State = state, Year = year, Count = rand.Next(200, 1000) };
+ 
+             // Return a subset of size numRecords as a list
+             return allCombinations.Take(numRecords).ToList();
+         }
+ 
+         /// <summary>An array of state identifiers (plus Washington, DC).</summary>
+         private static string[] _stateIdentifiers =
+         {            
+             "AK", "AL", "AR", "AZ", "CA", "CO", "CT", 
+             "DC", "DE", "FL", "GA", "HI", "IA", "ID", 
+             "IL", "IN", "KS", "KY", "LA", "MA", "MD", 
+             "ME", "MI", "MN", "MO", "MS", "MT", "NC", 
+             "ND", "NE", "NH", "NJ", "NM", "NV", "NY", 
+             "OH", "OK", "OR", "PA", "RI", "SC", "SD", 
+             "TN", "TX", "UT", "VA", "VT", "WA", "WI", 
+             "WV", "WY"
+         };
+ 
+         /// <summary>An array of common names given to babies.</summary>
+         private static string[] _commonPeopleNames = 
+         {            
+             "Aaliyah", "Aaron", "Abbey", "Abbie", "Abby", "Abigail", "Abigale", 
+             "Abigayle", "Abraham", "Adam", "Addison", "Aden", "Adrian", "Adriana", 
+             "Adrianna", "Adrienne", "Agnes", "Aidan", "Aiden", "Aimee", "Aisha", 
+             "Alaina", "Alan", "Alana", "Albert", "Alberto", "Alec", "Alejandra", 
+             "Alejandro", "Alex", "Alexa", "Alexande", "Alexander", "Alexandr", "Alexandra", 
+             "Alexandria", "Alexia", "Alexis", "Alexus", "Alfred", "Ali", "Alice", 
+             "Alicia", "Alika", "Alisha", "Alison", "Alissa", "Alivia", "Aliyah", 
+             "Allan", "Allen", "Allie", "Allison", "Allyson", "Alondra", "Alvin", 
+             "Alyson", "Alyssa", "Amanda", "Amari", "Amaya", "Amber", "Amelia", 
+             "Amie", "Amir", "Amy", "Amya", "Ana", "Anahi", "Anastasia", 
+             "Andre", "Andrea", "Andres", "Andrew", "Andy", "Anela", "Angel", 
+             "Angela", "Angelia", "Angelica", "Angelina", "Angelique", "Angelo", "Angie", 
+             "Anita", "Aniya", "Aniyah", "Ann", "Anna", "Annabelle", "Anne", 
+             "Annette", "Annie", "Annika", "Annmarie", "Ansley", "Anthony", "Antoine", 
+             "Antoinette", "Antonio", "Antwan", "April", "Ariana", "Arianna", "Ariel", 
+             "Arielle", "Arlene", "Armando", "Arnold", "Aron", "Arthur", "Arturo", 
+             "Ashanti", "Ashlee", "Ashleigh", "Ashley", "Ashlyn", "Ashlynn", "Ashton", 
+             "Asia", "Aspen", "Aubrey", "Audra", "Audrey", "Aurora", "Austin", 
+             "Autumn", "Ava", "Avery", "Ayanna", "Ayden", "Ayla", "Baby", 
+             "Babyboy", "Babygirl", "Bailee", "Bailey", "Barbara", "Barry", "Bart", 
+             "Baylee", "Beau", "Becky", "Belinda", "Benjamin", "Bernadette", "Bernard", 
+             "Bertha", "Beth", "Bethany", "Betsy", "Betty", "Beverly", "Bianca", 
+             "Bill", "Billie", "Billy", "Blaine", "Blake", "Blaze", "Bob", 
+             "Bobbi", "Bobbie", "Bobby", "Bonnie", "Boston", "Boyd", "Brad", 
+             "Braden", "Bradford", "Bradley", "Brady", "Branden", "Brandi", "Brandie", 
+             "Brandon", "Brandy", "Braxton", "Brayden", "Breanna", "Breanne", "Brenda", 
+             "Brendan", "Brenden", "Brendon", "Brenna", "Brennan", "Brent", "Brenton", 
+             "Bret", "Brett", "Bria", "Brian", "Briana", "Brianna", "Brianne", 
+             "Bridger", "Bridget", "Brinley", "Britney", "Brittany", "Brittney", "Brock", 
+             "Brodie", "Brody", "Bronson", "Brooke", "Brooklyn", "Brooklynn", "Bruce", 
+             "Bryan", "Bryanna", "Bryant", "Bryce", "Brynlee", "Brynn", "Bryon", 
+             "Bryson", "Byron", "Cade", "Caden", "Cadence", "Cael", "Caitlin", 
+             "Caitlyn", "Caleb", "Callie", "Calvin", "Camden", "Cameron", "Cami", 
+             "Camila", "Camille", "Camryn", "Candace", "Candice", "Cara", "Carissa", 
+             "Carl", "Carla", "Carlos", "Carlton", "Carly", "Carmen", "Carol", 
+             "Carole", "Caroline", "Carolyn", "Carrie", "Carson", "Carter", "Casey", 
+             "Cassandra", "Cassidy", "Cassie", "Catherine", "Cathy", "Catina", "Cayden", 
+             "Cecilia", "Cedric", "Celeste", "Cesar", "Chad", "Chance", "Chandler", 
+             "Chanel", "Chantel", "Chantelle", "Charity", "Charlene", "Charles", "Charlie", 
+             "Charlotte", "Charmaine", "Chase", "Chasity", "Chaya", "Chelsea", "Chelsey", 
+             "Chelsie", "Cheri", "Cherie", "Cheryl", "Cheyanne", "Cheyenne", "Chiquita", 
+             "Chloe", "Chris", "Christa", "Christi", "Christian", "Christie", "Christin", 
+             "Christina", "Christine", "Christopher", "Christy", "Chuck", "Ciara", "Cierra", 
+             "Cindy", "Claire", "Clara", "Clarence", "Clarissa", "Clark", "Claudia", 
+             "Clay", "Clayton", "Clifford", "Clifton", "Clint", "Clinton", "Clyde", 
+             "Cody", "Colby", "Cole", "Colin", "Colleen", "Collin", "Colten", 
+             "Colter", "Colton", "Conner", "Connie", "Connor", "Conor", "Constance", 
+             "Cooper", "Cora", "Corbin", "Corey", "Corinne", "Cornelius", "Cortney", 
+             "Cory", "Coty", "Courtney", "Craig", "Cristian", "Cristina", "Crystal", 
+             "Curt", "Curtis", "Cynthia", "Cyrus", "Daisy", "Dakota", "Dale", 
+             "Dallas", "Dallin", "Dalton", "Damari", "Damian", "Damien", "Damon", 
+             "Dan", "Dana", "Dane", "Dangelo", "Daniel", "Daniela", "Danielle", 
+             "Danny", "Dante", "Daquan", "Darcy", "Daren", "Darian", "Darin", 
+             "Darius", "Darla", "Darlene", "Darnell", "Darrell", "Darren", "Darrin", 
+             "Darryl", "Darwin", "Daryl", "Dave", "David", "Davon", "Dawn", 
+             "Dawson", "Dayna", "Dean", "Deandre", "Deangelo", "Deann", "Deanna", 
+             "Debbie", "Debora", "Deborah", "Debra", "Declan", "Deja", "Delaney", 
+             "Delonte", "Demarcus", "Demetrius", "Denali", "Deneen", "Denis", "Denise", 
+             "Dennis", "Denzel", "Derek", "Derrick", "Desiree", "Desmond", "Destinee", 
+             "Destiny", "Devante", "Devin", "Devon", "Devonte", "Dexter", "Diamond", 
+             "Diana", "Diane", "Dianna", "Dianne", "Diego", "Dillon", "Dina", 
+             "Dionne", "Dixie", "Dolores", "Domenic", "Dominic", "Dominick", "Dominique", 
+             "Don", "Donald", "Donna", "Donnell", "Donnie", "Donovan", "Donte", 
+             "Dora", "Doreen", "Doris", "Dorothy", "Doug", "Douglas", "Drake", 
+             "Drew", "Duane", "Duke", "Dustin", "Dusty", "Dwayne", "Dwight", 
+             "Dylan", "Earl", "Earnest", "Easton", "Ebony", "Ed", "Eddie", "Eden", 
+             "Edgar", "Edmund", "Edna", "Eduardo", "Edward", "Edwin", "Eileen", 
+             "Elaine", "Eleanor", "Elena", "Eli", "Elias", "Elijah", "Elise", 
+             "Eliza", "Elizabet", "Elizabeth", "Ella", "Ellen", "Ellie", "Elton", 
+             "Emilee", "Emilio", "Emily", "Emma", "Emmanuel", "Enrique", "Eric", 
+             "Erica", "Erick", "Erik", "Erika", "Erin", "Ernest", "Esmeralda", 
+             "Esperanza", "Estevan", "Esther", "Estrella", "Ethan", "Eugene", "Eva", 
+             "Evan", "Evelyn", "Everett", "Ezekiel", "Ezra", "Fabian", "Faith", 
+             "Farrah", "Felicia", "Female", "Fernando", "Finn", "Fiona", "Floyd", 
+             "Forrest", "Frances", "Francesca", "Francine", "Francis", "Francisco", "Frank", 
+             "Franklin", "Fred", "Freddie", "Frederick", "Fredrick", "Gabriel", "Gabriela", 
+             "Gabriella", "Gabrielle", "Gage", "Gail", "Garrett", "Gary", "Gavin", 
+             "Gayla", "Gayle", "Gene", "Genesis", "Geoffrey", "George", "Gerald", 
+             "Geraldine", "Gerard", "Gerardo", "Gianna", "Gilbert", "Gillian", "Gina", 
+             "Ginger", "Giovanni", "Giselle", "Glen", "Glenda", "Glenn", "Gloria", 
+             "Gordon", "Grace", "Gracie", "Graham", "Grant", "Grayson", "Greg", 
+             "Gregg", "Gregory", "Greta", "Gretchen", "Griffin", "Guadalupe", "Guy", 
+             "Gwen", "Gwendolyn", "Hailee", "Hailey", "Haleigh", "Haley", "Halle", 
+             "Hallie", "Hanna", "Hannah", "Harley", "Harmony", "Harold", "Harrison", 
+             "Harry", "Hayden", "Haylee", "Hayley", "Heath", "Heather", "Heaven", 
+             "Hector", "Heidi", "Helen", "Henry", "Herbert", "Hilary", "Hillary", 
+             "Holly", "Hope", "Howard", "Hudson", "Hunter", "Ian", "Iesha", "Igor",
+             "Ikaika", "Imani", "India", "Infant", "Ira", "Irene", "Iris", 
+             "Irma", "Isaac", "Isabel", "Isabella", "Isabelle", "Isaiah", "Isiah", 
+             "Israel", "Ivan", "Ivy", "Jace", "Jack", "Jackie", "Jackson", 
+             "Jaclyn", "Jacob", "Jacqueline", "Jada", "Jade", "Jaden", "Jadyn", 
+             "Jaheim", "Jaime", "Jakayla", "Jake", "Jakob", "Jalen", "Jamaal", 
+             "Jamal", "Jamar", "Jamarion", "James", "Jami", "Jamia", "Jamie", 
+             "Jan", "Jana", "Janae", "Janay", "Jane", "Janelle", "Janet", 
+             "Janice", "Janiya", "Jaquan", "Jaqueline", "Jared", "Jarrod", "Jarvis", 
+             "Jasmin", "Jasmine", "Jason", "Javier", "Javon", "Jaxon", "Jay", 
+             "Jayden", "Jayla", "Jaylen", "Jaylon", "Jayme", "Jayson", "Jazmin", 
+             "Jazmine", "Jean", "Jeanette", "Jeanne", "Jeannine", "Jeff", "Jeffery", 
+             "Jeffrey", "Jenifer", "Jenna", "Jennie", "Jennifer", "Jenny", "Jeremiah", 
+             "Jeremy", "Jermaine", "Jerome", "Jerry", "Jess", "Jesse", "Jessica", 
+             "Jessie", "Jesus", "Jill", "Jillian", "Jim", "Jimmie", "Jimmy", 
+             "Jo", "Joan", "Joann", "Joanna", "Joanne", "Jocelyn", "Jodi", 
+             "Jodie", "Jody", "Joe", "Joel", "Joey", "Johanna", "John", 
+             "Johnathan", "Johnathon", "Johnnie", "Johnny", "Jolene", "Jon", "Jonah", 
+             "Jonathan", "Jonathon", "Joni", "Jordan", "Jordyn", "Jorge", "Jory", 
+             "Jose", "Joseph", "Josephine", "Josette", "Joshua", "Josiah", "Josie", 
+             "Joy", "Joyce", "Juan", "Juanita", "Judith", "Judy", "Julia", 
+             "Julian", "Juliana", "Julianna", "Julie", "Julio", "Julissa", "Julius", 
+             "June", "Justice", "Justin", "Justine", "Juwan", "Kade", "Kaden", 
+             "Kadence", "Kadijah", "Kahealani", "Kai", "Kaila", "Kailee", "Kailey", 
+             "Kaimana", "Kainalu", "Kainoa", "Kaitlin", "Kaitlyn", "Kalani", "Kaleb", 
+             "Kalena", "Kamalani", "Kameron", "Kamryn", "Kanani", "Kapena", "Kara", 
+             "Karen", "Kari", "Karin", "Karina", "Karissa", "Karl", "Karla", 
+             "Karlee", "Kasey", "Kassandra", "Kassidy", "Kate", "Katelyn", "Katelynn", 
+             "Katharine", "Katherin", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", 
+             "Katina", "Katlyn", "Katrina", "Kawena", "Kawika", "Kay", "Kaya", 
+             "Kaycee", "Kayden", "Kaydence", "Kayla", "Kaylee", "Kayleigh", "Keanu", 
+             "Keaton", "Keegan", "Keenan", "Kehaulani", "Keira", "Keisha", "Keith", 
+             "Kekoa", "Kelley", "Kelli", "Kellie", "Kelly", "Kelsey", "Kelsie", 
+             "Kelvin", "Ken", "Kendall", "Kendra", "Kendrick", "Kennedy", "Kenneth", 
+             "Kenny", "Kent", "Kenya", "Keola", "Keoni", "Keri", "Kerri", 
+             "Kerry", "Kevin", "Kevon", "Khadijah", "Khalil", "Kia", "Kiana", 
+             "Kiani", "Kiara", "Kierra", "Kim", "Kimberlee", "Kimberley", "Kimberly", 
+             "Kira", "Kirk", "Kirsten", "Kisha", "Kizzy", "Kobe", "Kody", 
+             "Kory", "Kris", "Krista", "Kristen", "Kristi", "Kristie", "Kristin", 
+             "Kristina", "Kristine", "Kristopher", "Kristy", "Krystal", "Krystle", "Kurt", 
+             "Kyla", "Kyle", "Kylee", "Kyleigh", "Kyler", "Kylie", "Kyra", 
+             "Lacey", "Laci", "Lacy", "Ladarius", "Ladonna", "Laila", "Lakeisha", 
+             "Lakesha", "Lakisha", "Lamar", "Lamont", "Lana", "Lance", "Landen", 
+             "Landon", "Lane", "Lani", "Larry", "Lashawn", "Lashonda", "Latasha", 
+             "Latisha", "Latonya", "Latoya", "Laura", "Laurel", "Lauren", "Laurie", 
+             "Lauryn", "Lawanda", "Lawrence", "Layla", "Leah", "Leann", "Lee", 
+             "Leigh", "Leila", "Leilani", "Lena", "Leo", "Leon", "Leona", 
+             "Leonard", "Leonardo", "Leroy", "Lesley", "Leslie", "Leticia", "Levi", 
+             "Lewis", "Lexi", "Liam", "Liana", "Liliana", "Lillian", "Lillie", 
+             "Lilly", "Lily", "Linda", "Lindsay", "Lindsey", "Lisa", "Liza", 
+             "Lizbeth", "Lloyd", "Logan", "Lois", "London", "Lonnie", "Lora", 
+             "Loren", "Lorena", "Lorenzo", "Loretta", "Lori", "Loriann", "Lorna", 
+             "Lorraine", "Lorrie", "Louis", "Louise", "Lucas", "Lucia", "Lucy", 
+             "Luis", "Luke", "Lydia", "Lyle", "Lynda", "Lynette", "Lynn", 
+             "Lynne", "Mackenzie", "Macy", "Maddison", "Madeleine", "Madeline", "Madelyn", 
+             "Madison", "Madisyn", "Maeve", "Maggie", "Mahealani", "Mahina", "Maia", 
+             "Maile", "Makana", "Makayla", "Makenna", "Makenzie", "Makoa", "Malachi", 
+             "Malcolm", "Male", "Malia", "Malik", "Mallory", "Mandi", "Mandy", 
+             "Manuel", "Marc", "Marcel", "Marcella", "Marci", "Marcia", "Marco", 
+             "Marcos", "Marcus", "Marcy", "Margaret", "Mari", "Maria", "Mariah", 
+             "Mariana", "Marianne", "Maribel", "Marie", "Marilyn", "Marina", "Mario", 
+             "Marion", "Marisa", "Marisol", "Marissa", "Mark", "Marlene", "Marlon", 
+             "Marquis", "Marquise", "Marquita", "Marsha", "Marshall", "Martha", "Martin", 
+             "Marty", "Marvin", "Mary", "Maryann", "Mason", "Mathew", "Matt", 
+             "Matthew", "Maureen", "Maurice", "Max", "Maxwell", "Maya", "Mayra", 
+             "Mckay", "Mckayla", "Mckenna", "Mckenzie", "Meagan", "Meaghan", "Megan", 
+             "Meghan", "Mekhi", "Melanie", "Melia", "Melinda", "Melissa", "Melody", 
+             "Melvin", "Mercedes", "Meredith", "Mia", "Micah", "Michael", "Michaela", 
+             "Micheal", "Michele", "Michelle", "Miguel", "Mikaela", "Mikayla", "Mike", 
+             "Miles", "Milton", "Mindy", "Miracle", "Miranda", "Misti", "Misty", 
+             "Mitchell", "Molly", "Monica", "Monique", "Monte", "Morgan", "Moshe", 
+             "Mya", "Myles", "Myra", "Myron", "Nadia", "Nadine", "Nainoa", 
+             "Nakia", "Nalani", "Nancy", "Nanea", "Naomi", "Nasir", "Natalia", 
+             "Natalie", "Natasha", "Nathan", "Nathaniel", "Nayeli", "Neal", "Neil", 
+             "Nelson", "Nevaeh", "Nia", "Nicholas", "Nichole", "Nick", "Nickolas", 
+             "Nicolas", "Nicole", "Nikita", "Nikki", "Nina", "Noa", "Noah", 
+             "Nolan", "Nora", "Norma", "Norman", "Normand", "Notnamed", "Nyasia", 
+             "Oliver", "Olivia", "Omar", "Omarion", "Orlando", "Oscar", "Owen", 
+             "Paige", "Pam", "Pamela", "Paris", "Parker", "Pat", "Patrice", 
+             "Patricia", "Patrick", "Patti", "Patty", "Paul", "Paula", "Pauline", 
+             "Payton", "Pedro", "Peggy", "Penny", "Perry", "Peter", "Peyton", 
+             "Philip", "Phillip", "Phoebe", "Phyllis", "Piper", "Pooja", "Porter", "Precious", 
+             "Preston", "Priscilla", "Quentin", "Quinn", "Quinton", "Rachael", "Rachel", 
+             "Rachelle", "Raekwon", "Rafael", "Raheem", "Ralph", "Ramon", "Ramona", 
+             "Randal", "Randall", "Randi", "Randy", "Raquel", "Rashad", "Raul", 
+             "Raven", "Ray", "Raymond", "Reagan", "Rebecca", "Rebekah", "Reed", 
+             "Reese", "Regina", "Reginald", "Reid", "Renae", "Renata", "Rene", 
+             "Renee", "Rex", "Rhonda", "Ricardo", "Richard", "Rick", "Rickey", 
+             "Ricky", "Riley", "Rita", "Robert", "Roberta", "Roberto", "Robin", 
+             "Robyn", "Rochelle", "Roderick", "Rodney", "Roger", "Roland", "Ron", 
+             "Ronald", "Ronda", "Ronnie", "Roosevelt", "Rory", "Rosa", "Rose", 
+             "Rosemary", "Rosie", "Ross", "Rowena", "Roxanne", "Roy", "Royce", 
+             "Ruben", "Ruby", "Rudy", "Russell", "Ruth", "Ryan", "Ryder", 
+             "Ryker", "Rylan", "Rylee", "Rylie", "Sabrina", "Sade", "Sadie", 
+             "Sage", "Sally", "Salvador", "Salvatore", "Sam", "Samantha", "Sammy", 
+             "Samuel", "Sandra", "Sandy", "Saniya", "Santana", "Santiago", "Sara", 
+             "Sarah", "Sasha", "Savanna", "Savannah", "Sawyer", "Scott", "Scottie", 
+             "Scotty", "Sean", "Sebastian", "Selena", "Serena", "Serenity", "Sergio", 
+             "Seth", "Shana", "Shane", "Shania", "Shanice", "Shaniqua", "Shanna", 
+             "Shannon", "Shantel", "Shaquille", "Shari", "Sharon", "Shaun", "Shauna", 
+             "Shawn", "Shawna", "Shayden", "Shayla", "Shaylee", "Shayna", "Sheena", 
+             "Sheila", "Shelbi", "Shelby", "Sheldon", "Shelia", "Shelley", "Shelly", 
+             "Sheri", "Sherri", "Sherrie", "Sherry", "Sheryl", "Shirley", "Shyla", 
+             "Sidney", "Sienna", "Sierra", "Silas", "Simone", "Skylar", "Skyler", 
+             "Sofia", "Sonia", "Sonja", "Sonya", "Sophia", "Sophie", "Spencer", 
+             "Stacey", "Staci", "Stacie", "Stacy", "Stanley", "Stefanie", "Stella", 
+             "Stephani", "Stephanie", "Stephen", "Stephon", "Steve", "Steven", "Stuart", 
+             "Sue", "Summer", "Susan", "Suzanne", "Sydney", "Sylvia", "Tabitha", 
+             "Talia", "Tamara", "Tameka", "Tami", "Tamia", "Tamika", "Tammie", 
+             "Tammy", "Tania", "Tanner", "Tanya", "Tara", "Taryn", "Tasha", 
+             "Tate", "Tatiana", "Tatum", "Tatyana", "Tavon", "Tayla", "Taylor", 
+             "Teagan", "Ted", "Teddy", "Tehani", "Teresa", "Teri", "Terrance", 
+             "Terrell", "Terrence", "Terri", "Terry", "Tessa", "Tevin", "Thad", 
+             "Theodore", "Theresa", "Thomas", "Tia", "Tiana", "Tiara", "Tiare", 
+             "Tierra", "Tiffany", "Tim", "Timmy", "Timothy", "Tina", "Toby", 
+             "Todd", "Tom", "Tommie", "Tommy", "Toni", "Tonia", "Tony", 
+             "Tonya", "Tori", "Tracey", "Traci", "Tracie", "Tracy", "Travis", 
+             "Trent", "Trenton", "Trevon", "Trevor", "Trey", "Tricia", "Trina", 
+             "Trinity", "Trisha", "Trista", "Tristan", "Tristen", "Troy", "Tucker", 
+             "Ty", "Tyler", "Tyra", "Tyree", "Tyrel", "Tyrell", "Tyrese", 
+             "Tyrone", "Tyson", "Unknown", "Unnamed", "Valeria", "Valerie", "Vanessa", 
+             "Vera", "Vernon", "Veronica", "Vicki", "Vickie", "Vicky", "Victor", 
+             "Victoria", "Vincent", "Virginia", "Vivian", "Wade", "Walker", "Walter", 
+             "Wanda", "Warren", "Wassillie", "Wayne", "Wendell", "Wendy", "Wesley", 
+             "Weston", "Whitney", "Willa", "William", "Willie", "Willow", "Wyatt", 
+             "Xander", "Xavier", "Yesenia", "Yolanda", "Yvette", "Yvonne", "Zachariah", 
+             "Zachary", "Zachery", "Zackary", "Zander", "Zane", "Zion", "Zoe", "Zoey"
+         };
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\DataLoader.cs" startline="50" endline="280"><![CDATA[
+         private static string[] _stateIdentifiers =
+         {            
+             "AK", "AL", "AR", "AZ", "CA", "CO", "CT", 
+             "DC", "DE", "FL", "GA", "HI", "IA", "ID", 
+             "IL", "IN", "KS", "KY", "LA", "MA", "MD", 
+             "ME", "MI", "MN", "MO", "MS", "MT", "NC", 
+             "ND", "NE", "NH", "NJ", "NM", "NV", "NY", 
+             "OH", "OK", "OR", "PA", "RI", "SC", "SD", 
+             "TN", "TX", "UT", "VA", "VT", "WA", "WI", 
+             "WV", "WY"
+         };
+ 
+         /// <summary>An array of common names given to babies.</summary>
+         private static string[] _commonPeopleNames = 
+         {            
+             "Aaliyah", "Aaron", "Abbey", "Abbie", "Abby", "Abigail", "Abigale", 
+             "Abigayle", "Abraham", "Adam", "Addison", "Aden", "Adrian", "Adriana", 
+             "Adrianna", "Adrienne", "Agnes", "Aidan", "Aiden", "Aimee", "Aisha", 
+             "Alaina", "Alan", "Alana", "Albert", "Alberto", "Alec", "Alejandra", 
+             "Alejandro", "Alex", "Alexa", "Alexande", "Alexander", "Alexandr", "Alexandra", 
+             "Alexandria", "Alexia", "Alexis", "Alexus", "Alfred", "Ali", "Alice", 
+             "Alicia", "Alika", "Alisha", "Alison", "Alissa", "Alivia", "Aliyah", 
+             "Allan", "Allen", "Allie", "Allison", "Allyson", "Alondra", "Alvin", 
+             "Alyson", "Alyssa", "Amanda", "Amari", "Amaya", "Amber", "Amelia", 
+             "Amie", "Amir", "Amy", "Amya", "Ana", "Anahi", "Anastasia", 
+             "Andre", "Andrea", "Andres", "Andrew", "Andy", "Anela", "Angel", 
+             "Angela", "Angelia", "Angelica", "Angelina", "Angelique", "Angelo", "Angie", 
+             "Anita", "Aniya", "Aniyah", "Ann", "Anna", "Annabelle", "Anne", 
+             "Annette", "Annie", "Annika", "Annmarie", "Ansley", "Anthony", "Antoine", 
+             "Antoinette", "Antonio", "Antwan", "April", "Ariana", "Arianna", "Ariel", 
+             "Arielle", "Arlene", "Armando", "Arnold", "Aron", "Arthur", "Arturo", 
+             "Ashanti", "Ashlee", "Ashleigh", "Ashley", "Ashlyn", "Ashlynn", "Ashton", 
+             "Asia", "Aspen", "Aubrey", "Audra", "Audrey", "Aurora", "Austin", 
+             "Autumn", "Ava", "Avery", "Ayanna", "Ayden", "Ayla", "Baby", 
+             "Babyboy", "Babygirl", "Bailee", "Bailey", "Barbara", "Barry", "Bart", 
+             "Baylee", "Beau", "Becky", "Belinda", "Benjamin", "Bernadette", "Bernard", 
+             "Bertha", "Beth", "Bethany", "Betsy", "Betty", "Beverly", "Bianca", 
+             "Bill", "Billie", "Billy", "Blaine", "Blake", "Blaze", "Bob", 
+             "Bobbi", "Bobbie", "Bobby", "Bonnie", "Boston", "Boyd", "Brad", 
+             "Braden", "Bradford", "Bradley", "Brady", "Branden", "Brandi", "Brandie", 
+             "Brandon", "Brandy", "Braxton", "Brayden", "Breanna", "Breanne", "Brenda", 
+             "Brendan", "Brenden", "Brendon", "Brenna", "Brennan", "Brent", "Brenton", 
+             "Bret", "Brett", "Bria", "Brian", "Briana", "Brianna", "Brianne", 
+             "Bridger", "Bridget", "Brinley", "Britney", "Brittany", "Brittney", "Brock", 
+             "Brodie", "Brody", "Bronson", "Brooke", "Brooklyn", "Brooklynn", "Bruce", 
+             "Bryan", "Bryanna", "Bryant", "Bryce", "Brynlee", "Brynn", "Bryon", 
+             "Bryson", "Byron", "Cade", "Caden", "Cadence", "Cael", "Caitlin", 
+             "Caitlyn", "Caleb", "Callie", "Calvin", "Camden", "Cameron", "Cami", 
+             "Camila", "Camille", "Camryn", "Candace", "Candice", "Cara", "Carissa", 
+             "Carl", "Carla", "Carlos", "Carlton", "Carly", "Carmen", "Carol", 
+             "Carole", "Caroline", "Carolyn", "Carrie", "Carson", "Carter", "Casey", 
+             "Cassandra", "Cassidy", "Cassie", "Catherine", "Cathy", "Catina", "Cayden", 
+             "Cecilia", "Cedric", "Celeste", "Cesar", "Chad", "Chance", "Chandler", 
+             "Chanel", "Chantel", "Chantelle", "Charity", "Charlene", "Charles", "Charlie", 
+             "Charlotte", "Charmaine", "Chase", "Chasity", "Chaya", "Chelsea", "Chelsey", 
+             "Chelsie", "Cheri", "Cherie", "Cheryl", "Cheyanne", "Cheyenne", "Chiquita", 
+             "Chloe", "Chris", "Christa", "Christi", "Christian", "Christie", "Christin", 
+             "Christina", "Christine", "Christopher", "Christy", "Chuck", "Ciara", "Cierra", 
+             "Cindy", "Claire", "Clara", "Clarence", "Clarissa", "Clark", "Claudia", 
+             "Clay", "Clayton", "Clifford", "Clifton", "Clint", "Clinton", "Clyde", 
+             "Cody", "Colby", "Cole", "Colin", "Colleen", "Collin", "Colten", 
+             "Colter", "Colton", "Conner", "Connie", "Connor", "Conor", "Constance", 
+             "Cooper", "Cora", "Corbin", "Corey", "Corinne", "Cornelius", "Cortney", 
+             "Cory", "Coty", "Courtney", "Craig", "Cristian", "Cristina", "Crystal", 
+             "Curt", "Curtis", "Cynthia", "Cyrus", "Daisy", "Dakota", "Dale", 
+             "Dallas", "Dallin", "Dalton", "Damari", "Damian", "Damien", "Damon", 
+             "Dan", "Dana", "Dane", "Dangelo", "Daniel", "Daniela", "Danielle", 
+             "Danny", "Dante", "Daquan", "Darcy", "Daren", "Darian", "Darin", 
+             "Darius", "Darla", "Darlene", "Darnell", "Darrell", "Darren", "Darrin", 
+             "Darryl", "Darwin", "Daryl", "Dave", "David", "Davon", "Dawn", 
+             "Dawson", "Dayna", "Dean", "Deandre", "Deangelo", "Deann", "Deanna", 
+             "Debbie", "Debora", "Deborah", "Debra", "Declan", "Deja", "Delaney", 
+             "Delonte", "Demarcus", "Demetrius", "Denali", "Deneen", "Denis", "Denise", 
+             "Dennis", "Denzel", "Derek", "Derrick", "Desiree", "Desmond", "Destinee", 
+             "Destiny", "Devante", "Devin", "Devon", "Devonte", "Dexter", "Diamond", 
+             "Diana", "Diane", "Dianna", "Dianne", "Diego", "Dillon", "Dina", 
+             "Dionne", "Dixie", "Dolores", "Domenic", "Dominic", "Dominick", "Dominique", 
+             "Don", "Donald", "Donna", "Donnell", "Donnie", "Donovan", "Donte", 
+             "Dora", "Doreen", "Doris", "Dorothy", "Doug", "Douglas", "Drake", 
+             "Drew", "Duane", "Duke", "Dustin", "Dusty", "Dwayne", "Dwight", 
+             "Dylan", "Earl", "Earnest", "Easton", "Ebony", "Ed", "Eddie", "Eden", 
+             "Edgar", "Edmund", "Edna", "Eduardo", "Edward", "Edwin", "Eileen", 
+             "Elaine", "Eleanor", "Elena", "Eli", "Elias", "Elijah", "Elise", 
+             "Eliza", "Elizabet", "Elizabeth", "Ella", "Ellen", "Ellie", "Elton", 
+             "Emilee", "Emilio", "Emily", "Emma", "Emmanuel", "Enrique", "Eric", 
+             "Erica", "Erick", "Erik", "Erika", "Erin", "Ernest", "Esmeralda", 
+             "Esperanza", "Estevan", "Esther", "Estrella", "Ethan", "Eugene", "Eva", 
+             "Evan", "Evelyn", "Everett", "Ezekiel", "Ezra", "Fabian", "Faith", 
+             "Farrah", "Felicia", "Female", "Fernando", "Finn", "Fiona", "Floyd", 
+             "Forrest", "Frances", "Francesca", "Francine", "Francis", "Francisco", "Frank", 
+             "Franklin", "Fred", "Freddie", "Frederick", "Fredrick", "Gabriel", "Gabriela", 
+             "Gabriella", "Gabrielle", "Gage", "Gail", "Garrett", "Gary", "Gavin", 
+             "Gayla", "Gayle", "Gene", "Genesis", "Geoffrey", "George", "Gerald", 
+             "Geraldine", "Gerard", "Gerardo", "Gianna", "Gilbert", "Gillian", "Gina", 
+             "Ginger", "Giovanni", "Giselle", "Glen", "Glenda", "Glenn", "Gloria", 
+             "Gordon", "Grace", "Gracie", "Graham", "Grant", "Grayson", "Greg", 
+             "Gregg", "Gregory", "Greta", "Gretchen", "Griffin", "Guadalupe", "Guy", 
+             "Gwen", "Gwendolyn", "Hailee", "Hailey", "Haleigh", "Haley", "Halle", 
+             "Hallie", "Hanna", "Hannah", "Harley", "Harmony", "Harold", "Harrison", 
+             "Harry", "Hayden", "Haylee", "Hayley", "Heath", "Heather", "Heaven", 
+             "Hector", "Heidi", "Helen", "Henry", "Herbert", "Hilary", "Hillary", 
+             "Holly", "Hope", "Howard", "Hudson", "Hunter", "Ian", "Iesha", "Igor",
+             "Ikaika", "Imani", "India", "Infant", "Ira", "Irene", "Iris", 
+             "Irma", "Isaac", "Isabel", "Isabella", "Isabelle", "Isaiah", "Isiah", 
+             "Israel", "Ivan", "Ivy", "Jace", "Jack", "Jackie", "Jackson", 
+             "Jaclyn", "Jacob", "Jacqueline", "Jada", "Jade", "Jaden", "Jadyn", 
+             "Jaheim", "Jaime", "Jakayla", "Jake", "Jakob", "Jalen", "Jamaal", 
+             "Jamal", "Jamar", "Jamarion", "James", "Jami", "Jamia", "Jamie", 
+             "Jan", "Jana", "Janae", "Janay", "Jane", "Janelle", "Janet", 
+             "Janice", "Janiya", "Jaquan", "Jaqueline", "Jared", "Jarrod", "Jarvis", 
+             "Jasmin", "Jasmine", "Jason", "Javier", "Javon", "Jaxon", "Jay", 
+             "Jayden", "Jayla", "Jaylen", "Jaylon", "Jayme", "Jayson", "Jazmin", 
+             "Jazmine", "Jean", "Jeanette", "Jeanne", "Jeannine", "Jeff", "Jeffery", 
+             "Jeffrey", "Jenifer", "Jenna", "Jennie", "Jennifer", "Jenny", "Jeremiah", 
+             "Jeremy", "Jermaine", "Jerome", "Jerry", "Jess", "Jesse", "Jessica", 
+             "Jessie", "Jesus", "Jill", "Jillian", "Jim", "Jimmie", "Jimmy", 
+             "Jo", "Joan", "Joann", "Joanna", "Joanne", "Jocelyn", "Jodi", 
+             "Jodie", "Jody", "Joe", "Joel", "Joey", "Johanna", "John", 
+             "Johnathan", "Johnathon", "Johnnie", "Johnny", "Jolene", "Jon", "Jonah", 
+             "Jonathan", "Jonathon", "Joni", "Jordan", "Jordyn", "Jorge", "Jory", 
+             "Jose", "Joseph", "Josephine", "Josette", "Joshua", "Josiah", "Josie", 
+             "Joy", "Joyce", "Juan", "Juanita", "Judith", "Judy", "Julia", 
+             "Julian", "Juliana", "Julianna", "Julie", "Julio", "Julissa", "Julius", 
+             "June", "Justice", "Justin", "Justine", "Juwan", "Kade", "Kaden", 
+             "Kadence", "Kadijah", "Kahealani", "Kai", "Kaila", "Kailee", "Kailey", 
+             "Kaimana", "Kainalu", "Kainoa", "Kaitlin", "Kaitlyn", "Kalani", "Kaleb", 
+             "Kalena", "Kamalani", "Kameron", "Kamryn", "Kanani", "Kapena", "Kara", 
+             "Karen", "Kari", "Karin", "Karina", "Karissa", "Karl", "Karla", 
+             "Karlee", "Kasey", "Kassandra", "Kassidy", "Kate", "Katelyn", "Katelynn", 
+             "Katharine", "Katherin", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", 
+             "Katina", "Katlyn", "Katrina", "Kawena", "Kawika", "Kay", "Kaya", 
+             "Kaycee", "Kayden", "Kaydence", "Kayla", "Kaylee", "Kayleigh", "Keanu", 
+             "Keaton", "Keegan", "Keenan", "Kehaulani", "Keira", "Keisha", "Keith", 
+             "Kekoa", "Kelley", "Kelli", "Kellie", "Kelly", "Kelsey", "Kelsie", 
+             "Kelvin", "Ken", "Kendall", "Kendra", "Kendrick", "Kennedy", "Kenneth", 
+             "Kenny", "Kent", "Kenya", "Keola", "Keoni", "Keri", "Kerri", 
+             "Kerry", "Kevin", "Kevon", "Khadijah", "Khalil", "Kia", "Kiana", 
+             "Kiani", "Kiara", "Kierra", "Kim", "Kimberlee", "Kimberley", "Kimberly", 
+             "Kira", "Kirk", "Kirsten", "Kisha", "Kizzy", "Kobe", "Kody", 
+             "Kory", "Kris", "Krista", "Kristen", "Kristi", "Kristie", "Kristin", 
+             "Kristina", "Kristine", "Kristopher", "Kristy", "Krystal", "Krystle", "Kurt", 
+             "Kyla", "Kyle", "Kylee", "Kyleigh", "Kyler", "Kylie", "Kyra", 
+             "Lacey", "Laci", "Lacy", "Ladarius", "Ladonna", "Laila", "Lakeisha", 
+             "Lakesha", "Lakisha", "Lamar", "Lamont", "Lana", "Lance", "Landen", 
+             "Landon", "Lane", "Lani", "Larry", "Lashawn", "Lashonda", "Latasha", 
+             "Latisha", "Latonya", "Latoya", "Laura", "Laurel", "Lauren", "Laurie", 
+             "Lauryn", "Lawanda", "Lawrence", "Layla", "Leah", "Leann", "Lee", 
+             "Leigh", "Leila", "Leilani", "Lena", "Leo", "Leon", "Leona", 
+             "Leonard", "Leonardo", "Leroy", "Lesley", "Leslie", "Leticia", "Levi", 
+             "Lewis", "Lexi", "Liam", "Liana", "Liliana", "Lillian", "Lillie", 
+             "Lilly", "Lily", "Linda", "Lindsay", "Lindsey", "Lisa", "Liza", 
+             "Lizbeth", "Lloyd", "Logan", "Lois", "London", "Lonnie", "Lora", 
+             "Loren", "Lorena", "Lorenzo", "Loretta", "Lori", "Loriann", "Lorna", 
+             "Lorraine", "Lorrie", "Louis", "Louise", "Lucas", "Lucia", "Lucy", 
+             "Luis", "Luke", "Lydia", "Lyle", "Lynda", "Lynette", "Lynn", 
+             "Lynne", "Mackenzie", "Macy", "Maddison", "Madeleine", "Madeline", "Madelyn", 
+             "Madison", "Madisyn", "Maeve", "Maggie", "Mahealani", "Mahina", "Maia", 
+             "Maile", "Makana", "Makayla", "Makenna", "Makenzie", "Makoa", "Malachi", 
+             "Malcolm", "Male", "Malia", "Malik", "Mallory", "Mandi", "Mandy", 
+             "Manuel", "Marc", "Marcel", "Marcella", "Marci", "Marcia", "Marco", 
+             "Marcos", "Marcus", "Marcy", "Margaret", "Mari", "Maria", "Mariah", 
+             "Mariana", "Marianne", "Maribel", "Marie", "Marilyn", "Marina", "Mario", 
+             "Marion", "Marisa", "Marisol", "Marissa", "Mark", "Marlene", "Marlon", 
+             "Marquis", "Marquise", "Marquita", "Marsha", "Marshall", "Martha", "Martin", 
+             "Marty", "Marvin", "Mary", "Maryann", "Mason", "Mathew", "Matt", 
+             "Matthew", "Maureen", "Maurice", "Max", "Maxwell", "Maya", "Mayra", 
+             "Mckay", "Mckayla", "Mckenna", "Mckenzie", "Meagan", "Meaghan", "Megan", 
+             "Meghan", "Mekhi", "Melanie", "Melia", "Melinda", "Melissa", "Melody", 
+             "Melvin", "Mercedes", "Meredith", "Mia", "Micah", "Michael", "Michaela", 
+             "Micheal", "Michele", "Michelle", "Miguel", "Mikaela", "Mikayla", "Mike", 
+             "Miles", "Milton", "Mindy", "Miracle", "Miranda", "Misti", "Misty", 
+             "Mitchell", "Molly", "Monica", "Monique", "Monte", "Morgan", "Moshe", 
+             "Mya", "Myles", "Myra", "Myron", "Nadia", "Nadine", "Nainoa", 
+             "Nakia", "Nalani", "Nancy", "Nanea", "Naomi", "Nasir", "Natalia", 
+             "Natalie", "Natasha", "Nathan", "Nathaniel", "Nayeli", "Neal", "Neil", 
+             "Nelson", "Nevaeh", "Nia", "Nicholas", "Nichole", "Nick", "Nickolas", 
+             "Nicolas", "Nicole", "Nikita", "Nikki", "Nina", "Noa", "Noah", 
+             "Nolan", "Nora", "Norma", "Norman", "Normand", "Notnamed", "Nyasia", 
+             "Oliver", "Olivia", "Omar", "Omarion", "Orlando", "Oscar", "Owen", 
+             "Paige", "Pam", "Pamela", "Paris", "Parker", "Pat", "Patrice", 
+             "Patricia", "Patrick", "Patti", "Patty", "Paul", "Paula", "Pauline", 
+             "Payton", "Pedro", "Peggy", "Penny", "Perry", "Peter", "Peyton", 
+             "Philip", "Phillip", "Phoebe", "Phyllis", "Piper", "Pooja", "Porter", "Precious", 
+             "Preston", "Priscilla", "Quentin", "Quinn", "Quinton", "Rachael", "Rachel", 
+             "Rachelle", "Raekwon", "Rafael", "Raheem", "Ralph", "Ramon", "Ramona", 
+             "Randal", "Randall", "Randi", "Randy", "Raquel", "Rashad", "Raul", 
+             "Raven", "Ray", "Raymond", "Reagan", "Rebecca", "Rebekah", "Reed", 
+             "Reese", "Regina", "Reginald", "Reid", "Renae", "Renata", "Rene", 
+             "Renee", "Rex", "Rhonda", "Ricardo", "Richard", "Rick", "Rickey", 
+             "Ricky", "Riley", "Rita", "Robert", "Roberta", "Roberto", "Robin", 
+             "Robyn", "Rochelle", "Roderick", "Rodney", "Roger", "Roland", "Ron", 
+             "Ronald", "Ronda", "Ronnie", "Roosevelt", "Rory", "Rosa", "Rose", 
+             "Rosemary", "Rosie", "Ross", "Rowena", "Roxanne", "Roy", "Royce", 
+             "Ruben", "Ruby", "Rudy", "Russell", "Ruth", "Ryan", "Ryder", 
+             "Ryker", "Rylan", "Rylee", "Rylie", "Sabrina", "Sade", "Sadie", 
+             "Sage", "Sally", "Salvador", "Salvatore", "Sam", "Samantha", "Sammy", 
+             "Samuel", "Sandra", "Sandy", "Saniya", "Santana", "Santiago", "Sara", 
+             "Sarah", "Sasha", "Savanna", "Savannah", "Sawyer", "Scott", "Scottie", 
+             "Scotty", "Sean", "Sebastian", "Selena", "Serena", "Serenity", "Sergio", 
+             "Seth", "Shana", "Shane", "Shania", "Shanice", "Shaniqua", "Shanna", 
+             "Shannon", "Shantel", "Shaquille", "Shari", "Sharon", "Shaun", "Shauna", 
+             "Shawn", "Shawna", "Shayden", "Shayla", "Shaylee", "Shayna", "Sheena", 
+             "Sheila", "Shelbi", "Shelby", "Sheldon", "Shelia", "Shelley", "Shelly", 
+             "Sheri", "Sherri", "Sherrie", "Sherry", "Sheryl", "Shirley", "Shyla", 
+             "Sidney", "Sienna", "Sierra", "Silas", "Simone", "Skylar", "Skyler", 
+             "Sofia", "Sonia", "Sonja", "Sonya", "Sophia", "Sophie", "Spencer", 
+             "Stacey", "Staci", "Stacie", "Stacy", "Stanley", "Stefanie", "Stella", 
+             "Stephani", "Stephanie", "Stephen", "Stephon", "Steve", "Steven", "Stuart", 
+             "Sue", "Summer", "Susan", "Suzanne", "Sydney", "Sylvia", "Tabitha", 
+             "Talia", "Tamara", "Tameka", "Tami", "Tamia", "Tamika", "Tammie", 
+             "Tammy", "Tania", "Tanner", "Tanya", "Tara", "Taryn", "Tasha", 
+             "Tate", "Tatiana", "Tatum", "Tatyana", "Tavon", "Tayla", "Taylor", 
+             "Teagan", "Ted", "Teddy", "Tehani", "Teresa", "Teri", "Terrance", 
+             "Terrell", "Terrence", "Terri", "Terry", "Tessa", "Tevin", "Thad", 
+             "Theodore", "Theresa", "Thomas", "Tia", "Tiana", "Tiara", "Tiare", 
+             "Tierra", "Tiffany", "Tim", "Timmy", "Timothy", "Tina", "Toby", 
+             "Todd", "Tom", "Tommie", "Tommy", "Toni", "Tonia", "Tony", 
+             "Tonya", "Tori", "Tracey", "Traci", "Tracie", "Tracy", "Travis", 
+             "Trent", "Trenton", "Trevon", "Trevor", "Trey", "Tricia", "Trina", 
+             "Trinity", "Trisha", "Trista", "Tristan", "Tristen", "Troy", "Tucker", 
+             "Ty", "Tyler", "Tyra", "Tyree", "Tyrel", "Tyrell", "Tyrese", 
+             "Tyrone", "Tyson", "Unknown", "Unnamed", "Valeria", "Valerie", "Vanessa", 
+             "Vera", "Vernon", "Veronica", "Vicki", "Vickie", "Vicky", "Victor", 
+             "Victoria", "Vincent", "Virginia", "Vivian", "Wade", "Walker", "Walter", 
+             "Wanda", "Warren", "Wassillie", "Wayne", "Wendell", "Wendy", "Wesley", 
+             "Weston", "Whitney", "Willa", "William", "Willie", "Willow", "Wyatt", 
+             "Xander", "Xavier", "Yesenia", "Yolanda", "Yvette", "Yvonne", "Zachariah", 
+             "Zachary", "Zachery", "Zackary", "Zander", "Zane", "Zion", "Zoe", "Zoey"
+         };
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Properties\Resources.Designer.cs" startline="31" endline="33"><![CDATA[
+         [global
+         internal Resources() {
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Properties\Resources.Designer.cs" startline="34" endline="46"><![CDATA[
+         
+         /// <summary>
+         ///   Returns the cached ResourceManager instance used by this class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 if (object.ReferenceEquals(resourceMan, null)) {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+         }
+         
+         /// <summary>
+         ///   Overrides the current thread's CurrentUICulture property for all
+         ///   resource lookups using this strongly typed resource class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 return resourceCulture;
+             }
+             set {
+                 resourceCulture = value;
+             }
+         }
+     }
+ }
+                 if (object.ReferenceEquals(resourceMan, null)) {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Properties\Resources.Designer.cs" startline="47" endline="57"><![CDATA[
+         }
+         
+         /// <summary>
+         ///   Overrides the current thread's CurrentUICulture property for all
+         ///   resource lookups using this strongly typed resource class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 return resourceCulture;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Properties\Resources.Designer.cs" startline="58" endline="60"><![CDATA[
+             set {
+                 resourceCulture = value;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\MainWindow.xaml.cs" startline="30" endline="50"><![CDATA[
+         private QueryData _userQuery = new QueryData();
+         private List<BabyInfo> _babies = new List<BabyInfo>();
+         private ParallelQuery<BabyInfo> _parallelQuery;
+         private IEnumerable<BabyInfo> _sequentialQuery;
+         private long _lastSeqRun = 0, _lastParRun = 0;
+         private DispatcherTimer _sizeChangedTimer;
+         private TaskFactory _uiTasks;
+ 
+         public Window1()
+         {
+             // Initialize controls
+             InitializeComponent();
+             
+             // Setup a timer for the slider control so that we don't load for every single tick change
+             _sizeChangedTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(.5) };
+             _sizeChangedTimer.Tick += (sender, e) =>
+             {
+                 ((DispatcherTimer)sender).Stop();
+                 LoadAsync((int)slNumRecords.Value);
+             };
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\MainWindow.xaml.cs" startline="51" endline="67"><![CDATA[
+ 
+         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+         {
+             // Create a UI task factory
+             _uiTasks = new TaskFactory(TaskScheduler.FromCurrentSynchronizationContext());
+ 
+             // Set up the processors slider
+             slProcessorsToUse.Minimum = 1;
+             slProcessorsToUse.Maximum = slProcessorsToUse.Value = Environment.ProcessorCount;
+ 
+             // Setup the label controls for the sliders
+             lblProcessorsToUse.Content = string.Format(PROCESSORS_TO_USE_FORMAT, (int)slProcessorsToUse.Value);
+             lblSize.Content = string.Format(DATA_TO_USE_FORMAT, (int)slNumRecords.Value);
+ 
+             // Load the data for the app
+             LoadAsync((int)slNumRecords.Value);
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\MainWindow.xaml.cs" startline="68" endline="73"><![CDATA[
+ 
+         private void btnRunLinq_Click(object sender, RoutedEventArgs e)
+         {
+             // Run sequentially
+             RunQuery(() => _sequentialQuery.ToList(), graphLinq, lblLinqTime);
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\MainWindow.xaml.cs" startline="74" endline="79"><![CDATA[
+ 
+         private void btnRunPlinq_Click(object sender, RoutedEventArgs e)
+         {
+             // Run in parallel
+             RunQuery(() => _parallelQuery.ToList(), graphPlinq, lblPlinqTime);
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\MainWindow.xaml.cs" startline="80" endline="132"><![CDATA[
+ 
+         internal class QueryData { public string Name, State; }
+ 
+         private void RunQuery(Func<List<BabyInfo>> query, Graph targetGraph, Label targetLabel)
+         {
+             // Get query info values from the text box.
+             _userQuery.Name = txtQueryName.Text.Trim();
+             _userQuery.State = txtQueryState.Text.Trim();
+             if (_userQuery.Name.Length == 0 || _userQuery.State.Length == 0) return;
+             
+             // Disable UI interaction
+             lblSpeedup.Visibility = Visibility.Hidden;
+             targetLabel.Visibility = Visibility.Hidden;
+             targetGraph.Visibility = Visibility.Hidden;
+             ConfigureUiControls(false);
+ 
+             // Do query asynchronously
+             Task.Factory.StartNew(delegate
+             {
+                 // Execute and time the query
+                 List<BabyInfo> results = null;
+                 var sw = Stopwatch.StartNew();
+                 for (int i = 0; i < RUN_MULTIPLIER; i++) results = query();
+                 sw.Stop();
+ 
+                 // Update the UI
+                 _uiTasks.StartNew(()=>
+                 {
+                     // Update the run time
+                     if (targetLabel == lblLinqTime) _lastSeqRun = sw.ElapsedTicks;
+                     else _lastParRun = sw.ElapsedTicks;
+ 
+                     // Update the graph
+                     targetGraph.Configure(results);
+                     targetGraph.Visibility = Visibility.Visible;
+                     targetGraph.InvalidateVisual();
+ 
+                     // Display the execution time
+                     targetLabel.Content = string.Format("{0
+                     targetLabel.Visibility = Visibility.Visible;
+ 
+                     // Show any speedup
+                     if (_lastSeqRun != 0 && _lastParRun != 0)
+                     {
+                         lblSpeedup.Content = string.Format("{0
+                         lblSpeedup.Visibility = Visibility.Visible;
+                     }
+ 
+                     // Allow the user to interact again
+                     ConfigureUiControls(true);
+                 });
+             });
+         }
+ 
+         private void LoadAsync(int numRecords)
+         {
+             // Loading new data, so hide and reset old timings
+             lblLinqTime.Visibility = lblPlinqTime.Visibility = lblSpeedup.Visibility = Visibility.Hidden;
+             _lastSeqRun = _lastParRun = 0;
+ 
+             // Clear the screen
+             graphLinq.Visibility = graphPlinq.Visibility = Visibility.Hidden;
+             ConfigureUiControls(false);
+ 
+             // Load all of the names asynchronously; when done, update the UI
+             Task.Factory.StartNew(delegate
+             {
+                 _babies = DataLoader.GenerateRandom(numRecords, YEAR_START, YEAR_END);
+                 _uiTasks.StartNew(()=>
+                 {
+                     InitializeQueries();
+                     ConfigureUiControls(true);
+                 });
+             });
+         }
+ 
+         private void ConfigureUiControls(bool allowUserInteraction)
+         {
+             // Controls that the user can interact with
+             txtQueryName.IsEnabled = txtQueryState.IsEnabled = btnRunLinq.IsEnabled = btnRunPlinq.IsEnabled =
+                 slProcessorsToUse.IsEnabled = slNumRecords.IsEnabled = allowUserInteraction;
+         }
+ 
+ 
+         private void slSize_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+         {
+             // Handle data size slider updates
+             if (slNumRecords.IsVisible)
+             {
+                 lblSize.Content = string.Format(DATA_TO_USE_FORMAT, (int)slNumRecords.Value);
+                 _sizeChangedTimer.Stop();
+                 _sizeChangedTimer.Start();
+             }
+         }
+ 
+         private void slProcessorsToUse_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+         {
+             // Handle processors to use updates
+             if (slProcessorsToUse.IsVisible)
+             {
+                 lblProcessorsToUse.Content = string.Format(PROCESSORS_TO_USE_FORMAT, (int)slProcessorsToUse.Value);
+                 InitializeQueries();
+             }
+         }
+     }
+ }
+         {
+             // Get query info values from the text box.
+             _userQuery.Name = txtQueryName.Text.Trim();
+             _userQuery.State = txtQueryState.Text.Trim();
+             if (_userQuery.Name.Length == 0 || _userQuery.State.Length == 0) return;
+             
+             // Disable UI interaction
+             lblSpeedup.Visibility = Visibility.Hidden;
+             targetLabel.Visibility = Visibility.Hidden;
+             targetGraph.Visibility = Visibility.Hidden;
+             ConfigureUiControls(false);
+ 
+             // Do query asynchronously
+             Task.Factory.StartNew(delegate
+             {
+                 // Execute and time the query
+                 List<BabyInfo> results = null;
+                 var sw = Stopwatch.StartNew();
+                 for (int i = 0; i < RUN_MULTIPLIER; i++) results = query();
+                 sw.Stop();
+ 
+                 // Update the UI
+                 _uiTasks.StartNew(()=>
+                 {
+                     // Update the run time
+                     if (targetLabel == lblLinqTime) _lastSeqRun = sw.ElapsedTicks;
+                     else _lastParRun = sw.ElapsedTicks;
+ 
+                     // Update the graph
+                     targetGraph.Configure(results);
+                     targetGraph.Visibility = Visibility.Visible;
+                     targetGraph.InvalidateVisual();
+ 
+                     // Display the execution time
+                     targetLabel.Content = string.Format("{0
+                     targetLabel.Visibility = Visibility.Visible;
+ 
+                     // Show any speedup
+                     if (_lastSeqRun != 0 && _lastParRun != 0)
+                     {
+                         lblSpeedup.Content = string.Format("{0
+                         lblSpeedup.Visibility = Visibility.Visible;
+                     }
+ 
+                     // Allow the user to interact again
+                     ConfigureUiControls(true);
+                 });
+             });
+         }
+ 
+         private void LoadAsync(int numRecords)
+         {
+             // Loading new data, so hide and reset old timings
+             lblLinqTime.Visibility = lblPlinqTime.Visibility = lblSpeedup.Visibility = Visibility.Hidden;
+             _lastSeqRun = _lastParRun = 0;
+ 
+             // Clear the screen
+             graphLinq.Visibility = graphPlinq.Visibility = Visibility.Hidden;
+             ConfigureUiControls(false);
+ 
+             // Load all of the names asynchronously; when done, update the UI
+             Task.Factory.StartNew(delegate
+             {
+                 _babies = DataLoader.GenerateRandom(numRecords, YEAR_START, YEAR_END);
+                 _uiTasks.StartNew(()=>
+                 {
+                     InitializeQueries();
+                     ConfigureUiControls(true);
+                 });
+             });
+         }
+ 
+         private void ConfigureUiControls(bool allowUserInteraction)
+         {
+             // Controls that the user can interact with
+             txtQueryName.IsEnabled = txtQueryState.IsEnabled = btnRunLinq.IsEnabled = btnRunPlinq.IsEnabled =
+                 slProcessorsToUse.IsEnabled = slNumRecords.IsEnabled = allowUserInteraction;
+         }
+ 
+ 
+         private void slSize_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+         {
+             // Handle data size slider updates
+             if (slNumRecords.IsVisible)
+             {
+                 lblSize.Content = string.Format(DATA_TO_USE_FORMAT, (int)slNumRecords.Value);
+                 _sizeChangedTimer.Stop();
+                 _sizeChangedTimer.Start();
+             }
+         }
+ 
+         private void slProcessorsToUse_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+         {
+             // Handle processors to use updates
+             if (slProcessorsToUse.IsVisible)
+             {
+                 lblProcessorsToUse.Content = string.Format(PROCESSORS_TO_USE_FORMAT, (int)slProcessorsToUse.Value);
+                 InitializeQueries();
+             }
+         }
+     }
+ }
+             if (_userQuery.Name.Length == 0 || _userQuery.State.Length == 0) return;
+             
+             // Disable UI interaction
+             lblSpeedup.Visibility = Visibility.Hidden;
+             targetLabel.Visibility = Visibility.Hidden;
+             targetGraph.Visibility = Visibility.Hidden;
+             ConfigureUiControls(false);
+ 
+             // Do query asynchronously
+             Task.Factory.StartNew(delegate
+             {
+                 // Execute and time the query
+                 List<BabyInfo> results = null;
+                 var sw = Stopwatch.StartNew();
+                 for (int i = 0; i < RUN_MULTIPLIER; i++) results = query();
+                 sw.Stop();
+ 
+                 // Update the UI
+                 _uiTasks.StartNew(()=>
+                 {
+                     // Update the run time
+                     if (targetLabel == lblLinqTime) _lastSeqRun = sw.ElapsedTicks;
+                     else _lastParRun = sw.ElapsedTicks;
+ 
+                     // Update the graph
+                     targetGraph.Configure(results);
+                     targetGraph.Visibility = Visibility.Visible;
+                     targetGraph.InvalidateVisual();
+ 
+                     // Display the execution time
+                     targetLabel.Content = string.Format("{0
+                     targetLabel.Visibility = Visibility.Visible;
+ 
+                     // Show any speedup
+                     if (_lastSeqRun != 0 && _lastParRun != 0)
+                     {
+                         lblSpeedup.Content = string.Format("{0
+                         lblSpeedup.Visibility = Visibility.Visible;
+                     }
+ 
+                     // Allow the user to interact again
+                     ConfigureUiControls(true);
+                 });
+             });
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\MainWindow.xaml.cs" startline="133" endline="154"><![CDATA[
+ 
+         private void LoadAsync(int numRecords)
+         {
+             // Loading new data, so hide and reset old timings
+             lblLinqTime.Visibility = lblPlinqTime.Visibility = lblSpeedup.Visibility = Visibility.Hidden;
+             _lastSeqRun = _lastParRun = 0;
+ 
+             // Clear the screen
+             graphLinq.Visibility = graphPlinq.Visibility = Visibility.Hidden;
+             ConfigureUiControls(false);
+ 
+             // Load all of the names asynchronously; when done, update the UI
+             Task.Factory.StartNew(delegate
+             {
+                 _babies = DataLoader.GenerateRandom(numRecords, YEAR_START, YEAR_END);
+                 _uiTasks.StartNew(()=>
+                 {
+                     InitializeQueries();
+                     ConfigureUiControls(true);
+                 });
+             });
+         }
+ 
+         private void ConfigureUiControls(bool allowUserInteraction)
+         {
+             // Controls that the user can interact with
+             txtQueryName.IsEnabled = txtQueryState.IsEnabled = btnRunLinq.IsEnabled = btnRunPlinq.IsEnabled =
+                 slProcessorsToUse.IsEnabled = slNumRecords.IsEnabled = allowUserInteraction;
+         }
+ 
+ 
+         private void slSize_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+         {
+             // Handle data size slider updates
+             if (slNumRecords.IsVisible)
+             {
+                 lblSize.Content = string.Format(DATA_TO_USE_FORMAT, (int)slNumRecords.Value);
+                 _sizeChangedTimer.Stop();
+                 _sizeChangedTimer.Start();
+             }
+         }
+ 
+         private void slProcessorsToUse_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+         {
+             // Handle processors to use updates
+             if (slProcessorsToUse.IsVisible)
+             {
+                 lblProcessorsToUse.Content = string.Format(PROCESSORS_TO_USE_FORMAT, (int)slProcessorsToUse.Value);
+                 InitializeQueries();
+             }
+         }
+     }
+ }
+         {
+             // Loading new data, so hide and reset old timings
+             lblLinqTime.Visibility = lblPlinqTime.Visibility = lblSpeedup.Visibility = Visibility.Hidden;
+             _lastSeqRun = _lastParRun = 0;
+ 
+             // Clear the screen
+             graphLinq.Visibility = graphPlinq.Visibility = Visibility.Hidden;
+             ConfigureUiControls(false);
+ 
+             // Load all of the names asynchronously; when done, update the UI
+             Task.Factory.StartNew(delegate
+             {
+                 _babies = DataLoader.GenerateRandom(numRecords, YEAR_START, YEAR_END);
+                 _uiTasks.StartNew(()=>
+                 {
+                     InitializeQueries();
+                     ConfigureUiControls(true);
+                 });
+             });
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\MainWindow.xaml.cs" startline="155" endline="161"><![CDATA[
+ 
+         private void ConfigureUiControls(bool allowUserInteraction)
+         {
+             // Controls that the user can interact with
+             txtQueryName.IsEnabled = txtQueryState.IsEnabled = btnRunLinq.IsEnabled = btnRunPlinq.IsEnabled =
+                 slProcessorsToUse.IsEnabled = slNumRecords.IsEnabled = allowUserInteraction;
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\MainWindow.xaml.cs" startline="162" endline="173"><![CDATA[
+ 
+ 
+         private void slSize_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+         {
+             // Handle data size slider updates
+             if (slNumRecords.IsVisible)
+             {
+                 lblSize.Content = string.Format(DATA_TO_USE_FORMAT, (int)slNumRecords.Value);
+                 _sizeChangedTimer.Stop();
+                 _sizeChangedTimer.Start();
+             }
+         }
+ 
+         private void slProcessorsToUse_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+         {
+             // Handle processors to use updates
+             if (slProcessorsToUse.IsVisible)
+             {
+                 lblProcessorsToUse.Content = string.Format(PROCESSORS_TO_USE_FORMAT, (int)slProcessorsToUse.Value);
+                 InitializeQueries();
+             }
+         }
+     }
+ }
+             {
+                 lblSize.Content = string.Format(DATA_TO_USE_FORMAT, (int)slNumRecords.Value);
+                 _sizeChangedTimer.Stop();
+                 _sizeChangedTimer.Start();
+             }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\MainWindow.xaml.cs" startline="174" endline="183"><![CDATA[
+ 
+         private void slProcessorsToUse_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+         {
+             // Handle processors to use updates
+             if (slProcessorsToUse.IsVisible)
+             {
+                 lblProcessorsToUse.Content = string.Format(PROCESSORS_TO_USE_FORMAT, (int)slProcessorsToUse.Value);
+                 InitializeQueries();
+             }
+         }
+     }
+ }
+             {
+                 lblProcessorsToUse.Content = string.Format(PROCESSORS_TO_USE_FORMAT, (int)slProcessorsToUse.Value);
+                 InitializeQueries();
+             }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Queries.cs" startline="18" endline="36"><![CDATA[
+         {
+             int numProcs = (int)slProcessorsToUse.Value;
+ 
+             // SEQUENTIAL QUERY
+             _sequentialQuery = from b in _babies
+                                where b.Name.Equals(_userQuery.Name, StringComparison.InvariantCultureIgnoreCase) &&
+                                      b.State == _userQuery.State &&
+                                      b.Year >= YEAR_START && b.Year <= YEAR_END
+                                orderby b.Year
+                                select b;
+ 
+             // PARALLEL QUERY
+             _parallelQuery = from b in _babies.AsParallel().WithDegreeOfParallelism(numProcs)
+                              where b.Name.Equals(_userQuery.Name, StringComparison.InvariantCultureIgnoreCase) &&
+                                    b.State == _userQuery.State &&
+                                    b.Year >= YEAR_START && b.Year <= YEAR_END
+                              orderby b.Year
+                              select b;
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\obj\Debug\MainWindow.g.cs" startline="1" endline="1"><![CDATA[
+ ?<Window x
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\obj\Debug\MainWindow.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\obj\Debug\MainWindow.g.cs" startline="5" endline="44"><![CDATA[
+     Title="Baby Names Popularity Search" Height="724.503" Width="1044.599" Background="Black" Name="MainWindow" Loaded="MainWindow_Loaded">
+             <Button Grid.Row="1" Name="btnRunLinq" Margin="0,0,107.099,0" FontSize="20" Grid.Column="1" Grid.ColumnSpan="2" Click="btnRunLinq_Click" ClickMode="Press">
+             <Button Name="btnRunPlinq" Grid.Column="4" Grid.Row="1" Margin="107.013,0,0,0" FontSize="20" Grid.ColumnSpan="2" Click="btnRunPlinq_Click" ClickMode="Press">
+             <Slider Grid.Column="5" Name="slProcessorsToUse" TickPlacement="TopLeft" IsMoveToPointEnabled="False" IsSnapToTickEnabled="True" Grid.Row="5" Foreground="LightGreen" Maximum="16" IsDirectionReversed="False" AutoToolTipPlacement="BottomRight" Value="16" ValueChanged="slProcessorsToUse_ValueChanged" />
+             <Slider AutoToolTipPlacement="BottomRight" Foreground="LightGreen" IsDirectionReversed="False" IsMoveToPointEnabled="False" IsSnapToTickEnabled="False" Maximum="3500000" Name="slNumRecords" TickPlacement="TopLeft" Grid.Column="1" Grid.Row="5" TickFrequency="100" AutoToolTipPrecision="1" Value="3000000" Minimum="10" SmallChange="1" LargeChange="10" Interval="1"  ValueChanged="slSize_ValueChanged" Delay="500" />
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\MainWindow.xaml.cs" startline="46" endline="185"><![CDATA[
+             {
+                 ((DispatcherTimer)sender).Stop();
+                 LoadAsync((int)slNumRecords.Value);
+             };
+         }
+ 
+         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+         {
+             // Create a UI task factory
+             _uiTasks = new TaskFactory(TaskScheduler.FromCurrentSynchronizationContext());
+ 
+             // Set up the processors slider
+             slProcessorsToUse.Minimum = 1;
+             slProcessorsToUse.Maximum = slProcessorsToUse.Value = Environment.ProcessorCount;
+ 
+             // Setup the label controls for the sliders
+             lblProcessorsToUse.Content = string.Format(PROCESSORS_TO_USE_FORMAT, (int)slProcessorsToUse.Value);
+             lblSize.Content = string.Format(DATA_TO_USE_FORMAT, (int)slNumRecords.Value);
+ 
+             // Load the data for the app
+             LoadAsync((int)slNumRecords.Value);
+         }
+ 
+         private void btnRunLinq_Click(object sender, RoutedEventArgs e)
+         {
+             // Run sequentially
+             RunQuery(() => _sequentialQuery.ToList(), graphLinq, lblLinqTime);
+         }
+ 
+         private void btnRunPlinq_Click(object sender, RoutedEventArgs e)
+         {
+             // Run in parallel
+             RunQuery(() => _parallelQuery.ToList(), graphPlinq, lblPlinqTime);
+         }
+ 
+         internal class QueryData { public string Name, State; }
+ 
+         private void RunQuery(Func<List<BabyInfo>> query, Graph targetGraph, Label targetLabel)
+         {
+             // Get query info values from the text box.
+             _userQuery.Name = txtQueryName.Text.Trim();
+             _userQuery.State = txtQueryState.Text.Trim();
+             if (_userQuery.Name.Length == 0 || _userQuery.State.Length == 0) return;
+             
+             // Disable UI interaction
+             lblSpeedup.Visibility = Visibility.Hidden;
+             targetLabel.Visibility = Visibility.Hidden;
+             targetGraph.Visibility = Visibility.Hidden;
+             ConfigureUiControls(false);
+ 
+             // Do query asynchronously
+             Task.Factory.StartNew(delegate
+             {
+                 // Execute and time the query
+                 List<BabyInfo> results = null;
+                 var sw = Stopwatch.StartNew();
+                 for (int i = 0; i < RUN_MULTIPLIER; i++) results = query();
+                 sw.Stop();
+ 
+                 // Update the UI
+                 _uiTasks.StartNew(()=>
+                 {
+                     // Update the run time
+                     if (targetLabel == lblLinqTime) _lastSeqRun = sw.ElapsedTicks;
+                     else _lastParRun = sw.ElapsedTicks;
+ 
+                     // Update the graph
+                     targetGraph.Configure(results);
+                     targetGraph.Visibility = Visibility.Visible;
+                     targetGraph.InvalidateVisual();
+ 
+                     // Display the execution time
+                     targetLabel.Content = string.Format("{0
+                     targetLabel.Visibility = Visibility.Visible;
+ 
+                     // Show any speedup
+                     if (_lastSeqRun != 0 && _lastParRun != 0)
+                     {
+                         lblSpeedup.Content = string.Format("{0
+                         lblSpeedup.Visibility = Visibility.Visible;
+                     }
+ 
+                     // Allow the user to interact again
+                     ConfigureUiControls(true);
+                 });
+             });
+         }
+ 
+         private void LoadAsync(int numRecords)
+         {
+             // Loading new data, so hide and reset old timings
+             lblLinqTime.Visibility = lblPlinqTime.Visibility = lblSpeedup.Visibility = Visibility.Hidden;
+             _lastSeqRun = _lastParRun = 0;
+ 
+             // Clear the screen
+             graphLinq.Visibility = graphPlinq.Visibility = Visibility.Hidden;
+             ConfigureUiControls(false);
+ 
+             // Load all of the names asynchronously; when done, update the UI
+             Task.Factory.StartNew(delegate
+             {
+                 _babies = DataLoader.GenerateRandom(numRecords, YEAR_START, YEAR_END);
+                 _uiTasks.StartNew(()=>
+                 {
+                     InitializeQueries();
+                     ConfigureUiControls(true);
+                 });
+             });
+         }
+ 
+         private void ConfigureUiControls(bool allowUserInteraction)
+         {
+             // Controls that the user can interact with
+             txtQueryName.IsEnabled = txtQueryState.IsEnabled = btnRunLinq.IsEnabled = btnRunPlinq.IsEnabled =
+                 slProcessorsToUse.IsEnabled = slNumRecords.IsEnabled = allowUserInteraction;
+         }
+ 
+ 
+         private void slSize_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+         {
+             // Handle data size slider updates
+             if (slNumRecords.IsVisible)
+             {
+                 lblSize.Content = string.Format(DATA_TO_USE_FORMAT, (int)slNumRecords.Value);
+                 _sizeChangedTimer.Stop();
+                 _sizeChangedTimer.Start();
+             }
+         }
+ 
+         private void slProcessorsToUse_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+         {
+             // Handle processors to use updates
+             if (slProcessorsToUse.IsVisible)
+             {
+                 lblProcessorsToUse.Content = string.Format(PROCESSORS_TO_USE_FORMAT, (int)slProcessorsToUse.Value);
+                 InitializeQueries();
+             }
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\MainWindow.xaml.cs" startline="72" endline="185"><![CDATA[
+             RunQuery(() => _sequentialQuery.ToList(), graphLinq, lblLinqTime);
+         }
+ 
+         private void btnRunPlinq_Click(object sender, RoutedEventArgs e)
+         {
+             // Run in parallel
+             RunQuery(() => _parallelQuery.ToList(), graphPlinq, lblPlinqTime);
+         }
+ 
+         internal class QueryData { public string Name, State; }
+ 
+         private void RunQuery(Func<List<BabyInfo>> query, Graph targetGraph, Label targetLabel)
+         {
+             // Get query info values from the text box.
+             _userQuery.Name = txtQueryName.Text.Trim();
+             _userQuery.State = txtQueryState.Text.Trim();
+             if (_userQuery.Name.Length == 0 || _userQuery.State.Length == 0) return;
+             
+             // Disable UI interaction
+             lblSpeedup.Visibility = Visibility.Hidden;
+             targetLabel.Visibility = Visibility.Hidden;
+             targetGraph.Visibility = Visibility.Hidden;
+             ConfigureUiControls(false);
+ 
+             // Do query asynchronously
+             Task.Factory.StartNew(delegate
+             {
+                 // Execute and time the query
+                 List<BabyInfo> results = null;
+                 var sw = Stopwatch.StartNew();
+                 for (int i = 0; i < RUN_MULTIPLIER; i++) results = query();
+                 sw.Stop();
+ 
+                 // Update the UI
+                 _uiTasks.StartNew(()=>
+                 {
+                     // Update the run time
+                     if (targetLabel == lblLinqTime) _lastSeqRun = sw.ElapsedTicks;
+                     else _lastParRun = sw.ElapsedTicks;
+ 
+                     // Update the graph
+                     targetGraph.Configure(results);
+                     targetGraph.Visibility = Visibility.Visible;
+                     targetGraph.InvalidateVisual();
+ 
+                     // Display the execution time
+                     targetLabel.Content = string.Format("{0
+                     targetLabel.Visibility = Visibility.Visible;
+ 
+                     // Show any speedup
+                     if (_lastSeqRun != 0 && _lastParRun != 0)
+                     {
+                         lblSpeedup.Content = string.Format("{0
+                         lblSpeedup.Visibility = Visibility.Visible;
+                     }
+ 
+                     // Allow the user to interact again
+                     ConfigureUiControls(true);
+                 });
+             });
+         }
+ 
+         private void LoadAsync(int numRecords)
+         {
+             // Loading new data, so hide and reset old timings
+             lblLinqTime.Visibility = lblPlinqTime.Visibility = lblSpeedup.Visibility = Visibility.Hidden;
+             _lastSeqRun = _lastParRun = 0;
+ 
+             // Clear the screen
+             graphLinq.Visibility = graphPlinq.Visibility = Visibility.Hidden;
+             ConfigureUiControls(false);
+ 
+             // Load all of the names asynchronously; when done, update the UI
+             Task.Factory.StartNew(delegate
+             {
+                 _babies = DataLoader.GenerateRandom(numRecords, YEAR_START, YEAR_END);
+                 _uiTasks.StartNew(()=>
+                 {
+                     InitializeQueries();
+                     ConfigureUiControls(true);
+                 });
+             });
+         }
+ 
+         private void ConfigureUiControls(bool allowUserInteraction)
+         {
+             // Controls that the user can interact with
+             txtQueryName.IsEnabled = txtQueryState.IsEnabled = btnRunLinq.IsEnabled = btnRunPlinq.IsEnabled =
+                 slProcessorsToUse.IsEnabled = slNumRecords.IsEnabled = allowUserInteraction;
+         }
+ 
+ 
+         private void slSize_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+         {
+             // Handle data size slider updates
+             if (slNumRecords.IsVisible)
+             {
+                 lblSize.Content = string.Format(DATA_TO_USE_FORMAT, (int)slNumRecords.Value);
+                 _sizeChangedTimer.Stop();
+                 _sizeChangedTimer.Start();
+             }
+         }
+ 
+         private void slProcessorsToUse_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+         {
+             // Handle processors to use updates
+             if (slProcessorsToUse.IsVisible)
+             {
+                 lblProcessorsToUse.Content = string.Format(PROCESSORS_TO_USE_FORMAT, (int)slProcessorsToUse.Value);
+                 InitializeQueries();
+             }
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\MainWindow.xaml.cs" startline="78" endline="185"><![CDATA[
+             RunQuery(() => _parallelQuery.ToList(), graphPlinq, lblPlinqTime);
+         }
+ 
+         internal class QueryData { public string Name, State; }
+ 
+         private void RunQuery(Func<List<BabyInfo>> query, Graph targetGraph, Label targetLabel)
+         {
+             // Get query info values from the text box.
+             _userQuery.Name = txtQueryName.Text.Trim();
+             _userQuery.State = txtQueryState.Text.Trim();
+             if (_userQuery.Name.Length == 0 || _userQuery.State.Length == 0) return;
+             
+             // Disable UI interaction
+             lblSpeedup.Visibility = Visibility.Hidden;
+             targetLabel.Visibility = Visibility.Hidden;
+             targetGraph.Visibility = Visibility.Hidden;
+             ConfigureUiControls(false);
+ 
+             // Do query asynchronously
+             Task.Factory.StartNew(delegate
+             {
+                 // Execute and time the query
+                 List<BabyInfo> results = null;
+                 var sw = Stopwatch.StartNew();
+                 for (int i = 0; i < RUN_MULTIPLIER; i++) results = query();
+                 sw.Stop();
+ 
+                 // Update the UI
+                 _uiTasks.StartNew(()=>
+                 {
+                     // Update the run time
+                     if (targetLabel == lblLinqTime) _lastSeqRun = sw.ElapsedTicks;
+                     else _lastParRun = sw.ElapsedTicks;
+ 
+                     // Update the graph
+                     targetGraph.Configure(results);
+                     targetGraph.Visibility = Visibility.Visible;
+                     targetGraph.InvalidateVisual();
+ 
+                     // Display the execution time
+                     targetLabel.Content = string.Format("{0
+                     targetLabel.Visibility = Visibility.Visible;
+ 
+                     // Show any speedup
+                     if (_lastSeqRun != 0 && _lastParRun != 0)
+                     {
+                         lblSpeedup.Content = string.Format("{0
+                         lblSpeedup.Visibility = Visibility.Visible;
+                     }
+ 
+                     // Allow the user to interact again
+                     ConfigureUiControls(true);
+                 });
+             });
+         }
+ 
+         private void LoadAsync(int numRecords)
+         {
+             // Loading new data, so hide and reset old timings
+             lblLinqTime.Visibility = lblPlinqTime.Visibility = lblSpeedup.Visibility = Visibility.Hidden;
+             _lastSeqRun = _lastParRun = 0;
+ 
+             // Clear the screen
+             graphLinq.Visibility = graphPlinq.Visibility = Visibility.Hidden;
+             ConfigureUiControls(false);
+ 
+             // Load all of the names asynchronously; when done, update the UI
+             Task.Factory.StartNew(delegate
+             {
+                 _babies = DataLoader.GenerateRandom(numRecords, YEAR_START, YEAR_END);
+                 _uiTasks.StartNew(()=>
+                 {
+                     InitializeQueries();
+                     ConfigureUiControls(true);
+                 });
+             });
+         }
+ 
+         private void ConfigureUiControls(bool allowUserInteraction)
+         {
+             // Controls that the user can interact with
+             txtQueryName.IsEnabled = txtQueryState.IsEnabled = btnRunLinq.IsEnabled = btnRunPlinq.IsEnabled =
+                 slProcessorsToUse.IsEnabled = slNumRecords.IsEnabled = allowUserInteraction;
+         }
+ 
+ 
+         private void slSize_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+         {
+             // Handle data size slider updates
+             if (slNumRecords.IsVisible)
+             {
+                 lblSize.Content = string.Format(DATA_TO_USE_FORMAT, (int)slNumRecords.Value);
+                 _sizeChangedTimer.Stop();
+                 _sizeChangedTimer.Start();
+             }
+         }
+ 
+         private void slProcessorsToUse_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+         {
+             // Handle processors to use updates
+             if (slProcessorsToUse.IsVisible)
+             {
+                 lblProcessorsToUse.Content = string.Format(PROCESSORS_TO_USE_FORMAT, (int)slProcessorsToUse.Value);
+                 InitializeQueries();
+             }
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Queries.cs" startline="23" endline="38"><![CDATA[
+                                where b.Name.Equals(_userQuery.Name, StringComparison.InvariantCultureIgnoreCase) &&
+                                      b.State == _userQuery.State &&
+                                      b.Year >= YEAR_START && b.Year <= YEAR_END
+                                orderby b.Year
+                                select b;
+ 
+             // PARALLEL QUERY
+             _parallelQuery = from b in _babies.AsParallel().WithDegreeOfParallelism(numProcs)
+                              where b.Name.Equals(_userQuery.Name, StringComparison.InvariantCultureIgnoreCase) &&
+                                    b.State == _userQuery.State &&
+                                    b.Year >= YEAR_START && b.Year <= YEAR_END
+                              orderby b.Year
+                              select b;
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Queries.cs" startline="26" endline="38"><![CDATA[
+                                orderby b.Year
+                                select b;
+ 
+             // PARALLEL QUERY
+             _parallelQuery = from b in _babies.AsParallel().WithDegreeOfParallelism(numProcs)
+                              where b.Name.Equals(_userQuery.Name, StringComparison.InvariantCultureIgnoreCase) &&
+                                    b.State == _userQuery.State &&
+                                    b.Year >= YEAR_START && b.Year <= YEAR_END
+                              orderby b.Year
+                              select b;
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Queries.cs" startline="31" endline="38"><![CDATA[
+                              where b.Name.Equals(_userQuery.Name, StringComparison.InvariantCultureIgnoreCase) &&
+                                    b.State == _userQuery.State &&
+                                    b.Year >= YEAR_START && b.Year <= YEAR_END
+                              orderby b.Year
+                              select b;
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Queries.cs" startline="34" endline="38"><![CDATA[
+                              orderby b.Year
+                              select b;
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\obj\Debug\App.g.cs" startline="47" endline="4"><![CDATA[
+         public void InitializeComponent() {
+     StartupUri="MainWindow.xaml">
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\obj\Debug\App.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\obj\Debug\App.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Properties\Settings.Designer.cs" startline="21" endline="23"><![CDATA[
+             get {
+                 return defaultInstance;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Properties\Settings.Designer.cs" startline="18" endline="26"><![CDATA[
+         private static Settings defaultInstance = ((Settings)(global
+         
+         public static Settings Default {
+             get {
+                 return defaultInstance;
+             }
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="22" endline="24"><![CDATA[
+         {
+             DefaultStyleKeyProperty.OverrideMetadata(typeof(Graph), new FrameworkPropertyMetadata(typeof(Graph)));
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="25" endline="38"><![CDATA[
+ 
+         private List<BabyInfo> _babyResults;
+         private int _minYear = -1, _maxYear = -1, _maxValue = -1;
+ 
+         internal void Configure(List<BabyInfo> babyResults)
+         {
+             _babyResults = babyResults;
+             if (_babyResults != null && _babyResults.Count > 0)
+             {
+                 _maxValue = _babyResults.Max(b => b.Count);
+                 _minYear = _babyResults.Min(b => b.Year);
+                 _maxYear = _babyResults.Max(b => b.Year);
+             }
+         }
+ 
+         protected override void OnInitialized(EventArgs e)
+         {
+             base.OnInitialized(e);
+             ToolTip = new ToolTip { Content = "Results" };
+         }
+ 
+         protected override void OnMouseMove(MouseEventArgs e)
+         {
+             base.OnMouseMove(e);
+             if (_minYear >= 0 && _maxYear >= 0 && _maxValue >= 0)
+             {
+                 Size s = RenderSize;
+                 Point p = e.GetPosition(this);
+                 int year = _minYear + (int)((p.X / s.Width) * (_maxYear - _minYear));
+ 
+                 ToolTip tt = (ToolTip)this.ToolTip;
+                 tt.Content = "Year
+                 tt.Visibility = Visibility.Visible;
+             }
+         }
+ 
+         protected override void OnRender(DrawingContext drawingContext)
+         {
+             base.OnRender(drawingContext);
+ 
+             // Draw the babies
+             if (_babyResults != null && _babyResults.Count > 0)
+             {
+                 int width = (int)RenderSize.Width, height = (int)RenderSize.Height;
+ 
+                 if (_minYear != _maxYear)
+                 {
+                     // Note
+                     // These are the dimensions everything will be scaled to.
+                     float per_x = (float)width / (_maxYear - _minYear), per_y = (float)height / _maxValue;
+ 
+                     // Draw axis lines
+                     Pen paxis = new Pen(new SolidColorBrush(Color.FromArgb(128, 128, 128, 128)), 1);
+                     for (float i = (height / 10); i < height; i += (height / 10))
+                     {
+                         drawingContext.DrawLine(paxis, new Point(0, i), new Point(width, i));
+                     }
+                     int xvalues = (_maxYear - _minYear);
+                     float xincrement = (float)width / xvalues;
+                     for (float i = xincrement; i < width; i += xincrement)
+                     {
+                         drawingContext.DrawLine(paxis, new Point(i, 0), new Point(i, height));
+                     }
+ 
+                     // Draw data
+                     Pen p = new Pen(new SolidColorBrush(Colors.White), 4);
+                     float curr_x = 0.0f, curr_y = 0.0f, last_x = -1, last_y = -1;
+                     int last_year = -1;
+ 
+                     foreach (BabyInfo b in _babyResults)
+                     {
+                         if (b.Year != last_year)
+                         {
+                             curr_x = (b.Year - _minYear) * per_x;
+                             curr_y = height - (b.Count * per_y);
+                             if (last_x != -1 && last_y != -1)
+                             {
+                                 drawingContext.DrawLine(p, new Point(curr_x, height), new Point(curr_x, curr_y));
+                             }
+                             last_x = curr_x;
+                             last_y = curr_y;
+                             last_year = b.Year;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
+             {
+                 _maxValue = _babyResults.Max(b => b.Count);
+                 _minYear = _babyResults.Min(b => b.Year);
+                 _maxYear = _babyResults.Max(b => b.Year);
+             }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="39" endline="44"><![CDATA[
+ 
+         protected override void OnInitialized(EventArgs e)
+         {
+             base.OnInitialized(e);
+             ToolTip = new ToolTip { Content = "Results" };
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="45" endline="59"><![CDATA[
+ 
+         protected override void OnMouseMove(MouseEventArgs e)
+         {
+             base.OnMouseMove(e);
+             if (_minYear >= 0 && _maxYear >= 0 && _maxValue >= 0)
+             {
+                 Size s = RenderSize;
+                 Point p = e.GetPosition(this);
+                 int year = _minYear + (int)((p.X / s.Width) * (_maxYear - _minYear));
+ 
+                 ToolTip tt = (ToolTip)this.ToolTip;
+                 tt.Content = "Year
+                 tt.Visibility = Visibility.Visible;
+             }
+         }
+ 
+         protected override void OnRender(DrawingContext drawingContext)
+         {
+             base.OnRender(drawingContext);
+ 
+             // Draw the babies
+             if (_babyResults != null && _babyResults.Count > 0)
+             {
+                 int width = (int)RenderSize.Width, height = (int)RenderSize.Height;
+ 
+                 if (_minYear != _maxYear)
+                 {
+                     // Note
+                     // These are the dimensions everything will be scaled to.
+                     float per_x = (float)width / (_maxYear - _minYear), per_y = (float)height / _maxValue;
+ 
+                     // Draw axis lines
+                     Pen paxis = new Pen(new SolidColorBrush(Color.FromArgb(128, 128, 128, 128)), 1);
+                     for (float i = (height / 10); i < height; i += (height / 10))
+                     {
+                         drawingContext.DrawLine(paxis, new Point(0, i), new Point(width, i));
+                     }
+                     int xvalues = (_maxYear - _minYear);
+                     float xincrement = (float)width / xvalues;
+                     for (float i = xincrement; i < width; i += xincrement)
+                     {
+                         drawingContext.DrawLine(paxis, new Point(i, 0), new Point(i, height));
+                     }
+ 
+                     // Draw data
+                     Pen p = new Pen(new SolidColorBrush(Colors.White), 4);
+                     float curr_x = 0.0f, curr_y = 0.0f, last_x = -1, last_y = -1;
+                     int last_year = -1;
+ 
+                     foreach (BabyInfo b in _babyResults)
+                     {
+                         if (b.Year != last_year)
+                         {
+                             curr_x = (b.Year - _minYear) * per_x;
+                             curr_y = height - (b.Count * per_y);
+                             if (last_x != -1 && last_y != -1)
+                             {
+                                 drawingContext.DrawLine(p, new Point(curr_x, height), new Point(curr_x, curr_y));
+                             }
+                             last_x = curr_x;
+                             last_y = curr_y;
+                             last_year = b.Year;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
+             {
+                 Size s = RenderSize;
+                 Point p = e.GetPosition(this);
+                 int year = _minYear + (int)((p.X / s.Width) * (_maxYear - _minYear));
+ 
+                 ToolTip tt = (ToolTip)this.ToolTip;
+                 tt.Content = "Year
+                 tt.Visibility = Visibility.Visible;
+             }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="60" endline="111"><![CDATA[
+ 
+         protected override void OnRender(DrawingContext drawingContext)
+         {
+             base.OnRender(drawingContext);
+ 
+             // Draw the babies
+             if (_babyResults != null && _babyResults.Count > 0)
+             {
+                 int width = (int)RenderSize.Width, height = (int)RenderSize.Height;
+ 
+                 if (_minYear != _maxYear)
+                 {
+                     // Note
+                     // These are the dimensions everything will be scaled to.
+                     float per_x = (float)width / (_maxYear - _minYear), per_y = (float)height / _maxValue;
+ 
+                     // Draw axis lines
+                     Pen paxis = new Pen(new SolidColorBrush(Color.FromArgb(128, 128, 128, 128)), 1);
+                     for (float i = (height / 10); i < height; i += (height / 10))
+                     {
+                         drawingContext.DrawLine(paxis, new Point(0, i), new Point(width, i));
+                     }
+                     int xvalues = (_maxYear - _minYear);
+                     float xincrement = (float)width / xvalues;
+                     for (float i = xincrement; i < width; i += xincrement)
+                     {
+                         drawingContext.DrawLine(paxis, new Point(i, 0), new Point(i, height));
+                     }
+ 
+                     // Draw data
+                     Pen p = new Pen(new SolidColorBrush(Colors.White), 4);
+                     float curr_x = 0.0f, curr_y = 0.0f, last_x = -1, last_y = -1;
+                     int last_year = -1;
+ 
+                     foreach (BabyInfo b in _babyResults)
+                     {
+                         if (b.Year != last_year)
+                         {
+                             curr_x = (b.Year - _minYear) * per_x;
+                             curr_y = height - (b.Count * per_y);
+                             if (last_x != -1 && last_y != -1)
+                             {
+                                 drawingContext.DrawLine(p, new Point(curr_x, height), new Point(curr_x, curr_y));
+                             }
+                             last_x = curr_x;
+                             last_y = curr_y;
+                             last_year = b.Year;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
+             {
+                 int width = (int)RenderSize.Width, height = (int)RenderSize.Height;
+ 
+                 if (_minYear != _maxYear)
+                 {
+                     // Note
+                     // These are the dimensions everything will be scaled to.
+                     float per_x = (float)width / (_maxYear - _minYear), per_y = (float)height / _maxValue;
+ 
+                     // Draw axis lines
+                     Pen paxis = new Pen(new SolidColorBrush(Color.FromArgb(128, 128, 128, 128)), 1);
+                     for (float i = (height / 10); i < height; i += (height / 10))
+                     {
+                         drawingContext.DrawLine(paxis, new Point(0, i), new Point(width, i));
+                     }
+                     int xvalues = (_maxYear - _minYear);
+                     float xincrement = (float)width / xvalues;
+                     for (float i = xincrement; i < width; i += xincrement)
+                     {
+                         drawingContext.DrawLine(paxis, new Point(i, 0), new Point(i, height));
+                     }
+ 
+                     // Draw data
+                     Pen p = new Pen(new SolidColorBrush(Colors.White), 4);
+                     float curr_x = 0.0f, curr_y = 0.0f, last_x = -1, last_y = -1;
+                     int last_year = -1;
+ 
+                     foreach (BabyInfo b in _babyResults)
+                     {
+                         if (b.Year != last_year)
+                         {
+                             curr_x = (b.Year - _minYear) * per_x;
+                             curr_y = height - (b.Count * per_y);
+                             if (last_x != -1 && last_y != -1)
+                             {
+                                 drawingContext.DrawLine(p, new Point(curr_x, height), new Point(curr_x, curr_y));
+                             }
+                             last_x = curr_x;
+                             last_y = curr_y;
+                             last_year = b.Year;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
+                 {
+                     // Note
+                     // These are the dimensions everything will be scaled to.
+                     float per_x = (float)width / (_maxYear - _minYear), per_y = (float)height / _maxValue;
+ 
+                     // Draw axis lines
+                     Pen paxis = new Pen(new SolidColorBrush(Color.FromArgb(128, 128, 128, 128)), 1);
+                     for (float i = (height / 10); i < height; i += (height / 10))
+                     {
+                         drawingContext.DrawLine(paxis, new Point(0, i), new Point(width, i));
+                     }
+                     int xvalues = (_maxYear - _minYear);
+                     float xincrement = (float)width / xvalues;
+                     for (float i = xincrement; i < width; i += xincrement)
+                     {
+                         drawingContext.DrawLine(paxis, new Point(i, 0), new Point(i, height));
+                     }
+ 
+                     // Draw data
+                     Pen p = new Pen(new SolidColorBrush(Colors.White), 4);
+                     float curr_x = 0.0f, curr_y = 0.0f, last_x = -1, last_y = -1;
+                     int last_year = -1;
+ 
+                     foreach (BabyInfo b in _babyResults)
+                     {
+                         if (b.Year != last_year)
+                         {
+                             curr_x = (b.Year - _minYear) * per_x;
+                             curr_y = height - (b.Count * per_y);
+                             if (last_x != -1 && last_y != -1)
+                             {
+                                 drawingContext.DrawLine(p, new Point(curr_x, height), new Point(curr_x, curr_y));
+                             }
+                             last_x = curr_x;
+                             last_y = curr_y;
+                             last_year = b.Year;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
+                     {
+                         drawingContext.DrawLine(paxis, new Point(0, i), new Point(width, i));
+                     }
+                     for (float i = (height / 10); i < height; i += (height / 10))
+                     {
+                         drawingContext.DrawLine(paxis, new Point(0, i), new Point(width, i));
+                     }
+                     int xvalues = (_maxYear - _minYear);
+                     float xincrement = (float)width / xvalues;
+                     for (float i = xincrement; i < width; i += xincrement)
+                     {
+                         drawingContext.DrawLine(paxis, new Point(i, 0), new Point(i, height));
+                     }
+ 
+                     // Draw data
+                     Pen p = new Pen(new SolidColorBrush(Colors.White), 4);
+                     float curr_x = 0.0f, curr_y = 0.0f, last_x = -1, last_y = -1;
+                     int last_year = -1;
+ 
+                     foreach (BabyInfo b in _babyResults)
+                     {
+                         if (b.Year != last_year)
+                         {
+                             curr_x = (b.Year - _minYear) * per_x;
+                             curr_y = height - (b.Count * per_y);
+                             if (last_x != -1 && last_y != -1)
+                             {
+                                 drawingContext.DrawLine(p, new Point(curr_x, height), new Point(curr_x, curr_y));
+                             }
+                             last_x = curr_x;
+                             last_y = curr_y;
+                             last_year = b.Year;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
+                     int xvalues = (_maxYear - _minYear);
+                     float xincrement = (float)width / xvalues;
+                     for (float i = xincrement; i < width; i += xincrement)
+                     {
+                         drawingContext.DrawLine(paxis, new Point(i, 0), new Point(i, height));
+                     }
+ 
+                     // Draw data
+                     Pen p = new Pen(new SolidColorBrush(Colors.White), 4);
+                     float curr_x = 0.0f, curr_y = 0.0f, last_x = -1, last_y = -1;
+                     int last_year = -1;
+ 
+                     foreach (BabyInfo b in _babyResults)
+                     {
+                         if (b.Year != last_year)
+                         {
+                             curr_x = (b.Year - _minYear) * per_x;
+                             curr_y = height - (b.Count * per_y);
+                             if (last_x != -1 && last_y != -1)
+                             {
+                                 drawingContext.DrawLine(p, new Point(curr_x, height), new Point(curr_x, curr_y));
+                             }
+                             last_x = curr_x;
+                             last_y = curr_y;
+                             last_year = b.Year;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
+                     {
+                         drawingContext.DrawLine(paxis, new Point(i, 0), new Point(i, height));
+                     }
+                     for (float i = xincrement; i < width; i += xincrement)
+                     {
+                         drawingContext.DrawLine(paxis, new Point(i, 0), new Point(i, height));
+                     }
+ 
+                     // Draw data
+                     Pen p = new Pen(new SolidColorBrush(Colors.White), 4);
+                     float curr_x = 0.0f, curr_y = 0.0f, last_x = -1, last_y = -1;
+                     int last_year = -1;
+ 
+                     foreach (BabyInfo b in _babyResults)
+                     {
+                         if (b.Year != last_year)
+                         {
+                             curr_x = (b.Year - _minYear) * per_x;
+                             curr_y = height - (b.Count * per_y);
+                             if (last_x != -1 && last_y != -1)
+                             {
+                                 drawingContext.DrawLine(p, new Point(curr_x, height), new Point(curr_x, curr_y));
+                             }
+                             last_x = curr_x;
+                             last_y = curr_y;
+                             last_year = b.Year;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
+                     Pen p = new Pen(new SolidColorBrush(Colors.White), 4);
+                     float curr_x = 0.0f, curr_y = 0.0f, last_x = -1, last_y = -1;
+                     int last_year = -1;
+ 
+                     foreach (BabyInfo b in _babyResults)
+                     {
+                         if (b.Year != last_year)
+                         {
+                             curr_x = (b.Year - _minYear) * per_x;
+                             curr_y = height - (b.Count * per_y);
+                             if (last_x != -1 && last_y != -1)
+                             {
+                                 drawingContext.DrawLine(p, new Point(curr_x, height), new Point(curr_x, curr_y));
+                             }
+                             last_x = curr_x;
+                             last_y = curr_y;
+                             last_year = b.Year;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
+                     foreach (BabyInfo b in _babyResults)
+                     {
+                         if (b.Year != last_year)
+                         {
+                             curr_x = (b.Year - _minYear) * per_x;
+                             curr_y = height - (b.Count * per_y);
+                             if (last_x != -1 && last_y != -1)
+                             {
+                                 drawingContext.DrawLine(p, new Point(curr_x, height), new Point(curr_x, curr_y));
+                             }
+                             last_x = curr_x;
+                             last_y = curr_y;
+                             last_year = b.Year;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
+                         {
+                             curr_x = (b.Year - _minYear) * per_x;
+                             curr_y = height - (b.Count * per_y);
+                             if (last_x != -1 && last_y != -1)
+                             {
+                                 drawingContext.DrawLine(p, new Point(curr_x, height), new Point(curr_x, curr_y));
+                             }
+                             last_x = curr_x;
+                             last_y = curr_y;
+                             last_year = b.Year;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
+                             {
+                                 drawingContext.DrawLine(p, new Point(curr_x, height), new Point(curr_x, curr_y));
+                             }
+                             last_x = curr_x;
+                             last_y = curr_y;
+                             last_year = b.Year;
+                         }
+                     }
+                     foreach (BabyInfo b in _babyResults)
+                     {
+                         if (b.Year != last_year)
+                         {
+                             curr_x = (b.Year - _minYear) * per_x;
+                             curr_y = height - (b.Count * per_y);
+                             if (last_x != -1 && last_y != -1)
+                             {
+                                 drawingContext.DrawLine(p, new Point(curr_x, height), new Point(curr_x, curr_y));
+                             }
+                             last_x = curr_x;
+                             last_y = curr_y;
+                             last_year = b.Year;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
+                 }
+             }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="27" endline="113"><![CDATA[
+         private int _minYear = -1, _maxYear = -1, _maxValue = -1;
+ 
+         internal void Configure(List<BabyInfo> babyResults)
+         {
+             _babyResults = babyResults;
+             if (_babyResults != null && _babyResults.Count > 0)
+             {
+                 _maxValue = _babyResults.Max(b => b.Count);
+                 _minYear = _babyResults.Min(b => b.Year);
+                 _maxYear = _babyResults.Max(b => b.Year);
+             }
+         }
+ 
+         protected override void OnInitialized(EventArgs e)
+         {
+             base.OnInitialized(e);
+             ToolTip = new ToolTip { Content = "Results" };
+         }
+ 
+         protected override void OnMouseMove(MouseEventArgs e)
+         {
+             base.OnMouseMove(e);
+             if (_minYear >= 0 && _maxYear >= 0 && _maxValue >= 0)
+             {
+                 Size s = RenderSize;
+                 Point p = e.GetPosition(this);
+                 int year = _minYear + (int)((p.X / s.Width) * (_maxYear - _minYear));
+ 
+                 ToolTip tt = (ToolTip)this.ToolTip;
+                 tt.Content = "Year
+                 tt.Visibility = Visibility.Visible;
+             }
+         }
+ 
+         protected override void OnRender(DrawingContext drawingContext)
+         {
+             base.OnRender(drawingContext);
+ 
+             // Draw the babies
+             if (_babyResults != null && _babyResults.Count > 0)
+             {
+                 int width = (int)RenderSize.Width, height = (int)RenderSize.Height;
+ 
+                 if (_minYear != _maxYear)
+                 {
+                     // Note
+                     // These are the dimensions everything will be scaled to.
+                     float per_x = (float)width / (_maxYear - _minYear), per_y = (float)height / _maxValue;
+ 
+                     // Draw axis lines
+                     Pen paxis = new Pen(new SolidColorBrush(Color.FromArgb(128, 128, 128, 128)), 1);
+                     for (float i = (height / 10); i < height; i += (height / 10))
+                     {
+                         drawingContext.DrawLine(paxis, new Point(0, i), new Point(width, i));
+                     }
+                     int xvalues = (_maxYear - _minYear);
+                     float xincrement = (float)width / xvalues;
+                     for (float i = xincrement; i < width; i += xincrement)
+                     {
+                         drawingContext.DrawLine(paxis, new Point(i, 0), new Point(i, height));
+                     }
+ 
+                     // Draw data
+                     Pen p = new Pen(new SolidColorBrush(Colors.White), 4);
+                     float curr_x = 0.0f, curr_y = 0.0f, last_x = -1, last_y = -1;
+                     int last_year = -1;
+ 
+                     foreach (BabyInfo b in _babyResults)
+                     {
+                         if (b.Year != last_year)
+                         {
+                             curr_x = (b.Year - _minYear) * per_x;
+                             curr_y = height - (b.Count * per_y);
+                             if (last_x != -1 && last_y != -1)
+                             {
+                                 drawingContext.DrawLine(p, new Point(curr_x, height), new Point(curr_x, curr_y));
+                             }
+                             last_x = curr_x;
+                             last_y = curr_y;
+                             last_year = b.Year;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="34" endline="113"><![CDATA[
+                 _maxValue = _babyResults.Max(b => b.Count);
+                 _minYear = _babyResults.Min(b => b.Year);
+                 _maxYear = _babyResults.Max(b => b.Year);
+             }
+         }
+ 
+         protected override void OnInitialized(EventArgs e)
+         {
+             base.OnInitialized(e);
+             ToolTip = new ToolTip { Content = "Results" };
+         }
+ 
+         protected override void OnMouseMove(MouseEventArgs e)
+         {
+             base.OnMouseMove(e);
+             if (_minYear >= 0 && _maxYear >= 0 && _maxValue >= 0)
+             {
+                 Size s = RenderSize;
+                 Point p = e.GetPosition(this);
+                 int year = _minYear + (int)((p.X / s.Width) * (_maxYear - _minYear));
+ 
+                 ToolTip tt = (ToolTip)this.ToolTip;
+                 tt.Content = "Year
+                 tt.Visibility = Visibility.Visible;
+             }
+         }
+ 
+         protected override void OnRender(DrawingContext drawingContext)
+         {
+             base.OnRender(drawingContext);
+ 
+             // Draw the babies
+             if (_babyResults != null && _babyResults.Count > 0)
+             {
+                 int width = (int)RenderSize.Width, height = (int)RenderSize.Height;
+ 
+                 if (_minYear != _maxYear)
+                 {
+                     // Note
+                     // These are the dimensions everything will be scaled to.
+                     float per_x = (float)width / (_maxYear - _minYear), per_y = (float)height / _maxValue;
+ 
+                     // Draw axis lines
+                     Pen paxis = new Pen(new SolidColorBrush(Color.FromArgb(128, 128, 128, 128)), 1);
+                     for (float i = (height / 10); i < height; i += (height / 10))
+                     {
+                         drawingContext.DrawLine(paxis, new Point(0, i), new Point(width, i));
+                     }
+                     int xvalues = (_maxYear - _minYear);
+                     float xincrement = (float)width / xvalues;
+                     for (float i = xincrement; i < width; i += xincrement)
+                     {
+                         drawingContext.DrawLine(paxis, new Point(i, 0), new Point(i, height));
+                     }
+ 
+                     // Draw data
+                     Pen p = new Pen(new SolidColorBrush(Colors.White), 4);
+                     float curr_x = 0.0f, curr_y = 0.0f, last_x = -1, last_y = -1;
+                     int last_year = -1;
+ 
+                     foreach (BabyInfo b in _babyResults)
+                     {
+                         if (b.Year != last_year)
+                         {
+                             curr_x = (b.Year - _minYear) * per_x;
+                             curr_y = height - (b.Count * per_y);
+                             if (last_x != -1 && last_y != -1)
+                             {
+                                 drawingContext.DrawLine(p, new Point(curr_x, height), new Point(curr_x, curr_y));
+                             }
+                             last_x = curr_x;
+                             last_y = curr_y;
+                             last_year = b.Year;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="35" endline="113"><![CDATA[
+                 _minYear = _babyResults.Min(b => b.Year);
+                 _maxYear = _babyResults.Max(b => b.Year);
+             }
+         }
+ 
+         protected override void OnInitialized(EventArgs e)
+         {
+             base.OnInitialized(e);
+             ToolTip = new ToolTip { Content = "Results" };
+         }
+ 
+         protected override void OnMouseMove(MouseEventArgs e)
+         {
+             base.OnMouseMove(e);
+             if (_minYear >= 0 && _maxYear >= 0 && _maxValue >= 0)
+             {
+                 Size s = RenderSize;
+                 Point p = e.GetPosition(this);
+                 int year = _minYear + (int)((p.X / s.Width) * (_maxYear - _minYear));
+ 
+                 ToolTip tt = (ToolTip)this.ToolTip;
+                 tt.Content = "Year
+                 tt.Visibility = Visibility.Visible;
+             }
+         }
+ 
+         protected override void OnRender(DrawingContext drawingContext)
+         {
+             base.OnRender(drawingContext);
+ 
+             // Draw the babies
+             if (_babyResults != null && _babyResults.Count > 0)
+             {
+                 int width = (int)RenderSize.Width, height = (int)RenderSize.Height;
+ 
+                 if (_minYear != _maxYear)
+                 {
+                     // Note
+                     // These are the dimensions everything will be scaled to.
+                     float per_x = (float)width / (_maxYear - _minYear), per_y = (float)height / _maxValue;
+ 
+                     // Draw axis lines
+                     Pen paxis = new Pen(new SolidColorBrush(Color.FromArgb(128, 128, 128, 128)), 1);
+                     for (float i = (height / 10); i < height; i += (height / 10))
+                     {
+                         drawingContext.DrawLine(paxis, new Point(0, i), new Point(width, i));
+                     }
+                     int xvalues = (_maxYear - _minYear);
+                     float xincrement = (float)width / xvalues;
+                     for (float i = xincrement; i < width; i += xincrement)
+                     {
+                         drawingContext.DrawLine(paxis, new Point(i, 0), new Point(i, height));
+                     }
+ 
+                     // Draw data
+                     Pen p = new Pen(new SolidColorBrush(Colors.White), 4);
+                     float curr_x = 0.0f, curr_y = 0.0f, last_x = -1, last_y = -1;
+                     int last_year = -1;
+ 
+                     foreach (BabyInfo b in _babyResults)
+                     {
+                         if (b.Year != last_year)
+                         {
+                             curr_x = (b.Year - _minYear) * per_x;
+                             curr_y = height - (b.Count * per_y);
+                             if (last_x != -1 && last_y != -1)
+                             {
+                                 drawingContext.DrawLine(p, new Point(curr_x, height), new Point(curr_x, curr_y));
+                             }
+                             last_x = curr_x;
+                             last_y = curr_y;
+                             last_year = b.Year;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="36" endline="113"><![CDATA[
+                 _maxYear = _babyResults.Max(b => b.Year);
+             }
+         }
+ 
+         protected override void OnInitialized(EventArgs e)
+         {
+             base.OnInitialized(e);
+             ToolTip = new ToolTip { Content = "Results" };
+         }
+ 
+         protected override void OnMouseMove(MouseEventArgs e)
+         {
+             base.OnMouseMove(e);
+             if (_minYear >= 0 && _maxYear >= 0 && _maxValue >= 0)
+             {
+                 Size s = RenderSize;
+                 Point p = e.GetPosition(this);
+                 int year = _minYear + (int)((p.X / s.Width) * (_maxYear - _minYear));
+ 
+                 ToolTip tt = (ToolTip)this.ToolTip;
+                 tt.Content = "Year
+                 tt.Visibility = Visibility.Visible;
+             }
+         }
+ 
+         protected override void OnRender(DrawingContext drawingContext)
+         {
+             base.OnRender(drawingContext);
+ 
+             // Draw the babies
+             if (_babyResults != null && _babyResults.Count > 0)
+             {
+                 int width = (int)RenderSize.Width, height = (int)RenderSize.Height;
+ 
+                 if (_minYear != _maxYear)
+                 {
+                     // Note
+                     // These are the dimensions everything will be scaled to.
+                     float per_x = (float)width / (_maxYear - _minYear), per_y = (float)height / _maxValue;
+ 
+                     // Draw axis lines
+                     Pen paxis = new Pen(new SolidColorBrush(Color.FromArgb(128, 128, 128, 128)), 1);
+                     for (float i = (height / 10); i < height; i += (height / 10))
+                     {
+                         drawingContext.DrawLine(paxis, new Point(0, i), new Point(width, i));
+                     }
+                     int xvalues = (_maxYear - _minYear);
+                     float xincrement = (float)width / xvalues;
+                     for (float i = xincrement; i < width; i += xincrement)
+                     {
+                         drawingContext.DrawLine(paxis, new Point(i, 0), new Point(i, height));
+                     }
+ 
+                     // Draw data
+                     Pen p = new Pen(new SolidColorBrush(Colors.White), 4);
+                     float curr_x = 0.0f, curr_y = 0.0f, last_x = -1, last_y = -1;
+                     int last_year = -1;
+ 
+                     foreach (BabyInfo b in _babyResults)
+                     {
+                         if (b.Year != last_year)
+                         {
+                             curr_x = (b.Year - _minYear) * per_x;
+                             curr_y = height - (b.Count * per_y);
+                             if (last_x != -1 && last_y != -1)
+                             {
+                                 drawingContext.DrawLine(p, new Point(curr_x, height), new Point(curr_x, curr_y));
+                             }
+                             last_x = curr_x;
+                             last_y = curr_y;
+                             last_year = b.Year;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\BabyNames\BabyNames_CSharp\Graph.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+</source_elements></project>

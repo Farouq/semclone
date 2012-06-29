@@ -1,0 +1,16 @@
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\bin\Debug\SpellChecker.exe.config
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\bin\Debug\SpellChecker.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\bin\Debug\SpellChecker.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\bin\Debug\ParallelExtensionsExtras.dll
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\bin\Debug\ParallelExtensionsExtras.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\obj\Debug\Window1.baml
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\obj\Debug\Window1.g.vb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\obj\Debug\Application.g.vb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\obj\Debug\SpellChecker_MarkupCompile.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\obj\Debug\SpellChecker.g.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\obj\Debug\Resources.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\obj\Debug\SpellChecker.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\obj\Debug\SpellChecker.pdb

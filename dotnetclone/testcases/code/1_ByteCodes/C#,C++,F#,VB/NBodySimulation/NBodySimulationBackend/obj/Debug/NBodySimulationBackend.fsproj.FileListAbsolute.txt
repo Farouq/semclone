@@ -1,0 +1,5 @@
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulationBackend\bin\Debug\NBodySimulationBackend.dll
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulationBackend\bin\Debug\NBodySimulationBackend.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulationBackend\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulationBackend\obj\Debug\NBodySimulationBackend.dll
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulationBackend\obj\Debug\NBodySimulationBackend.pdb

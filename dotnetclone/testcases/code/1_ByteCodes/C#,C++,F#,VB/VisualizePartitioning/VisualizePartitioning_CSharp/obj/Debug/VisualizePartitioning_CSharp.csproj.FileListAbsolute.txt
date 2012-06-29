@@ -1,0 +1,11 @@
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_CSharp\bin\Debug\VisualizePartitioning.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_CSharp\bin\Debug\VisualizePartitioning.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_CSharp\bin\Debug\ParallelExtensionsExtras.dll
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_CSharp\bin\Debug\ParallelExtensionsExtras.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_CSharp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_CSharp\obj\Debug\VisualizePartitioning.MainForm.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_CSharp\obj\Debug\VisualizePartitioning.Properties.Resources.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_CSharp\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_CSharp\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_CSharp\obj\Debug\VisualizePartitioning.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\VisualizePartitioning\VisualizePartitioning_CSharp\obj\Debug\VisualizePartitioning.pdb

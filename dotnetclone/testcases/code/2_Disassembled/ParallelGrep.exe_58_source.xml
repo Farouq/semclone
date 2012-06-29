@@ -1,0 +1,248 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="15" endline="58"><![CDATA[
+ 	Shared Sub Main(ByVal args() As String)
+ 		' Parse command-line switches
+         Dim recursive = args.Contains("/s")
+         Dim ignoreCase = args.Contains("/i")
+ 
+ 		' Get the regex and file wildcards from the command-line
+         Dim nonSwitches = From arg In args
+                           Where arg.FirstOrDefault() <> "/"c
+                           Select arg
+ 		Dim regexString = nonSwitches.FirstOrDefault()
+ 		Dim wildcards = nonSwitches.Skip(1)
+ 
+ 		' Create thread-local Regex instances, to prevent contention on Regex's internal lock
+         Dim regex = New ThreadLocal(Of Regex)(Function() New Regex(regexString, RegexOptions.Compiled Or
+                                                          (If(ignoreCase, RegexOptions.IgnoreCase, RegexOptions.None))))
+ 
+ 		' Get the list of files to be examined
+         Dim files = From wc In wildcards
+                     Let dirName = Path.GetDirectoryName(wc)
+                     Let fileName = Path.GetFileName(wc)
+                     From file In Directory.EnumerateFiles(If(String.IsNullOrWhiteSpace(dirName), ".", dirName),
+                                                           If(String.IsNullOrWhiteSpace(fileName), "*.*", fileName),
+                                                           If(recursive, SearchOption.AllDirectories, SearchOption.TopDirectoryOnly))
+                     Select file
+ 
+ 		Try
+ 			' Traverse the specified files in parallel, and run each line through the Regex, collecting line number info
+ 			' for each match (the Zip call counts the lines in each file)
+ 
+             Dim matches = From file In files.AsParallel().AsOrdered().WithMergeOptions(ParallelMergeOptions.NotBuffered)
+                           From line In System.IO.File.ReadLines(file).
+                             Zip(Enumerable.Range(1, Integer.MaxValue), Function(s, i) New With {Key .Num = i, Key .Text = s, Key .File = file})
+                           Where regex.Value.IsMatch(line.Text)
+                           Select line
+ 			For Each line In matches
+ 				Console.WriteLine("{0}
+ 			Next line
+ 		Catch ae As AggregateException
+             ae.Handle(Function(e)
+                           Console.WriteLine(e.Message)
+                           Return True
+                       End Function)
+ 		End Try
+ 	End Sub
+ End Class
+         Dim recursive = args.Contains("/s")
+         Dim ignoreCase = args.Contains("/i")
+ 
+ 		' Get the regex and file wildcards from the command-line
+         Dim nonSwitches = From arg In args
+                           Where arg.FirstOrDefault() <> "/"c
+                           Select arg
+ 		Dim regexString = nonSwitches.FirstOrDefault()
+ 		Dim wildcards = nonSwitches.Skip(1)
+ 
+ 		' Create thread-local Regex instances, to prevent contention on Regex's internal lock
+         Dim regex = New ThreadLocal(Of Regex)(Function() New Regex(regexString, RegexOptions.Compiled Or
+                                                          (If(ignoreCase, RegexOptions.IgnoreCase, RegexOptions.None))))
+ 
+ 		' Get the list of files to be examined
+         Dim files = From wc In wildcards
+                     Let dirName = Path.GetDirectoryName(wc)
+                     Let fileName = Path.GetFileName(wc)
+                     From file In Directory.EnumerateFiles(If(String.IsNullOrWhiteSpace(dirName), ".", dirName),
+                                                           If(String.IsNullOrWhiteSpace(fileName), "*.*", fileName),
+                                                           If(recursive, SearchOption.AllDirectories, SearchOption.TopDirectoryOnly))
+                     Select file
+ 
+ 		Try
+ 			' Traverse the specified files in parallel, and run each line through the Regex, collecting line number info
+ 			' for each match (the Zip call counts the lines in each file)
+ 
+             Dim matches = From file In files.AsParallel().AsOrdered().WithMergeOptions(ParallelMergeOptions.NotBuffered)
+                           From line In System.IO.File.ReadLines(file).
+                             Zip(Enumerable.Range(1, Integer.MaxValue), Function(s, i) New With {Key .Num = i, Key .Text = s, Key .File = file})
+                           Where regex.Value.IsMatch(line.Text)
+                           Select line
+ 			For Each line In matches
+ 				Console.WriteLine("{0}
+ 			Next line
+ 		Catch ae As AggregateException
+             ae.Handle(Function(e)
+                           Console.WriteLine(e.Message)
+                           Return True
+                       End Function)
+ 		End Try
+ 	End Sub
+ End Class
+ 			For Each line In matches
+ 				Console.WriteLine("{0}
+ 			Next line
+ 		Catch ae As AggregateException
+             ae.Handle(Function(e)
+                           Console.WriteLine(e.Message)
+                           Return True
+                       End Function)
+ 		End Try
+ 	End Sub
+ End Class
+ 				Console.WriteLine("{0}
+ 			Next line
+ 		Catch ae As AggregateException
+             ae.Handle(Function(e)
+                           Console.WriteLine(e.Message)
+                           Return True
+                       End Function)
+ 		End Try
+ 	End Sub
+ End Class
+ 		Catch ae As AggregateException
+             ae.Handle(Function(e)
+                           Console.WriteLine(e.Message)
+                           Return True
+                       End Function)
+ 		End Try
+ 	End Sub
+ End Class
+ 		End Try
+ 	End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="22" endline="22"><![CDATA[
+                           Where arg.FirstOrDefault() <> "/"c
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="23" endline="23"><![CDATA[
+                           Select arg
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="24" endline="33"><![CDATA[
+ 		Dim regexString = nonSwitches.FirstOrDefault()
+ 		Dim wildcards = nonSwitches.Skip(1)
+ 
+ 		' Create thread-local Regex instances, to prevent contention on Regex's internal lock
+         Dim regex = New ThreadLocal(Of Regex)(Function() New Regex(regexString, RegexOptions.Compiled Or
+                                                          (If(ignoreCase, RegexOptions.IgnoreCase, RegexOptions.None))))
+ 
+ 		' Get the list of files to be examined
+         Dim files = From wc In wildcards
+                     Let dirName = Path.GetDirectoryName(wc)
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="34" endline="34"><![CDATA[
+                     Let fileName = Path.GetFileName(wc)
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="35" endline="38"><![CDATA[
+                     From file In Directory.EnumerateFiles(If(String.IsNullOrWhiteSpace(dirName), ".", dirName),
+                                                           If(String.IsNullOrWhiteSpace(fileName), "*.*", fileName),
+                                                           If(recursive, SearchOption.AllDirectories, SearchOption.TopDirectoryOnly))
+                     Select file
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="39" endline="44"><![CDATA[
+ 
+ 		Try
+ 			' Traverse the specified files in parallel, and run each line through the Regex, collecting line number info
+ 			' for each match (the Zip call counts the lines in each file)
+ 
+             Dim matches = From file In files.AsParallel().AsOrdered().WithMergeOptions(ParallelMergeOptions.NotBuffered)
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="45" endline="48"><![CDATA[
+                           From line In System.IO.File.ReadLines(file).
+                             Zip(Enumerable.Range(1, Integer.MaxValue), Function(s, i) New With {Key .Num = i, Key .Text = s, Key .File = file})
+                           Where regex.Value.IsMatch(line.Text)
+                           Select line
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="49" endline="56"><![CDATA[
+ 			For Each line In matches
+ 				Console.WriteLine("{0}
+ 			Next line
+ 		Catch ae As AggregateException
+             ae.Handle(Function(e)
+                           Console.WriteLine(e.Message)
+                           Return True
+                       End Function)
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+</source_elements></project>

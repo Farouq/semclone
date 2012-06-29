@@ -1,0 +1,2749 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\Properties\Resources.Designer.cs" startline="31" endline="33"><![CDATA[
+         [global
+         internal Resources() {
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\Properties\Resources.Designer.cs" startline="34" endline="46"><![CDATA[
+         
+         /// <summary>
+         ///   Returns the cached ResourceManager instance used by this class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 if (object.ReferenceEquals(resourceMan, null)) {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+         }
+         
+         /// <summary>
+         ///   Overrides the current thread's CurrentUICulture property for all
+         ///   resource lookups using this strongly typed resource class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 return resourceCulture;
+             }
+             set {
+                 resourceCulture = value;
+             }
+         }
+     }
+ }
+                 if (object.ReferenceEquals(resourceMan, null)) {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\Properties\Resources.Designer.cs" startline="47" endline="57"><![CDATA[
+         }
+         
+         /// <summary>
+         ///   Overrides the current thread's CurrentUICulture property for all
+         ///   resource lookups using this strongly typed resource class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 return resourceCulture;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\Properties\Resources.Designer.cs" startline="58" endline="60"><![CDATA[
+             set {
+                 resourceCulture = value;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\Program.cs" startline="12" endline="16"><![CDATA[
+         {
+             Application.EnableVisualStyles();
+             Application.SetCompatibleTextRenderingDefault(false);
+             Application.Run(new MainForm());
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\MainForm.cs" startline="17" endline="14"><![CDATA[
+         MandelbrotPosition _mandelbrotWindow = MandelbrotPosition.Default;
+         /// <summary>The last known size of the main window.</summary>
+         private Size _lastWindowSize = Size.Empty;
+         /// <summary>The last known position of the mouse.</summary>
+         private Point _lastMousePosition;
+         /// <summary>The most recent cancellation source to cancel the last task.</summary>
+         private CancellationTokenSource _lastCancellation;
+         /// <summary>The last time the image was updated.</summary>
+         private DateTime _lastUpdateTime = DateTime.MinValue;
+         /// <summary>Whether the left mouse button is currently pressed on the picture box.</summary>
+         private bool _leftMouseDown = false;
+         /// <summary>
+         /// The format string to use for the main form's title; {0} should be set to the number of
+         /// pixels per second rendered.
+         /// </summary>
+         private const string _formTitle = "Interactive Fractal ({0}x) - PPMS
+         /// <summary>Whether to use parallel rendering.</summary>
+         private bool _parallelRendering = false;
+         private System.ComponentModel.IContainer components = null;
+         public MainForm() { InitializeComponent(); }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\MainForm.cs" startline="15" endline="50"><![CDATA[
+ 
+         /// <summary>Describes the bounds of the fractal to render.</summary>
+         MandelbrotPosition _mandelbrotWindow = MandelbrotPosition.Default;
+         /// <summary>The last known size of the main window.</summary>
+         private Size _lastWindowSize = Size.Empty;
+         /// <summary>The last known position of the mouse.</summary>
+         private Point _lastMousePosition;
+         /// <summary>The most recent cancellation source to cancel the last task.</summary>
+         private CancellationTokenSource _lastCancellation;
+         /// <summary>The last time the image was updated.</summary>
+         private DateTime _lastUpdateTime = DateTime.MinValue;
+         /// <summary>Whether the left mouse button is currently pressed on the picture box.</summary>
+         private bool _leftMouseDown = false;
+         /// <summary>
+         /// The format string to use for the main form's title; {0} should be set to the number of
+         /// pixels per second rendered.
+         /// </summary>
+         private const string _formTitle = "Interactive Fractal ({0}x) - PPMS
+         /// <summary>Whether to use parallel rendering.</summary>
+         private bool _parallelRendering = false;
+ 
+         void mandelbrotPb_MouseDoubleClick(object sender, MouseEventArgs e)
+         {
+             // Center the image on the selected location
+             _mandelbrotWindow.CenterX += ((e.X - (mandelbrotPb.Width / 2.0)) / mandelbrotPb.Width) * _mandelbrotWindow.Width;
+             _mandelbrotWindow.CenterY += ((e.Y - (mandelbrotPb.Height / 2.0)) / mandelbrotPb.Height) * _mandelbrotWindow.Height;
+ 
+             // If the left mouse button was used, zoom in by a factor of 2; if the right mouse button, zoom
+             // out by a factor of 2
+             double factor = e.Button == MouseButtons.Left ? .5 
+             _mandelbrotWindow.Width *= factor;
+             _mandelbrotWindow.Height *= factor;
+             
+             // Update the image
+             UpdateImageAsync();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\MainForm.cs" startline="51" endline="60"><![CDATA[
+ 
+         void mandelbrotPb_VisibleChanged(object sender, EventArgs e)
+         {
+             // When the picture box becomes visible, render it
+             if (mandelbrotPb.Visible)
+             {
+                 _lastWindowSize = Size;
+                 UpdateImageAsync();
+             }
+         }
+ 
+         void mandelbrotPb_Resize(object sender, EventArgs e)
+         {
+             // If the window has been resized
+             if (Size != _lastWindowSize)
+             {
+                 // Scale the mandelbrot image by the same factor so that its visual size doesn't change
+                 if (_lastWindowSize.Width != 0)
+                 {
+                     double xFactor = Size.Width / (double)_lastWindowSize.Width;
+                     _mandelbrotWindow.Width *= xFactor;
+                 }
+ 
+                 if (_lastWindowSize.Height != 0)
+                 {
+                     double yFactor = Size.Height / (double)_lastWindowSize.Height;
+                     _mandelbrotWindow.Height *= yFactor;
+                 }
+ 
+                 // Record the new window size
+                 _lastWindowSize = Size;
+ 
+                 // Update the image
+                 UpdateImageAsync();
+             }
+         }
+ 
+         void mandelbrotPb_MouseMove(object sender, MouseEventArgs e)
+         {
+             // Determine how far the mouse has moved.  If it moved at all...
+             Point delta = new Point(e.X - _lastMousePosition.X, e.Y - _lastMousePosition.Y);
+             if (delta != Point.Empty)
+             {
+                 // And if the left mouse button is down...
+                 if (_leftMouseDown)
+                 {
+                     // Determine how much the mouse moved in fractal coordinates
+                     double fractalMoveX = delta.X * _mandelbrotWindow.Width / mandelbrotPb.Width;
+                     double fractalMoveY = delta.Y * _mandelbrotWindow.Height / mandelbrotPb.Height;
+ 
+                     // Shift the fractal window accordingly
+                     _mandelbrotWindow.CenterX -= fractalMoveX;
+                     _mandelbrotWindow.CenterY -= fractalMoveY;
+  
+                     // And update the image
+                     UpdateImageAsync();
+                 }
+                 // Record the new mouse position
+                 _lastMousePosition = e.Location;
+             }
+         }
+ 
+         void mandelbrotPb_MouseDown(object sender, MouseEventArgs e)
+         {
+             // Record that mouse button is being pressed
+             if (e.Button == MouseButtons.Left)
+             {
+                 _lastMousePosition = e.Location;
+                 _leftMouseDown = true;
+             }
+         }
+ 
+         void mandelbrotPb_MouseUp(object sender, MouseEventArgs e)
+         {
+             // Record that the mouse button is being released
+             if (e.Button == MouseButtons.Left)
+             {
+                 _lastMousePosition = e.Location;
+                 _leftMouseDown = false;
+             }
+         }
+ 
+         private void UpdateImageAsync()
+         {
+             // If there's currently an active task, cancel it!  We don't care about it anymore.
+             if (_lastCancellation != null) _lastCancellation.Cancel();
+ 
+             // Get the current size of the picture box
+             Size renderSize = mandelbrotPb.Size;
+ 
+             // Keep track of the time this request was made.  If multiple requests are executing,
+             // we want to only render the most recent one available rather than overwriting a more
+             // recent image with an older one.
+             DateTime timeOfRequest = DateTime.UtcNow;
+ 
+             // Start a task to asynchronously render the fractal, and store the task
+             // so we can cancel it later as necessary
+             _lastCancellation = new CancellationTokenSource();
+             var token = _lastCancellation.Token;
+             Task.Factory.StartNew(() =>
+             {
+                 // For diagnostic reasons, time how long the rendering takes
+                 Stopwatch sw = Stopwatch.StartNew();
+ 
+                 // Render the fractal
+                 Bitmap bmp = MandelbrotGenerator.Create(_mandelbrotWindow, renderSize.Width, renderSize.Height, token, _parallelRendering);
+                 if (bmp != null)
+                 {
+                     sw.Stop();
+                     double ppms = (renderSize.Width * renderSize.Height) / (double)sw.ElapsedMilliseconds;
+ 
+                     // Update the fractal image asynchronously on the UI thread
+                     Image old = null;
+                     BeginInvoke((MethodInvoker)delegate
+                     {
+                         // If this image is the most recent, store it into the picture box
+                         // making sure to free the resources for the one currently in use.
+                         // And update the form's title to reflect the rendering time.
+                         if (timeOfRequest > _lastUpdateTime)
+                         {
+                             old = mandelbrotPb.Image;
+                             mandelbrotPb.Image = bmp;
+                             _lastUpdateTime = timeOfRequest;
+                             this.Text = string.Format(_formTitle, _parallelRendering ? Environment.ProcessorCount 
+                         }
+                         // If the image isn't the most recent, just get rid of it
+                         else bmp.Dispose();
+                     });
+                     if (old != null) old.Dispose();
+                 }
+             }, token);
+         }
+ 
+         protected override void OnKeyDown(KeyEventArgs e)
+         {
+             base.OnKeyDown(e);
+             if (e.KeyCode == Keys.R)
+             {
+                 _mandelbrotWindow = MandelbrotPosition.Default;
+ 
+                 using (MainForm tempForm = new MainForm())
+                 {
+                     double xFactor = Size.Width / (double)tempForm.Width, yFactor = Size.Height / (double)tempForm.Height;
+                     _mandelbrotWindow.Width *= xFactor;
+                     _mandelbrotWindow.Height *= yFactor;
+                 }
+ 
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.S)
+             {
+                 _parallelRendering = false;
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.P)
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+         }
+     }
+ }
+ 
+ 
+             {
+                 _lastWindowSize = Size;
+                 UpdateImageAsync();
+             }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\MainForm.cs" startline="61" endline="86"><![CDATA[
+ 
+         void mandelbrotPb_Resize(object sender, EventArgs e)
+         {
+             // If the window has been resized
+             if (Size != _lastWindowSize)
+             {
+                 // Scale the mandelbrot image by the same factor so that its visual size doesn't change
+                 if (_lastWindowSize.Width != 0)
+                 {
+                     double xFactor = Size.Width / (double)_lastWindowSize.Width;
+                     _mandelbrotWindow.Width *= xFactor;
+                 }
+ 
+                 if (_lastWindowSize.Height != 0)
+                 {
+                     double yFactor = Size.Height / (double)_lastWindowSize.Height;
+                     _mandelbrotWindow.Height *= yFactor;
+                 }
+ 
+                 // Record the new window size
+                 _lastWindowSize = Size;
+ 
+                 // Update the image
+                 UpdateImageAsync();
+             }
+         }
+ 
+         void mandelbrotPb_MouseMove(object sender, MouseEventArgs e)
+         {
+             // Determine how far the mouse has moved.  If it moved at all...
+             Point delta = new Point(e.X - _lastMousePosition.X, e.Y - _lastMousePosition.Y);
+             if (delta != Point.Empty)
+             {
+                 // And if the left mouse button is down...
+                 if (_leftMouseDown)
+                 {
+                     // Determine how much the mouse moved in fractal coordinates
+                     double fractalMoveX = delta.X * _mandelbrotWindow.Width / mandelbrotPb.Width;
+                     double fractalMoveY = delta.Y * _mandelbrotWindow.Height / mandelbrotPb.Height;
+ 
+                     // Shift the fractal window accordingly
+                     _mandelbrotWindow.CenterX -= fractalMoveX;
+                     _mandelbrotWindow.CenterY -= fractalMoveY;
+  
+                     // And update the image
+                     UpdateImageAsync();
+                 }
+                 // Record the new mouse position
+                 _lastMousePosition = e.Location;
+             }
+         }
+ 
+         void mandelbrotPb_MouseDown(object sender, MouseEventArgs e)
+         {
+             // Record that mouse button is being pressed
+             if (e.Button == MouseButtons.Left)
+             {
+                 _lastMousePosition = e.Location;
+                 _leftMouseDown = true;
+             }
+         }
+ 
+         void mandelbrotPb_MouseUp(object sender, MouseEventArgs e)
+         {
+             // Record that the mouse button is being released
+             if (e.Button == MouseButtons.Left)
+             {
+                 _lastMousePosition = e.Location;
+                 _leftMouseDown = false;
+             }
+         }
+ 
+         private void UpdateImageAsync()
+         {
+             // If there's currently an active task, cancel it!  We don't care about it anymore.
+             if (_lastCancellation != null) _lastCancellation.Cancel();
+ 
+             // Get the current size of the picture box
+             Size renderSize = mandelbrotPb.Size;
+ 
+             // Keep track of the time this request was made.  If multiple requests are executing,
+             // we want to only render the most recent one available rather than overwriting a more
+             // recent image with an older one.
+             DateTime timeOfRequest = DateTime.UtcNow;
+ 
+             // Start a task to asynchronously render the fractal, and store the task
+             // so we can cancel it later as necessary
+             _lastCancellation = new CancellationTokenSource();
+             var token = _lastCancellation.Token;
+             Task.Factory.StartNew(() =>
+             {
+                 // For diagnostic reasons, time how long the rendering takes
+                 Stopwatch sw = Stopwatch.StartNew();
+ 
+                 // Render the fractal
+                 Bitmap bmp = MandelbrotGenerator.Create(_mandelbrotWindow, renderSize.Width, renderSize.Height, token, _parallelRendering);
+                 if (bmp != null)
+                 {
+                     sw.Stop();
+                     double ppms = (renderSize.Width * renderSize.Height) / (double)sw.ElapsedMilliseconds;
+ 
+                     // Update the fractal image asynchronously on the UI thread
+                     Image old = null;
+                     BeginInvoke((MethodInvoker)delegate
+                     {
+                         // If this image is the most recent, store it into the picture box
+                         // making sure to free the resources for the one currently in use.
+                         // And update the form's title to reflect the rendering time.
+                         if (timeOfRequest > _lastUpdateTime)
+                         {
+                             old = mandelbrotPb.Image;
+                             mandelbrotPb.Image = bmp;
+                             _lastUpdateTime = timeOfRequest;
+                             this.Text = string.Format(_formTitle, _parallelRendering ? Environment.ProcessorCount 
+                         }
+                         // If the image isn't the most recent, just get rid of it
+                         else bmp.Dispose();
+                     });
+                     if (old != null) old.Dispose();
+                 }
+             }, token);
+         }
+ 
+         protected override void OnKeyDown(KeyEventArgs e)
+         {
+             base.OnKeyDown(e);
+             if (e.KeyCode == Keys.R)
+             {
+                 _mandelbrotWindow = MandelbrotPosition.Default;
+ 
+                 using (MainForm tempForm = new MainForm())
+                 {
+                     double xFactor = Size.Width / (double)tempForm.Width, yFactor = Size.Height / (double)tempForm.Height;
+                     _mandelbrotWindow.Width *= xFactor;
+                     _mandelbrotWindow.Height *= yFactor;
+                 }
+ 
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.S)
+             {
+                 _parallelRendering = false;
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.P)
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+         }
+     }
+ }
+ 
+ 
+             {
+                 // Scale the mandelbrot image by the same factor so that its visual size doesn't change
+                 if (_lastWindowSize.Width != 0)
+                 {
+                     double xFactor = Size.Width / (double)_lastWindowSize.Width;
+                     _mandelbrotWindow.Width *= xFactor;
+                 }
+ 
+                 if (_lastWindowSize.Height != 0)
+                 {
+                     double yFactor = Size.Height / (double)_lastWindowSize.Height;
+                     _mandelbrotWindow.Height *= yFactor;
+                 }
+ 
+                 // Record the new window size
+                 _lastWindowSize = Size;
+ 
+                 // Update the image
+                 UpdateImageAsync();
+             }
+         }
+ 
+         void mandelbrotPb_MouseMove(object sender, MouseEventArgs e)
+         {
+             // Determine how far the mouse has moved.  If it moved at all...
+             Point delta = new Point(e.X - _lastMousePosition.X, e.Y - _lastMousePosition.Y);
+             if (delta != Point.Empty)
+             {
+                 // And if the left mouse button is down...
+                 if (_leftMouseDown)
+                 {
+                     // Determine how much the mouse moved in fractal coordinates
+                     double fractalMoveX = delta.X * _mandelbrotWindow.Width / mandelbrotPb.Width;
+                     double fractalMoveY = delta.Y * _mandelbrotWindow.Height / mandelbrotPb.Height;
+ 
+                     // Shift the fractal window accordingly
+                     _mandelbrotWindow.CenterX -= fractalMoveX;
+                     _mandelbrotWindow.CenterY -= fractalMoveY;
+  
+                     // And update the image
+                     UpdateImageAsync();
+                 }
+                 // Record the new mouse position
+                 _lastMousePosition = e.Location;
+             }
+         }
+ 
+         void mandelbrotPb_MouseDown(object sender, MouseEventArgs e)
+         {
+             // Record that mouse button is being pressed
+             if (e.Button == MouseButtons.Left)
+             {
+                 _lastMousePosition = e.Location;
+                 _leftMouseDown = true;
+             }
+         }
+ 
+         void mandelbrotPb_MouseUp(object sender, MouseEventArgs e)
+         {
+             // Record that the mouse button is being released
+             if (e.Button == MouseButtons.Left)
+             {
+                 _lastMousePosition = e.Location;
+                 _leftMouseDown = false;
+             }
+         }
+ 
+         private void UpdateImageAsync()
+         {
+             // If there's currently an active task, cancel it!  We don't care about it anymore.
+             if (_lastCancellation != null) _lastCancellation.Cancel();
+ 
+             // Get the current size of the picture box
+             Size renderSize = mandelbrotPb.Size;
+ 
+             // Keep track of the time this request was made.  If multiple requests are executing,
+             // we want to only render the most recent one available rather than overwriting a more
+             // recent image with an older one.
+             DateTime timeOfRequest = DateTime.UtcNow;
+ 
+             // Start a task to asynchronously render the fractal, and store the task
+             // so we can cancel it later as necessary
+             _lastCancellation = new CancellationTokenSource();
+             var token = _lastCancellation.Token;
+             Task.Factory.StartNew(() =>
+             {
+                 // For diagnostic reasons, time how long the rendering takes
+                 Stopwatch sw = Stopwatch.StartNew();
+ 
+                 // Render the fractal
+                 Bitmap bmp = MandelbrotGenerator.Create(_mandelbrotWindow, renderSize.Width, renderSize.Height, token, _parallelRendering);
+                 if (bmp != null)
+                 {
+                     sw.Stop();
+                     double ppms = (renderSize.Width * renderSize.Height) / (double)sw.ElapsedMilliseconds;
+ 
+                     // Update the fractal image asynchronously on the UI thread
+                     Image old = null;
+                     BeginInvoke((MethodInvoker)delegate
+                     {
+                         // If this image is the most recent, store it into the picture box
+                         // making sure to free the resources for the one currently in use.
+                         // And update the form's title to reflect the rendering time.
+                         if (timeOfRequest > _lastUpdateTime)
+                         {
+                             old = mandelbrotPb.Image;
+                             mandelbrotPb.Image = bmp;
+                             _lastUpdateTime = timeOfRequest;
+                             this.Text = string.Format(_formTitle, _parallelRendering ? Environment.ProcessorCount 
+                         }
+                         // If the image isn't the most recent, just get rid of it
+                         else bmp.Dispose();
+                     });
+                     if (old != null) old.Dispose();
+                 }
+             }, token);
+         }
+ 
+         protected override void OnKeyDown(KeyEventArgs e)
+         {
+             base.OnKeyDown(e);
+             if (e.KeyCode == Keys.R)
+             {
+                 _mandelbrotWindow = MandelbrotPosition.Default;
+ 
+                 using (MainForm tempForm = new MainForm())
+                 {
+                     double xFactor = Size.Width / (double)tempForm.Width, yFactor = Size.Height / (double)tempForm.Height;
+                     _mandelbrotWindow.Width *= xFactor;
+                     _mandelbrotWindow.Height *= yFactor;
+                 }
+ 
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.S)
+             {
+                 _parallelRendering = false;
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.P)
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+         }
+     }
+ }
+ 
+ 
+                 {
+                     double xFactor = Size.Width / (double)_lastWindowSize.Width;
+                     _mandelbrotWindow.Width *= xFactor;
+                 }
+ 
+                 if (_lastWindowSize.Height != 0)
+                 {
+                     double yFactor = Size.Height / (double)_lastWindowSize.Height;
+                     _mandelbrotWindow.Height *= yFactor;
+                 }
+ 
+                 // Record the new window size
+                 _lastWindowSize = Size;
+ 
+                 // Update the image
+                 UpdateImageAsync();
+             }
+         }
+ 
+         void mandelbrotPb_MouseMove(object sender, MouseEventArgs e)
+         {
+             // Determine how far the mouse has moved.  If it moved at all...
+             Point delta = new Point(e.X - _lastMousePosition.X, e.Y - _lastMousePosition.Y);
+             if (delta != Point.Empty)
+             {
+                 // And if the left mouse button is down...
+                 if (_leftMouseDown)
+                 {
+                     // Determine how much the mouse moved in fractal coordinates
+                     double fractalMoveX = delta.X * _mandelbrotWindow.Width / mandelbrotPb.Width;
+                     double fractalMoveY = delta.Y * _mandelbrotWindow.Height / mandelbrotPb.Height;
+ 
+                     // Shift the fractal window accordingly
+                     _mandelbrotWindow.CenterX -= fractalMoveX;
+                     _mandelbrotWindow.CenterY -= fractalMoveY;
+  
+                     // And update the image
+                     UpdateImageAsync();
+                 }
+                 // Record the new mouse position
+                 _lastMousePosition = e.Location;
+             }
+         }
+ 
+         void mandelbrotPb_MouseDown(object sender, MouseEventArgs e)
+         {
+             // Record that mouse button is being pressed
+             if (e.Button == MouseButtons.Left)
+             {
+                 _lastMousePosition = e.Location;
+                 _leftMouseDown = true;
+             }
+         }
+ 
+         void mandelbrotPb_MouseUp(object sender, MouseEventArgs e)
+         {
+             // Record that the mouse button is being released
+             if (e.Button == MouseButtons.Left)
+             {
+                 _lastMousePosition = e.Location;
+                 _leftMouseDown = false;
+             }
+         }
+ 
+         private void UpdateImageAsync()
+         {
+             // If there's currently an active task, cancel it!  We don't care about it anymore.
+             if (_lastCancellation != null) _lastCancellation.Cancel();
+ 
+             // Get the current size of the picture box
+             Size renderSize = mandelbrotPb.Size;
+ 
+             // Keep track of the time this request was made.  If multiple requests are executing,
+             // we want to only render the most recent one available rather than overwriting a more
+             // recent image with an older one.
+             DateTime timeOfRequest = DateTime.UtcNow;
+ 
+             // Start a task to asynchronously render the fractal, and store the task
+             // so we can cancel it later as necessary
+             _lastCancellation = new CancellationTokenSource();
+             var token = _lastCancellation.Token;
+             Task.Factory.StartNew(() =>
+             {
+                 // For diagnostic reasons, time how long the rendering takes
+                 Stopwatch sw = Stopwatch.StartNew();
+ 
+                 // Render the fractal
+                 Bitmap bmp = MandelbrotGenerator.Create(_mandelbrotWindow, renderSize.Width, renderSize.Height, token, _parallelRendering);
+                 if (bmp != null)
+                 {
+                     sw.Stop();
+                     double ppms = (renderSize.Width * renderSize.Height) / (double)sw.ElapsedMilliseconds;
+ 
+                     // Update the fractal image asynchronously on the UI thread
+                     Image old = null;
+                     BeginInvoke((MethodInvoker)delegate
+                     {
+                         // If this image is the most recent, store it into the picture box
+                         // making sure to free the resources for the one currently in use.
+                         // And update the form's title to reflect the rendering time.
+                         if (timeOfRequest > _lastUpdateTime)
+                         {
+                             old = mandelbrotPb.Image;
+                             mandelbrotPb.Image = bmp;
+                             _lastUpdateTime = timeOfRequest;
+                             this.Text = string.Format(_formTitle, _parallelRendering ? Environment.ProcessorCount 
+                         }
+                         // If the image isn't the most recent, just get rid of it
+                         else bmp.Dispose();
+                     });
+                     if (old != null) old.Dispose();
+                 }
+             }, token);
+         }
+ 
+         protected override void OnKeyDown(KeyEventArgs e)
+         {
+             base.OnKeyDown(e);
+             if (e.KeyCode == Keys.R)
+             {
+                 _mandelbrotWindow = MandelbrotPosition.Default;
+ 
+                 using (MainForm tempForm = new MainForm())
+                 {
+                     double xFactor = Size.Width / (double)tempForm.Width, yFactor = Size.Height / (double)tempForm.Height;
+                     _mandelbrotWindow.Width *= xFactor;
+                     _mandelbrotWindow.Height *= yFactor;
+                 }
+ 
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.S)
+             {
+                 _parallelRendering = false;
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.P)
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+         }
+     }
+ }
+ 
+ 
+                 {
+                     double yFactor = Size.Height / (double)_lastWindowSize.Height;
+                     _mandelbrotWindow.Height *= yFactor;
+                 }
+ 
+                 // Record the new window size
+                 _lastWindowSize = Size;
+ 
+                 // Update the image
+                 UpdateImageAsync();
+             }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\MainForm.cs" startline="87" endline="111"><![CDATA[
+ 
+         void mandelbrotPb_MouseMove(object sender, MouseEventArgs e)
+         {
+             // Determine how far the mouse has moved.  If it moved at all...
+             Point delta = new Point(e.X - _lastMousePosition.X, e.Y - _lastMousePosition.Y);
+             if (delta != Point.Empty)
+             {
+                 // And if the left mouse button is down...
+                 if (_leftMouseDown)
+                 {
+                     // Determine how much the mouse moved in fractal coordinates
+                     double fractalMoveX = delta.X * _mandelbrotWindow.Width / mandelbrotPb.Width;
+                     double fractalMoveY = delta.Y * _mandelbrotWindow.Height / mandelbrotPb.Height;
+ 
+                     // Shift the fractal window accordingly
+                     _mandelbrotWindow.CenterX -= fractalMoveX;
+                     _mandelbrotWindow.CenterY -= fractalMoveY;
+  
+                     // And update the image
+                     UpdateImageAsync();
+                 }
+                 // Record the new mouse position
+                 _lastMousePosition = e.Location;
+             }
+         }
+ 
+         void mandelbrotPb_MouseDown(object sender, MouseEventArgs e)
+         {
+             // Record that mouse button is being pressed
+             if (e.Button == MouseButtons.Left)
+             {
+                 _lastMousePosition = e.Location;
+                 _leftMouseDown = true;
+             }
+         }
+ 
+         void mandelbrotPb_MouseUp(object sender, MouseEventArgs e)
+         {
+             // Record that the mouse button is being released
+             if (e.Button == MouseButtons.Left)
+             {
+                 _lastMousePosition = e.Location;
+                 _leftMouseDown = false;
+             }
+         }
+ 
+         private void UpdateImageAsync()
+         {
+             // If there's currently an active task, cancel it!  We don't care about it anymore.
+             if (_lastCancellation != null) _lastCancellation.Cancel();
+ 
+             // Get the current size of the picture box
+             Size renderSize = mandelbrotPb.Size;
+ 
+             // Keep track of the time this request was made.  If multiple requests are executing,
+             // we want to only render the most recent one available rather than overwriting a more
+             // recent image with an older one.
+             DateTime timeOfRequest = DateTime.UtcNow;
+ 
+             // Start a task to asynchronously render the fractal, and store the task
+             // so we can cancel it later as necessary
+             _lastCancellation = new CancellationTokenSource();
+             var token = _lastCancellation.Token;
+             Task.Factory.StartNew(() =>
+             {
+                 // For diagnostic reasons, time how long the rendering takes
+                 Stopwatch sw = Stopwatch.StartNew();
+ 
+                 // Render the fractal
+                 Bitmap bmp = MandelbrotGenerator.Create(_mandelbrotWindow, renderSize.Width, renderSize.Height, token, _parallelRendering);
+                 if (bmp != null)
+                 {
+                     sw.Stop();
+                     double ppms = (renderSize.Width * renderSize.Height) / (double)sw.ElapsedMilliseconds;
+ 
+                     // Update the fractal image asynchronously on the UI thread
+                     Image old = null;
+                     BeginInvoke((MethodInvoker)delegate
+                     {
+                         // If this image is the most recent, store it into the picture box
+                         // making sure to free the resources for the one currently in use.
+                         // And update the form's title to reflect the rendering time.
+                         if (timeOfRequest > _lastUpdateTime)
+                         {
+                             old = mandelbrotPb.Image;
+                             mandelbrotPb.Image = bmp;
+                             _lastUpdateTime = timeOfRequest;
+                             this.Text = string.Format(_formTitle, _parallelRendering ? Environment.ProcessorCount 
+                         }
+                         // If the image isn't the most recent, just get rid of it
+                         else bmp.Dispose();
+                     });
+                     if (old != null) old.Dispose();
+                 }
+             }, token);
+         }
+ 
+         protected override void OnKeyDown(KeyEventArgs e)
+         {
+             base.OnKeyDown(e);
+             if (e.KeyCode == Keys.R)
+             {
+                 _mandelbrotWindow = MandelbrotPosition.Default;
+ 
+                 using (MainForm tempForm = new MainForm())
+                 {
+                     double xFactor = Size.Width / (double)tempForm.Width, yFactor = Size.Height / (double)tempForm.Height;
+                     _mandelbrotWindow.Width *= xFactor;
+                     _mandelbrotWindow.Height *= yFactor;
+                 }
+ 
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.S)
+             {
+                 _parallelRendering = false;
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.P)
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+         }
+     }
+ }
+ 
+ 
+             {
+                 // And if the left mouse button is down...
+                 if (_leftMouseDown)
+                 {
+                     // Determine how much the mouse moved in fractal coordinates
+                     double fractalMoveX = delta.X * _mandelbrotWindow.Width / mandelbrotPb.Width;
+                     double fractalMoveY = delta.Y * _mandelbrotWindow.Height / mandelbrotPb.Height;
+ 
+                     // Shift the fractal window accordingly
+                     _mandelbrotWindow.CenterX -= fractalMoveX;
+                     _mandelbrotWindow.CenterY -= fractalMoveY;
+  
+                     // And update the image
+                     UpdateImageAsync();
+                 }
+                 // Record the new mouse position
+                 _lastMousePosition = e.Location;
+             }
+         }
+ 
+         void mandelbrotPb_MouseDown(object sender, MouseEventArgs e)
+         {
+             // Record that mouse button is being pressed
+             if (e.Button == MouseButtons.Left)
+             {
+                 _lastMousePosition = e.Location;
+                 _leftMouseDown = true;
+             }
+         }
+ 
+         void mandelbrotPb_MouseUp(object sender, MouseEventArgs e)
+         {
+             // Record that the mouse button is being released
+             if (e.Button == MouseButtons.Left)
+             {
+                 _lastMousePosition = e.Location;
+                 _leftMouseDown = false;
+             }
+         }
+ 
+         private void UpdateImageAsync()
+         {
+             // If there's currently an active task, cancel it!  We don't care about it anymore.
+             if (_lastCancellation != null) _lastCancellation.Cancel();
+ 
+             // Get the current size of the picture box
+             Size renderSize = mandelbrotPb.Size;
+ 
+             // Keep track of the time this request was made.  If multiple requests are executing,
+             // we want to only render the most recent one available rather than overwriting a more
+             // recent image with an older one.
+             DateTime timeOfRequest = DateTime.UtcNow;
+ 
+             // Start a task to asynchronously render the fractal, and store the task
+             // so we can cancel it later as necessary
+             _lastCancellation = new CancellationTokenSource();
+             var token = _lastCancellation.Token;
+             Task.Factory.StartNew(() =>
+             {
+                 // For diagnostic reasons, time how long the rendering takes
+                 Stopwatch sw = Stopwatch.StartNew();
+ 
+                 // Render the fractal
+                 Bitmap bmp = MandelbrotGenerator.Create(_mandelbrotWindow, renderSize.Width, renderSize.Height, token, _parallelRendering);
+                 if (bmp != null)
+                 {
+                     sw.Stop();
+                     double ppms = (renderSize.Width * renderSize.Height) / (double)sw.ElapsedMilliseconds;
+ 
+                     // Update the fractal image asynchronously on the UI thread
+                     Image old = null;
+                     BeginInvoke((MethodInvoker)delegate
+                     {
+                         // If this image is the most recent, store it into the picture box
+                         // making sure to free the resources for the one currently in use.
+                         // And update the form's title to reflect the rendering time.
+                         if (timeOfRequest > _lastUpdateTime)
+                         {
+                             old = mandelbrotPb.Image;
+                             mandelbrotPb.Image = bmp;
+                             _lastUpdateTime = timeOfRequest;
+                             this.Text = string.Format(_formTitle, _parallelRendering ? Environment.ProcessorCount 
+                         }
+                         // If the image isn't the most recent, just get rid of it
+                         else bmp.Dispose();
+                     });
+                     if (old != null) old.Dispose();
+                 }
+             }, token);
+         }
+ 
+         protected override void OnKeyDown(KeyEventArgs e)
+         {
+             base.OnKeyDown(e);
+             if (e.KeyCode == Keys.R)
+             {
+                 _mandelbrotWindow = MandelbrotPosition.Default;
+ 
+                 using (MainForm tempForm = new MainForm())
+                 {
+                     double xFactor = Size.Width / (double)tempForm.Width, yFactor = Size.Height / (double)tempForm.Height;
+                     _mandelbrotWindow.Width *= xFactor;
+                     _mandelbrotWindow.Height *= yFactor;
+                 }
+ 
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.S)
+             {
+                 _parallelRendering = false;
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.P)
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+         }
+     }
+ }
+ 
+ 
+                 {
+                     // Determine how much the mouse moved in fractal coordinates
+                     double fractalMoveX = delta.X * _mandelbrotWindow.Width / mandelbrotPb.Width;
+                     double fractalMoveY = delta.Y * _mandelbrotWindow.Height / mandelbrotPb.Height;
+ 
+                     // Shift the fractal window accordingly
+                     _mandelbrotWindow.CenterX -= fractalMoveX;
+                     _mandelbrotWindow.CenterY -= fractalMoveY;
+  
+                     // And update the image
+                     UpdateImageAsync();
+                 }
+                 // Record the new mouse position
+                 _lastMousePosition = e.Location;
+             }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\MainForm.cs" startline="112" endline="121"><![CDATA[
+ 
+         void mandelbrotPb_MouseDown(object sender, MouseEventArgs e)
+         {
+             // Record that mouse button is being pressed
+             if (e.Button == MouseButtons.Left)
+             {
+                 _lastMousePosition = e.Location;
+                 _leftMouseDown = true;
+             }
+         }
+ 
+         void mandelbrotPb_MouseUp(object sender, MouseEventArgs e)
+         {
+             // Record that the mouse button is being released
+             if (e.Button == MouseButtons.Left)
+             {
+                 _lastMousePosition = e.Location;
+                 _leftMouseDown = false;
+             }
+         }
+ 
+         private void UpdateImageAsync()
+         {
+             // If there's currently an active task, cancel it!  We don't care about it anymore.
+             if (_lastCancellation != null) _lastCancellation.Cancel();
+ 
+             // Get the current size of the picture box
+             Size renderSize = mandelbrotPb.Size;
+ 
+             // Keep track of the time this request was made.  If multiple requests are executing,
+             // we want to only render the most recent one available rather than overwriting a more
+             // recent image with an older one.
+             DateTime timeOfRequest = DateTime.UtcNow;
+ 
+             // Start a task to asynchronously render the fractal, and store the task
+             // so we can cancel it later as necessary
+             _lastCancellation = new CancellationTokenSource();
+             var token = _lastCancellation.Token;
+             Task.Factory.StartNew(() =>
+             {
+                 // For diagnostic reasons, time how long the rendering takes
+                 Stopwatch sw = Stopwatch.StartNew();
+ 
+                 // Render the fractal
+                 Bitmap bmp = MandelbrotGenerator.Create(_mandelbrotWindow, renderSize.Width, renderSize.Height, token, _parallelRendering);
+                 if (bmp != null)
+                 {
+                     sw.Stop();
+                     double ppms = (renderSize.Width * renderSize.Height) / (double)sw.ElapsedMilliseconds;
+ 
+                     // Update the fractal image asynchronously on the UI thread
+                     Image old = null;
+                     BeginInvoke((MethodInvoker)delegate
+                     {
+                         // If this image is the most recent, store it into the picture box
+                         // making sure to free the resources for the one currently in use.
+                         // And update the form's title to reflect the rendering time.
+                         if (timeOfRequest > _lastUpdateTime)
+                         {
+                             old = mandelbrotPb.Image;
+                             mandelbrotPb.Image = bmp;
+                             _lastUpdateTime = timeOfRequest;
+                             this.Text = string.Format(_formTitle, _parallelRendering ? Environment.ProcessorCount 
+                         }
+                         // If the image isn't the most recent, just get rid of it
+                         else bmp.Dispose();
+                     });
+                     if (old != null) old.Dispose();
+                 }
+             }, token);
+         }
+ 
+         protected override void OnKeyDown(KeyEventArgs e)
+         {
+             base.OnKeyDown(e);
+             if (e.KeyCode == Keys.R)
+             {
+                 _mandelbrotWindow = MandelbrotPosition.Default;
+ 
+                 using (MainForm tempForm = new MainForm())
+                 {
+                     double xFactor = Size.Width / (double)tempForm.Width, yFactor = Size.Height / (double)tempForm.Height;
+                     _mandelbrotWindow.Width *= xFactor;
+                     _mandelbrotWindow.Height *= yFactor;
+                 }
+ 
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.S)
+             {
+                 _parallelRendering = false;
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.P)
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+         }
+     }
+ }
+ 
+ 
+             {
+                 _lastMousePosition = e.Location;
+                 _leftMouseDown = true;
+             }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\MainForm.cs" startline="122" endline="131"><![CDATA[
+ 
+         void mandelbrotPb_MouseUp(object sender, MouseEventArgs e)
+         {
+             // Record that the mouse button is being released
+             if (e.Button == MouseButtons.Left)
+             {
+                 _lastMousePosition = e.Location;
+                 _leftMouseDown = false;
+             }
+         }
+ 
+         private void UpdateImageAsync()
+         {
+             // If there's currently an active task, cancel it!  We don't care about it anymore.
+             if (_lastCancellation != null) _lastCancellation.Cancel();
+ 
+             // Get the current size of the picture box
+             Size renderSize = mandelbrotPb.Size;
+ 
+             // Keep track of the time this request was made.  If multiple requests are executing,
+             // we want to only render the most recent one available rather than overwriting a more
+             // recent image with an older one.
+             DateTime timeOfRequest = DateTime.UtcNow;
+ 
+             // Start a task to asynchronously render the fractal, and store the task
+             // so we can cancel it later as necessary
+             _lastCancellation = new CancellationTokenSource();
+             var token = _lastCancellation.Token;
+             Task.Factory.StartNew(() =>
+             {
+                 // For diagnostic reasons, time how long the rendering takes
+                 Stopwatch sw = Stopwatch.StartNew();
+ 
+                 // Render the fractal
+                 Bitmap bmp = MandelbrotGenerator.Create(_mandelbrotWindow, renderSize.Width, renderSize.Height, token, _parallelRendering);
+                 if (bmp != null)
+                 {
+                     sw.Stop();
+                     double ppms = (renderSize.Width * renderSize.Height) / (double)sw.ElapsedMilliseconds;
+ 
+                     // Update the fractal image asynchronously on the UI thread
+                     Image old = null;
+                     BeginInvoke((MethodInvoker)delegate
+                     {
+                         // If this image is the most recent, store it into the picture box
+                         // making sure to free the resources for the one currently in use.
+                         // And update the form's title to reflect the rendering time.
+                         if (timeOfRequest > _lastUpdateTime)
+                         {
+                             old = mandelbrotPb.Image;
+                             mandelbrotPb.Image = bmp;
+                             _lastUpdateTime = timeOfRequest;
+                             this.Text = string.Format(_formTitle, _parallelRendering ? Environment.ProcessorCount 
+                         }
+                         // If the image isn't the most recent, just get rid of it
+                         else bmp.Dispose();
+                     });
+                     if (old != null) old.Dispose();
+                 }
+             }, token);
+         }
+ 
+         protected override void OnKeyDown(KeyEventArgs e)
+         {
+             base.OnKeyDown(e);
+             if (e.KeyCode == Keys.R)
+             {
+                 _mandelbrotWindow = MandelbrotPosition.Default;
+ 
+                 using (MainForm tempForm = new MainForm())
+                 {
+                     double xFactor = Size.Width / (double)tempForm.Width, yFactor = Size.Height / (double)tempForm.Height;
+                     _mandelbrotWindow.Width *= xFactor;
+                     _mandelbrotWindow.Height *= yFactor;
+                 }
+ 
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.S)
+             {
+                 _parallelRendering = false;
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.P)
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+         }
+     }
+ }
+ 
+ 
+             {
+                 _lastMousePosition = e.Location;
+                 _leftMouseDown = false;
+             }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\MainForm.cs" startline="132" endline="182"><![CDATA[
+ 
+         private void UpdateImageAsync()
+         {
+             // If there's currently an active task, cancel it!  We don't care about it anymore.
+             if (_lastCancellation != null) _lastCancellation.Cancel();
+ 
+             // Get the current size of the picture box
+             Size renderSize = mandelbrotPb.Size;
+ 
+             // Keep track of the time this request was made.  If multiple requests are executing,
+             // we want to only render the most recent one available rather than overwriting a more
+             // recent image with an older one.
+             DateTime timeOfRequest = DateTime.UtcNow;
+ 
+             // Start a task to asynchronously render the fractal, and store the task
+             // so we can cancel it later as necessary
+             _lastCancellation = new CancellationTokenSource();
+             var token = _lastCancellation.Token;
+             Task.Factory.StartNew(() =>
+             {
+                 // For diagnostic reasons, time how long the rendering takes
+                 Stopwatch sw = Stopwatch.StartNew();
+ 
+                 // Render the fractal
+                 Bitmap bmp = MandelbrotGenerator.Create(_mandelbrotWindow, renderSize.Width, renderSize.Height, token, _parallelRendering);
+                 if (bmp != null)
+                 {
+                     sw.Stop();
+                     double ppms = (renderSize.Width * renderSize.Height) / (double)sw.ElapsedMilliseconds;
+ 
+                     // Update the fractal image asynchronously on the UI thread
+                     Image old = null;
+                     BeginInvoke((MethodInvoker)delegate
+                     {
+                         // If this image is the most recent, store it into the picture box
+                         // making sure to free the resources for the one currently in use.
+                         // And update the form's title to reflect the rendering time.
+                         if (timeOfRequest > _lastUpdateTime)
+                         {
+                             old = mandelbrotPb.Image;
+                             mandelbrotPb.Image = bmp;
+                             _lastUpdateTime = timeOfRequest;
+                             this.Text = string.Format(_formTitle, _parallelRendering ? Environment.ProcessorCount 
+                         }
+                         // If the image isn't the most recent, just get rid of it
+                         else bmp.Dispose();
+                     });
+                     if (old != null) old.Dispose();
+                 }
+             }, token);
+         }
+ 
+         protected override void OnKeyDown(KeyEventArgs e)
+         {
+             base.OnKeyDown(e);
+             if (e.KeyCode == Keys.R)
+             {
+                 _mandelbrotWindow = MandelbrotPosition.Default;
+ 
+                 using (MainForm tempForm = new MainForm())
+                 {
+                     double xFactor = Size.Width / (double)tempForm.Width, yFactor = Size.Height / (double)tempForm.Height;
+                     _mandelbrotWindow.Width *= xFactor;
+                     _mandelbrotWindow.Height *= yFactor;
+                 }
+ 
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.S)
+             {
+                 _parallelRendering = false;
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.P)
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+         }
+     }
+ }
+ 
+ 
+         {
+             // If there's currently an active task, cancel it!  We don't care about it anymore.
+             if (_lastCancellation != null) _lastCancellation.Cancel();
+ 
+             // Get the current size of the picture box
+             Size renderSize = mandelbrotPb.Size;
+ 
+             // Keep track of the time this request was made.  If multiple requests are executing,
+             // we want to only render the most recent one available rather than overwriting a more
+             // recent image with an older one.
+             DateTime timeOfRequest = DateTime.UtcNow;
+ 
+             // Start a task to asynchronously render the fractal, and store the task
+             // so we can cancel it later as necessary
+             _lastCancellation = new CancellationTokenSource();
+             var token = _lastCancellation.Token;
+             Task.Factory.StartNew(() =>
+             {
+                 // For diagnostic reasons, time how long the rendering takes
+                 Stopwatch sw = Stopwatch.StartNew();
+ 
+                 // Render the fractal
+                 Bitmap bmp = MandelbrotGenerator.Create(_mandelbrotWindow, renderSize.Width, renderSize.Height, token, _parallelRendering);
+                 if (bmp != null)
+                 {
+                     sw.Stop();
+                     double ppms = (renderSize.Width * renderSize.Height) / (double)sw.ElapsedMilliseconds;
+ 
+                     // Update the fractal image asynchronously on the UI thread
+                     Image old = null;
+                     BeginInvoke((MethodInvoker)delegate
+                     {
+                         // If this image is the most recent, store it into the picture box
+                         // making sure to free the resources for the one currently in use.
+                         // And update the form's title to reflect the rendering time.
+                         if (timeOfRequest > _lastUpdateTime)
+                         {
+                             old = mandelbrotPb.Image;
+                             mandelbrotPb.Image = bmp;
+                             _lastUpdateTime = timeOfRequest;
+                             this.Text = string.Format(_formTitle, _parallelRendering ? Environment.ProcessorCount 
+                         }
+                         // If the image isn't the most recent, just get rid of it
+                         else bmp.Dispose();
+                     });
+                     if (old != null) old.Dispose();
+                 }
+             }, token);
+         }
+ 
+         protected override void OnKeyDown(KeyEventArgs e)
+         {
+             base.OnKeyDown(e);
+             if (e.KeyCode == Keys.R)
+             {
+                 _mandelbrotWindow = MandelbrotPosition.Default;
+ 
+                 using (MainForm tempForm = new MainForm())
+                 {
+                     double xFactor = Size.Width / (double)tempForm.Width, yFactor = Size.Height / (double)tempForm.Height;
+                     _mandelbrotWindow.Width *= xFactor;
+                     _mandelbrotWindow.Height *= yFactor;
+                 }
+ 
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.S)
+             {
+                 _parallelRendering = false;
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.P)
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+         }
+     }
+ }
+ 
+ 
+             if (_lastCancellation != null) _lastCancellation.Cancel();
+ 
+             // Get the current size of the picture box
+             Size renderSize = mandelbrotPb.Size;
+ 
+             // Keep track of the time this request was made.  If multiple requests are executing,
+             // we want to only render the most recent one available rather than overwriting a more
+             // recent image with an older one.
+             DateTime timeOfRequest = DateTime.UtcNow;
+ 
+             // Start a task to asynchronously render the fractal, and store the task
+             // so we can cancel it later as necessary
+             _lastCancellation = new CancellationTokenSource();
+             var token = _lastCancellation.Token;
+             Task.Factory.StartNew(() =>
+             {
+                 // For diagnostic reasons, time how long the rendering takes
+                 Stopwatch sw = Stopwatch.StartNew();
+ 
+                 // Render the fractal
+                 Bitmap bmp = MandelbrotGenerator.Create(_mandelbrotWindow, renderSize.Width, renderSize.Height, token, _parallelRendering);
+                 if (bmp != null)
+                 {
+                     sw.Stop();
+                     double ppms = (renderSize.Width * renderSize.Height) / (double)sw.ElapsedMilliseconds;
+ 
+                     // Update the fractal image asynchronously on the UI thread
+                     Image old = null;
+                     BeginInvoke((MethodInvoker)delegate
+                     {
+                         // If this image is the most recent, store it into the picture box
+                         // making sure to free the resources for the one currently in use.
+                         // And update the form's title to reflect the rendering time.
+                         if (timeOfRequest > _lastUpdateTime)
+                         {
+                             old = mandelbrotPb.Image;
+                             mandelbrotPb.Image = bmp;
+                             _lastUpdateTime = timeOfRequest;
+                             this.Text = string.Format(_formTitle, _parallelRendering ? Environment.ProcessorCount 
+                         }
+                         // If the image isn't the most recent, just get rid of it
+                         else bmp.Dispose();
+                     });
+                     if (old != null) old.Dispose();
+                 }
+             }, token);
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\MainForm.cs" startline="183" endline="210"><![CDATA[
+ 
+         protected override void OnKeyDown(KeyEventArgs e)
+         {
+             base.OnKeyDown(e);
+             if (e.KeyCode == Keys.R)
+             {
+                 _mandelbrotWindow = MandelbrotPosition.Default;
+ 
+                 using (MainForm tempForm = new MainForm())
+                 {
+                     double xFactor = Size.Width / (double)tempForm.Width, yFactor = Size.Height / (double)tempForm.Height;
+                     _mandelbrotWindow.Width *= xFactor;
+                     _mandelbrotWindow.Height *= yFactor;
+                 }
+ 
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.S)
+             {
+                 _parallelRendering = false;
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.P)
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+         }
+     }
+ }
+ 
+ 
+             {
+                 _mandelbrotWindow = MandelbrotPosition.Default;
+ 
+                 using (MainForm tempForm = new MainForm())
+                 {
+                     double xFactor = Size.Width / (double)tempForm.Width, yFactor = Size.Height / (double)tempForm.Height;
+                     _mandelbrotWindow.Width *= xFactor;
+                     _mandelbrotWindow.Height *= yFactor;
+                 }
+ 
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.S)
+             {
+                 _parallelRendering = false;
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.P)
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+         }
+     }
+ }
+ 
+ 
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.S)
+             {
+                 _parallelRendering = false;
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.P)
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+         }
+     }
+ }
+ 
+ 
+             else if (e.KeyCode == Keys.S)
+             {
+                 _parallelRendering = false;
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.P)
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+         }
+     }
+ }
+ 
+ 
+             {
+                 _parallelRendering = false;
+                 UpdateImageAsync();
+             }
+             else if (e.KeyCode == Keys.P)
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+         }
+     }
+ }
+ 
+ 
+             else if (e.KeyCode == Keys.P)
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+         }
+     }
+ }
+ 
+ 
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\MainForm.designer.cs" startline="15" endline="21"><![CDATA[
+         {
+             if (disposing && (components != null))
+             {
+                 components.Dispose();
+             }
+             base.Dispose(disposing);
+         }
+ 
+         #region Windows Form Designer generated code
+ 
+         /// <summary>
+         /// Required method for Designer support - do not modify
+         /// the contents of this method with the code editor.
+         /// </summary>
+         private void InitializeComponent()
+         {
+             this.mandelbrotPb = new System.Windows.Forms.PictureBox();
+             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+             ((System.ComponentModel.ISupportInitialize)(this.mandelbrotPb)).BeginInit();
+             this.statusStrip1.SuspendLayout();
+             this.SuspendLayout();
+             // 
+             // mandelbrotPb
+             // 
+             this.mandelbrotPb.BackColor = System.Drawing.Color.Black;
+             this.mandelbrotPb.Dock = System.Windows.Forms.DockStyle.Fill;
+             this.mandelbrotPb.Location = new System.Drawing.Point(0, 0);
+             this.mandelbrotPb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+             this.mandelbrotPb.Name = "mandelbrotPb";
+             this.mandelbrotPb.Size = new System.Drawing.Size(521, 452);
+             this.mandelbrotPb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+             this.mandelbrotPb.TabIndex = 0;
+             this.mandelbrotPb.TabStop = false;
+             this.mandelbrotPb.VisibleChanged += new System.EventHandler(this.mandelbrotPb_VisibleChanged);
+             this.mandelbrotPb.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.mandelbrotPb_MouseDoubleClick);
+             this.mandelbrotPb.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mandelbrotPb_MouseDown);
+             this.mandelbrotPb.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mandelbrotPb_MouseMove);
+             this.mandelbrotPb.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mandelbrotPb_MouseUp);
+             this.mandelbrotPb.Resize += new System.EventHandler(this.mandelbrotPb_Resize);
+             // 
+             // statusStrip1
+             // 
+             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+             this.toolStripStatusLabel1});
+             this.statusStrip1.Location = new System.Drawing.Point(0, 427);
+             this.statusStrip1.Name = "statusStrip1";
+             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+             this.statusStrip1.Size = new System.Drawing.Size(521, 25);
+             this.statusStrip1.TabIndex = 2;
+             this.statusStrip1.Text = "statusStrip1";
+             // 
+             // toolStripStatusLabel1
+             // 
+             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+             this.toolStripStatusLabel1.Size = new System.Drawing.Size(386, 20);
+             this.toolStripStatusLabel1.Text = "P
+             // 
+             // MainForm
+             // 
+             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+             this.ClientSize = new System.Drawing.Size(521, 452);
+             this.Controls.Add(this.statusStrip1);
+             this.Controls.Add(this.mandelbrotPb);
+             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+             this.Name = "MainForm";
+             this.Text = "Mandelbrot Fractals";
+             ((System.ComponentModel.ISupportInitialize)(this.mandelbrotPb)).EndInit();
+             this.statusStrip1.ResumeLayout(false);
+             this.statusStrip1.PerformLayout();
+             this.ResumeLayout(false);
+             this.PerformLayout();
+ 
+         }
+ 
+         #endregion
+ 
+         private System.Windows.Forms.PictureBox mandelbrotPb;
+         private System.Windows.Forms.StatusStrip statusStrip1;
+         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+     }
+ }
+ 
+             {
+                 components.Dispose();
+             }
+             base.Dispose(disposing);
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\MainForm.designer.cs" startline="22" endline="89"><![CDATA[
+ 
+         #region Windows Form Designer generated code
+ 
+         /// <summary>
+         /// Required method for Designer support - do not modify
+         /// the contents of this method with the code editor.
+         /// </summary>
+         private void InitializeComponent()
+         {
+             this.mandelbrotPb = new System.Windows.Forms.PictureBox();
+             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+             ((System.ComponentModel.ISupportInitialize)(this.mandelbrotPb)).BeginInit();
+             this.statusStrip1.SuspendLayout();
+             this.SuspendLayout();
+             // 
+             // mandelbrotPb
+             // 
+             this.mandelbrotPb.BackColor = System.Drawing.Color.Black;
+             this.mandelbrotPb.Dock = System.Windows.Forms.DockStyle.Fill;
+             this.mandelbrotPb.Location = new System.Drawing.Point(0, 0);
+             this.mandelbrotPb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+             this.mandelbrotPb.Name = "mandelbrotPb";
+             this.mandelbrotPb.Size = new System.Drawing.Size(521, 452);
+             this.mandelbrotPb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+             this.mandelbrotPb.TabIndex = 0;
+             this.mandelbrotPb.TabStop = false;
+             this.mandelbrotPb.VisibleChanged += new System.EventHandler(this.mandelbrotPb_VisibleChanged);
+             this.mandelbrotPb.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.mandelbrotPb_MouseDoubleClick);
+             this.mandelbrotPb.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mandelbrotPb_MouseDown);
+             this.mandelbrotPb.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mandelbrotPb_MouseMove);
+             this.mandelbrotPb.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mandelbrotPb_MouseUp);
+             this.mandelbrotPb.Resize += new System.EventHandler(this.mandelbrotPb_Resize);
+             // 
+             // statusStrip1
+             // 
+             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+             this.toolStripStatusLabel1});
+             this.statusStrip1.Location = new System.Drawing.Point(0, 427);
+             this.statusStrip1.Name = "statusStrip1";
+             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+             this.statusStrip1.Size = new System.Drawing.Size(521, 25);
+             this.statusStrip1.TabIndex = 2;
+             this.statusStrip1.Text = "statusStrip1";
+             // 
+             // toolStripStatusLabel1
+             // 
+             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+             this.toolStripStatusLabel1.Size = new System.Drawing.Size(386, 20);
+             this.toolStripStatusLabel1.Text = "P
+             // 
+             // MainForm
+             // 
+             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+             this.ClientSize = new System.Drawing.Size(521, 452);
+             this.Controls.Add(this.statusStrip1);
+             this.Controls.Add(this.mandelbrotPb);
+             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+             this.Name = "MainForm";
+             this.Text = "Mandelbrot Fractals";
+             ((System.ComponentModel.ISupportInitialize)(this.mandelbrotPb)).EndInit();
+             this.statusStrip1.ResumeLayout(false);
+             this.statusStrip1.PerformLayout();
+             this.ResumeLayout(false);
+             this.PerformLayout();
+ 
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\Properties\Settings.Designer.cs" startline="21" endline="23"><![CDATA[
+             get {
+                 return defaultInstance;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\Properties\Settings.Designer.cs" startline="18" endline="26"><![CDATA[
+         private static Settings defaultInstance = ((Settings)(global
+         
+         public static Settings Default {
+             get {
+                 return defaultInstance;
+             }
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\MandelbrotGenerator.cs" startline="19" endline="26"><![CDATA[
+             {
+                 MandelbrotPosition pos = new MandelbrotPosition();
+                 pos.Width = 2.9;
+                 pos.Height = 2.27;
+                 pos.CenterX = -.75;
+                 pos.CenterY = .006;
+                 return pos;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\MandelbrotGenerator.cs" startline="41" endline="46"><![CDATA[
+         {
+             Color[] paletteColors = new Color[256];
+             paletteColors[0] = Color.Black;
+             for (int i = 1; i < 256; i++) paletteColors[i] = Color.FromArgb(0, i * 5 % 256, i * 5 % 256); // change this at will for different colorings
+             return paletteColors;
+         }
+ 
+         /// <summary>Copy our precreated color palette into the target Bitmap.</summary>
+         /// <param name="bmp">The Bitmap to be updated.</param>
+         private static void UpdatePalette(Bitmap bmp)
+         {
+             ColorPalette p = bmp.Palette;
+             Array.Copy(_paletteColors, p.Entries, _paletteColors.Length);
+             bmp.Palette = p; // The Bitmap will only update when the Palette property's setter is used
+         }
+ 
+         /// <summary>Renders a mandelbrot fractal.</summary>
+         /// <param name="position">The MandelbrotPosition representing the fractal boundaries to be rendered.</param>
+         /// <param name="imageWidth">The width in pixels of the image to create.</param>
+         /// <param name="imageHeight">The height in pixels of the image to create.</param>
+         /// <param name="parallelRendering">Whether to render the image in parallel.</param>
+         /// <returns>The rendered Bitmap.</returns>
+         public unsafe static Bitmap Create(MandelbrotPosition position, int imageWidth, int imageHeight, CancellationToken cancellationToken, bool parallelRendering)
+         {
+             // The maximum number of iterations to perform for each pixel.  Higher number means better
+             // quality but also slower.
+             const int maxIterations = 256;
+ 
+             // In order to use the Bitmap ctor that accepts a stride, the stride must be divisible by four.
+             // We're using imageWidth as the stride, so shift it to be divisible by 4 as necessary.
+             if (imageWidth % 4 != 0) imageWidth = (imageWidth / 4) * 4;
+ 
+             // Based on the fractal bounds, determine its upper left coordinate
+             double left = position.CenterX - (position.Width / 2);
+             double top = position.CenterY - (position.Height / 2);
+ 
+             // Get the factors that can be multiplied by row and col to arrive at specific x and y values
+             double colToXTranslation = position.Width / (double)imageWidth;
+             double rowToYTranslation = position.Height / (double)imageHeight;
+ 
+             // Create the byte array that will store the rendered color indices
+             int pixels = imageWidth * imageHeight;
+             byte[] data = new byte[pixels]; // initialized to all 0s, which equates to all black based on the default palette
+ 
+             // Generate the fractal using the mandelbrot formula 
+ 
+             // Parallel implementation
+             if (parallelRendering)
+             {
+                 var options = new ParallelOptions { CancellationToken = cancellationToken };
+                 Parallel.For(0, imageHeight, options, row =>
+                 {
+                     double initialY = row * rowToYTranslation + top;
+                     fixed (byte* ptr = data)
+                     {
+                         byte* currentPixel = &ptr[row * imageWidth];
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 });
+             }
+                 // Sequential implementation
+             else
+             {
+                 for (int row = 0; row < imageHeight; row++)
+                 {
+                     cancellationToken.ThrowIfCancellationRequested();
+ 
+                     double initialY = row * rowToYTranslation + top;
+                     fixed (byte* ptr = data)
+                     {
+                         byte* currentPixel = &ptr[row * imageWidth];
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 };
+             }
+ 
+             // Produce a Bitmap from the byte array of color indices and return it
+             fixed (byte* ptr = data)
+             {
+                 using (Bitmap tempBitmap = new Bitmap(imageWidth, imageHeight, imageWidth, PixelFormat.Format8bppIndexed, (IntPtr)ptr))
+                 {
+                     Bitmap bitmap = tempBitmap.Clone(new Rectangle(0, 0, tempBitmap.Width, tempBitmap.Height), PixelFormat.Format8bppIndexed);
+                     UpdatePalette(bitmap);
+                     return bitmap;
+                 }
+             }
+         }
+     }
+ }
+             for (int i = 1; i < 256; i++) paletteColors[i] = Color.FromArgb(0, i * 5 % 256, i * 5 % 256); // change this at will for different colorings
+             return paletteColors;
+         }
+ 
+         /// <summary>Copy our precreated color palette into the target Bitmap.</summary>
+         /// <param name="bmp">The Bitmap to be updated.</param>
+         private static void UpdatePalette(Bitmap bmp)
+         {
+             ColorPalette p = bmp.Palette;
+             Array.Copy(_paletteColors, p.Entries, _paletteColors.Length);
+             bmp.Palette = p; // The Bitmap will only update when the Palette property's setter is used
+         }
+ 
+         /// <summary>Renders a mandelbrot fractal.</summary>
+         /// <param name="position">The MandelbrotPosition representing the fractal boundaries to be rendered.</param>
+         /// <param name="imageWidth">The width in pixels of the image to create.</param>
+         /// <param name="imageHeight">The height in pixels of the image to create.</param>
+         /// <param name="parallelRendering">Whether to render the image in parallel.</param>
+         /// <returns>The rendered Bitmap.</returns>
+         public unsafe static Bitmap Create(MandelbrotPosition position, int imageWidth, int imageHeight, CancellationToken cancellationToken, bool parallelRendering)
+         {
+             // The maximum number of iterations to perform for each pixel.  Higher number means better
+             // quality but also slower.
+             const int maxIterations = 256;
+ 
+             // In order to use the Bitmap ctor that accepts a stride, the stride must be divisible by four.
+             // We're using imageWidth as the stride, so shift it to be divisible by 4 as necessary.
+             if (imageWidth % 4 != 0) imageWidth = (imageWidth / 4) * 4;
+ 
+             // Based on the fractal bounds, determine its upper left coordinate
+             double left = position.CenterX - (position.Width / 2);
+             double top = position.CenterY - (position.Height / 2);
+ 
+             // Get the factors that can be multiplied by row and col to arrive at specific x and y values
+             double colToXTranslation = position.Width / (double)imageWidth;
+             double rowToYTranslation = position.Height / (double)imageHeight;
+ 
+             // Create the byte array that will store the rendered color indices
+             int pixels = imageWidth * imageHeight;
+             byte[] data = new byte[pixels]; // initialized to all 0s, which equates to all black based on the default palette
+ 
+             // Generate the fractal using the mandelbrot formula 
+ 
+             // Parallel implementation
+             if (parallelRendering)
+             {
+                 var options = new ParallelOptions { CancellationToken = cancellationToken };
+                 Parallel.For(0, imageHeight, options, row =>
+                 {
+                     double initialY = row * rowToYTranslation + top;
+                     fixed (byte* ptr = data)
+                     {
+                         byte* currentPixel = &ptr[row * imageWidth];
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 });
+             }
+                 // Sequential implementation
+             else
+             {
+                 for (int row = 0; row < imageHeight; row++)
+                 {
+                     cancellationToken.ThrowIfCancellationRequested();
+ 
+                     double initialY = row * rowToYTranslation + top;
+                     fixed (byte* ptr = data)
+                     {
+                         byte* currentPixel = &ptr[row * imageWidth];
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 };
+             }
+ 
+             // Produce a Bitmap from the byte array of color indices and return it
+             fixed (byte* ptr = data)
+             {
+                 using (Bitmap tempBitmap = new Bitmap(imageWidth, imageHeight, imageWidth, PixelFormat.Format8bppIndexed, (IntPtr)ptr))
+                 {
+                     Bitmap bitmap = tempBitmap.Clone(new Rectangle(0, 0, tempBitmap.Width, tempBitmap.Height), PixelFormat.Format8bppIndexed);
+                     UpdatePalette(bitmap);
+                     return bitmap;
+                 }
+             }
+         }
+     }
+ }
+             return paletteColors;
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\MandelbrotGenerator.cs" startline="47" endline="55"><![CDATA[
+ 
+         /// <summary>Copy our precreated color palette into the target Bitmap.</summary>
+         /// <param name="bmp">The Bitmap to be updated.</param>
+         private static void UpdatePalette(Bitmap bmp)
+         {
+             ColorPalette p = bmp.Palette;
+             Array.Copy(_paletteColors, p.Entries, _paletteColors.Length);
+             bmp.Palette = p; // The Bitmap will only update when the Palette property's setter is used
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\MandelbrotGenerator.cs" startline="56" endline="155"><![CDATA[
+ 
+         /// <summary>Renders a mandelbrot fractal.</summary>
+         /// <param name="position">The MandelbrotPosition representing the fractal boundaries to be rendered.</param>
+         /// <param name="imageWidth">The width in pixels of the image to create.</param>
+         /// <param name="imageHeight">The height in pixels of the image to create.</param>
+         /// <param name="parallelRendering">Whether to render the image in parallel.</param>
+         /// <returns>The rendered Bitmap.</returns>
+         public unsafe static Bitmap Create(MandelbrotPosition position, int imageWidth, int imageHeight, CancellationToken cancellationToken, bool parallelRendering)
+         {
+             // The maximum number of iterations to perform for each pixel.  Higher number means better
+             // quality but also slower.
+             const int maxIterations = 256;
+ 
+             // In order to use the Bitmap ctor that accepts a stride, the stride must be divisible by four.
+             // We're using imageWidth as the stride, so shift it to be divisible by 4 as necessary.
+             if (imageWidth % 4 != 0) imageWidth = (imageWidth / 4) * 4;
+ 
+             // Based on the fractal bounds, determine its upper left coordinate
+             double left = position.CenterX - (position.Width / 2);
+             double top = position.CenterY - (position.Height / 2);
+ 
+             // Get the factors that can be multiplied by row and col to arrive at specific x and y values
+             double colToXTranslation = position.Width / (double)imageWidth;
+             double rowToYTranslation = position.Height / (double)imageHeight;
+ 
+             // Create the byte array that will store the rendered color indices
+             int pixels = imageWidth * imageHeight;
+             byte[] data = new byte[pixels]; // initialized to all 0s, which equates to all black based on the default palette
+ 
+             // Generate the fractal using the mandelbrot formula 
+ 
+             // Parallel implementation
+             if (parallelRendering)
+             {
+                 var options = new ParallelOptions { CancellationToken = cancellationToken };
+                 Parallel.For(0, imageHeight, options, row =>
+                 {
+                     double initialY = row * rowToYTranslation + top;
+                     fixed (byte* ptr = data)
+                     {
+                         byte* currentPixel = &ptr[row * imageWidth];
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 });
+             }
+                 // Sequential implementation
+             else
+             {
+                 for (int row = 0; row < imageHeight; row++)
+                 {
+                     cancellationToken.ThrowIfCancellationRequested();
+ 
+                     double initialY = row * rowToYTranslation + top;
+                     fixed (byte* ptr = data)
+                     {
+                         byte* currentPixel = &ptr[row * imageWidth];
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 };
+             }
+ 
+             // Produce a Bitmap from the byte array of color indices and return it
+             fixed (byte* ptr = data)
+             {
+                 using (Bitmap tempBitmap = new Bitmap(imageWidth, imageHeight, imageWidth, PixelFormat.Format8bppIndexed, (IntPtr)ptr))
+                 {
+                     Bitmap bitmap = tempBitmap.Clone(new Rectangle(0, 0, tempBitmap.Width, tempBitmap.Height), PixelFormat.Format8bppIndexed);
+                     UpdatePalette(bitmap);
+                     return bitmap;
+                 }
+             }
+         }
+     }
+ }
+         {
+             // The maximum number of iterations to perform for each pixel.  Higher number means better
+             // quality but also slower.
+             const int maxIterations = 256;
+ 
+             // In order to use the Bitmap ctor that accepts a stride, the stride must be divisible by four.
+             // We're using imageWidth as the stride, so shift it to be divisible by 4 as necessary.
+             if (imageWidth % 4 != 0) imageWidth = (imageWidth / 4) * 4;
+ 
+             // Based on the fractal bounds, determine its upper left coordinate
+             double left = position.CenterX - (position.Width / 2);
+             double top = position.CenterY - (position.Height / 2);
+ 
+             // Get the factors that can be multiplied by row and col to arrive at specific x and y values
+             double colToXTranslation = position.Width / (double)imageWidth;
+             double rowToYTranslation = position.Height / (double)imageHeight;
+ 
+             // Create the byte array that will store the rendered color indices
+             int pixels = imageWidth * imageHeight;
+             byte[] data = new byte[pixels]; // initialized to all 0s, which equates to all black based on the default palette
+ 
+             // Generate the fractal using the mandelbrot formula 
+ 
+             // Parallel implementation
+             if (parallelRendering)
+             {
+                 var options = new ParallelOptions { CancellationToken = cancellationToken };
+                 Parallel.For(0, imageHeight, options, row =>
+                 {
+                     double initialY = row * rowToYTranslation + top;
+                     fixed (byte* ptr = data)
+                     {
+                         byte* currentPixel = &ptr[row * imageWidth];
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 });
+             }
+                 // Sequential implementation
+             else
+             {
+                 for (int row = 0; row < imageHeight; row++)
+                 {
+                     cancellationToken.ThrowIfCancellationRequested();
+ 
+                     double initialY = row * rowToYTranslation + top;
+                     fixed (byte* ptr = data)
+                     {
+                         byte* currentPixel = &ptr[row * imageWidth];
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 };
+             }
+ 
+             // Produce a Bitmap from the byte array of color indices and return it
+             fixed (byte* ptr = data)
+             {
+                 using (Bitmap tempBitmap = new Bitmap(imageWidth, imageHeight, imageWidth, PixelFormat.Format8bppIndexed, (IntPtr)ptr))
+                 {
+                     Bitmap bitmap = tempBitmap.Clone(new Rectangle(0, 0, tempBitmap.Width, tempBitmap.Height), PixelFormat.Format8bppIndexed);
+                     UpdatePalette(bitmap);
+                     return bitmap;
+                 }
+             }
+         }
+     }
+ }
+             if (imageWidth % 4 != 0) imageWidth = (imageWidth / 4) * 4;
+ 
+             // Based on the fractal bounds, determine its upper left coordinate
+             double left = position.CenterX - (position.Width / 2);
+             double top = position.CenterY - (position.Height / 2);
+ 
+             // Get the factors that can be multiplied by row and col to arrive at specific x and y values
+             double colToXTranslation = position.Width / (double)imageWidth;
+             double rowToYTranslation = position.Height / (double)imageHeight;
+ 
+             // Create the byte array that will store the rendered color indices
+             int pixels = imageWidth * imageHeight;
+             byte[] data = new byte[pixels]; // initialized to all 0s, which equates to all black based on the default palette
+ 
+             // Generate the fractal using the mandelbrot formula 
+ 
+             // Parallel implementation
+             if (parallelRendering)
+             {
+                 var options = new ParallelOptions { CancellationToken = cancellationToken };
+                 Parallel.For(0, imageHeight, options, row =>
+                 {
+                     double initialY = row * rowToYTranslation + top;
+                     fixed (byte* ptr = data)
+                     {
+                         byte* currentPixel = &ptr[row * imageWidth];
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 });
+             }
+                 // Sequential implementation
+             else
+             {
+                 for (int row = 0; row < imageHeight; row++)
+                 {
+                     cancellationToken.ThrowIfCancellationRequested();
+ 
+                     double initialY = row * rowToYTranslation + top;
+                     fixed (byte* ptr = data)
+                     {
+                         byte* currentPixel = &ptr[row * imageWidth];
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 };
+             }
+ 
+             // Produce a Bitmap from the byte array of color indices and return it
+             fixed (byte* ptr = data)
+             {
+                 using (Bitmap tempBitmap = new Bitmap(imageWidth, imageHeight, imageWidth, PixelFormat.Format8bppIndexed, (IntPtr)ptr))
+                 {
+                     Bitmap bitmap = tempBitmap.Clone(new Rectangle(0, 0, tempBitmap.Width, tempBitmap.Height), PixelFormat.Format8bppIndexed);
+                     UpdatePalette(bitmap);
+                     return bitmap;
+                 }
+             }
+         }
+     }
+ }
+             {
+                 var options = new ParallelOptions { CancellationToken = cancellationToken };
+                 Parallel.For(0, imageHeight, options, row =>
+                 {
+                     double initialY = row * rowToYTranslation + top;
+                     fixed (byte* ptr = data)
+                     {
+                         byte* currentPixel = &ptr[row * imageWidth];
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 });
+             }
+                 // Sequential implementation
+             else
+             {
+                 for (int row = 0; row < imageHeight; row++)
+                 {
+                     cancellationToken.ThrowIfCancellationRequested();
+ 
+                     double initialY = row * rowToYTranslation + top;
+                     fixed (byte* ptr = data)
+                     {
+                         byte* currentPixel = &ptr[row * imageWidth];
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 };
+             }
+ 
+             // Produce a Bitmap from the byte array of color indices and return it
+             fixed (byte* ptr = data)
+             {
+                 using (Bitmap tempBitmap = new Bitmap(imageWidth, imageHeight, imageWidth, PixelFormat.Format8bppIndexed, (IntPtr)ptr))
+                 {
+                     Bitmap bitmap = tempBitmap.Clone(new Rectangle(0, 0, tempBitmap.Width, tempBitmap.Height), PixelFormat.Format8bppIndexed);
+                     UpdatePalette(bitmap);
+                     return bitmap;
+                 }
+             }
+         }
+     }
+ }
+             {
+                 for (int row = 0; row < imageHeight; row++)
+                 {
+                     cancellationToken.ThrowIfCancellationRequested();
+ 
+                     double initialY = row * rowToYTranslation + top;
+                     fixed (byte* ptr = data)
+                     {
+                         byte* currentPixel = &ptr[row * imageWidth];
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 };
+             }
+ 
+             // Produce a Bitmap from the byte array of color indices and return it
+             fixed (byte* ptr = data)
+             {
+                 using (Bitmap tempBitmap = new Bitmap(imageWidth, imageHeight, imageWidth, PixelFormat.Format8bppIndexed, (IntPtr)ptr))
+                 {
+                     Bitmap bitmap = tempBitmap.Clone(new Rectangle(0, 0, tempBitmap.Width, tempBitmap.Height), PixelFormat.Format8bppIndexed);
+                     UpdatePalette(bitmap);
+                     return bitmap;
+                 }
+             }
+         }
+     }
+ }
+                 {
+                     cancellationToken.ThrowIfCancellationRequested();
+ 
+                     double initialY = row * rowToYTranslation + top;
+                     fixed (byte* ptr = data)
+                     {
+                         byte* currentPixel = &ptr[row * imageWidth];
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 };
+             }
+ 
+             // Produce a Bitmap from the byte array of color indices and return it
+             fixed (byte* ptr = data)
+             {
+                 using (Bitmap tempBitmap = new Bitmap(imageWidth, imageHeight, imageWidth, PixelFormat.Format8bppIndexed, (IntPtr)ptr))
+                 {
+                     Bitmap bitmap = tempBitmap.Clone(new Rectangle(0, 0, tempBitmap.Width, tempBitmap.Height), PixelFormat.Format8bppIndexed);
+                     UpdatePalette(bitmap);
+                     return bitmap;
+                 }
+             }
+         }
+     }
+ }
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 };
+             }
+ 
+             // Produce a Bitmap from the byte array of color indices and return it
+             fixed (byte* ptr = data)
+             {
+                 using (Bitmap tempBitmap = new Bitmap(imageWidth, imageHeight, imageWidth, PixelFormat.Format8bppIndexed, (IntPtr)ptr))
+                 {
+                     Bitmap bitmap = tempBitmap.Clone(new Rectangle(0, 0, tempBitmap.Width, tempBitmap.Height), PixelFormat.Format8bppIndexed);
+                     UpdatePalette(bitmap);
+                     return bitmap;
+                 }
+             }
+         }
+     }
+ }
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 };
+             }
+ 
+             // Produce a Bitmap from the byte array of color indices and return it
+             fixed (byte* ptr = data)
+             {
+                 using (Bitmap tempBitmap = new Bitmap(imageWidth, imageHeight, imageWidth, PixelFormat.Format8bppIndexed, (IntPtr)ptr))
+                 {
+                     Bitmap bitmap = tempBitmap.Clone(new Rectangle(0, 0, tempBitmap.Width, tempBitmap.Height), PixelFormat.Format8bppIndexed);
+                     UpdatePalette(bitmap);
+                     return bitmap;
+                 }
+             }
+         }
+     }
+ }
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 };
+             }
+ 
+             // Produce a Bitmap from the byte array of color indices and return it
+             fixed (byte* ptr = data)
+             {
+                 using (Bitmap tempBitmap = new Bitmap(imageWidth, imageHeight, imageWidth, PixelFormat.Format8bppIndexed, (IntPtr)ptr))
+                 {
+                     Bitmap bitmap = tempBitmap.Clone(new Rectangle(0, 0, tempBitmap.Width, tempBitmap.Height), PixelFormat.Format8bppIndexed);
+                     UpdatePalette(bitmap);
+                     return bitmap;
+                 }
+             }
+         }
+     }
+ }
+                         }
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 };
+             }
+ 
+             // Produce a Bitmap from the byte array of color indices and return it
+             fixed (byte* ptr = data)
+             {
+                 using (Bitmap tempBitmap = new Bitmap(imageWidth, imageHeight, imageWidth, PixelFormat.Format8bppIndexed, (IntPtr)ptr))
+                 {
+                     Bitmap bitmap = tempBitmap.Clone(new Rectangle(0, 0, tempBitmap.Width, tempBitmap.Height), PixelFormat.Format8bppIndexed);
+                     UpdatePalette(bitmap);
+                     return bitmap;
+                 }
+             }
+         }
+     }
+ }
+                     }
+                 };
+             }
+ 
+             // Produce a Bitmap from the byte array of color indices and return it
+             fixed (byte* ptr = data)
+             {
+                 using (Bitmap tempBitmap = new Bitmap(imageWidth, imageHeight, imageWidth, PixelFormat.Format8bppIndexed, (IntPtr)ptr))
+                 {
+                     Bitmap bitmap = tempBitmap.Clone(new Rectangle(0, 0, tempBitmap.Width, tempBitmap.Height), PixelFormat.Format8bppIndexed);
+                     UpdatePalette(bitmap);
+                     return bitmap;
+                 }
+             }
+         }
+     }
+ }
+                 };
+                 for (int row = 0; row < imageHeight; row++)
+                 {
+                     cancellationToken.ThrowIfCancellationRequested();
+ 
+                     double initialY = row * rowToYTranslation + top;
+                     fixed (byte* ptr = data)
+                     {
+                         byte* currentPixel = &ptr[row * imageWidth];
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 };
+             }
+ 
+             // Produce a Bitmap from the byte array of color indices and return it
+             fixed (byte* ptr = data)
+             {
+                 using (Bitmap tempBitmap = new Bitmap(imageWidth, imageHeight, imageWidth, PixelFormat.Format8bppIndexed, (IntPtr)ptr))
+                 {
+                     Bitmap bitmap = tempBitmap.Clone(new Rectangle(0, 0, tempBitmap.Width, tempBitmap.Height), PixelFormat.Format8bppIndexed);
+                     UpdatePalette(bitmap);
+                     return bitmap;
+                 }
+             }
+         }
+     }
+ }
+             }
+ 
+             // Produce a Bitmap from the byte array of color indices and return it
+             fixed (byte* ptr = data)
+             {
+                 using (Bitmap tempBitmap = new Bitmap(imageWidth, imageHeight, imageWidth, PixelFormat.Format8bppIndexed, (IntPtr)ptr))
+                 {
+                     Bitmap bitmap = tempBitmap.Clone(new Rectangle(0, 0, tempBitmap.Width, tempBitmap.Height), PixelFormat.Format8bppIndexed);
+                     UpdatePalette(bitmap);
+                     return bitmap;
+                 }
+             }
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\MandelbrotGenerator.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\MandelbrotGenerator.cs" startline="36" endline="155"><![CDATA[
+         private static Color[] _paletteColors = CreatePaletteColors();
+ 
+         /// <summary>Create the color palette to be used for all fractals.</summary>
+         /// <returns>A 256-color array that can be stored into an 8bpp Bitmap's ColorPalette.</returns>
+         private static Color[] CreatePaletteColors()
+         {
+             Color[] paletteColors = new Color[256];
+             paletteColors[0] = Color.Black;
+             for (int i = 1; i < 256; i++) paletteColors[i] = Color.FromArgb(0, i * 5 % 256, i * 5 % 256); // change this at will for different colorings
+             return paletteColors;
+         }
+ 
+         /// <summary>Copy our precreated color palette into the target Bitmap.</summary>
+         /// <param name="bmp">The Bitmap to be updated.</param>
+         private static void UpdatePalette(Bitmap bmp)
+         {
+             ColorPalette p = bmp.Palette;
+             Array.Copy(_paletteColors, p.Entries, _paletteColors.Length);
+             bmp.Palette = p; // The Bitmap will only update when the Palette property's setter is used
+         }
+ 
+         /// <summary>Renders a mandelbrot fractal.</summary>
+         /// <param name="position">The MandelbrotPosition representing the fractal boundaries to be rendered.</param>
+         /// <param name="imageWidth">The width in pixels of the image to create.</param>
+         /// <param name="imageHeight">The height in pixels of the image to create.</param>
+         /// <param name="parallelRendering">Whether to render the image in parallel.</param>
+         /// <returns>The rendered Bitmap.</returns>
+         public unsafe static Bitmap Create(MandelbrotPosition position, int imageWidth, int imageHeight, CancellationToken cancellationToken, bool parallelRendering)
+         {
+             // The maximum number of iterations to perform for each pixel.  Higher number means better
+             // quality but also slower.
+             const int maxIterations = 256;
+ 
+             // In order to use the Bitmap ctor that accepts a stride, the stride must be divisible by four.
+             // We're using imageWidth as the stride, so shift it to be divisible by 4 as necessary.
+             if (imageWidth % 4 != 0) imageWidth = (imageWidth / 4) * 4;
+ 
+             // Based on the fractal bounds, determine its upper left coordinate
+             double left = position.CenterX - (position.Width / 2);
+             double top = position.CenterY - (position.Height / 2);
+ 
+             // Get the factors that can be multiplied by row and col to arrive at specific x and y values
+             double colToXTranslation = position.Width / (double)imageWidth;
+             double rowToYTranslation = position.Height / (double)imageHeight;
+ 
+             // Create the byte array that will store the rendered color indices
+             int pixels = imageWidth * imageHeight;
+             byte[] data = new byte[pixels]; // initialized to all 0s, which equates to all black based on the default palette
+ 
+             // Generate the fractal using the mandelbrot formula 
+ 
+             // Parallel implementation
+             if (parallelRendering)
+             {
+                 var options = new ParallelOptions { CancellationToken = cancellationToken };
+                 Parallel.For(0, imageHeight, options, row =>
+                 {
+                     double initialY = row * rowToYTranslation + top;
+                     fixed (byte* ptr = data)
+                     {
+                         byte* currentPixel = &ptr[row * imageWidth];
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 });
+             }
+                 // Sequential implementation
+             else
+             {
+                 for (int row = 0; row < imageHeight; row++)
+                 {
+                     cancellationToken.ThrowIfCancellationRequested();
+ 
+                     double initialY = row * rowToYTranslation + top;
+                     fixed (byte* ptr = data)
+                     {
+                         byte* currentPixel = &ptr[row * imageWidth];
+                         for (int col = 0; col < imageWidth; col++, currentPixel++)
+                         {
+                             Complex c = new Complex(col * colToXTranslation + left, initialY);
+                             Complex z = c;
+                             for (int iteration = 0; iteration < maxIterations; iteration++)
+                             {
+                                 if (z.Magnitude > 4)
+                                 {
+                                     *currentPixel = (byte)iteration;
+                                     break;
+                                 }
+                                 z = (z * z) + c;
+                             }
+                         }
+                     }
+                 };
+             }
+ 
+             // Produce a Bitmap from the byte array of color indices and return it
+             fixed (byte* ptr = data)
+             {
+                 using (Bitmap tempBitmap = new Bitmap(imageWidth, imageHeight, imageWidth, PixelFormat.Format8bppIndexed, (IntPtr)ptr))
+                 {
+                     Bitmap bitmap = tempBitmap.Clone(new Rectangle(0, 0, tempBitmap.Width, tempBitmap.Height), PixelFormat.Format8bppIndexed);
+                     UpdatePalette(bitmap);
+                     return bitmap;
+                 }
+             }
+         }
+     }
+ }
+]]></source>
+</source_elements></project>

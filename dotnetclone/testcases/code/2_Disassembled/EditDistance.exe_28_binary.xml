@@ -1,0 +1,444 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_CSharp\EditDistance.cs" startline="19" endline="96"><![CDATA[
+  {
+    .entrypoint
+    // Code size       162 (0xa2)
+    .maxstack  3
+    .locals init ([0] class [mscorlib]System.Random rand,
+             [1] class [System]System.Diagnostics.Stopwatch sw,
+             [2] int32 result,
+             [3] string s1,
+             [4] string s2,
+             [5] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void [mscorlib]System.Random::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  newobj     instance void [System]System.Diagnostics.Stopwatch::.ctor()
+    IL_000c:  stloc.1
+    IL_000d:  br         IL_009a
+
+    IL_0012:  nop
+    IL_0013:  ldloc.0
+    IL_0014:  call       string EditDistance.Program::GenerateRandomString(class [mscorlib]System.Random)
+    IL_0019:  stloc.3
+    IL_001a:  ldloc.0
+    IL_001b:  call       string EditDistance.Program::GenerateRandomString(class [mscorlib]System.Random)
+    IL_0020:  stloc.s    s2
+    IL_0022:  ldloc.1
+    IL_0023:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Restart()
+    IL_0028:  nop
+    IL_0029:  ldloc.3
+    IL_002a:  ldloc.s    s2
+    IL_002c:  call       int32 EditDistance.Program::SerialEditDistance(string,
+                                                                        string)
+    IL_0031:  stloc.2
+    IL_0032:  ldloc.1
+    IL_0033:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Stop()
+    IL_0038:  nop
+    IL_0039:  ldstr      "Serial  :\t{0}\t{1}"
+    IL_003e:  ldloc.2
+    IL_003f:  box        [mscorlib]System.Int32
+    IL_0044:  ldloc.1
+    IL_0045:  callvirt   instance valuetype [mscorlib]System.TimeSpan [System]System.Diagnostics.Stopwatch::get_Elapsed()
+    IL_004a:  box        [mscorlib]System.TimeSpan
+    IL_004f:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object,
+                                                                  object)
+    IL_0054:  nop
+    IL_0055:  ldloc.1
+    IL_0056:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Restart()
+    IL_005b:  nop
+    IL_005c:  ldloc.3
+    IL_005d:  ldloc.s    s2
+    IL_005f:  call       int32 EditDistance.Program::ParallelEditDistance(string,
+                                                                          string)
+    IL_0064:  stloc.2
+    IL_0065:  ldloc.1
+    IL_0066:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Stop()
+    IL_006b:  nop
+    IL_006c:  ldstr      "Parallel:\t{0}\t{1}"
+    IL_0071:  ldloc.2
+    IL_0072:  box        [mscorlib]System.Int32
+    IL_0077:  ldloc.1
+    IL_0078:  callvirt   instance valuetype [mscorlib]System.TimeSpan [System]System.Diagnostics.Stopwatch::get_Elapsed()
+    IL_007d:  box        [mscorlib]System.TimeSpan
+    IL_0082:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object,
+                                                                  object)
+    IL_0087:  nop
+    IL_0088:  ldstr      "--------------------------------------------------"
+    + "-----"
+    IL_008d:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0092:  nop
+    IL_0093:  call       void [mscorlib]System.GC::Collect()
+    IL_0098:  nop
+    IL_0099:  nop
+    IL_009a:  ldc.i4.1
+    IL_009b:  stloc.s    CS$4$0000
+    IL_009d:  br         IL_0012
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_CSharp\EditDistance.cs" startline="44" endline="49"><![CDATA[
+  {
+    // Code size       63 (0x3f)
+    .maxstack  5
+    .locals init ([0] class [mscorlib]System.Text.StringBuilder sb,
+             [1] int32 i,
+             [2] string CS$1$0000,
+             [3] bool CS$4$0001)
+    IL_0000:  nop
+    IL_0001:  ldc.i4     0x2710
+    IL_0006:  newobj     instance void [mscorlib]System.Text.StringBuilder::.ctor(int32)
+    IL_000b:  stloc.0
+    IL_000c:  ldc.i4.0
+    IL_000d:  stloc.1
+    IL_000e:  br.s       IL_0028
+
+    IL_0010:  ldloc.0
+    IL_0011:  ldc.i4.s   97
+    IL_0013:  ldarg.0
+    IL_0014:  ldc.i4.0
+    IL_0015:  ldc.i4.s   26
+    IL_0017:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_001c:  add
+    IL_001d:  conv.u2
+    IL_001e:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(char)
+    IL_0023:  pop
+    IL_0024:  ldloc.1
+    IL_0025:  ldc.i4.1
+    IL_0026:  add
+    IL_0027:  stloc.1
+    IL_0028:  ldloc.1
+    IL_0029:  ldc.i4     0x2710
+    IL_002e:  clt
+    IL_0030:  stloc.3
+    IL_0031:  ldloc.3
+    IL_0032:  brtrue.s   IL_0010
+
+    IL_0034:  ldloc.0
+    IL_0035:  callvirt   instance string [mscorlib]System.Object::ToString()
+    IL_003a:  stloc.2
+    IL_003b:  br.s       IL_003d
+
+    IL_003d:  ldloc.2
+    IL_003e:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_CSharp\EditDistance.cs" startline="50" endline="69"><![CDATA[
+  {
+    // Code size       261 (0x105)
+    .maxstack  10
+    .locals init ([0] int32[0...,0...] dist,
+             [1] int32 i,
+             [2] int32 j,
+             [3] int32 CS$1$0000,
+             [4] bool CS$4$0001)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_0007:  ldc.i4.1
+    IL_0008:  add
+    IL_0009:  ldarg.1
+    IL_000a:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_000f:  ldc.i4.1
+    IL_0010:  add
+    IL_0011:  newobj     instance void int32[0...,0...]::.ctor(int32,
+                                                               int32)
+    IL_0016:  stloc.0
+    IL_0017:  ldc.i4.0
+    IL_0018:  stloc.1
+    IL_0019:  br.s       IL_0028
+
+    IL_001b:  ldloc.0
+    IL_001c:  ldloc.1
+    IL_001d:  ldc.i4.0
+    IL_001e:  ldloc.1
+    IL_001f:  call       instance void int32[0...,0...]::Set(int32,
+                                                             int32,
+                                                             int32)
+    IL_0024:  ldloc.1
+    IL_0025:  ldc.i4.1
+    IL_0026:  add
+    IL_0027:  stloc.1
+    IL_0028:  ldloc.1
+    IL_0029:  ldarg.0
+    IL_002a:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_002f:  cgt
+    IL_0031:  ldc.i4.0
+    IL_0032:  ceq
+    IL_0034:  stloc.s    CS$4$0001
+    IL_0036:  ldloc.s    CS$4$0001
+    IL_0038:  brtrue.s   IL_001b
+
+    IL_003a:  ldc.i4.0
+    IL_003b:  stloc.2
+    IL_003c:  br.s       IL_004b
+
+    IL_003e:  ldloc.0
+    IL_003f:  ldc.i4.0
+    IL_0040:  ldloc.2
+    IL_0041:  ldloc.2
+    IL_0042:  call       instance void int32[0...,0...]::Set(int32,
+                                                             int32,
+                                                             int32)
+    IL_0047:  ldloc.2
+    IL_0048:  ldc.i4.1
+    IL_0049:  add
+    IL_004a:  stloc.2
+    IL_004b:  ldloc.2
+    IL_004c:  ldarg.1
+    IL_004d:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_0052:  cgt
+    IL_0054:  ldc.i4.0
+    IL_0055:  ceq
+    IL_0057:  stloc.s    CS$4$0001
+    IL_0059:  ldloc.s    CS$4$0001
+    IL_005b:  brtrue.s   IL_003e
+
+    IL_005d:  ldc.i4.1
+    IL_005e:  stloc.1
+    IL_005f:  br.s       IL_00d9
+
+    IL_0061:  nop
+    IL_0062:  ldc.i4.1
+    IL_0063:  stloc.2
+    IL_0064:  br.s       IL_00c2
+
+    IL_0066:  nop
+    IL_0067:  ldloc.0
+    IL_0068:  ldloc.1
+    IL_0069:  ldloc.2
+    IL_006a:  ldarg.0
+    IL_006b:  ldloc.1
+    IL_006c:  ldc.i4.1
+    IL_006d:  sub
+    IL_006e:  callvirt   instance char [mscorlib]System.String::get_Chars(int32)
+    IL_0073:  ldarg.1
+    IL_0074:  ldloc.2
+    IL_0075:  ldc.i4.1
+    IL_0076:  sub
+    IL_0077:  callvirt   instance char [mscorlib]System.String::get_Chars(int32)
+    IL_007c:  beq.s      IL_00ac
+
+    IL_007e:  ldc.i4.1
+    IL_007f:  ldloc.0
+    IL_0080:  ldloc.1
+    IL_0081:  ldc.i4.1
+    IL_0082:  sub
+    IL_0083:  ldloc.2
+    IL_0084:  call       instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_0089:  ldloc.0
+    IL_008a:  ldloc.1
+    IL_008b:  ldloc.2
+    IL_008c:  ldc.i4.1
+    IL_008d:  sub
+    IL_008e:  call       instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_0093:  ldloc.0
+    IL_0094:  ldloc.1
+    IL_0095:  ldc.i4.1
+    IL_0096:  sub
+    IL_0097:  ldloc.2
+    IL_0098:  ldc.i4.1
+    IL_0099:  sub
+    IL_009a:  call       instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_009f:  call       int32 [mscorlib]System.Math::Min(int32,
+                                                          int32)
+    IL_00a4:  call       int32 [mscorlib]System.Math::Min(int32,
+                                                          int32)
+    IL_00a9:  add
+    IL_00aa:  br.s       IL_00b8
+
+    IL_00ac:  ldloc.0
+    IL_00ad:  ldloc.1
+    IL_00ae:  ldc.i4.1
+    IL_00af:  sub
+    IL_00b0:  ldloc.2
+    IL_00b1:  ldc.i4.1
+    IL_00b2:  sub
+    IL_00b3:  call       instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_00b8:  call       instance void int32[0...,0...]::Set(int32,
+                                                             int32,
+                                                             int32)
+    IL_00bd:  nop
+    IL_00be:  ldloc.2
+    IL_00bf:  ldc.i4.1
+    IL_00c0:  add
+    IL_00c1:  stloc.2
+    IL_00c2:  ldloc.2
+    IL_00c3:  ldarg.1
+    IL_00c4:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_00c9:  cgt
+    IL_00cb:  ldc.i4.0
+    IL_00cc:  ceq
+    IL_00ce:  stloc.s    CS$4$0001
+    IL_00d0:  ldloc.s    CS$4$0001
+    IL_00d2:  brtrue.s   IL_0066
+
+    IL_00d4:  nop
+    IL_00d5:  ldloc.1
+    IL_00d6:  ldc.i4.1
+    IL_00d7:  add
+    IL_00d8:  stloc.1
+    IL_00d9:  ldloc.1
+    IL_00da:  ldarg.0
+    IL_00db:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_00e0:  cgt
+    IL_00e2:  ldc.i4.0
+    IL_00e3:  ceq
+    IL_00e5:  stloc.s    CS$4$0001
+    IL_00e7:  ldloc.s    CS$4$0001
+    IL_00e9:  brtrue     IL_0061
+
+    IL_00ee:  ldloc.0
+    IL_00ef:  ldarg.0
+    IL_00f0:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_00f5:  ldarg.1
+    IL_00f6:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_00fb:  call       instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_0100:  stloc.3
+    IL_0101:  br.s       IL_0103
+
+    IL_0103:  ldloc.3
+    IL_0104:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_CSharp\EditDistance.cs" startline="70" endline="94"><![CDATA[
+  {
+    // Code size       238 (0xee)
+    .maxstack  7
+    .locals init ([0] int32 i,
+             [1] int32 j,
+             [2] int32 numBlocks,
+             [3] class EditDistance.Program/'<>c__DisplayClass1' 'CS$<>8__locals2',
+             [4] int32 CS$1$0000,
+             [5] bool CS$4$0001)
+    IL_0000:  newobj     instance void EditDistance.Program/'<>c__DisplayClass1'::.ctor()
+    IL_0005:  stloc.3
+    IL_0006:  ldloc.3
+    IL_0007:  ldarg.0
+    IL_0008:  stfld      string EditDistance.Program/'<>c__DisplayClass1'::s1
+    IL_000d:  ldloc.3
+    IL_000e:  ldarg.1
+    IL_000f:  stfld      string EditDistance.Program/'<>c__DisplayClass1'::s2
+    IL_0014:  nop
+    IL_0015:  ldloc.3
+    IL_0016:  ldloc.3
+    IL_0017:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s1
+    IL_001c:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_0021:  ldc.i4.1
+    IL_0022:  add
+    IL_0023:  ldloc.3
+    IL_0024:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s2
+    IL_0029:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_002e:  ldc.i4.1
+    IL_002f:  add
+    IL_0030:  newobj     instance void int32[0...,0...]::.ctor(int32,
+                                                               int32)
+    IL_0035:  stfld      int32[0...,0...] EditDistance.Program/'<>c__DisplayClass1'::dist
+    IL_003a:  ldc.i4.0
+    IL_003b:  stloc.0
+    IL_003c:  br.s       IL_0050
+
+    IL_003e:  ldloc.3
+    IL_003f:  ldfld      int32[0...,0...] EditDistance.Program/'<>c__DisplayClass1'::dist
+    IL_0044:  ldloc.0
+    IL_0045:  ldc.i4.0
+    IL_0046:  ldloc.0
+    IL_0047:  call       instance void int32[0...,0...]::Set(int32,
+                                                             int32,
+                                                             int32)
+    IL_004c:  ldloc.0
+    IL_004d:  ldc.i4.1
+    IL_004e:  add
+    IL_004f:  stloc.0
+    IL_0050:  ldloc.0
+    IL_0051:  ldloc.3
+    IL_0052:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s1
+    IL_0057:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_005c:  cgt
+    IL_005e:  ldc.i4.0
+    IL_005f:  ceq
+    IL_0061:  stloc.s    CS$4$0001
+    IL_0063:  ldloc.s    CS$4$0001
+    IL_0065:  brtrue.s   IL_003e
+
+    IL_0067:  ldc.i4.0
+    IL_0068:  stloc.1
+    IL_0069:  br.s       IL_007d
+
+    IL_006b:  ldloc.3
+    IL_006c:  ldfld      int32[0...,0...] EditDistance.Program/'<>c__DisplayClass1'::dist
+    IL_0071:  ldc.i4.0
+    IL_0072:  ldloc.1
+    IL_0073:  ldloc.1
+    IL_0074:  call       instance void int32[0...,0...]::Set(int32,
+                                                             int32,
+                                                             int32)
+    IL_0079:  ldloc.1
+    IL_007a:  ldc.i4.1
+    IL_007b:  add
+    IL_007c:  stloc.1
+    IL_007d:  ldloc.1
+    IL_007e:  ldloc.3
+    IL_007f:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s2
+    IL_0084:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_0089:  cgt
+    IL_008b:  ldc.i4.0
+    IL_008c:  ceq
+    IL_008e:  stloc.s    CS$4$0001
+    IL_0090:  ldloc.s    CS$4$0001
+    IL_0092:  brtrue.s   IL_006b
+
+    IL_0094:  call       int32 [mscorlib]System.Environment::get_ProcessorCount()
+    IL_0099:  ldc.i4.4
+    IL_009a:  mul
+    IL_009b:  stloc.2
+    IL_009c:  ldloc.3
+    IL_009d:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s1
+    IL_00a2:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_00a7:  ldloc.3
+    IL_00a8:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s2
+    IL_00ad:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_00b2:  ldloc.2
+    IL_00b3:  ldloc.2
+    IL_00b4:  ldloc.3
+    IL_00b5:  ldftn      instance void EditDistance.Program/'<>c__DisplayClass1'::'<ParallelEditDistance>b__0'(int32,
+                                                                                                               int32,
+                                                                                                               int32,
+                                                                                                               int32)
+    IL_00bb:  newobj     instance void class [mscorlib]System.Action`4<int32,int32,int32,int32>::.ctor(object,
+                                                                                                       native int)
+    IL_00c0:  call       void [ParallelExtensionsExtras]System.Threading.Algorithms.ParallelAlgorithms::Wavefront(int32,
+                                                                                                                  int32,
+                                                                                                                  int32,
+                                                                                                                  int32,
+                                                                                                                  class [mscorlib]System.Action`4<int32,int32,int32,int32>)
+    IL_00c5:  nop
+    IL_00c6:  ldloc.3
+    IL_00c7:  ldfld      int32[0...,0...] EditDistance.Program/'<>c__DisplayClass1'::dist
+    IL_00cc:  ldloc.3
+    IL_00cd:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s1
+    IL_00d2:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_00d7:  ldloc.3
+    IL_00d8:  ldfld      string EditDistance.Program/'<>c__DisplayClass1'::s2
+    IL_00dd:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_00e2:  call       instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_00e7:  stloc.s    CS$1$0000
+    IL_00e9:  br.s       IL_00eb
+
+    IL_00eb:  ldloc.s    CS$1$0000
+    IL_00ed:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_CSharp\EditDistance.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+]]></source>
+</source_elements></project>

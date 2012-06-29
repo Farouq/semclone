@@ -1,0 +1,14 @@
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\bin\Debug\Boids.exe.config
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\bin\Debug\Boids.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\bin\Debug\Boids.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\obj\Debug\MainWindow.baml
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\obj\Debug\MainWindow.g.cs
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\obj\Debug\App.g.cs
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\obj\Debug\Boids_MarkupCompile.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\obj\Debug\Boids.g.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\obj\Debug\Boids.Properties.Resources.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\obj\Debug\Boids.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\obj\Debug\Boids.pdb

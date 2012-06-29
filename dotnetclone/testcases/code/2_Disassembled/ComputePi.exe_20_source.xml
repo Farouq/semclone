@@ -1,0 +1,1076 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="21" endline="105"><![CDATA[
+     {
+         while (true)
+         {
+             Time(() => SerialLinqPi());
+             Time(() => ParallelLinqPi());
+             Time(() => SerialPi());
+             Time(() => ParallelPi());
+             Time(() => ParallelPartitionerPi());
+ 
+             Console.WriteLine("----");
+             Console.ReadLine();
+         }
+     }
+ 
+     /// <summary>Times the execution of a function and outputs both the elapsed time and the function's result.</summary>
+     static void Time<T>(Func<T> work)
+     {
+         var sw = Stopwatch.StartNew();
+         var result = work();
+         Console.WriteLine(sw.Elapsed + "
+     }
+ 
+     /// <summary>Estimates the value of PI using a LINQ-based implementation.</summary>
+     static double SerialLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in Enumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a PLINQ-based implementation.</summary>
+     static double ParallelLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in ParallelEnumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a for loop.</summary>
+     static double SerialPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         for (int i = 0; i < num_steps; i++)
+         {
+             double x = (i + 0.5) * step;
+             sum = sum + 4.0 / (1.0 + x * x);
+         }
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.For.</summary>
+     static double ParallelPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.For(0, num_steps, () => 0.0, (i, state, local) =>
+         {
+             double x = (i + 0.5) * step;
+             return local + 4.0 / (1.0 + x * x);
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     static double ParallelPartitionerPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ }
+         {
+             Time(() => SerialLinqPi());
+             Time(() => ParallelLinqPi());
+             Time(() => SerialPi());
+             Time(() => ParallelPi());
+             Time(() => ParallelPartitionerPi());
+ 
+             Console.WriteLine("----");
+             Console.ReadLine();
+         }
+         while (true)
+         {
+             Time(() => SerialLinqPi());
+             Time(() => ParallelLinqPi());
+             Time(() => SerialPi());
+             Time(() => ParallelPi());
+             Time(() => ParallelPartitionerPi());
+ 
+             Console.WriteLine("----");
+             Console.ReadLine();
+         }
+     }
+ 
+     /// <summary>Times the execution of a function and outputs both the elapsed time and the function's result.</summary>
+     static void Time<T>(Func<T> work)
+     {
+         var sw = Stopwatch.StartNew();
+         var result = work();
+         Console.WriteLine(sw.Elapsed + "
+     }
+ 
+     /// <summary>Estimates the value of PI using a LINQ-based implementation.</summary>
+     static double SerialLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in Enumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a PLINQ-based implementation.</summary>
+     static double ParallelLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in ParallelEnumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a for loop.</summary>
+     static double SerialPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         for (int i = 0; i < num_steps; i++)
+         {
+             double x = (i + 0.5) * step;
+             sum = sum + 4.0 / (1.0 + x * x);
+         }
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.For.</summary>
+     static double ParallelPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.For(0, num_steps, () => 0.0, (i, state, local) =>
+         {
+             double x = (i + 0.5) * step;
+             return local + 4.0 / (1.0 + x * x);
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     static double ParallelPartitionerPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="37" endline="41"><![CDATA[
+     {
+         var sw = Stopwatch.StartNew();
+         var result = work();
+         Console.WriteLine(sw.Elapsed + "
+     }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="42" endline="50"><![CDATA[
+ 
+     /// <summary>Estimates the value of PI using a LINQ-based implementation.</summary>
+     static double SerialLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in Enumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a PLINQ-based implementation.</summary>
+     static double ParallelLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in ParallelEnumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a for loop.</summary>
+     static double SerialPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         for (int i = 0; i < num_steps; i++)
+         {
+             double x = (i + 0.5) * step;
+             sum = sum + 4.0 / (1.0 + x * x);
+         }
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.For.</summary>
+     static double ParallelPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.For(0, num_steps, () => 0.0, (i, state, local) =>
+         {
+             double x = (i + 0.5) * step;
+             return local + 4.0 / (1.0 + x * x);
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     static double ParallelPartitionerPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ }
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in Enumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="51" endline="59"><![CDATA[
+ 
+     /// <summary>Estimates the value of PI using a PLINQ-based implementation.</summary>
+     static double ParallelLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in ParallelEnumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a for loop.</summary>
+     static double SerialPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         for (int i = 0; i < num_steps; i++)
+         {
+             double x = (i + 0.5) * step;
+             sum = sum + 4.0 / (1.0 + x * x);
+         }
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.For.</summary>
+     static double ParallelPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.For(0, num_steps, () => 0.0, (i, state, local) =>
+         {
+             double x = (i + 0.5) * step;
+             return local + 4.0 / (1.0 + x * x);
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     static double ParallelPartitionerPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ }
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in ParallelEnumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="60" endline="72"><![CDATA[
+ 
+     /// <summary>Estimates the value of PI using a for loop.</summary>
+     static double SerialPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         for (int i = 0; i < num_steps; i++)
+         {
+             double x = (i + 0.5) * step;
+             sum = sum + 4.0 / (1.0 + x * x);
+         }
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.For.</summary>
+     static double ParallelPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.For(0, num_steps, () => 0.0, (i, state, local) =>
+         {
+             double x = (i + 0.5) * step;
+             return local + 4.0 / (1.0 + x * x);
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     static double ParallelPartitionerPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ }
+         {
+             double x = (i + 0.5) * step;
+             sum = sum + 4.0 / (1.0 + x * x);
+         }
+         for (int i = 0; i < num_steps; i++)
+         {
+             double x = (i + 0.5) * step;
+             sum = sum + 4.0 / (1.0 + x * x);
+         }
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.For.</summary>
+     static double ParallelPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.For(0, num_steps, () => 0.0, (i, state, local) =>
+         {
+             double x = (i + 0.5) * step;
+             return local + 4.0 / (1.0 + x * x);
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     static double ParallelPartitionerPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ }
+         return step * sum;
+     }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="73" endline="86"><![CDATA[
+ 
+     /// <summary>Estimates the value of PI using a Parallel.For.</summary>
+     static double ParallelPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.For(0, num_steps, () => 0.0, (i, state, local) =>
+         {
+             double x = (i + 0.5) * step;
+             return local + 4.0 / (1.0 + x * x);
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     static double ParallelPartitionerPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ }
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.For(0, num_steps, () => 0.0, (i, state, local) =>
+         {
+             double x = (i + 0.5) * step;
+             return local + 4.0 / (1.0 + x * x);
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="87" endline="104"><![CDATA[
+ 
+     /// <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     static double ParallelPartitionerPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ }
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="24" endline="105"><![CDATA[
+             Time(() => SerialLinqPi());
+             Time(() => ParallelLinqPi());
+             Time(() => SerialPi());
+             Time(() => ParallelPi());
+             Time(() => ParallelPartitionerPi());
+ 
+             Console.WriteLine("----");
+             Console.ReadLine();
+         }
+     }
+ 
+     /// <summary>Times the execution of a function and outputs both the elapsed time and the function's result.</summary>
+     static void Time<T>(Func<T> work)
+     {
+         var sw = Stopwatch.StartNew();
+         var result = work();
+         Console.WriteLine(sw.Elapsed + "
+     }
+ 
+     /// <summary>Estimates the value of PI using a LINQ-based implementation.</summary>
+     static double SerialLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in Enumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a PLINQ-based implementation.</summary>
+     static double ParallelLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in ParallelEnumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a for loop.</summary>
+     static double SerialPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         for (int i = 0; i < num_steps; i++)
+         {
+             double x = (i + 0.5) * step;
+             sum = sum + 4.0 / (1.0 + x * x);
+         }
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.For.</summary>
+     static double ParallelPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.For(0, num_steps, () => 0.0, (i, state, local) =>
+         {
+             double x = (i + 0.5) * step;
+             return local + 4.0 / (1.0 + x * x);
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     static double ParallelPartitionerPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="25" endline="105"><![CDATA[
+             Time(() => ParallelLinqPi());
+             Time(() => SerialPi());
+             Time(() => ParallelPi());
+             Time(() => ParallelPartitionerPi());
+ 
+             Console.WriteLine("----");
+             Console.ReadLine();
+         }
+     }
+ 
+     /// <summary>Times the execution of a function and outputs both the elapsed time and the function's result.</summary>
+     static void Time<T>(Func<T> work)
+     {
+         var sw = Stopwatch.StartNew();
+         var result = work();
+         Console.WriteLine(sw.Elapsed + "
+     }
+ 
+     /// <summary>Estimates the value of PI using a LINQ-based implementation.</summary>
+     static double SerialLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in Enumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a PLINQ-based implementation.</summary>
+     static double ParallelLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in ParallelEnumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a for loop.</summary>
+     static double SerialPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         for (int i = 0; i < num_steps; i++)
+         {
+             double x = (i + 0.5) * step;
+             sum = sum + 4.0 / (1.0 + x * x);
+         }
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.For.</summary>
+     static double ParallelPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.For(0, num_steps, () => 0.0, (i, state, local) =>
+         {
+             double x = (i + 0.5) * step;
+             return local + 4.0 / (1.0 + x * x);
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     static double ParallelPartitionerPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="26" endline="105"><![CDATA[
+             Time(() => SerialPi());
+             Time(() => ParallelPi());
+             Time(() => ParallelPartitionerPi());
+ 
+             Console.WriteLine("----");
+             Console.ReadLine();
+         }
+     }
+ 
+     /// <summary>Times the execution of a function and outputs both the elapsed time and the function's result.</summary>
+     static void Time<T>(Func<T> work)
+     {
+         var sw = Stopwatch.StartNew();
+         var result = work();
+         Console.WriteLine(sw.Elapsed + "
+     }
+ 
+     /// <summary>Estimates the value of PI using a LINQ-based implementation.</summary>
+     static double SerialLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in Enumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a PLINQ-based implementation.</summary>
+     static double ParallelLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in ParallelEnumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a for loop.</summary>
+     static double SerialPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         for (int i = 0; i < num_steps; i++)
+         {
+             double x = (i + 0.5) * step;
+             sum = sum + 4.0 / (1.0 + x * x);
+         }
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.For.</summary>
+     static double ParallelPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.For(0, num_steps, () => 0.0, (i, state, local) =>
+         {
+             double x = (i + 0.5) * step;
+             return local + 4.0 / (1.0 + x * x);
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     static double ParallelPartitionerPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="27" endline="105"><![CDATA[
+             Time(() => ParallelPi());
+             Time(() => ParallelPartitionerPi());
+ 
+             Console.WriteLine("----");
+             Console.ReadLine();
+         }
+     }
+ 
+     /// <summary>Times the execution of a function and outputs both the elapsed time and the function's result.</summary>
+     static void Time<T>(Func<T> work)
+     {
+         var sw = Stopwatch.StartNew();
+         var result = work();
+         Console.WriteLine(sw.Elapsed + "
+     }
+ 
+     /// <summary>Estimates the value of PI using a LINQ-based implementation.</summary>
+     static double SerialLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in Enumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a PLINQ-based implementation.</summary>
+     static double ParallelLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in ParallelEnumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a for loop.</summary>
+     static double SerialPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         for (int i = 0; i < num_steps; i++)
+         {
+             double x = (i + 0.5) * step;
+             sum = sum + 4.0 / (1.0 + x * x);
+         }
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.For.</summary>
+     static double ParallelPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.For(0, num_steps, () => 0.0, (i, state, local) =>
+         {
+             double x = (i + 0.5) * step;
+             return local + 4.0 / (1.0 + x * x);
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     static double ParallelPartitionerPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="28" endline="105"><![CDATA[
+             Time(() => ParallelPartitionerPi());
+ 
+             Console.WriteLine("----");
+             Console.ReadLine();
+         }
+     }
+ 
+     /// <summary>Times the execution of a function and outputs both the elapsed time and the function's result.</summary>
+     static void Time<T>(Func<T> work)
+     {
+         var sw = Stopwatch.StartNew();
+         var result = work();
+         Console.WriteLine(sw.Elapsed + "
+     }
+ 
+     /// <summary>Estimates the value of PI using a LINQ-based implementation.</summary>
+     static double SerialLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in Enumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a PLINQ-based implementation.</summary>
+     static double ParallelLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in ParallelEnumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a for loop.</summary>
+     static double SerialPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         for (int i = 0; i < num_steps; i++)
+         {
+             double x = (i + 0.5) * step;
+             sum = sum + 4.0 / (1.0 + x * x);
+         }
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.For.</summary>
+     static double ParallelPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.For(0, num_steps, () => 0.0, (i, state, local) =>
+         {
+             double x = (i + 0.5) * step;
+             return local + 4.0 / (1.0 + x * x);
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     static double ParallelPartitionerPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="49" endline="105"><![CDATA[
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a PLINQ-based implementation.</summary>
+     static double ParallelLinqPi()
+     {
+         double step = 1.0 / (double)num_steps;
+         return (from i in ParallelEnumerable.Range(0, num_steps)
+                 let x = (i + 0.5) * step
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a for loop.</summary>
+     static double SerialPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         for (int i = 0; i < num_steps; i++)
+         {
+             double x = (i + 0.5) * step;
+             sum = sum + 4.0 / (1.0 + x * x);
+         }
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.For.</summary>
+     static double ParallelPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.For(0, num_steps, () => 0.0, (i, state, local) =>
+         {
+             double x = (i + 0.5) * step;
+             return local + 4.0 / (1.0 + x * x);
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     static double ParallelPartitionerPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="58" endline="105"><![CDATA[
+                 select 4.0 / (1.0 + x * x)).Sum() * step;
+     }
+ 
+     /// <summary>Estimates the value of PI using a for loop.</summary>
+     static double SerialPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         for (int i = 0; i < num_steps; i++)
+         {
+             double x = (i + 0.5) * step;
+             sum = sum + 4.0 / (1.0 + x * x);
+         }
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.For.</summary>
+     static double ParallelPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.For(0, num_steps, () => 0.0, (i, state, local) =>
+         {
+             double x = (i + 0.5) * step;
+             return local + 4.0 / (1.0 + x * x);
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     static double ParallelPartitionerPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="80" endline="105"><![CDATA[
+         Parallel.For(0, num_steps, () => 0.0, (i, state, local) =>
+         {
+             double x = (i + 0.5) * step;
+             return local + 4.0 / (1.0 + x * x);
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ 
+     /// <summary>Estimates the value of PI using a Parallel.ForEach and a range partitioner.</summary>
+     static double ParallelPartitionerPi()
+     {
+         double sum = 0.0;
+         double step = 1.0 / (double)num_steps;
+         object monitor = new object();
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="94" endline="105"><![CDATA[
+         Parallel.ForEach(Partitioner.Create(0, num_steps), () => 0.0, (range, state, local) =>
+         {
+             for (int i = range.Item1; i < range.Item2; i++)
+             {
+                 double x = (i + 0.5) * step;
+                 local += 4.0 / (1.0 + x * x);
+             }
+             return local;
+         }, local => { lock (monitor) sum += local; });
+         return step * sum;
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+</source_elements></project>

@@ -1,0 +1,3101 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.ApplicationBase::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  8
+    .language '{3A12D0B8-C26C-11D0-B442-00A0244A1DD2}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.Devices.Computer::.ctor()
+    IL_0007:  nop
+    IL_0008:  nop
+    IL_0009:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       42 (0x2a)
+    .maxstack  8
+    IL_0000:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer>::.ctor()
+    IL_0005:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer> My.MyProject::m_ComputerObjectProvider
+    IL_000a:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication>::.ctor()
+    IL_000f:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication> My.MyProject::m_AppObjectProvider
+    IL_0014:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User>::.ctor()
+    IL_0019:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User> My.MyProject::m_UserObjectProvider
+    IL_001e:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices>::.ctor()
+    IL_0023:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices> My.MyProject::m_MyWebServicesObjectProvider
+    IL_0028:  nop
+    IL_0029:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class My.MyComputer Computer)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer> My.MyProject::m_ComputerObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class My.MyApplication Application)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication> My.MyProject::m_AppObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User User)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User> My.MyProject::m_UserObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class My.MyProject/MyWebServices WebServices)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices> My.MyProject::m_MyWebServicesObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\MainForm.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       243 (0xf3)
+    .maxstack  4
+    .locals init (int32 V_0,
+             int32 V_1,
+             class [mscorlib]System.WeakReference V_2,
+             class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> V_3,
+             bool V_4,
+             int32 V_5,
+             bool V_6,
+             bool V_7,
+             int32 V_8)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> ShakespeareanMonkeys.MainForm::__ENCList
+    IL_0006:  stloc.3
+    IL_0007:  ldc.i4.0
+    IL_0008:  stloc.s    V_4
+    IL_000a:  nop
+    .try
+    {
+      IL_000b:  ldloc.3
+      IL_000c:  ldloca.s   V_4
+      IL_000e:  call       void [mscorlib]System.Threading.Monitor::Enter(object,
+                                                                          bool&)
+      IL_0013:  nop
+      IL_0014:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> ShakespeareanMonkeys.MainForm::__ENCList
+      IL_0019:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_001e:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> ShakespeareanMonkeys.MainForm::__ENCList
+      IL_0023:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Capacity()
+      IL_0028:  ceq
+      IL_002a:  stloc.s    V_6
+      IL_002c:  ldloc.s    V_6
+      IL_002e:  brfalse    IL_00c4
+
+      IL_0033:  ldc.i4.0
+      IL_0034:  stloc.0
+      IL_0035:  ldc.i4.0
+      IL_0036:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> ShakespeareanMonkeys.MainForm::__ENCList
+      IL_003b:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_0040:  ldc.i4.1
+      IL_0041:  sub.ovf
+      IL_0042:  stloc.s    V_5
+      IL_0044:  stloc.1
+      IL_0045:  br.s       IL_008e
+
+      IL_0047:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> ShakespeareanMonkeys.MainForm::__ENCList
+      IL_004c:  ldloc.1
+      IL_004d:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Item(int32)
+      IL_0052:  stloc.2
+      IL_0053:  ldloc.2
+      IL_0054:  callvirt   instance bool [mscorlib]System.WeakReference::get_IsAlive()
+      IL_0059:  stloc.s    V_6
+      IL_005b:  ldloc.s    V_6
+      IL_005d:  brfalse.s  IL_0088
+
+      IL_005f:  ldloc.1
+      IL_0060:  ldloc.0
+      IL_0061:  ceq
+      IL_0063:  ldc.i4.0
+      IL_0064:  ceq
+      IL_0066:  stloc.s    V_7
+      IL_0068:  ldloc.s    V_7
+      IL_006a:  brfalse.s  IL_0083
+
+      IL_006c:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> ShakespeareanMonkeys.MainForm::__ENCList
+      IL_0071:  ldloc.0
+      IL_0072:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> ShakespeareanMonkeys.MainForm::__ENCList
+      IL_0077:  ldloc.1
+      IL_0078:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Item(int32)
+      IL_007d:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::set_Item(int32,
+                                                                                                                                           !0)
+      IL_0082:  nop
+      IL_0083:  nop
+      IL_0084:  ldloc.0
+      IL_0085:  ldc.i4.1
+      IL_0086:  add.ovf
+      IL_0087:  stloc.0
+      IL_0088:  nop
+      IL_0089:  nop
+      IL_008a:  ldloc.1
+      IL_008b:  ldc.i4.1
+      IL_008c:  add.ovf
+      IL_008d:  stloc.1
+      IL_008e:  ldloc.1
+      IL_008f:  ldloc.s    V_5
+      IL_0091:  stloc.s    V_8
+      IL_0093:  ldloc.s    V_8
+      IL_0095:  ble.s      IL_0047
+
+      IL_0097:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> ShakespeareanMonkeys.MainForm::__ENCList
+      IL_009c:  ldloc.0
+      IL_009d:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> ShakespeareanMonkeys.MainForm::__ENCList
+      IL_00a2:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_00a7:  ldloc.0
+      IL_00a8:  sub.ovf
+      IL_00a9:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::RemoveRange(int32,
+                                                                                                                                              int32)
+      IL_00ae:  nop
+      IL_00af:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> ShakespeareanMonkeys.MainForm::__ENCList
+      IL_00b4:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> ShakespeareanMonkeys.MainForm::__ENCList
+      IL_00b9:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_00be:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::set_Capacity(int32)
+      IL_00c3:  nop
+      IL_00c4:  nop
+      IL_00c5:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> ShakespeareanMonkeys.MainForm::__ENCList
+      IL_00ca:  ldarg.0
+      IL_00cb:  call       object [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+      IL_00d0:  newobj     instance void [mscorlib]System.WeakReference::.ctor(object)
+      IL_00d5:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::Add(!0)
+      IL_00da:  nop
+      IL_00db:  nop
+      IL_00dc:  leave.s    IL_00f0
+
+    }  // end .try
+    finally
+    {
+      IL_00de:  nop
+      IL_00df:  ldloc.s    V_4
+      IL_00e1:  stloc.s    V_7
+      IL_00e3:  ldloc.s    V_7
+      IL_00e5:  brfalse.s  IL_00ee
+
+      IL_00e7:  ldloc.3
+      IL_00e8:  call       void [mscorlib]System.Threading.Monitor::Exit(object)
+      IL_00ed:  nop
+      IL_00ee:  nop
+      IL_00ef:  endfinally
+    }  // end handler
+    IL_00f0:  nop
+    IL_00f1:  nop
+    IL_00f2:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\MainForm.Designer.vb" startline="12" endline="17"><![CDATA[
+  {
+    // Code size       43 (0x2b)
+    .maxstack  2
+    .locals init ([0] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  brfalse.s  IL_000c
+
+    IL_0004:  ldarg.0
+    IL_0005:  ldfld      class [System]System.ComponentModel.IContainer ShakespeareanMonkeys.MainForm::components
+    IL_000a:  brtrue.s   IL_000f
+
+    IL_000c:  ldc.i4.0
+    IL_000d:  br.s       IL_0010
+
+    IL_000f:  ldc.i4.1
+    IL_0010:  stloc.0
+    IL_0011:  ldloc.0
+    IL_0012:  brfalse.s  IL_0020
+
+    IL_0014:  ldarg.0
+    IL_0015:  ldfld      class [System]System.ComponentModel.IContainer ShakespeareanMonkeys.MainForm::components
+    IL_001a:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+    IL_001f:  nop
+    IL_0020:  nop
+    IL_0021:  ldarg.0
+    IL_0022:  ldarg.1
+    IL_0023:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::Dispose(bool)
+    IL_0028:  nop
+    IL_0029:  nop
+    IL_002a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\MainForm.Designer.vb" startline="18" endline="263"><![CDATA[
+  {
+    // Code size       3183 (0xc6f)
+    .maxstack  6
+    .locals init ([0] valuetype [System.Drawing]System.Drawing.Point VB$t_struct$N0,
+             [1] valuetype [System.Drawing]System.Drawing.Point VB$t_struct$S1,
+             [2] valuetype [System.Drawing]System.Drawing.Size VB$t_struct$N2,
+             [3] valuetype [System.Drawing]System.Drawing.Size VB$t_struct$S3,
+             [4] valuetype [System.Drawing]System.Drawing.Color VB$t_struct$N4,
+             [5] valuetype [System.Drawing]System.Drawing.SizeF VB$t_struct$N5,
+             [6] valuetype [System.Drawing]System.Drawing.SizeF VB$t_struct$S6)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.SplitContainer::.ctor()
+    IL_0007:  stfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_000c:  ldarg.0
+    IL_000d:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_0012:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenPerSec
+    IL_0017:  ldarg.0
+    IL_0018:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_001d:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label5
+    IL_0022:  ldarg.0
+    IL_0023:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_0028:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblElapsedTime
+    IL_002d:  ldarg.0
+    IL_002e:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_0033:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label4
+    IL_0038:  ldarg.0
+    IL_0039:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_003e:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenerations
+    IL_0043:  ldarg.0
+    IL_0044:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_0049:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label2
+    IL_004e:  ldarg.0
+    IL_004f:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.SplitContainer::.ctor()
+    IL_0054:  stfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_0059:  ldarg.0
+    IL_005a:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.TextBox::.ctor()
+    IL_005f:  stfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtBestMatch
+    IL_0064:  ldarg.0
+    IL_0065:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.TextBox::.ctor()
+    IL_006a:  stfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtTarget
+    IL_006f:  ldarg.0
+    IL_0070:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Button::.ctor()
+    IL_0075:  callvirt   instance void ShakespeareanMonkeys.MainForm::set_btnRun(class [System.Windows.Forms]System.Windows.Forms.Button)
+    IL_007a:  nop
+    IL_007b:  ldarg.0
+    IL_007c:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.TextBox::.ctor()
+    IL_0081:  stfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtMonkeysPerGeneration
+    IL_0086:  ldarg.0
+    IL_0087:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_008c:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label1
+    IL_0091:  ldarg.0
+    IL_0092:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Timer::.ctor()
+    IL_0097:  callvirt   instance void ShakespeareanMonkeys.MainForm::set_timerElapsedTime(class [System.Windows.Forms]System.Windows.Forms.Timer)
+    IL_009c:  nop
+    IL_009d:  ldarg.0
+    IL_009e:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.CheckBox::.ctor()
+    IL_00a3:  stfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox ShakespeareanMonkeys.MainForm::chkParallel
+    IL_00a8:  ldarg.0
+    IL_00a9:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::.ctor()
+    IL_00ae:  stfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox ShakespeareanMonkeys.MainForm::pictureBox1
+    IL_00b3:  ldarg.0
+    IL_00b4:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_00b9:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::BeginInit()
+    IL_00be:  nop
+    IL_00bf:  ldarg.0
+    IL_00c0:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_00c5:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel1()
+    IL_00ca:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::SuspendLayout()
+    IL_00cf:  nop
+    IL_00d0:  ldarg.0
+    IL_00d1:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_00d6:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_00db:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::SuspendLayout()
+    IL_00e0:  nop
+    IL_00e1:  ldarg.0
+    IL_00e2:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_00e7:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::SuspendLayout()
+    IL_00ec:  nop
+    IL_00ed:  ldarg.0
+    IL_00ee:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_00f3:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::BeginInit()
+    IL_00f8:  nop
+    IL_00f9:  ldarg.0
+    IL_00fa:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_00ff:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel1()
+    IL_0104:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::SuspendLayout()
+    IL_0109:  nop
+    IL_010a:  ldarg.0
+    IL_010b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_0110:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_0115:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::SuspendLayout()
+    IL_011a:  nop
+    IL_011b:  ldarg.0
+    IL_011c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_0121:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::SuspendLayout()
+    IL_0126:  nop
+    IL_0127:  ldarg.0
+    IL_0128:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox ShakespeareanMonkeys.MainForm::pictureBox1
+    IL_012d:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::BeginInit()
+    IL_0132:  nop
+    IL_0133:  ldarg.0
+    IL_0134:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::SuspendLayout()
+    IL_0139:  nop
+    IL_013a:  ldarg.0
+    IL_013b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_0140:  ldc.i4.5
+    IL_0141:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.SplitContainer::set_Dock(valuetype [System.Windows.Forms]System.Windows.Forms.DockStyle)
+    IL_0146:  nop
+    IL_0147:  ldarg.0
+    IL_0148:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_014d:  ldloca.s   VB$t_struct$S1
+    IL_014f:  ldc.i4.0
+    IL_0150:  ldc.i4.0
+    IL_0151:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0156:  nop
+    IL_0157:  ldloc.1
+    IL_0158:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_015d:  nop
+    IL_015e:  ldarg.0
+    IL_015f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_0164:  ldstr      "splitContainer1"
+    IL_0169:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_016e:  nop
+    IL_016f:  ldarg.0
+    IL_0170:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_0175:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel1()
+    IL_017a:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_017f:  ldarg.0
+    IL_0180:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox ShakespeareanMonkeys.MainForm::pictureBox1
+    IL_0185:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_018a:  nop
+    IL_018b:  ldarg.0
+    IL_018c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_0191:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_0196:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_019b:  ldarg.0
+    IL_019c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox ShakespeareanMonkeys.MainForm::chkParallel
+    IL_01a1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_01a6:  nop
+    IL_01a7:  ldarg.0
+    IL_01a8:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_01ad:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_01b2:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_01b7:  ldarg.0
+    IL_01b8:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenPerSec
+    IL_01bd:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_01c2:  nop
+    IL_01c3:  ldarg.0
+    IL_01c4:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_01c9:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_01ce:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_01d3:  ldarg.0
+    IL_01d4:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label5
+    IL_01d9:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_01de:  nop
+    IL_01df:  ldarg.0
+    IL_01e0:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_01e5:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_01ea:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_01ef:  ldarg.0
+    IL_01f0:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblElapsedTime
+    IL_01f5:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_01fa:  nop
+    IL_01fb:  ldarg.0
+    IL_01fc:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_0201:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_0206:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_020b:  ldarg.0
+    IL_020c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label4
+    IL_0211:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0216:  nop
+    IL_0217:  ldarg.0
+    IL_0218:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_021d:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_0222:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0227:  ldarg.0
+    IL_0228:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenerations
+    IL_022d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0232:  nop
+    IL_0233:  ldarg.0
+    IL_0234:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_0239:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_023e:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0243:  ldarg.0
+    IL_0244:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label2
+    IL_0249:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_024e:  nop
+    IL_024f:  ldarg.0
+    IL_0250:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_0255:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_025a:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_025f:  ldarg.0
+    IL_0260:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_0265:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_026a:  nop
+    IL_026b:  ldarg.0
+    IL_026c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_0271:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_0276:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_027b:  ldarg.0
+    IL_027c:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button ShakespeareanMonkeys.MainForm::get_btnRun()
+    IL_0281:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0286:  nop
+    IL_0287:  ldarg.0
+    IL_0288:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_028d:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_0292:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0297:  ldarg.0
+    IL_0298:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtMonkeysPerGeneration
+    IL_029d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_02a2:  nop
+    IL_02a3:  ldarg.0
+    IL_02a4:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_02a9:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_02ae:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_02b3:  ldarg.0
+    IL_02b4:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label1
+    IL_02b9:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_02be:  nop
+    IL_02bf:  ldarg.0
+    IL_02c0:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_02c5:  ldloca.s   VB$t_struct$S3
+    IL_02c7:  ldc.i4     0x3cd
+    IL_02cc:  ldc.i4     0x185
+    IL_02d1:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_02d6:  nop
+    IL_02d7:  ldloc.3
+    IL_02d8:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_02dd:  nop
+    IL_02de:  ldarg.0
+    IL_02df:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_02e4:  ldc.i4     0x12d
+    IL_02e9:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.SplitContainer::set_SplitterDistance(int32)
+    IL_02ee:  nop
+    IL_02ef:  ldarg.0
+    IL_02f0:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_02f5:  ldc.i4.1
+    IL_02f6:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_02fb:  nop
+    IL_02fc:  ldarg.0
+    IL_02fd:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenPerSec
+    IL_0302:  ldc.i4.s   9
+    IL_0304:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_0309:  nop
+    IL_030a:  ldarg.0
+    IL_030b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenPerSec
+    IL_0310:  ldc.i4.1
+    IL_0311:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_AutoSize(bool)
+    IL_0316:  nop
+    IL_0317:  ldarg.0
+    IL_0318:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenPerSec
+    IL_031d:  ldstr      "Microsoft Sans Serif"
+    IL_0322:  ldc.r4     10.
+    IL_0327:  ldc.i4.0
+    IL_0328:  ldc.i4.3
+    IL_0329:  ldc.i4.0
+    IL_032a:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle,
+                                                                                  valuetype [System.Drawing]System.Drawing.GraphicsUnit,
+                                                                                  uint8)
+    IL_032f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_0334:  nop
+    IL_0335:  ldarg.0
+    IL_0336:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenPerSec
+    IL_033b:  ldloca.s   VB$t_struct$S1
+    IL_033d:  ldc.i4     0x259
+    IL_0342:  ldc.i4.s   48
+    IL_0344:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0349:  nop
+    IL_034a:  ldloc.1
+    IL_034b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0350:  nop
+    IL_0351:  ldarg.0
+    IL_0352:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenPerSec
+    IL_0357:  ldstr      "lblGenPerSec"
+    IL_035c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0361:  nop
+    IL_0362:  ldarg.0
+    IL_0363:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenPerSec
+    IL_0368:  ldloca.s   VB$t_struct$S3
+    IL_036a:  ldc.i4.s   13
+    IL_036c:  ldc.i4.s   17
+    IL_036e:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0373:  nop
+    IL_0374:  ldloc.3
+    IL_0375:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_037a:  nop
+    IL_037b:  ldarg.0
+    IL_037c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenPerSec
+    IL_0381:  ldc.i4.s   9
+    IL_0383:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0388:  nop
+    IL_0389:  ldarg.0
+    IL_038a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenPerSec
+    IL_038f:  ldstr      "-"
+    IL_0394:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_0399:  nop
+    IL_039a:  ldarg.0
+    IL_039b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label5
+    IL_03a0:  ldc.i4.s   9
+    IL_03a2:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_03a7:  nop
+    IL_03a8:  ldarg.0
+    IL_03a9:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label5
+    IL_03ae:  ldc.i4.1
+    IL_03af:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_AutoSize(bool)
+    IL_03b4:  nop
+    IL_03b5:  ldarg.0
+    IL_03b6:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label5
+    IL_03bb:  ldstr      "Microsoft Sans Serif"
+    IL_03c0:  ldc.r4     10.
+    IL_03c5:  ldc.i4.1
+    IL_03c6:  ldc.i4.3
+    IL_03c7:  ldc.i4.0
+    IL_03c8:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle,
+                                                                                  valuetype [System.Drawing]System.Drawing.GraphicsUnit,
+                                                                                  uint8)
+    IL_03cd:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_03d2:  nop
+    IL_03d3:  ldarg.0
+    IL_03d4:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label5
+    IL_03d9:  ldloca.s   VB$t_struct$S1
+    IL_03db:  ldc.i4     0x1c6
+    IL_03e0:  ldc.i4.s   48
+    IL_03e2:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_03e7:  nop
+    IL_03e8:  ldloc.1
+    IL_03e9:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_03ee:  nop
+    IL_03ef:  ldarg.0
+    IL_03f0:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label5
+    IL_03f5:  ldstr      "label5"
+    IL_03fa:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_03ff:  nop
+    IL_0400:  ldarg.0
+    IL_0401:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label5
+    IL_0406:  ldloca.s   VB$t_struct$S3
+    IL_0408:  ldc.i4     0x90
+    IL_040d:  ldc.i4.s   17
+    IL_040f:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0414:  nop
+    IL_0415:  ldloc.3
+    IL_0416:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_041b:  nop
+    IL_041c:  ldarg.0
+    IL_041d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label5
+    IL_0422:  ldc.i4.8
+    IL_0423:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0428:  nop
+    IL_0429:  ldarg.0
+    IL_042a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label5
+    IL_042f:  ldstr      "Generations / Sec:"
+    IL_0434:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_0439:  nop
+    IL_043a:  ldarg.0
+    IL_043b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblElapsedTime
+    IL_0440:  ldc.i4.s   9
+    IL_0442:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_0447:  nop
+    IL_0448:  ldarg.0
+    IL_0449:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblElapsedTime
+    IL_044e:  ldc.i4.1
+    IL_044f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_AutoSize(bool)
+    IL_0454:  nop
+    IL_0455:  ldarg.0
+    IL_0456:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblElapsedTime
+    IL_045b:  ldstr      "Microsoft Sans Serif"
+    IL_0460:  ldc.r4     10.
+    IL_0465:  ldc.i4.0
+    IL_0466:  ldc.i4.3
+    IL_0467:  ldc.i4.0
+    IL_0468:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle,
+                                                                                  valuetype [System.Drawing]System.Drawing.GraphicsUnit,
+                                                                                  uint8)
+    IL_046d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_0472:  nop
+    IL_0473:  ldarg.0
+    IL_0474:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblElapsedTime
+    IL_0479:  ldloca.s   VB$t_struct$S1
+    IL_047b:  ldc.i4     0x259
+    IL_0480:  ldc.i4.s   9
+    IL_0482:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0487:  nop
+    IL_0488:  ldloc.1
+    IL_0489:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_048e:  nop
+    IL_048f:  ldarg.0
+    IL_0490:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblElapsedTime
+    IL_0495:  ldstr      "lblElapsedTime"
+    IL_049a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_049f:  nop
+    IL_04a0:  ldarg.0
+    IL_04a1:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblElapsedTime
+    IL_04a6:  ldloca.s   VB$t_struct$S3
+    IL_04a8:  ldc.i4.s   13
+    IL_04aa:  ldc.i4.s   17
+    IL_04ac:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_04b1:  nop
+    IL_04b2:  ldloc.3
+    IL_04b3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_04b8:  nop
+    IL_04b9:  ldarg.0
+    IL_04ba:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblElapsedTime
+    IL_04bf:  ldc.i4.7
+    IL_04c0:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_04c5:  nop
+    IL_04c6:  ldarg.0
+    IL_04c7:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblElapsedTime
+    IL_04cc:  ldstr      "-"
+    IL_04d1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_04d6:  nop
+    IL_04d7:  ldarg.0
+    IL_04d8:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label4
+    IL_04dd:  ldc.i4.s   9
+    IL_04df:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_04e4:  nop
+    IL_04e5:  ldarg.0
+    IL_04e6:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label4
+    IL_04eb:  ldc.i4.1
+    IL_04ec:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_AutoSize(bool)
+    IL_04f1:  nop
+    IL_04f2:  ldarg.0
+    IL_04f3:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label4
+    IL_04f8:  ldstr      "Microsoft Sans Serif"
+    IL_04fd:  ldc.r4     10.
+    IL_0502:  ldc.i4.1
+    IL_0503:  ldc.i4.3
+    IL_0504:  ldc.i4.0
+    IL_0505:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle,
+                                                                                  valuetype [System.Drawing]System.Drawing.GraphicsUnit,
+                                                                                  uint8)
+    IL_050a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_050f:  nop
+    IL_0510:  ldarg.0
+    IL_0511:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label4
+    IL_0516:  ldloca.s   VB$t_struct$S1
+    IL_0518:  ldc.i4     0x1c6
+    IL_051d:  ldc.i4.s   9
+    IL_051f:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0524:  nop
+    IL_0525:  ldloc.1
+    IL_0526:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_052b:  nop
+    IL_052c:  ldarg.0
+    IL_052d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label4
+    IL_0532:  ldstr      "label4"
+    IL_0537:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_053c:  nop
+    IL_053d:  ldarg.0
+    IL_053e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label4
+    IL_0543:  ldloca.s   VB$t_struct$S3
+    IL_0545:  ldc.i4.s   48
+    IL_0547:  ldc.i4.s   17
+    IL_0549:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_054e:  nop
+    IL_054f:  ldloc.3
+    IL_0550:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0555:  nop
+    IL_0556:  ldarg.0
+    IL_0557:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label4
+    IL_055c:  ldc.i4.6
+    IL_055d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0562:  nop
+    IL_0563:  ldarg.0
+    IL_0564:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label4
+    IL_0569:  ldstr      "Time:"
+    IL_056e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_0573:  nop
+    IL_0574:  ldarg.0
+    IL_0575:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenerations
+    IL_057a:  ldc.i4.s   9
+    IL_057c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_0581:  nop
+    IL_0582:  ldarg.0
+    IL_0583:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenerations
+    IL_0588:  ldc.i4.1
+    IL_0589:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_AutoSize(bool)
+    IL_058e:  nop
+    IL_058f:  ldarg.0
+    IL_0590:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenerations
+    IL_0595:  ldstr      "Microsoft Sans Serif"
+    IL_059a:  ldc.r4     10.
+    IL_059f:  ldc.i4.0
+    IL_05a0:  ldc.i4.3
+    IL_05a1:  ldc.i4.0
+    IL_05a2:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle,
+                                                                                  valuetype [System.Drawing]System.Drawing.GraphicsUnit,
+                                                                                  uint8)
+    IL_05a7:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_05ac:  nop
+    IL_05ad:  ldarg.0
+    IL_05ae:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenerations
+    IL_05b3:  ldloca.s   VB$t_struct$S1
+    IL_05b5:  ldc.i4     0x259
+    IL_05ba:  ldc.i4.s   29
+    IL_05bc:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_05c1:  nop
+    IL_05c2:  ldloc.1
+    IL_05c3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_05c8:  nop
+    IL_05c9:  ldarg.0
+    IL_05ca:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenerations
+    IL_05cf:  ldstr      "lblGenerations"
+    IL_05d4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_05d9:  nop
+    IL_05da:  ldarg.0
+    IL_05db:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenerations
+    IL_05e0:  ldloca.s   VB$t_struct$S3
+    IL_05e2:  ldc.i4.s   13
+    IL_05e4:  ldc.i4.s   17
+    IL_05e6:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_05eb:  nop
+    IL_05ec:  ldloc.3
+    IL_05ed:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_05f2:  nop
+    IL_05f3:  ldarg.0
+    IL_05f4:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenerations
+    IL_05f9:  ldc.i4.5
+    IL_05fa:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_05ff:  nop
+    IL_0600:  ldarg.0
+    IL_0601:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenerations
+    IL_0606:  ldstr      "-"
+    IL_060b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_0610:  nop
+    IL_0611:  ldarg.0
+    IL_0612:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label2
+    IL_0617:  ldc.i4.s   9
+    IL_0619:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_061e:  nop
+    IL_061f:  ldarg.0
+    IL_0620:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label2
+    IL_0625:  ldc.i4.1
+    IL_0626:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_AutoSize(bool)
+    IL_062b:  nop
+    IL_062c:  ldarg.0
+    IL_062d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label2
+    IL_0632:  ldstr      "Microsoft Sans Serif"
+    IL_0637:  ldc.r4     10.
+    IL_063c:  ldc.i4.1
+    IL_063d:  ldc.i4.3
+    IL_063e:  ldc.i4.0
+    IL_063f:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle,
+                                                                                  valuetype [System.Drawing]System.Drawing.GraphicsUnit,
+                                                                                  uint8)
+    IL_0644:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_0649:  nop
+    IL_064a:  ldarg.0
+    IL_064b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label2
+    IL_0650:  ldloca.s   VB$t_struct$S1
+    IL_0652:  ldc.i4     0x1c6
+    IL_0657:  ldc.i4.s   29
+    IL_0659:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_065e:  nop
+    IL_065f:  ldloc.1
+    IL_0660:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0665:  nop
+    IL_0666:  ldarg.0
+    IL_0667:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label2
+    IL_066c:  ldstr      "label2"
+    IL_0671:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0676:  nop
+    IL_0677:  ldarg.0
+    IL_0678:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label2
+    IL_067d:  ldloca.s   VB$t_struct$S3
+    IL_067f:  ldc.i4.s   102
+    IL_0681:  ldc.i4.s   17
+    IL_0683:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0688:  nop
+    IL_0689:  ldloc.3
+    IL_068a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_068f:  nop
+    IL_0690:  ldarg.0
+    IL_0691:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label2
+    IL_0696:  ldc.i4.4
+    IL_0697:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_069c:  nop
+    IL_069d:  ldarg.0
+    IL_069e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label2
+    IL_06a3:  ldstr      "Generations:"
+    IL_06a8:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_06ad:  nop
+    IL_06ae:  ldarg.0
+    IL_06af:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_06b4:  ldc.i4.s   15
+    IL_06b6:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_06bb:  nop
+    IL_06bc:  ldarg.0
+    IL_06bd:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_06c2:  ldloca.s   VB$t_struct$S1
+    IL_06c4:  ldc.i4.2
+    IL_06c5:  ldc.i4.s   68
+    IL_06c7:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_06cc:  nop
+    IL_06cd:  ldloc.1
+    IL_06ce:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_06d3:  nop
+    IL_06d4:  ldarg.0
+    IL_06d5:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_06da:  ldstr      "splitContainer2"
+    IL_06df:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_06e4:  nop
+    IL_06e5:  ldarg.0
+    IL_06e6:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_06eb:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel1()
+    IL_06f0:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_06f5:  ldarg.0
+    IL_06f6:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtBestMatch
+    IL_06fb:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0700:  nop
+    IL_0701:  ldarg.0
+    IL_0702:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_0707:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_070c:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0711:  ldarg.0
+    IL_0712:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtTarget
+    IL_0717:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_071c:  nop
+    IL_071d:  ldarg.0
+    IL_071e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_0723:  ldloca.s   VB$t_struct$S3
+    IL_0725:  ldc.i4     0x29a
+    IL_072a:  ldc.i4     0x141
+    IL_072f:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0734:  nop
+    IL_0735:  ldloc.3
+    IL_0736:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_073b:  nop
+    IL_073c:  ldarg.0
+    IL_073d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_0742:  ldc.i4     0x145
+    IL_0747:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.SplitContainer::set_SplitterDistance(int32)
+    IL_074c:  nop
+    IL_074d:  ldarg.0
+    IL_074e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_0753:  ldc.i4.3
+    IL_0754:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0759:  nop
+    IL_075a:  ldarg.0
+    IL_075b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtBestMatch
+    IL_0760:  ldc.i4.5
+    IL_0761:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Dock(valuetype [System.Windows.Forms]System.Windows.Forms.DockStyle)
+    IL_0766:  nop
+    IL_0767:  ldarg.0
+    IL_0768:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtBestMatch
+    IL_076d:  ldstr      "Microsoft Sans Serif"
+    IL_0772:  ldc.r4     12.
+    IL_0777:  ldc.i4.0
+    IL_0778:  ldc.i4.3
+    IL_0779:  ldc.i4.0
+    IL_077a:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle,
+                                                                                  valuetype [System.Drawing]System.Drawing.GraphicsUnit,
+                                                                                  uint8)
+    IL_077f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_0784:  nop
+    IL_0785:  ldarg.0
+    IL_0786:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtBestMatch
+    IL_078b:  ldloca.s   VB$t_struct$S1
+    IL_078d:  ldc.i4.0
+    IL_078e:  ldc.i4.0
+    IL_078f:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0794:  nop
+    IL_0795:  ldloc.1
+    IL_0796:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_079b:  nop
+    IL_079c:  ldarg.0
+    IL_079d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtBestMatch
+    IL_07a2:  ldc.i4.1
+    IL_07a3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TextBox::set_Multiline(bool)
+    IL_07a8:  nop
+    IL_07a9:  ldarg.0
+    IL_07aa:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtBestMatch
+    IL_07af:  ldstr      "txtBestMatch"
+    IL_07b4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_07b9:  nop
+    IL_07ba:  ldarg.0
+    IL_07bb:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtBestMatch
+    IL_07c0:  ldloca.s   VB$t_struct$S3
+    IL_07c2:  ldc.i4     0x145
+    IL_07c7:  ldc.i4     0x141
+    IL_07cc:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_07d1:  nop
+    IL_07d2:  ldloc.3
+    IL_07d3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_07d8:  nop
+    IL_07d9:  ldarg.0
+    IL_07da:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtBestMatch
+    IL_07df:  ldc.i4.3
+    IL_07e0:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_07e5:  nop
+    IL_07e6:  ldarg.0
+    IL_07e7:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtTarget
+    IL_07ec:  ldc.i4.5
+    IL_07ed:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Dock(valuetype [System.Windows.Forms]System.Windows.Forms.DockStyle)
+    IL_07f2:  nop
+    IL_07f3:  ldarg.0
+    IL_07f4:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtTarget
+    IL_07f9:  ldstr      "Microsoft Sans Serif"
+    IL_07fe:  ldc.r4     12.
+    IL_0803:  ldc.i4.0
+    IL_0804:  ldc.i4.3
+    IL_0805:  ldc.i4.0
+    IL_0806:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle,
+                                                                                  valuetype [System.Drawing]System.Drawing.GraphicsUnit,
+                                                                                  uint8)
+    IL_080b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_0810:  nop
+    IL_0811:  ldarg.0
+    IL_0812:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtTarget
+    IL_0817:  ldloca.s   VB$t_struct$S1
+    IL_0819:  ldc.i4.0
+    IL_081a:  ldc.i4.0
+    IL_081b:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0820:  nop
+    IL_0821:  ldloc.1
+    IL_0822:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0827:  nop
+    IL_0828:  ldarg.0
+    IL_0829:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtTarget
+    IL_082e:  ldc.i4.1
+    IL_082f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TextBox::set_Multiline(bool)
+    IL_0834:  nop
+    IL_0835:  ldarg.0
+    IL_0836:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtTarget
+    IL_083b:  ldstr      "txtTarget"
+    IL_0840:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0845:  nop
+    IL_0846:  ldarg.0
+    IL_0847:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtTarget
+    IL_084c:  ldloca.s   VB$t_struct$S3
+    IL_084e:  ldc.i4     0x151
+    IL_0853:  ldc.i4     0x141
+    IL_0858:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_085d:  nop
+    IL_085e:  ldloc.3
+    IL_085f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0864:  nop
+    IL_0865:  ldarg.0
+    IL_0866:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtTarget
+    IL_086b:  ldc.i4.0
+    IL_086c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0871:  nop
+    IL_0872:  ldarg.0
+    IL_0873:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button ShakespeareanMonkeys.MainForm::get_btnRun()
+    IL_0878:  ldstr      "Microsoft Sans Serif"
+    IL_087d:  ldc.r4     11.
+    IL_0882:  ldc.i4.1
+    IL_0883:  ldc.i4.3
+    IL_0884:  ldc.i4.0
+    IL_0885:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle,
+                                                                                  valuetype [System.Drawing]System.Drawing.GraphicsUnit,
+                                                                                  uint8)
+    IL_088a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_088f:  nop
+    IL_0890:  ldarg.0
+    IL_0891:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button ShakespeareanMonkeys.MainForm::get_btnRun()
+    IL_0896:  ldloca.s   VB$t_struct$S1
+    IL_0898:  ldc.i4.s   17
+    IL_089a:  ldc.i4.s   39
+    IL_089c:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_08a1:  nop
+    IL_08a2:  ldloc.1
+    IL_08a3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_08a8:  nop
+    IL_08a9:  ldarg.0
+    IL_08aa:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button ShakespeareanMonkeys.MainForm::get_btnRun()
+    IL_08af:  ldstr      "btnRun"
+    IL_08b4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_08b9:  nop
+    IL_08ba:  ldarg.0
+    IL_08bb:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button ShakespeareanMonkeys.MainForm::get_btnRun()
+    IL_08c0:  ldloca.s   VB$t_struct$S3
+    IL_08c2:  ldc.i4.s   83
+    IL_08c4:  ldc.i4.s   26
+    IL_08c6:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_08cb:  nop
+    IL_08cc:  ldloc.3
+    IL_08cd:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_08d2:  nop
+    IL_08d3:  ldarg.0
+    IL_08d4:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button ShakespeareanMonkeys.MainForm::get_btnRun()
+    IL_08d9:  ldc.i4.2
+    IL_08da:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_08df:  nop
+    IL_08e0:  ldarg.0
+    IL_08e1:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button ShakespeareanMonkeys.MainForm::get_btnRun()
+    IL_08e6:  ldstr      "Start"
+    IL_08eb:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_Text(string)
+    IL_08f0:  nop
+    IL_08f1:  ldarg.0
+    IL_08f2:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button ShakespeareanMonkeys.MainForm::get_btnRun()
+    IL_08f7:  ldc.i4.1
+    IL_08f8:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_UseVisualStyleBackColor(bool)
+    IL_08fd:  nop
+    IL_08fe:  ldarg.0
+    IL_08ff:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtMonkeysPerGeneration
+    IL_0904:  ldstr      "Microsoft Sans Serif"
+    IL_0909:  ldc.r4     12.
+    IL_090e:  ldc.i4.1
+    IL_090f:  ldc.i4.3
+    IL_0910:  ldc.i4.0
+    IL_0911:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle,
+                                                                                  valuetype [System.Drawing]System.Drawing.GraphicsUnit,
+                                                                                  uint8)
+    IL_0916:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_091b:  nop
+    IL_091c:  ldarg.0
+    IL_091d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtMonkeysPerGeneration
+    IL_0922:  ldloca.s   VB$t_struct$S1
+    IL_0924:  ldc.i4     0xe1
+    IL_0929:  ldc.i4.s   12
+    IL_092b:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0930:  nop
+    IL_0931:  ldloc.1
+    IL_0932:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0937:  nop
+    IL_0938:  ldarg.0
+    IL_0939:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtMonkeysPerGeneration
+    IL_093e:  ldstr      "txtMonkeysPerGeneration"
+    IL_0943:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0948:  nop
+    IL_0949:  ldarg.0
+    IL_094a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtMonkeysPerGeneration
+    IL_094f:  ldloca.s   VB$t_struct$S3
+    IL_0951:  ldc.i4.s   50
+    IL_0953:  ldc.i4.s   26
+    IL_0955:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_095a:  nop
+    IL_095b:  ldloc.3
+    IL_095c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0961:  nop
+    IL_0962:  ldarg.0
+    IL_0963:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtMonkeysPerGeneration
+    IL_0968:  ldc.i4.1
+    IL_0969:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_096e:  nop
+    IL_096f:  ldarg.0
+    IL_0970:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtMonkeysPerGeneration
+    IL_0975:  ldstr      "2000"
+    IL_097a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TextBox::set_Text(string)
+    IL_097f:  nop
+    IL_0980:  ldarg.0
+    IL_0981:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label1
+    IL_0986:  ldc.i4.1
+    IL_0987:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_AutoSize(bool)
+    IL_098c:  nop
+    IL_098d:  ldarg.0
+    IL_098e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label1
+    IL_0993:  ldstr      "Microsoft Sans Serif"
+    IL_0998:  ldc.r4     12.
+    IL_099d:  ldc.i4.1
+    IL_099e:  ldc.i4.3
+    IL_099f:  ldc.i4.0
+    IL_09a0:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle,
+                                                                                  valuetype [System.Drawing]System.Drawing.GraphicsUnit,
+                                                                                  uint8)
+    IL_09a5:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_09aa:  nop
+    IL_09ab:  ldarg.0
+    IL_09ac:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label1
+    IL_09b1:  ldloca.s   VB$t_struct$S1
+    IL_09b3:  ldc.i4.s   13
+    IL_09b5:  ldc.i4.s   13
+    IL_09b7:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_09bc:  nop
+    IL_09bd:  ldloc.1
+    IL_09be:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_09c3:  nop
+    IL_09c4:  ldarg.0
+    IL_09c5:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label1
+    IL_09ca:  ldstr      "label1"
+    IL_09cf:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_09d4:  nop
+    IL_09d5:  ldarg.0
+    IL_09d6:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label1
+    IL_09db:  ldloca.s   VB$t_struct$S3
+    IL_09dd:  ldc.i4     0xce
+    IL_09e2:  ldc.i4.s   20
+    IL_09e4:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_09e9:  nop
+    IL_09ea:  ldloc.3
+    IL_09eb:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_09f0:  nop
+    IL_09f1:  ldarg.0
+    IL_09f2:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label1
+    IL_09f7:  ldc.i4.0
+    IL_09f8:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_09fd:  nop
+    IL_09fe:  ldarg.0
+    IL_09ff:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::label1
+    IL_0a04:  ldstr      "Monkeys Per Generation"
+    IL_0a09:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_0a0e:  nop
+    IL_0a0f:  ldarg.0
+    IL_0a10:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Timer ShakespeareanMonkeys.MainForm::get_timerElapsedTime()
+    IL_0a15:  ldc.i4     0x3e8
+    IL_0a1a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Timer::set_Interval(int32)
+    IL_0a1f:  nop
+    IL_0a20:  ldarg.0
+    IL_0a21:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox ShakespeareanMonkeys.MainForm::chkParallel
+    IL_0a26:  ldc.i4.1
+    IL_0a27:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_AutoSize(bool)
+    IL_0a2c:  nop
+    IL_0a2d:  ldarg.0
+    IL_0a2e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox ShakespeareanMonkeys.MainForm::chkParallel
+    IL_0a33:  ldloca.s   VB$t_struct$S1
+    IL_0a35:  ldc.i4.s   106
+    IL_0a37:  ldc.i4.s   45
+    IL_0a39:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0a3e:  nop
+    IL_0a3f:  ldloc.1
+    IL_0a40:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0a45:  nop
+    IL_0a46:  ldarg.0
+    IL_0a47:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox ShakespeareanMonkeys.MainForm::chkParallel
+    IL_0a4c:  ldstr      "chkParallel"
+    IL_0a51:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0a56:  nop
+    IL_0a57:  ldarg.0
+    IL_0a58:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox ShakespeareanMonkeys.MainForm::chkParallel
+    IL_0a5d:  ldloca.s   VB$t_struct$S3
+    IL_0a5f:  ldc.i4.s   60
+    IL_0a61:  ldc.i4.s   17
+    IL_0a63:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0a68:  nop
+    IL_0a69:  ldloc.3
+    IL_0a6a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0a6f:  nop
+    IL_0a70:  ldarg.0
+    IL_0a71:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox ShakespeareanMonkeys.MainForm::chkParallel
+    IL_0a76:  ldc.i4.s   10
+    IL_0a78:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0a7d:  nop
+    IL_0a7e:  ldarg.0
+    IL_0a7f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox ShakespeareanMonkeys.MainForm::chkParallel
+    IL_0a84:  ldstr      "Parallel"
+    IL_0a89:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_Text(string)
+    IL_0a8e:  nop
+    IL_0a8f:  ldarg.0
+    IL_0a90:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox ShakespeareanMonkeys.MainForm::chkParallel
+    IL_0a95:  ldc.i4.1
+    IL_0a96:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_UseVisualStyleBackColor(bool)
+    IL_0a9b:  nop
+    IL_0a9c:  ldarg.0
+    IL_0a9d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox ShakespeareanMonkeys.MainForm::pictureBox1
+    IL_0aa2:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_Transparent()
+    IL_0aa7:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_BackColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_0aac:  nop
+    IL_0aad:  ldarg.0
+    IL_0aae:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox ShakespeareanMonkeys.MainForm::pictureBox1
+    IL_0ab3:  ldc.i4.5
+    IL_0ab4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Dock(valuetype [System.Windows.Forms]System.Windows.Forms.DockStyle)
+    IL_0ab9:  nop
+    IL_0aba:  ldarg.0
+    IL_0abb:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox ShakespeareanMonkeys.MainForm::pictureBox1
+    IL_0ac0:  call       class [System.Drawing]System.Drawing.Bitmap My.Resources.Resources::get_HamletMonkey()
+    IL_0ac5:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_Image(class [System.Drawing]System.Drawing.Image)
+    IL_0aca:  nop
+    IL_0acb:  ldarg.0
+    IL_0acc:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox ShakespeareanMonkeys.MainForm::pictureBox1
+    IL_0ad1:  ldloca.s   VB$t_struct$S1
+    IL_0ad3:  ldc.i4.0
+    IL_0ad4:  ldc.i4.0
+    IL_0ad5:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0ada:  nop
+    IL_0adb:  ldloc.1
+    IL_0adc:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0ae1:  nop
+    IL_0ae2:  ldarg.0
+    IL_0ae3:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox ShakespeareanMonkeys.MainForm::pictureBox1
+    IL_0ae8:  ldstr      "pictureBox1"
+    IL_0aed:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0af2:  nop
+    IL_0af3:  ldarg.0
+    IL_0af4:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox ShakespeareanMonkeys.MainForm::pictureBox1
+    IL_0af9:  ldloca.s   VB$t_struct$S3
+    IL_0afb:  ldc.i4     0x12d
+    IL_0b00:  ldc.i4     0x185
+    IL_0b05:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0b0a:  nop
+    IL_0b0b:  ldloc.3
+    IL_0b0c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0b11:  nop
+    IL_0b12:  ldarg.0
+    IL_0b13:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox ShakespeareanMonkeys.MainForm::pictureBox1
+    IL_0b18:  ldc.i4.4
+    IL_0b19:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_SizeMode(valuetype [System.Windows.Forms]System.Windows.Forms.PictureBoxSizeMode)
+    IL_0b1e:  nop
+    IL_0b1f:  ldarg.0
+    IL_0b20:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox ShakespeareanMonkeys.MainForm::pictureBox1
+    IL_0b25:  ldc.i4.0
+    IL_0b26:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_TabIndex(int32)
+    IL_0b2b:  nop
+    IL_0b2c:  ldarg.0
+    IL_0b2d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox ShakespeareanMonkeys.MainForm::pictureBox1
+    IL_0b32:  ldc.i4.0
+    IL_0b33:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_TabStop(bool)
+    IL_0b38:  nop
+    IL_0b39:  ldarg.0
+    IL_0b3a:  ldloca.s   VB$t_struct$S6
+    IL_0b3c:  ldc.r4     6.
+    IL_0b41:  ldc.r4     13.
+    IL_0b46:  call       instance void [System.Drawing]System.Drawing.SizeF::.ctor(float32,
+                                                                                   float32)
+    IL_0b4b:  nop
+    IL_0b4c:  ldloc.s    VB$t_struct$S6
+    IL_0b4e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::set_AutoScaleDimensions(valuetype [System.Drawing]System.Drawing.SizeF)
+    IL_0b53:  nop
+    IL_0b54:  ldarg.0
+    IL_0b55:  ldc.i4.1
+    IL_0b56:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::set_AutoScaleMode(valuetype [System.Windows.Forms]System.Windows.Forms.AutoScaleMode)
+    IL_0b5b:  nop
+    IL_0b5c:  ldarg.0
+    IL_0b5d:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_White()
+    IL_0b62:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Form::set_BackColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_0b67:  nop
+    IL_0b68:  ldarg.0
+    IL_0b69:  ldloca.s   VB$t_struct$S3
+    IL_0b6b:  ldc.i4     0x3cd
+    IL_0b70:  ldc.i4     0x185
+    IL_0b75:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0b7a:  nop
+    IL_0b7b:  ldloc.3
+    IL_0b7c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Form::set_ClientSize(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0b81:  nop
+    IL_0b82:  ldarg.0
+    IL_0b83:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0b88:  ldarg.0
+    IL_0b89:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_0b8e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0b93:  nop
+    IL_0b94:  ldarg.0
+    IL_0b95:  ldstr      "MainForm"
+    IL_0b9a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0b9f:  nop
+    IL_0ba0:  ldarg.0
+    IL_0ba1:  ldstr      "Shakespearean Monkeys"
+    IL_0ba6:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Form::set_Text(string)
+    IL_0bab:  nop
+    IL_0bac:  ldarg.0
+    IL_0bad:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_0bb2:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel1()
+    IL_0bb7:  ldc.i4.0
+    IL_0bb8:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::ResumeLayout(bool)
+    IL_0bbd:  nop
+    IL_0bbe:  ldarg.0
+    IL_0bbf:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_0bc4:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_0bc9:  ldc.i4.0
+    IL_0bca:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::ResumeLayout(bool)
+    IL_0bcf:  nop
+    IL_0bd0:  ldarg.0
+    IL_0bd1:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_0bd6:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_0bdb:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::PerformLayout()
+    IL_0be0:  nop
+    IL_0be1:  ldarg.0
+    IL_0be2:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_0be7:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::EndInit()
+    IL_0bec:  nop
+    IL_0bed:  ldarg.0
+    IL_0bee:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer1
+    IL_0bf3:  ldc.i4.0
+    IL_0bf4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::ResumeLayout(bool)
+    IL_0bf9:  nop
+    IL_0bfa:  ldarg.0
+    IL_0bfb:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_0c00:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel1()
+    IL_0c05:  ldc.i4.0
+    IL_0c06:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::ResumeLayout(bool)
+    IL_0c0b:  nop
+    IL_0c0c:  ldarg.0
+    IL_0c0d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_0c12:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel1()
+    IL_0c17:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::PerformLayout()
+    IL_0c1c:  nop
+    IL_0c1d:  ldarg.0
+    IL_0c1e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_0c23:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_0c28:  ldc.i4.0
+    IL_0c29:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::ResumeLayout(bool)
+    IL_0c2e:  nop
+    IL_0c2f:  ldarg.0
+    IL_0c30:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_0c35:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.SplitterPanel [System.Windows.Forms]System.Windows.Forms.SplitContainer::get_Panel2()
+    IL_0c3a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::PerformLayout()
+    IL_0c3f:  nop
+    IL_0c40:  ldarg.0
+    IL_0c41:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_0c46:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::EndInit()
+    IL_0c4b:  nop
+    IL_0c4c:  ldarg.0
+    IL_0c4d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.SplitContainer ShakespeareanMonkeys.MainForm::splitContainer2
+    IL_0c52:  ldc.i4.0
+    IL_0c53:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::ResumeLayout(bool)
+    IL_0c58:  nop
+    IL_0c59:  ldarg.0
+    IL_0c5a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox ShakespeareanMonkeys.MainForm::pictureBox1
+    IL_0c5f:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::EndInit()
+    IL_0c64:  nop
+    IL_0c65:  ldarg.0
+    IL_0c66:  ldc.i4.0
+    IL_0c67:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::ResumeLayout(bool)
+    IL_0c6c:  nop
+    IL_0c6d:  nop
+    IL_0c6e:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [System.Windows.Forms]System.Windows.Forms.Button V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button ShakespeareanMonkeys.MainForm::_btnRun
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       83 (0x53)
+    .maxstack  2
+    .locals init (class [mscorlib]System.EventHandler V_0,
+             bool V_1)
+    IL_0000:  ldarg.0
+    IL_0001:  dup
+    IL_0002:  ldvirtftn  instance void ShakespeareanMonkeys.MainForm::btnRun_Click(object,
+                                                                                   class [mscorlib]System.EventArgs)
+    IL_0008:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_000d:  stloc.0
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button ShakespeareanMonkeys.MainForm::_btnRun
+    IL_0014:  ldnull
+    IL_0015:  ceq
+    IL_0017:  ldc.i4.0
+    IL_0018:  ceq
+    IL_001a:  stloc.1
+    IL_001b:  ldloc.1
+    IL_001c:  brfalse.s  IL_002b
+
+    IL_001e:  ldarg.0
+    IL_001f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button ShakespeareanMonkeys.MainForm::_btnRun
+    IL_0024:  ldloc.0
+    IL_0025:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::remove_Click(class [mscorlib]System.EventHandler)
+    IL_002a:  nop
+    IL_002b:  nop
+    IL_002c:  ldarg.0
+    IL_002d:  ldarg.1
+    IL_002e:  stfld      class [System.Windows.Forms]System.Windows.Forms.Button ShakespeareanMonkeys.MainForm::_btnRun
+    IL_0033:  ldarg.0
+    IL_0034:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button ShakespeareanMonkeys.MainForm::_btnRun
+    IL_0039:  ldnull
+    IL_003a:  ceq
+    IL_003c:  ldc.i4.0
+    IL_003d:  ceq
+    IL_003f:  stloc.1
+    IL_0040:  ldloc.1
+    IL_0041:  brfalse.s  IL_0050
+
+    IL_0043:  ldarg.0
+    IL_0044:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button ShakespeareanMonkeys.MainForm::_btnRun
+    IL_0049:  ldloc.0
+    IL_004a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::add_Click(class [mscorlib]System.EventHandler)
+    IL_004f:  nop
+    IL_0050:  nop
+    IL_0051:  nop
+    IL_0052:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [System.Windows.Forms]System.Windows.Forms.Timer V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Timer ShakespeareanMonkeys.MainForm::_timerElapsedTime
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       83 (0x53)
+    .maxstack  2
+    .locals init (class [mscorlib]System.EventHandler V_0,
+             bool V_1)
+    IL_0000:  ldarg.0
+    IL_0001:  dup
+    IL_0002:  ldvirtftn  instance void ShakespeareanMonkeys.MainForm::timerElapsedTime_Tick(object,
+                                                                                            class [mscorlib]System.EventArgs)
+    IL_0008:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_000d:  stloc.0
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Timer ShakespeareanMonkeys.MainForm::_timerElapsedTime
+    IL_0014:  ldnull
+    IL_0015:  ceq
+    IL_0017:  ldc.i4.0
+    IL_0018:  ceq
+    IL_001a:  stloc.1
+    IL_001b:  ldloc.1
+    IL_001c:  brfalse.s  IL_002b
+
+    IL_001e:  ldarg.0
+    IL_001f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Timer ShakespeareanMonkeys.MainForm::_timerElapsedTime
+    IL_0024:  ldloc.0
+    IL_0025:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Timer::remove_Tick(class [mscorlib]System.EventHandler)
+    IL_002a:  nop
+    IL_002b:  nop
+    IL_002c:  ldarg.0
+    IL_002d:  ldarg.1
+    IL_002e:  stfld      class [System.Windows.Forms]System.Windows.Forms.Timer ShakespeareanMonkeys.MainForm::_timerElapsedTime
+    IL_0033:  ldarg.0
+    IL_0034:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Timer ShakespeareanMonkeys.MainForm::_timerElapsedTime
+    IL_0039:  ldnull
+    IL_003a:  ceq
+    IL_003c:  ldc.i4.0
+    IL_003d:  ceq
+    IL_003f:  stloc.1
+    IL_0040:  ldloc.1
+    IL_0041:  brfalse.s  IL_0050
+
+    IL_0043:  ldarg.0
+    IL_0044:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Timer ShakespeareanMonkeys.MainForm::_timerElapsedTime
+    IL_0049:  ldloc.0
+    IL_004a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Timer::add_Tick(class [mscorlib]System.EventHandler)
+    IL_004f:  nop
+    IL_0050:  nop
+    IL_0051:  nop
+    IL_0052:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\MainForm.vb" startline="264" endline="18"><![CDATA[
+  {
+    // Code size       112 (0x70)
+    .maxstack  3
+    .locals init ([0] string[] VB$t_array$S0)
+    IL_0000:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::.ctor()
+    IL_0005:  stsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> ShakespeareanMonkeys.MainForm::__ENCList
+    IL_000a:  ldc.i4.s   9
+    IL_000c:  newarr     [mscorlib]System.String
+    IL_0011:  stloc.0
+    IL_0012:  ldloc.0
+    IL_0013:  ldc.i4.0
+    IL_0014:  ldstr      "To be or not to be, that is the question;"
+    IL_0019:  stelem.ref
+    IL_001a:  nop
+    IL_001b:  ldloc.0
+    IL_001c:  ldc.i4.1
+    IL_001d:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_0022:  stelem.ref
+    IL_0023:  nop
+    IL_0024:  ldloc.0
+    IL_0025:  ldc.i4.2
+    IL_0026:  ldstr      "Whether 'tis nobler in the mind to suffer"
+    IL_002b:  stelem.ref
+    IL_002c:  nop
+    IL_002d:  ldloc.0
+    IL_002e:  ldc.i4.3
+    IL_002f:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_0034:  stelem.ref
+    IL_0035:  nop
+    IL_0036:  ldloc.0
+    IL_0037:  ldc.i4.4
+    IL_0038:  ldstr      "The slings and arrows of outrageous fortune,"
+    IL_003d:  stelem.ref
+    IL_003e:  nop
+    IL_003f:  ldloc.0
+    IL_0040:  ldc.i4.5
+    IL_0041:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_0046:  stelem.ref
+    IL_0047:  nop
+    IL_0048:  ldloc.0
+    IL_0049:  ldc.i4.6
+    IL_004a:  ldstr      "Or to take arms against a sea of troubles,"
+    IL_004f:  stelem.ref
+    IL_0050:  nop
+    IL_0051:  ldloc.0
+    IL_0052:  ldc.i4.7
+    IL_0053:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_0058:  stelem.ref
+    IL_0059:  nop
+    IL_005a:  ldloc.0
+    IL_005b:  ldc.i4.8
+    IL_005c:  ldstr      "And by opposing, end them."
+    IL_0061:  stelem.ref
+    IL_0062:  nop
+    IL_0063:  ldloc.0
+    IL_0064:  call       string [mscorlib]System.String::Concat(string[])
+    IL_0069:  stsfld     string ShakespeareanMonkeys.MainForm::_targetText
+    IL_006e:  nop
+    IL_006f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\MainForm.vb" startline="19" endline="30"><![CDATA[
+  {
+    // Code size       86 (0x56)
+    .maxstack  2
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::.ctor()
+    IL_0007:  nop
+    IL_0008:  ldarg.0
+    IL_0009:  call       void ShakespeareanMonkeys.MainForm::__ENCAddToList(object)
+    IL_000e:  nop
+    IL_000f:  ldarg.0
+    IL_0010:  ldnull
+    IL_0011:  stfld      class [System]System.ComponentModel.IContainer ShakespeareanMonkeys.MainForm::components
+    IL_0016:  ldarg.0
+    IL_0017:  ldsfld     valuetype [mscorlib]System.DateTimeOffset [mscorlib]System.DateTimeOffset::MinValue
+    IL_001c:  stfld      valuetype [mscorlib]System.DateTimeOffset ShakespeareanMonkeys.MainForm::_startTime
+    IL_0021:  ldarg.0
+    IL_0022:  ldsfld     valuetype [mscorlib]System.DateTimeOffset [mscorlib]System.DateTimeOffset::MinValue
+    IL_0027:  stfld      valuetype [mscorlib]System.DateTimeOffset ShakespeareanMonkeys.MainForm::_lastTime
+    IL_002c:  ldarg.0
+    IL_002d:  callvirt   instance void ShakespeareanMonkeys.MainForm::InitializeComponent()
+    IL_0032:  nop
+    IL_0033:  ldarg.0
+    IL_0034:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtTarget
+    IL_0039:  ldsfld     string ShakespeareanMonkeys.MainForm::_targetText
+    IL_003e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TextBox::set_Text(string)
+    IL_0043:  nop
+    IL_0044:  ldarg.0
+    IL_0045:  call       class [mscorlib]System.Threading.Tasks.TaskScheduler [mscorlib]System.Threading.Tasks.TaskScheduler::FromCurrentSynchronizationContext()
+    IL_004a:  newobj     instance void [mscorlib]System.Threading.Tasks.TaskFactory::.ctor(class [mscorlib]System.Threading.Tasks.TaskScheduler)
+    IL_004f:  stfld      class [mscorlib]System.Threading.Tasks.TaskFactory ShakespeareanMonkeys.MainForm::_uiTasks
+    IL_0054:  nop
+    IL_0055:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\MainForm.vb" startline="31" endline="103"><![CDATA[
+  {
+    // Code size       355 (0x163)
+    .maxstack  3
+    .locals init ([0] class ShakespeareanMonkeys.MainForm/_Closure$__1 $VB$Closure_ClosureVariable_23_C,
+             [1] class ShakespeareanMonkeys.GeneticAlgorithmSettings VB$t_ref$S0,
+             [2] valuetype [System.Drawing]System.Drawing.Color VB$t_struct$N0,
+             [3] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource ShakespeareanMonkeys.MainForm::_cancellation
+    IL_0007:  ldnull
+    IL_0008:  ceq
+    IL_000a:  stloc.3
+    IL_000b:  ldloc.3
+    IL_000c:  brfalse    IL_0153
+
+    IL_0011:  newobj     instance void ShakespeareanMonkeys.MainForm/_Closure$__1::.ctor()
+    IL_0016:  stloc.0
+    IL_0017:  ldloc.0
+    IL_0018:  ldarg.0
+    IL_0019:  stfld      class ShakespeareanMonkeys.MainForm ShakespeareanMonkeys.MainForm/_Closure$__1::$VB$Me
+    IL_001e:  ldarg.0
+    IL_001f:  newobj     instance void [mscorlib]System.Threading.CancellationTokenSource::.ctor()
+    IL_0024:  stfld      class [mscorlib]System.Threading.CancellationTokenSource ShakespeareanMonkeys.MainForm::_cancellation
+    IL_0029:  ldloc.0
+    IL_002a:  newobj     instance void ShakespeareanMonkeys.GeneticAlgorithmSettings::.ctor()
+    IL_002f:  stloc.1
+    IL_0030:  ldloc.1
+    IL_0031:  ldarg.0
+    IL_0032:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtMonkeysPerGeneration
+    IL_0037:  callvirt   instance string [System.Windows.Forms]System.Windows.Forms.TextBox::get_Text()
+    IL_003c:  call       int32 [mscorlib]System.Int32::Parse(string)
+    IL_0041:  callvirt   instance void ShakespeareanMonkeys.GeneticAlgorithmSettings::set_PopulationSize(int32)
+    IL_0046:  nop
+    IL_0047:  ldloc.1
+    IL_0048:  stfld      class ShakespeareanMonkeys.GeneticAlgorithmSettings ShakespeareanMonkeys.MainForm/_Closure$__1::$VB$Local_settings
+    IL_004d:  ldarg.0
+    IL_004e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtBestMatch
+    IL_0053:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.SystemColors::get_Window()
+    IL_0058:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TextBoxBase::set_BackColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_005d:  nop
+    IL_005e:  ldarg.0
+    IL_005f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenerations
+    IL_0064:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.SystemColors::get_Control()
+    IL_0069:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_BackColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_006e:  nop
+    IL_006f:  ldarg.0
+    IL_0070:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenerations
+    IL_0075:  ldstr      "-"
+    IL_007a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_007f:  nop
+    IL_0080:  ldarg.0
+    IL_0081:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenPerSec
+    IL_0086:  ldarg.0
+    IL_0087:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenerations
+    IL_008c:  callvirt   instance string [System.Windows.Forms]System.Windows.Forms.Label::get_Text()
+    IL_0091:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_0096:  nop
+    IL_0097:  ldarg.0
+    IL_0098:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblElapsedTime
+    IL_009d:  ldstr      "0"
+    IL_00a2:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_00a7:  nop
+    IL_00a8:  ldarg.0
+    IL_00a9:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button ShakespeareanMonkeys.MainForm::get_btnRun()
+    IL_00ae:  ldstr      "Cancel"
+    IL_00b3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_Text(string)
+    IL_00b8:  nop
+    IL_00b9:  ldarg.0
+    IL_00ba:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox ShakespeareanMonkeys.MainForm::chkParallel
+    IL_00bf:  ldc.i4.0
+    IL_00c0:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Visible(bool)
+    IL_00c5:  nop
+    IL_00c6:  ldarg.0
+    IL_00c7:  call       valuetype [mscorlib]System.DateTimeOffset [mscorlib]System.DateTimeOffset::get_Now()
+    IL_00cc:  stfld      valuetype [mscorlib]System.DateTimeOffset ShakespeareanMonkeys.MainForm::_lastTime
+    IL_00d1:  ldarg.0
+    IL_00d2:  ldarg.0
+    IL_00d3:  ldfld      valuetype [mscorlib]System.DateTimeOffset ShakespeareanMonkeys.MainForm::_lastTime
+    IL_00d8:  stfld      valuetype [mscorlib]System.DateTimeOffset ShakespeareanMonkeys.MainForm::_startTime
+    IL_00dd:  ldarg.0
+    IL_00de:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Timer ShakespeareanMonkeys.MainForm::get_timerElapsedTime()
+    IL_00e3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Timer::Start()
+    IL_00e8:  nop
+    IL_00e9:  ldarg.0
+    IL_00ea:  newobj     instance void [mscorlib]System.Threading.CancellationTokenSource::.ctor()
+    IL_00ef:  stfld      class [mscorlib]System.Threading.CancellationTokenSource ShakespeareanMonkeys.MainForm::_cancellation
+    IL_00f4:  ldloc.0
+    IL_00f5:  ldarg.0
+    IL_00f6:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource ShakespeareanMonkeys.MainForm::_cancellation
+    IL_00fb:  callvirt   instance valuetype [mscorlib]System.Threading.CancellationToken [mscorlib]System.Threading.CancellationTokenSource::get_Token()
+    IL_0100:  stfld      valuetype [mscorlib]System.Threading.CancellationToken ShakespeareanMonkeys.MainForm/_Closure$__1::$VB$Local_token
+    IL_0105:  ldloc.0
+    IL_0106:  ldarg.0
+    IL_0107:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox ShakespeareanMonkeys.MainForm::chkParallel
+    IL_010c:  callvirt   instance bool [System.Windows.Forms]System.Windows.Forms.CheckBox::get_Checked()
+    IL_0111:  stfld      bool ShakespeareanMonkeys.MainForm/_Closure$__1::$VB$Local_runParallel
+    IL_0116:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_011b:  ldloc.0
+    IL_011c:  dup
+    IL_011d:  ldvirtftn  instance void ShakespeareanMonkeys.MainForm/_Closure$__1::_Lambda$__2()
+    IL_0123:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_0128:  ldloc.0
+    IL_0129:  ldfld      valuetype [mscorlib]System.Threading.CancellationToken ShakespeareanMonkeys.MainForm/_Closure$__1::$VB$Local_token
+    IL_012e:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.CancellationToken)
+    IL_0133:  ldarg.0
+    IL_0134:  dup
+    IL_0135:  ldvirtftn  instance void ShakespeareanMonkeys.MainForm::_Lambda$__1(class [mscorlib]System.Threading.Tasks.Task)
+    IL_013b:  newobj     instance void class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task>::.ctor(object,
+                                                                                                                           native int)
+    IL_0140:  ldarg.0
+    IL_0141:  ldfld      class [mscorlib]System.Threading.Tasks.TaskFactory ShakespeareanMonkeys.MainForm::_uiTasks
+    IL_0146:  callvirt   instance class [mscorlib]System.Threading.Tasks.TaskScheduler [mscorlib]System.Threading.Tasks.TaskFactory::get_Scheduler()
+    IL_014b:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.Task::ContinueWith(class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task>,
+                                                                                                                                  class [mscorlib]System.Threading.Tasks.TaskScheduler)
+    IL_0150:  pop
+    IL_0151:  br.s       IL_0160
+
+    IL_0153:  nop
+    IL_0154:  ldarg.0
+    IL_0155:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource ShakespeareanMonkeys.MainForm::_cancellation
+    IL_015a:  callvirt   instance void [mscorlib]System.Threading.CancellationTokenSource::Cancel()
+    IL_015f:  nop
+    IL_0160:  nop
+    IL_0161:  nop
+    IL_0162:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\MainForm.vb" startline="104" endline="121"><![CDATA[
+  {
+    // Code size       177 (0xb1)
+    .maxstack  3
+    .locals init ([0] int32 elapsed,
+             [1] valuetype [mscorlib]System.DateTimeOffset now,
+             [2] float64 diffSeconds,
+             [3] valuetype [mscorlib]System.TimeSpan VB$t_struct$S0,
+             [4] valuetype [mscorlib]System.TimeSpan VB$t_struct$S1,
+             [5] valuetype [mscorlib]System.TimeSpan VB$t_struct$S2,
+             [6] valuetype [mscorlib]System.TimeSpan VB$t_struct$S3,
+             [7] valuetype [mscorlib]System.TimeSpan VB$t_struct$S4,
+             [8] valuetype [mscorlib]System.TimeSpan VB$t_struct$S5,
+             [9] valuetype [mscorlib]System.TimeSpan VB$t_struct$S6,
+             [10] valuetype [mscorlib]System.TimeSpan VB$t_struct$S7,
+             [11] int32 VB$t_i4$S0,
+             [12] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  call       valuetype [mscorlib]System.DateTimeOffset [mscorlib]System.DateTimeOffset::get_Now()
+    IL_0006:  stloc.1
+    IL_0007:  ldloc.1
+    IL_0008:  ldarg.0
+    IL_0009:  ldfld      valuetype [mscorlib]System.DateTimeOffset ShakespeareanMonkeys.MainForm::_startTime
+    IL_000e:  call       valuetype [mscorlib]System.TimeSpan [mscorlib]System.DateTimeOffset::op_Subtraction(valuetype [mscorlib]System.DateTimeOffset,
+                                                                                                             valuetype [mscorlib]System.DateTimeOffset)
+    IL_0013:  stloc.s    VB$t_struct$S7
+    IL_0015:  ldloca.s   VB$t_struct$S7
+    IL_0017:  call       instance float64 [mscorlib]System.TimeSpan::get_TotalSeconds()
+    IL_001c:  call       float64 [Microsoft.VisualBasic]Microsoft.VisualBasic.Conversion::Fix(float64)
+    IL_0021:  call       float64 [mscorlib]System.Math::Round(float64)
+    IL_0026:  conv.ovf.i4
+    IL_0027:  stloc.0
+    IL_0028:  ldarg.0
+    IL_0029:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblElapsedTime
+    IL_002e:  ldloca.s   elapsed
+    IL_0030:  call       instance string [mscorlib]System.Int32::ToString()
+    IL_0035:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_003a:  nop
+    IL_003b:  ldarg.0
+    IL_003c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenerations
+    IL_0041:  ldarg.0
+    IL_0042:  ldflda     int32 ShakespeareanMonkeys.MainForm::_currentIteration
+    IL_0047:  call       instance string [mscorlib]System.Int32::ToString()
+    IL_004c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_0051:  nop
+    IL_0052:  ldloc.0
+    IL_0053:  ldc.i4.2
+    IL_0054:  cgt
+    IL_0056:  stloc.s    VB$CG$t_bool$S0
+    IL_0058:  ldloc.s    VB$CG$t_bool$S0
+    IL_005a:  brfalse.s  IL_00ae
+
+    IL_005c:  ldloc.1
+    IL_005d:  ldarg.0
+    IL_005e:  ldfld      valuetype [mscorlib]System.DateTimeOffset ShakespeareanMonkeys.MainForm::_lastTime
+    IL_0063:  call       valuetype [mscorlib]System.TimeSpan [mscorlib]System.DateTimeOffset::op_Subtraction(valuetype [mscorlib]System.DateTimeOffset,
+                                                                                                             valuetype [mscorlib]System.DateTimeOffset)
+    IL_0068:  stloc.s    VB$t_struct$S7
+    IL_006a:  ldloca.s   VB$t_struct$S7
+    IL_006c:  call       instance float64 [mscorlib]System.TimeSpan::get_TotalSeconds()
+    IL_0071:  stloc.2
+    IL_0072:  ldloc.2
+    IL_0073:  ldc.r8     0.0
+    IL_007c:  cgt
+    IL_007e:  stloc.s    VB$CG$t_bool$S0
+    IL_0080:  ldloc.s    VB$CG$t_bool$S0
+    IL_0082:  brfalse.s  IL_00ad
+
+    IL_0084:  ldarg.0
+    IL_0085:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenPerSec
+    IL_008a:  ldarg.0
+    IL_008b:  ldfld      int32 ShakespeareanMonkeys.MainForm::_currentIteration
+    IL_0090:  conv.r8
+    IL_0091:  ldloc.2
+    IL_0092:  div
+    IL_0093:  call       float64 [Microsoft.VisualBasic]Microsoft.VisualBasic.Conversion::Fix(float64)
+    IL_0098:  call       float64 [mscorlib]System.Math::Round(float64)
+    IL_009d:  conv.ovf.i4
+    IL_009e:  stloc.s    VB$t_i4$S0
+    IL_00a0:  ldloca.s   VB$t_i4$S0
+    IL_00a2:  call       instance string [mscorlib]System.Int32::ToString()
+    IL_00a7:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_00ac:  nop
+    IL_00ad:  nop
+    IL_00ae:  nop
+    IL_00af:  nop
+    IL_00b0:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\MainForm.vb" startline="82" endline="96"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       145 (0x91)
+    .maxstack  3
+    .locals init ([0] valuetype [mscorlib]System.Threading.Tasks.TaskStatus VB$t_i4$L0,
+             [1] valuetype [System.Drawing]System.Drawing.Color VB$t_struct$N0,
+             [2] int32 VB$CG$t_i4$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Timer ShakespeareanMonkeys.MainForm::get_timerElapsedTime()
+    IL_0007:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Timer::Stop()
+    IL_000c:  nop
+    IL_000d:  ldarg.0
+    IL_000e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox ShakespeareanMonkeys.MainForm::chkParallel
+    IL_0013:  ldc.i4.1
+    IL_0014:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Visible(bool)
+    IL_0019:  nop
+    IL_001a:  ldarg.0
+    IL_001b:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button ShakespeareanMonkeys.MainForm::get_btnRun()
+    IL_0020:  ldstr      "Start"
+    IL_0025:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_Text(string)
+    IL_002a:  nop
+    IL_002b:  ldarg.0
+    IL_002c:  ldnull
+    IL_002d:  stfld      class [mscorlib]System.Threading.CancellationTokenSource ShakespeareanMonkeys.MainForm::_cancellation
+    IL_0032:  nop
+    IL_0033:  ldarg.1
+    IL_0034:  callvirt   instance valuetype [mscorlib]System.Threading.Tasks.TaskStatus [mscorlib]System.Threading.Tasks.Task::get_Status()
+    IL_0039:  ldc.i4.5
+    IL_003a:  sub
+    IL_003b:  stloc.2
+    IL_003c:  ldloc.2
+    IL_003d:  switch     ( 
+                          IL_006b,
+                          IL_008e,
+                          IL_0050)
+    IL_004e:  br.s       IL_008e
+
+    IL_0050:  nop
+    IL_0051:  ldarg.1
+    IL_0052:  callvirt   instance class [mscorlib]System.AggregateException [mscorlib]System.Threading.Tasks.Task::get_Exception()
+    IL_0057:  callvirt   instance string [mscorlib]System.AggregateException::ToString()
+    IL_005c:  ldc.i4.s   16
+    IL_005e:  ldstr      "Error"
+    IL_0063:  call       valuetype [Microsoft.VisualBasic]Microsoft.VisualBasic.MsgBoxResult [Microsoft.VisualBasic]Microsoft.VisualBasic.Interaction::MsgBox(object,
+                                                                                                                                                              valuetype [Microsoft.VisualBasic]Microsoft.VisualBasic.MsgBoxStyle,
+                                                                                                                                                              object)
+    IL_0068:  pop
+    IL_0069:  br.s       IL_008e
+
+    IL_006b:  nop
+    IL_006c:  ldarg.0
+    IL_006d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TextBox ShakespeareanMonkeys.MainForm::txtBestMatch
+    IL_0072:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_LightGreen()
+    IL_0077:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TextBoxBase::set_BackColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_007c:  nop
+    IL_007d:  ldarg.0
+    IL_007e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label ShakespeareanMonkeys.MainForm::lblGenerations
+    IL_0083:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_LemonChiffon()
+    IL_0088:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_BackColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_008d:  nop
+    IL_008e:  nop
+    IL_008f:  nop
+    IL_0090:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\Module1.vb" startline="15" endline="19"><![CDATA[
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.STAThreadAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       27 (0x1b)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  call       void [System.Windows.Forms]System.Windows.Forms.Application::EnableVisualStyles()
+    IL_0006:  nop
+    IL_0007:  ldc.i4.0
+    IL_0008:  call       void [System.Windows.Forms]System.Windows.Forms.Application::SetCompatibleTextRenderingDefault(bool)
+    IL_000d:  nop
+    IL_000e:  newobj     instance void ShakespeareanMonkeys.MainForm::.ctor()
+    IL_0013:  call       void [System.Windows.Forms]System.Windows.Forms.Application::Run(class [System.Windows.Forms]System.Windows.Forms.Form)
+    IL_0018:  nop
+    IL_0019:  nop
+    IL_001a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\My Project\Resources.Designer.vb" startline="40" endline="46"><![CDATA[
+  {
+    // Code size       59 (0x3b)
+    .maxstack  2
+    .locals init ([0] class [mscorlib]System.Resources.ResourceManager ResourceManager,
+             [1] class [mscorlib]System.Resources.ResourceManager temp,
+             [2] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Resources.ResourceManager My.Resources.Resources::resourceMan
+    IL_0006:  ldnull
+    IL_0007:  call       bool [mscorlib]System.Object::ReferenceEquals(object,
+                                                                       object)
+    IL_000c:  stloc.2
+    IL_000d:  ldloc.2
+    IL_000e:  brfalse.s  IL_0030
+
+    IL_0010:  ldstr      "Resources"
+    IL_0015:  ldtoken    My.Resources.Resources
+    IL_001a:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_001f:  callvirt   instance class [mscorlib]System.Reflection.Assembly [mscorlib]System.Type::get_Assembly()
+    IL_0024:  newobj     instance void [mscorlib]System.Resources.ResourceManager::.ctor(string,
+                                                                                         class [mscorlib]System.Reflection.Assembly)
+    IL_0029:  stloc.1
+    IL_002a:  ldloc.1
+    IL_002b:  stsfld     class [mscorlib]System.Resources.ResourceManager My.Resources.Resources::resourceMan
+    IL_0030:  nop
+    IL_0031:  ldsfld     class [mscorlib]System.Resources.ResourceManager My.Resources.Resources::resourceMan
+    IL_0036:  stloc.0
+    IL_0037:  br.s       IL_0039
+
+    IL_0039:  ldloc.0
+    IL_003a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\My Project\Resources.Designer.vb" startline="47" endline="57"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Globalization.CultureInfo Culture)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Globalization.CultureInfo My.Resources.Resources::resourceCulture
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\My Project\Resources.Designer.vb" startline="58" endline="60"><![CDATA[
+  {
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  stsfld     class [mscorlib]System.Globalization.CultureInfo My.Resources.Resources::resourceCulture
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\My Project\Resources.Designer.vb" startline="61" endline="67"><![CDATA[
+  {
+    // Code size       38 (0x26)
+    .maxstack  3
+    .locals init ([0] class [System.Drawing]System.Drawing.Bitmap HamletMonkey,
+             [1] object obj)
+    IL_0000:  nop
+    IL_0001:  call       class [mscorlib]System.Resources.ResourceManager My.Resources.Resources::get_ResourceManager()
+    IL_0006:  ldstr      "HamletMonkey"
+    IL_000b:  ldsfld     class [mscorlib]System.Globalization.CultureInfo My.Resources.Resources::resourceCulture
+    IL_0010:  callvirt   instance object [mscorlib]System.Resources.ResourceManager::GetObject(string,
+                                                                                               class [mscorlib]System.Globalization.CultureInfo)
+    IL_0015:  call       object [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+    IL_001a:  stloc.1
+    IL_001b:  ldloc.1
+    IL_001c:  castclass  [System.Drawing]System.Drawing.Bitmap
+    IL_0021:  stloc.0
+    IL_0022:  br.s       IL_0024
+
+    IL_0024:  ldloc.0
+    IL_0025:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\My Project\Settings.Designer.vb" startline="18" endline="18"><![CDATA[
+  {
+    // Code size       22 (0x16)
+    .maxstack  8
+    IL_0000:  newobj     instance void My.Settings::.ctor()
+    IL_0005:  call       class [System]System.Configuration.SettingsBase [System]System.Configuration.SettingsBase::Synchronized(class [System]System.Configuration.SettingsBase)
+    IL_000a:  castclass  My.Settings
+    IL_000f:  stsfld     class My.Settings My.Settings::defaultInstance
+    IL_0014:  nop
+    IL_0015:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [System]System.Configuration.ApplicationSettingsBase::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\My Project\Settings.Designer.vb" startline="19" endline="23"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class My.Settings Default)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.Settings My.Settings::defaultInstance
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="21" endline="33"><![CDATA[
+  {
+    // Code size       86 (0x56)
+    .maxstack  3
+    .locals init ([0] int32 i,
+             [1] int32 pos,
+             [2] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void [ParallelExtensionsExtras]System.Threading.ThreadSafeRandom::.ctor()
+    IL_0006:  stsfld     class [ParallelExtensionsExtras]System.Threading.ThreadSafeRandom ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_random
+    IL_000b:  ldc.i4.s   97
+    IL_000d:  newarr     [mscorlib]System.Char
+    IL_0012:  stsfld     char[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_validChars
+    IL_0017:  ldsfld     char[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_validChars
+    IL_001c:  ldc.i4.0
+    IL_001d:  ldc.i4.s   10
+    IL_001f:  stelem.i2
+    IL_0020:  ldsfld     char[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_validChars
+    IL_0025:  ldc.i4.1
+    IL_0026:  ldc.i4.s   13
+    IL_0028:  stelem.i2
+    IL_0029:  ldc.i4.2
+    IL_002a:  stloc.0
+    IL_002b:  ldc.i4.s   32
+    IL_002d:  stloc.1
+    IL_002e:  br.s       IL_0046
+
+    IL_0030:  ldsfld     char[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_validChars
+    IL_0035:  ldloc.0
+    IL_0036:  ldloc.1
+    IL_0037:  call       char [Microsoft.VisualBasic]Microsoft.VisualBasic.Strings::ChrW(int32)
+    IL_003c:  stelem.i2
+    IL_003d:  ldloc.0
+    IL_003e:  ldc.i4.1
+    IL_003f:  add.ovf
+    IL_0040:  stloc.0
+    IL_0041:  ldloc.1
+    IL_0042:  ldc.i4.1
+    IL_0043:  add.ovf
+    IL_0044:  stloc.1
+    IL_0045:  nop
+    IL_0046:  ldloc.0
+    IL_0047:  ldsfld     char[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_validChars
+    IL_004c:  ldlen
+    IL_004d:  conv.ovf.i4
+    IL_004e:  clt
+    IL_0050:  stloc.2
+    IL_0051:  ldloc.2
+    IL_0052:  brtrue.s   IL_0030
+
+    IL_0054:  nop
+    IL_0055:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="34" endline="45"><![CDATA[
+  {
+    // Code size       71 (0x47)
+    .maxstack  2
+    .locals init ([0] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0007:  nop
+    IL_0008:  ldarg.3
+    IL_0009:  ldnull
+    IL_000a:  ceq
+    IL_000c:  stloc.0
+    IL_000d:  ldloc.0
+    IL_000e:  brfalse.s  IL_001b
+
+    IL_0010:  ldstr      "settings"
+    IL_0015:  newobj     instance void [mscorlib]System.ArgumentNullException::.ctor(string)
+    IL_001a:  throw
+
+    IL_001b:  nop
+    IL_001c:  ldarg.2
+    IL_001d:  ldnull
+    IL_001e:  ceq
+    IL_0020:  stloc.0
+    IL_0021:  ldloc.0
+    IL_0022:  brfalse.s  IL_002f
+
+    IL_0024:  ldstr      "targetText"
+    IL_0029:  newobj     instance void [mscorlib]System.ArgumentNullException::.ctor(string)
+    IL_002e:  throw
+
+    IL_002f:  nop
+    IL_0030:  ldarg.0
+    IL_0031:  ldarg.1
+    IL_0032:  stfld      bool ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_runParallel
+    IL_0037:  ldarg.0
+    IL_0038:  ldarg.3
+    IL_0039:  stfld      class ShakespeareanMonkeys.GeneticAlgorithmSettings ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_settings
+    IL_003e:  ldarg.0
+    IL_003f:  ldarg.2
+    IL_0040:  stfld      string ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_targetText
+    IL_0045:  nop
+    IL_0046:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="46" endline="55"><![CDATA[
+  {
+    // Code size       44 (0x2c)
+    .maxstack  2
+    .locals init ([0] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      valuetype ShakespeareanMonkeys.TextMatchGenome[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_currentPopulation
+    IL_0007:  ldnull
+    IL_0008:  ceq
+    IL_000a:  stloc.0
+    IL_000b:  ldloc.0
+    IL_000c:  brfalse.s  IL_001c
+
+    IL_000e:  ldarg.0
+    IL_000f:  ldarg.0
+    IL_0010:  callvirt   instance valuetype ShakespeareanMonkeys.TextMatchGenome[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::CreateRandomPopulation()
+    IL_0015:  stfld      valuetype ShakespeareanMonkeys.TextMatchGenome[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_currentPopulation
+    IL_001a:  br.s       IL_0029
+
+    IL_001c:  nop
+    IL_001d:  ldarg.0
+    IL_001e:  ldarg.0
+    IL_001f:  callvirt   instance valuetype ShakespeareanMonkeys.TextMatchGenome[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::CreateNextGeneration()
+    IL_0024:  stfld      valuetype ShakespeareanMonkeys.TextMatchGenome[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_currentPopulation
+    IL_0029:  nop
+    IL_002a:  nop
+    IL_002b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="56" endline="60"><![CDATA[
+  {
+    // Code size       23 (0x17)
+    .maxstack  2
+    .locals init ([0] valuetype ShakespeareanMonkeys.TextMatchGenome CurrentBest)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      valuetype ShakespeareanMonkeys.TextMatchGenome[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_currentPopulation
+    IL_0007:  ldc.i4.0
+    IL_0008:  ldelema    ShakespeareanMonkeys.TextMatchGenome
+    IL_000d:  ldobj      ShakespeareanMonkeys.TextMatchGenome
+    IL_0012:  stloc.0
+    IL_0013:  br.s       IL_0015
+
+    IL_0015:  ldloc.0
+    IL_0016:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="61" endline="67"><![CDATA[
+  {
+    // Code size       46 (0x2e)
+    .maxstack  3
+    .locals init ([0] valuetype ShakespeareanMonkeys.TextMatchGenome[] CreateRandomPopulation)
+    IL_0000:  nop
+    IL_0001:  ldc.i4.0
+    IL_0002:  ldarg.0
+    IL_0003:  ldfld      class ShakespeareanMonkeys.GeneticAlgorithmSettings ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_settings
+    IL_0008:  callvirt   instance int32 ShakespeareanMonkeys.GeneticAlgorithmSettings::get_PopulationSize()
+    IL_000d:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> [System.Core]System.Linq.Enumerable::Range(int32,
+                                                                                                                                    int32)
+    IL_0012:  ldarg.0
+    IL_0013:  dup
+    IL_0014:  ldvirtftn  instance valuetype ShakespeareanMonkeys.TextMatchGenome ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_Lambda$__4(int32)
+    IL_001a:  newobj     instance void class [mscorlib]System.Func`2<int32,valuetype ShakespeareanMonkeys.TextMatchGenome>::.ctor(object,
+                                                                                                                                  native int)
+    IL_001f:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<int32,valuetype ShakespeareanMonkeys.TextMatchGenome>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                         class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_0024:  call       !!0[] [System.Core]System.Linq.Enumerable::ToArray<valuetype ShakespeareanMonkeys.TextMatchGenome>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_0029:  stloc.0
+    IL_002a:  br.s       IL_002c
+
+    IL_002c:  ldloc.0
+    IL_002d:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="68" endline="75"><![CDATA[
+  {
+    // Code size       123 (0x7b)
+    .maxstack  5
+    .locals init ([0] valuetype ShakespeareanMonkeys.TextMatchGenome CreateRandomGenome,
+             [1] class [mscorlib]System.Text.StringBuilder sb,
+             [2] int32 i,
+             [3] int32 VB$t_i4$L0,
+             [4] valuetype ShakespeareanMonkeys.TextMatchGenome VB$t_struct$S0,
+             [5] valuetype ShakespeareanMonkeys.TextMatchGenome VB$t_struct$S1,
+             [6] int32 VB$CG$t_i4$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      string ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_targetText
+    IL_0007:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_000c:  newobj     instance void [mscorlib]System.Text.StringBuilder::.ctor(int32)
+    IL_0011:  stloc.1
+    IL_0012:  ldc.i4.0
+    IL_0013:  ldarg.0
+    IL_0014:  ldfld      string ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_targetText
+    IL_0019:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_001e:  ldc.i4.1
+    IL_001f:  sub.ovf
+    IL_0020:  stloc.3
+    IL_0021:  stloc.2
+    IL_0022:  br.s       IL_0044
+
+    IL_0024:  ldloc.1
+    IL_0025:  ldsfld     char[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_validChars
+    IL_002a:  ldarg.1
+    IL_002b:  ldc.i4.0
+    IL_002c:  ldsfld     char[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_validChars
+    IL_0031:  ldlen
+    IL_0032:  conv.ovf.i4
+    IL_0033:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_0038:  ldelem.u2
+    IL_0039:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(char)
+    IL_003e:  pop
+    IL_003f:  nop
+    IL_0040:  ldloc.2
+    IL_0041:  ldc.i4.1
+    IL_0042:  add.ovf
+    IL_0043:  stloc.2
+    IL_0044:  ldloc.2
+    IL_0045:  ldloc.3
+    IL_0046:  stloc.s    VB$CG$t_i4$S0
+    IL_0048:  ldloc.s    VB$CG$t_i4$S0
+    IL_004a:  ble.s      IL_0024
+
+    IL_004c:  ldloca.s   VB$t_struct$S0
+    IL_004e:  initobj    ShakespeareanMonkeys.TextMatchGenome
+    IL_0054:  ldloc.s    VB$t_struct$S0
+    IL_0056:  stloc.s    VB$t_struct$S1
+    IL_0058:  ldloca.s   VB$t_struct$S1
+    IL_005a:  ldloc.1
+    IL_005b:  callvirt   instance string [mscorlib]System.Text.StringBuilder::ToString()
+    IL_0060:  call       instance void ShakespeareanMonkeys.TextMatchGenome::set_Text(string)
+    IL_0065:  nop
+    IL_0066:  ldloca.s   VB$t_struct$S1
+    IL_0068:  ldarg.0
+    IL_0069:  ldfld      string ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_targetText
+    IL_006e:  call       instance void ShakespeareanMonkeys.TextMatchGenome::set_TargetText(string)
+    IL_0073:  nop
+    IL_0074:  ldloc.s    VB$t_struct$S1
+    IL_0076:  stloc.0
+    IL_0077:  br.s       IL_0079
+
+    IL_0079:  ldloc.0
+    IL_007a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="76" endline="94"><![CDATA[
+  {
+    // Code size       205 (0xcd)
+    .maxstack  4
+    .locals init ([0] class ShakespeareanMonkeys.TextMatchGeneticAlgorithm/_Closure$__3 $VB$Closure_ClosureVariable_4C_3E,
+             [1] valuetype ShakespeareanMonkeys.TextMatchGenome[] CreateNextGeneration,
+             [2] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void ShakespeareanMonkeys.TextMatchGeneticAlgorithm/_Closure$__3::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  ldarg.0
+    IL_0009:  stfld      class ShakespeareanMonkeys.TextMatchGeneticAlgorithm ShakespeareanMonkeys.TextMatchGeneticAlgorithm/_Closure$__3::$VB$Me
+    IL_000e:  ldloc.0
+    IL_000f:  ldarg.0
+    IL_0010:  ldfld      valuetype ShakespeareanMonkeys.TextMatchGenome[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_currentPopulation
+    IL_0015:  ldnull
+    IL_0016:  ldftn      int32 ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_Lambda$__5(valuetype ShakespeareanMonkeys.TextMatchGenome)
+    IL_001c:  newobj     instance void class [mscorlib]System.Func`2<valuetype ShakespeareanMonkeys.TextMatchGenome,int32>::.ctor(object,
+                                                                                                                                  native int)
+    IL_0021:  call       int32 [System.Core]System.Linq.Enumerable::Max<valuetype ShakespeareanMonkeys.TextMatchGenome>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                        class [mscorlib]System.Func`2<!!0,int32>)
+    IL_0026:  ldc.i4.1
+    IL_0027:  add.ovf
+    IL_0028:  stfld      int32 ShakespeareanMonkeys.TextMatchGeneticAlgorithm/_Closure$__3::$VB$Local_maxFitness
+    IL_002d:  ldloc.0
+    IL_002e:  ldarg.0
+    IL_002f:  ldfld      valuetype ShakespeareanMonkeys.TextMatchGenome[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_currentPopulation
+    IL_0034:  ldloc.0
+    IL_0035:  dup
+    IL_0036:  ldvirtftn  instance int64 ShakespeareanMonkeys.TextMatchGeneticAlgorithm/_Closure$__3::_Lambda$__6(valuetype ShakespeareanMonkeys.TextMatchGenome)
+    IL_003c:  newobj     instance void class [mscorlib]System.Func`2<valuetype ShakespeareanMonkeys.TextMatchGenome,int64>::.ctor(object,
+                                                                                                                                  native int)
+    IL_0041:  call       int64 [System.Core]System.Linq.Enumerable::Sum<valuetype ShakespeareanMonkeys.TextMatchGenome>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                        class [mscorlib]System.Func`2<!!0,int64>)
+    IL_0046:  stfld      int64 ShakespeareanMonkeys.TextMatchGeneticAlgorithm/_Closure$__3::$VB$Local_sumOfMaxMinusFitness
+    IL_004b:  ldarg.0
+    IL_004c:  ldfld      bool ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_runParallel
+    IL_0051:  stloc.2
+    IL_0052:  ldloc.2
+    IL_0053:  brfalse.s  IL_0090
+
+    IL_0055:  ldc.i4.0
+    IL_0056:  ldarg.0
+    IL_0057:  ldfld      class ShakespeareanMonkeys.GeneticAlgorithmSettings ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_settings
+    IL_005c:  callvirt   instance int32 ShakespeareanMonkeys.GeneticAlgorithmSettings::get_PopulationSize()
+    IL_0061:  ldc.i4.2
+    IL_0062:  div
+    IL_0063:  call       class [System.Core]System.Linq.ParallelQuery`1<int32> [System.Core]System.Linq.ParallelEnumerable::Range(int32,
+                                                                                                                                  int32)
+    IL_0068:  ldloc.0
+    IL_0069:  dup
+    IL_006a:  ldvirtftn  instance class [mscorlib]System.Collections.Generic.IEnumerable`1<valuetype ShakespeareanMonkeys.TextMatchGenome> ShakespeareanMonkeys.TextMatchGeneticAlgorithm/_Closure$__3::_Lambda$__7(int32)
+    IL_0070:  newobj     instance void class [mscorlib]System.Func`2<int32,class [mscorlib]System.Collections.Generic.IEnumerable`1<valuetype ShakespeareanMonkeys.TextMatchGenome>>::.ctor(object,
+                                                                                                                                                                                            native int)
+    IL_0075:  ldnull
+    IL_0076:  ldftn      valuetype ShakespeareanMonkeys.TextMatchGenome ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_Lambda$__8(int32,
+                                                                                                                                    valuetype ShakespeareanMonkeys.TextMatchGenome)
+    IL_007c:  newobj     instance void class [mscorlib]System.Func`3<int32,valuetype ShakespeareanMonkeys.TextMatchGenome,valuetype ShakespeareanMonkeys.TextMatchGenome>::.ctor(object,
+                                                                                                                                                                                 native int)
+    IL_0081:  call       class [System.Core]System.Linq.ParallelQuery`1<!!2> [System.Core]System.Linq.ParallelEnumerable::SelectMany<int32,valuetype ShakespeareanMonkeys.TextMatchGenome,valuetype ShakespeareanMonkeys.TextMatchGenome>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                                                                                                          class [mscorlib]System.Func`2<!!0,class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1>>,
+                                                                                                                                                                                                                                          class [mscorlib]System.Func`3<!!0,!!1,!!2>)
+    IL_0086:  call       !!0[] [System.Core]System.Linq.ParallelEnumerable::ToArray<valuetype ShakespeareanMonkeys.TextMatchGenome>(class [System.Core]System.Linq.ParallelQuery`1<!!0>)
+    IL_008b:  stloc.1
+    IL_008c:  br.s       IL_00cb
+
+    IL_008e:  br.s       IL_00ca
+
+    IL_0090:  nop
+    IL_0091:  ldc.i4.0
+    IL_0092:  ldarg.0
+    IL_0093:  ldfld      class ShakespeareanMonkeys.GeneticAlgorithmSettings ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_settings
+    IL_0098:  callvirt   instance int32 ShakespeareanMonkeys.GeneticAlgorithmSettings::get_PopulationSize()
+    IL_009d:  ldc.i4.2
+    IL_009e:  div
+    IL_009f:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> [System.Core]System.Linq.Enumerable::Range(int32,
+                                                                                                                                    int32)
+    IL_00a4:  ldloc.0
+    IL_00a5:  dup
+    IL_00a6:  ldvirtftn  instance class [mscorlib]System.Collections.Generic.IEnumerable`1<valuetype ShakespeareanMonkeys.TextMatchGenome> ShakespeareanMonkeys.TextMatchGeneticAlgorithm/_Closure$__3::_Lambda$__9(int32)
+    IL_00ac:  newobj     instance void class [mscorlib]System.Func`2<int32,class [mscorlib]System.Collections.Generic.IEnumerable`1<valuetype ShakespeareanMonkeys.TextMatchGenome>>::.ctor(object,
+                                                                                                                                                                                            native int)
+    IL_00b1:  ldnull
+    IL_00b2:  ldftn      valuetype ShakespeareanMonkeys.TextMatchGenome ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_Lambda$__10(int32,
+                                                                                                                                     valuetype ShakespeareanMonkeys.TextMatchGenome)
+    IL_00b8:  newobj     instance void class [mscorlib]System.Func`3<int32,valuetype ShakespeareanMonkeys.TextMatchGenome,valuetype ShakespeareanMonkeys.TextMatchGenome>::.ctor(object,
+                                                                                                                                                                                 native int)
+    IL_00bd:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!2> [System.Core]System.Linq.Enumerable::SelectMany<int32,valuetype ShakespeareanMonkeys.TextMatchGenome,valuetype ShakespeareanMonkeys.TextMatchGenome>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                                                                            class [mscorlib]System.Func`2<!!0,class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1>>,
+                                                                                                                                                                                                                                            class [mscorlib]System.Func`3<!!0,!!1,!!2>)
+    IL_00c2:  call       !!0[] [System.Core]System.Linq.Enumerable::ToArray<valuetype ShakespeareanMonkeys.TextMatchGenome>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_00c7:  stloc.1
+    IL_00c8:  br.s       IL_00cb
+
+    IL_00ca:  nop
+    IL_00cb:  ldloc.1
+    IL_00cc:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="95" endline="117"><![CDATA[
+  {
+    // Code size       199 (0xc7)
+    .maxstack  6
+    .locals init ([0] valuetype ShakespeareanMonkeys.TextMatchGenome child1,
+             [1] valuetype ShakespeareanMonkeys.TextMatchGenome child2,
+             [2] valuetype ShakespeareanMonkeys.TextMatchGenome[] CreateChildren,
+             [3] valuetype ShakespeareanMonkeys.TextMatchGenome[] VB$LW$t_array$S0,
+             [4] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldloca.s   child1
+    IL_0003:  initobj    ShakespeareanMonkeys.TextMatchGenome
+    IL_0009:  ldloca.s   child2
+    IL_000b:  initobj    ShakespeareanMonkeys.TextMatchGenome
+    IL_0011:  ldsfld     class [ParallelExtensionsExtras]System.Threading.ThreadSafeRandom ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_random
+    IL_0016:  callvirt   instance float64 [ParallelExtensionsExtras]System.Threading.ThreadSafeRandom::NextDouble()
+    IL_001b:  ldarg.0
+    IL_001c:  ldfld      class ShakespeareanMonkeys.GeneticAlgorithmSettings ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_settings
+    IL_0021:  callvirt   instance float64 ShakespeareanMonkeys.GeneticAlgorithmSettings::get_CrossoverProbability()
+    IL_0026:  clt
+    IL_0028:  stloc.s    VB$CG$t_bool$S0
+    IL_002a:  ldloc.s    VB$CG$t_bool$S0
+    IL_002c:  brfalse.s  IL_0042
+
+    IL_002e:  ldarg.0
+    IL_002f:  ldsfld     class [ParallelExtensionsExtras]System.Threading.ThreadSafeRandom ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_random
+    IL_0034:  ldarg.1
+    IL_0035:  ldarg.2
+    IL_0036:  ldloca.s   child1
+    IL_0038:  ldloca.s   child2
+    IL_003a:  callvirt   instance void ShakespeareanMonkeys.TextMatchGeneticAlgorithm::Crossover(class [mscorlib]System.Random,
+                                                                                                 valuetype ShakespeareanMonkeys.TextMatchGenome,
+                                                                                                 valuetype ShakespeareanMonkeys.TextMatchGenome,
+                                                                                                 valuetype ShakespeareanMonkeys.TextMatchGenome&,
+                                                                                                 valuetype ShakespeareanMonkeys.TextMatchGenome&)
+    IL_003f:  nop
+    IL_0040:  br.s       IL_0047
+
+    IL_0042:  nop
+    IL_0043:  ldarg.1
+    IL_0044:  stloc.0
+    IL_0045:  ldarg.2
+    IL_0046:  stloc.1
+    IL_0047:  nop
+    IL_0048:  ldsfld     class [ParallelExtensionsExtras]System.Threading.ThreadSafeRandom ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_random
+    IL_004d:  callvirt   instance float64 [ParallelExtensionsExtras]System.Threading.ThreadSafeRandom::NextDouble()
+    IL_0052:  ldarg.0
+    IL_0053:  ldfld      class ShakespeareanMonkeys.GeneticAlgorithmSettings ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_settings
+    IL_0058:  callvirt   instance float64 ShakespeareanMonkeys.GeneticAlgorithmSettings::get_MutationProbability()
+    IL_005d:  clt
+    IL_005f:  stloc.s    VB$CG$t_bool$S0
+    IL_0061:  ldloc.s    VB$CG$t_bool$S0
+    IL_0063:  brfalse.s  IL_0073
+
+    IL_0065:  ldarg.0
+    IL_0066:  ldsfld     class [ParallelExtensionsExtras]System.Threading.ThreadSafeRandom ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_random
+    IL_006b:  ldloca.s   child1
+    IL_006d:  callvirt   instance void ShakespeareanMonkeys.TextMatchGeneticAlgorithm::Mutate(class [mscorlib]System.Random,
+                                                                                              valuetype ShakespeareanMonkeys.TextMatchGenome&)
+    IL_0072:  nop
+    IL_0073:  nop
+    IL_0074:  ldsfld     class [ParallelExtensionsExtras]System.Threading.ThreadSafeRandom ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_random
+    IL_0079:  callvirt   instance float64 [ParallelExtensionsExtras]System.Threading.ThreadSafeRandom::NextDouble()
+    IL_007e:  ldarg.0
+    IL_007f:  ldfld      class ShakespeareanMonkeys.GeneticAlgorithmSettings ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_settings
+    IL_0084:  callvirt   instance float64 ShakespeareanMonkeys.GeneticAlgorithmSettings::get_MutationProbability()
+    IL_0089:  clt
+    IL_008b:  stloc.s    VB$CG$t_bool$S0
+    IL_008d:  ldloc.s    VB$CG$t_bool$S0
+    IL_008f:  brfalse.s  IL_009f
+
+    IL_0091:  ldarg.0
+    IL_0092:  ldsfld     class [ParallelExtensionsExtras]System.Threading.ThreadSafeRandom ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_random
+    IL_0097:  ldloca.s   child2
+    IL_0099:  callvirt   instance void ShakespeareanMonkeys.TextMatchGeneticAlgorithm::Mutate(class [mscorlib]System.Random,
+                                                                                              valuetype ShakespeareanMonkeys.TextMatchGenome&)
+    IL_009e:  nop
+    IL_009f:  nop
+    IL_00a0:  ldc.i4.2
+    IL_00a1:  newarr     ShakespeareanMonkeys.TextMatchGenome
+    IL_00a6:  stloc.3
+    IL_00a7:  ldloc.3
+    IL_00a8:  ldc.i4.0
+    IL_00a9:  ldelema    ShakespeareanMonkeys.TextMatchGenome
+    IL_00ae:  ldloc.0
+    IL_00af:  stobj      ShakespeareanMonkeys.TextMatchGenome
+    IL_00b4:  ldloc.3
+    IL_00b5:  ldc.i4.1
+    IL_00b6:  ldelema    ShakespeareanMonkeys.TextMatchGenome
+    IL_00bb:  ldloc.1
+    IL_00bc:  stobj      ShakespeareanMonkeys.TextMatchGenome
+    IL_00c1:  ldloc.3
+    IL_00c2:  stloc.2
+    IL_00c3:  br.s       IL_00c5
+
+    IL_00c5:  ldloc.2
+    IL_00c6:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="118" endline="129"><![CDATA[
+  {
+    // Code size       126 (0x7e)
+    .maxstack  3
+    .locals init ([0] valuetype ShakespeareanMonkeys.TextMatchGenome FindRandomHighQualityParent,
+             [1] int64 val,
+             [2] int32 i,
+             [3] int32 maxMinusFitness,
+             [4] int32 VB$t_i4$L0,
+             [5] bool VB$CG$t_bool$S0,
+             [6] int32 VB$CG$t_i4$S0)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [ParallelExtensionsExtras]System.Threading.ThreadSafeRandom ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_random
+    IL_0006:  callvirt   instance float64 [ParallelExtensionsExtras]System.Threading.ThreadSafeRandom::NextDouble()
+    IL_000b:  ldarg.1
+    IL_000c:  conv.r8
+    IL_000d:  mul
+    IL_000e:  call       float64 [Microsoft.VisualBasic]Microsoft.VisualBasic.Conversion::Fix(float64)
+    IL_0013:  call       float64 [mscorlib]System.Math::Round(float64)
+    IL_0018:  conv.ovf.i8
+    IL_0019:  stloc.1
+    IL_001a:  ldc.i4.0
+    IL_001b:  ldarg.0
+    IL_001c:  ldfld      valuetype ShakespeareanMonkeys.TextMatchGenome[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_currentPopulation
+    IL_0021:  ldlen
+    IL_0022:  conv.ovf.i4
+    IL_0023:  ldc.i4.1
+    IL_0024:  sub.ovf
+    IL_0025:  stloc.s    VB$t_i4$L0
+    IL_0027:  stloc.2
+    IL_0028:  br.s       IL_0068
+
+    IL_002a:  ldarg.2
+    IL_002b:  ldarg.0
+    IL_002c:  ldfld      valuetype ShakespeareanMonkeys.TextMatchGenome[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_currentPopulation
+    IL_0031:  ldloc.2
+    IL_0032:  ldelema    ShakespeareanMonkeys.TextMatchGenome
+    IL_0037:  call       instance int32 ShakespeareanMonkeys.TextMatchGenome::get_Fitness()
+    IL_003c:  sub.ovf
+    IL_003d:  stloc.3
+    IL_003e:  ldloc.1
+    IL_003f:  ldloc.3
+    IL_0040:  conv.i8
+    IL_0041:  clt
+    IL_0043:  stloc.s    VB$CG$t_bool$S0
+    IL_0045:  ldloc.s    VB$CG$t_bool$S0
+    IL_0047:  brfalse.s  IL_005d
+
+    IL_0049:  ldarg.0
+    IL_004a:  ldfld      valuetype ShakespeareanMonkeys.TextMatchGenome[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_currentPopulation
+    IL_004f:  ldloc.2
+    IL_0050:  ldelema    ShakespeareanMonkeys.TextMatchGenome
+    IL_0055:  ldobj      ShakespeareanMonkeys.TextMatchGenome
+    IL_005a:  stloc.0
+    IL_005b:  br.s       IL_007c
+
+    IL_005d:  nop
+    IL_005e:  ldloc.1
+    IL_005f:  ldloc.3
+    IL_0060:  conv.i8
+    IL_0061:  sub.ovf
+    IL_0062:  stloc.1
+    IL_0063:  nop
+    IL_0064:  ldloc.2
+    IL_0065:  ldc.i4.1
+    IL_0066:  add.ovf
+    IL_0067:  stloc.2
+    IL_0068:  ldloc.2
+    IL_0069:  ldloc.s    VB$t_i4$L0
+    IL_006b:  stloc.s    VB$CG$t_i4$S0
+    IL_006d:  ldloc.s    VB$CG$t_i4$S0
+    IL_006f:  ble.s      IL_002a
+
+    IL_0071:  ldstr      "Not to be, apparently."
+    IL_0076:  newobj     instance void [mscorlib]System.InvalidOperationException::.ctor(string)
+    IL_007b:  throw
+
+    IL_007c:  ldloc.0
+    IL_007d:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="130" endline="137"><![CDATA[
+  {
+    // Code size       167 (0xa7)
+    .maxstack  5
+    .locals init ([0] int32 crossoverPoint,
+             [1] valuetype ShakespeareanMonkeys.TextMatchGenome VB$t_struct$S0,
+             [2] valuetype ShakespeareanMonkeys.TextMatchGenome VB$t_struct$S1)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldc.i4.1
+    IL_0003:  ldarga.s   p1
+    IL_0005:  call       instance string ShakespeareanMonkeys.TextMatchGenome::get_Text()
+    IL_000a:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_000f:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_0014:  stloc.0
+    IL_0015:  ldarg.s    child1
+    IL_0017:  ldloca.s   VB$t_struct$S0
+    IL_0019:  initobj    ShakespeareanMonkeys.TextMatchGenome
+    IL_001f:  ldloc.1
+    IL_0020:  stloc.2
+    IL_0021:  ldloca.s   VB$t_struct$S1
+    IL_0023:  ldarga.s   p1
+    IL_0025:  call       instance string ShakespeareanMonkeys.TextMatchGenome::get_Text()
+    IL_002a:  ldc.i4.0
+    IL_002b:  ldloc.0
+    IL_002c:  callvirt   instance string [mscorlib]System.String::Substring(int32,
+                                                                            int32)
+    IL_0031:  ldarga.s   p2
+    IL_0033:  call       instance string ShakespeareanMonkeys.TextMatchGenome::get_Text()
+    IL_0038:  ldloc.0
+    IL_0039:  callvirt   instance string [mscorlib]System.String::Substring(int32)
+    IL_003e:  call       string [mscorlib]System.String::Concat(string,
+                                                                string)
+    IL_0043:  call       instance void ShakespeareanMonkeys.TextMatchGenome::set_Text(string)
+    IL_0048:  nop
+    IL_0049:  ldloca.s   VB$t_struct$S1
+    IL_004b:  ldarg.0
+    IL_004c:  ldfld      string ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_targetText
+    IL_0051:  call       instance void ShakespeareanMonkeys.TextMatchGenome::set_TargetText(string)
+    IL_0056:  nop
+    IL_0057:  ldloc.2
+    IL_0058:  stobj      ShakespeareanMonkeys.TextMatchGenome
+    IL_005d:  ldarg.s    child2
+    IL_005f:  ldloca.s   VB$t_struct$S1
+    IL_0061:  initobj    ShakespeareanMonkeys.TextMatchGenome
+    IL_0067:  ldloc.2
+    IL_0068:  stloc.1
+    IL_0069:  ldloca.s   VB$t_struct$S0
+    IL_006b:  ldarga.s   p2
+    IL_006d:  call       instance string ShakespeareanMonkeys.TextMatchGenome::get_Text()
+    IL_0072:  ldc.i4.0
+    IL_0073:  ldloc.0
+    IL_0074:  callvirt   instance string [mscorlib]System.String::Substring(int32,
+                                                                            int32)
+    IL_0079:  ldarga.s   p1
+    IL_007b:  call       instance string ShakespeareanMonkeys.TextMatchGenome::get_Text()
+    IL_0080:  ldloc.0
+    IL_0081:  callvirt   instance string [mscorlib]System.String::Substring(int32)
+    IL_0086:  call       string [mscorlib]System.String::Concat(string,
+                                                                string)
+    IL_008b:  call       instance void ShakespeareanMonkeys.TextMatchGenome::set_Text(string)
+    IL_0090:  nop
+    IL_0091:  ldloca.s   VB$t_struct$S0
+    IL_0093:  ldarg.0
+    IL_0094:  ldfld      string ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_targetText
+    IL_0099:  call       instance void ShakespeareanMonkeys.TextMatchGenome::set_TargetText(string)
+    IL_009e:  nop
+    IL_009f:  ldloc.1
+    IL_00a0:  stobj      ShakespeareanMonkeys.TextMatchGenome
+    IL_00a5:  nop
+    IL_00a6:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="138" endline="143"><![CDATA[
+  {
+    // Code size       73 (0x49)
+    .maxstack  6
+    .locals init ([0] class [mscorlib]System.Text.StringBuilder sb)
+    IL_0000:  nop
+    IL_0001:  ldarg.2
+    IL_0002:  call       instance string ShakespeareanMonkeys.TextMatchGenome::get_Text()
+    IL_0007:  newobj     instance void [mscorlib]System.Text.StringBuilder::.ctor(string)
+    IL_000c:  stloc.0
+    IL_000d:  ldloc.0
+    IL_000e:  ldarg.1
+    IL_000f:  ldc.i4.0
+    IL_0010:  ldarg.2
+    IL_0011:  call       instance string ShakespeareanMonkeys.TextMatchGenome::get_Text()
+    IL_0016:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_001b:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_0020:  ldsfld     char[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_validChars
+    IL_0025:  ldarg.1
+    IL_0026:  ldc.i4.0
+    IL_0027:  ldsfld     char[] ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_validChars
+    IL_002c:  ldlen
+    IL_002d:  conv.ovf.i4
+    IL_002e:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_0033:  ldelem.u2
+    IL_0034:  callvirt   instance void [mscorlib]System.Text.StringBuilder::set_Chars(int32,
+                                                                                      char)
+    IL_0039:  nop
+    IL_003a:  ldarg.2
+    IL_003b:  ldloc.0
+    IL_003c:  callvirt   instance string [mscorlib]System.Text.StringBuilder::ToString()
+    IL_0041:  call       instance void ShakespeareanMonkeys.TextMatchGenome::set_Text(string)
+    IL_0046:  nop
+    IL_0047:  nop
+    IL_0048:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="66" endline="66"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  2
+    .locals init ([0] valuetype ShakespeareanMonkeys.TextMatchGenome _Lambda$__4)
+    IL_0000:  ldarg.0
+    IL_0001:  ldsfld     class [ParallelExtensionsExtras]System.Threading.ThreadSafeRandom ShakespeareanMonkeys.TextMatchGeneticAlgorithm::_random
+    IL_0006:  callvirt   instance valuetype ShakespeareanMonkeys.TextMatchGenome ShakespeareanMonkeys.TextMatchGeneticAlgorithm::CreateRandomGenome(class [mscorlib]System.Random)
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="67" endline="78"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       12 (0xc)
+    .maxstack  1
+    .locals init ([0] int32 _Lambda$__5)
+    IL_0000:  ldarga.s   g
+    IL_0002:  call       instance int32 ShakespeareanMonkeys.TextMatchGenome::get_Fitness()
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="79" endline="86"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       6 (0x6)
+    .maxstack  1
+    .locals init ([0] valuetype ShakespeareanMonkeys.TextMatchGenome _Lambda$__8)
+    IL_0000:  ldarg.1
+    IL_0001:  stloc.0
+    IL_0002:  br.s       IL_0004
+
+    IL_0004:  ldloc.0
+    IL_0005:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="87" endline="92"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       6 (0x6)
+    .maxstack  1
+    .locals init ([0] valuetype ShakespeareanMonkeys.TextMatchGenome _Lambda$__10)
+    IL_0000:  ldarg.1
+    IL_0001:  stloc.0
+    IL_0002:  br.s       IL_0004
+
+    IL_0004:  ldloc.0
+    IL_0005:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="93" endline="153"><![CDATA[
+  {
+    // Code size       12 (0xc)
+    .maxstack  1
+    .locals init ([0] string Text)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      string ShakespeareanMonkeys.TextMatchGenome::_text
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="154" endline="157"><![CDATA[
+  {
+    // Code size       17 (0x11)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  stfld      string ShakespeareanMonkeys.TextMatchGenome::_text
+    IL_0008:  ldarg.0
+    IL_0009:  call       instance void ShakespeareanMonkeys.TextMatchGenome::RecomputeFitness()
+    IL_000e:  nop
+    IL_000f:  nop
+    IL_0010:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="158" endline="163"><![CDATA[
+  {
+    // Code size       12 (0xc)
+    .maxstack  1
+    .locals init ([0] string TargetText)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      string ShakespeareanMonkeys.TextMatchGenome::_targetText
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="164" endline="167"><![CDATA[
+  {
+    // Code size       17 (0x11)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  stfld      string ShakespeareanMonkeys.TextMatchGenome::_targetText
+    IL_0008:  ldarg.0
+    IL_0009:  call       instance void ShakespeareanMonkeys.TextMatchGenome::RecomputeFitness()
+    IL_000e:  nop
+    IL_000f:  nop
+    IL_0010:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="168" endline="182"><![CDATA[
+  {
+    // Code size       122 (0x7a)
+    .maxstack  3
+    .locals init ([0] int32 diffs,
+             [1] int32 i,
+             [2] int32 VB$t_i4$L0,
+             [3] bool VB$CG$t_bool$S0,
+             [4] int32 VB$CG$t_i4$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      string ShakespeareanMonkeys.TextMatchGenome::_text
+    IL_0007:  brfalse.s  IL_0011
+
+    IL_0009:  ldarg.0
+    IL_000a:  ldfld      string ShakespeareanMonkeys.TextMatchGenome::_targetText
+    IL_000f:  brtrue.s   IL_0014
+
+    IL_0011:  ldc.i4.0
+    IL_0012:  br.s       IL_0015
+
+    IL_0014:  ldc.i4.1
+    IL_0015:  stloc.3
+    IL_0016:  ldloc.3
+    IL_0017:  brfalse.s  IL_006a
+
+    IL_0019:  ldc.i4.0
+    IL_001a:  stloc.0
+    IL_001b:  ldc.i4.0
+    IL_001c:  ldarg.0
+    IL_001d:  ldfld      string ShakespeareanMonkeys.TextMatchGenome::_targetText
+    IL_0022:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_0027:  ldc.i4.1
+    IL_0028:  sub.ovf
+    IL_0029:  stloc.2
+    IL_002a:  stloc.1
+    IL_002b:  br.s       IL_0058
+
+    IL_002d:  ldarg.0
+    IL_002e:  ldfld      string ShakespeareanMonkeys.TextMatchGenome::_targetText
+    IL_0033:  ldloc.1
+    IL_0034:  callvirt   instance char [mscorlib]System.String::get_Chars(int32)
+    IL_0039:  ldarg.0
+    IL_003a:  ldfld      string ShakespeareanMonkeys.TextMatchGenome::_text
+    IL_003f:  ldloc.1
+    IL_0040:  callvirt   instance char [mscorlib]System.String::get_Chars(int32)
+    IL_0045:  ceq
+    IL_0047:  ldc.i4.0
+    IL_0048:  ceq
+    IL_004a:  stloc.3
+    IL_004b:  ldloc.3
+    IL_004c:  brfalse.s  IL_0052
+
+    IL_004e:  ldloc.0
+    IL_004f:  ldc.i4.1
+    IL_0050:  add.ovf
+    IL_0051:  stloc.0
+    IL_0052:  nop
+    IL_0053:  nop
+    IL_0054:  ldloc.1
+    IL_0055:  ldc.i4.1
+    IL_0056:  add.ovf
+    IL_0057:  stloc.1
+    IL_0058:  ldloc.1
+    IL_0059:  ldloc.2
+    IL_005a:  stloc.s    VB$CG$t_i4$S0
+    IL_005c:  ldloc.s    VB$CG$t_i4$S0
+    IL_005e:  ble.s      IL_002d
+
+    IL_0060:  ldarg.0
+    IL_0061:  ldloc.0
+    IL_0062:  call       instance void ShakespeareanMonkeys.TextMatchGenome::set_Fitness(int32)
+    IL_0067:  nop
+    IL_0068:  br.s       IL_0077
+
+    IL_006a:  nop
+    IL_006b:  ldarg.0
+    IL_006c:  ldc.i4     0x7fffffff
+    IL_0071:  call       instance void ShakespeareanMonkeys.TextMatchGenome::set_Fitness(int32)
+    IL_0076:  nop
+    IL_0077:  nop
+    IL_0078:  nop
+    IL_0079:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="183" endline="188"><![CDATA[
+  {
+    // Code size       12 (0xc)
+    .maxstack  1
+    .locals init ([0] int32 Fitness)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      int32 ShakespeareanMonkeys.TextMatchGenome::privateFitness
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="189" endline="191"><![CDATA[
+  {
+    // Code size       10 (0xa)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  stfld      int32 ShakespeareanMonkeys.TextMatchGenome::privateFitness
+    IL_0008:  nop
+    IL_0009:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="192" endline="234"><![CDATA[
+  {
+    // Code size       47 (0x2f)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+    IL_0007:  ldarg.0
+    IL_0008:  ldc.i4.s   30
+    IL_000a:  stfld      int32 ShakespeareanMonkeys.GeneticAlgorithmSettings::_populationSize
+    IL_000f:  ldarg.0
+    IL_0010:  ldc.r8     1.e-002
+    IL_0019:  stfld      float64 ShakespeareanMonkeys.GeneticAlgorithmSettings::_mutationProbability
+    IL_001e:  ldarg.0
+    IL_001f:  ldc.r8     0.87
+    IL_0028:  stfld      float64 ShakespeareanMonkeys.GeneticAlgorithmSettings::_crossoverProbability
+    IL_002d:  nop
+    IL_002e:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="197" endline="199"><![CDATA[
+  {
+    // Code size       12 (0xc)
+    .maxstack  1
+    .locals init ([0] int32 PopulationSize)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      int32 ShakespeareanMonkeys.GeneticAlgorithmSettings::_populationSize
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="200" endline="205"><![CDATA[
+  {
+    // Code size       40 (0x28)
+    .maxstack  2
+    .locals init ([0] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldc.i4.1
+    IL_0003:  blt.s      IL_000e
+
+    IL_0005:  ldarg.1
+    IL_0006:  ldc.i4.2
+    IL_0007:  rem
+    IL_0008:  ldc.i4.0
+    IL_0009:  bne.un.s   IL_000e
+
+    IL_000b:  ldc.i4.0
+    IL_000c:  br.s       IL_000f
+
+    IL_000e:  ldc.i4.1
+    IL_000f:  stloc.0
+    IL_0010:  ldloc.0
+    IL_0011:  brfalse.s  IL_001e
+
+    IL_0013:  ldstr      "PopulationSize"
+    IL_0018:  newobj     instance void [mscorlib]System.ArgumentOutOfRangeException::.ctor(string)
+    IL_001d:  throw
+
+    IL_001e:  nop
+    IL_001f:  ldarg.0
+    IL_0020:  ldarg.1
+    IL_0021:  stfld      int32 ShakespeareanMonkeys.GeneticAlgorithmSettings::_populationSize
+    IL_0026:  nop
+    IL_0027:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="206" endline="211"><![CDATA[
+  {
+    // Code size       12 (0xc)
+    .maxstack  1
+    .locals init ([0] float64 MutationProbability)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      float64 ShakespeareanMonkeys.GeneticAlgorithmSettings::_mutationProbability
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="212" endline="217"><![CDATA[
+  {
+    // Code size       54 (0x36)
+    .maxstack  2
+    .locals init ([0] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldc.r8     0.0
+    IL_000b:  blt.s      IL_001c
+
+    IL_000d:  ldarg.1
+    IL_000e:  ldc.r8     1.
+    IL_0017:  bgt.s      IL_001c
+
+    IL_0019:  ldc.i4.0
+    IL_001a:  br.s       IL_001d
+
+    IL_001c:  ldc.i4.1
+    IL_001d:  stloc.0
+    IL_001e:  ldloc.0
+    IL_001f:  brfalse.s  IL_002c
+
+    IL_0021:  ldstr      "MutationProbability"
+    IL_0026:  newobj     instance void [mscorlib]System.ArgumentOutOfRangeException::.ctor(string)
+    IL_002b:  throw
+
+    IL_002c:  nop
+    IL_002d:  ldarg.0
+    IL_002e:  ldarg.1
+    IL_002f:  stfld      float64 ShakespeareanMonkeys.GeneticAlgorithmSettings::_mutationProbability
+    IL_0034:  nop
+    IL_0035:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="218" endline="223"><![CDATA[
+  {
+    // Code size       12 (0xc)
+    .maxstack  1
+    .locals init ([0] float64 CrossoverProbability)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      float64 ShakespeareanMonkeys.GeneticAlgorithmSettings::_crossoverProbability
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="224" endline="229"><![CDATA[
+  {
+    // Code size       54 (0x36)
+    .maxstack  2
+    .locals init ([0] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldc.r8     0.0
+    IL_000b:  blt.s      IL_001c
+
+    IL_000d:  ldarg.1
+    IL_000e:  ldc.r8     1.
+    IL_0017:  bgt.s      IL_001c
+
+    IL_0019:  ldc.i4.0
+    IL_001a:  br.s       IL_001d
+
+    IL_001c:  ldc.i4.1
+    IL_001d:  stloc.0
+    IL_001e:  ldloc.0
+    IL_001f:  brfalse.s  IL_002c
+
+    IL_0021:  ldstr      "CrossoverProbability"
+    IL_0026:  newobj     instance void [mscorlib]System.ArgumentOutOfRangeException::.ctor(string)
+    IL_002b:  throw
+
+    IL_002c:  nop
+    IL_002d:  ldarg.0
+    IL_002e:  ldarg.1
+    IL_002f:  stfld      float64 ShakespeareanMonkeys.GeneticAlgorithmSettings::_crossoverProbability
+    IL_0034:  nop
+    IL_0035:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_VisualBasic\TextMatchGeneticAlgorithm.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+]]></source>
+</source_elements></project>

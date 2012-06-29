@@ -1,0 +1,12 @@
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_VisualBasic\bin\Debug\Raytracer.exe.config
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_VisualBasic\bin\Debug\Raytracer.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_VisualBasic\bin\Debug\Raytracer.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_VisualBasic\bin\Debug\ParallelExtensionsExtras.dll
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_VisualBasic\bin\Debug\ParallelExtensionsExtras.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_VisualBasic\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_VisualBasic\obj\Debug\Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_VisualBasic\obj\Debug\Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Resources.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_VisualBasic\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_VisualBasic\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_VisualBasic\obj\Debug\Raytracer.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_VisualBasic\obj\Debug\Raytracer.pdb

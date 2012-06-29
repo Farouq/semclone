@@ -1,0 +1,184 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_FSharp\harness.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       6 (0x6)
+    .maxstack  4
+    IL_0000:  ldsfld     int32 '<StartupCode$Raytracer_FSharp>'.$Harness::width@15
+    IL_0005:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_FSharp\harness.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       7 (0x7)
+    .maxstack  4
+    IL_0000:  ldarg.0
+    IL_0001:  stsfld     int32 '<StartupCode$Raytracer_FSharp>'.$Harness::width@15
+    IL_0006:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_FSharp\harness.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       6 (0x6)
+    .maxstack  4
+    IL_0000:  ldsfld     int32 '<StartupCode$Raytracer_FSharp>'.$Harness::height@16
+    IL_0005:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_FSharp\harness.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       7 (0x7)
+    .maxstack  4
+    IL_0000:  ldarg.0
+    IL_0001:  stsfld     int32 '<StartupCode$Raytracer_FSharp>'.$Harness::height@16
+    IL_0006:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_FSharp\harness.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       6 (0x6)
+    .maxstack  4
+    IL_0000:  ldsfld     class Raytracer_FSharp/Scene '<StartupCode$Raytracer_FSharp>'.$Harness::baseScene@44
+    IL_0005:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_FSharp\harness.fs" startline="15" endline="221"><![CDATA[
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.STAThreadAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       430 (0x1ae)
+    .maxstack  8
+    .locals init ([0] class Raytracer_FSharp/Surface Shiny,
+             [1] class Raytracer_FSharp/Surface MatteShiny,
+             [2] class Raytracer_FSharp/Surface Checkerboard,
+             [3] class Raytracer_FSharp/Scene baseScene)
+    IL_0000:  nop
+    IL_0001:  ldc.i4     0x190
+    IL_0006:  stsfld     int32 '<StartupCode$Raytracer_FSharp>'.$Harness::width@15
+    IL_000b:  ldc.i4     0x190
+    IL_0010:  stsfld     int32 '<StartupCode$Raytracer_FSharp>'.$Harness::height@16
+    IL_0015:  newobj     instance void Harness/Surfaces/Shiny@20::.ctor()
+    IL_001a:  dup
+    IL_001b:  stsfld     class Raytracer_FSharp/Surface '<StartupCode$Raytracer_FSharp>'.$Harness::Shiny@19
+    IL_0020:  stloc.0
+    IL_0021:  newobj     instance void Harness/Surfaces/MatteShiny@26::.ctor()
+    IL_0026:  dup
+    IL_0027:  stsfld     class Raytracer_FSharp/Surface '<StartupCode$Raytracer_FSharp>'.$Harness::MatteShiny@25
+    IL_002c:  stloc.1
+    IL_002d:  newobj     instance void Harness/Surfaces/Checkerboard@32::.ctor()
+    IL_0032:  dup
+    IL_0033:  stsfld     class Raytracer_FSharp/Surface '<StartupCode$Raytracer_FSharp>'.$Harness::Checkerboard@31
+    IL_0038:  stloc.2
+    IL_0039:  ldc.r8     0.0
+    IL_0042:  ldc.r8     1.
+    IL_004b:  ldc.r8     0.0
+    IL_0054:  newobj     instance void Raytracer_FSharp/Vector::.ctor(float64,
+                                                                      float64,
+                                                                      float64)
+    IL_0059:  ldc.r8     0.0
+    IL_0062:  call       class Raytracer_FSharp/Surface Harness/Surfaces::get_Checkerboard()
+    IL_0067:  call       class Raytracer_FSharp/SceneObject Raytracer_FSharp::Plane(class Raytracer_FSharp/Vector,
+                                                                                    float64,
+                                                                                    class Raytracer_FSharp/Surface)
+    IL_006c:  ldc.r8     0.0
+    IL_0075:  ldc.r8     1.
+    IL_007e:  ldc.r8     -0.25
+    IL_0087:  newobj     instance void Raytracer_FSharp/Vector::.ctor(float64,
+                                                                      float64,
+                                                                      float64)
+    IL_008c:  ldc.r8     1.
+    IL_0095:  call       class Raytracer_FSharp/Surface Harness/Surfaces::get_Shiny()
+    IL_009a:  call       class Raytracer_FSharp/SceneObject Raytracer_FSharp::Sphere(class Raytracer_FSharp/Vector,
+                                                                                     float64,
+                                                                                     class Raytracer_FSharp/Surface)
+    IL_009f:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class Raytracer_FSharp/SceneObject>::get_Empty()
+    IL_00a4:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class Raytracer_FSharp/SceneObject>::Cons(!0,
+                                                                                                                                                                                                 class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_00a9:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class Raytracer_FSharp/SceneObject>::Cons(!0,
+                                                                                                                                                                                                 class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_00ae:  ldc.r8     -2.
+    IL_00b7:  ldc.r8     2.5
+    IL_00c0:  ldc.r8     0.0
+    IL_00c9:  newobj     instance void Raytracer_FSharp/Vector::.ctor(float64,
+                                                                      float64,
+                                                                      float64)
+    IL_00ce:  ldc.r8     0.5
+    IL_00d7:  ldc.r8     0.45000000000000001
+    IL_00e0:  ldc.r8     0.40999999999999998
+    IL_00e9:  newobj     instance void Raytracer_FSharp/Color::.ctor(float64,
+                                                                     float64,
+                                                                     float64)
+    IL_00ee:  newobj     instance void Raytracer_FSharp/Light::.ctor(class Raytracer_FSharp/Vector,
+                                                                     class Raytracer_FSharp/Color)
+    IL_00f3:  ldc.r8     2.
+    IL_00fc:  ldc.r8     4.5
+    IL_0105:  ldc.r8     2.
+    IL_010e:  newobj     instance void Raytracer_FSharp/Vector::.ctor(float64,
+                                                                      float64,
+                                                                      float64)
+    IL_0113:  ldc.r8     0.98999999999999999
+    IL_011c:  ldc.r8     0.94999999999999996
+    IL_0125:  ldc.r8     0.80000000000000004
+    IL_012e:  newobj     instance void Raytracer_FSharp/Color::.ctor(float64,
+                                                                     float64,
+                                                                     float64)
+    IL_0133:  newobj     instance void Raytracer_FSharp/Light::.ctor(class Raytracer_FSharp/Vector,
+                                                                     class Raytracer_FSharp/Color)
+    IL_0138:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class Raytracer_FSharp/Light>::get_Empty()
+    IL_013d:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class Raytracer_FSharp/Light>::Cons(!0,
+                                                                                                                                                                                           class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_0142:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class Raytracer_FSharp/Light>::Cons(!0,
+                                                                                                                                                                                           class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_0147:  ldc.r8     2.75
+    IL_0150:  ldc.r8     2.
+    IL_0159:  ldc.r8     3.75
+    IL_0162:  newobj     instance void Raytracer_FSharp/Vector::.ctor(float64,
+                                                                      float64,
+                                                                      float64)
+    IL_0167:  ldc.r8     -0.59999999999999998
+    IL_0170:  ldc.r8     0.5
+    IL_0179:  ldc.r8     0.0
+    IL_0182:  newobj     instance void Raytracer_FSharp/Vector::.ctor(float64,
+                                                                      float64,
+                                                                      float64)
+    IL_0187:  newobj     instance void Raytracer_FSharp/Camera::.ctor(class Raytracer_FSharp/Vector,
+                                                                      class Raytracer_FSharp/Vector)
+    IL_018c:  newobj     instance void Raytracer_FSharp/Scene::.ctor(class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class Raytracer_FSharp/SceneObject>,
+                                                                     class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class Raytracer_FSharp/Light>,
+                                                                     class Raytracer_FSharp/Camera)
+    IL_0191:  dup
+    IL_0192:  stsfld     class Raytracer_FSharp/Scene '<StartupCode$Raytracer_FSharp>'.$Harness::baseScene@44
+    IL_0197:  stloc.3
+    IL_0198:  call       void [System.Windows.Forms]System.Windows.Forms.Application::EnableVisualStyles()
+    IL_019d:  ldc.i4.0
+    IL_019e:  call       void [System.Windows.Forms]System.Windows.Forms.Application::SetCompatibleTextRenderingDefault(bool)
+    IL_01a3:  newobj     instance void Harness/RayTracerForm::.ctor()
+    IL_01a8:  call       void [System.Windows.Forms]System.Windows.Forms.Application::Run(class [System.Windows.Forms]System.Windows.Forms.Form)
+    IL_01ad:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_FSharp\raytracer.fs" startline="89" endline="90"><![CDATA[
+  {
+    // Code size       14 (0xe)
+    .maxstack  5
+    .locals init ([0] float64 radius2)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldarg.1
+    IL_0003:  mul
+    IL_0004:  stloc.0
+    IL_0005:  ldarg.2
+    IL_0006:  ldarg.0
+    IL_0007:  ldloc.0
+    IL_0008:  newobj     instance void Raytracer_FSharp/Sphere@90::.ctor(class Raytracer_FSharp/Surface,
+                                                                         class Raytracer_FSharp/Vector,
+                                                                         float64)
+    IL_000d:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_FSharp\raytracer.fs" startline="91" endline="109"><![CDATA[
+  {
+    // Code size       10 (0xa)
+    .maxstack  5
+    IL_0000:  nop
+    IL_0001:  ldarg.2
+    IL_0002:  ldarg.1
+    IL_0003:  ldarg.0
+    IL_0004:  newobj     instance void Raytracer_FSharp/Plane@109::.ctor(class Raytracer_FSharp/Surface,
+                                                                         float64,
+                                                                         class Raytracer_FSharp/Vector)
+    IL_0009:  ret
+]]></source>
+</source_elements></project>

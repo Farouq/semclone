@@ -1,0 +1,2994 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.ApplicationBase::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  8
+    .language '{3A12D0B8-C26C-11D0-B442-00A0244A1DD2}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.Devices.Computer::.ctor()
+    IL_0007:  nop
+    IL_0008:  nop
+    IL_0009:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       42 (0x2a)
+    .maxstack  8
+    IL_0000:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer>::.ctor()
+    IL_0005:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer> My.MyProject::m_ComputerObjectProvider
+    IL_000a:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication>::.ctor()
+    IL_000f:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication> My.MyProject::m_AppObjectProvider
+    IL_0014:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User>::.ctor()
+    IL_0019:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User> My.MyProject::m_UserObjectProvider
+    IL_001e:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices>::.ctor()
+    IL_0023:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices> My.MyProject::m_MyWebServicesObjectProvider
+    IL_0028:  nop
+    IL_0029:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class My.MyComputer Computer)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer> My.MyProject::m_ComputerObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class My.MyApplication Application)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication> My.MyProject::m_AppObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User User)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User> My.MyProject::m_UserObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class My.MyProject/MyWebServices WebServices)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices> My.MyProject::m_MyWebServicesObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0007:  nop
+    IL_0008:  nop
+    IL_0009:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       67 (0x43)
+    .maxstack  2
+    .locals init ([0] string Value,
+             [1] class [System.Xml.Linq]System.Xml.Linq.XElement item,
+             [2] class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement> VB$t_ref$L0,
+             [3] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  nop
+    .try
+    {
+      IL_0002:  ldarg.0
+      IL_0003:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::GetEnumerator()
+      IL_0008:  stloc.2
+      IL_0009:  br.s       IL_001c
+
+      IL_000b:  ldloc.2
+      IL_000c:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::get_Current()
+      IL_0011:  stloc.1
+      IL_0012:  ldloc.1
+      IL_0013:  callvirt   instance string [System.Xml.Linq]System.Xml.Linq.XElement::get_Value()
+      IL_0018:  stloc.0
+      IL_0019:  leave.s    IL_0041
+
+      IL_001b:  nop
+      IL_001c:  ldloc.2
+      IL_001d:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0022:  stloc.3
+      IL_0023:  ldloc.3
+      IL_0024:  brtrue.s   IL_000b
+
+      IL_0026:  nop
+      IL_0027:  leave.s    IL_003d
+
+    }  // end .try
+    finally
+    {
+      IL_0029:  ldloc.2
+      IL_002a:  ldnull
+      IL_002b:  ceq
+      IL_002d:  ldc.i4.0
+      IL_002e:  ceq
+      IL_0030:  stloc.3
+      IL_0031:  ldloc.3
+      IL_0032:  brfalse.s  IL_003b
+
+      IL_0034:  ldloc.2
+      IL_0035:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_003a:  nop
+      IL_003b:  nop
+      IL_003c:  endfinally
+    }  // end handler
+    IL_003d:  ldnull
+    IL_003e:  stloc.0
+    IL_003f:  br.s       IL_0041
+
+    IL_0041:  ldloc.0
+    IL_0042:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       65 (0x41)
+    .maxstack  2
+    .locals init ([0] class [System.Xml.Linq]System.Xml.Linq.XElement item,
+             [1] class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement> VB$t_ref$L0,
+             [2] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  nop
+    .try
+    {
+      IL_0002:  ldarg.0
+      IL_0003:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::GetEnumerator()
+      IL_0008:  stloc.1
+      IL_0009:  br.s       IL_001e
+
+      IL_000b:  ldloc.1
+      IL_000c:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::get_Current()
+      IL_0011:  stloc.0
+      IL_0012:  ldloc.0
+      IL_0013:  ldarg.1
+      IL_0014:  callvirt   instance void [System.Xml.Linq]System.Xml.Linq.XElement::set_Value(string)
+      IL_0019:  nop
+      IL_001a:  nop
+      IL_001b:  br.s       IL_0028
+
+      IL_001d:  nop
+      IL_001e:  ldloc.1
+      IL_001f:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0024:  stloc.2
+      IL_0025:  ldloc.2
+      IL_0026:  brtrue.s   IL_000b
+
+      IL_0028:  nop
+      IL_0029:  leave.s    IL_003f
+
+    }  // end .try
+    finally
+    {
+      IL_002b:  ldloc.1
+      IL_002c:  ldnull
+      IL_002d:  ceq
+      IL_002f:  ldc.i4.0
+      IL_0030:  ceq
+      IL_0032:  stloc.2
+      IL_0033:  ldloc.2
+      IL_0034:  brfalse.s  IL_003d
+
+      IL_0036:  ldloc.1
+      IL_0037:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_003c:  nop
+      IL_003d:  nop
+      IL_003e:  endfinally
+    }  // end handler
+    IL_003f:  nop
+    IL_0040:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       73 (0x49)
+    .maxstack  2
+    .locals init ([0] string AttributeValue,
+             [1] class [System.Xml.Linq]System.Xml.Linq.XElement item,
+             [2] class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement> VB$t_ref$L0,
+             [3] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  nop
+    .try
+    {
+      IL_0002:  ldarg.0
+      IL_0003:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::GetEnumerator()
+      IL_0008:  stloc.2
+      IL_0009:  br.s       IL_0022
+
+      IL_000b:  ldloc.2
+      IL_000c:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::get_Current()
+      IL_0011:  stloc.1
+      IL_0012:  ldloc.1
+      IL_0013:  ldarg.1
+      IL_0014:  callvirt   instance class [System.Xml.Linq]System.Xml.Linq.XAttribute [System.Xml.Linq]System.Xml.Linq.XElement::Attribute(class [System.Xml.Linq]System.Xml.Linq.XName)
+      IL_0019:  call       string [System.Xml.Linq]System.Xml.Linq.XAttribute::op_Explicit(class [System.Xml.Linq]System.Xml.Linq.XAttribute)
+      IL_001e:  stloc.0
+      IL_001f:  leave.s    IL_0047
+
+      IL_0021:  nop
+      IL_0022:  ldloc.2
+      IL_0023:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0028:  stloc.3
+      IL_0029:  ldloc.3
+      IL_002a:  brtrue.s   IL_000b
+
+      IL_002c:  nop
+      IL_002d:  leave.s    IL_0043
+
+    }  // end .try
+    finally
+    {
+      IL_002f:  ldloc.2
+      IL_0030:  ldnull
+      IL_0031:  ceq
+      IL_0033:  ldc.i4.0
+      IL_0034:  ceq
+      IL_0036:  stloc.3
+      IL_0037:  ldloc.3
+      IL_0038:  brfalse.s  IL_0041
+
+      IL_003a:  ldloc.2
+      IL_003b:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_0040:  nop
+      IL_0041:  nop
+      IL_0042:  endfinally
+    }  // end handler
+    IL_0043:  ldnull
+    IL_0044:  stloc.0
+    IL_0045:  br.s       IL_0047
+
+    IL_0047:  ldloc.0
+    IL_0048:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       66 (0x42)
+    .maxstack  3
+    .locals init ([0] class [System.Xml.Linq]System.Xml.Linq.XElement item,
+             [1] class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement> VB$t_ref$L0,
+             [2] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  nop
+    .try
+    {
+      IL_0002:  ldarg.0
+      IL_0003:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::GetEnumerator()
+      IL_0008:  stloc.1
+      IL_0009:  br.s       IL_001f
+
+      IL_000b:  ldloc.1
+      IL_000c:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::get_Current()
+      IL_0011:  stloc.0
+      IL_0012:  ldloc.0
+      IL_0013:  ldarg.1
+      IL_0014:  ldarg.2
+      IL_0015:  callvirt   instance void [System.Xml.Linq]System.Xml.Linq.XElement::SetAttributeValue(class [System.Xml.Linq]System.Xml.Linq.XName,
+                                                                                                      object)
+      IL_001a:  nop
+      IL_001b:  nop
+      IL_001c:  br.s       IL_0029
+
+      IL_001e:  nop
+      IL_001f:  ldloc.1
+      IL_0020:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0025:  stloc.2
+      IL_0026:  ldloc.2
+      IL_0027:  brtrue.s   IL_000b
+
+      IL_0029:  nop
+      IL_002a:  leave.s    IL_0040
+
+    }  // end .try
+    finally
+    {
+      IL_002c:  ldloc.1
+      IL_002d:  ldnull
+      IL_002e:  ceq
+      IL_0030:  ldc.i4.0
+      IL_0031:  ceq
+      IL_0033:  stloc.2
+      IL_0034:  ldloc.2
+      IL_0035:  brfalse.s  IL_003e
+
+      IL_0037:  ldloc.1
+      IL_0038:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_003d:  nop
+      IL_003e:  nop
+      IL_003f:  endfinally
+    }  // end handler
+    IL_0040:  nop
+    IL_0041:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       18 (0x12)
+    .maxstack  2
+    .locals init ([0] string AttributeValue)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  callvirt   instance class [System.Xml.Linq]System.Xml.Linq.XAttribute [System.Xml.Linq]System.Xml.Linq.XElement::Attribute(class [System.Xml.Linq]System.Xml.Linq.XName)
+    IL_0008:  call       string [System.Xml.Linq]System.Xml.Linq.XAttribute::op_Explicit(class [System.Xml.Linq]System.Xml.Linq.XAttribute)
+    IL_000d:  stloc.0
+    IL_000e:  br.s       IL_0010
+
+    IL_0010:  ldloc.0
+    IL_0011:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       12 (0xc)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  ldarg.2
+    IL_0004:  callvirt   instance void [System.Xml.Linq]System.Xml.Linq.XElement::SetAttributeValue(class [System.Xml.Linq]System.Xml.Linq.XName,
+                                                                                                    object)
+    IL_0009:  nop
+    IL_000a:  nop
+    IL_000b:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    // Code size       31 (0x1f)
+    .maxstack  2
+    .locals init ([0] class [System.Xml.Linq]System.Xml.Linq.XAttribute CreateAttribute,
+             [1] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldnull
+    IL_0003:  ceq
+    IL_0005:  stloc.1
+    IL_0006:  ldloc.1
+    IL_0007:  brfalse.s  IL_000d
+
+    IL_0009:  ldnull
+    IL_000a:  stloc.0
+    IL_000b:  br.s       IL_001d
+
+    IL_000d:  nop
+    IL_000e:  ldarg.0
+    IL_000f:  ldarg.1
+    IL_0010:  call       object [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+    IL_0015:  newobj     instance void [System.Xml.Linq]System.Xml.Linq.XAttribute::.ctor(class [System.Xml.Linq]System.Xml.Linq.XName,
+                                                                                          object)
+    IL_001a:  stloc.0
+    IL_001b:  br.s       IL_001d
+
+    IL_001d:  ldloc.0
+    IL_001e:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    // Code size       28 (0x1c)
+    .maxstack  2
+    .locals init ([0] class [System.Xml.Linq]System.Xml.Linq.XAttribute a,
+             [1] class [System.Xml.Linq]System.Xml.Linq.XAttribute CreateNamespaceAttribute)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  callvirt   instance string [System.Xml.Linq]System.Xml.Linq.XNamespace::get_NamespaceName()
+    IL_0008:  newobj     instance void [System.Xml.Linq]System.Xml.Linq.XAttribute::.ctor(class [System.Xml.Linq]System.Xml.Linq.XName,
+                                                                                          object)
+    IL_000d:  stloc.0
+    IL_000e:  ldloc.0
+    IL_000f:  ldarg.1
+    IL_0010:  callvirt   instance void [System.Xml.Linq]System.Xml.Linq.XObject::AddAnnotation(object)
+    IL_0015:  nop
+    IL_0016:  ldloc.0
+    IL_0017:  stloc.1
+    IL_0018:  br.s       IL_001a
+
+    IL_001a:  ldloc.1
+    IL_001b:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    // Code size       84 (0x54)
+    .maxstack  4
+    .locals init ([0] object RemoveNamespaceAttributes,
+             [1] class [System.Xml.Linq]System.Xml.Linq.XElement elem,
+             [2] class [mscorlib]System.Collections.IEnumerable elems,
+             [3] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.3
+    IL_0002:  ldnull
+    IL_0003:  ceq
+    IL_0005:  ldc.i4.0
+    IL_0006:  ceq
+    IL_0008:  stloc.3
+    IL_0009:  ldloc.3
+    IL_000a:  brfalse.s  IL_004d
+
+    IL_000c:  ldarg.3
+    IL_000d:  isinst     [System.Xml.Linq]System.Xml.Linq.XElement
+    IL_0012:  stloc.1
+    IL_0013:  ldloc.1
+    IL_0014:  ldnull
+    IL_0015:  ceq
+    IL_0017:  ldc.i4.0
+    IL_0018:  ceq
+    IL_001a:  stloc.3
+    IL_001b:  ldloc.3
+    IL_001c:  brfalse.s  IL_002c
+
+    IL_001e:  ldarg.0
+    IL_001f:  ldarg.1
+    IL_0020:  ldarg.2
+    IL_0021:  ldloc.1
+    IL_0022:  call       class [System.Xml.Linq]System.Xml.Linq.XElement My.InternalXmlHelper::RemoveNamespaceAttributes(string[],
+                                                                                                                         class [System.Xml.Linq]System.Xml.Linq.XNamespace[],
+                                                                                                                         class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>,
+                                                                                                                         class [System.Xml.Linq]System.Xml.Linq.XElement)
+    IL_0027:  stloc.0
+    IL_0028:  br.s       IL_0052
+
+    IL_002a:  br.s       IL_004c
+
+    IL_002c:  nop
+    IL_002d:  ldarg.3
+    IL_002e:  isinst     [mscorlib]System.Collections.IEnumerable
+    IL_0033:  stloc.2
+    IL_0034:  ldloc.2
+    IL_0035:  ldnull
+    IL_0036:  ceq
+    IL_0038:  ldc.i4.0
+    IL_0039:  ceq
+    IL_003b:  stloc.3
+    IL_003c:  ldloc.3
+    IL_003d:  brfalse.s  IL_004b
+
+    IL_003f:  ldarg.0
+    IL_0040:  ldarg.1
+    IL_0041:  ldarg.2
+    IL_0042:  ldloc.2
+    IL_0043:  call       class [mscorlib]System.Collections.IEnumerable My.InternalXmlHelper::RemoveNamespaceAttributes(string[],
+                                                                                                                        class [System.Xml.Linq]System.Xml.Linq.XNamespace[],
+                                                                                                                        class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>,
+                                                                                                                        class [mscorlib]System.Collections.IEnumerable)
+    IL_0048:  stloc.0
+    IL_0049:  br.s       IL_0052
+
+    IL_004b:  nop
+    IL_004c:  nop
+    IL_004d:  nop
+    IL_004e:  ldarg.3
+    IL_004f:  stloc.0
+    IL_0050:  br.s       IL_0052
+
+    IL_0052:  ldloc.0
+    IL_0053:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    // Code size       104 (0x68)
+    .maxstack  4
+    .locals init ([0] class [mscorlib]System.Collections.IEnumerable RemoveNamespaceAttributes,
+             [1] class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement> elems,
+             [2] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.3
+    IL_0002:  ldnull
+    IL_0003:  ceq
+    IL_0005:  ldc.i4.0
+    IL_0006:  ceq
+    IL_0008:  stloc.2
+    IL_0009:  ldloc.2
+    IL_000a:  brfalse.s  IL_0061
+
+    IL_000c:  ldarg.3
+    IL_000d:  isinst     class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>
+    IL_0012:  stloc.1
+    IL_0013:  ldloc.1
+    IL_0014:  ldnull
+    IL_0015:  ceq
+    IL_0017:  ldc.i4.0
+    IL_0018:  ceq
+    IL_001a:  stloc.2
+    IL_001b:  ldloc.2
+    IL_001c:  brfalse.s  IL_003d
+
+    IL_001e:  ldloc.1
+    IL_001f:  ldarg.0
+    IL_0020:  ldarg.1
+    IL_0021:  ldarg.2
+    IL_0022:  newobj     instance void My.InternalXmlHelper/RemoveNamespaceAttributesClosure::.ctor(string[],
+                                                                                                    class [System.Xml.Linq]System.Xml.Linq.XNamespace[],
+                                                                                                    class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>)
+    IL_0027:  dup
+    IL_0028:  ldvirtftn  instance class [System.Xml.Linq]System.Xml.Linq.XElement My.InternalXmlHelper/RemoveNamespaceAttributesClosure::ProcessXElement(class [System.Xml.Linq]System.Xml.Linq.XElement)
+    IL_002e:  newobj     instance void class [mscorlib]System.Func`2<class [System.Xml.Linq]System.Xml.Linq.XElement,class [System.Xml.Linq]System.Xml.Linq.XElement>::.ctor(object,
+                                                                                                                                                                             native int)
+    IL_0033:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<class [System.Xml.Linq]System.Xml.Linq.XElement,class [System.Xml.Linq]System.Xml.Linq.XElement>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                                                                    class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_0038:  stloc.0
+    IL_0039:  br.s       IL_0066
+
+    IL_003b:  br.s       IL_0060
+
+    IL_003d:  nop
+    IL_003e:  ldarg.3
+    IL_003f:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0> [System.Core]System.Linq.Enumerable::Cast<object>(class [mscorlib]System.Collections.IEnumerable)
+    IL_0044:  ldarg.0
+    IL_0045:  ldarg.1
+    IL_0046:  ldarg.2
+    IL_0047:  newobj     instance void My.InternalXmlHelper/RemoveNamespaceAttributesClosure::.ctor(string[],
+                                                                                                    class [System.Xml.Linq]System.Xml.Linq.XNamespace[],
+                                                                                                    class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>)
+    IL_004c:  dup
+    IL_004d:  ldvirtftn  instance object My.InternalXmlHelper/RemoveNamespaceAttributesClosure::ProcessObject(object)
+    IL_0053:  newobj     instance void class [mscorlib]System.Func`2<object,object>::.ctor(object,
+                                                                                           native int)
+    IL_0058:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<object,object>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                  class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_005d:  stloc.0
+    IL_005e:  br.s       IL_0066
+
+    IL_0060:  nop
+    IL_0061:  nop
+    IL_0062:  ldarg.3
+    IL_0063:  stloc.0
+    IL_0064:  br.s       IL_0066
+
+    IL_0066:  ldloc.0
+    IL_0067:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    // Code size       407 (0x197)
+    .maxstack  2
+    .locals init ([0] class [System.Xml.Linq]System.Xml.Linq.XElement RemoveNamespaceAttributes,
+             [1] class [System.Xml.Linq]System.Xml.Linq.XAttribute a,
+             [2] class [System.Xml.Linq]System.Xml.Linq.XAttribute nextA,
+             [3] class [System.Xml.Linq]System.Xml.Linq.XNamespace ns,
+             [4] string prefix,
+             [5] int32 lastIndex,
+             [6] class [System.Xml.Linq]System.Xml.Linq.XNamespace currentInScopeNs,
+             [7] string currentInScopePrefix,
+             [8] int32 i,
+             [9] int32 V_9,
+             [10] class [System.Xml.Linq]System.Xml.Linq.XAttribute currentA,
+             [11] class [System.Xml.Linq]System.Xml.Linq.XNamespace V_11,
+             [12] string V_12,
+             [13] int32 V_13,
+             [14] int32 VB$t_i4$L0,
+             [15] int32 VB$t_i4$L1,
+             [16] bool VB$CG$t_bool$S0,
+             [17] bool VB$CG$t_bool$S1,
+             [18] int32 VB$CG$t_i4$S0,
+             [19] bool VB$CG$t_bool$S2)
+    IL_0000:  nop
+    IL_0001:  ldarg.3
+    IL_0002:  ldnull
+    IL_0003:  ceq
+    IL_0005:  ldc.i4.0
+    IL_0006:  ceq
+    IL_0008:  stloc.s    VB$CG$t_bool$S0
+    IL_000a:  ldloc.s    VB$CG$t_bool$S0
+    IL_000c:  brfalse    IL_0190
+
+    IL_0011:  ldarg.3
+    IL_0012:  callvirt   instance class [System.Xml.Linq]System.Xml.Linq.XAttribute [System.Xml.Linq]System.Xml.Linq.XElement::get_FirstAttribute()
+    IL_0017:  stloc.1
+    IL_0018:  br         IL_0180
+
+    IL_001d:  ldloc.1
+    IL_001e:  callvirt   instance class [System.Xml.Linq]System.Xml.Linq.XAttribute [System.Xml.Linq]System.Xml.Linq.XAttribute::get_NextAttribute()
+    IL_0023:  stloc.2
+    IL_0024:  ldloc.1
+    IL_0025:  callvirt   instance bool [System.Xml.Linq]System.Xml.Linq.XAttribute::get_IsNamespaceDeclaration()
+    IL_002a:  stloc.s    VB$CG$t_bool$S0
+    IL_002c:  ldloc.s    VB$CG$t_bool$S0
+    IL_002e:  brfalse    IL_017c
+
+    IL_0033:  ldloc.1
+    IL_0034:  callvirt   instance !!0 [System.Xml.Linq]System.Xml.Linq.XObject::Annotation<class [System.Xml.Linq]System.Xml.Linq.XNamespace>()
+    IL_0039:  stloc.3
+    IL_003a:  ldloc.1
+    IL_003b:  callvirt   instance class [System.Xml.Linq]System.Xml.Linq.XName [System.Xml.Linq]System.Xml.Linq.XAttribute::get_Name()
+    IL_0040:  callvirt   instance string [System.Xml.Linq]System.Xml.Linq.XName::get_LocalName()
+    IL_0045:  stloc.s    prefix
+    IL_0047:  ldloc.3
+    IL_0048:  ldnull
+    IL_0049:  ceq
+    IL_004b:  ldc.i4.0
+    IL_004c:  ceq
+    IL_004e:  stloc.s    VB$CG$t_bool$S0
+    IL_0050:  ldloc.s    VB$CG$t_bool$S0
+    IL_0052:  brfalse    IL_017b
+
+    IL_0057:  ldarg.0
+    IL_0058:  brfalse.s  IL_005d
+
+    IL_005a:  ldarg.1
+    IL_005b:  brtrue.s   IL_0060
+
+    IL_005d:  ldc.i4.0
+    IL_005e:  br.s       IL_0061
+
+    IL_0060:  ldc.i4.1
+    IL_0061:  stloc.s    VB$CG$t_bool$S1
+    IL_0063:  ldloc.s    VB$CG$t_bool$S1
+    IL_0065:  brfalse.s  IL_00bf
+
+    IL_0067:  ldarg.0
+    IL_0068:  ldlen
+    IL_0069:  conv.ovf.i4
+    IL_006a:  ldc.i4.1
+    IL_006b:  sub.ovf
+    IL_006c:  stloc.s    lastIndex
+    IL_006e:  ldc.i4.0
+    IL_006f:  ldloc.s    lastIndex
+    IL_0071:  stloc.s    VB$t_i4$L0
+    IL_0073:  stloc.s    i
+    IL_0075:  br.s       IL_00b5
+
+    IL_0077:  ldarg.0
+    IL_0078:  ldloc.s    i
+    IL_007a:  ldelem.ref
+    IL_007b:  stloc.s    currentInScopePrefix
+    IL_007d:  ldarg.1
+    IL_007e:  ldloc.s    i
+    IL_0080:  ldelem.ref
+    IL_0081:  stloc.s    currentInScopeNs
+    IL_0083:  ldloc.s    prefix
+    IL_0085:  ldloc.s    currentInScopePrefix
+    IL_0087:  callvirt   instance bool [mscorlib]System.String::Equals(string)
+    IL_008c:  stloc.s    VB$CG$t_bool$S1
+    IL_008e:  ldloc.s    VB$CG$t_bool$S1
+    IL_0090:  brfalse.s  IL_00ad
+
+    IL_0092:  ldloc.3
+    IL_0093:  ldloc.s    currentInScopeNs
+    IL_0095:  call       bool [System.Xml.Linq]System.Xml.Linq.XNamespace::op_Equality(class [System.Xml.Linq]System.Xml.Linq.XNamespace,
+                                                                                       class [System.Xml.Linq]System.Xml.Linq.XNamespace)
+    IL_009a:  stloc.s    VB$CG$t_bool$S0
+    IL_009c:  ldloc.s    VB$CG$t_bool$S0
+    IL_009e:  brfalse.s  IL_00a7
+
+    IL_00a0:  ldloc.1
+    IL_00a1:  callvirt   instance void [System.Xml.Linq]System.Xml.Linq.XAttribute::Remove()
+    IL_00a6:  nop
+    IL_00a7:  nop
+    IL_00a8:  ldnull
+    IL_00a9:  stloc.1
+    IL_00aa:  nop
+    IL_00ab:  br.s       IL_00bf
+
+    IL_00ad:  nop
+    IL_00ae:  nop
+    IL_00af:  ldloc.s    i
+    IL_00b1:  ldc.i4.1
+    IL_00b2:  add.ovf
+    IL_00b3:  stloc.s    i
+    IL_00b5:  ldloc.s    i
+    IL_00b7:  ldloc.s    VB$t_i4$L0
+    IL_00b9:  stloc.s    VB$CG$t_i4$S0
+    IL_00bb:  ldloc.s    VB$CG$t_i4$S0
+    IL_00bd:  ble.s      IL_0077
+
+    IL_00bf:  nop
+    IL_00c0:  ldloc.1
+    IL_00c1:  ldnull
+    IL_00c2:  ceq
+    IL_00c4:  ldc.i4.0
+    IL_00c5:  ceq
+    IL_00c7:  stloc.s    VB$CG$t_bool$S1
+    IL_00c9:  ldloc.s    VB$CG$t_bool$S1
+    IL_00cb:  brfalse    IL_017a
+
+    IL_00d0:  ldarg.2
+    IL_00d1:  ldnull
+    IL_00d2:  ceq
+    IL_00d4:  ldc.i4.0
+    IL_00d5:  ceq
+    IL_00d7:  stloc.s    VB$CG$t_bool$S0
+    IL_00d9:  ldloc.s    VB$CG$t_bool$S0
+    IL_00db:  brfalse.s  IL_015c
+
+    IL_00dd:  ldarg.2
+    IL_00de:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>::get_Count()
+    IL_00e3:  ldc.i4.1
+    IL_00e4:  sub.ovf
+    IL_00e5:  stloc.s    V_9
+    IL_00e7:  ldc.i4.0
+    IL_00e8:  ldloc.s    V_9
+    IL_00ea:  stloc.s    VB$t_i4$L1
+    IL_00ec:  stloc.s    V_13
+    IL_00ee:  br.s       IL_0152
+
+    IL_00f0:  ldarg.2
+    IL_00f1:  ldloc.s    V_13
+    IL_00f3:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>::get_Item(int32)
+    IL_00f8:  stloc.s    currentA
+    IL_00fa:  ldloc.s    currentA
+    IL_00fc:  callvirt   instance class [System.Xml.Linq]System.Xml.Linq.XName [System.Xml.Linq]System.Xml.Linq.XAttribute::get_Name()
+    IL_0101:  callvirt   instance string [System.Xml.Linq]System.Xml.Linq.XName::get_LocalName()
+    IL_0106:  stloc.s    V_12
+    IL_0108:  ldloc.s    currentA
+    IL_010a:  callvirt   instance !!0 [System.Xml.Linq]System.Xml.Linq.XObject::Annotation<class [System.Xml.Linq]System.Xml.Linq.XNamespace>()
+    IL_010f:  stloc.s    V_11
+    IL_0111:  ldloc.s    V_11
+    IL_0113:  ldnull
+    IL_0114:  ceq
+    IL_0116:  ldc.i4.0
+    IL_0117:  ceq
+    IL_0119:  stloc.s    VB$CG$t_bool$S1
+    IL_011b:  ldloc.s    VB$CG$t_bool$S1
+    IL_011d:  brfalse.s  IL_014a
+
+    IL_011f:  ldloc.s    prefix
+    IL_0121:  ldloc.s    V_12
+    IL_0123:  callvirt   instance bool [mscorlib]System.String::Equals(string)
+    IL_0128:  stloc.s    VB$CG$t_bool$S0
+    IL_012a:  ldloc.s    VB$CG$t_bool$S0
+    IL_012c:  brfalse.s  IL_0149
+
+    IL_012e:  ldloc.3
+    IL_012f:  ldloc.s    V_11
+    IL_0131:  call       bool [System.Xml.Linq]System.Xml.Linq.XNamespace::op_Equality(class [System.Xml.Linq]System.Xml.Linq.XNamespace,
+                                                                                       class [System.Xml.Linq]System.Xml.Linq.XNamespace)
+    IL_0136:  stloc.s    VB$CG$t_bool$S2
+    IL_0138:  ldloc.s    VB$CG$t_bool$S2
+    IL_013a:  brfalse.s  IL_0143
+
+    IL_013c:  ldloc.1
+    IL_013d:  callvirt   instance void [System.Xml.Linq]System.Xml.Linq.XAttribute::Remove()
+    IL_0142:  nop
+    IL_0143:  nop
+    IL_0144:  ldnull
+    IL_0145:  stloc.1
+    IL_0146:  nop
+    IL_0147:  br.s       IL_015c
+
+    IL_0149:  nop
+    IL_014a:  nop
+    IL_014b:  nop
+    IL_014c:  ldloc.s    V_13
+    IL_014e:  ldc.i4.1
+    IL_014f:  add.ovf
+    IL_0150:  stloc.s    V_13
+    IL_0152:  ldloc.s    V_13
+    IL_0154:  ldloc.s    VB$t_i4$L1
+    IL_0156:  stloc.s    VB$CG$t_i4$S0
+    IL_0158:  ldloc.s    VB$CG$t_i4$S0
+    IL_015a:  ble.s      IL_00f0
+
+    IL_015c:  nop
+    IL_015d:  ldloc.1
+    IL_015e:  ldnull
+    IL_015f:  ceq
+    IL_0161:  ldc.i4.0
+    IL_0162:  ceq
+    IL_0164:  stloc.s    VB$CG$t_bool$S2
+    IL_0166:  ldloc.s    VB$CG$t_bool$S2
+    IL_0168:  brfalse.s  IL_0179
+
+    IL_016a:  ldloc.1
+    IL_016b:  callvirt   instance void [System.Xml.Linq]System.Xml.Linq.XAttribute::Remove()
+    IL_0170:  nop
+    IL_0171:  ldarg.2
+    IL_0172:  ldloc.1
+    IL_0173:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>::Add(!0)
+    IL_0178:  nop
+    IL_0179:  nop
+    IL_017a:  nop
+    IL_017b:  nop
+    IL_017c:  nop
+    IL_017d:  ldloc.2
+    IL_017e:  stloc.1
+    IL_017f:  nop
+    IL_0180:  ldloc.1
+    IL_0181:  ldnull
+    IL_0182:  ceq
+    IL_0184:  ldc.i4.0
+    IL_0185:  ceq
+    IL_0187:  stloc.s    VB$CG$t_bool$S2
+    IL_0189:  ldloc.s    VB$CG$t_bool$S2
+    IL_018b:  brtrue     IL_001d
+
+    IL_0190:  nop
+    IL_0191:  ldarg.3
+    IL_0192:  stloc.0
+    IL_0193:  br.s       IL_0195
+
+    IL_0195:  ldloc.0
+    IL_0196:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       12 (0xc)
+    .maxstack  8
+    IL_0000:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::.ctor()
+    IL_0005:  stsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.App::__ENCList
+    IL_000a:  nop
+    IL_000b:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [PresentationFramework]System.Windows.Application::.ctor()
+    IL_0006:  nop
+    IL_0007:  ldarg.0
+    IL_0008:  call       void SpellChecker.App::__ENCAddToList(object)
+    IL_000d:  nop
+    IL_000e:  nop
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1072.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       243 (0xf3)
+    .maxstack  4
+    .locals init (int32 V_0,
+             int32 V_1,
+             class [mscorlib]System.WeakReference V_2,
+             class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> V_3,
+             bool V_4,
+             int32 V_5,
+             bool V_6,
+             bool V_7,
+             int32 V_8)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.App::__ENCList
+    IL_0006:  stloc.3
+    IL_0007:  ldc.i4.0
+    IL_0008:  stloc.s    V_4
+    IL_000a:  nop
+    .try
+    {
+      IL_000b:  ldloc.3
+      IL_000c:  ldloca.s   V_4
+      IL_000e:  call       void [mscorlib]System.Threading.Monitor::Enter(object,
+                                                                          bool&)
+      IL_0013:  nop
+      IL_0014:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.App::__ENCList
+      IL_0019:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_001e:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.App::__ENCList
+      IL_0023:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Capacity()
+      IL_0028:  ceq
+      IL_002a:  stloc.s    V_6
+      IL_002c:  ldloc.s    V_6
+      IL_002e:  brfalse    IL_00c4
+
+      IL_0033:  ldc.i4.0
+      IL_0034:  stloc.0
+      IL_0035:  ldc.i4.0
+      IL_0036:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.App::__ENCList
+      IL_003b:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_0040:  ldc.i4.1
+      IL_0041:  sub.ovf
+      IL_0042:  stloc.s    V_5
+      IL_0044:  stloc.1
+      IL_0045:  br.s       IL_008e
+
+      IL_0047:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.App::__ENCList
+      IL_004c:  ldloc.1
+      IL_004d:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Item(int32)
+      IL_0052:  stloc.2
+      IL_0053:  ldloc.2
+      IL_0054:  callvirt   instance bool [mscorlib]System.WeakReference::get_IsAlive()
+      IL_0059:  stloc.s    V_6
+      IL_005b:  ldloc.s    V_6
+      IL_005d:  brfalse.s  IL_0088
+
+      IL_005f:  ldloc.1
+      IL_0060:  ldloc.0
+      IL_0061:  ceq
+      IL_0063:  ldc.i4.0
+      IL_0064:  ceq
+      IL_0066:  stloc.s    V_7
+      IL_0068:  ldloc.s    V_7
+      IL_006a:  brfalse.s  IL_0083
+
+      IL_006c:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.App::__ENCList
+      IL_0071:  ldloc.0
+      IL_0072:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.App::__ENCList
+      IL_0077:  ldloc.1
+      IL_0078:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Item(int32)
+      IL_007d:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::set_Item(int32,
+                                                                                                                                           !0)
+      IL_0082:  nop
+      IL_0083:  nop
+      IL_0084:  ldloc.0
+      IL_0085:  ldc.i4.1
+      IL_0086:  add.ovf
+      IL_0087:  stloc.0
+      IL_0088:  nop
+      IL_0089:  nop
+      IL_008a:  ldloc.1
+      IL_008b:  ldc.i4.1
+      IL_008c:  add.ovf
+      IL_008d:  stloc.1
+      IL_008e:  ldloc.1
+      IL_008f:  ldloc.s    V_5
+      IL_0091:  stloc.s    V_8
+      IL_0093:  ldloc.s    V_8
+      IL_0095:  ble.s      IL_0047
+
+      IL_0097:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.App::__ENCList
+      IL_009c:  ldloc.0
+      IL_009d:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.App::__ENCList
+      IL_00a2:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_00a7:  ldloc.0
+      IL_00a8:  sub.ovf
+      IL_00a9:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::RemoveRange(int32,
+                                                                                                                                              int32)
+      IL_00ae:  nop
+      IL_00af:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.App::__ENCList
+      IL_00b4:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.App::__ENCList
+      IL_00b9:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_00be:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::set_Capacity(int32)
+      IL_00c3:  nop
+      IL_00c4:  nop
+      IL_00c5:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.App::__ENCList
+      IL_00ca:  ldarg.0
+      IL_00cb:  call       object [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+      IL_00d0:  newobj     instance void [mscorlib]System.WeakReference::.ctor(object)
+      IL_00d5:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::Add(!0)
+      IL_00da:  nop
+      IL_00db:  nop
+      IL_00dc:  leave.s    IL_00f0
+
+    }  // end .try
+    finally
+    {
+      IL_00de:  nop
+      IL_00df:  ldloc.s    V_4
+      IL_00e1:  stloc.s    V_7
+      IL_00e3:  ldloc.s    V_7
+      IL_00e5:  brfalse.s  IL_00ee
+
+      IL_00e7:  ldloc.3
+      IL_00e8:  call       void [mscorlib]System.Threading.Monitor::Exit(object)
+      IL_00ed:  nop
+      IL_00ee:  nop
+      IL_00ef:  endfinally
+    }  // end handler
+    IL_00f0:  nop
+    IL_00f1:  nop
+    IL_00f2:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\obj\Debug\Application.g.vb" startline="49" endline="55"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       21 (0x15)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldstr      "Window1.xaml"
+    IL_0007:  ldc.i4.2
+    IL_0008:  newobj     instance void [System]System.Uri::.ctor(string,
+                                                                 valuetype [System]System.UriKind)
+    IL_000d:  callvirt   instance void [PresentationFramework]System.Windows.Application::set_StartupUri(class [System]System.Uri)
+    IL_0012:  nop
+    IL_0013:  nop
+    IL_0014:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\obj\Debug\Application.g.vb" startline="56" endline="66"><![CDATA[
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [mscorlib]System.STAThreadAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       23 (0x17)
+    .maxstack  1
+    .locals init ([0] class SpellChecker.App app)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void SpellChecker.App::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  callvirt   instance void SpellChecker.App::InitializeComponent()
+    IL_000d:  nop
+    IL_000e:  ldloc.0
+    IL_000f:  callvirt   instance int32 [PresentationFramework]System.Windows.Application::Run()
+    IL_0014:  pop
+    IL_0015:  nop
+    IL_0016:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\My Project\Resources.Designer.vb" startline="41" endline="47"><![CDATA[
+  {
+    // Code size       59 (0x3b)
+    .maxstack  2
+    .locals init ([0] class [mscorlib]System.Resources.ResourceManager ResourceManager,
+             [1] class [mscorlib]System.Resources.ResourceManager temp,
+             [2] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Resources.ResourceManager My.Resources.Resources::resourceMan
+    IL_0006:  ldnull
+    IL_0007:  call       bool [mscorlib]System.Object::ReferenceEquals(object,
+                                                                       object)
+    IL_000c:  stloc.2
+    IL_000d:  ldloc.2
+    IL_000e:  brfalse.s  IL_0030
+
+    IL_0010:  ldstr      "Resources"
+    IL_0015:  ldtoken    My.Resources.Resources
+    IL_001a:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_001f:  callvirt   instance class [mscorlib]System.Reflection.Assembly [mscorlib]System.Type::get_Assembly()
+    IL_0024:  newobj     instance void [mscorlib]System.Resources.ResourceManager::.ctor(string,
+                                                                                         class [mscorlib]System.Reflection.Assembly)
+    IL_0029:  stloc.1
+    IL_002a:  ldloc.1
+    IL_002b:  stsfld     class [mscorlib]System.Resources.ResourceManager My.Resources.Resources::resourceMan
+    IL_0030:  nop
+    IL_0031:  ldsfld     class [mscorlib]System.Resources.ResourceManager My.Resources.Resources::resourceMan
+    IL_0036:  stloc.0
+    IL_0037:  br.s       IL_0039
+
+    IL_0039:  ldloc.0
+    IL_003a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\My Project\Resources.Designer.vb" startline="48" endline="58"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Globalization.CultureInfo Culture)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Globalization.CultureInfo My.Resources.Resources::resourceCulture
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\My Project\Resources.Designer.vb" startline="59" endline="61"><![CDATA[
+  {
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  stsfld     class [mscorlib]System.Globalization.CultureInfo My.Resources.Resources::resourceCulture
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\My Project\Settings.Designer.vb" startline="17" endline="17"><![CDATA[
+  {
+    // Code size       22 (0x16)
+    .maxstack  8
+    IL_0000:  newobj     instance void My.Settings::.ctor()
+    IL_0005:  call       class [System]System.Configuration.SettingsBase [System]System.Configuration.SettingsBase::Synchronized(class [System]System.Configuration.SettingsBase)
+    IL_000a:  castclass  My.Settings
+    IL_000f:  stsfld     class My.Settings My.Settings::defaultInstance
+    IL_0014:  nop
+    IL_0015:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [System]System.Configuration.ApplicationSettingsBase::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\My Project\Settings.Designer.vb" startline="18" endline="22"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class My.Settings Default)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.Settings My.Settings::defaultInstance
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       12 (0xc)
+    .maxstack  8
+    IL_0000:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::.ctor()
+    IL_0005:  stsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.Window1::__ENCList
+    IL_000a:  nop
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       243 (0xf3)
+    .maxstack  4
+    .locals init (int32 V_0,
+             int32 V_1,
+             class [mscorlib]System.WeakReference V_2,
+             class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> V_3,
+             bool V_4,
+             int32 V_5,
+             bool V_6,
+             bool V_7,
+             int32 V_8)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.Window1::__ENCList
+    IL_0006:  stloc.3
+    IL_0007:  ldc.i4.0
+    IL_0008:  stloc.s    V_4
+    IL_000a:  nop
+    .try
+    {
+      IL_000b:  ldloc.3
+      IL_000c:  ldloca.s   V_4
+      IL_000e:  call       void [mscorlib]System.Threading.Monitor::Enter(object,
+                                                                          bool&)
+      IL_0013:  nop
+      IL_0014:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.Window1::__ENCList
+      IL_0019:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_001e:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.Window1::__ENCList
+      IL_0023:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Capacity()
+      IL_0028:  ceq
+      IL_002a:  stloc.s    V_6
+      IL_002c:  ldloc.s    V_6
+      IL_002e:  brfalse    IL_00c4
+
+      IL_0033:  ldc.i4.0
+      IL_0034:  stloc.0
+      IL_0035:  ldc.i4.0
+      IL_0036:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.Window1::__ENCList
+      IL_003b:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_0040:  ldc.i4.1
+      IL_0041:  sub.ovf
+      IL_0042:  stloc.s    V_5
+      IL_0044:  stloc.1
+      IL_0045:  br.s       IL_008e
+
+      IL_0047:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.Window1::__ENCList
+      IL_004c:  ldloc.1
+      IL_004d:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Item(int32)
+      IL_0052:  stloc.2
+      IL_0053:  ldloc.2
+      IL_0054:  callvirt   instance bool [mscorlib]System.WeakReference::get_IsAlive()
+      IL_0059:  stloc.s    V_6
+      IL_005b:  ldloc.s    V_6
+      IL_005d:  brfalse.s  IL_0088
+
+      IL_005f:  ldloc.1
+      IL_0060:  ldloc.0
+      IL_0061:  ceq
+      IL_0063:  ldc.i4.0
+      IL_0064:  ceq
+      IL_0066:  stloc.s    V_7
+      IL_0068:  ldloc.s    V_7
+      IL_006a:  brfalse.s  IL_0083
+
+      IL_006c:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.Window1::__ENCList
+      IL_0071:  ldloc.0
+      IL_0072:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.Window1::__ENCList
+      IL_0077:  ldloc.1
+      IL_0078:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Item(int32)
+      IL_007d:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::set_Item(int32,
+                                                                                                                                           !0)
+      IL_0082:  nop
+      IL_0083:  nop
+      IL_0084:  ldloc.0
+      IL_0085:  ldc.i4.1
+      IL_0086:  add.ovf
+      IL_0087:  stloc.0
+      IL_0088:  nop
+      IL_0089:  nop
+      IL_008a:  ldloc.1
+      IL_008b:  ldc.i4.1
+      IL_008c:  add.ovf
+      IL_008d:  stloc.1
+      IL_008e:  ldloc.1
+      IL_008f:  ldloc.s    V_5
+      IL_0091:  stloc.s    V_8
+      IL_0093:  ldloc.s    V_8
+      IL_0095:  ble.s      IL_0047
+
+      IL_0097:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.Window1::__ENCList
+      IL_009c:  ldloc.0
+      IL_009d:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.Window1::__ENCList
+      IL_00a2:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_00a7:  ldloc.0
+      IL_00a8:  sub.ovf
+      IL_00a9:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::RemoveRange(int32,
+                                                                                                                                              int32)
+      IL_00ae:  nop
+      IL_00af:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.Window1::__ENCList
+      IL_00b4:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.Window1::__ENCList
+      IL_00b9:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_00be:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::set_Capacity(int32)
+      IL_00c3:  nop
+      IL_00c4:  nop
+      IL_00c5:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> SpellChecker.Window1::__ENCList
+      IL_00ca:  ldarg.0
+      IL_00cb:  call       object [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+      IL_00d0:  newobj     instance void [mscorlib]System.WeakReference::.ctor(object)
+      IL_00d5:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::Add(!0)
+      IL_00da:  nop
+      IL_00db:  nop
+      IL_00dc:  leave.s    IL_00f0
+
+    }  // end .try
+    finally
+    {
+      IL_00de:  nop
+      IL_00df:  ldloc.s    V_4
+      IL_00e1:  stloc.s    V_7
+      IL_00e3:  ldloc.s    V_7
+      IL_00e5:  brfalse.s  IL_00ee
+
+      IL_00e7:  ldloc.3
+      IL_00e8:  call       void [mscorlib]System.Threading.Monitor::Exit(object)
+      IL_00ed:  nop
+      IL_00ee:  nop
+      IL_00ef:  endfinally
+    }  // end handler
+    IL_00f0:  nop
+    IL_00f1:  nop
+    IL_00f2:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="22" endline="24"><![CDATA[
+  {
+    // Code size       24 (0x18)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void [PresentationFramework]System.Windows.Window::.ctor()
+    IL_0007:  nop
+    IL_0008:  ldarg.0
+    IL_0009:  call       void SpellChecker.Window1::__ENCAddToList(object)
+    IL_000e:  nop
+    IL_000f:  ldarg.0
+    IL_0010:  callvirt   instance void SpellChecker.Window1::InitializeComponent()
+    IL_0015:  nop
+    IL_0016:  nop
+    IL_0017:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="25" endline="67"><![CDATA[
+  {
+    // Code size       197 (0xc5)
+    .maxstack  3
+    .locals init ([0] class SpellChecker.Window1/_Closure$__1 $VB$Closure_ClosureVariable_19_4F,
+             [1] valuetype [mscorlib]System.Nullable`1<bool> VB$LW$t_struct$S0,
+             [2] valuetype [mscorlib]System.Nullable`1<bool> VB$LW$t_struct$S1,
+             [3] bool VB$LW$t_bool$S0,
+             [4] valuetype [mscorlib]System.Nullable`1<bool> VB$LW$t_struct$N2,
+             [5] valuetype [mscorlib]System.Nullable`1<bool> VB$LW$t_struct$S3,
+             [6] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void SpellChecker.Window1/_Closure$__1::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  ldarg.0
+    IL_0009:  stfld      class SpellChecker.Window1 SpellChecker.Window1/_Closure$__1::$VB$Me
+    IL_000e:  ldarg.0
+    IL_000f:  callvirt   instance class [PresentationFramework]System.Windows.Controls.ListBox SpellChecker.Window1::get_listBox1()
+    IL_0014:  ldnull
+    IL_0015:  callvirt   instance void [PresentationFramework]System.Windows.Controls.ItemsControl::set_ItemsSource(class [mscorlib]System.Collections.IEnumerable)
+    IL_001a:  nop
+    IL_001b:  ldarg.0
+    IL_001c:  callvirt   instance class [PresentationFramework]System.Windows.Controls.TextBox SpellChecker.Window1::get_txtInput()
+    IL_0021:  ldc.i4.0
+    IL_0022:  callvirt   instance void [PresentationCore]System.Windows.UIElement::set_IsEnabled(bool)
+    IL_0027:  nop
+    IL_0028:  ldarg.0
+    IL_0029:  callvirt   instance class [PresentationFramework]System.Windows.Controls.CheckBox SpellChecker.Window1::get_chkParallel()
+    IL_002e:  ldc.i4.0
+    IL_002f:  callvirt   instance void [PresentationCore]System.Windows.UIElement::set_IsEnabled(bool)
+    IL_0034:  nop
+    IL_0035:  ldloc.0
+    IL_0036:  newobj     instance void [PresentationFramework]Microsoft.Win32.OpenFileDialog::.ctor()
+    IL_003b:  stfld      class [PresentationFramework]Microsoft.Win32.OpenFileDialog SpellChecker.Window1/_Closure$__1::$VB$Local_ofd
+    IL_0040:  ldloc.0
+    IL_0041:  ldfld      class [PresentationFramework]Microsoft.Win32.OpenFileDialog SpellChecker.Window1/_Closure$__1::$VB$Local_ofd
+    IL_0046:  ldc.i4.0
+    IL_0047:  callvirt   instance void [PresentationFramework]Microsoft.Win32.OpenFileDialog::set_Multiselect(bool)
+    IL_004c:  nop
+    IL_004d:  ldc.i4.1
+    IL_004e:  stloc.3
+    IL_004f:  ldloc.0
+    IL_0050:  ldfld      class [PresentationFramework]Microsoft.Win32.OpenFileDialog SpellChecker.Window1/_Closure$__1::$VB$Local_ofd
+    IL_0055:  ldarg.0
+    IL_0056:  callvirt   instance valuetype [mscorlib]System.Nullable`1<bool> [PresentationFramework]Microsoft.Win32.CommonDialog::ShowDialog(class [PresentationFramework]System.Windows.Window)
+    IL_005b:  stloc.2
+    IL_005c:  ldloca.s   VB$LW$t_struct$S1
+    IL_005e:  call       instance bool valuetype [mscorlib]System.Nullable`1<bool>::get_HasValue()
+    IL_0063:  brtrue.s   IL_0071
+
+    IL_0065:  ldloca.s   VB$LW$t_struct$N2
+    IL_0067:  initobj    valuetype [mscorlib]System.Nullable`1<bool>
+    IL_006d:  ldloc.s    VB$LW$t_struct$N2
+    IL_006f:  br.s       IL_0085
+
+    IL_0071:  ldloca.s   VB$LW$t_struct$S3
+    IL_0073:  ldloca.s   VB$LW$t_struct$S1
+    IL_0075:  call       instance !0 valuetype [mscorlib]System.Nullable`1<bool>::GetValueOrDefault()
+    IL_007a:  ldloc.3
+    IL_007b:  ceq
+    IL_007d:  call       instance void valuetype [mscorlib]System.Nullable`1<bool>::.ctor(!0)
+    IL_0082:  nop
+    IL_0083:  ldloc.s    VB$LW$t_struct$S3
+    IL_0085:  stloc.1
+    IL_0086:  ldloca.s   VB$LW$t_struct$S0
+    IL_0088:  call       instance !0 valuetype [mscorlib]System.Nullable`1<bool>::GetValueOrDefault()
+    IL_008d:  stloc.s    VB$CG$t_bool$S0
+    IL_008f:  ldloc.s    VB$CG$t_bool$S0
+    IL_0091:  brfalse.s  IL_00c2
+
+    IL_0093:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_0098:  ldloc.0
+    IL_0099:  dup
+    IL_009a:  ldvirtftn  instance void SpellChecker.Window1/_Closure$__1::_Lambda$__2()
+    IL_00a0:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_00a5:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action)
+    IL_00aa:  ldarg.0
+    IL_00ab:  dup
+    IL_00ac:  ldvirtftn  instance void SpellChecker.Window1::_Lambda$__1(class [mscorlib]System.Threading.Tasks.Task)
+    IL_00b2:  newobj     instance void class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task>::.ctor(object,
+                                                                                                                           native int)
+    IL_00b7:  call       class [mscorlib]System.Threading.Tasks.TaskScheduler [mscorlib]System.Threading.Tasks.TaskScheduler::FromCurrentSynchronizationContext()
+    IL_00bc:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.Task::ContinueWith(class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task>,
+                                                                                                                                  class [mscorlib]System.Threading.Tasks.TaskScheduler)
+    IL_00c1:  pop
+    IL_00c2:  nop
+    IL_00c3:  nop
+    IL_00c4:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="68" endline="72"><![CDATA[
+  {
+    // Code size       10 (0xa)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance void SpellChecker.Window1::MakeSuggestions()
+    IL_0007:  nop
+    IL_0008:  nop
+    IL_0009:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="73" endline="77"><![CDATA[
+  {
+    // Code size       10 (0xa)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance void SpellChecker.Window1::MakeSuggestions()
+    IL_0007:  nop
+    IL_0008:  nop
+    IL_0009:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="78" endline="133"><![CDATA[
+  {
+    // Code size       251 (0xfb)
+    .maxstack  5
+    .locals init ([0] class SpellChecker.Window1/_Closure$__2 $VB$Closure_ClosureVariable_50_25,
+             [1] valuetype [mscorlib]System.Nullable`1<bool> VB$t_struct$S0,
+             [2] valuetype [mscorlib]System.Nullable`1<bool> VB$t_struct$S1,
+             [3] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void SpellChecker.Window1/_Closure$__2::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  ldarg.0
+    IL_0009:  stfld      class SpellChecker.Window1 SpellChecker.Window1/_Closure$__2::$VB$Me
+    IL_000e:  ldloc.0
+    IL_000f:  ldarg.0
+    IL_0010:  callvirt   instance class [PresentationFramework]System.Windows.Controls.CheckBox SpellChecker.Window1::get_chkParallel()
+    IL_0015:  callvirt   instance valuetype [mscorlib]System.Nullable`1<bool> [PresentationFramework]System.Windows.Controls.Primitives.ToggleButton::get_IsChecked()
+    IL_001a:  stloc.1
+    IL_001b:  ldloca.s   VB$t_struct$S0
+    IL_001d:  call       instance bool valuetype [mscorlib]System.Nullable`1<bool>::get_HasValue()
+    IL_0022:  brfalse.s  IL_003c
+
+    IL_0024:  ldarg.0
+    IL_0025:  callvirt   instance class [PresentationFramework]System.Windows.Controls.CheckBox SpellChecker.Window1::get_chkParallel()
+    IL_002a:  callvirt   instance valuetype [mscorlib]System.Nullable`1<bool> [PresentationFramework]System.Windows.Controls.Primitives.ToggleButton::get_IsChecked()
+    IL_002f:  stloc.2
+    IL_0030:  ldloca.s   VB$t_struct$S1
+    IL_0032:  call       instance !0 valuetype [mscorlib]System.Nullable`1<bool>::get_Value()
+    IL_0037:  brfalse.s  IL_003c
+
+    IL_0039:  ldc.i4.0
+    IL_003a:  br.s       IL_003d
+
+    IL_003c:  ldc.i4.1
+    IL_003d:  stfld      bool SpellChecker.Window1/_Closure$__2::$VB$Local_sequential
+    IL_0042:  ldloc.0
+    IL_0043:  ldarg.0
+    IL_0044:  callvirt   instance class [PresentationFramework]System.Windows.Controls.TextBox SpellChecker.Window1::get_txtInput()
+    IL_0049:  callvirt   instance string [PresentationFramework]System.Windows.Controls.TextBox::get_Text()
+    IL_004e:  stfld      string SpellChecker.Window1/_Closure$__2::$VB$Local_text
+    IL_0053:  ldloc.0
+    IL_0054:  ldfld      string SpellChecker.Window1/_Closure$__2::$VB$Local_text
+    IL_0059:  call       bool [mscorlib]System.String::IsNullOrEmpty(string)
+    IL_005e:  stloc.3
+    IL_005f:  ldloc.3
+    IL_0060:  brfalse.s  IL_0075
+
+    IL_0062:  ldarg.0
+    IL_0063:  callvirt   instance class [PresentationFramework]System.Windows.Controls.ListBox SpellChecker.Window1::get_listBox1()
+    IL_0068:  ldnull
+    IL_0069:  callvirt   instance void [PresentationFramework]System.Windows.Controls.ItemsControl::set_ItemsSource(class [mscorlib]System.Collections.IEnumerable)
+    IL_006e:  nop
+    IL_006f:  nop
+    IL_0070:  br         IL_00f9
+
+    IL_0075:  nop
+    IL_0076:  ldarg.0
+    IL_0077:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource SpellChecker.Window1::_cancellation
+    IL_007c:  ldnull
+    IL_007d:  ceq
+    IL_007f:  ldc.i4.0
+    IL_0080:  ceq
+    IL_0082:  stloc.3
+    IL_0083:  ldloc.3
+    IL_0084:  brfalse.s  IL_0092
+
+    IL_0086:  ldarg.0
+    IL_0087:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource SpellChecker.Window1::_cancellation
+    IL_008c:  callvirt   instance void [mscorlib]System.Threading.CancellationTokenSource::Cancel()
+    IL_0091:  nop
+    IL_0092:  nop
+    IL_0093:  ldarg.0
+    IL_0094:  newobj     instance void [mscorlib]System.Threading.CancellationTokenSource::.ctor()
+    IL_0099:  stfld      class [mscorlib]System.Threading.CancellationTokenSource SpellChecker.Window1::_cancellation
+    IL_009e:  ldloc.0
+    IL_009f:  ldarg.0
+    IL_00a0:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource SpellChecker.Window1::_cancellation
+    IL_00a5:  callvirt   instance valuetype [mscorlib]System.Threading.CancellationToken [mscorlib]System.Threading.CancellationTokenSource::get_Token()
+    IL_00aa:  stfld      valuetype [mscorlib]System.Threading.CancellationToken SpellChecker.Window1/_Closure$__2::$VB$Local_token
+    IL_00af:  ldloc.0
+    IL_00b0:  call       class [System]System.Diagnostics.Stopwatch [System]System.Diagnostics.Stopwatch::StartNew()
+    IL_00b5:  stfld      class [System]System.Diagnostics.Stopwatch SpellChecker.Window1/_Closure$__2::$VB$Local_sw
+    IL_00ba:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_00bf:  ldloc.0
+    IL_00c0:  dup
+    IL_00c1:  ldvirtftn  instance class VB$AnonymousType_2`2<class [mscorlib]System.Collections.Generic.List`1<string>,valuetype [mscorlib]System.TimeSpan> SpellChecker.Window1/_Closure$__2::_Lambda$__5()
+    IL_00c7:  newobj     instance void class [mscorlib]System.Func`1<class VB$AnonymousType_2`2<class [mscorlib]System.Collections.Generic.List`1<string>,valuetype [mscorlib]System.TimeSpan>>::.ctor(object,
+                                                                                                                                                                                                       native int)
+    IL_00cc:  ldloc.0
+    IL_00cd:  ldfld      valuetype [mscorlib]System.Threading.CancellationToken SpellChecker.Window1/_Closure$__2::$VB$Local_token
+    IL_00d2:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.TaskFactory::StartNew<class VB$AnonymousType_2`2<class [mscorlib]System.Collections.Generic.List`1<string>,valuetype [mscorlib]System.TimeSpan>>(class [mscorlib]System.Func`1<!!0>,
+                                                                                                                                                                                                                                                                       valuetype [mscorlib]System.Threading.CancellationToken)
+    IL_00d7:  ldarg.0
+    IL_00d8:  dup
+    IL_00d9:  ldvirtftn  instance void SpellChecker.Window1::_Lambda$__3(class [mscorlib]System.Threading.Tasks.Task`1<class VB$AnonymousType_2`2<class [mscorlib]System.Collections.Generic.List`1<string>,valuetype [mscorlib]System.TimeSpan>>)
+    IL_00df:  newobj     instance void class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<class VB$AnonymousType_2`2<class [mscorlib]System.Collections.Generic.List`1<string>,valuetype [mscorlib]System.TimeSpan>>>::.ctor(object,
+                                                                                                                                                                                                                                                        native int)
+    IL_00e4:  call       valuetype [mscorlib]System.Threading.CancellationToken [mscorlib]System.Threading.CancellationToken::get_None()
+    IL_00e9:  ldc.i4     0x40000
+    IL_00ee:  call       class [mscorlib]System.Threading.Tasks.TaskScheduler [mscorlib]System.Threading.Tasks.TaskScheduler::FromCurrentSynchronizationContext()
+    IL_00f3:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task class [mscorlib]System.Threading.Tasks.Task`1<class VB$AnonymousType_2`2<class [mscorlib]System.Collections.Generic.List`1<string>,valuetype [mscorlib]System.TimeSpan>>::ContinueWith(class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<!0>>,
+                                                                                                                                                                                                                                                                     valuetype [mscorlib]System.Threading.CancellationToken,
+                                                                                                                                                                                                                                                                     valuetype [mscorlib]System.Threading.Tasks.TaskContinuationOptions,
+                                                                                                                                                                                                                                                                     class [mscorlib]System.Threading.Tasks.TaskScheduler)
+    IL_00f8:  pop
+    IL_00f9:  nop
+    IL_00fa:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="134" endline="171"><![CDATA[
+  {
+    // Code size       397 (0x18d)
+    .maxstack  8
+    .locals init ([0] int32 LevenshteinDistance,
+             [1] int32 i,
+             [2] int32 j,
+             [3] int32 V_3,
+             [4] int32 str1Index,
+             [5] int32 cost,
+             [6] int32 deletion,
+             [7] int32 insertion,
+             [8] int32 V_8,
+             [9] int32 str2Index,
+             [10] int32 substitution,
+             [11] int32 VB$t_i4$L0,
+             [12] int32 VB$t_i4$L1,
+             [13] int32 VB$t_i4$L2,
+             [14] int32 VB$t_i4$L3,
+             [15] int32 VB$CG$t_i4$S0,
+             [16] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldc.i4.0
+    IL_0002:  ldarg.0
+    IL_0003:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_0008:  stloc.s    VB$t_i4$L0
+    IL_000a:  stloc.1
+    IL_000b:  br.s       IL_001b
+
+    IL_000d:  ldarg.2
+    IL_000e:  ldloc.1
+    IL_000f:  ldc.i4.0
+    IL_0010:  ldloc.1
+    IL_0011:  callvirt   instance void int32[0...,0...]::Set(int32,
+                                                             int32,
+                                                             int32)
+    IL_0016:  nop
+    IL_0017:  ldloc.1
+    IL_0018:  ldc.i4.1
+    IL_0019:  add.ovf
+    IL_001a:  stloc.1
+    IL_001b:  ldloc.1
+    IL_001c:  ldloc.s    VB$t_i4$L0
+    IL_001e:  stloc.s    VB$CG$t_i4$S0
+    IL_0020:  ldloc.s    VB$CG$t_i4$S0
+    IL_0022:  ble.s      IL_000d
+
+    IL_0024:  ldc.i4.0
+    IL_0025:  ldarg.1
+    IL_0026:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_002b:  stloc.s    VB$t_i4$L1
+    IL_002d:  stloc.2
+    IL_002e:  br.s       IL_003e
+
+    IL_0030:  ldarg.2
+    IL_0031:  ldc.i4.0
+    IL_0032:  ldloc.2
+    IL_0033:  ldloc.2
+    IL_0034:  callvirt   instance void int32[0...,0...]::Set(int32,
+                                                             int32,
+                                                             int32)
+    IL_0039:  nop
+    IL_003a:  ldloc.2
+    IL_003b:  ldc.i4.1
+    IL_003c:  add.ovf
+    IL_003d:  stloc.2
+    IL_003e:  ldloc.2
+    IL_003f:  ldloc.s    VB$t_i4$L1
+    IL_0041:  stloc.s    VB$CG$t_i4$S0
+    IL_0043:  ldloc.s    VB$CG$t_i4$S0
+    IL_0045:  ble.s      IL_0030
+
+    IL_0047:  ldc.i4.1
+    IL_0048:  ldarg.0
+    IL_0049:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_004e:  stloc.s    VB$t_i4$L2
+    IL_0050:  stloc.3
+    IL_0051:  br         IL_016a
+
+    IL_0056:  ldloc.3
+    IL_0057:  ldc.i4.1
+    IL_0058:  sub.ovf
+    IL_0059:  stloc.s    str1Index
+    IL_005b:  ldc.i4.1
+    IL_005c:  ldarg.1
+    IL_005d:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_0062:  stloc.s    VB$t_i4$L3
+    IL_0064:  stloc.s    V_8
+    IL_0066:  br         IL_0158
+
+    IL_006b:  ldloc.s    V_8
+    IL_006d:  ldc.i4.1
+    IL_006e:  sub.ovf
+    IL_006f:  stloc.s    str2Index
+    IL_0071:  ldarg.0
+    IL_0072:  ldloc.s    str1Index
+    IL_0074:  callvirt   instance char [mscorlib]System.String::get_Chars(int32)
+    IL_0079:  ldarg.1
+    IL_007a:  ldloc.s    str2Index
+    IL_007c:  callvirt   instance char [mscorlib]System.String::get_Chars(int32)
+    IL_0081:  beq.s      IL_0086
+
+    IL_0083:  ldc.i4.1
+    IL_0084:  br.s       IL_0087
+
+    IL_0086:  ldc.i4.0
+    IL_0087:  stloc.s    cost
+    IL_0089:  ldloc.3
+    IL_008a:  ldc.i4.0
+    IL_008b:  beq.s      IL_009c
+
+    IL_008d:  ldarg.2
+    IL_008e:  ldloc.3
+    IL_008f:  ldc.i4.1
+    IL_0090:  sub.ovf
+    IL_0091:  ldloc.s    V_8
+    IL_0093:  callvirt   instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_0098:  ldc.i4.1
+    IL_0099:  add.ovf
+    IL_009a:  br.s       IL_009d
+
+    IL_009c:  ldc.i4.1
+    IL_009d:  stloc.s    deletion
+    IL_009f:  ldloc.s    V_8
+    IL_00a1:  ldc.i4.0
+    IL_00a2:  beq.s      IL_00b3
+
+    IL_00a4:  ldarg.2
+    IL_00a5:  ldloc.3
+    IL_00a6:  ldloc.s    V_8
+    IL_00a8:  ldc.i4.1
+    IL_00a9:  sub.ovf
+    IL_00aa:  callvirt   instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_00af:  ldc.i4.1
+    IL_00b0:  add.ovf
+    IL_00b1:  br.s       IL_00b4
+
+    IL_00b3:  ldc.i4.1
+    IL_00b4:  stloc.s    insertion
+    IL_00b6:  ldloc.3
+    IL_00b7:  ldc.i4.0
+    IL_00b8:  beq.s      IL_00d1
+
+    IL_00ba:  ldloc.s    V_8
+    IL_00bc:  ldc.i4.0
+    IL_00bd:  beq.s      IL_00d1
+
+    IL_00bf:  ldarg.2
+    IL_00c0:  ldloc.3
+    IL_00c1:  ldc.i4.1
+    IL_00c2:  sub.ovf
+    IL_00c3:  ldloc.s    V_8
+    IL_00c5:  ldc.i4.1
+    IL_00c6:  sub.ovf
+    IL_00c7:  callvirt   instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_00cc:  ldloc.s    cost
+    IL_00ce:  add.ovf
+    IL_00cf:  br.s       IL_00d3
+
+    IL_00d1:  ldloc.s    cost
+    IL_00d3:  stloc.s    substitution
+    IL_00d5:  ldarg.2
+    IL_00d6:  ldloc.3
+    IL_00d7:  ldloc.s    V_8
+    IL_00d9:  ldloc.s    deletion
+    IL_00db:  ldloc.s    insertion
+    IL_00dd:  call       int32 [mscorlib]System.Math::Min(int32,
+                                                          int32)
+    IL_00e2:  ldloc.s    substitution
+    IL_00e4:  call       int32 [mscorlib]System.Math::Min(int32,
+                                                          int32)
+    IL_00e9:  callvirt   instance void int32[0...,0...]::Set(int32,
+                                                             int32,
+                                                             int32)
+    IL_00ee:  ldloc.3
+    IL_00ef:  ldc.i4.1
+    IL_00f0:  ble.s      IL_011f
+
+    IL_00f2:  ldloc.s    V_8
+    IL_00f4:  ldc.i4.1
+    IL_00f5:  ble.s      IL_011f
+
+    IL_00f7:  ldarg.0
+    IL_00f8:  ldloc.s    str1Index
+    IL_00fa:  callvirt   instance char [mscorlib]System.String::get_Chars(int32)
+    IL_00ff:  ldarg.1
+    IL_0100:  ldloc.s    str2Index
+    IL_0102:  ldc.i4.1
+    IL_0103:  sub.ovf
+    IL_0104:  callvirt   instance char [mscorlib]System.String::get_Chars(int32)
+    IL_0109:  bne.un.s   IL_011f
+
+    IL_010b:  ldarg.0
+    IL_010c:  ldloc.s    str1Index
+    IL_010e:  ldc.i4.1
+    IL_010f:  sub.ovf
+    IL_0110:  callvirt   instance char [mscorlib]System.String::get_Chars(int32)
+    IL_0115:  ldarg.1
+    IL_0116:  ldloc.s    str2Index
+    IL_0118:  callvirt   instance char [mscorlib]System.String::get_Chars(int32)
+    IL_011d:  beq.s      IL_0122
+
+    IL_011f:  ldc.i4.0
+    IL_0120:  br.s       IL_0123
+
+    IL_0122:  ldc.i4.1
+    IL_0123:  stloc.s    VB$CG$t_bool$S0
+    IL_0125:  ldloc.s    VB$CG$t_bool$S0
+    IL_0127:  brfalse.s  IL_0150
+
+    IL_0129:  ldarg.2
+    IL_012a:  ldloc.3
+    IL_012b:  ldloc.s    V_8
+    IL_012d:  ldarg.2
+    IL_012e:  ldloc.3
+    IL_012f:  ldloc.s    V_8
+    IL_0131:  callvirt   instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_0136:  ldarg.2
+    IL_0137:  ldloc.3
+    IL_0138:  ldc.i4.2
+    IL_0139:  sub.ovf
+    IL_013a:  ldloc.s    V_8
+    IL_013c:  ldc.i4.2
+    IL_013d:  sub.ovf
+    IL_013e:  callvirt   instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_0143:  ldloc.s    cost
+    IL_0145:  add.ovf
+    IL_0146:  call       int32 [mscorlib]System.Math::Min(int32,
+                                                          int32)
+    IL_014b:  callvirt   instance void int32[0...,0...]::Set(int32,
+                                                             int32,
+                                                             int32)
+    IL_0150:  nop
+    IL_0151:  nop
+    IL_0152:  ldloc.s    V_8
+    IL_0154:  ldc.i4.1
+    IL_0155:  add.ovf
+    IL_0156:  stloc.s    V_8
+    IL_0158:  ldloc.s    V_8
+    IL_015a:  ldloc.s    VB$t_i4$L3
+    IL_015c:  stloc.s    VB$CG$t_i4$S0
+    IL_015e:  ldloc.s    VB$CG$t_i4$S0
+    IL_0160:  ble        IL_006b
+
+    IL_0165:  nop
+    IL_0166:  ldloc.3
+    IL_0167:  ldc.i4.1
+    IL_0168:  add.ovf
+    IL_0169:  stloc.3
+    IL_016a:  ldloc.3
+    IL_016b:  ldloc.s    VB$t_i4$L2
+    IL_016d:  stloc.s    VB$CG$t_i4$S0
+    IL_016f:  ldloc.s    VB$CG$t_i4$S0
+    IL_0171:  ble        IL_0056
+
+    IL_0176:  ldarg.2
+    IL_0177:  ldarg.0
+    IL_0178:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_017d:  ldarg.1
+    IL_017e:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+    IL_0183:  callvirt   instance int32 int32[0...,0...]::Get(int32,
+                                                              int32)
+    IL_0188:  stloc.0
+    IL_0189:  br.s       IL_018b
+
+    IL_018b:  ldloc.0
+    IL_018c:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [PresentationFramework]System.Windows.Controls.ListBox V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [PresentationFramework]System.Windows.Controls.ListBox SpellChecker.Window1::_listBox1
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      class [PresentationFramework]System.Windows.Controls.ListBox SpellChecker.Window1::_listBox1
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [PresentationFramework]System.Windows.Controls.TextBox V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [PresentationFramework]System.Windows.Controls.TextBox SpellChecker.Window1::_txtInput
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      class [PresentationFramework]System.Windows.Controls.TextBox SpellChecker.Window1::_txtInput
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [PresentationFramework]System.Windows.Controls.Label V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [PresentationFramework]System.Windows.Controls.Label SpellChecker.Window1::_lblTime
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      class [PresentationFramework]System.Windows.Controls.Label SpellChecker.Window1::_lblTime
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [PresentationFramework]System.Windows.Controls.CheckBox V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [PresentationFramework]System.Windows.Controls.CheckBox SpellChecker.Window1::_chkParallel
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      class [PresentationFramework]System.Windows.Controls.CheckBox SpellChecker.Window1::_chkParallel
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [PresentationFramework]System.Windows.Controls.Button V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [PresentationFramework]System.Windows.Controls.Button SpellChecker.Window1::_btnLoad
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      class [PresentationFramework]System.Windows.Controls.Button SpellChecker.Window1::_btnLoad
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\obj\Debug\Window1.g.vb" startline="88" endline="99"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .override [System.Xaml]System.Windows.Markup.IComponentConnector::InitializeComponent
+    // Code size       44 (0x2c)
+    .maxstack  2
+    .locals init ([0] class [System]System.Uri resourceLocater,
+             [1] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      bool SpellChecker.Window1::_contentLoaded
+    IL_0007:  stloc.1
+    IL_0008:  ldloc.1
+    IL_0009:  brfalse.s  IL_000e
+
+    IL_000b:  nop
+    IL_000c:  br.s       IL_002a
+
+    IL_000e:  nop
+    IL_000f:  ldarg.0
+    IL_0010:  ldc.i4.1
+    IL_0011:  stfld      bool SpellChecker.Window1::_contentLoaded
+    IL_0016:  ldstr      "/SpellChecker;component/window1.xaml"
+    IL_001b:  ldc.i4.2
+    IL_001c:  newobj     instance void [System]System.Uri::.ctor(string,
+                                                                 valuetype [System]System.UriKind)
+    IL_0021:  stloc.0
+    IL_0022:  ldarg.0
+    IL_0023:  ldloc.0
+    IL_0024:  call       void [PresentationFramework]System.Windows.Application::LoadComponent(object,
+                                                                                               class [System]System.Uri)
+    IL_0029:  nop
+    IL_002a:  nop
+    IL_002b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\obj\Debug\Window1.g.vb" startline="100" endline="148"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .override [System.Xaml]System.Windows.Markup.IComponentConnector::Connect
+    // Code size       244 (0xf4)
+    .maxstack  3
+    .locals init ([0] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldc.i4.1
+    IL_0003:  ceq
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  brfalse.s  IL_001c
+
+    IL_0009:  ldarg.0
+    IL_000a:  ldarg.2
+    IL_000b:  castclass  [PresentationFramework]System.Windows.Controls.ListBox
+    IL_0010:  callvirt   instance void SpellChecker.Window1::set_listBox1(class [PresentationFramework]System.Windows.Controls.ListBox)
+    IL_0015:  nop
+    IL_0016:  nop
+    IL_0017:  br         IL_00f2
+
+    IL_001c:  nop
+    IL_001d:  ldarg.1
+    IL_001e:  ldc.i4.2
+    IL_001f:  ceq
+    IL_0021:  stloc.0
+    IL_0022:  ldloc.0
+    IL_0023:  brfalse.s  IL_0051
+
+    IL_0025:  ldarg.0
+    IL_0026:  ldarg.2
+    IL_0027:  castclass  [PresentationFramework]System.Windows.Controls.TextBox
+    IL_002c:  callvirt   instance void SpellChecker.Window1::set_txtInput(class [PresentationFramework]System.Windows.Controls.TextBox)
+    IL_0031:  nop
+    IL_0032:  ldarg.0
+    IL_0033:  callvirt   instance class [PresentationFramework]System.Windows.Controls.TextBox SpellChecker.Window1::get_txtInput()
+    IL_0038:  ldarg.0
+    IL_0039:  dup
+    IL_003a:  ldvirtftn  instance void SpellChecker.Window1::txtInput_TextChanged(object,
+                                                                                  class [PresentationFramework]System.Windows.Controls.TextChangedEventArgs)
+    IL_0040:  newobj     instance void [PresentationFramework]System.Windows.Controls.TextChangedEventHandler::.ctor(object,
+                                                                                                                     native int)
+    IL_0045:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Primitives.TextBoxBase::add_TextChanged(class [PresentationFramework]System.Windows.Controls.TextChangedEventHandler)
+    IL_004a:  nop
+    IL_004b:  nop
+    IL_004c:  br         IL_00f2
+
+    IL_0051:  nop
+    IL_0052:  ldarg.1
+    IL_0053:  ldc.i4.3
+    IL_0054:  ceq
+    IL_0056:  stloc.0
+    IL_0057:  ldloc.0
+    IL_0058:  brfalse.s  IL_006d
+
+    IL_005a:  ldarg.0
+    IL_005b:  ldarg.2
+    IL_005c:  castclass  [PresentationFramework]System.Windows.Controls.Label
+    IL_0061:  callvirt   instance void SpellChecker.Window1::set_lblTime(class [PresentationFramework]System.Windows.Controls.Label)
+    IL_0066:  nop
+    IL_0067:  nop
+    IL_0068:  br         IL_00f2
+
+    IL_006d:  nop
+    IL_006e:  ldarg.1
+    IL_006f:  ldc.i4.4
+    IL_0070:  ceq
+    IL_0072:  stloc.0
+    IL_0073:  ldloc.0
+    IL_0074:  brfalse.s  IL_00b8
+
+    IL_0076:  ldarg.0
+    IL_0077:  ldarg.2
+    IL_0078:  castclass  [PresentationFramework]System.Windows.Controls.CheckBox
+    IL_007d:  callvirt   instance void SpellChecker.Window1::set_chkParallel(class [PresentationFramework]System.Windows.Controls.CheckBox)
+    IL_0082:  nop
+    IL_0083:  ldarg.0
+    IL_0084:  callvirt   instance class [PresentationFramework]System.Windows.Controls.CheckBox SpellChecker.Window1::get_chkParallel()
+    IL_0089:  ldarg.0
+    IL_008a:  dup
+    IL_008b:  ldvirtftn  instance void SpellChecker.Window1::chkParallel_CheckedChanged(object,
+                                                                                        class [PresentationCore]System.Windows.RoutedEventArgs)
+    IL_0091:  newobj     instance void [PresentationCore]System.Windows.RoutedEventHandler::.ctor(object,
+                                                                                                  native int)
+    IL_0096:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Primitives.ToggleButton::add_Checked(class [PresentationCore]System.Windows.RoutedEventHandler)
+    IL_009b:  nop
+    IL_009c:  ldarg.0
+    IL_009d:  callvirt   instance class [PresentationFramework]System.Windows.Controls.CheckBox SpellChecker.Window1::get_chkParallel()
+    IL_00a2:  ldarg.0
+    IL_00a3:  dup
+    IL_00a4:  ldvirtftn  instance void SpellChecker.Window1::chkParallel_CheckedChanged(object,
+                                                                                        class [PresentationCore]System.Windows.RoutedEventArgs)
+    IL_00aa:  newobj     instance void [PresentationCore]System.Windows.RoutedEventHandler::.ctor(object,
+                                                                                                  native int)
+    IL_00af:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Primitives.ToggleButton::add_Unchecked(class [PresentationCore]System.Windows.RoutedEventHandler)
+    IL_00b4:  nop
+    IL_00b5:  nop
+    IL_00b6:  br.s       IL_00f2
+
+    IL_00b8:  nop
+    IL_00b9:  ldarg.1
+    IL_00ba:  ldc.i4.5
+    IL_00bb:  ceq
+    IL_00bd:  stloc.0
+    IL_00be:  ldloc.0
+    IL_00bf:  brfalse.s  IL_00ea
+
+    IL_00c1:  ldarg.0
+    IL_00c2:  ldarg.2
+    IL_00c3:  castclass  [PresentationFramework]System.Windows.Controls.Button
+    IL_00c8:  callvirt   instance void SpellChecker.Window1::set_btnLoad(class [PresentationFramework]System.Windows.Controls.Button)
+    IL_00cd:  nop
+    IL_00ce:  ldarg.0
+    IL_00cf:  callvirt   instance class [PresentationFramework]System.Windows.Controls.Button SpellChecker.Window1::get_btnLoad()
+    IL_00d4:  ldarg.0
+    IL_00d5:  dup
+    IL_00d6:  ldvirtftn  instance void SpellChecker.Window1::btnLoad_Click(object,
+                                                                           class [PresentationCore]System.Windows.RoutedEventArgs)
+    IL_00dc:  newobj     instance void [PresentationCore]System.Windows.RoutedEventHandler::.ctor(object,
+                                                                                                  native int)
+    IL_00e1:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Primitives.ButtonBase::add_Click(class [PresentationCore]System.Windows.RoutedEventHandler)
+    IL_00e6:  nop
+    IL_00e7:  nop
+    IL_00e8:  br.s       IL_00f2
+
+    IL_00ea:  nop
+    IL_00eb:  ldarg.0
+    IL_00ec:  ldc.i4.1
+    IL_00ed:  stfld      bool SpellChecker.Window1::_contentLoaded
+    IL_00f2:  nop
+    IL_00f3:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="55" endline="63"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       69 (0x45)
+    .maxstack  3
+    .locals init ([0] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance class [PresentationFramework]System.Windows.Controls.TextBox SpellChecker.Window1::get_txtInput()
+    IL_0007:  ldc.i4.1
+    IL_0008:  callvirt   instance void [PresentationCore]System.Windows.UIElement::set_IsEnabled(bool)
+    IL_000d:  nop
+    IL_000e:  ldarg.0
+    IL_000f:  callvirt   instance class [PresentationFramework]System.Windows.Controls.CheckBox SpellChecker.Window1::get_chkParallel()
+    IL_0014:  ldc.i4.1
+    IL_0015:  callvirt   instance void [PresentationCore]System.Windows.UIElement::set_IsEnabled(bool)
+    IL_001a:  nop
+    IL_001b:  ldarg.1
+    IL_001c:  callvirt   instance bool [mscorlib]System.Threading.Tasks.Task::get_IsFaulted()
+    IL_0021:  stloc.0
+    IL_0022:  ldloc.0
+    IL_0023:  brfalse.s  IL_003a
+
+    IL_0025:  ldarg.1
+    IL_0026:  callvirt   instance class [mscorlib]System.AggregateException [mscorlib]System.Threading.Tasks.Task::get_Exception()
+    IL_002b:  callvirt   instance string [mscorlib]System.AggregateException::ToString()
+    IL_0030:  ldc.i4.0
+    IL_0031:  ldnull
+    IL_0032:  call       valuetype [Microsoft.VisualBasic]Microsoft.VisualBasic.MsgBoxResult [Microsoft.VisualBasic]Microsoft.VisualBasic.Interaction::MsgBox(object,
+                                                                                                                                                              valuetype [Microsoft.VisualBasic]Microsoft.VisualBasic.MsgBoxStyle,
+                                                                                                                                                              object)
+    IL_0037:  pop
+    IL_0038:  br.s       IL_0042
+
+    IL_003a:  nop
+    IL_003b:  ldarg.0
+    IL_003c:  callvirt   instance void SpellChecker.Window1::MakeSuggestions()
+    IL_0041:  nop
+    IL_0042:  nop
+    IL_0043:  nop
+    IL_0044:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="64" endline="131"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       91 (0x5b)
+    .maxstack  4
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance class [PresentationFramework]System.Windows.Controls.ListBox SpellChecker.Window1::get_listBox1()
+    IL_0007:  ldarg.1
+    IL_0008:  callvirt   instance !0 class [mscorlib]System.Threading.Tasks.Task`1<class VB$AnonymousType_2`2<class [mscorlib]System.Collections.Generic.List`1<string>,valuetype [mscorlib]System.TimeSpan>>::get_Result()
+    IL_000d:  callvirt   instance !0 class VB$AnonymousType_2`2<class [mscorlib]System.Collections.Generic.List`1<string>,valuetype [mscorlib]System.TimeSpan>::get_Results()
+    IL_0012:  ldnull
+    IL_0013:  ldftn      string SpellChecker.Window1::_Lambda$__4(string,
+                                                                  int32)
+    IL_0019:  newobj     instance void class [mscorlib]System.Func`3<string,int32,string>::.ctor(object,
+                                                                                                 native int)
+    IL_001e:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<string,string>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                  class [mscorlib]System.Func`3<!!0,int32,!!1>)
+    IL_0023:  callvirt   instance void [PresentationFramework]System.Windows.Controls.ItemsControl::set_ItemsSource(class [mscorlib]System.Collections.IEnumerable)
+    IL_0028:  nop
+    IL_0029:  ldarg.0
+    IL_002a:  callvirt   instance class [PresentationFramework]System.Windows.Controls.Label SpellChecker.Window1::get_lblTime()
+    IL_002f:  ldstr      "Sec: "
+    IL_0034:  call       string [mscorlib]System.Convert::ToString(string)
+    IL_0039:  ldarg.1
+    IL_003a:  callvirt   instance !0 class [mscorlib]System.Threading.Tasks.Task`1<class VB$AnonymousType_2`2<class [mscorlib]System.Collections.Generic.List`1<string>,valuetype [mscorlib]System.TimeSpan>>::get_Result()
+    IL_003f:  callvirt   instance !1 class VB$AnonymousType_2`2<class [mscorlib]System.Collections.Generic.List`1<string>,valuetype [mscorlib]System.TimeSpan>::get_Time()
+    IL_0044:  box        [mscorlib]System.TimeSpan
+    IL_0049:  call       string [mscorlib]System.Convert::ToString(object)
+    IL_004e:  call       string [mscorlib]System.String::Concat(string,
+                                                                string)
+    IL_0053:  callvirt   instance void [PresentationFramework]System.Windows.Controls.ContentControl::set_Content(object)
+    IL_0058:  nop
+    IL_0059:  nop
+    IL_005a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="129" endline="129"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       24 (0x18)
+    .maxstack  3
+    .locals init ([0] string _Lambda$__4)
+    IL_0000:  ldstr      "{0,2}. {1}"
+    IL_0005:  ldarg.1
+    IL_0006:  ldc.i4.1
+    IL_0007:  add.ovf
+    IL_0008:  box        [mscorlib]System.Int32
+    IL_000d:  ldarg.0
+    IL_000e:  call       string [mscorlib]System.String::Format(string,
+                                                                object,
+                                                                object)
+    IL_0013:  stloc.0
+    IL_0014:  br.s       IL_0016
+
+    IL_0016:  ldloc.0
+    IL_0017:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="112" endline="112"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] int32 _Lambda$__7)
+    IL_0000:  ldarg.0
+    IL_0001:  callvirt   instance !1 class VB$AnonymousType_0`2<string,int32>::get_Distance()
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="113" endline="114"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] string _Lambda$__8)
+    IL_0000:  ldarg.0
+    IL_0001:  callvirt   instance !0 class VB$AnonymousType_0`2<string,int32>::get_Word()
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="115" endline="117"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       26 (0x1a)
+    .maxstack  3
+    .locals init ([0] int32[0...,0...] _Lambda$__9)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      int32 SpellChecker.Window1::_maxWordLength
+    IL_0006:  ldc.i4.1
+    IL_0007:  add.ovf
+    IL_0008:  ldarg.0
+    IL_0009:  ldfld      int32 SpellChecker.Window1::_maxWordLength
+    IL_000e:  ldc.i4.1
+    IL_000f:  add.ovf
+    IL_0010:  newobj     instance void int32[0...,0...]::.ctor(int32,
+                                                               int32)
+    IL_0015:  stloc.0
+    IL_0016:  br.s       IL_0018
+
+    IL_0018:  ldloc.0
+    IL_0019:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="118" endline="120"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] int32 _Lambda$__11)
+    IL_0000:  ldarg.0
+    IL_0001:  callvirt   instance !1 class VB$AnonymousType_1`2<string,int32>::get_Distance()
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="121" endline="121"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] string _Lambda$__12)
+    IL_0000:  ldarg.0
+    IL_0001:  callvirt   instance !0 class VB$AnonymousType_1`2<string,int32>::get_Word()
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       23 (0x17)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+    IL_0007:  ldarg.0
+    IL_0008:  ldarg.1
+    IL_0009:  stfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$Word
+    IL_000e:  ldarg.0
+    IL_000f:  ldarg.2
+    IL_0010:  stfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$Distance
+    IL_0015:  nop
+    IL_0016:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       17 (0x11)
+    .maxstack  2
+    .locals init (bool V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  isinst     class VB$AnonymousType_0`2<!T0,!T1>
+    IL_0007:  callvirt   instance bool class VB$AnonymousType_0`2<!T0,!T1>::Equals(class VB$AnonymousType_0`2<!0,!1>)
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .override  method instance bool class [mscorlib]System.IEquatable`1<class VB$AnonymousType_0`2<!T0,!T1>>::Equals(!0)
+    // Code size       304 (0x130)
+    .maxstack  2
+    .locals init (bool V_0,
+             class VB$AnonymousType_0`2<!T0,!T1> V_1,
+             bool V_2,
+             bool V_3)
+    IL_0000:  ldc.i4.1
+    IL_0001:  stloc.0
+    IL_0002:  ldarg.1
+    IL_0003:  ldnull
+    IL_0004:  ceq
+    IL_0006:  stloc.2
+    IL_0007:  ldloc.2
+    IL_0008:  brfalse.s  IL_0011
+
+    IL_000a:  ldc.i4.0
+    IL_000b:  stloc.0
+    IL_000c:  br         IL_012e
+
+    IL_0011:  ldarg.1
+    IL_0012:  stloc.1
+    IL_0013:  ldarg.0
+    IL_0014:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$Word
+    IL_0019:  box        !T0
+    IL_001e:  ldnull
+    IL_001f:  ceq
+    IL_0021:  stloc.2
+    IL_0022:  ldloc.2
+    IL_0023:  brfalse.s  IL_0043
+
+    IL_0025:  ldloc.1
+    IL_0026:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$Word
+    IL_002b:  box        !T0
+    IL_0030:  ldnull
+    IL_0031:  ceq
+    IL_0033:  ldc.i4.0
+    IL_0034:  ceq
+    IL_0036:  stloc.3
+    IL_0037:  ldloc.3
+    IL_0038:  brfalse.s  IL_0041
+
+    IL_003a:  ldc.i4.0
+    IL_003b:  stloc.0
+    IL_003c:  br         IL_012e
+
+    IL_0041:  br.s       IL_005d
+
+    IL_0043:  nop
+    IL_0044:  ldloc.1
+    IL_0045:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$Word
+    IL_004a:  box        !T0
+    IL_004f:  ldnull
+    IL_0050:  ceq
+    IL_0052:  stloc.3
+    IL_0053:  ldloc.3
+    IL_0054:  brfalse.s  IL_005d
+
+    IL_0056:  ldc.i4.0
+    IL_0057:  stloc.0
+    IL_0058:  br         IL_012e
+
+    IL_005d:  nop
+    IL_005e:  ldarg.0
+    IL_005f:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$Word
+    IL_0064:  box        !T0
+    IL_0069:  brfalse.s  IL_0095
+
+    IL_006b:  ldloc.1
+    IL_006c:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$Word
+    IL_0071:  box        !T0
+    IL_0076:  brfalse.s  IL_0095
+
+    IL_0078:  ldarg.0
+    IL_0079:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$Word
+    IL_007e:  box        !T0
+    IL_0083:  ldloc.1
+    IL_0084:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$Word
+    IL_0089:  box        !T0
+    IL_008e:  callvirt   instance bool [mscorlib]System.Object::Equals(object)
+    IL_0093:  brfalse.s  IL_0098
+
+    IL_0095:  ldc.i4.0
+    IL_0096:  br.s       IL_0099
+
+    IL_0098:  ldc.i4.1
+    IL_0099:  stloc.3
+    IL_009a:  ldloc.3
+    IL_009b:  brfalse.s  IL_00a4
+
+    IL_009d:  ldc.i4.0
+    IL_009e:  stloc.0
+    IL_009f:  br         IL_012e
+
+    IL_00a4:  ldarg.0
+    IL_00a5:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$Distance
+    IL_00aa:  box        !T1
+    IL_00af:  ldnull
+    IL_00b0:  ceq
+    IL_00b2:  stloc.3
+    IL_00b3:  ldloc.3
+    IL_00b4:  brfalse.s  IL_00d1
+
+    IL_00b6:  ldloc.1
+    IL_00b7:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$Distance
+    IL_00bc:  box        !T1
+    IL_00c1:  ldnull
+    IL_00c2:  ceq
+    IL_00c4:  ldc.i4.0
+    IL_00c5:  ceq
+    IL_00c7:  stloc.2
+    IL_00c8:  ldloc.2
+    IL_00c9:  brfalse.s  IL_00cf
+
+    IL_00cb:  ldc.i4.0
+    IL_00cc:  stloc.0
+    IL_00cd:  br.s       IL_012e
+
+    IL_00cf:  br.s       IL_00e8
+
+    IL_00d1:  nop
+    IL_00d2:  ldloc.1
+    IL_00d3:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$Distance
+    IL_00d8:  box        !T1
+    IL_00dd:  ldnull
+    IL_00de:  ceq
+    IL_00e0:  stloc.3
+    IL_00e1:  ldloc.3
+    IL_00e2:  brfalse.s  IL_00e8
+
+    IL_00e4:  ldc.i4.0
+    IL_00e5:  stloc.0
+    IL_00e6:  br.s       IL_012e
+
+    IL_00e8:  nop
+    IL_00e9:  ldarg.0
+    IL_00ea:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$Distance
+    IL_00ef:  box        !T1
+    IL_00f4:  brfalse.s  IL_0120
+
+    IL_00f6:  ldloc.1
+    IL_00f7:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$Distance
+    IL_00fc:  box        !T1
+    IL_0101:  brfalse.s  IL_0120
+
+    IL_0103:  ldarg.0
+    IL_0104:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$Distance
+    IL_0109:  box        !T1
+    IL_010e:  ldloc.1
+    IL_010f:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$Distance
+    IL_0114:  box        !T1
+    IL_0119:  callvirt   instance bool [mscorlib]System.Object::Equals(object)
+    IL_011e:  brfalse.s  IL_0123
+
+    IL_0120:  ldc.i4.0
+    IL_0121:  br.s       IL_0124
+
+    IL_0123:  ldc.i4.1
+    IL_0124:  stloc.3
+    IL_0125:  ldloc.3
+    IL_0126:  brfalse.s  IL_012c
+
+    IL_0128:  ldc.i4.0
+    IL_0129:  stloc.0
+    IL_012a:  br.s       IL_012e
+
+    IL_012c:  ldnull
+    IL_012d:  stloc.1
+    IL_012e:  ldloc.0
+    IL_012f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       112 (0x70)
+    .maxstack  2
+    .locals init (int32 V_0,
+             !T0 V_1,
+             !T1 V_2,
+             bool V_3)
+    IL_0000:  ldc.i4     0xc1482c73
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldc.i4     0xa5555529
+    IL_000c:  mul
+    IL_000d:  stloc.0
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$Word
+    IL_0014:  box        !T0
+    IL_0019:  ldnull
+    IL_001a:  ceq
+    IL_001c:  ldc.i4.0
+    IL_001d:  ceq
+    IL_001f:  stloc.3
+    IL_0020:  ldloc.3
+    IL_0021:  brfalse.s  IL_003a
+
+    IL_0023:  ldloc.0
+    IL_0024:  ldarg.0
+    IL_0025:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$Word
+    IL_002a:  stloc.1
+    IL_002b:  ldloca.s   V_1
+    IL_002d:  constrained. !T0
+    IL_0033:  callvirt   instance int32 [mscorlib]System.Object::GetHashCode()
+    IL_0038:  add
+    IL_0039:  stloc.0
+    IL_003a:  ldloc.0
+    IL_003b:  ldc.i4     0xa5555529
+    IL_0040:  mul
+    IL_0041:  stloc.0
+    IL_0042:  ldarg.0
+    IL_0043:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$Distance
+    IL_0048:  box        !T1
+    IL_004d:  ldnull
+    IL_004e:  ceq
+    IL_0050:  ldc.i4.0
+    IL_0051:  ceq
+    IL_0053:  stloc.3
+    IL_0054:  ldloc.3
+    IL_0055:  brfalse.s  IL_006e
+
+    IL_0057:  ldloc.0
+    IL_0058:  ldarg.0
+    IL_0059:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$Distance
+    IL_005e:  stloc.2
+    IL_005f:  ldloca.s   V_2
+    IL_0061:  constrained. !T1
+    IL_0067:  callvirt   instance int32 [mscorlib]System.Object::GetHashCode()
+    IL_006c:  add
+    IL_006d:  stloc.0
+    IL_006e:  ldloc.0
+    IL_006f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       97 (0x61)
+    .maxstack  4
+    .locals init (class [mscorlib]System.Text.StringBuilder V_0,
+             string V_1)
+    IL_0000:  newobj     instance void [mscorlib]System.Text.StringBuilder::.ctor()
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldstr      "{ "
+    IL_000c:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(string)
+    IL_0011:  pop
+    IL_0012:  ldloc.0
+    IL_0013:  ldstr      "{0} = {1}, "
+    IL_0018:  ldstr      "Word"
+    IL_001d:  ldarg.0
+    IL_001e:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$Word
+    IL_0023:  box        !T0
+    IL_0028:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::AppendFormat(string,
+                                                                                                                              object,
+                                                                                                                              object)
+    IL_002d:  pop
+    IL_002e:  ldloc.0
+    IL_002f:  ldstr      "{0} = {1} "
+    IL_0034:  ldstr      "Distance"
+    IL_0039:  ldarg.0
+    IL_003a:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$Distance
+    IL_003f:  box        !T1
+    IL_0044:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::AppendFormat(string,
+                                                                                                                              object,
+                                                                                                                              object)
+    IL_0049:  pop
+    IL_004a:  ldloc.0
+    IL_004b:  ldstr      "}"
+    IL_0050:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(string)
+    IL_0055:  pop
+    IL_0056:  ldloc.0
+    IL_0057:  callvirt   instance string [mscorlib]System.Text.StringBuilder::ToString()
+    IL_005c:  stloc.1
+    IL_005d:  br.s       IL_005f
+
+    IL_005f:  ldloc.1
+    IL_0060:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (!T0 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$Word
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (!T1 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$Distance
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       23 (0x17)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+    IL_0007:  ldarg.0
+    IL_0008:  ldarg.1
+    IL_0009:  stfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$Word
+    IL_000e:  ldarg.0
+    IL_000f:  ldarg.2
+    IL_0010:  stfld      !1 class VB$AnonymousType_1`2<!T0,!T1>::$Distance
+    IL_0015:  nop
+    IL_0016:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .override  method instance bool class [mscorlib]System.IEquatable`1<class VB$AnonymousType_1`2<!T0,!T1>>::Equals(!0)
+    // Code size       159 (0x9f)
+    .maxstack  2
+    .locals init (bool V_0,
+             class VB$AnonymousType_1`2<!T0,!T1> V_1,
+             bool V_2,
+             bool V_3)
+    IL_0000:  ldc.i4.1
+    IL_0001:  stloc.0
+    IL_0002:  ldarg.1
+    IL_0003:  ldnull
+    IL_0004:  ceq
+    IL_0006:  stloc.2
+    IL_0007:  ldloc.2
+    IL_0008:  brfalse.s  IL_0011
+
+    IL_000a:  ldc.i4.0
+    IL_000b:  stloc.0
+    IL_000c:  br         IL_009d
+
+    IL_0011:  ldarg.1
+    IL_0012:  stloc.1
+    IL_0013:  ldarg.0
+    IL_0014:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$Word
+    IL_0019:  box        !T0
+    IL_001e:  ldnull
+    IL_001f:  ceq
+    IL_0021:  stloc.2
+    IL_0022:  ldloc.2
+    IL_0023:  brfalse.s  IL_0040
+
+    IL_0025:  ldloc.1
+    IL_0026:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$Word
+    IL_002b:  box        !T0
+    IL_0030:  ldnull
+    IL_0031:  ceq
+    IL_0033:  ldc.i4.0
+    IL_0034:  ceq
+    IL_0036:  stloc.3
+    IL_0037:  ldloc.3
+    IL_0038:  brfalse.s  IL_003e
+
+    IL_003a:  ldc.i4.0
+    IL_003b:  stloc.0
+    IL_003c:  br.s       IL_009d
+
+    IL_003e:  br.s       IL_0057
+
+    IL_0040:  nop
+    IL_0041:  ldloc.1
+    IL_0042:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$Word
+    IL_0047:  box        !T0
+    IL_004c:  ldnull
+    IL_004d:  ceq
+    IL_004f:  stloc.3
+    IL_0050:  ldloc.3
+    IL_0051:  brfalse.s  IL_0057
+
+    IL_0053:  ldc.i4.0
+    IL_0054:  stloc.0
+    IL_0055:  br.s       IL_009d
+
+    IL_0057:  nop
+    IL_0058:  ldarg.0
+    IL_0059:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$Word
+    IL_005e:  box        !T0
+    IL_0063:  brfalse.s  IL_008f
+
+    IL_0065:  ldloc.1
+    IL_0066:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$Word
+    IL_006b:  box        !T0
+    IL_0070:  brfalse.s  IL_008f
+
+    IL_0072:  ldarg.0
+    IL_0073:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$Word
+    IL_0078:  box        !T0
+    IL_007d:  ldloc.1
+    IL_007e:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$Word
+    IL_0083:  box        !T0
+    IL_0088:  callvirt   instance bool [mscorlib]System.Object::Equals(object)
+    IL_008d:  brfalse.s  IL_0092
+
+    IL_008f:  ldc.i4.0
+    IL_0090:  br.s       IL_0093
+
+    IL_0092:  ldc.i4.1
+    IL_0093:  stloc.3
+    IL_0094:  ldloc.3
+    IL_0095:  brfalse.s  IL_009b
+
+    IL_0097:  ldc.i4.0
+    IL_0098:  stloc.0
+    IL_0099:  br.s       IL_009d
+
+    IL_009b:  ldnull
+    IL_009c:  stloc.1
+    IL_009d:  ldloc.0
+    IL_009e:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       17 (0x11)
+    .maxstack  2
+    .locals init (bool V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  isinst     class VB$AnonymousType_1`2<!T0,!T1>
+    IL_0007:  callvirt   instance bool class VB$AnonymousType_1`2<!T0,!T1>::Equals(class VB$AnonymousType_1`2<!0,!1>)
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       60 (0x3c)
+    .maxstack  2
+    .locals init (int32 V_0,
+             !T0 V_1,
+             bool V_2)
+    IL_0000:  ldc.i4     0xc1482c73
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldc.i4     0xa5555529
+    IL_000c:  mul
+    IL_000d:  stloc.0
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$Word
+    IL_0014:  box        !T0
+    IL_0019:  ldnull
+    IL_001a:  ceq
+    IL_001c:  ldc.i4.0
+    IL_001d:  ceq
+    IL_001f:  stloc.2
+    IL_0020:  ldloc.2
+    IL_0021:  brfalse.s  IL_003a
+
+    IL_0023:  ldloc.0
+    IL_0024:  ldarg.0
+    IL_0025:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$Word
+    IL_002a:  stloc.1
+    IL_002b:  ldloca.s   V_1
+    IL_002d:  constrained. !T0
+    IL_0033:  callvirt   instance int32 [mscorlib]System.Object::GetHashCode()
+    IL_0038:  add
+    IL_0039:  stloc.0
+    IL_003a:  ldloc.0
+    IL_003b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       97 (0x61)
+    .maxstack  4
+    .locals init (class [mscorlib]System.Text.StringBuilder V_0,
+             string V_1)
+    IL_0000:  newobj     instance void [mscorlib]System.Text.StringBuilder::.ctor()
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldstr      "{ "
+    IL_000c:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(string)
+    IL_0011:  pop
+    IL_0012:  ldloc.0
+    IL_0013:  ldstr      "{0} = {1}, "
+    IL_0018:  ldstr      "Word"
+    IL_001d:  ldarg.0
+    IL_001e:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$Word
+    IL_0023:  box        !T0
+    IL_0028:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::AppendFormat(string,
+                                                                                                                              object,
+                                                                                                                              object)
+    IL_002d:  pop
+    IL_002e:  ldloc.0
+    IL_002f:  ldstr      "{0} = {1} "
+    IL_0034:  ldstr      "Distance"
+    IL_0039:  ldarg.0
+    IL_003a:  ldfld      !1 class VB$AnonymousType_1`2<!T0,!T1>::$Distance
+    IL_003f:  box        !T1
+    IL_0044:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::AppendFormat(string,
+                                                                                                                              object,
+                                                                                                                              object)
+    IL_0049:  pop
+    IL_004a:  ldloc.0
+    IL_004b:  ldstr      "}"
+    IL_0050:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(string)
+    IL_0055:  pop
+    IL_0056:  ldloc.0
+    IL_0057:  callvirt   instance string [mscorlib]System.Text.StringBuilder::ToString()
+    IL_005c:  stloc.1
+    IL_005d:  br.s       IL_005f
+
+    IL_005f:  ldloc.1
+    IL_0060:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (!T0 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$Word
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (!T1 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      !1 class VB$AnonymousType_1`2<!T0,!T1>::$Distance
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      !1 class VB$AnonymousType_1`2<!T0,!T1>::$Distance
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       23 (0x17)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+    IL_0007:  ldarg.0
+    IL_0008:  ldarg.1
+    IL_0009:  stfld      !0 class VB$AnonymousType_2`2<!T0,!T1>::$Results
+    IL_000e:  ldarg.0
+    IL_000f:  ldarg.2
+    IL_0010:  stfld      !1 class VB$AnonymousType_2`2<!T0,!T1>::$Time
+    IL_0015:  nop
+    IL_0016:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       97 (0x61)
+    .maxstack  4
+    .locals init (class [mscorlib]System.Text.StringBuilder V_0,
+             string V_1)
+    IL_0000:  newobj     instance void [mscorlib]System.Text.StringBuilder::.ctor()
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldstr      "{ "
+    IL_000c:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(string)
+    IL_0011:  pop
+    IL_0012:  ldloc.0
+    IL_0013:  ldstr      "{0} = {1}, "
+    IL_0018:  ldstr      "Results"
+    IL_001d:  ldarg.0
+    IL_001e:  ldfld      !0 class VB$AnonymousType_2`2<!T0,!T1>::$Results
+    IL_0023:  box        !T0
+    IL_0028:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::AppendFormat(string,
+                                                                                                                              object,
+                                                                                                                              object)
+    IL_002d:  pop
+    IL_002e:  ldloc.0
+    IL_002f:  ldstr      "{0} = {1} "
+    IL_0034:  ldstr      "Time"
+    IL_0039:  ldarg.0
+    IL_003a:  ldfld      !1 class VB$AnonymousType_2`2<!T0,!T1>::$Time
+    IL_003f:  box        !T1
+    IL_0044:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::AppendFormat(string,
+                                                                                                                              object,
+                                                                                                                              object)
+    IL_0049:  pop
+    IL_004a:  ldloc.0
+    IL_004b:  ldstr      "}"
+    IL_0050:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(string)
+    IL_0055:  pop
+    IL_0056:  ldloc.0
+    IL_0057:  callvirt   instance string [mscorlib]System.Text.StringBuilder::ToString()
+    IL_005c:  stloc.1
+    IL_005d:  br.s       IL_005f
+
+    IL_005f:  ldloc.1
+    IL_0060:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (!T0 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      !0 class VB$AnonymousType_2`2<!T0,!T1>::$Results
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      !0 class VB$AnonymousType_2`2<!T0,!T1>::$Results
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (!T1 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      !1 class VB$AnonymousType_2`2<!T0,!T1>::$Time
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\SpellChecker\SpellChecker_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      !1 class VB$AnonymousType_2`2<!T0,!T1>::$Time
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+</source_elements></project>

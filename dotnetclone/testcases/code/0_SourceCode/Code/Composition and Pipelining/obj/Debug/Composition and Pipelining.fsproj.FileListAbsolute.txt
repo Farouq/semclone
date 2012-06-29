@@ -1,0 +1,5 @@
+C:\Users\faa634\Desktop\book codes\F#\Code\Composition and Pipelining\bin\Debug\Composition_and_Pipelining.dll
+C:\Users\faa634\Desktop\book codes\F#\Code\Composition and Pipelining\bin\Debug\Composition_and_Pipelining.pdb
+C:\Users\faa634\Desktop\book codes\F#\Code\Composition and Pipelining\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\F#\Code\Composition and Pipelining\obj\Debug\Composition_and_Pipelining.dll
+C:\Users\faa634\Desktop\book codes\F#\Code\Composition and Pipelining\obj\Debug\Composition_and_Pipelining.pdb

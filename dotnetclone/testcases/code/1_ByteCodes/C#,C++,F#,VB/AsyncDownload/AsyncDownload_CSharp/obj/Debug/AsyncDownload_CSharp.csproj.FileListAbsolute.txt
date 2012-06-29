@@ -1,0 +1,7 @@
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\bin\Debug\AsyncDownload.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\bin\Debug\AsyncDownload.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\bin\Debug\ParallelExtensionsExtras.dll
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\bin\Debug\ParallelExtensionsExtras.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\obj\Debug\AsyncDownload.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\obj\Debug\AsyncDownload.pdb

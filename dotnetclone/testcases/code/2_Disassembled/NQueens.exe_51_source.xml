@@ -1,0 +1,1012 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\MainForm.cs" startline="25" endline="30"><![CDATA[
+         private double _max = 0;
+         private System.ComponentModel.IContainer components = null;
+         public MainForm()
+         {
+             InitializeComponent();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\MainForm.cs" startline="31" endline="36"><![CDATA[
+ 
+         private void Form1_Load(object sender, EventArgs e)
+         {
+             _uiScheduler = TaskScheduler.FromCurrentSynchronizationContext();
+             SetupPoints();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\MainForm.cs" startline="37" endline="46"><![CDATA[
+ 
+         private void SetupPoints()
+         {
+             _serial = chart1.Series[0].Points[chart1.Series[0].Points.AddXY("Serial", 0.0)];
+             _parallel = chart1.Series[0].Points[chart1.Series[0].Points.AddXY("Parallel", 0.0)];
+             chart1.ChartAreas[0].AxisY.Minimum = 0.0;
+             chart1.ChartAreas[0].AxisY.Maximum = 10.0;
+             ClearPointValues();
+             Invalidate();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\MainForm.cs" startline="47" endline="58"><![CDATA[
+ 
+         private void ClearPointValues()
+         {
+             foreach (var point in new[] { _serial, _parallel })
+             {
+                 point.SetValueY(0);
+                 point.ToolTip = "";
+                 point.Label = "";
+                 point.Font = new System.Drawing.Font(point.Font, System.Drawing.FontStyle.Bold);
+             }
+             chart1.Invalidate();
+         }
+ 
+         private void btnSolve_Click(object sender, EventArgs e)
+         {
+             int numQueens = 0;
+             if (!Int32.TryParse(cbNumQueens.Text, out numQueens)) return;
+ 
+             btnSolve.Enabled = false;
+             progressBar1.Visible = true;
+ 
+             ClearPointValues();
+             _max = 0;
+ 
+             Task.Factory.StartNew(() =>
+             {
+                 TimeSpan elapsed;
+ 
+                 elapsed = Time(() => NQueensSolver.Sequential(numQueens));
+                 SetPoint(_serial, elapsed.TotalSeconds);
+ 
+                 elapsed = Time(() => NQueensSolver.Parallel(numQueens));
+                 SetPoint(_parallel, elapsed.TotalSeconds);
+ 
+             }, TaskCreationOptions.AttachedToParent).ContinueWith(t =>
+             {
+                 progressBar1.Visible = false;
+                 btnSolve.Enabled = true;
+                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+         }
+ 
+         private void SetPoint(DataPoint point, double seconds)
+         {
+             Task.Factory.StartNew(() =>
+             {
+                 if (seconds > _max)
+                 {
+                     _max = seconds;
+                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+                 }
+                 point.SetValueY(seconds);
+                 point.ToolTip = seconds.ToString("F3");
+                 point.Label = string.Format("{0
+                 chart1.Invalidate();
+             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+         }
+ 
+         static TimeSpan Time(Action action)
+         {
+             var sw = Stopwatch.StartNew();
+             action();
+             return sw.Elapsed;
+         }
+     }
+ }
+             foreach (var point in new[] { _serial, _parallel })
+             {
+                 point.SetValueY(0);
+                 point.ToolTip = "";
+                 point.Label = "";
+                 point.Font = new System.Drawing.Font(point.Font, System.Drawing.FontStyle.Bold);
+             }
+             chart1.Invalidate();
+         }
+ 
+         private void btnSolve_Click(object sender, EventArgs e)
+         {
+             int numQueens = 0;
+             if (!Int32.TryParse(cbNumQueens.Text, out numQueens)) return;
+ 
+             btnSolve.Enabled = false;
+             progressBar1.Visible = true;
+ 
+             ClearPointValues();
+             _max = 0;
+ 
+             Task.Factory.StartNew(() =>
+             {
+                 TimeSpan elapsed;
+ 
+                 elapsed = Time(() => NQueensSolver.Sequential(numQueens));
+                 SetPoint(_serial, elapsed.TotalSeconds);
+ 
+                 elapsed = Time(() => NQueensSolver.Parallel(numQueens));
+                 SetPoint(_parallel, elapsed.TotalSeconds);
+ 
+             }, TaskCreationOptions.AttachedToParent).ContinueWith(t =>
+             {
+                 progressBar1.Visible = false;
+                 btnSolve.Enabled = true;
+                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+         }
+ 
+         private void SetPoint(DataPoint point, double seconds)
+         {
+             Task.Factory.StartNew(() =>
+             {
+                 if (seconds > _max)
+                 {
+                     _max = seconds;
+                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+                 }
+                 point.SetValueY(seconds);
+                 point.ToolTip = seconds.ToString("F3");
+                 point.Label = string.Format("{0
+                 chart1.Invalidate();
+             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+         }
+ 
+         static TimeSpan Time(Action action)
+         {
+             var sw = Stopwatch.StartNew();
+             action();
+             return sw.Elapsed;
+         }
+     }
+ }
+             foreach (var point in new[] { _serial, _parallel })
+             {
+                 point.SetValueY(0);
+                 point.ToolTip = "";
+                 point.Label = "";
+                 point.Font = new System.Drawing.Font(point.Font, System.Drawing.FontStyle.Bold);
+             }
+             chart1.Invalidate();
+         }
+ 
+         private void btnSolve_Click(object sender, EventArgs e)
+         {
+             int numQueens = 0;
+             if (!Int32.TryParse(cbNumQueens.Text, out numQueens)) return;
+ 
+             btnSolve.Enabled = false;
+             progressBar1.Visible = true;
+ 
+             ClearPointValues();
+             _max = 0;
+ 
+             Task.Factory.StartNew(() =>
+             {
+                 TimeSpan elapsed;
+ 
+                 elapsed = Time(() => NQueensSolver.Sequential(numQueens));
+                 SetPoint(_serial, elapsed.TotalSeconds);
+ 
+                 elapsed = Time(() => NQueensSolver.Parallel(numQueens));
+                 SetPoint(_parallel, elapsed.TotalSeconds);
+ 
+             }, TaskCreationOptions.AttachedToParent).ContinueWith(t =>
+             {
+                 progressBar1.Visible = false;
+                 btnSolve.Enabled = true;
+                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+         }
+ 
+         private void SetPoint(DataPoint point, double seconds)
+         {
+             Task.Factory.StartNew(() =>
+             {
+                 if (seconds > _max)
+                 {
+                     _max = seconds;
+                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+                 }
+                 point.SetValueY(seconds);
+                 point.ToolTip = seconds.ToString("F3");
+                 point.Label = string.Format("{0
+                 chart1.Invalidate();
+             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+         }
+ 
+         static TimeSpan Time(Action action)
+         {
+             var sw = Stopwatch.StartNew();
+             action();
+             return sw.Elapsed;
+         }
+     }
+ }
+             chart1.Invalidate();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\MainForm.cs" startline="59" endline="87"><![CDATA[
+ 
+         private void btnSolve_Click(object sender, EventArgs e)
+         {
+             int numQueens = 0;
+             if (!Int32.TryParse(cbNumQueens.Text, out numQueens)) return;
+ 
+             btnSolve.Enabled = false;
+             progressBar1.Visible = true;
+ 
+             ClearPointValues();
+             _max = 0;
+ 
+             Task.Factory.StartNew(() =>
+             {
+                 TimeSpan elapsed;
+ 
+                 elapsed = Time(() => NQueensSolver.Sequential(numQueens));
+                 SetPoint(_serial, elapsed.TotalSeconds);
+ 
+                 elapsed = Time(() => NQueensSolver.Parallel(numQueens));
+                 SetPoint(_parallel, elapsed.TotalSeconds);
+ 
+             }, TaskCreationOptions.AttachedToParent).ContinueWith(t =>
+             {
+                 progressBar1.Visible = false;
+                 btnSolve.Enabled = true;
+                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+         }
+ 
+         private void SetPoint(DataPoint point, double seconds)
+         {
+             Task.Factory.StartNew(() =>
+             {
+                 if (seconds > _max)
+                 {
+                     _max = seconds;
+                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+                 }
+                 point.SetValueY(seconds);
+                 point.ToolTip = seconds.ToString("F3");
+                 point.Label = string.Format("{0
+                 chart1.Invalidate();
+             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+         }
+ 
+         static TimeSpan Time(Action action)
+         {
+             var sw = Stopwatch.StartNew();
+             action();
+             return sw.Elapsed;
+         }
+     }
+ }
+         {
+             int numQueens = 0;
+             if (!Int32.TryParse(cbNumQueens.Text, out numQueens)) return;
+ 
+             btnSolve.Enabled = false;
+             progressBar1.Visible = true;
+ 
+             ClearPointValues();
+             _max = 0;
+ 
+             Task.Factory.StartNew(() =>
+             {
+                 TimeSpan elapsed;
+ 
+                 elapsed = Time(() => NQueensSolver.Sequential(numQueens));
+                 SetPoint(_serial, elapsed.TotalSeconds);
+ 
+                 elapsed = Time(() => NQueensSolver.Parallel(numQueens));
+                 SetPoint(_parallel, elapsed.TotalSeconds);
+ 
+             }, TaskCreationOptions.AttachedToParent).ContinueWith(t =>
+             {
+                 progressBar1.Visible = false;
+                 btnSolve.Enabled = true;
+                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+         }
+ 
+         private void SetPoint(DataPoint point, double seconds)
+         {
+             Task.Factory.StartNew(() =>
+             {
+                 if (seconds > _max)
+                 {
+                     _max = seconds;
+                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+                 }
+                 point.SetValueY(seconds);
+                 point.ToolTip = seconds.ToString("F3");
+                 point.Label = string.Format("{0
+                 chart1.Invalidate();
+             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+         }
+ 
+         static TimeSpan Time(Action action)
+         {
+             var sw = Stopwatch.StartNew();
+             action();
+             return sw.Elapsed;
+         }
+     }
+ }
+             if (!Int32.TryParse(cbNumQueens.Text, out numQueens)) return;
+ 
+             btnSolve.Enabled = false;
+             progressBar1.Visible = true;
+ 
+             ClearPointValues();
+             _max = 0;
+ 
+             Task.Factory.StartNew(() =>
+             {
+                 TimeSpan elapsed;
+ 
+                 elapsed = Time(() => NQueensSolver.Sequential(numQueens));
+                 SetPoint(_serial, elapsed.TotalSeconds);
+ 
+                 elapsed = Time(() => NQueensSolver.Parallel(numQueens));
+                 SetPoint(_parallel, elapsed.TotalSeconds);
+ 
+             }, TaskCreationOptions.AttachedToParent).ContinueWith(t =>
+             {
+                 progressBar1.Visible = false;
+                 btnSolve.Enabled = true;
+                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\MainForm.cs" startline="88" endline="103"><![CDATA[
+ 
+         private void SetPoint(DataPoint point, double seconds)
+         {
+             Task.Factory.StartNew(() =>
+             {
+                 if (seconds > _max)
+                 {
+                     _max = seconds;
+                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+                 }
+                 point.SetValueY(seconds);
+                 point.ToolTip = seconds.ToString("F3");
+                 point.Label = string.Format("{0
+                 chart1.Invalidate();
+             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+         }
+ 
+         static TimeSpan Time(Action action)
+         {
+             var sw = Stopwatch.StartNew();
+             action();
+             return sw.Elapsed;
+         }
+     }
+ }
+         {
+             Task.Factory.StartNew(() =>
+             {
+                 if (seconds > _max)
+                 {
+                     _max = seconds;
+                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+                 }
+                 point.SetValueY(seconds);
+                 point.ToolTip = seconds.ToString("F3");
+                 point.Label = string.Format("{0
+                 chart1.Invalidate();
+             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\MainForm.cs" startline="104" endline="110"><![CDATA[
+ 
+         static TimeSpan Time(Action action)
+         {
+             var sw = Stopwatch.StartNew();
+             action();
+             return sw.Elapsed;
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\MainForm.Designer.cs" startline="15" endline="21"><![CDATA[
+         {
+             if (disposing && (components != null))
+             {
+                 components.Dispose();
+             }
+             base.Dispose(disposing);
+         }
+ 
+         #region Windows Form Designer generated code
+ 
+         /// <summary>
+         /// Required method for Designer support - do not modify
+         /// the contents of this method with the code editor.
+         /// </summary>
+         private void InitializeComponent()
+         {
+             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+             System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+             this.btnSolve = new System.Windows.Forms.Button();
+             this.cbNumQueens = new System.Windows.Forms.ComboBox();
+             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+             this.SuspendLayout();
+             // 
+             // chart1
+             // 
+             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                         | System.Windows.Forms.AnchorStyles.Left)
+                         | System.Windows.Forms.AnchorStyles.Right)));
+             this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
+             this.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter;
+             chartArea6.AxisX.IsLabelAutoFit = false;
+             chartArea6.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+             chartArea6.AxisY.IsLabelAutoFit = false;
+             chartArea6.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+             chartArea6.AxisY.LabelStyle.Format = "F2";
+             chartArea6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+             chartArea6.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
+             chartArea6.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+             chartArea6.Name = "ChartArea1";
+             this.chart1.ChartAreas.Add(chartArea6);
+             this.chart1.Location = new System.Drawing.Point(13, 59);
+             this.chart1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+             this.chart1.Name = "chart1";
+             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+             series6.BackSecondaryColor = System.Drawing.Color.MintCream;
+             series6.ChartArea = "ChartArea1";
+             series6.CustomProperties = "DrawingStyle=Cylinder, LabelStyle=Top";
+             series6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+             series6.Name = "chartSeries1";
+             series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+             series6.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+             this.chart1.Series.Add(series6);
+             this.chart1.Size = new System.Drawing.Size(691, 417);
+             this.chart1.TabIndex = 1;
+             this.chart1.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
+             // 
+             // progressBar1
+             // 
+             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                         | System.Windows.Forms.AnchorStyles.Right)));
+             this.progressBar1.Location = new System.Drawing.Point(197, 14);
+             this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+             this.progressBar1.Name = "progressBar1";
+             this.progressBar1.Size = new System.Drawing.Size(507, 35);
+             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+             this.progressBar1.TabIndex = 5;
+             this.progressBar1.Visible = false;
+             // 
+             // btnSolve
+             // 
+             this.btnSolve.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.btnSolve.Location = new System.Drawing.Point(77, 14);
+             this.btnSolve.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+             this.btnSolve.Name = "btnSolve";
+             this.btnSolve.Size = new System.Drawing.Size(112, 35);
+             this.btnSolve.TabIndex = 4;
+             this.btnSolve.Text = "Solve";
+             this.btnSolve.UseVisualStyleBackColor = true;
+             this.btnSolve.Click += new System.EventHandler(this.btnSolve_Click);
+             // 
+             // cbNumQueens
+             // 
+             this.cbNumQueens.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+             this.cbNumQueens.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+             this.cbNumQueens.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.cbNumQueens.FormattingEnabled = true;
+             this.cbNumQueens.Items.AddRange(new object[] {
+             "8",
+             "9",
+             "10",
+             "11",
+             "12",
+             "13",
+             "14",
+             "15"});
+             this.cbNumQueens.Location = new System.Drawing.Point(13, 14);
+             this.cbNumQueens.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+             this.cbNumQueens.Name = "cbNumQueens";
+             this.cbNumQueens.Size = new System.Drawing.Size(56, 32);
+             this.cbNumQueens.TabIndex = 6;
+             this.cbNumQueens.Text = "12";
+             // 
+             // MainForm
+             // 
+             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+             this.ClientSize = new System.Drawing.Size(717, 490);
+             this.Controls.Add(this.cbNumQueens);
+             this.Controls.Add(this.progressBar1);
+             this.Controls.Add(this.btnSolve);
+             this.Controls.Add(this.chart1);
+             this.Name = "MainForm";
+             this.Text = "NQueens";
+             this.Load += new System.EventHandler(this.Form1_Load);
+             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+             this.ResumeLayout(false);
+ 
+         }
+ 
+         #endregion
+ 
+         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+         private System.Windows.Forms.ProgressBar progressBar1;
+         private System.Windows.Forms.Button btnSolve;
+         private System.Windows.Forms.ComboBox cbNumQueens;
+     }
+ }
+ 
+             {
+                 components.Dispose();
+             }
+             base.Dispose(disposing);
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\MainForm.Designer.cs" startline="22" endline="134"><![CDATA[
+ 
+         #region Windows Form Designer generated code
+ 
+         /// <summary>
+         /// Required method for Designer support - do not modify
+         /// the contents of this method with the code editor.
+         /// </summary>
+         private void InitializeComponent()
+         {
+             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+             System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+             this.btnSolve = new System.Windows.Forms.Button();
+             this.cbNumQueens = new System.Windows.Forms.ComboBox();
+             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+             this.SuspendLayout();
+             // 
+             // chart1
+             // 
+             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                         | System.Windows.Forms.AnchorStyles.Left)
+                         | System.Windows.Forms.AnchorStyles.Right)));
+             this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
+             this.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter;
+             chartArea6.AxisX.IsLabelAutoFit = false;
+             chartArea6.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+             chartArea6.AxisY.IsLabelAutoFit = false;
+             chartArea6.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+             chartArea6.AxisY.LabelStyle.Format = "F2";
+             chartArea6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+             chartArea6.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
+             chartArea6.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+             chartArea6.Name = "ChartArea1";
+             this.chart1.ChartAreas.Add(chartArea6);
+             this.chart1.Location = new System.Drawing.Point(13, 59);
+             this.chart1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+             this.chart1.Name = "chart1";
+             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+             series6.BackSecondaryColor = System.Drawing.Color.MintCream;
+             series6.ChartArea = "ChartArea1";
+             series6.CustomProperties = "DrawingStyle=Cylinder, LabelStyle=Top";
+             series6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+             series6.Name = "chartSeries1";
+             series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+             series6.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+             this.chart1.Series.Add(series6);
+             this.chart1.Size = new System.Drawing.Size(691, 417);
+             this.chart1.TabIndex = 1;
+             this.chart1.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
+             // 
+             // progressBar1
+             // 
+             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                         | System.Windows.Forms.AnchorStyles.Right)));
+             this.progressBar1.Location = new System.Drawing.Point(197, 14);
+             this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+             this.progressBar1.Name = "progressBar1";
+             this.progressBar1.Size = new System.Drawing.Size(507, 35);
+             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+             this.progressBar1.TabIndex = 5;
+             this.progressBar1.Visible = false;
+             // 
+             // btnSolve
+             // 
+             this.btnSolve.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.btnSolve.Location = new System.Drawing.Point(77, 14);
+             this.btnSolve.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+             this.btnSolve.Name = "btnSolve";
+             this.btnSolve.Size = new System.Drawing.Size(112, 35);
+             this.btnSolve.TabIndex = 4;
+             this.btnSolve.Text = "Solve";
+             this.btnSolve.UseVisualStyleBackColor = true;
+             this.btnSolve.Click += new System.EventHandler(this.btnSolve_Click);
+             // 
+             // cbNumQueens
+             // 
+             this.cbNumQueens.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+             this.cbNumQueens.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+             this.cbNumQueens.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.cbNumQueens.FormattingEnabled = true;
+             this.cbNumQueens.Items.AddRange(new object[] {
+             "8",
+             "9",
+             "10",
+             "11",
+             "12",
+             "13",
+             "14",
+             "15"});
+             this.cbNumQueens.Location = new System.Drawing.Point(13, 14);
+             this.cbNumQueens.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+             this.cbNumQueens.Name = "cbNumQueens";
+             this.cbNumQueens.Size = new System.Drawing.Size(56, 32);
+             this.cbNumQueens.TabIndex = 6;
+             this.cbNumQueens.Text = "12";
+             // 
+             // MainForm
+             // 
+             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+             this.ClientSize = new System.Drawing.Size(717, 490);
+             this.Controls.Add(this.cbNumQueens);
+             this.Controls.Add(this.progressBar1);
+             this.Controls.Add(this.btnSolve);
+             this.Controls.Add(this.chart1);
+             this.Name = "MainForm";
+             this.Text = "NQueens";
+             this.Load += new System.EventHandler(this.Form1_Load);
+             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+             this.ResumeLayout(false);
+ 
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\MainForm.cs" startline="82" endline="112"><![CDATA[
+             {
+                 progressBar1.Visible = false;
+                 btnSolve.Enabled = true;
+                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+         }
+ 
+         private void SetPoint(DataPoint point, double seconds)
+         {
+             Task.Factory.StartNew(() =>
+             {
+                 if (seconds > _max)
+                 {
+                     _max = seconds;
+                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+                 }
+                 point.SetValueY(seconds);
+                 point.ToolTip = seconds.ToString("F3");
+                 point.Label = string.Format("{0
+                 chart1.Invalidate();
+             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+         }
+ 
+         static TimeSpan Time(Action action)
+         {
+             var sw = Stopwatch.StartNew();
+             action();
+             return sw.Elapsed;
+         }
+     }
+ }
+                 if (t.IsFaulted) MessageBox.Show(t.Exception.ToString());
+             }, CancellationToken.None, TaskContinuationOptions.AttachedToParent, _uiScheduler);
+         }
+ 
+         private void SetPoint(DataPoint point, double seconds)
+         {
+             Task.Factory.StartNew(() =>
+             {
+                 if (seconds > _max)
+                 {
+                     _max = seconds;
+                     chart1.ChartAreas[0].AxisY.Maximum = _max * 1.1;
+                 }
+                 point.SetValueY(seconds);
+                 point.ToolTip = seconds.ToString("F3");
+                 point.Label = string.Format("{0
+                 chart1.Invalidate();
+             }, CancellationToken.None, TaskCreationOptions.AttachedToParent, _uiScheduler);
+         }
+ 
+         static TimeSpan Time(Action action)
+         {
+             var sw = Stopwatch.StartNew();
+             action();
+             return sw.Elapsed;
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\Properties\Settings.Designer.cs" startline="21" endline="23"><![CDATA[
+             get {
+                 return defaultInstance;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\Properties\Settings.Designer.cs" startline="18" endline="26"><![CDATA[
+         private static Settings defaultInstance = ((Settings)(global
+         
+         public static Settings Default {
+             get {
+                 return defaultInstance;
+             }
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\NQueens.cs" startline="24" endline="26"><![CDATA[
+         {
+             return new NQueensState(n).CountSolutions();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\NQueens.cs" startline="27" endline="39"><![CDATA[
+ 
+         public static int Parallel(int n)
+         {
+             NQueensState[] statesAfterOneMove = new NQueensState[n];
+             for (int row = 0; row < n; row++)
+             {
+                 statesAfterOneMove[row] = new NQueensState(n);
+                 statesAfterOneMove[row].PlaceQueen(row);
+             };
+ 
+             return (from q in statesAfterOneMove.AsParallel()
+                     select q.CountSolutions()).Sum();
+         }
+ 
+         class NQueensState
+         {
+             private bool[] m_rows;        // m_rows[i] = does row i contain a queen?
+             private bool[] m_fwDiagonals; // m_fwDiagonals[i] = does forward diagonal i contain a queen?
+             private bool[] m_bwDiagonals; // m_bwDiagonals[i] = does backward diagonal i contain a queen?
+             int m_size;  // Size of the chessboard
+             int m_col;   // Column with the smallest index that does not contain a queen, 0 <= m_col < m_size
+ 
+             public NQueensState(int size)
+             {
+                 m_size = size;
+                 m_rows = new bool[size];
+                 m_fwDiagonals = new bool[2 * size - 1];
+                 m_bwDiagonals = new bool[2 * size - 1];
+                 m_col = 0;
+             }
+ 
+             public int CountSolutions()
+             {
+                 if (m_col == m_size) return 1;
+ 
+                 int answer = 0;
+                 for (int row = 0; row < m_size; row++)
+                 {
+                     if (PlaceQueen(row))
+                     {
+                         answer += CountSolutions();
+                         RemoveQueen(row);
+                     }
+                 }
+                 return answer;
+             }
+ 
+             public bool PlaceQueen(int row)
+             {
+                 if (!m_rows[row] && !m_fwDiagonals[row + m_col] && !m_bwDiagonals[row - m_col + m_size - 1])
+                 {
+                     m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = true;
+                     m_col++;
+ 
+                     return true;
+                 }
+                 return false;
+             }
+ 
+             private void RemoveQueen(int row)
+             {
+                 m_col--;
+                 m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = false;
+             }
+         }
+     }
+ }
+             {
+                 statesAfterOneMove[row] = new NQueensState(n);
+                 statesAfterOneMove[row].PlaceQueen(row);
+             };
+             for (int row = 0; row < n; row++)
+             {
+                 statesAfterOneMove[row] = new NQueensState(n);
+                 statesAfterOneMove[row].PlaceQueen(row);
+             };
+ 
+             return (from q in statesAfterOneMove.AsParallel()
+                     select q.CountSolutions()).Sum();
+         }
+ 
+         class NQueensState
+         {
+             private bool[] m_rows;        // m_rows[i] = does row i contain a queen?
+             private bool[] m_fwDiagonals; // m_fwDiagonals[i] = does forward diagonal i contain a queen?
+             private bool[] m_bwDiagonals; // m_bwDiagonals[i] = does backward diagonal i contain a queen?
+             int m_size;  // Size of the chessboard
+             int m_col;   // Column with the smallest index that does not contain a queen, 0 <= m_col < m_size
+ 
+             public NQueensState(int size)
+             {
+                 m_size = size;
+                 m_rows = new bool[size];
+                 m_fwDiagonals = new bool[2 * size - 1];
+                 m_bwDiagonals = new bool[2 * size - 1];
+                 m_col = 0;
+             }
+ 
+             public int CountSolutions()
+             {
+                 if (m_col == m_size) return 1;
+ 
+                 int answer = 0;
+                 for (int row = 0; row < m_size; row++)
+                 {
+                     if (PlaceQueen(row))
+                     {
+                         answer += CountSolutions();
+                         RemoveQueen(row);
+                     }
+                 }
+                 return answer;
+             }
+ 
+             public bool PlaceQueen(int row)
+             {
+                 if (!m_rows[row] && !m_fwDiagonals[row + m_col] && !m_bwDiagonals[row - m_col + m_size - 1])
+                 {
+                     m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = true;
+                     m_col++;
+ 
+                     return true;
+                 }
+                 return false;
+             }
+ 
+             private void RemoveQueen(int row)
+             {
+                 m_col--;
+                 m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = false;
+             }
+         }
+     }
+ }
+             return (from q in statesAfterOneMove.AsParallel()
+                     select q.CountSolutions()).Sum();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\NQueens.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\NQueens.cs" startline="38" endline="93"><![CDATA[
+                     select q.CountSolutions()).Sum();
+         }
+ 
+         class NQueensState
+         {
+             private bool[] m_rows;        // m_rows[i] = does row i contain a queen?
+             private bool[] m_fwDiagonals; // m_fwDiagonals[i] = does forward diagonal i contain a queen?
+             private bool[] m_bwDiagonals; // m_bwDiagonals[i] = does backward diagonal i contain a queen?
+             int m_size;  // Size of the chessboard
+             int m_col;   // Column with the smallest index that does not contain a queen, 0 <= m_col < m_size
+ 
+             public NQueensState(int size)
+             {
+                 m_size = size;
+                 m_rows = new bool[size];
+                 m_fwDiagonals = new bool[2 * size - 1];
+                 m_bwDiagonals = new bool[2 * size - 1];
+                 m_col = 0;
+             }
+ 
+             public int CountSolutions()
+             {
+                 if (m_col == m_size) return 1;
+ 
+                 int answer = 0;
+                 for (int row = 0; row < m_size; row++)
+                 {
+                     if (PlaceQueen(row))
+                     {
+                         answer += CountSolutions();
+                         RemoveQueen(row);
+                     }
+                 }
+                 return answer;
+             }
+ 
+             public bool PlaceQueen(int row)
+             {
+                 if (!m_rows[row] && !m_fwDiagonals[row + m_col] && !m_bwDiagonals[row - m_col + m_size - 1])
+                 {
+                     m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = true;
+                     m_col++;
+ 
+                     return true;
+                 }
+                 return false;
+             }
+ 
+             private void RemoveQueen(int row)
+             {
+                 m_col--;
+                 m_rows[row] = m_fwDiagonals[row + m_col] = m_bwDiagonals[row - m_col + m_size - 1] = false;
+             }
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\Properties\Resources.Designer.cs" startline="31" endline="33"><![CDATA[
+         [global
+         internal Resources() {
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\Properties\Resources.Designer.cs" startline="34" endline="46"><![CDATA[
+         
+         /// <summary>
+         ///   Returns the cached ResourceManager instance used by this class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 if (object.ReferenceEquals(resourceMan, null)) {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+         }
+         
+         /// <summary>
+         ///   Overrides the current thread's CurrentUICulture property for all
+         ///   resource lookups using this strongly typed resource class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 return resourceCulture;
+             }
+             set {
+                 resourceCulture = value;
+             }
+         }
+     }
+ }
+                 if (object.ReferenceEquals(resourceMan, null)) {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\Properties\Resources.Designer.cs" startline="47" endline="57"><![CDATA[
+         }
+         
+         /// <summary>
+         ///   Overrides the current thread's CurrentUICulture property for all
+         ///   resource lookups using this strongly typed resource class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 return resourceCulture;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\Properties\Resources.Designer.cs" startline="58" endline="60"><![CDATA[
+             set {
+                 resourceCulture = value;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\Program.cs" startline="19" endline="23"><![CDATA[
+         {
+             Application.EnableVisualStyles();
+             Application.SetCompatibleTextRenderingDefault(false);
+             Application.Run(new MainForm());
+         }
+]]></source>
+</source_elements></project>

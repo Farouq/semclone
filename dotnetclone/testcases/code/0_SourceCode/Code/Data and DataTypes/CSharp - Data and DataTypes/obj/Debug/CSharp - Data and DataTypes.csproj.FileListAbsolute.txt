@@ -1,0 +1,5 @@
+C:\Users\faa634\Desktop\book codes\F#\Code\Data and DataTypes\CSharp - Data and DataTypes\bin\Debug\CSharp - Data and DataTypes.dll
+C:\Users\faa634\Desktop\book codes\F#\Code\Data and DataTypes\CSharp - Data and DataTypes\bin\Debug\CSharp - Data and DataTypes.pdb
+C:\Users\faa634\Desktop\book codes\F#\Code\Data and DataTypes\CSharp - Data and DataTypes\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\F#\Code\Data and DataTypes\CSharp - Data and DataTypes\obj\Debug\CSharp - Data and DataTypes.dll
+C:\Users\faa634\Desktop\book codes\F#\Code\Data and DataTypes\CSharp - Data and DataTypes\obj\Debug\CSharp - Data and DataTypes.pdb

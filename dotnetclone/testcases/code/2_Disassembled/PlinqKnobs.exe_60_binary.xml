@@ -1,0 +1,741 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\PlinqKnobs\PlinqKnobs_CSharp\Program.cs" startline="18" endline="25"><![CDATA[
+  {
+    .entrypoint
+    // Code size       8 (0x8)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  call       void Program::AsOrdered()
+    IL_0006:  nop
+    IL_0007:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\PlinqKnobs\PlinqKnobs_CSharp\Program.cs" startline="26" endline="70"><![CDATA[
+  {
+    // Code size       382 (0x17e)
+    .maxstack  4
+    .locals init ([0] class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> items,
+             [1] class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> q,
+             [2] int32 e,
+             [3] class [System.Core]System.Linq.ParallelQuery`1<int32> items2,
+             [4] class [mscorlib]System.Collections.Generic.IEnumerator`1<int32> CS$5$0000,
+             [5] bool CS$4$0001)
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  ldc.i4.s   100
+    IL_0004:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> [System.Core]System.Linq.Enumerable::Range(int32,
+                                                                                                                                    int32)
+    IL_0009:  stloc.0
+    IL_000a:  ldloc.0
+    IL_000b:  ldsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate3'
+    IL_0010:  brtrue.s   IL_0025
+
+    IL_0012:  ldnull
+    IL_0013:  ldftn      bool Program::'<AsOrdered>b__0'(int32)
+    IL_0019:  newobj     instance void class [mscorlib]System.Func`2<int32,bool>::.ctor(object,
+                                                                                        native int)
+    IL_001e:  stsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate3'
+    IL_0023:  br.s       IL_0025
+
+    IL_0025:  ldsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate3'
+    IL_002a:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0> [System.Core]System.Linq.Enumerable::Where<int32>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                         class [mscorlib]System.Func`2<!!0,bool>)
+    IL_002f:  stloc.1
+    IL_0030:  nop
+    IL_0031:  ldloc.1
+    IL_0032:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<int32>::GetEnumerator()
+    IL_0037:  stloc.s    CS$5$0000
+    .try
+    {
+      IL_0039:  br.s       IL_004c
+
+      IL_003b:  ldloc.s    CS$5$0000
+      IL_003d:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<int32>::get_Current()
+      IL_0042:  stloc.2
+      IL_0043:  nop
+      IL_0044:  ldloc.2
+      IL_0045:  call       void [mscorlib]System.Console::WriteLine(int32)
+      IL_004a:  nop
+      IL_004b:  nop
+      IL_004c:  ldloc.s    CS$5$0000
+      IL_004e:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0053:  stloc.s    CS$4$0001
+      IL_0055:  ldloc.s    CS$4$0001
+      IL_0057:  brtrue.s   IL_003b
+
+      IL_0059:  leave.s    IL_006f
+
+    }  // end .try
+    finally
+    {
+      IL_005b:  ldloc.s    CS$5$0000
+      IL_005d:  ldnull
+      IL_005e:  ceq
+      IL_0060:  stloc.s    CS$4$0001
+      IL_0062:  ldloc.s    CS$4$0001
+      IL_0064:  brtrue.s   IL_006e
+
+      IL_0066:  ldloc.s    CS$5$0000
+      IL_0068:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_006d:  nop
+      IL_006e:  endfinally
+    }  // end handler
+    IL_006f:  nop
+    IL_0070:  ldstr      "Complete: Sequential"
+    IL_0075:  call       void [mscorlib]System.Console::Write(string)
+    IL_007a:  nop
+    IL_007b:  call       string [mscorlib]System.Console::ReadLine()
+    IL_0080:  pop
+    IL_0081:  ldc.i4.1
+    IL_0082:  ldc.i4.s   100
+    IL_0084:  call       class [System.Core]System.Linq.ParallelQuery`1<int32> [System.Core]System.Linq.ParallelEnumerable::Range(int32,
+                                                                                                                                  int32)
+    IL_0089:  stloc.3
+    IL_008a:  ldloc.3
+    IL_008b:  ldsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate4'
+    IL_0090:  brtrue.s   IL_00a5
+
+    IL_0092:  ldnull
+    IL_0093:  ldftn      bool Program::'<AsOrdered>b__1'(int32)
+    IL_0099:  newobj     instance void class [mscorlib]System.Func`2<int32,bool>::.ctor(object,
+                                                                                        native int)
+    IL_009e:  stsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate4'
+    IL_00a3:  br.s       IL_00a5
+
+    IL_00a5:  ldsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate4'
+    IL_00aa:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::Where<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                       class [mscorlib]System.Func`2<!!0,bool>)
+    IL_00af:  stloc.1
+    IL_00b0:  nop
+    IL_00b1:  ldloc.1
+    IL_00b2:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<int32>::GetEnumerator()
+    IL_00b7:  stloc.s    CS$5$0000
+    .try
+    {
+      IL_00b9:  br.s       IL_00cc
+
+      IL_00bb:  ldloc.s    CS$5$0000
+      IL_00bd:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<int32>::get_Current()
+      IL_00c2:  stloc.2
+      IL_00c3:  nop
+      IL_00c4:  ldloc.2
+      IL_00c5:  call       void [mscorlib]System.Console::WriteLine(int32)
+      IL_00ca:  nop
+      IL_00cb:  nop
+      IL_00cc:  ldloc.s    CS$5$0000
+      IL_00ce:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_00d3:  stloc.s    CS$4$0001
+      IL_00d5:  ldloc.s    CS$4$0001
+      IL_00d7:  brtrue.s   IL_00bb
+
+      IL_00d9:  leave.s    IL_00ef
+
+    }  // end .try
+    finally
+    {
+      IL_00db:  ldloc.s    CS$5$0000
+      IL_00dd:  ldnull
+      IL_00de:  ceq
+      IL_00e0:  stloc.s    CS$4$0001
+      IL_00e2:  ldloc.s    CS$4$0001
+      IL_00e4:  brtrue.s   IL_00ee
+
+      IL_00e6:  ldloc.s    CS$5$0000
+      IL_00e8:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_00ed:  nop
+      IL_00ee:  endfinally
+    }  // end handler
+    IL_00ef:  nop
+    IL_00f0:  ldstr      "Complete: Parallel"
+    IL_00f5:  call       void [mscorlib]System.Console::Write(string)
+    IL_00fa:  nop
+    IL_00fb:  call       string [mscorlib]System.Console::ReadLine()
+    IL_0100:  pop
+    IL_0101:  ldloc.3
+    IL_0102:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::AsOrdered<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>)
+    IL_0107:  ldsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate5'
+    IL_010c:  brtrue.s   IL_0121
+
+    IL_010e:  ldnull
+    IL_010f:  ldftn      bool Program::'<AsOrdered>b__2'(int32)
+    IL_0115:  newobj     instance void class [mscorlib]System.Func`2<int32,bool>::.ctor(object,
+                                                                                        native int)
+    IL_011a:  stsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate5'
+    IL_011f:  br.s       IL_0121
+
+    IL_0121:  ldsfld     class [mscorlib]System.Func`2<int32,bool> Program::'CS$<>9__CachedAnonymousMethodDelegate5'
+    IL_0126:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::Where<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                       class [mscorlib]System.Func`2<!!0,bool>)
+    IL_012b:  stloc.1
+    IL_012c:  nop
+    IL_012d:  ldloc.1
+    IL_012e:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<int32>::GetEnumerator()
+    IL_0133:  stloc.s    CS$5$0000
+    .try
+    {
+      IL_0135:  br.s       IL_0148
+
+      IL_0137:  ldloc.s    CS$5$0000
+      IL_0139:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<int32>::get_Current()
+      IL_013e:  stloc.2
+      IL_013f:  nop
+      IL_0140:  ldloc.2
+      IL_0141:  call       void [mscorlib]System.Console::WriteLine(int32)
+      IL_0146:  nop
+      IL_0147:  nop
+      IL_0148:  ldloc.s    CS$5$0000
+      IL_014a:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_014f:  stloc.s    CS$4$0001
+      IL_0151:  ldloc.s    CS$4$0001
+      IL_0153:  brtrue.s   IL_0137
+
+      IL_0155:  leave.s    IL_016b
+
+    }  // end .try
+    finally
+    {
+      IL_0157:  ldloc.s    CS$5$0000
+      IL_0159:  ldnull
+      IL_015a:  ceq
+      IL_015c:  stloc.s    CS$4$0001
+      IL_015e:  ldloc.s    CS$4$0001
+      IL_0160:  brtrue.s   IL_016a
+
+      IL_0162:  ldloc.s    CS$5$0000
+      IL_0164:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_0169:  nop
+      IL_016a:  endfinally
+    }  // end handler
+    IL_016b:  nop
+    IL_016c:  ldstr      "Complete: Parallel with Ordering"
+    IL_0171:  call       void [mscorlib]System.Console::Write(string)
+    IL_0176:  nop
+    IL_0177:  call       string [mscorlib]System.Console::ReadLine()
+    IL_017c:  pop
+    IL_017d:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\PlinqKnobs\PlinqKnobs_CSharp\Program.cs" startline="71" endline="109"><![CDATA[
+  {
+    // Code size       292 (0x124)
+    .maxstack  4
+    .locals init ([0] class [System.Core]System.Linq.ParallelQuery`1<int32> items,
+             [1] class [System.Core]System.Linq.ParallelQuery`1<int32> q,
+             [2] int32 e,
+             [3] class [mscorlib]System.Collections.Generic.IEnumerator`1<int32> CS$5$0000,
+             [4] bool CS$4$0001)
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  ldc.i4     0x3e8
+    IL_0007:  call       class [System.Core]System.Linq.ParallelQuery`1<int32> [System.Core]System.Linq.ParallelEnumerable::Range(int32,
+                                                                                                                                  int32)
+    IL_000c:  stloc.0
+    IL_000d:  ldloc.0
+    IL_000e:  ldsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegate7'
+    IL_0013:  brtrue.s   IL_0028
+
+    IL_0015:  ldnull
+    IL_0016:  ldftn      int32 Program::'<WithMergeOptions>b__6'(int32)
+    IL_001c:  newobj     instance void class [mscorlib]System.Func`2<int32,int32>::.ctor(object,
+                                                                                         native int)
+    IL_0021:  stsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegate7'
+    IL_0026:  br.s       IL_0028
+
+    IL_0028:  ldsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegate7'
+    IL_002d:  call       class [System.Core]System.Linq.ParallelQuery`1<!!1> [System.Core]System.Linq.ParallelEnumerable::Select<int32,int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                              class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_0032:  stloc.1
+    IL_0033:  nop
+    IL_0034:  ldloc.1
+    IL_0035:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [System.Core]System.Linq.ParallelQuery`1<int32>::GetEnumerator()
+    IL_003a:  stloc.3
+    .try
+    {
+      IL_003b:  br.s       IL_004d
+
+      IL_003d:  ldloc.3
+      IL_003e:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<int32>::get_Current()
+      IL_0043:  stloc.2
+      IL_0044:  nop
+      IL_0045:  ldloc.2
+      IL_0046:  call       void [mscorlib]System.Console::WriteLine(int32)
+      IL_004b:  nop
+      IL_004c:  nop
+      IL_004d:  ldloc.3
+      IL_004e:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0053:  stloc.s    CS$4$0001
+      IL_0055:  ldloc.s    CS$4$0001
+      IL_0057:  brtrue.s   IL_003d
+
+      IL_0059:  leave.s    IL_006d
+
+    }  // end .try
+    finally
+    {
+      IL_005b:  ldloc.3
+      IL_005c:  ldnull
+      IL_005d:  ceq
+      IL_005f:  stloc.s    CS$4$0001
+      IL_0061:  ldloc.s    CS$4$0001
+      IL_0063:  brtrue.s   IL_006c
+
+      IL_0065:  ldloc.3
+      IL_0066:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_006b:  nop
+      IL_006c:  endfinally
+    }  // end handler
+    IL_006d:  nop
+    IL_006e:  ldstr      "Complete: Auto buffered"
+    IL_0073:  call       void [mscorlib]System.Console::Write(string)
+    IL_0078:  nop
+    IL_0079:  call       string [mscorlib]System.Console::ReadLine()
+    IL_007e:  pop
+    IL_007f:  nop
+    IL_0080:  ldloc.1
+    IL_0081:  ldc.i4.3
+    IL_0082:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::WithMergeOptions<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                  valuetype [System.Core]System.Linq.ParallelMergeOptions)
+    IL_0087:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [System.Core]System.Linq.ParallelQuery`1<int32>::GetEnumerator()
+    IL_008c:  stloc.3
+    .try
+    {
+      IL_008d:  br.s       IL_009f
+
+      IL_008f:  ldloc.3
+      IL_0090:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<int32>::get_Current()
+      IL_0095:  stloc.2
+      IL_0096:  nop
+      IL_0097:  ldloc.2
+      IL_0098:  call       void [mscorlib]System.Console::WriteLine(int32)
+      IL_009d:  nop
+      IL_009e:  nop
+      IL_009f:  ldloc.3
+      IL_00a0:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_00a5:  stloc.s    CS$4$0001
+      IL_00a7:  ldloc.s    CS$4$0001
+      IL_00a9:  brtrue.s   IL_008f
+
+      IL_00ab:  leave.s    IL_00bf
+
+    }  // end .try
+    finally
+    {
+      IL_00ad:  ldloc.3
+      IL_00ae:  ldnull
+      IL_00af:  ceq
+      IL_00b1:  stloc.s    CS$4$0001
+      IL_00b3:  ldloc.s    CS$4$0001
+      IL_00b5:  brtrue.s   IL_00be
+
+      IL_00b7:  ldloc.3
+      IL_00b8:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_00bd:  nop
+      IL_00be:  endfinally
+    }  // end handler
+    IL_00bf:  nop
+    IL_00c0:  ldstr      "Complete: Fully buffered"
+    IL_00c5:  call       void [mscorlib]System.Console::Write(string)
+    IL_00ca:  nop
+    IL_00cb:  call       string [mscorlib]System.Console::ReadLine()
+    IL_00d0:  pop
+    IL_00d1:  nop
+    IL_00d2:  ldloc.1
+    IL_00d3:  ldc.i4.1
+    IL_00d4:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::WithMergeOptions<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                  valuetype [System.Core]System.Linq.ParallelMergeOptions)
+    IL_00d9:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [System.Core]System.Linq.ParallelQuery`1<int32>::GetEnumerator()
+    IL_00de:  stloc.3
+    .try
+    {
+      IL_00df:  br.s       IL_00f1
+
+      IL_00e1:  ldloc.3
+      IL_00e2:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<int32>::get_Current()
+      IL_00e7:  stloc.2
+      IL_00e8:  nop
+      IL_00e9:  ldloc.2
+      IL_00ea:  call       void [mscorlib]System.Console::WriteLine(int32)
+      IL_00ef:  nop
+      IL_00f0:  nop
+      IL_00f1:  ldloc.3
+      IL_00f2:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_00f7:  stloc.s    CS$4$0001
+      IL_00f9:  ldloc.s    CS$4$0001
+      IL_00fb:  brtrue.s   IL_00e1
+
+      IL_00fd:  leave.s    IL_0111
+
+    }  // end .try
+    finally
+    {
+      IL_00ff:  ldloc.3
+      IL_0100:  ldnull
+      IL_0101:  ceq
+      IL_0103:  stloc.s    CS$4$0001
+      IL_0105:  ldloc.s    CS$4$0001
+      IL_0107:  brtrue.s   IL_0110
+
+      IL_0109:  ldloc.3
+      IL_010a:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_010f:  nop
+      IL_0110:  endfinally
+    }  // end handler
+    IL_0111:  nop
+    IL_0112:  ldstr      "Complete: Not buffered"
+    IL_0117:  call       void [mscorlib]System.Console::Write(string)
+    IL_011c:  nop
+    IL_011d:  call       string [mscorlib]System.Console::ReadLine()
+    IL_0122:  pop
+    IL_0123:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\PlinqKnobs\PlinqKnobs_CSharp\Program.cs" startline="110" endline="144"><![CDATA[
+  {
+    // Code size       206 (0xce)
+    .maxstack  4
+    .locals init ([0] class [System.Core]System.Linq.ParallelQuery`1<int32> items,
+             [1] class [System.Core]System.Linq.ParallelQuery`1<int32> q,
+             [2] int32 e,
+             [3] class Program/'<>c__DisplayClassb' 'CS$<>8__localsc',
+             [4] class [mscorlib]System.Collections.Generic.IEnumerator`1<int32> CS$5$0000,
+             [5] bool CS$4$0001)
+    IL_0000:  newobj     instance void Program/'<>c__DisplayClassb'::.ctor()
+    IL_0005:  stloc.3
+    IL_0006:  nop
+    IL_0007:  ldc.i4.1
+    IL_0008:  ldc.i4     0x3e8
+    IL_000d:  call       class [System.Core]System.Linq.ParallelQuery`1<int32> [System.Core]System.Linq.ParallelEnumerable::Range(int32,
+                                                                                                                                  int32)
+    IL_0012:  stloc.0
+    IL_0013:  ldloc.0
+    IL_0014:  ldc.i4.1
+    IL_0015:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::WithMergeOptions<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                  valuetype [System.Core]System.Linq.ParallelMergeOptions)
+    IL_001a:  ldsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegatea'
+    IL_001f:  brtrue.s   IL_0034
+
+    IL_0021:  ldnull
+    IL_0022:  ldftn      int32 Program::'<WithCancellation>b__8'(int32)
+    IL_0028:  newobj     instance void class [mscorlib]System.Func`2<int32,int32>::.ctor(object,
+                                                                                         native int)
+    IL_002d:  stsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegatea'
+    IL_0032:  br.s       IL_0034
+
+    IL_0034:  ldsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegatea'
+    IL_0039:  call       class [System.Core]System.Linq.ParallelQuery`1<!!1> [System.Core]System.Linq.ParallelEnumerable::Select<int32,int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                              class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_003e:  stloc.1
+    IL_003f:  ldloc.3
+    IL_0040:  newobj     instance void [mscorlib]System.Threading.CancellationTokenSource::.ctor()
+    IL_0045:  stfld      class [mscorlib]System.Threading.CancellationTokenSource Program/'<>c__DisplayClassb'::cts
+    IL_004a:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_004f:  ldloc.3
+    IL_0050:  ldftn      instance void Program/'<>c__DisplayClassb'::'<WithCancellation>b__9'()
+    IL_0056:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_005b:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action)
+    IL_0060:  pop
+    .try
+    {
+      IL_0061:  nop
+      IL_0062:  nop
+      IL_0063:  ldloc.1
+      IL_0064:  ldloc.3
+      IL_0065:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource Program/'<>c__DisplayClassb'::cts
+      IL_006a:  callvirt   instance valuetype [mscorlib]System.Threading.CancellationToken [mscorlib]System.Threading.CancellationTokenSource::get_Token()
+      IL_006f:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::WithCancellation<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                    valuetype [mscorlib]System.Threading.CancellationToken)
+      IL_0074:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [System.Core]System.Linq.ParallelQuery`1<int32>::GetEnumerator()
+      IL_0079:  stloc.s    CS$5$0000
+      .try
+      {
+        IL_007b:  br.s       IL_008e
+
+        IL_007d:  ldloc.s    CS$5$0000
+        IL_007f:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<int32>::get_Current()
+        IL_0084:  stloc.2
+        IL_0085:  nop
+        IL_0086:  ldloc.2
+        IL_0087:  call       void [mscorlib]System.Console::WriteLine(int32)
+        IL_008c:  nop
+        IL_008d:  nop
+        IL_008e:  ldloc.s    CS$5$0000
+        IL_0090:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+        IL_0095:  stloc.s    CS$4$0001
+        IL_0097:  ldloc.s    CS$4$0001
+        IL_0099:  brtrue.s   IL_007d
+
+        IL_009b:  leave.s    IL_00b1
+
+      }  // end .try
+      finally
+      {
+        IL_009d:  ldloc.s    CS$5$0000
+        IL_009f:  ldnull
+        IL_00a0:  ceq
+        IL_00a2:  stloc.s    CS$4$0001
+        IL_00a4:  ldloc.s    CS$4$0001
+        IL_00a6:  brtrue.s   IL_00b0
+
+        IL_00a8:  ldloc.s    CS$5$0000
+        IL_00aa:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+        IL_00af:  nop
+        IL_00b0:  endfinally
+      }  // end handler
+      IL_00b1:  nop
+      IL_00b2:  nop
+      IL_00b3:  leave.s    IL_00c5
+
+    }  // end .try
+    catch [mscorlib]System.OperationCanceledException 
+    {
+      IL_00b5:  pop
+      IL_00b6:  nop
+      IL_00b7:  ldstr      "Cancelled!"
+      IL_00bc:  call       void [mscorlib]System.Console::WriteLine(string)
+      IL_00c1:  nop
+      IL_00c2:  nop
+      IL_00c3:  leave.s    IL_00c5
+
+    }  // end handler
+    IL_00c5:  nop
+    IL_00c6:  call       string [mscorlib]System.Console::ReadLine()
+    IL_00cb:  pop
+    IL_00cc:  nop
+    IL_00cd:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\PlinqKnobs\PlinqKnobs_CSharp\Program.cs" startline="145" endline="175"><![CDATA[
+  {
+    // Code size       211 (0xd3)
+    .maxstack  4
+    .locals init ([0] class [System.Core]System.Linq.ParallelQuery`1<int32> items,
+             [1] class [System]System.Diagnostics.Stopwatch sw)
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  ldc.i4     0xc8
+    IL_0007:  call       class [System.Core]System.Linq.ParallelQuery`1<int32> [System.Core]System.Linq.ParallelEnumerable::Range(int32,
+                                                                                                                                  int32)
+    IL_000c:  stloc.0
+    IL_000d:  newobj     instance void [System]System.Diagnostics.Stopwatch::.ctor()
+    IL_0012:  stloc.1
+    IL_0013:  ldloc.1
+    IL_0014:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Start()
+    IL_0019:  nop
+    IL_001a:  ldstr      "Default DOP: "
+    IL_001f:  call       void [mscorlib]System.Console::Write(string)
+    IL_0024:  nop
+    IL_0025:  ldloc.0
+    IL_0026:  ldsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegatef'
+    IL_002b:  brtrue.s   IL_0040
+
+    IL_002d:  ldnull
+    IL_002e:  ldftn      int32 Program::'<WithDegreeOfParallelism>b__d'(int32)
+    IL_0034:  newobj     instance void class [mscorlib]System.Func`2<int32,int32>::.ctor(object,
+                                                                                         native int)
+    IL_0039:  stsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegatef'
+    IL_003e:  br.s       IL_0040
+
+    IL_0040:  ldsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegatef'
+    IL_0045:  call       float64 [System.Core]System.Linq.ParallelEnumerable::Average<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                             class [mscorlib]System.Func`2<!!0,int32>)
+    IL_004a:  pop
+    IL_004b:  ldloc.1
+    IL_004c:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Stop()
+    IL_0051:  nop
+    IL_0052:  ldloc.1
+    IL_0053:  callvirt   instance int64 [System]System.Diagnostics.Stopwatch::get_ElapsedMilliseconds()
+    IL_0058:  call       void [mscorlib]System.Console::WriteLine(int64)
+    IL_005d:  nop
+    IL_005e:  ldstr      "Complete: Default DOP"
+    IL_0063:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0068:  nop
+    IL_0069:  ldloc.1
+    IL_006a:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Reset()
+    IL_006f:  nop
+    IL_0070:  ldloc.1
+    IL_0071:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Start()
+    IL_0076:  nop
+    IL_0077:  ldstr      "DOP = 2: "
+    IL_007c:  call       void [mscorlib]System.Console::Write(string)
+    IL_0081:  nop
+    IL_0082:  ldloc.0
+    IL_0083:  ldc.i4.2
+    IL_0084:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::WithDegreeOfParallelism<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                         int32)
+    IL_0089:  ldsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegate10'
+    IL_008e:  brtrue.s   IL_00a3
+
+    IL_0090:  ldnull
+    IL_0091:  ldftn      int32 Program::'<WithDegreeOfParallelism>b__e'(int32)
+    IL_0097:  newobj     instance void class [mscorlib]System.Func`2<int32,int32>::.ctor(object,
+                                                                                         native int)
+    IL_009c:  stsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegate10'
+    IL_00a1:  br.s       IL_00a3
+
+    IL_00a3:  ldsfld     class [mscorlib]System.Func`2<int32,int32> Program::'CS$<>9__CachedAnonymousMethodDelegate10'
+    IL_00a8:  call       float64 [System.Core]System.Linq.ParallelEnumerable::Average<int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                             class [mscorlib]System.Func`2<!!0,int32>)
+    IL_00ad:  pop
+    IL_00ae:  ldloc.1
+    IL_00af:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Stop()
+    IL_00b4:  nop
+    IL_00b5:  ldloc.1
+    IL_00b6:  callvirt   instance int64 [System]System.Diagnostics.Stopwatch::get_ElapsedMilliseconds()
+    IL_00bb:  call       void [mscorlib]System.Console::WriteLine(int64)
+    IL_00c0:  nop
+    IL_00c1:  ldstr      "Complete: DOP = 2"
+    IL_00c6:  call       void [mscorlib]System.Console::Write(string)
+    IL_00cb:  nop
+    IL_00cc:  call       string [mscorlib]System.Console::ReadLine()
+    IL_00d1:  pop
+    IL_00d2:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\PlinqKnobs\PlinqKnobs_CSharp\Program.cs" startline="176" endline="182"><![CDATA[
+  {
+    // Code size       17 (0x11)
+    .maxstack  2
+    .locals init ([0] int32 CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  ldc.i4.s   20
+    IL_0003:  call       void [mscorlib]System.Threading.Thread::Sleep(int32)
+    IL_0008:  nop
+    IL_0009:  ldarg.0
+    IL_000a:  ldc.i4.2
+    IL_000b:  mul
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\PlinqKnobs\PlinqKnobs_CSharp\Program.cs" startline="183" endline="188"><![CDATA[
+  {
+    // Code size       20 (0x14)
+    .maxstack  2
+    .locals init ([0] int32 CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  ldc.i4     0x4c4b40
+    IL_0006:  call       void [mscorlib]System.Threading.Thread::SpinWait(int32)
+    IL_000b:  nop
+    IL_000c:  ldarg.0
+    IL_000d:  ldc.i4.2
+    IL_000e:  mul
+    IL_000f:  stloc.0
+    IL_0010:  br.s       IL_0012
+
+    IL_0012:  ldloc.0
+    IL_0013:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\PlinqKnobs\PlinqKnobs_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\PlinqKnobs\PlinqKnobs_CSharp\Program.cs" startline="32" endline="190"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  2
+    .locals init ([0] bool CS$1$0000)
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.2
+    IL_0002:  rem
+    IL_0003:  ldc.i4.0
+    IL_0004:  ceq
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\PlinqKnobs\PlinqKnobs_CSharp\Program.cs" startline="46" endline="190"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  2
+    .locals init ([0] bool CS$1$0000)
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.2
+    IL_0002:  rem
+    IL_0003:  ldc.i4.0
+    IL_0004:  ceq
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\PlinqKnobs\PlinqKnobs_CSharp\Program.cs" startline="59" endline="190"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  2
+    .locals init ([0] bool CS$1$0000)
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.2
+    IL_0002:  rem
+    IL_0003:  ldc.i4.0
+    IL_0004:  ceq
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\PlinqKnobs\PlinqKnobs_CSharp\Program.cs" startline="77" endline="190"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] int32 CS$1$0000)
+    IL_0000:  ldarg.0
+    IL_0001:  call       int32 Program::DoWork(int32)
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\PlinqKnobs\PlinqKnobs_CSharp\Program.cs" startline="116" endline="190"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] int32 CS$1$0000)
+    IL_0000:  ldarg.0
+    IL_0001:  call       int32 Program::DoWork(int32)
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\PlinqKnobs\PlinqKnobs_CSharp\Program.cs" startline="155" endline="190"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] int32 CS$1$0000)
+    IL_0000:  ldarg.0
+    IL_0001:  call       int32 Program::DoWork2(int32)
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\PlinqKnobs\PlinqKnobs_CSharp\Program.cs" startline="168" endline="190"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] int32 CS$1$0000)
+    IL_0000:  ldarg.0
+    IL_0001:  call       int32 Program::DoWork2(int32)
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+</source_elements></project>

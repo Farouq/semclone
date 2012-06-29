@@ -1,0 +1,5 @@
+C:\Users\faa634\Desktop\book codes\F#\Code\List Processing\bin\Debug\List_Processing.dll
+C:\Users\faa634\Desktop\book codes\F#\Code\List Processing\bin\Debug\List_Processing.pdb
+C:\Users\faa634\Desktop\book codes\F#\Code\List Processing\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\F#\Code\List Processing\obj\Debug\List_Processing.dll
+C:\Users\faa634\Desktop\book codes\F#\Code\List Processing\obj\Debug\List_Processing.pdb

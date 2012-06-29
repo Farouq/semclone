@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Code">
+</Property><Property Name="Solution File" Value="C:\Users\faa634\Desktop\book codes\F#\Code\Code.sln">
+</Property><Property Name="Date" Value="March-31-12">
+</Property><Property Name="Time" Value="21:30 PM">
+</Property></Properties><Event ErrorLevel="3" Project="Basics" Source="Basics\Basics.fsproj" Description="Converted">
+</Event><Event ErrorLevel="3" Project="Objects" Source="Objects\Objects.fsproj" Description="Converted">
+</Event><Event ErrorLevel="3" Project="XMLActivePatterns" Source="Ecosystem\XMLActivePatterns\XMLActivePatterns.fsproj" Description="Converted">
+</Event><Event ErrorLevel="3" Project="XML" Source="Ecosystem\XML\XML.fsproj" Description="Converted">
+</Event><Event ErrorLevel="3" Project="Data and DataTypes" Source="Data and DataTypes\Data and DataTypes.fsproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="CSharp - Data and DataTypes" Source="Data and DataTypes\CSharp - Data and DataTypes\CSharp - Data and DataTypes.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="CSharp - Data and DataTypes" Source="Data and DataTypes\CSharp - Data and DataTypes\CSharp - Data and DataTypes.csproj" Description="Converted">
+</Event><Event ErrorLevel="3" Project="Reflection" Source="Ecosystem\Reflection\Reflection.fsproj" Description="Converted">
+</Event><Event ErrorLevel="3" Project="Functions" Source="Functions\Functions.fsproj" Description="Converted">
+</Event><Event ErrorLevel="3" Project="List Processing" Source="List Processing\List Processing.fsproj" Description="Converted">
+</Event><Event ErrorLevel="3" Project="Composition and Pipelining" Source="Composition and Pipelining\Composition and Pipelining.fsproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Code.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Code.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="CSharp - Data and DataTypes" Source="Data and DataTypes\CSharp - Data and DataTypes\CSharp - Data and DataTypes.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

@@ -1,0 +1,5 @@
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_FSharp\bin\Debug\Raytracer_FSharp.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_FSharp\bin\Debug\Raytracer_FSharp.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_FSharp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_FSharp\obj\Debug\Raytracer_FSharp.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Raytracer\Raytracer_FSharp\obj\Debug\Raytracer_FSharp.pdb

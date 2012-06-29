@@ -1,0 +1,28 @@
+C:\Users\stoub\Desktop\Based on Main0702\Reversi\Reversi\bin\Debug\Reversi.exe.config
+C:\Users\stoub\Desktop\Based on Main0702\Reversi\Reversi\bin\Debug\Reversi.exe
+C:\Users\stoub\Desktop\Based on Main0702\Reversi\Reversi\bin\Debug\Reversi.pdb
+C:\Users\stoub\Desktop\Based on Main0702\Reversi\Reversi\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\stoub\Desktop\Based on Main0702\Reversi\Reversi\obj\Debug\Window1.baml
+C:\Users\stoub\Desktop\Based on Main0702\Reversi\Reversi\obj\Debug\Window1.g.cs
+C:\Users\stoub\Desktop\Based on Main0702\Reversi\Reversi\obj\Debug\App.g.cs
+C:\Users\stoub\Desktop\Based on Main0702\Reversi\Reversi\obj\Debug\Reversi_MarkupCompile.cache
+C:\Users\stoub\Desktop\Based on Main0702\Reversi\Reversi\obj\Debug\Reversi.g.resources
+C:\Users\stoub\Desktop\Based on Main0702\Reversi\Reversi\obj\Debug\Reversi.Properties.Resources.resources
+C:\Users\stoub\Desktop\Based on Main0702\Reversi\Reversi\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\stoub\Desktop\Based on Main0702\Reversi\Reversi\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\stoub\Desktop\Based on Main0702\Reversi\Reversi\obj\Debug\Reversi.exe
+C:\Users\stoub\Desktop\Based on Main0702\Reversi\Reversi\obj\Debug\Reversi.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Reversi\Reversi\bin\Debug\Reversi.exe.config
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Reversi\Reversi\bin\Debug\Reversi.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Reversi\Reversi\bin\Debug\Reversi.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Reversi\Reversi\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Reversi\Reversi\obj\Debug\Window1.baml
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Reversi\Reversi\obj\Debug\Window1.g.cs
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Reversi\Reversi\obj\Debug\App.g.cs
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Reversi\Reversi\obj\Debug\Reversi_MarkupCompile.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Reversi\Reversi\obj\Debug\Reversi.g.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Reversi\Reversi\obj\Debug\Reversi.Properties.Resources.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Reversi\Reversi\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Reversi\Reversi\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Reversi\Reversi\obj\Debug\Reversi.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Reversi\Reversi\obj\Debug\Reversi.pdb

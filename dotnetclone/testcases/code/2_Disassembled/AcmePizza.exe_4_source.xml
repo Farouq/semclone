@@ -1,0 +1,1100 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\obj\Debug\Application.g.vb" startline="52" endline="68"><![CDATA[
+         Public Sub InitializeComponent()
+             If _contentLoaded Then
+                 Return
+             End If
+             _contentLoaded = true
+             
+             #ExternalSource("..\..\Application.xaml",5)
+             Me.StartupUri = New System.Uri("Window1.xaml", System.UriKind.Relative)
+             
+             #End ExternalSource
+             Dim resourceLocater As System.Uri = New System.Uri("/AcmePizza;component/application.xaml", System.UriKind.Relative)
+             
+             #ExternalSource("..\..\Application.xaml",1)
+             System.Windows.Application.LoadComponent(Me, resourceLocater)
+             
+             #End ExternalSource
+         End Sub
+         
+         '''<summary>
+         '''Application Entry Point.
+         '''</summary>
+         <System.STAThreadAttribute(),  _
+          System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+         Public Shared Sub Main()
+             Dim app As AcmePizza.App = New AcmePizza.App()
+             app.InitializeComponent
+             app.Run
+         End Sub
+     End Class
+ End Namespace
+ 
+                 Return
+             End If
+             _contentLoaded = true
+             
+             #ExternalSource("..\..\Application.xaml",5)
+             Me.StartupUri = New System.Uri("Window1.xaml", System.UriKind.Relative)
+             
+             #End ExternalSource
+             Dim resourceLocater As System.Uri = New System.Uri("/AcmePizza;component/application.xaml", System.UriKind.Relative)
+             
+             #ExternalSource("..\..\Application.xaml",1)
+             System.Windows.Application.LoadComponent(Me, resourceLocater)
+             
+             #End ExternalSource
+         End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\obj\Debug\Application.g.vb" startline="69" endline="79"><![CDATA[
+         
+         '''<summary>
+         '''Application Entry Point.
+         '''</summary>
+         <System.STAThreadAttribute(),  _
+          System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+         Public Shared Sub Main()
+             Dim app As AcmePizza.App = New AcmePizza.App()
+             app.InitializeComponent
+             app.Run
+         End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\obj\Debug\Application.g.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\obj\Debug\Application.g.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\CurrentOrderWindow.xaml.vb" startline="19" endline="25"><![CDATA[
+ 		Public Sub New(ByVal order As PizzaOrder)
+ 			InitializeComponent()
+             ' Show the current order by binding to a collection of one.
+ 			m_currentOrder = New ObservableCollection(Of PizzaOrder)()
+ 			Me.DataContext = m_currentOrder
+ 			m_currentOrder.Add(order)
+ 		End Sub
+ 
+ 		Private Sub Image_MouseDown(ByVal sender As Object, ByVal e As MouseButtonEventArgs)
+ 			Me.Close()
+ 		End Sub
+ 
+ 	End Class
+ End Namespace
+ 			InitializeComponent()
+             ' Show the current order by binding to a collection of one.
+ 			m_currentOrder = New ObservableCollection(Of PizzaOrder)()
+ 			Me.DataContext = m_currentOrder
+ 			m_currentOrder.Add(order)
+ 		End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\CurrentOrderWindow.xaml.vb" startline="26" endline="29"><![CDATA[
+ 
+ 		Private Sub Image_MouseDown(ByVal sender As Object, ByVal e As MouseButtonEventArgs)
+ 			Me.Close()
+ 		End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\CurrentOrderWindow.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\CurrentOrderWindow.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\obj\Debug\CurrentOrderWindow.g.vb" startline="61" endline="72"><![CDATA[
+         Public Sub InitializeComponent() Implements System.Windows.Markup.IComponentConnector.InitializeComponent
+             If _contentLoaded Then
+                 Return
+             End If
+             _contentLoaded = true
+             Dim resourceLocater As System.Uri = New System.Uri("/AcmePizza;component/currentorderwindow.xaml", System.UriKind.Relative)
+             
+             #ExternalSource("..\..\CurrentOrderWindow.xaml",1)
+             System.Windows.Application.LoadComponent(Me, resourceLocater)
+             
+             #End ExternalSource
+         End Sub
+         
+         <System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+          System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never),  _
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800
+         Sub System_Windows_Markup_IComponentConnector_Connect(ByVal connectionId As Integer, ByVal target As Object) Implements System.Windows.Markup.IComponentConnector.Connect
+             If (connectionId = 1) Then
+                 Me.currOrder = CType(target,System.Windows.Controls.ItemsControl)
+                 Return
+             End If
+             If (connectionId = 2) Then
+                 
+                 #ExternalSource("..\..\CurrentOrderWindow.xaml",29)
+                 AddHandler CType(target,System.Windows.Controls.Image).MouseDown, New System.Windows.Input.MouseButtonEventHandler(AddressOf Me.Image_MouseDown)
+                 
+                 #End ExternalSource
+                 Return
+             End If
+             Me._contentLoaded = true
+         End Sub
+     End Class
+ End Namespace
+ 
+                 Return
+             End If
+             _contentLoaded = true
+             Dim resourceLocater As System.Uri = New System.Uri("/AcmePizza;component/currentorderwindow.xaml", System.UriKind.Relative)
+             
+             #ExternalSource("..\..\CurrentOrderWindow.xaml",1)
+             System.Windows.Application.LoadComponent(Me, resourceLocater)
+             
+             #End ExternalSource
+         End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\obj\Debug\CurrentOrderWindow.g.vb" startline="73" endline="93"><![CDATA[
+         
+         <System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+          System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never),  _
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800
+         Sub System_Windows_Markup_IComponentConnector_Connect(ByVal connectionId As Integer, ByVal target As Object) Implements System.Windows.Markup.IComponentConnector.Connect
+             If (connectionId = 1) Then
+                 Me.currOrder = CType(target,System.Windows.Controls.ItemsControl)
+                 Return
+             End If
+             If (connectionId = 2) Then
+                 
+                 #ExternalSource("..\..\CurrentOrderWindow.xaml",29)
+                 AddHandler CType(target,System.Windows.Controls.Image).MouseDown, New System.Windows.Input.MouseButtonEventHandler(AddressOf Me.Image_MouseDown)
+                 
+                 #End ExternalSource
+                 Return
+             End If
+             Me._contentLoaded = true
+         End Sub
+     End Class
+ End Namespace
+ 
+                 Me.currOrder = CType(target,System.Windows.Controls.ItemsControl)
+                 Return
+             End If
+             If (connectionId = 2) Then
+                 
+                 #ExternalSource("..\..\CurrentOrderWindow.xaml",29)
+                 AddHandler CType(target,System.Windows.Controls.Image).MouseDown, New System.Windows.Input.MouseButtonEventHandler(AddressOf Me.Image_MouseDown)
+                 
+                 #End ExternalSource
+                 Return
+             End If
+             Me._contentLoaded = true
+         End Sub
+     End Class
+ End Namespace
+ 
+                 AddHandler CType(target,System.Windows.Controls.Image).MouseDown, New System.Windows.Input.MouseButtonEventHandler(AddressOf Me.Image_MouseDown)
+                 
+                 #End ExternalSource
+                 Return
+             End If
+             Me._contentLoaded = true
+         End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\My Project\Resources.Designer.vb" startline="40" endline="46"><![CDATA[
+ 			Get
+ 				If Object.ReferenceEquals(resourceMan, Nothing) Then
+ 					Dim temp As New Global.System.Resources.ResourceManager("Resources", GetType(Resources).Assembly)
+ 					resourceMan = temp
+ 				End If
+ 				Return resourceMan
+ 			End Get
+ 		End Property
+ 
+ 		''' <summary>
+ 		'''   Overrides the current thread's CurrentUICulture property for all
+ 		'''   resource lookups using this strongly typed resource class.
+ 		''' </summary>
+ 		<Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>
+ 		Friend Property Culture() As Global.System.Globalization.CultureInfo
+ 			Get
+ 				Return resourceCulture
+ 			End Get
+ 			Set(ByVal value As System.Globalization.CultureInfo)
+ 				resourceCulture = value
+ 			End Set
+ 		End Property
+ 	End Module
+ End Namespace
+ 					Dim temp As New Global.System.Resources.ResourceManager("Resources", GetType(Resources).Assembly)
+ 					resourceMan = temp
+ 				End If
+ 				Return resourceMan
+ 			End Get
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\My Project\Resources.Designer.vb" startline="47" endline="57"><![CDATA[
+ 		End Property
+ 
+ 		''' <summary>
+ 		'''   Overrides the current thread's CurrentUICulture property for all
+ 		'''   resource lookups using this strongly typed resource class.
+ 		''' </summary>
+ 		<Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>
+ 		Friend Property Culture() As Global.System.Globalization.CultureInfo
+ 			Get
+ 				Return resourceCulture
+ 			End Get
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\My Project\Resources.Designer.vb" startline="58" endline="60"><![CDATA[
+ 			Set(ByVal value As System.Globalization.CultureInfo)
+ 				resourceCulture = value
+ 			End Set
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\My Project\Settings.Designer.vb" startline="18" endline="18"><![CDATA[
+ 		Private Shared defaultInstance As Settings = (CType(Global.System.Configuration.ApplicationSettingsBase.Synchronized(New Settings()), Settings))
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\My Project\Settings.Designer.vb" startline="19" endline="23"><![CDATA[
+ 
+ 		Public Shared ReadOnly Property [Default]() As Settings
+ 			Get
+ 				Return defaultInstance
+ 			End Get
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\PizzaSizeCircle.xaml.vb" startline="57" endline="57"><![CDATA[
+         Public Shared ReadOnly PizzaSizeProperty As DependencyProperty = DependencyProperty.Register("PizzaSize", GetType(Integer),
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\PizzaSizeCircle.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\PizzaSizeCircle.xaml.vb" startline="17" endline="19"><![CDATA[
+         Public Sub New()
+             InitializeComponent()
+         End Sub
+ 
+         Public Property PizzaSize() As Integer
+             Get
+                 Return CInt(Fix(Me.GetValue(PizzaSizeProperty)))
+             End Get
+             Set(ByVal value As Integer)
+                 Me.SetValue(PizzaSizeProperty, value)
+ 
+             End Set
+         End Property
+ 
+         Private Shared Sub PizzaSizeChangedCallBack(ByVal [property] As DependencyObject, ByVal args As DependencyPropertyChangedEventArgs)
+             Dim control = CType([property], PizzaSizeCircle)
+             Select Case CInt(Fix(args.NewValue))
+                 Case 11
+                     control.circle.Width = 30
+                     control.circle.Height = 30
+                     control.layoutRoot.Width = 30
+                     control.layoutRoot.Height = 30
+                     control.label.Text = "11"
+                 Case 13
+                     control.circle.Width = 50
+                     control.circle.Height = 50
+                     control.layoutRoot.Width = 50
+                     control.layoutRoot.Height = 50
+                     control.label.Text = "13"
+                 Case 17
+                     control.circle.Width = 75
+                     control.circle.Height = 75
+                     control.layoutRoot.Width = 75
+                     control.layoutRoot.Height = 75
+                     control.label.Text = "17"
+                 Case Else
+                     Throw New ArgumentOutOfRangeException()
+             End Select
+         End Sub
+ 
+         Public Shared ReadOnly PizzaSizeProperty As DependencyProperty = DependencyProperty.Register("PizzaSize", GetType(Integer),
+                     GetType(PizzaSizeCircle), New UIPropertyMetadata(17, New PropertyChangedCallback(AddressOf PizzaSizeChangedCallBack)))
+ 
+     End Class
+ End Namespace
+             InitializeComponent()
+         End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\PizzaSizeCircle.xaml.vb" startline="20" endline="24"><![CDATA[
+ 
+         Public Property PizzaSize() As Integer
+             Get
+                 Return CInt(Fix(Me.GetValue(PizzaSizeProperty)))
+             End Get
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\PizzaSizeCircle.xaml.vb" startline="25" endline="28"><![CDATA[
+             Set(ByVal value As Integer)
+                 Me.SetValue(PizzaSizeProperty, value)
+ 
+             End Set
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\PizzaSizeCircle.xaml.vb" startline="29" endline="55"><![CDATA[
+         End Property
+ 
+         Private Shared Sub PizzaSizeChangedCallBack(ByVal [property] As DependencyObject, ByVal args As DependencyPropertyChangedEventArgs)
+             Dim control = CType([property], PizzaSizeCircle)
+             Select Case CInt(Fix(args.NewValue))
+                 Case 11
+                     control.circle.Width = 30
+                     control.circle.Height = 30
+                     control.layoutRoot.Width = 30
+                     control.layoutRoot.Height = 30
+                     control.label.Text = "11"
+                 Case 13
+                     control.circle.Width = 50
+                     control.circle.Height = 50
+                     control.layoutRoot.Width = 50
+                     control.layoutRoot.Height = 50
+                     control.label.Text = "13"
+                 Case 17
+                     control.circle.Width = 75
+                     control.circle.Height = 75
+                     control.layoutRoot.Width = 75
+                     control.layoutRoot.Height = 75
+                     control.label.Text = "17"
+                 Case Else
+                     Throw New ArgumentOutOfRangeException()
+             End Select
+         End Sub
+ 
+         Public Shared ReadOnly PizzaSizeProperty As DependencyProperty = DependencyProperty.Register("PizzaSize", GetType(Integer),
+                     GetType(PizzaSizeCircle), New UIPropertyMetadata(17, New PropertyChangedCallback(AddressOf PizzaSizeChangedCallBack)))
+ 
+     End Class
+ End Namespace
+                 Case 11
+                     control.circle.Width = 30
+                     control.circle.Height = 30
+                     control.layoutRoot.Width = 30
+                     control.layoutRoot.Height = 30
+                     control.label.Text = "11"
+                 Case 13
+                     control.circle.Width = 50
+                     control.circle.Height = 50
+                     control.layoutRoot.Width = 50
+                     control.layoutRoot.Height = 50
+                     control.label.Text = "13"
+                 Case 17
+                     control.circle.Width = 75
+                     control.circle.Height = 75
+                     control.layoutRoot.Width = 75
+                     control.layoutRoot.Height = 75
+                     control.label.Text = "17"
+                 Case Else
+                     Throw New ArgumentOutOfRangeException()
+             End Select
+         End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\PizzaSizeCircle.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\PizzaSizeCircle.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\PizzaSizeCircle.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\PizzaSizeCircle.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\PizzaSizeCircle.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\PizzaSizeCircle.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\obj\Debug\PizzaSizeCircle.g.vb" startline="74" endline="85"><![CDATA[
+         Public Sub InitializeComponent() Implements System.Windows.Markup.IComponentConnector.InitializeComponent
+             If _contentLoaded Then
+                 Return
+             End If
+             _contentLoaded = true
+             Dim resourceLocater As System.Uri = New System.Uri("/AcmePizza;component/pizzasizecircle.xaml", System.UriKind.Relative)
+             
+             #ExternalSource("..\..\PizzaSizeCircle.xaml",1)
+             System.Windows.Application.LoadComponent(Me, resourceLocater)
+             
+             #End ExternalSource
+         End Sub
+         
+         <System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+          System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never),  _
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800
+         Sub System_Windows_Markup_IComponentConnector_Connect(ByVal connectionId As Integer, ByVal target As Object) Implements System.Windows.Markup.IComponentConnector.Connect
+             If (connectionId = 1) Then
+                 Me.layoutRoot = CType(target,System.Windows.Controls.Grid)
+                 Return
+             End If
+             If (connectionId = 2) Then
+                 Me.circle = CType(target,System.Windows.Shapes.Ellipse)
+                 Return
+             End If
+             If (connectionId = 3) Then
+                 Me.label = CType(target,System.Windows.Controls.TextBlock)
+                 Return
+             End If
+             Me._contentLoaded = true
+         End Sub
+     End Class
+ End Namespace
+ 
+                 Return
+             End If
+             _contentLoaded = true
+             Dim resourceLocater As System.Uri = New System.Uri("/AcmePizza;component/pizzasizecircle.xaml", System.UriKind.Relative)
+             
+             #ExternalSource("..\..\PizzaSizeCircle.xaml",1)
+             System.Windows.Application.LoadComponent(Me, resourceLocater)
+             
+             #End ExternalSource
+         End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\obj\Debug\PizzaSizeCircle.g.vb" startline="86" endline="106"><![CDATA[
+         
+         <System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+          System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never),  _
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800
+         Sub System_Windows_Markup_IComponentConnector_Connect(ByVal connectionId As Integer, ByVal target As Object) Implements System.Windows.Markup.IComponentConnector.Connect
+             If (connectionId = 1) Then
+                 Me.layoutRoot = CType(target,System.Windows.Controls.Grid)
+                 Return
+             End If
+             If (connectionId = 2) Then
+                 Me.circle = CType(target,System.Windows.Shapes.Ellipse)
+                 Return
+             End If
+             If (connectionId = 3) Then
+                 Me.label = CType(target,System.Windows.Controls.TextBlock)
+                 Return
+             End If
+             Me._contentLoaded = true
+         End Sub
+     End Class
+ End Namespace
+ 
+                 Me.layoutRoot = CType(target,System.Windows.Controls.Grid)
+                 Return
+             End If
+             If (connectionId = 2) Then
+                 Me.circle = CType(target,System.Windows.Shapes.Ellipse)
+                 Return
+             End If
+             If (connectionId = 3) Then
+                 Me.label = CType(target,System.Windows.Controls.TextBlock)
+                 Return
+             End If
+             Me._contentLoaded = true
+         End Sub
+     End Class
+ End Namespace
+ 
+                 Me.circle = CType(target,System.Windows.Shapes.Ellipse)
+                 Return
+             End If
+             If (connectionId = 3) Then
+                 Me.label = CType(target,System.Windows.Controls.TextBlock)
+                 Return
+             End If
+             Me._contentLoaded = true
+         End Sub
+     End Class
+ End Namespace
+ 
+                 Me.label = CType(target,System.Windows.Controls.TextBlock)
+                 Return
+             End If
+             Me._contentLoaded = true
+         End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="21" endline="21"><![CDATA[
+ 		Private Shared m_rand As Random = New ThreadSafeRandom()
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="22" endline="33"><![CDATA[
+ 
+ 		Public Sub New()
+ 			InitializeComponent()
+ 
+             ' Intialize the bindable collection and set it as the data context.
+ 			Dim orders = New ObservableConcurrentCollection(Of PizzaOrder)()
+             ' Store the observable collection as an explicity producer consumer.
+             ' Collection that has tryadd and tryremove operations.
+ 			m_orders = orders
+             ' Set the AcmePizza as the defaut.
+ 			Me.DataContext = orders
+ 		End Sub
+ 
+ 		Private Sub Window_Loaded(ByVal sender As Object, ByVal e As EventArgs)
+             ' Launch four threads that mimic various sources
+             With Task.Factory
+                 .StartNew(Sub() OrdererThread(OrderSource.Fax), TaskCreationOptions.AttachedToParent)
+                 .StartNew(Sub() OrdererThread(OrderSource.Internet), TaskCreationOptions.AttachedToParent)
+                 .StartNew(Sub() OrdererThread(OrderSource.Phone), TaskCreationOptions.AttachedToParent)
+                 .StartNew(Sub() OrdererThread(OrderSource.WalkIn), TaskCreationOptions.AttachedToParent)
+             End With
+         End Sub
+ 
+ 		Private Sub OrdererThread(ByVal source As OrderSource)
+             For i = 0 To 9
+                 ' Submit random order.
+                 m_orders.TryAdd(GenerateRandomOrder(source))
+                 ' Sleep for a random period.
+                 Thread.Sleep(m_rand.Next(1000, 4001))
+             Next i
+ 		End Sub
+ 
+ 		Private Shared Function GenerateRandomOrder(ByVal source As OrderSource) As PizzaOrder
+             ' Source.
+             Dim order = New PizzaOrder With {.Source = source}
+             ' Delivery.
+ 			order.IsDelivery = If(m_rand.Next(0, 2) = 0, True, False)
+             ' Phone number.
+ 			Dim areaCode = If(m_rand.Next(0, 2) = 0, 425, 206)
+ 			Dim firstThreeDigits = m_rand.Next(100, 1000)
+ 			Dim lastFourDigits = m_rand.Next(0, 10000)
+ 			order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"))
+             ' Size.
+ 			Select Case m_rand.Next(0, 3)
+ 				Case 0
+ 					order.Size = 11
+ 				Case 1
+ 					order.Size = 13
+ 				Case 2
+ 					order.Size = 17
+ 			End Select
+             ' Toppings.
+ 			Dim availToppings = New List(Of PizzaToppings)(System.Enum.GetValues(GetType(PizzaToppings)).Cast(Of PizzaToppings)())
+ 			order.Toppings = New PizzaToppings(m_rand.Next(1, 5) - 1){}
+             For j = 0 To order.Toppings.Length - 1
+                 Dim toppingIndex = m_rand.Next(0, availToppings.Count)
+                 order.Toppings(j) = availToppings(toppingIndex)
+                 availToppings.RemoveAt(toppingIndex)
+             Next j
+ 			Return order
+ 		End Function
+ 
+ 		Private Sub processNextOrderButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+             ' Attempt to get an order from the queue.
+             ' Dim nextOrder As PizzaOrder.
+             Dim nextOrder = New PizzaOrder()
+             If Not m_orders.TryTake(nextOrder) Then
+                 MsgBox("No orders available.  Please try again later.")
+                 Return
+             End If
+             ' If successful launch an order window.
+ 			Dim currentOrderWindow = New CurrentOrderWindow(nextOrder)
+ 			currentOrderWindow.Show()
+ 		End Sub
+ 	End Class
+ End Namespace
+ 			InitializeComponent()
+ 
+             ' Intialize the bindable collection and set it as the data context.
+ 			Dim orders = New ObservableConcurrentCollection(Of PizzaOrder)()
+             ' Store the observable collection as an explicity producer consumer.
+             ' Collection that has tryadd and tryremove operations.
+ 			m_orders = orders
+             ' Set the AcmePizza as the defaut.
+ 			Me.DataContext = orders
+ 		End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="34" endline="43"><![CDATA[
+ 
+ 		Private Sub Window_Loaded(ByVal sender As Object, ByVal e As EventArgs)
+             ' Launch four threads that mimic various sources
+             With Task.Factory
+                 .StartNew(Sub() OrdererThread(OrderSource.Fax), TaskCreationOptions.AttachedToParent)
+                 .StartNew(Sub() OrdererThread(OrderSource.Internet), TaskCreationOptions.AttachedToParent)
+                 .StartNew(Sub() OrdererThread(OrderSource.Phone), TaskCreationOptions.AttachedToParent)
+                 .StartNew(Sub() OrdererThread(OrderSource.WalkIn), TaskCreationOptions.AttachedToParent)
+             End With
+         End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="44" endline="52"><![CDATA[
+ 
+ 		Private Sub OrdererThread(ByVal source As OrderSource)
+             For i = 0 To 9
+                 ' Submit random order.
+                 m_orders.TryAdd(GenerateRandomOrder(source))
+                 ' Sleep for a random period.
+                 Thread.Sleep(m_rand.Next(1000, 4001))
+             Next i
+ 		End Sub
+ 
+ 		Private Shared Function GenerateRandomOrder(ByVal source As OrderSource) As PizzaOrder
+             ' Source.
+             Dim order = New PizzaOrder With {.Source = source}
+             ' Delivery.
+ 			order.IsDelivery = If(m_rand.Next(0, 2) = 0, True, False)
+             ' Phone number.
+ 			Dim areaCode = If(m_rand.Next(0, 2) = 0, 425, 206)
+ 			Dim firstThreeDigits = m_rand.Next(100, 1000)
+ 			Dim lastFourDigits = m_rand.Next(0, 10000)
+ 			order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"))
+             ' Size.
+ 			Select Case m_rand.Next(0, 3)
+ 				Case 0
+ 					order.Size = 11
+ 				Case 1
+ 					order.Size = 13
+ 				Case 2
+ 					order.Size = 17
+ 			End Select
+             ' Toppings.
+ 			Dim availToppings = New List(Of PizzaToppings)(System.Enum.GetValues(GetType(PizzaToppings)).Cast(Of PizzaToppings)())
+ 			order.Toppings = New PizzaToppings(m_rand.Next(1, 5) - 1){}
+             For j = 0 To order.Toppings.Length - 1
+                 Dim toppingIndex = m_rand.Next(0, availToppings.Count)
+                 order.Toppings(j) = availToppings(toppingIndex)
+                 availToppings.RemoveAt(toppingIndex)
+             Next j
+ 			Return order
+ 		End Function
+ 
+ 		Private Sub processNextOrderButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+             ' Attempt to get an order from the queue.
+             ' Dim nextOrder As PizzaOrder.
+             Dim nextOrder = New PizzaOrder()
+             If Not m_orders.TryTake(nextOrder) Then
+                 MsgBox("No orders available.  Please try again later.")
+                 Return
+             End If
+             ' If successful launch an order window.
+ 			Dim currentOrderWindow = New CurrentOrderWindow(nextOrder)
+ 			currentOrderWindow.Show()
+ 		End Sub
+ 	End Class
+ End Namespace
+ 		End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="53" endline="82"><![CDATA[
+ 
+ 		Private Shared Function GenerateRandomOrder(ByVal source As OrderSource) As PizzaOrder
+             ' Source.
+             Dim order = New PizzaOrder With {.Source = source}
+             ' Delivery.
+ 			order.IsDelivery = If(m_rand.Next(0, 2) = 0, True, False)
+             ' Phone number.
+ 			Dim areaCode = If(m_rand.Next(0, 2) = 0, 425, 206)
+ 			Dim firstThreeDigits = m_rand.Next(100, 1000)
+ 			Dim lastFourDigits = m_rand.Next(0, 10000)
+ 			order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"))
+             ' Size.
+ 			Select Case m_rand.Next(0, 3)
+ 				Case 0
+ 					order.Size = 11
+ 				Case 1
+ 					order.Size = 13
+ 				Case 2
+ 					order.Size = 17
+ 			End Select
+             ' Toppings.
+ 			Dim availToppings = New List(Of PizzaToppings)(System.Enum.GetValues(GetType(PizzaToppings)).Cast(Of PizzaToppings)())
+ 			order.Toppings = New PizzaToppings(m_rand.Next(1, 5) - 1){}
+             For j = 0 To order.Toppings.Length - 1
+                 Dim toppingIndex = m_rand.Next(0, availToppings.Count)
+                 order.Toppings(j) = availToppings(toppingIndex)
+                 availToppings.RemoveAt(toppingIndex)
+             Next j
+ 			Return order
+ 		End Function
+ 
+ 		Private Sub processNextOrderButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+             ' Attempt to get an order from the queue.
+             ' Dim nextOrder As PizzaOrder.
+             Dim nextOrder = New PizzaOrder()
+             If Not m_orders.TryTake(nextOrder) Then
+                 MsgBox("No orders available.  Please try again later.")
+                 Return
+             End If
+             ' If successful launch an order window.
+ 			Dim currentOrderWindow = New CurrentOrderWindow(nextOrder)
+ 			currentOrderWindow.Show()
+ 		End Sub
+ 	End Class
+ End Namespace
+ 				Case 0
+ 					order.Size = 11
+ 				Case 1
+ 					order.Size = 13
+ 				Case 2
+ 					order.Size = 17
+ 			End Select
+             ' Toppings.
+ 			Dim availToppings = New List(Of PizzaToppings)(System.Enum.GetValues(GetType(PizzaToppings)).Cast(Of PizzaToppings)())
+ 			order.Toppings = New PizzaToppings(m_rand.Next(1, 5) - 1){}
+             For j = 0 To order.Toppings.Length - 1
+                 Dim toppingIndex = m_rand.Next(0, availToppings.Count)
+                 order.Toppings(j) = availToppings(toppingIndex)
+                 availToppings.RemoveAt(toppingIndex)
+             Next j
+ 			Return order
+ 		End Function
+ 
+ 		Private Sub processNextOrderButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+             ' Attempt to get an order from the queue.
+             ' Dim nextOrder As PizzaOrder.
+             Dim nextOrder = New PizzaOrder()
+             If Not m_orders.TryTake(nextOrder) Then
+                 MsgBox("No orders available.  Please try again later.")
+                 Return
+             End If
+             ' If successful launch an order window.
+ 			Dim currentOrderWindow = New CurrentOrderWindow(nextOrder)
+ 			currentOrderWindow.Show()
+ 		End Sub
+ 	End Class
+ End Namespace
+ 			Return order
+ 		End Function
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="83" endline="95"><![CDATA[
+ 
+ 		Private Sub processNextOrderButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+             ' Attempt to get an order from the queue.
+             ' Dim nextOrder As PizzaOrder.
+             Dim nextOrder = New PizzaOrder()
+             If Not m_orders.TryTake(nextOrder) Then
+                 MsgBox("No orders available.  Please try again later.")
+                 Return
+             End If
+             ' If successful launch an order window.
+ 			Dim currentOrderWindow = New CurrentOrderWindow(nextOrder)
+ 			currentOrderWindow.Show()
+ 		End Sub
+ 	End Class
+ End Namespace
+                 MsgBox("No orders available.  Please try again later.")
+                 Return
+             End If
+             ' If successful launch an order window.
+ 			Dim currentOrderWindow = New CurrentOrderWindow(nextOrder)
+ 			currentOrderWindow.Show()
+ 		End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\obj\Debug\Window1.g.vb" startline="89" endline="100"><![CDATA[
+         Public Sub InitializeComponent() Implements System.Windows.Markup.IComponentConnector.InitializeComponent
+             If _contentLoaded Then
+                 Return
+             End If
+             _contentLoaded = true
+             Dim resourceLocater As System.Uri = New System.Uri("/AcmePizza;component/window1.xaml", System.UriKind.Relative)
+             
+             #ExternalSource("..\..\Window1.xaml",1)
+             System.Windows.Application.LoadComponent(Me, resourceLocater)
+             
+             #End ExternalSource
+         End Sub
+         
+         <System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+          System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never),  _
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800
+         Sub System_Windows_Markup_IComponentConnector_Connect(ByVal connectionId As Integer, ByVal target As Object) Implements System.Windows.Markup.IComponentConnector.Connect
+             If (connectionId = 1) Then
+                 
+                 #ExternalSource("..\..\Window1.xaml",6)
+                 AddHandler CType(target,AcmePizza.Window1).Loaded, New System.Windows.RoutedEventHandler(AddressOf Me.Window_Loaded)
+                 
+                 #End ExternalSource
+                 Return
+             End If
+             If (connectionId = 2) Then
+                 Me.ordersList = CType(target,System.Windows.Controls.ItemsControl)
+                 Return
+             End If
+             If (connectionId = 3) Then
+                 Me.textBlock1 = CType(target,System.Windows.Controls.TextBlock)
+                 Return
+             End If
+             If (connectionId = 4) Then
+                 Me.textBlock2 = CType(target,System.Windows.Controls.TextBlock)
+                 Return
+             End If
+             If (connectionId = 5) Then
+                 Me.image1 = CType(target,System.Windows.Controls.Image)
+                 Return
+             End If
+             If (connectionId = 6) Then
+                 Me.processNextOrderButton = CType(target,System.Windows.Controls.Button)
+                 
+                 #ExternalSource("..\..\Window1.xaml",37)
+                 AddHandler Me.processNextOrderButton.Click, New System.Windows.RoutedEventHandler(AddressOf Me.processNextOrderButton_Click)
+                 
+                 #End ExternalSource
+                 Return
+             End If
+             Me._contentLoaded = true
+         End Sub
+     End Class
+ End Namespace
+ 
+                 Return
+             End If
+             _contentLoaded = true
+             Dim resourceLocater As System.Uri = New System.Uri("/AcmePizza;component/window1.xaml", System.UriKind.Relative)
+             
+             #ExternalSource("..\..\Window1.xaml",1)
+             System.Windows.Application.LoadComponent(Me, resourceLocater)
+             
+             #End ExternalSource
+         End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\obj\Debug\Window1.g.vb" startline="101" endline="142"><![CDATA[
+         
+         <System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+          System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never),  _
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502
+          System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800
+         Sub System_Windows_Markup_IComponentConnector_Connect(ByVal connectionId As Integer, ByVal target As Object) Implements System.Windows.Markup.IComponentConnector.Connect
+             If (connectionId = 1) Then
+                 
+                 #ExternalSource("..\..\Window1.xaml",6)
+                 AddHandler CType(target,AcmePizza.Window1).Loaded, New System.Windows.RoutedEventHandler(AddressOf Me.Window_Loaded)
+                 
+                 #End ExternalSource
+                 Return
+             End If
+             If (connectionId = 2) Then
+                 Me.ordersList = CType(target,System.Windows.Controls.ItemsControl)
+                 Return
+             End If
+             If (connectionId = 3) Then
+                 Me.textBlock1 = CType(target,System.Windows.Controls.TextBlock)
+                 Return
+             End If
+             If (connectionId = 4) Then
+                 Me.textBlock2 = CType(target,System.Windows.Controls.TextBlock)
+                 Return
+             End If
+             If (connectionId = 5) Then
+                 Me.image1 = CType(target,System.Windows.Controls.Image)
+                 Return
+             End If
+             If (connectionId = 6) Then
+                 Me.processNextOrderButton = CType(target,System.Windows.Controls.Button)
+                 
+                 #ExternalSource("..\..\Window1.xaml",37)
+                 AddHandler Me.processNextOrderButton.Click, New System.Windows.RoutedEventHandler(AddressOf Me.processNextOrderButton_Click)
+                 
+                 #End ExternalSource
+                 Return
+             End If
+             Me._contentLoaded = true
+         End Sub
+     End Class
+ End Namespace
+ 
+                 AddHandler CType(target,AcmePizza.Window1).Loaded, New System.Windows.RoutedEventHandler(AddressOf Me.Window_Loaded)
+                 
+                 #End ExternalSource
+                 Return
+             End If
+             If (connectionId = 2) Then
+                 Me.ordersList = CType(target,System.Windows.Controls.ItemsControl)
+                 Return
+             End If
+             If (connectionId = 3) Then
+                 Me.textBlock1 = CType(target,System.Windows.Controls.TextBlock)
+                 Return
+             End If
+             If (connectionId = 4) Then
+                 Me.textBlock2 = CType(target,System.Windows.Controls.TextBlock)
+                 Return
+             End If
+             If (connectionId = 5) Then
+                 Me.image1 = CType(target,System.Windows.Controls.Image)
+                 Return
+             End If
+             If (connectionId = 6) Then
+                 Me.processNextOrderButton = CType(target,System.Windows.Controls.Button)
+                 
+                 #ExternalSource("..\..\Window1.xaml",37)
+                 AddHandler Me.processNextOrderButton.Click, New System.Windows.RoutedEventHandler(AddressOf Me.processNextOrderButton_Click)
+                 
+                 #End ExternalSource
+                 Return
+             End If
+             Me._contentLoaded = true
+         End Sub
+     End Class
+ End Namespace
+ 
+                 Me.ordersList = CType(target,System.Windows.Controls.ItemsControl)
+                 Return
+             End If
+             If (connectionId = 3) Then
+                 Me.textBlock1 = CType(target,System.Windows.Controls.TextBlock)
+                 Return
+             End If
+             If (connectionId = 4) Then
+                 Me.textBlock2 = CType(target,System.Windows.Controls.TextBlock)
+                 Return
+             End If
+             If (connectionId = 5) Then
+                 Me.image1 = CType(target,System.Windows.Controls.Image)
+                 Return
+             End If
+             If (connectionId = 6) Then
+                 Me.processNextOrderButton = CType(target,System.Windows.Controls.Button)
+                 
+                 #ExternalSource("..\..\Window1.xaml",37)
+                 AddHandler Me.processNextOrderButton.Click, New System.Windows.RoutedEventHandler(AddressOf Me.processNextOrderButton_Click)
+                 
+                 #End ExternalSource
+                 Return
+             End If
+             Me._contentLoaded = true
+         End Sub
+     End Class
+ End Namespace
+ 
+                 Me.textBlock1 = CType(target,System.Windows.Controls.TextBlock)
+                 Return
+             End If
+             If (connectionId = 4) Then
+                 Me.textBlock2 = CType(target,System.Windows.Controls.TextBlock)
+                 Return
+             End If
+             If (connectionId = 5) Then
+                 Me.image1 = CType(target,System.Windows.Controls.Image)
+                 Return
+             End If
+             If (connectionId = 6) Then
+                 Me.processNextOrderButton = CType(target,System.Windows.Controls.Button)
+                 
+                 #ExternalSource("..\..\Window1.xaml",37)
+                 AddHandler Me.processNextOrderButton.Click, New System.Windows.RoutedEventHandler(AddressOf Me.processNextOrderButton_Click)
+                 
+                 #End ExternalSource
+                 Return
+             End If
+             Me._contentLoaded = true
+         End Sub
+     End Class
+ End Namespace
+ 
+                 Me.textBlock2 = CType(target,System.Windows.Controls.TextBlock)
+                 Return
+             End If
+             If (connectionId = 5) Then
+                 Me.image1 = CType(target,System.Windows.Controls.Image)
+                 Return
+             End If
+             If (connectionId = 6) Then
+                 Me.processNextOrderButton = CType(target,System.Windows.Controls.Button)
+                 
+                 #ExternalSource("..\..\Window1.xaml",37)
+                 AddHandler Me.processNextOrderButton.Click, New System.Windows.RoutedEventHandler(AddressOf Me.processNextOrderButton_Click)
+                 
+                 #End ExternalSource
+                 Return
+             End If
+             Me._contentLoaded = true
+         End Sub
+     End Class
+ End Namespace
+ 
+                 Me.image1 = CType(target,System.Windows.Controls.Image)
+                 Return
+             End If
+             If (connectionId = 6) Then
+                 Me.processNextOrderButton = CType(target,System.Windows.Controls.Button)
+                 
+                 #ExternalSource("..\..\Window1.xaml",37)
+                 AddHandler Me.processNextOrderButton.Click, New System.Windows.RoutedEventHandler(AddressOf Me.processNextOrderButton_Click)
+                 
+                 #End ExternalSource
+                 Return
+             End If
+             Me._contentLoaded = true
+         End Sub
+     End Class
+ End Namespace
+ 
+                 Me.processNextOrderButton = CType(target,System.Windows.Controls.Button)
+                 
+                 #ExternalSource("..\..\Window1.xaml",37)
+                 AddHandler Me.processNextOrderButton.Click, New System.Windows.RoutedEventHandler(AddressOf Me.processNextOrderButton_Click)
+                 
+                 #End ExternalSource
+                 Return
+             End If
+             Me._contentLoaded = true
+         End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="38" endline="38"><![CDATA[
+                 .StartNew(Sub() OrdererThread(OrderSource.Fax), TaskCreationOptions.AttachedToParent)
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="39" endline="39"><![CDATA[
+                 .StartNew(Sub() OrdererThread(OrderSource.Internet), TaskCreationOptions.AttachedToParent)
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="40" endline="40"><![CDATA[
+                 .StartNew(Sub() OrdererThread(OrderSource.Phone), TaskCreationOptions.AttachedToParent)
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="41" endline="41"><![CDATA[
+                 .StartNew(Sub() OrdererThread(OrderSource.WalkIn), TaskCreationOptions.AttachedToParent)
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_VisualBasic\Window1.xaml.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+</source_elements></project>

@@ -1,0 +1,5 @@
+C:\Users\faa634\Desktop\book codes\F#\Code\Functions\bin\Debug\Functions.dll
+C:\Users\faa634\Desktop\book codes\F#\Code\Functions\bin\Debug\Functions.pdb
+C:\Users\faa634\Desktop\book codes\F#\Code\Functions\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\F#\Code\Functions\obj\Debug\Functions.dll
+C:\Users\faa634\Desktop\book codes\F#\Code\Functions\obj\Debug\Functions.pdb

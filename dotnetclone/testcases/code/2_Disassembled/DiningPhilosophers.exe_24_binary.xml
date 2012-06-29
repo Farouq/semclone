@@ -1,0 +1,1338 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\Properties\Settings.Designer.cs" startline="25" endline="27"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class DiningPhilosophers.Properties.Settings CS$1$0000)
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+    IL_0000:  nop
+    IL_0001:  ldsfld     class DiningPhilosophers.Properties.Settings DiningPhilosophers.Properties.Settings::defaultInstance
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [System]System.Configuration.ApplicationSettingsBase::.ctor()
+    IL_0006:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\Properties\Settings.Designer.cs" startline="20" endline="30"><![CDATA[
+  {
+    // Code size       21 (0x15)
+    .maxstack  8
+    IL_0000:  newobj     instance void DiningPhilosophers.Properties.Settings::.ctor()
+    IL_0005:  call       class [System]System.Configuration.SettingsBase [System]System.Configuration.SettingsBase::Synchronized(class [System]System.Configuration.SettingsBase)
+    IL_000a:  castclass  DiningPhilosophers.Properties.Settings
+    IL_000f:  stsfld     class DiningPhilosophers.Properties.Settings DiningPhilosophers.Properties.Settings::defaultInstance
+    IL_0014:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="53" endline="49"><![CDATA[
+  {
+    // Code size       80 (0x50)
+    .maxstack  3
+    IL_0000:  ldarg.0
+    IL_0001:  call       class [PresentationCore]System.Windows.Media.SolidColorBrush [PresentationCore]System.Windows.Media.Brushes::get_Yellow()
+    IL_0006:  stfld      class [PresentationCore]System.Windows.Media.Brush DiningPhilosophers.MainWindow::_think
+    IL_000b:  ldarg.0
+    IL_000c:  call       class [PresentationCore]System.Windows.Media.SolidColorBrush [PresentationCore]System.Windows.Media.Brushes::get_Green()
+    IL_0011:  stfld      class [PresentationCore]System.Windows.Media.Brush DiningPhilosophers.MainWindow::_eat
+    IL_0016:  ldarg.0
+    IL_0017:  call       class [PresentationCore]System.Windows.Media.SolidColorBrush [PresentationCore]System.Windows.Media.Brushes::get_Red()
+    IL_001c:  stfld      class [PresentationCore]System.Windows.Media.Brush DiningPhilosophers.MainWindow::_wait
+    IL_0021:  ldarg.0
+    IL_0022:  call       instance void [PresentationFramework]System.Windows.Window::.ctor()
+    IL_0027:  nop
+    IL_0028:  nop
+    IL_0029:  ldarg.0
+    IL_002a:  call       instance void DiningPhilosophers.MainWindow::InitializeComponent()
+    IL_002f:  nop
+    IL_0030:  ldarg.0
+    IL_0031:  call       class [mscorlib]System.Threading.Tasks.TaskScheduler [mscorlib]System.Threading.Tasks.TaskScheduler::FromCurrentSynchronizationContext()
+    IL_0036:  newobj     instance void [mscorlib]System.Threading.Tasks.TaskFactory::.ctor(class [mscorlib]System.Threading.Tasks.TaskScheduler)
+    IL_003b:  stfld      class [mscorlib]System.Threading.Tasks.TaskFactory DiningPhilosophers.MainWindow::_ui
+    IL_0040:  ldarg.0
+    IL_0041:  call       instance void DiningPhilosophers.MainWindow::ConfigurePhilosophers()
+    IL_0046:  nop
+    IL_0047:  ldarg.0
+    IL_0048:  call       instance void DiningPhilosophers.MainWindow::RunWithSemaphoresSyncWithOrderedForks()
+    IL_004d:  nop
+    IL_004e:  nop
+    IL_004f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="50" endline="67"><![CDATA[
+  {
+    // Code size       104 (0x68)
+    .maxstack  5
+    .locals init ([0] class [PresentationFramework]System.Windows.Shapes.Ellipse philosopher,
+             [1] class [PresentationFramework]System.Windows.Shapes.Ellipse[] CS$6$0000,
+             [2] int32 CS$7$0001,
+             [3] bool CS$4$0002)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.0
+    IL_0003:  ldc.i4.5
+    IL_0004:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> [System.Core]System.Linq.Enumerable::Range(int32,
+                                                                                                                                    int32)
+    IL_0009:  ldsfld     class [mscorlib]System.Func`2<int32,class [PresentationFramework]System.Windows.Shapes.Ellipse> DiningPhilosophers.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate2'
+    IL_000e:  brtrue.s   IL_0023
+
+    IL_0010:  ldnull
+    IL_0011:  ldftn      class [PresentationFramework]System.Windows.Shapes.Ellipse DiningPhilosophers.MainWindow::'<ConfigurePhilosophers>b__1'(int32)
+    IL_0017:  newobj     instance void class [mscorlib]System.Func`2<int32,class [PresentationFramework]System.Windows.Shapes.Ellipse>::.ctor(object,
+                                                                                                                                              native int)
+    IL_001c:  stsfld     class [mscorlib]System.Func`2<int32,class [PresentationFramework]System.Windows.Shapes.Ellipse> DiningPhilosophers.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate2'
+    IL_0021:  br.s       IL_0023
+
+    IL_0023:  ldsfld     class [mscorlib]System.Func`2<int32,class [PresentationFramework]System.Windows.Shapes.Ellipse> DiningPhilosophers.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate2'
+    IL_0028:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<int32,class [PresentationFramework]System.Windows.Shapes.Ellipse>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                                     class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_002d:  call       !!0[] [System.Core]System.Linq.Enumerable::ToArray<class [PresentationFramework]System.Windows.Shapes.Ellipse>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_0032:  stfld      class [PresentationFramework]System.Windows.Shapes.Ellipse[] DiningPhilosophers.MainWindow::_philosophers
+    IL_0037:  nop
+    IL_0038:  ldarg.0
+    IL_0039:  ldfld      class [PresentationFramework]System.Windows.Shapes.Ellipse[] DiningPhilosophers.MainWindow::_philosophers
+    IL_003e:  stloc.1
+    IL_003f:  ldc.i4.0
+    IL_0040:  stloc.2
+    IL_0041:  br.s       IL_005d
+
+    IL_0043:  ldloc.1
+    IL_0044:  ldloc.2
+    IL_0045:  ldelem.ref
+    IL_0046:  stloc.0
+    IL_0047:  ldarg.0
+    IL_0048:  ldfld      class DiningPhilosophers.CircularPanel DiningPhilosophers.MainWindow::circularPanel1
+    IL_004d:  callvirt   instance class [PresentationFramework]System.Windows.Controls.UIElementCollection [PresentationFramework]System.Windows.Controls.Panel::get_Children()
+    IL_0052:  ldloc.0
+    IL_0053:  callvirt   instance int32 [PresentationFramework]System.Windows.Controls.UIElementCollection::Add(class [PresentationCore]System.Windows.UIElement)
+    IL_0058:  pop
+    IL_0059:  ldloc.2
+    IL_005a:  ldc.i4.1
+    IL_005b:  add
+    IL_005c:  stloc.2
+    IL_005d:  ldloc.2
+    IL_005e:  ldloc.1
+    IL_005f:  ldlen
+    IL_0060:  conv.i4
+    IL_0061:  clt
+    IL_0063:  stloc.3
+    IL_0064:  ldloc.3
+    IL_0065:  brtrue.s   IL_0043
+
+    IL_0067:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="68" endline="88"><![CDATA[
+  {
+    // Code size       48 (0x30)
+    .maxstack  3
+    .locals init ([0] int32 tmp,
+             [1] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.3
+    IL_0002:  ldarg.1
+    IL_0003:  stind.i4
+    IL_0004:  ldarg.s    right
+    IL_0006:  ldarg.1
+    IL_0007:  ldc.i4.1
+    IL_0008:  add
+    IL_0009:  ldarg.2
+    IL_000a:  rem
+    IL_000b:  stind.i4
+    IL_000c:  ldarg.s    sort
+    IL_000e:  brfalse.s  IL_001c
+
+    IL_0010:  ldarg.3
+    IL_0011:  ldind.i4
+    IL_0012:  ldarg.s    right
+    IL_0014:  ldind.i4
+    IL_0015:  cgt
+    IL_0017:  ldc.i4.0
+    IL_0018:  ceq
+    IL_001a:  br.s       IL_001d
+
+    IL_001c:  ldc.i4.1
+    IL_001d:  stloc.1
+    IL_001e:  ldloc.1
+    IL_001f:  brtrue.s   IL_002f
+
+    IL_0021:  nop
+    IL_0022:  ldarg.3
+    IL_0023:  ldind.i4
+    IL_0024:  stloc.0
+    IL_0025:  ldarg.3
+    IL_0026:  ldarg.s    right
+    IL_0028:  ldind.i4
+    IL_0029:  stind.i4
+    IL_002a:  ldarg.s    right
+    IL_002c:  ldloc.0
+    IL_002d:  stind.i4
+    IL_002e:  nop
+    IL_002f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="89" endline="101"><![CDATA[
+  {
+    // Code size       146 (0x92)
+    .maxstack  5
+    .locals init ([0] int32 i,
+             [1] class DiningPhilosophers.MainWindow/'<>c__DisplayClass8' 'CS$<>8__locals9',
+             [2] class DiningPhilosophers.MainWindow/'<>c__DisplayClass6' 'CS$<>8__locals7',
+             [3] bool CS$4$0000)
+    IL_0000:  newobj     instance void DiningPhilosophers.MainWindow/'<>c__DisplayClass6'::.ctor()
+    IL_0005:  stloc.2
+    IL_0006:  ldloc.2
+    IL_0007:  ldarg.0
+    IL_0008:  stfld      class DiningPhilosophers.MainWindow DiningPhilosophers.MainWindow/'<>c__DisplayClass6'::'<>4__this'
+    IL_000d:  nop
+    IL_000e:  ldloc.2
+    IL_000f:  ldc.i4.0
+    IL_0010:  ldarg.0
+    IL_0011:  ldfld      class [PresentationFramework]System.Windows.Shapes.Ellipse[] DiningPhilosophers.MainWindow::_philosophers
+    IL_0016:  ldlen
+    IL_0017:  conv.i4
+    IL_0018:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> [System.Core]System.Linq.Enumerable::Range(int32,
+                                                                                                                                    int32)
+    IL_001d:  ldsfld     class [mscorlib]System.Func`2<int32,class [mscorlib]System.Threading.SemaphoreSlim> DiningPhilosophers.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate5'
+    IL_0022:  brtrue.s   IL_0037
+
+    IL_0024:  ldnull
+    IL_0025:  ldftn      class [mscorlib]System.Threading.SemaphoreSlim DiningPhilosophers.MainWindow::'<RunWithSemaphoresSyncWithOrderedForks>b__3'(int32)
+    IL_002b:  newobj     instance void class [mscorlib]System.Func`2<int32,class [mscorlib]System.Threading.SemaphoreSlim>::.ctor(object,
+                                                                                                                                  native int)
+    IL_0030:  stsfld     class [mscorlib]System.Func`2<int32,class [mscorlib]System.Threading.SemaphoreSlim> DiningPhilosophers.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate5'
+    IL_0035:  br.s       IL_0037
+
+    IL_0037:  ldsfld     class [mscorlib]System.Func`2<int32,class [mscorlib]System.Threading.SemaphoreSlim> DiningPhilosophers.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate5'
+    IL_003c:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<int32,class [mscorlib]System.Threading.SemaphoreSlim>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                         class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_0041:  call       !!0[] [System.Core]System.Linq.Enumerable::ToArray<class [mscorlib]System.Threading.SemaphoreSlim>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_0046:  stfld      class [mscorlib]System.Threading.SemaphoreSlim[] DiningPhilosophers.MainWindow/'<>c__DisplayClass6'::forks
+    IL_004b:  ldc.i4.0
+    IL_004c:  stloc.0
+    IL_004d:  br.s       IL_0081
+
+    IL_004f:  newobj     instance void DiningPhilosophers.MainWindow/'<>c__DisplayClass8'::.ctor()
+    IL_0054:  stloc.1
+    IL_0055:  ldloc.1
+    IL_0056:  ldloc.2
+    IL_0057:  stfld      class DiningPhilosophers.MainWindow/'<>c__DisplayClass6' DiningPhilosophers.MainWindow/'<>c__DisplayClass8'::'CS$<>8__locals7'
+    IL_005c:  nop
+    IL_005d:  ldloc.1
+    IL_005e:  ldloc.0
+    IL_005f:  stfld      int32 DiningPhilosophers.MainWindow/'<>c__DisplayClass8'::index
+    IL_0064:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_0069:  ldloc.1
+    IL_006a:  ldftn      instance void DiningPhilosophers.MainWindow/'<>c__DisplayClass8'::'<RunWithSemaphoresSyncWithOrderedForks>b__4'()
+    IL_0070:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_0075:  ldc.i4.2
+    IL_0076:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.Tasks.TaskCreationOptions)
+    IL_007b:  pop
+    IL_007c:  nop
+    IL_007d:  ldloc.0
+    IL_007e:  ldc.i4.1
+    IL_007f:  add
+    IL_0080:  stloc.0
+    IL_0081:  ldloc.0
+    IL_0082:  ldarg.0
+    IL_0083:  ldfld      class [PresentationFramework]System.Windows.Shapes.Ellipse[] DiningPhilosophers.MainWindow::_philosophers
+    IL_0088:  ldlen
+    IL_0089:  conv.i4
+    IL_008a:  clt
+    IL_008c:  stloc.3
+    IL_008d:  ldloc.3
+    IL_008e:  brtrue.s   IL_004f
+
+    IL_0090:  nop
+    IL_0091:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="102" endline="228"><![CDATA[
+  {
+    // Code size       282 (0x11a)
+    .maxstack  6
+    .locals init ([0] int32 fork1Id,
+             [1] int32 fork2Id,
+             [2] class [mscorlib]System.Threading.SemaphoreSlim fork1,
+             [3] class [mscorlib]System.Threading.SemaphoreSlim fork2,
+             [4] class [mscorlib]System.Random rand,
+             [5] class [mscorlib]System.Func`1<class [PresentationCore]System.Windows.Media.Brush> 'CS$<>9__CachedAnonymousMethodDelegated',
+             [6] class [mscorlib]System.Func`1<class [PresentationCore]System.Windows.Media.Brush> 'CS$<>9__CachedAnonymousMethodDelegatee',
+             [7] class [mscorlib]System.Func`1<class [PresentationCore]System.Windows.Media.Brush> 'CS$<>9__CachedAnonymousMethodDelegatef',
+             [8] class DiningPhilosophers.MainWindow/'<>c__DisplayClass10' 'CS$<>8__locals11',
+             [9] bool CS$4$0000)
+    IL_0000:  ldnull
+    IL_0001:  stloc.s    'CS$<>9__CachedAnonymousMethodDelegated'
+    IL_0003:  ldnull
+    IL_0004:  stloc.s    'CS$<>9__CachedAnonymousMethodDelegatee'
+    IL_0006:  ldnull
+    IL_0007:  stloc.s    'CS$<>9__CachedAnonymousMethodDelegatef'
+    IL_0009:  newobj     instance void DiningPhilosophers.MainWindow/'<>c__DisplayClass10'::.ctor()
+    IL_000e:  stloc.s    'CS$<>8__locals11'
+    IL_0010:  ldloc.s    'CS$<>8__locals11'
+    IL_0012:  ldarg.2
+    IL_0013:  stfld      int32 DiningPhilosophers.MainWindow/'<>c__DisplayClass10'::index
+    IL_0018:  ldloc.s    'CS$<>8__locals11'
+    IL_001a:  ldarg.0
+    IL_001b:  stfld      class DiningPhilosophers.MainWindow DiningPhilosophers.MainWindow/'<>c__DisplayClass10'::'<>4__this'
+    IL_0020:  nop
+    IL_0021:  ldarg.0
+    IL_0022:  ldloc.s    'CS$<>8__locals11'
+    IL_0024:  ldfld      int32 DiningPhilosophers.MainWindow/'<>c__DisplayClass10'::index
+    IL_0029:  ldarg.1
+    IL_002a:  ldlen
+    IL_002b:  conv.i4
+    IL_002c:  ldloca.s   fork1Id
+    IL_002e:  ldloca.s   fork2Id
+    IL_0030:  ldc.i4.1
+    IL_0031:  call       instance void DiningPhilosophers.MainWindow::GetForkIds(int32,
+                                                                                 int32,
+                                                                                 int32&,
+                                                                                 int32&,
+                                                                                 bool)
+    IL_0036:  nop
+    IL_0037:  ldarg.1
+    IL_0038:  ldloc.0
+    IL_0039:  ldelem.ref
+    IL_003a:  stloc.2
+    IL_003b:  ldarg.1
+    IL_003c:  ldloc.1
+    IL_003d:  ldelem.ref
+    IL_003e:  stloc.3
+    IL_003f:  ldloc.s    'CS$<>8__locals11'
+    IL_0041:  ldfld      int32 DiningPhilosophers.MainWindow/'<>c__DisplayClass10'::index
+    IL_0046:  newobj     instance void [mscorlib]System.Random::.ctor(int32)
+    IL_004b:  stloc.s    rand
+    IL_004d:  br         IL_0112
+
+    IL_0052:  nop
+    IL_0053:  ldarg.0
+    IL_0054:  ldfld      class [mscorlib]System.Threading.Tasks.TaskFactory DiningPhilosophers.MainWindow::_ui
+    IL_0059:  ldloc.s    'CS$<>9__CachedAnonymousMethodDelegated'
+    IL_005b:  brtrue.s   IL_006e
+
+    IL_005d:  ldloc.s    'CS$<>8__locals11'
+    IL_005f:  ldftn      instance class [PresentationCore]System.Windows.Media.Brush DiningPhilosophers.MainWindow/'<>c__DisplayClass10'::'<RunPhilosopherSyncWithOrderedForks>b__a'()
+    IL_0065:  newobj     instance void class [mscorlib]System.Func`1<class [PresentationCore]System.Windows.Media.Brush>::.ctor(object,
+                                                                                                                                native int)
+    IL_006a:  stloc.s    'CS$<>9__CachedAnonymousMethodDelegated'
+    IL_006c:  br.s       IL_006e
+
+    IL_006e:  ldloc.s    'CS$<>9__CachedAnonymousMethodDelegated'
+    IL_0070:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.TaskFactory::StartNew<class [PresentationCore]System.Windows.Media.Brush>(class [mscorlib]System.Func`1<!!0>)
+    IL_0075:  callvirt   instance void [mscorlib]System.Threading.Tasks.Task::Wait()
+    IL_007a:  nop
+    IL_007b:  ldloc.s    rand
+    IL_007d:  ldc.i4.s   10
+    IL_007f:  callvirt   instance int32 [mscorlib]System.Random::Next(int32)
+    IL_0084:  ldc.i4     0xc8
+    IL_0089:  mul
+    IL_008a:  call       void [mscorlib]System.Threading.Thread::Sleep(int32)
+    IL_008f:  nop
+    IL_0090:  ldloc.2
+    IL_0091:  callvirt   instance void [mscorlib]System.Threading.SemaphoreSlim::Wait()
+    IL_0096:  nop
+    IL_0097:  ldarg.0
+    IL_0098:  ldfld      class [mscorlib]System.Threading.Tasks.TaskFactory DiningPhilosophers.MainWindow::_ui
+    IL_009d:  ldloc.s    'CS$<>9__CachedAnonymousMethodDelegatee'
+    IL_009f:  brtrue.s   IL_00b2
+
+    IL_00a1:  ldloc.s    'CS$<>8__locals11'
+    IL_00a3:  ldftn      instance class [PresentationCore]System.Windows.Media.Brush DiningPhilosophers.MainWindow/'<>c__DisplayClass10'::'<RunPhilosopherSyncWithOrderedForks>b__b'()
+    IL_00a9:  newobj     instance void class [mscorlib]System.Func`1<class [PresentationCore]System.Windows.Media.Brush>::.ctor(object,
+                                                                                                                                native int)
+    IL_00ae:  stloc.s    'CS$<>9__CachedAnonymousMethodDelegatee'
+    IL_00b0:  br.s       IL_00b2
+
+    IL_00b2:  ldloc.s    'CS$<>9__CachedAnonymousMethodDelegatee'
+    IL_00b4:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.TaskFactory::StartNew<class [PresentationCore]System.Windows.Media.Brush>(class [mscorlib]System.Func`1<!!0>)
+    IL_00b9:  callvirt   instance void [mscorlib]System.Threading.Tasks.Task::Wait()
+    IL_00be:  nop
+    IL_00bf:  ldloc.3
+    IL_00c0:  callvirt   instance void [mscorlib]System.Threading.SemaphoreSlim::Wait()
+    IL_00c5:  nop
+    IL_00c6:  ldarg.0
+    IL_00c7:  ldfld      class [mscorlib]System.Threading.Tasks.TaskFactory DiningPhilosophers.MainWindow::_ui
+    IL_00cc:  ldloc.s    'CS$<>9__CachedAnonymousMethodDelegatef'
+    IL_00ce:  brtrue.s   IL_00e1
+
+    IL_00d0:  ldloc.s    'CS$<>8__locals11'
+    IL_00d2:  ldftn      instance class [PresentationCore]System.Windows.Media.Brush DiningPhilosophers.MainWindow/'<>c__DisplayClass10'::'<RunPhilosopherSyncWithOrderedForks>b__c'()
+    IL_00d8:  newobj     instance void class [mscorlib]System.Func`1<class [PresentationCore]System.Windows.Media.Brush>::.ctor(object,
+                                                                                                                                native int)
+    IL_00dd:  stloc.s    'CS$<>9__CachedAnonymousMethodDelegatef'
+    IL_00df:  br.s       IL_00e1
+
+    IL_00e1:  ldloc.s    'CS$<>9__CachedAnonymousMethodDelegatef'
+    IL_00e3:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.TaskFactory::StartNew<class [PresentationCore]System.Windows.Media.Brush>(class [mscorlib]System.Func`1<!!0>)
+    IL_00e8:  callvirt   instance void [mscorlib]System.Threading.Tasks.Task::Wait()
+    IL_00ed:  nop
+    IL_00ee:  ldloc.s    rand
+    IL_00f0:  ldc.i4.s   10
+    IL_00f2:  callvirt   instance int32 [mscorlib]System.Random::Next(int32)
+    IL_00f7:  ldc.i4     0xc8
+    IL_00fc:  mul
+    IL_00fd:  call       void [mscorlib]System.Threading.Thread::Sleep(int32)
+    IL_0102:  nop
+    IL_0103:  ldloc.2
+    IL_0104:  callvirt   instance int32 [mscorlib]System.Threading.SemaphoreSlim::Release()
+    IL_0109:  pop
+    IL_010a:  ldloc.3
+    IL_010b:  callvirt   instance int32 [mscorlib]System.Threading.SemaphoreSlim::Release()
+    IL_0110:  pop
+    IL_0111:  nop
+    IL_0112:  ldc.i4.1
+    IL_0113:  stloc.s    CS$4$0000
+    IL_0115:  br         IL_0052
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="140" endline="147"><![CDATA[
+  {
+    // Code size       146 (0x92)
+    .maxstack  5
+    .locals init ([0] int32 i,
+             [1] class DiningPhilosophers.MainWindow/'<>c__DisplayClass17' 'CS$<>8__locals18',
+             [2] class DiningPhilosophers.MainWindow/'<>c__DisplayClass15' 'CS$<>8__locals16',
+             [3] bool CS$4$0000)
+    IL_0000:  newobj     instance void DiningPhilosophers.MainWindow/'<>c__DisplayClass15'::.ctor()
+    IL_0005:  stloc.2
+    IL_0006:  ldloc.2
+    IL_0007:  ldarg.0
+    IL_0008:  stfld      class DiningPhilosophers.MainWindow DiningPhilosophers.MainWindow/'<>c__DisplayClass15'::'<>4__this'
+    IL_000d:  nop
+    IL_000e:  ldloc.2
+    IL_000f:  ldc.i4.0
+    IL_0010:  ldarg.0
+    IL_0011:  ldfld      class [PresentationFramework]System.Windows.Shapes.Ellipse[] DiningPhilosophers.MainWindow::_philosophers
+    IL_0016:  ldlen
+    IL_0017:  conv.i4
+    IL_0018:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> [System.Core]System.Linq.Enumerable::Range(int32,
+                                                                                                                                    int32)
+    IL_001d:  ldsfld     class [mscorlib]System.Func`2<int32,class [System]System.Threading.Semaphore> DiningPhilosophers.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate14'
+    IL_0022:  brtrue.s   IL_0037
+
+    IL_0024:  ldnull
+    IL_0025:  ldftn      class [System]System.Threading.Semaphore DiningPhilosophers.MainWindow::'<RunWithSemaphoresSyncWithWaitAll>b__12'(int32)
+    IL_002b:  newobj     instance void class [mscorlib]System.Func`2<int32,class [System]System.Threading.Semaphore>::.ctor(object,
+                                                                                                                            native int)
+    IL_0030:  stsfld     class [mscorlib]System.Func`2<int32,class [System]System.Threading.Semaphore> DiningPhilosophers.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate14'
+    IL_0035:  br.s       IL_0037
+
+    IL_0037:  ldsfld     class [mscorlib]System.Func`2<int32,class [System]System.Threading.Semaphore> DiningPhilosophers.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate14'
+    IL_003c:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<int32,class [System]System.Threading.Semaphore>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                   class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_0041:  call       !!0[] [System.Core]System.Linq.Enumerable::ToArray<class [System]System.Threading.Semaphore>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_0046:  stfld      class [System]System.Threading.Semaphore[] DiningPhilosophers.MainWindow/'<>c__DisplayClass15'::forks
+    IL_004b:  ldc.i4.0
+    IL_004c:  stloc.0
+    IL_004d:  br.s       IL_0081
+
+    IL_004f:  newobj     instance void DiningPhilosophers.MainWindow/'<>c__DisplayClass17'::.ctor()
+    IL_0054:  stloc.1
+    IL_0055:  ldloc.1
+    IL_0056:  ldloc.2
+    IL_0057:  stfld      class DiningPhilosophers.MainWindow/'<>c__DisplayClass15' DiningPhilosophers.MainWindow/'<>c__DisplayClass17'::'CS$<>8__locals16'
+    IL_005c:  nop
+    IL_005d:  ldloc.1
+    IL_005e:  ldloc.0
+    IL_005f:  stfld      int32 DiningPhilosophers.MainWindow/'<>c__DisplayClass17'::index
+    IL_0064:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_0069:  ldloc.1
+    IL_006a:  ldftn      instance void DiningPhilosophers.MainWindow/'<>c__DisplayClass17'::'<RunWithSemaphoresSyncWithWaitAll>b__13'()
+    IL_0070:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_0075:  ldc.i4.2
+    IL_0076:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.Tasks.TaskCreationOptions)
+    IL_007b:  pop
+    IL_007c:  nop
+    IL_007d:  ldloc.0
+    IL_007e:  ldc.i4.1
+    IL_007f:  add
+    IL_0080:  stloc.0
+    IL_0081:  ldloc.0
+    IL_0082:  ldarg.0
+    IL_0083:  ldfld      class [PresentationFramework]System.Windows.Shapes.Ellipse[] DiningPhilosophers.MainWindow::_philosophers
+    IL_0088:  ldlen
+    IL_0089:  conv.i4
+    IL_008a:  clt
+    IL_008c:  stloc.3
+    IL_008d:  ldloc.3
+    IL_008e:  brtrue.s   IL_004f
+
+    IL_0090:  nop
+    IL_0091:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="148" endline="228"><![CDATA[
+  {
+    // Code size       294 (0x126)
+    .maxstack  6
+    .locals init ([0] int32 fork1Id,
+             [1] int32 fork2Id,
+             [2] class [System]System.Threading.Semaphore fork1,
+             [3] class [System]System.Threading.Semaphore fork2,
+             [4] class [mscorlib]System.Random rand,
+             [5] class [mscorlib]System.Func`1<class [PresentationCore]System.Windows.Media.Brush> 'CS$<>9__CachedAnonymousMethodDelegate1c',
+             [6] class [mscorlib]System.Func`1<class [PresentationCore]System.Windows.Media.Brush> 'CS$<>9__CachedAnonymousMethodDelegate1d',
+             [7] class [mscorlib]System.Func`1<class [PresentationCore]System.Windows.Media.Brush> 'CS$<>9__CachedAnonymousMethodDelegate1e',
+             [8] class DiningPhilosophers.MainWindow/'<>c__DisplayClass1f' 'CS$<>8__locals20',
+             [9] class [System]System.Threading.Semaphore[] CS$0$0000,
+             [10] bool CS$4$0001)
+    IL_0000:  ldnull
+    IL_0001:  stloc.s    'CS$<>9__CachedAnonymousMethodDelegate1c'
+    IL_0003:  ldnull
+    IL_0004:  stloc.s    'CS$<>9__CachedAnonymousMethodDelegate1d'
+    IL_0006:  ldnull
+    IL_0007:  stloc.s    'CS$<>9__CachedAnonymousMethodDelegate1e'
+    IL_0009:  newobj     instance void DiningPhilosophers.MainWindow/'<>c__DisplayClass1f'::.ctor()
+    IL_000e:  stloc.s    'CS$<>8__locals20'
+    IL_0010:  ldloc.s    'CS$<>8__locals20'
+    IL_0012:  ldarg.2
+    IL_0013:  stfld      int32 DiningPhilosophers.MainWindow/'<>c__DisplayClass1f'::index
+    IL_0018:  ldloc.s    'CS$<>8__locals20'
+    IL_001a:  ldarg.0
+    IL_001b:  stfld      class DiningPhilosophers.MainWindow DiningPhilosophers.MainWindow/'<>c__DisplayClass1f'::'<>4__this'
+    IL_0020:  nop
+    IL_0021:  ldarg.0
+    IL_0022:  ldloc.s    'CS$<>8__locals20'
+    IL_0024:  ldfld      int32 DiningPhilosophers.MainWindow/'<>c__DisplayClass1f'::index
+    IL_0029:  ldarg.1
+    IL_002a:  ldlen
+    IL_002b:  conv.i4
+    IL_002c:  ldloca.s   fork1Id
+    IL_002e:  ldloca.s   fork2Id
+    IL_0030:  ldc.i4.0
+    IL_0031:  call       instance void DiningPhilosophers.MainWindow::GetForkIds(int32,
+                                                                                 int32,
+                                                                                 int32&,
+                                                                                 int32&,
+                                                                                 bool)
+    IL_0036:  nop
+    IL_0037:  ldarg.1
+    IL_0038:  ldloc.0
+    IL_0039:  ldelem.ref
+    IL_003a:  stloc.2
+    IL_003b:  ldarg.1
+    IL_003c:  ldloc.1
+    IL_003d:  ldelem.ref
+    IL_003e:  stloc.3
+    IL_003f:  ldloc.s    'CS$<>8__locals20'
+    IL_0041:  ldfld      int32 DiningPhilosophers.MainWindow/'<>c__DisplayClass1f'::index
+    IL_0046:  newobj     instance void [mscorlib]System.Random::.ctor(int32)
+    IL_004b:  stloc.s    rand
+    IL_004d:  br         IL_011e
+
+    IL_0052:  nop
+    IL_0053:  ldarg.0
+    IL_0054:  ldfld      class [mscorlib]System.Threading.Tasks.TaskFactory DiningPhilosophers.MainWindow::_ui
+    IL_0059:  ldloc.s    'CS$<>9__CachedAnonymousMethodDelegate1c'
+    IL_005b:  brtrue.s   IL_006e
+
+    IL_005d:  ldloc.s    'CS$<>8__locals20'
+    IL_005f:  ldftn      instance class [PresentationCore]System.Windows.Media.Brush DiningPhilosophers.MainWindow/'<>c__DisplayClass1f'::'<RunPhilosopherSyncWithWaitAll>b__19'()
+    IL_0065:  newobj     instance void class [mscorlib]System.Func`1<class [PresentationCore]System.Windows.Media.Brush>::.ctor(object,
+                                                                                                                                native int)
+    IL_006a:  stloc.s    'CS$<>9__CachedAnonymousMethodDelegate1c'
+    IL_006c:  br.s       IL_006e
+
+    IL_006e:  ldloc.s    'CS$<>9__CachedAnonymousMethodDelegate1c'
+    IL_0070:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.TaskFactory::StartNew<class [PresentationCore]System.Windows.Media.Brush>(class [mscorlib]System.Func`1<!!0>)
+    IL_0075:  callvirt   instance void [mscorlib]System.Threading.Tasks.Task::Wait()
+    IL_007a:  nop
+    IL_007b:  ldloc.s    rand
+    IL_007d:  ldc.i4.s   10
+    IL_007f:  callvirt   instance int32 [mscorlib]System.Random::Next(int32)
+    IL_0084:  ldc.i4     0xc8
+    IL_0089:  mul
+    IL_008a:  call       void [mscorlib]System.Threading.Thread::Sleep(int32)
+    IL_008f:  nop
+    IL_0090:  ldarg.0
+    IL_0091:  ldfld      class [mscorlib]System.Threading.Tasks.TaskFactory DiningPhilosophers.MainWindow::_ui
+    IL_0096:  ldloc.s    'CS$<>9__CachedAnonymousMethodDelegate1d'
+    IL_0098:  brtrue.s   IL_00ab
+
+    IL_009a:  ldloc.s    'CS$<>8__locals20'
+    IL_009c:  ldftn      instance class [PresentationCore]System.Windows.Media.Brush DiningPhilosophers.MainWindow/'<>c__DisplayClass1f'::'<RunPhilosopherSyncWithWaitAll>b__1a'()
+    IL_00a2:  newobj     instance void class [mscorlib]System.Func`1<class [PresentationCore]System.Windows.Media.Brush>::.ctor(object,
+                                                                                                                                native int)
+    IL_00a7:  stloc.s    'CS$<>9__CachedAnonymousMethodDelegate1d'
+    IL_00a9:  br.s       IL_00ab
+
+    IL_00ab:  ldloc.s    'CS$<>9__CachedAnonymousMethodDelegate1d'
+    IL_00ad:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.TaskFactory::StartNew<class [PresentationCore]System.Windows.Media.Brush>(class [mscorlib]System.Func`1<!!0>)
+    IL_00b2:  callvirt   instance void [mscorlib]System.Threading.Tasks.Task::Wait()
+    IL_00b7:  nop
+    IL_00b8:  ldc.i4.2
+    IL_00b9:  newarr     [System]System.Threading.Semaphore
+    IL_00be:  stloc.s    CS$0$0000
+    IL_00c0:  ldloc.s    CS$0$0000
+    IL_00c2:  ldc.i4.0
+    IL_00c3:  ldloc.2
+    IL_00c4:  stelem.ref
+    IL_00c5:  ldloc.s    CS$0$0000
+    IL_00c7:  ldc.i4.1
+    IL_00c8:  ldloc.3
+    IL_00c9:  stelem.ref
+    IL_00ca:  ldloc.s    CS$0$0000
+    IL_00cc:  call       bool [mscorlib]System.Threading.WaitHandle::WaitAll(class [mscorlib]System.Threading.WaitHandle[])
+    IL_00d1:  pop
+    IL_00d2:  ldarg.0
+    IL_00d3:  ldfld      class [mscorlib]System.Threading.Tasks.TaskFactory DiningPhilosophers.MainWindow::_ui
+    IL_00d8:  ldloc.s    'CS$<>9__CachedAnonymousMethodDelegate1e'
+    IL_00da:  brtrue.s   IL_00ed
+
+    IL_00dc:  ldloc.s    'CS$<>8__locals20'
+    IL_00de:  ldftn      instance class [PresentationCore]System.Windows.Media.Brush DiningPhilosophers.MainWindow/'<>c__DisplayClass1f'::'<RunPhilosopherSyncWithWaitAll>b__1b'()
+    IL_00e4:  newobj     instance void class [mscorlib]System.Func`1<class [PresentationCore]System.Windows.Media.Brush>::.ctor(object,
+                                                                                                                                native int)
+    IL_00e9:  stloc.s    'CS$<>9__CachedAnonymousMethodDelegate1e'
+    IL_00eb:  br.s       IL_00ed
+
+    IL_00ed:  ldloc.s    'CS$<>9__CachedAnonymousMethodDelegate1e'
+    IL_00ef:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.TaskFactory::StartNew<class [PresentationCore]System.Windows.Media.Brush>(class [mscorlib]System.Func`1<!!0>)
+    IL_00f4:  callvirt   instance void [mscorlib]System.Threading.Tasks.Task::Wait()
+    IL_00f9:  nop
+    IL_00fa:  ldloc.s    rand
+    IL_00fc:  ldc.i4.s   10
+    IL_00fe:  callvirt   instance int32 [mscorlib]System.Random::Next(int32)
+    IL_0103:  ldc.i4     0xc8
+    IL_0108:  mul
+    IL_0109:  call       void [mscorlib]System.Threading.Thread::Sleep(int32)
+    IL_010e:  nop
+    IL_010f:  ldloc.2
+    IL_0110:  callvirt   instance int32 [System]System.Threading.Semaphore::Release()
+    IL_0115:  pop
+    IL_0116:  ldloc.3
+    IL_0117:  callvirt   instance int32 [System]System.Threading.Semaphore::Release()
+    IL_011c:  pop
+    IL_011d:  nop
+    IL_011e:  ldc.i4.1
+    IL_011f:  stloc.s    CS$4$0001
+    IL_0121:  br         IL_0052
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="185" endline="191"><![CDATA[
+  {
+    // Code size       102 (0x66)
+    .maxstack  4
+    .locals init ([0] class [ParallelExtensionsExtras]System.Threading.Async.AsyncSemaphore[] forks,
+             [1] int32 i,
+             [2] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldc.i4.0
+    IL_0002:  ldarg.0
+    IL_0003:  ldfld      class [PresentationFramework]System.Windows.Shapes.Ellipse[] DiningPhilosophers.MainWindow::_philosophers
+    IL_0008:  ldlen
+    IL_0009:  conv.i4
+    IL_000a:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> [System.Core]System.Linq.Enumerable::Range(int32,
+                                                                                                                                    int32)
+    IL_000f:  ldsfld     class [mscorlib]System.Func`2<int32,class [ParallelExtensionsExtras]System.Threading.Async.AsyncSemaphore> DiningPhilosophers.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate22'
+    IL_0014:  brtrue.s   IL_0029
+
+    IL_0016:  ldnull
+    IL_0017:  ldftn      class [ParallelExtensionsExtras]System.Threading.Async.AsyncSemaphore DiningPhilosophers.MainWindow::'<RunWithSemaphoresAsync>b__21'(int32)
+    IL_001d:  newobj     instance void class [mscorlib]System.Func`2<int32,class [ParallelExtensionsExtras]System.Threading.Async.AsyncSemaphore>::.ctor(object,
+                                                                                                                                                         native int)
+    IL_0022:  stsfld     class [mscorlib]System.Func`2<int32,class [ParallelExtensionsExtras]System.Threading.Async.AsyncSemaphore> DiningPhilosophers.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate22'
+    IL_0027:  br.s       IL_0029
+
+    IL_0029:  ldsfld     class [mscorlib]System.Func`2<int32,class [ParallelExtensionsExtras]System.Threading.Async.AsyncSemaphore> DiningPhilosophers.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate22'
+    IL_002e:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<int32,class [ParallelExtensionsExtras]System.Threading.Async.AsyncSemaphore>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                                                class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_0033:  call       !!0[] [System.Core]System.Linq.Enumerable::ToArray<class [ParallelExtensionsExtras]System.Threading.Async.AsyncSemaphore>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_0038:  stloc.0
+    IL_0039:  ldc.i4.0
+    IL_003a:  stloc.1
+    IL_003b:  br.s       IL_0056
+
+    IL_003d:  nop
+    IL_003e:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_0043:  ldarg.0
+    IL_0044:  ldloc.0
+    IL_0045:  ldloc.1
+    IL_0046:  call       instance class [mscorlib]System.Collections.Generic.IEnumerable`1<class [mscorlib]System.Threading.Tasks.Task> DiningPhilosophers.MainWindow::RunPhilosopherAsync(class [ParallelExtensionsExtras]System.Threading.Async.AsyncSemaphore[],
+                                                                                                                                                                                           int32)
+    IL_004b:  call       class [mscorlib]System.Threading.Tasks.Task [ParallelExtensionsExtras]System.Threading.Tasks.TaskFactoryExtensions::Iterate(class [mscorlib]System.Threading.Tasks.TaskFactory,
+                                                                                                                                                     class [mscorlib]System.Collections.Generic.IEnumerable`1<object>)
+    IL_0050:  pop
+    IL_0051:  nop
+    IL_0052:  ldloc.1
+    IL_0053:  ldc.i4.1
+    IL_0054:  add
+    IL_0055:  stloc.1
+    IL_0056:  ldloc.1
+    IL_0057:  ldarg.0
+    IL_0058:  ldfld      class [PresentationFramework]System.Windows.Shapes.Ellipse[] DiningPhilosophers.MainWindow::_philosophers
+    IL_005d:  ldlen
+    IL_005e:  conv.i4
+    IL_005f:  clt
+    IL_0061:  stloc.2
+    IL_0062:  ldloc.2
+    IL_0063:  brtrue.s   IL_003d
+
+    IL_0065:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       35 (0x23)
+    .maxstack  2
+    .locals init ([0] class DiningPhilosophers.MainWindow/'<RunPhilosopherAsync>d__2f' V_0,
+             [1] class [mscorlib]System.Collections.Generic.IEnumerable`1<class [mscorlib]System.Threading.Tasks.Task> V_1)
+    IL_0000:  ldc.i4.s   -2
+    IL_0002:  newobj     instance void DiningPhilosophers.MainWindow/'<RunPhilosopherAsync>d__2f'::.ctor(int32)
+    IL_0007:  stloc.0
+    IL_0008:  ldloc.0
+    IL_0009:  ldarg.0
+    IL_000a:  stfld      class DiningPhilosophers.MainWindow DiningPhilosophers.MainWindow/'<RunPhilosopherAsync>d__2f'::'<>4__this'
+    IL_000f:  ldloc.0
+    IL_0010:  ldarg.1
+    IL_0011:  stfld      class [ParallelExtensionsExtras]System.Threading.Async.AsyncSemaphore[] DiningPhilosophers.MainWindow/'<RunPhilosopherAsync>d__2f'::'<>3__forks'
+    IL_0016:  ldloc.0
+    IL_0017:  ldarg.2
+    IL_0018:  stfld      int32 DiningPhilosophers.MainWindow/'<RunPhilosopherAsync>d__2f'::'<>3__index'
+    IL_001d:  ldloc.0
+    IL_001e:  stloc.1
+    IL_001f:  br.s       IL_0021
+
+    IL_0021:  ldloc.1
+    IL_0022:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\obj\Debug\MainWindow.g.cs" startline="1" endline="1"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       45 (0x2d)
+    .maxstack  3
+    .locals init ([0] class [System]System.Uri resourceLocater,
+             [1] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      bool DiningPhilosophers.MainWindow::_contentLoaded
+    IL_0007:  ldc.i4.0
+    IL_0008:  ceq
+    IL_000a:  stloc.1
+    IL_000b:  ldloc.1
+    IL_000c:  brtrue.s   IL_0011
+
+    IL_000e:  nop
+    IL_000f:  br.s       IL_002c
+
+    IL_0011:  ldarg.0
+    IL_0012:  ldc.i4.1
+    IL_0013:  stfld      bool DiningPhilosophers.MainWindow::_contentLoaded
+    IL_0018:  ldstr      "/DiningPhilosophers;component/mainwindow.xaml"
+    IL_001d:  ldc.i4.2
+    IL_001e:  newobj     instance void [System]System.Uri::.ctor(string,
+                                                                 valuetype [System]System.UriKind)
+    IL_0023:  stloc.0
+    IL_0024:  ldarg.0
+    IL_0025:  ldloc.0
+    IL_0026:  call       void [PresentationFramework]System.Windows.Application::LoadComponent(object,
+                                                                                               class [System]System.Uri)
+    IL_002b:  nop
+    IL_002c:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\obj\Debug\MainWindow.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       14 (0xe)
+    .maxstack  3
+    .locals init ([0] class [mscorlib]System.Delegate CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldarg.0
+    IL_0003:  ldarg.2
+    IL_0004:  call       class [mscorlib]System.Delegate [mscorlib]System.Delegate::CreateDelegate(class [mscorlib]System.Type,
+                                                                                                   object,
+                                                                                                   string)
+    IL_0009:  stloc.0
+    IL_000a:  br.s       IL_000c
+
+    IL_000c:  ldloc.0
+    IL_000d:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\obj\Debug\MainWindow.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .override [System.Xaml]System.Windows.Markup.IComponentConnector::Connect
+    // Code size       31 (0x1f)
+    .maxstack  2
+    .locals init ([0] int32 CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  stloc.0
+    IL_0003:  ldloc.0
+    IL_0004:  ldc.i4.1
+    IL_0005:  beq.s      IL_0009
+
+    IL_0007:  br.s       IL_0017
+
+    IL_0009:  ldarg.0
+    IL_000a:  ldarg.2
+    IL_000b:  castclass  DiningPhilosophers.CircularPanel
+    IL_0010:  stfld      class DiningPhilosophers.CircularPanel DiningPhilosophers.MainWindow::circularPanel1
+    IL_0015:  br.s       IL_001e
+
+    IL_0017:  ldarg.0
+    IL_0018:  ldc.i4.1
+    IL_0019:  stfld      bool DiningPhilosophers.MainWindow::_contentLoaded
+    IL_001e:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="65" endline="228"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       68 (0x44)
+    .maxstack  2
+    .locals init ([0] class [PresentationFramework]System.Windows.Shapes.Ellipse '<>g__initLocal0',
+             [1] class [PresentationFramework]System.Windows.Shapes.Ellipse CS$1$0000)
+    IL_0000:  newobj     instance void [PresentationFramework]System.Windows.Shapes.Ellipse::.ctor()
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldc.r8     75.
+    IL_0010:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Height(float64)
+    IL_0015:  nop
+    IL_0016:  ldloc.0
+    IL_0017:  ldc.r8     75.
+    IL_0020:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Width(float64)
+    IL_0025:  nop
+    IL_0026:  ldloc.0
+    IL_0027:  call       class [PresentationCore]System.Windows.Media.SolidColorBrush [PresentationCore]System.Windows.Media.Brushes::get_Red()
+    IL_002c:  callvirt   instance void [PresentationFramework]System.Windows.Shapes.Shape::set_Fill(class [PresentationCore]System.Windows.Media.Brush)
+    IL_0031:  nop
+    IL_0032:  ldloc.0
+    IL_0033:  call       class [PresentationCore]System.Windows.Media.SolidColorBrush [PresentationCore]System.Windows.Media.Brushes::get_Black()
+    IL_0038:  callvirt   instance void [PresentationFramework]System.Windows.Shapes.Shape::set_Stroke(class [PresentationCore]System.Windows.Media.Brush)
+    IL_003d:  nop
+    IL_003e:  ldloc.0
+    IL_003f:  stloc.1
+    IL_0040:  br.s       IL_0042
+
+    IL_0042:  ldloc.1
+    IL_0043:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="95" endline="228"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       12 (0xc)
+    .maxstack  3
+    .locals init ([0] class [mscorlib]System.Threading.SemaphoreSlim CS$1$0000)
+    IL_0000:  ldc.i4.1
+    IL_0001:  ldc.i4.1
+    IL_0002:  newobj     instance void [mscorlib]System.Threading.SemaphoreSlim::.ctor(int32,
+                                                                                       int32)
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="141" endline="228"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       12 (0xc)
+    .maxstack  3
+    .locals init ([0] class [System]System.Threading.Semaphore CS$1$0000)
+    IL_0000:  ldc.i4.1
+    IL_0001:  ldc.i4.1
+    IL_0002:  newobj     instance void [System]System.Threading.Semaphore::.ctor(int32,
+                                                                                 int32)
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="186" endline="228"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       12 (0xc)
+    .maxstack  3
+    .locals init ([0] class [ParallelExtensionsExtras]System.Threading.Async.AsyncSemaphore CS$1$0000)
+    IL_0000:  ldc.i4.1
+    IL_0001:  ldc.i4.1
+    IL_0002:  newobj     instance void [ParallelExtensionsExtras]System.Threading.Async.AsyncSemaphore::.ctor(int32,
+                                                                                                              int32)
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="210" endline="228"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="219" endline="228"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\CircularPanel.cs" startline="19" endline="28"><![CDATA[
+  {
+    // Code size       213 (0xd5)
+    .maxstack  2
+    .locals init ([0] valuetype [WindowsBase]System.Windows.Size maxChildSize,
+             [1] class [PresentationCore]System.Windows.UIElement child,
+             [2] valuetype [WindowsBase]System.Windows.Size CS$1$0000,
+             [3] class [mscorlib]System.Collections.IEnumerator CS$5$0001,
+             [4] valuetype [WindowsBase]System.Windows.Size CS$0$0002,
+             [5] bool CS$4$0003,
+             [6] class [mscorlib]System.IDisposable CS$0$0004)
+    IL_0000:  nop
+    IL_0001:  ldloca.s   maxChildSize
+    IL_0003:  initobj    [WindowsBase]System.Windows.Size
+    IL_0009:  nop
+    IL_000a:  ldarg.0
+    IL_000b:  call       instance class [PresentationFramework]System.Windows.Controls.UIElementCollection [PresentationFramework]System.Windows.Controls.Panel::get_InternalChildren()
+    IL_0010:  callvirt   instance class [mscorlib]System.Collections.IEnumerator [PresentationFramework]System.Windows.Controls.UIElementCollection::GetEnumerator()
+    IL_0015:  stloc.3
+    .try
+    {
+      IL_0016:  br         IL_00a1
+
+      IL_001b:  ldloc.3
+      IL_001c:  callvirt   instance object [mscorlib]System.Collections.IEnumerator::get_Current()
+      IL_0021:  castclass  [PresentationCore]System.Windows.UIElement
+      IL_0026:  stloc.1
+      IL_0027:  nop
+      IL_0028:  ldloc.1
+      IL_0029:  ldarg.1
+      IL_002a:  callvirt   instance void [PresentationCore]System.Windows.UIElement::Measure(valuetype [WindowsBase]System.Windows.Size)
+      IL_002f:  nop
+      IL_0030:  ldloca.s   maxChildSize
+      IL_0032:  call       instance float64 [WindowsBase]System.Windows.Size::get_Width()
+      IL_0037:  ldloc.1
+      IL_0038:  callvirt   instance valuetype [WindowsBase]System.Windows.Size [PresentationCore]System.Windows.UIElement::get_DesiredSize()
+      IL_003d:  stloc.s    CS$0$0002
+      IL_003f:  ldloca.s   CS$0$0002
+      IL_0041:  call       instance float64 [WindowsBase]System.Windows.Size::get_Width()
+      IL_0046:  clt
+      IL_0048:  ldc.i4.0
+      IL_0049:  ceq
+      IL_004b:  stloc.s    CS$4$0003
+      IL_004d:  ldloc.s    CS$4$0003
+      IL_004f:  brtrue.s   IL_0068
+
+      IL_0051:  ldloca.s   maxChildSize
+      IL_0053:  ldloc.1
+      IL_0054:  callvirt   instance valuetype [WindowsBase]System.Windows.Size [PresentationCore]System.Windows.UIElement::get_DesiredSize()
+      IL_0059:  stloc.s    CS$0$0002
+      IL_005b:  ldloca.s   CS$0$0002
+      IL_005d:  call       instance float64 [WindowsBase]System.Windows.Size::get_Width()
+      IL_0062:  call       instance void [WindowsBase]System.Windows.Size::set_Width(float64)
+      IL_0067:  nop
+      IL_0068:  ldloca.s   maxChildSize
+      IL_006a:  call       instance float64 [WindowsBase]System.Windows.Size::get_Height()
+      IL_006f:  ldloc.1
+      IL_0070:  callvirt   instance valuetype [WindowsBase]System.Windows.Size [PresentationCore]System.Windows.UIElement::get_DesiredSize()
+      IL_0075:  stloc.s    CS$0$0002
+      IL_0077:  ldloca.s   CS$0$0002
+      IL_0079:  call       instance float64 [WindowsBase]System.Windows.Size::get_Height()
+      IL_007e:  clt
+      IL_0080:  ldc.i4.0
+      IL_0081:  ceq
+      IL_0083:  stloc.s    CS$4$0003
+      IL_0085:  ldloc.s    CS$4$0003
+      IL_0087:  brtrue.s   IL_00a0
+
+      IL_0089:  ldloca.s   maxChildSize
+      IL_008b:  ldloc.1
+      IL_008c:  callvirt   instance valuetype [WindowsBase]System.Windows.Size [PresentationCore]System.Windows.UIElement::get_DesiredSize()
+      IL_0091:  stloc.s    CS$0$0002
+      IL_0093:  ldloca.s   CS$0$0002
+      IL_0095:  call       instance float64 [WindowsBase]System.Windows.Size::get_Height()
+      IL_009a:  call       instance void [WindowsBase]System.Windows.Size::set_Height(float64)
+      IL_009f:  nop
+      IL_00a0:  nop
+      IL_00a1:  ldloc.3
+      IL_00a2:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_00a7:  stloc.s    CS$4$0003
+      IL_00a9:  ldloc.s    CS$4$0003
+      IL_00ab:  brtrue     IL_001b
+
+      IL_00b0:  leave.s    IL_00ce
+
+    }  // end .try
+    finally
+    {
+      IL_00b2:  ldloc.3
+      IL_00b3:  isinst     [mscorlib]System.IDisposable
+      IL_00b8:  stloc.s    CS$0$0004
+      IL_00ba:  ldloc.s    CS$0$0004
+      IL_00bc:  ldnull
+      IL_00bd:  ceq
+      IL_00bf:  stloc.s    CS$4$0003
+      IL_00c1:  ldloc.s    CS$4$0003
+      IL_00c3:  brtrue.s   IL_00cd
+
+      IL_00c5:  ldloc.s    CS$0$0004
+      IL_00c7:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_00cc:  nop
+      IL_00cd:  endfinally
+    }  // end handler
+    IL_00ce:  nop
+    IL_00cf:  ldloc.0
+    IL_00d0:  stloc.2
+    IL_00d1:  br.s       IL_00d3
+
+    IL_00d3:  ldloc.2
+    IL_00d4:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\CircularPanel.cs" startline="29" endline="52"><![CDATA[
+  {
+    // Code size       435 (0x1b3)
+    .maxstack  6
+    .locals init ([0] class [PresentationCore]System.Windows.UIElement[] children,
+             [1] valuetype [WindowsBase]System.Windows.Point midPanel,
+             [2] valuetype [WindowsBase]System.Windows.Size maxChild,
+             [3] valuetype [WindowsBase]System.Windows.Size radius,
+             [4] float64 arcRadiansPerChild,
+             [5] int32 curPos,
+             [6] class [PresentationCore]System.Windows.UIElement child,
+             [7] float64 childAngleInRadians,
+             [8] valuetype [WindowsBase]System.Windows.Point childPosition,
+             [9] valuetype [WindowsBase]System.Windows.Size CS$1$0000,
+             [10] bool CS$4$0001,
+             [11] class [PresentationCore]System.Windows.UIElement[] CS$6$0002,
+             [12] int32 CS$7$0003,
+             [13] valuetype [WindowsBase]System.Windows.Size CS$0$0004)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance class [PresentationFramework]System.Windows.Controls.UIElementCollection [PresentationFramework]System.Windows.Controls.Panel::get_InternalChildren()
+    IL_0007:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0> [System.Core]System.Linq.Enumerable::OfType<class [PresentationCore]System.Windows.UIElement>(class [mscorlib]System.Collections.IEnumerable)
+    IL_000c:  call       !!0[] [System.Core]System.Linq.Enumerable::ToArray<class [PresentationCore]System.Windows.UIElement>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_0011:  stloc.0
+    IL_0012:  ldloc.0
+    IL_0013:  ldlen
+    IL_0014:  conv.i4
+    IL_0015:  ldc.i4.0
+    IL_0016:  cgt
+    IL_0018:  ldc.i4.0
+    IL_0019:  ceq
+    IL_001b:  stloc.s    CS$4$0001
+    IL_001d:  ldloc.s    CS$4$0001
+    IL_001f:  brtrue     IL_01ab
+
+    IL_0024:  nop
+    IL_0025:  ldloca.s   midPanel
+    IL_0027:  ldarga.s   finalSize
+    IL_0029:  call       instance float64 [WindowsBase]System.Windows.Size::get_Width()
+    IL_002e:  ldc.r8     2.
+    IL_0037:  div
+    IL_0038:  ldarga.s   finalSize
+    IL_003a:  call       instance float64 [WindowsBase]System.Windows.Size::get_Height()
+    IL_003f:  ldc.r8     2.
+    IL_0048:  div
+    IL_0049:  call       instance void [WindowsBase]System.Windows.Point::.ctor(float64,
+                                                                                float64)
+    IL_004e:  nop
+    IL_004f:  ldloca.s   maxChild
+    IL_0051:  ldloc.0
+    IL_0052:  ldsfld     class [mscorlib]System.Func`2<class [PresentationCore]System.Windows.UIElement,float64> DiningPhilosophers.CircularPanel::'CS$<>9__CachedAnonymousMethodDelegate2'
+    IL_0057:  brtrue.s   IL_006c
+
+    IL_0059:  ldnull
+    IL_005a:  ldftn      float64 DiningPhilosophers.CircularPanel::'<ArrangeOverride>b__0'(class [PresentationCore]System.Windows.UIElement)
+    IL_0060:  newobj     instance void class [mscorlib]System.Func`2<class [PresentationCore]System.Windows.UIElement,float64>::.ctor(object,
+                                                                                                                                      native int)
+    IL_0065:  stsfld     class [mscorlib]System.Func`2<class [PresentationCore]System.Windows.UIElement,float64> DiningPhilosophers.CircularPanel::'CS$<>9__CachedAnonymousMethodDelegate2'
+    IL_006a:  br.s       IL_006c
+
+    IL_006c:  ldsfld     class [mscorlib]System.Func`2<class [PresentationCore]System.Windows.UIElement,float64> DiningPhilosophers.CircularPanel::'CS$<>9__CachedAnonymousMethodDelegate2'
+    IL_0071:  call       float64 [System.Core]System.Linq.Enumerable::Max<class [PresentationCore]System.Windows.UIElement>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                            class [mscorlib]System.Func`2<!!0,float64>)
+    IL_0076:  ldloc.0
+    IL_0077:  ldsfld     class [mscorlib]System.Func`2<class [PresentationCore]System.Windows.UIElement,float64> DiningPhilosophers.CircularPanel::'CS$<>9__CachedAnonymousMethodDelegate3'
+    IL_007c:  brtrue.s   IL_0091
+
+    IL_007e:  ldnull
+    IL_007f:  ldftn      float64 DiningPhilosophers.CircularPanel::'<ArrangeOverride>b__1'(class [PresentationCore]System.Windows.UIElement)
+    IL_0085:  newobj     instance void class [mscorlib]System.Func`2<class [PresentationCore]System.Windows.UIElement,float64>::.ctor(object,
+                                                                                                                                      native int)
+    IL_008a:  stsfld     class [mscorlib]System.Func`2<class [PresentationCore]System.Windows.UIElement,float64> DiningPhilosophers.CircularPanel::'CS$<>9__CachedAnonymousMethodDelegate3'
+    IL_008f:  br.s       IL_0091
+
+    IL_0091:  ldsfld     class [mscorlib]System.Func`2<class [PresentationCore]System.Windows.UIElement,float64> DiningPhilosophers.CircularPanel::'CS$<>9__CachedAnonymousMethodDelegate3'
+    IL_0096:  call       float64 [System.Core]System.Linq.Enumerable::Max<class [PresentationCore]System.Windows.UIElement>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                            class [mscorlib]System.Func`2<!!0,float64>)
+    IL_009b:  call       instance void [WindowsBase]System.Windows.Size::.ctor(float64,
+                                                                               float64)
+    IL_00a0:  nop
+    IL_00a1:  ldloca.s   radius
+    IL_00a3:  ldarga.s   finalSize
+    IL_00a5:  call       instance float64 [WindowsBase]System.Windows.Size::get_Width()
+    IL_00aa:  ldloca.s   maxChild
+    IL_00ac:  call       instance float64 [WindowsBase]System.Windows.Size::get_Width()
+    IL_00b1:  sub
+    IL_00b2:  ldc.r8     2.
+    IL_00bb:  div
+    IL_00bc:  ldarga.s   finalSize
+    IL_00be:  call       instance float64 [WindowsBase]System.Windows.Size::get_Height()
+    IL_00c3:  ldloca.s   maxChild
+    IL_00c5:  call       instance float64 [WindowsBase]System.Windows.Size::get_Height()
+    IL_00ca:  sub
+    IL_00cb:  ldc.r8     2.
+    IL_00d4:  div
+    IL_00d5:  call       instance void [WindowsBase]System.Windows.Size::.ctor(float64,
+                                                                               float64)
+    IL_00da:  nop
+    IL_00db:  ldc.r8     6.2831853071795862
+    IL_00e4:  ldloc.0
+    IL_00e5:  ldlen
+    IL_00e6:  conv.i4
+    IL_00e7:  conv.r8
+    IL_00e8:  div
+    IL_00e9:  stloc.s    arcRadiansPerChild
+    IL_00eb:  ldc.i4.0
+    IL_00ec:  stloc.s    curPos
+    IL_00ee:  nop
+    IL_00ef:  ldloc.0
+    IL_00f0:  stloc.s    CS$6$0002
+    IL_00f2:  ldc.i4.0
+    IL_00f3:  stloc.s    CS$7$0003
+    IL_00f5:  br         IL_0199
+
+    IL_00fa:  ldloc.s    CS$6$0002
+    IL_00fc:  ldloc.s    CS$7$0003
+    IL_00fe:  ldelem.ref
+    IL_00ff:  stloc.s    child
+    IL_0101:  nop
+    IL_0102:  ldloc.s    curPos
+    IL_0104:  conv.r8
+    IL_0105:  ldloc.s    arcRadiansPerChild
+    IL_0107:  mul
+    IL_0108:  stloc.s    childAngleInRadians
+    IL_010a:  ldloca.s   childPosition
+    IL_010c:  ldloc.s    childAngleInRadians
+    IL_010e:  call       float64 [mscorlib]System.Math::Sin(float64)
+    IL_0113:  ldloca.s   radius
+    IL_0115:  call       instance float64 [WindowsBase]System.Windows.Size::get_Width()
+    IL_011a:  mul
+    IL_011b:  ldloca.s   midPanel
+    IL_011d:  call       instance float64 [WindowsBase]System.Windows.Point::get_X()
+    IL_0122:  ldloc.s    child
+    IL_0124:  callvirt   instance valuetype [WindowsBase]System.Windows.Size [PresentationCore]System.Windows.UIElement::get_DesiredSize()
+    IL_0129:  stloc.s    CS$0$0004
+    IL_012b:  ldloca.s   CS$0$0004
+    IL_012d:  call       instance float64 [WindowsBase]System.Windows.Size::get_Width()
+    IL_0132:  ldc.r8     2.
+    IL_013b:  div
+    IL_013c:  sub
+    IL_013d:  add
+    IL_013e:  ldloc.s    childAngleInRadians
+    IL_0140:  call       float64 [mscorlib]System.Math::Cos(float64)
+    IL_0145:  ldloca.s   radius
+    IL_0147:  call       instance float64 [WindowsBase]System.Windows.Size::get_Height()
+    IL_014c:  mul
+    IL_014d:  ldloca.s   midPanel
+    IL_014f:  call       instance float64 [WindowsBase]System.Windows.Point::get_Y()
+    IL_0154:  ldloc.s    child
+    IL_0156:  callvirt   instance valuetype [WindowsBase]System.Windows.Size [PresentationCore]System.Windows.UIElement::get_DesiredSize()
+    IL_015b:  stloc.s    CS$0$0004
+    IL_015d:  ldloca.s   CS$0$0004
+    IL_015f:  call       instance float64 [WindowsBase]System.Windows.Size::get_Height()
+    IL_0164:  ldc.r8     2.
+    IL_016d:  div
+    IL_016e:  sub
+    IL_016f:  add
+    IL_0170:  call       instance void [WindowsBase]System.Windows.Point::.ctor(float64,
+                                                                                float64)
+    IL_0175:  nop
+    IL_0176:  ldloc.s    child
+    IL_0178:  ldloc.s    childPosition
+    IL_017a:  ldloc.s    child
+    IL_017c:  callvirt   instance valuetype [WindowsBase]System.Windows.Size [PresentationCore]System.Windows.UIElement::get_DesiredSize()
+    IL_0181:  newobj     instance void [WindowsBase]System.Windows.Rect::.ctor(valuetype [WindowsBase]System.Windows.Point,
+                                                                               valuetype [WindowsBase]System.Windows.Size)
+    IL_0186:  callvirt   instance void [PresentationCore]System.Windows.UIElement::Arrange(valuetype [WindowsBase]System.Windows.Rect)
+    IL_018b:  nop
+    IL_018c:  ldloc.s    curPos
+    IL_018e:  ldc.i4.1
+    IL_018f:  add
+    IL_0190:  stloc.s    curPos
+    IL_0192:  nop
+    IL_0193:  ldloc.s    CS$7$0003
+    IL_0195:  ldc.i4.1
+    IL_0196:  add
+    IL_0197:  stloc.s    CS$7$0003
+    IL_0199:  ldloc.s    CS$7$0003
+    IL_019b:  ldloc.s    CS$6$0002
+    IL_019d:  ldlen
+    IL_019e:  conv.i4
+    IL_019f:  clt
+    IL_01a1:  stloc.s    CS$4$0001
+    IL_01a3:  ldloc.s    CS$4$0001
+    IL_01a5:  brtrue     IL_00fa
+
+    IL_01aa:  nop
+    IL_01ab:  ldarg.1
+    IL_01ac:  stloc.s    CS$1$0000
+    IL_01ae:  br.s       IL_01b0
+
+    IL_01b0:  ldloc.s    CS$1$0000
+    IL_01b2:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\CircularPanel.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [PresentationFramework]System.Windows.Controls.Panel::.ctor()
+    IL_0006:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\CircularPanel.cs" startline="36" endline="54"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       19 (0x13)
+    .maxstack  1
+    .locals init ([0] float64 CS$1$0000,
+             [1] valuetype [WindowsBase]System.Windows.Size CS$0$0001)
+    IL_0000:  ldarg.0
+    IL_0001:  callvirt   instance valuetype [WindowsBase]System.Windows.Size [PresentationCore]System.Windows.UIElement::get_DesiredSize()
+    IL_0006:  stloc.1
+    IL_0007:  ldloca.s   CS$0$0001
+    IL_0009:  call       instance float64 [WindowsBase]System.Windows.Size::get_Width()
+    IL_000e:  stloc.0
+    IL_000f:  br.s       IL_0011
+
+    IL_0011:  ldloc.0
+    IL_0012:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\CircularPanel.cs" startline="36" endline="54"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       19 (0x13)
+    .maxstack  1
+    .locals init ([0] float64 CS$1$0000,
+             [1] valuetype [WindowsBase]System.Windows.Size CS$0$0001)
+    IL_0000:  ldarg.0
+    IL_0001:  callvirt   instance valuetype [WindowsBase]System.Windows.Size [PresentationCore]System.Windows.UIElement::get_DesiredSize()
+    IL_0006:  stloc.1
+    IL_0007:  ldloca.s   CS$0$0001
+    IL_0009:  call       instance float64 [WindowsBase]System.Windows.Size::get_Height()
+    IL_000e:  stloc.0
+    IL_000f:  br.s       IL_0011
+
+    IL_0011:  ldloc.0
+    IL_0012:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\obj\Debug\App.g.cs" startline="47" endline="4"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       20 (0x14)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldstr      "MainWindow.xaml"
+    IL_0007:  ldc.i4.2
+    IL_0008:  newobj     instance void [System]System.Uri::.ctor(string,
+                                                                 valuetype [System]System.UriKind)
+    IL_000d:  call       instance void [PresentationFramework]System.Windows.Application::set_StartupUri(class [System]System.Uri)
+    IL_0012:  nop
+    IL_0013:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\obj\Debug\App.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [mscorlib]System.STAThreadAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       22 (0x16)
+    .maxstack  1
+    .locals init ([0] class DiningPhilosophers.App app)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void DiningPhilosophers.App::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  callvirt   instance void DiningPhilosophers.App::InitializeComponent()
+    IL_000d:  nop
+    IL_000e:  ldloc.0
+    IL_000f:  callvirt   instance int32 [PresentationFramework]System.Windows.Application::Run()
+    IL_0014:  pop
+    IL_0015:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\obj\Debug\App.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [PresentationFramework]System.Windows.Application::.ctor()
+    IL_0006:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\Properties\Resources.Designer.cs" startline="32" endline="35"><![CDATA[
+  {
+    // Code size       10 (0xa)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  nop
+    IL_0009:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\Properties\Resources.Designer.cs" startline="36" endline="51"><![CDATA[
+  {
+    // Code size       60 (0x3c)
+    .maxstack  3
+    .locals init ([0] class [mscorlib]System.Resources.ResourceManager temp,
+             [1] class [mscorlib]System.Resources.ResourceManager CS$1$0000,
+             [2] bool CS$4$0001)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Resources.ResourceManager DiningPhilosophers.Properties.Resources::resourceMan
+    IL_0006:  ldnull
+    IL_0007:  ceq
+    IL_0009:  ldc.i4.0
+    IL_000a:  ceq
+    IL_000c:  stloc.2
+    IL_000d:  ldloc.2
+    IL_000e:  brtrue.s   IL_0032
+
+    IL_0010:  nop
+    IL_0011:  ldstr      "DiningPhilosophers.Properties.Resources"
+    IL_0016:  ldtoken    DiningPhilosophers.Properties.Resources
+    IL_001b:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_0020:  callvirt   instance class [mscorlib]System.Reflection.Assembly [mscorlib]System.Type::get_Assembly()
+    IL_0025:  newobj     instance void [mscorlib]System.Resources.ResourceManager::.ctor(string,
+                                                                                         class [mscorlib]System.Reflection.Assembly)
+    IL_002a:  stloc.0
+    IL_002b:  ldloc.0
+    IL_002c:  stsfld     class [mscorlib]System.Resources.ResourceManager DiningPhilosophers.Properties.Resources::resourceMan
+    IL_0031:  nop
+    IL_0032:  ldsfld     class [mscorlib]System.Resources.ResourceManager DiningPhilosophers.Properties.Resources::resourceMan
+    IL_0037:  stloc.1
+    IL_0038:  br.s       IL_003a
+
+    IL_003a:  ldloc.1
+    IL_003b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\Properties\Resources.Designer.cs" startline="52" endline="64"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Globalization.CultureInfo CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Globalization.CultureInfo DiningPhilosophers.Properties.Resources::resourceCulture
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\Properties\Resources.Designer.cs" startline="65" endline="68"><![CDATA[
+  {
+    // Code size       8 (0x8)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  stsfld     class [mscorlib]System.Globalization.CultureInfo DiningPhilosophers.Properties.Resources::resourceCulture
+    IL_0007:  ret
+]]></source>
+</source_elements></project>

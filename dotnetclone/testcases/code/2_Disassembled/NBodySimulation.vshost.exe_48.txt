@@ -1,0 +1,127 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.0.30319.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern Microsoft.VisualStudio.HostingProcess.Utilities.Sync
+{
+  .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
+  .ver 10:0:0:0
+}
+.assembly extern mscorlib as mscorlib_2
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 2:0:0:0
+}
+.assembly vshost32
+{
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 2E C2 A9 20 4D 69 63 72 6F 73 6F 66 74 20   // ..... Microsoft 
+                                                                                                  43 6F 72 70 6F 72 61 74 69 6F 6E 2E 20 41 6C 6C   // Corporation. All
+                                                                                                  20 72 69 67 68 74 73 20 72 65 73 65 72 76 65 64   //  rights reserved
+                                                                                                  2E 00 00 )                                        // ...
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.CLSCompliantAttribute::.ctor(bool) = ( 01 00 01 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 0C 76 73 68 6F 73 74 33 32 2E 65 78 65 00   // ...vshost32.exe.
+                                                                                              00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 0C 76 73 68 6F 73 74 33 32 2E 65 78 65 00   // ...vshost32.exe.
+                                                                                                    00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyDefaultAliasAttribute::.ctor(string) = ( 01 00 0C 76 73 68 6F 73 74 33 32 2E 65 78 65 00   // ...vshost32.exe.
+                                                                                                     00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 15 4D 69 63 72 6F 73 6F 66 74 20 43 6F 72   // ...Microsoft Cor
+                                                                                                70 6F 72 61 74 69 6F 6E 00 00 )                   // poration..
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 24 4D 69 63 72 6F 73 6F 66 74 20 28 52 29   // ..$Microsoft (R)
+                                                                                                20 56 69 73 75 61 6C 20 53 74 75 64 69 6F 20 28   //  Visual Studio (
+                                                                                                52 29 20 32 30 31 30 00 00 )                      // R) 2010..
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 1A 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 01 00 54   // ,Version=v4.0..T
+                                                                                                        0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C   // ..FrameworkDispl
+                                                                                                        61 79 4E 61 6D 65 00 )                            // ayName.
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 0C 31 30 2E 30 2E 33 30 33 31 39 2E 31 00   // ...10.0.30319.1.
+                                                                                                    00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyInformationalVersionAttribute::.ctor(string) = ( 01 00 0C 31 30 2E 30 2E 33 30 33 31 39 2E 31 00   // ...10.0.30319.1.
+                                                                                                             00 ) 
+  .custom instance void [mscorlib]System.Resources.SatelliteContractVersionAttribute::.ctor(string) = ( 01 00 08 31 30 2E 30 2E 30 2E 30 00 00 )          // ...10.0.0.0..
+  .custom instance void [mscorlib]System.Resources.NeutralResourcesLanguageAttribute::.ctor(string) = ( 01 00 05 65 6E 2D 55 53 00 00 )                   // ...en-US..
+  .custom instance void [mscorlib]System.Reflection.AssemblyDelaySignAttribute::.ctor(bool) = ( 01 00 01 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyKeyFileAttribute::.ctor(string) = ( 01 00 25 66 3A 5C 64 64 5C 74 6F 6F 6C 73 5C 64   // ..%f:\dd\tools\d
+                                                                                                65 76 64 69 76 5C 46 69 6E 61 6C 50 75 62 6C 69   // evdiv\FinalPubli
+                                                                                                63 4B 65 79 2E 73 6E 6B 00 00 )                   // cKey.snk..
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 02 00 00 00 00 00 ) 
+
+  .publickey = (00 24 00 00 04 80 00 00 94 00 00 00 06 02 00 00   // .$..............
+                00 24 00 00 52 53 41 31 00 04 00 00 01 00 01 00   // .$..RSA1........
+                07 D1 FA 57 C4 AE D9 F0 A3 2E 84 AA 0F AE FD 0D   // ...W............
+                E9 E8 FD 6A EC 8F 87 FB 03 76 6C 83 4C 99 92 1E   // ...j.....vl.L...
+                B2 3B E7 9A D9 D5 DC C1 DD 9A D2 36 13 21 02 90   // .;.........6.!..
+                0B 72 3C F9 80 95 7F C4 E1 77 10 8F C6 07 77 4F   // .r<......w....wO
+                29 E8 32 0E 92 EA 05 EC E4 E8 21 C0 A5 EF E8 F1   // ).2.......!.....
+                64 5C 4C 0C 93 C1 AB 99 28 5D 62 2C AA 65 2C 1D   // d\L.....(]b,.e,.
+                FA D6 3D 74 5D 6F 2D E5 F1 7E 5E AF 0F C4 96 3D   // ..=t]o-..~^....=
+                26 1C 8A 12 43 65 18 20 6D C0 93 34 4D 5A D2 93 ) // &...Ce. m..4MZ..
+  .hash algorithm 0x00008004
+  .ver 10:0:0:0
+}
+.module vshost32.exe
+// MVID: {B1328A69-AAFE-412E-8B98-1D3DD7F59126}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0002       // WINDOWS_GUI
+.corflags 0x0000000b    //  ILONLY 32BITREQUIRED
+// Image base: 0x01240000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class public auto ansi sealed beforefieldinit Microsoft.VisualStudio.HostingProcess.EntryPoint
+       extends [mscorlib]System.Object
+{
+  .method private hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method EntryPoint::.ctor
+
+  .method public hidebysig static void  Main() cil managed
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       37 (0x25)
+    .maxstack  8
+    IL_0000:  call       class [mscorlib_2]System.Threading.EventWaitHandle [Microsoft.VisualStudio.HostingProcess.Utilities.Sync]Microsoft.VisualStudio.HostingProcess.Synchronize::get_HostingProcessInitialized()
+    IL_0005:  brfalse.s  IL_0024
+
+    IL_0007:  call       class [mscorlib_2]System.Threading.EventWaitHandle [Microsoft.VisualStudio.HostingProcess.Utilities.Sync]Microsoft.VisualStudio.HostingProcess.Synchronize::get_HostingProcessInitialized()
+    IL_000c:  callvirt   instance bool [mscorlib]System.Threading.EventWaitHandle::Set()
+    IL_0011:  pop
+    IL_0012:  call       class [mscorlib_2]System.Threading.ManualResetEvent [Microsoft.VisualStudio.HostingProcess.Utilities.Sync]Microsoft.VisualStudio.HostingProcess.Synchronize::get_StartRunningUsersAssembly()
+    IL_0017:  brfalse.s  IL_0024
+
+    IL_0019:  call       class [mscorlib_2]System.Threading.ManualResetEvent [Microsoft.VisualStudio.HostingProcess.Utilities.Sync]Microsoft.VisualStudio.HostingProcess.Synchronize::get_StartRunningUsersAssembly()
+    IL_001e:  callvirt   instance bool [mscorlib]System.Threading.WaitHandle::WaitOne()
+    IL_0023:  pop
+    IL_0024:  ret
+  } // end of method EntryPoint::Main
+
+} // end of class Microsoft.VisualStudio.HostingProcess.EntryPoint
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

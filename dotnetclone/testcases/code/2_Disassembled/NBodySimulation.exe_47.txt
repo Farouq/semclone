@@ -1,0 +1,2660 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.0.30319.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern PresentationFramework
+{
+  .publickeytoken = (31 BF 38 56 AD 36 4E 35 )                         // 1.8V.6N5
+  .ver 4:0:0:0
+}
+.assembly extern System.Xaml
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern System
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern WindowsBase
+{
+  .publickeytoken = (31 BF 38 56 AD 36 4E 35 )                         // 1.8V.6N5
+  .ver 4:0:0:0
+}
+.assembly extern PresentationCore
+{
+  .publickeytoken = (31 BF 38 56 AD 36 4E 35 )                         // 1.8V.6N5
+  .ver 4:0:0:0
+}
+.assembly extern NBodySimulationBackend
+{
+  .ver 0:0:0:0
+}
+.assembly NBodySimulation
+{
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 29 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ..).NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 2C 50 72   // ,Version=v4.0,Pr
+                                                                                                        6F 66 69 6C 65 3D 43 6C 69 65 6E 74 01 00 54 0E   // ofile=Client..T.
+                                                                                                        14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C 61   // .FrameworkDispla
+                                                                                                        79 4E 61 6D 65 1F 2E 4E 45 54 20 46 72 61 6D 65   // yName..NET Frame
+                                                                                                        77 6F 72 6B 20 34 20 43 6C 69 65 6E 74 20 50 72   // work 4 Client Pr
+                                                                                                        6F 66 69 6C 65 )                                  // ofile
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 0F 4E 42 6F 64 79 53 69 6D 75 6C 61 74 69   // ...NBodySimulati
+                                                                                              6F 6E 00 00 )                                     // on..
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 15 4D 69 63 72 6F 73 6F 66 74 20 43 6F 72   // ...Microsoft Cor
+                                                                                                70 6F 72 61 74 69 6F 6E 00 00 )                   // poration..
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 0F 4E 42 6F 64 79 53 69 6D 75 6C 61 74 69   // ...NBodySimulati
+                                                                                                6F 6E 00 00 )                                     // on..
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 39 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ..9Copyright .. 
+                                                                                                  4D 69 63 72 6F 73 6F 66 74 20 43 6F 72 70 6F 72   // Microsoft Corpor
+                                                                                                  61 74 69 6F 6E 2E 20 20 41 6C 6C 20 72 69 67 68   // ation.  All righ
+                                                                                                  74 73 20 72 65 73 65 72 76 65 64 2E 00 00 )       // ts reserved...
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [PresentationFramework]System.Windows.ThemeInfoAttribute::.ctor(valuetype [PresentationFramework]System.Windows.ResourceDictionaryLocation,
+                                                                                        valuetype [PresentationFramework]System.Windows.ResourceDictionaryLocation) = ( 01 00 00 00 00 00 01 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.mresource public NBodySimulation.g.resources
+{
+  // Offset: 0x00000000 Length: 0x000014DE
+}
+.mresource public NBodySimulation.Properties.Resources.resources
+{
+  // Offset: 0x000014E8 Length: 0x000000B4
+}
+.module NBodySimulation.exe
+// MVID: {01022DAA-4E16-4566-B0CB-A1644463C8C7}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0002       // WINDOWS_GUI
+.corflags 0x00000003    //  ILONLY 32BITREQUIRED
+// Image base: 0x004E0000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class public auto ansi beforefieldinit NBodySimulation.App
+       extends [PresentationFramework]System.Windows.Application
+{
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 16 50 72 65 73 65 6E 74 61 74 69 6F 6E 42   // ...PresentationB
+                                                                                                  75 69 6C 64 54 61 73 6B 73 07 34 2E 30 2E 30 2E   // uildTasks.4.0.0.
+                                                                                                  30 00 00 )                                        // 0..
+  .method public hidebysig instance void 
+          InitializeComponent() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       20 (0x14)
+    .maxstack  8
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\App.g.cs' 
+//000047:         public void InitializeComponent() {
+    IL_0000:  nop
+// Source File 'c:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\App.xaml' 
+//000004:              StartupUri="MainWindow.xaml">
+    IL_0001:  ldarg.0
+    IL_0002:  ldstr      "MainWindow.xaml"
+    IL_0007:  ldc.i4.2
+    IL_0008:  newobj     instance void [System]System.Uri::.ctor(string,
+                                                                 valuetype [System]System.UriKind)
+    IL_000d:  call       instance void [PresentationFramework]System.Windows.Application::set_StartupUri(class [System]System.Uri)
+    IL_0012:  nop
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\App.g.cs' 
+    IL_0013:  ret
+  } // end of method App::InitializeComponent
+
+  .method public hidebysig static void  Main() cil managed
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [mscorlib]System.STAThreadAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       22 (0x16)
+    .maxstack  1
+    .locals init ([0] class NBodySimulation.App app)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void NBodySimulation.App::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  callvirt   instance void NBodySimulation.App::InitializeComponent()
+    IL_000d:  nop
+    IL_000e:  ldloc.0
+    IL_000f:  callvirt   instance int32 [PresentationFramework]System.Windows.Application::Run()
+    IL_0014:  pop
+    IL_0015:  ret
+  } // end of method App::Main
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [PresentationFramework]System.Windows.Application::.ctor()
+    IL_0006:  ret
+  } // end of method App::.ctor
+
+} // end of class NBodySimulation.App
+
+.class public auto ansi beforefieldinit NBodySimulation.MainWindow
+       extends [PresentationFramework]System.Windows.Window
+       implements [System.Xaml]System.Windows.Markup.IComponentConnector
+{
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 16 50 72 65 73 65 6E 74 61 74 69 6F 6E 42   // ...PresentationB
+                                                                                                  75 69 6C 64 54 61 73 6B 73 07 34 2E 30 2E 30 2E   // uildTasks.4.0.0.
+                                                                                                  30 00 00 )                                        // 0..
+  .field private float64 m_stepSize
+  .field private class [System]System.Diagnostics.Stopwatch m_stopwatch
+  .field private class [WindowsBase]System.Windows.Threading.DispatcherTimer m_timer
+  .field private class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [mscorlib]System.Action`1<float64>> m_executeAlgorithm
+  .field assembly class [PresentationFramework]System.Windows.Controls.Label numCoresLabel
+  .field assembly class [PresentationFramework]System.Windows.Controls.Slider numCoresSlider
+  .field assembly class [PresentationFramework]System.Windows.Controls.StackPanel windowSideBar
+  .field assembly class [PresentationFramework]System.Windows.Controls.ListBox expanderSelection
+  .field assembly class [PresentationFramework]System.Windows.Controls.Expander expandUnoptimized
+  .field assembly class [PresentationFramework]System.Windows.Controls.ListBox algorithmList
+  .field assembly class [PresentationFramework]System.Windows.Controls.Label algorithmName
+  .field assembly class [PresentationFramework]System.Windows.Controls.Label timeElapsed
+  .field assembly class [PresentationFramework]System.Windows.Controls.Label displayTimeElapsed
+  .field assembly class [PresentationFramework]System.Windows.Controls.Button startButton
+  .field assembly class [PresentationFramework]System.Windows.Controls.Button resetButton
+  .field assembly class [PresentationFramework]System.Windows.Controls.Canvas ellipseCanvas
+  .field assembly class [PresentationFramework]System.Windows.Controls.Grid windowTopBar
+  .field assembly class [PresentationFramework]System.Windows.Controls.Label numParticlesLabel
+  .field assembly class [PresentationFramework]System.Windows.Controls.Slider numParticlesSlider
+  .field private bool _contentLoaded
+  .field private static class [mscorlib]System.Action`1<float64> 'CS$<>9__CachedAnonymousMethodDelegate3'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Action`1<float64> 'CS$<>9__CachedAnonymousMethodDelegate4'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       208 (0xd0)
+    .maxstack  4
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\MainWindow.xaml.cs' 
+//000023:         private double m_stepSize = 5000.0;
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.r8     5000.
+    IL_000a:  stfld      float64 NBodySimulation.MainWindow::m_stepSize
+//000024: 
+//000025:         Stopwatch m_stopwatch = new Stopwatch();
+    IL_000f:  ldarg.0
+    IL_0010:  newobj     instance void [System]System.Diagnostics.Stopwatch::.ctor()
+    IL_0015:  stfld      class [System]System.Diagnostics.Stopwatch NBodySimulation.MainWindow::m_stopwatch
+//000026:         DispatcherTimer m_timer = new DispatcherTimer();
+    IL_001a:  ldarg.0
+    IL_001b:  newobj     instance void [WindowsBase]System.Windows.Threading.DispatcherTimer::.ctor()
+    IL_0020:  stfld      class [WindowsBase]System.Windows.Threading.DispatcherTimer NBodySimulation.MainWindow::m_timer
+//000027:         Dictionary<string, Action<double>> m_executeAlgorithm;
+//000028: 
+//000029:         public MainWindow()
+    IL_0025:  ldarg.0
+    IL_0026:  call       instance void [PresentationFramework]System.Windows.Window::.ctor()
+    IL_002b:  nop
+//000030:         {
+    IL_002c:  nop
+//000031:             InitializeComponent();
+    IL_002d:  ldarg.0
+    IL_002e:  call       instance void NBodySimulation.MainWindow::InitializeComponent()
+    IL_0033:  nop
+//000032: 
+//000033:             SizeChanged += new SizeChangedEventHandler(WindowSizeChangedEvent);
+    IL_0034:  ldarg.0
+    IL_0035:  ldarg.0
+    IL_0036:  ldftn      instance void NBodySimulation.MainWindow::WindowSizeChangedEvent(object,
+                                                                                          class [PresentationFramework]System.Windows.SizeChangedEventArgs)
+    IL_003c:  newobj     instance void [PresentationFramework]System.Windows.SizeChangedEventHandler::.ctor(object,
+                                                                                                            native int)
+    IL_0041:  call       instance void [PresentationFramework]System.Windows.FrameworkElement::add_SizeChanged(class [PresentationFramework]System.Windows.SizeChangedEventHandler)
+    IL_0046:  nop
+//000034:             numParticlesSlider.ValueChanged += NumParticlesValueChanged;
+    IL_0047:  ldarg.0
+    IL_0048:  ldfld      class [PresentationFramework]System.Windows.Controls.Slider NBodySimulation.MainWindow::numParticlesSlider
+    IL_004d:  ldarg.0
+    IL_004e:  ldftn      instance void NBodySimulation.MainWindow::NumParticlesValueChanged(object,
+                                                                                            class [PresentationFramework]System.Windows.RoutedPropertyChangedEventArgs`1<float64>)
+    IL_0054:  newobj     instance void class [PresentationFramework]System.Windows.RoutedPropertyChangedEventHandler`1<float64>::.ctor(object,
+                                                                                                                                       native int)
+    IL_0059:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Primitives.RangeBase::add_ValueChanged(class [PresentationFramework]System.Windows.RoutedPropertyChangedEventHandler`1<float64>)
+    IL_005e:  nop
+//000035:             SetNumCoresSliderProperties();
+    IL_005f:  ldarg.0
+    IL_0060:  call       instance void NBodySimulation.MainWindow::SetNumCoresSliderProperties()
+    IL_0065:  nop
+//000036: 
+//000037:             ResetSimulation(true, Convert.ToInt32(numParticlesSlider.Value));
+    IL_0066:  ldarg.0
+    IL_0067:  ldc.i4.1
+    IL_0068:  ldarg.0
+    IL_0069:  ldfld      class [PresentationFramework]System.Windows.Controls.Slider NBodySimulation.MainWindow::numParticlesSlider
+    IL_006e:  callvirt   instance float64 [PresentationFramework]System.Windows.Controls.Primitives.RangeBase::get_Value()
+    IL_0073:  call       int32 [mscorlib]System.Convert::ToInt32(float64)
+    IL_0078:  call       instance void NBodySimulation.MainWindow::ResetSimulation(bool,
+                                                                                   int32)
+    IL_007d:  nop
+//000038: 
+//000039:             FillDelegateLists();
+    IL_007e:  ldarg.0
+    IL_007f:  call       instance void NBodySimulation.MainWindow::FillDelegateLists()
+    IL_0084:  nop
+//000040:             algorithmList.ItemsSource = m_executeAlgorithm.Keys;
+    IL_0085:  ldarg.0
+    IL_0086:  ldfld      class [PresentationFramework]System.Windows.Controls.ListBox NBodySimulation.MainWindow::algorithmList
+    IL_008b:  ldarg.0
+    IL_008c:  ldfld      class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [mscorlib]System.Action`1<float64>> NBodySimulation.MainWindow::m_executeAlgorithm
+    IL_0091:  callvirt   instance class [mscorlib]System.Collections.Generic.Dictionary`2/KeyCollection<!0,!1> class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [mscorlib]System.Action`1<float64>>::get_Keys()
+    IL_0096:  callvirt   instance void [PresentationFramework]System.Windows.Controls.ItemsControl::set_ItemsSource(class [mscorlib]System.Collections.IEnumerable)
+    IL_009b:  nop
+//000041: 
+//000042:             m_timer.Interval = TimeSpan.FromMilliseconds(20);
+    IL_009c:  ldarg.0
+    IL_009d:  ldfld      class [WindowsBase]System.Windows.Threading.DispatcherTimer NBodySimulation.MainWindow::m_timer
+    IL_00a2:  ldc.r8     20.
+    IL_00ab:  call       valuetype [mscorlib]System.TimeSpan [mscorlib]System.TimeSpan::FromMilliseconds(float64)
+    IL_00b0:  callvirt   instance void [WindowsBase]System.Windows.Threading.DispatcherTimer::set_Interval(valuetype [mscorlib]System.TimeSpan)
+    IL_00b5:  nop
+//000043:             m_timer.Tick += new EventHandler(ComputeNextPosition);
+    IL_00b6:  ldarg.0
+    IL_00b7:  ldfld      class [WindowsBase]System.Windows.Threading.DispatcherTimer NBodySimulation.MainWindow::m_timer
+    IL_00bc:  ldarg.0
+    IL_00bd:  ldftn      instance void NBodySimulation.MainWindow::ComputeNextPosition(object,
+                                                                                       class [mscorlib]System.EventArgs)
+    IL_00c3:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_00c8:  callvirt   instance void [WindowsBase]System.Windows.Threading.DispatcherTimer::add_Tick(class [mscorlib]System.EventHandler)
+    IL_00cd:  nop
+//000044:         }
+    IL_00ce:  nop
+    IL_00cf:  ret
+  } // end of method MainWindow::.ctor
+
+  .method private hidebysig instance void 
+          SetNumCoresSliderProperties() cil managed
+  {
+    // Code size       68 (0x44)
+    .maxstack  2
+    .locals init ([0] int32 numProcs)
+//000045: 
+//000046:         private void SetNumCoresSliderProperties()
+//000047:         {
+    IL_0000:  nop
+//000048:             var numProcs = Environment.ProcessorCount;
+    IL_0001:  call       int32 [mscorlib]System.Environment::get_ProcessorCount()
+    IL_0006:  stloc.0
+//000049:             numCoresSlider.SelectionEnd = numProcs;
+    IL_0007:  ldarg.0
+    IL_0008:  ldfld      class [PresentationFramework]System.Windows.Controls.Slider NBodySimulation.MainWindow::numCoresSlider
+    IL_000d:  ldloc.0
+    IL_000e:  conv.r8
+    IL_000f:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Slider::set_SelectionEnd(float64)
+    IL_0014:  nop
+//000050:             numCoresSlider.Maximum = numProcs;
+    IL_0015:  ldarg.0
+    IL_0016:  ldfld      class [PresentationFramework]System.Windows.Controls.Slider NBodySimulation.MainWindow::numCoresSlider
+    IL_001b:  ldloc.0
+    IL_001c:  conv.r8
+    IL_001d:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Primitives.RangeBase::set_Maximum(float64)
+    IL_0022:  nop
+//000051:             numCoresSlider.Value = numProcs;
+    IL_0023:  ldarg.0
+    IL_0024:  ldfld      class [PresentationFramework]System.Windows.Controls.Slider NBodySimulation.MainWindow::numCoresSlider
+    IL_0029:  ldloc.0
+    IL_002a:  conv.r8
+    IL_002b:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Primitives.RangeBase::set_Value(float64)
+    IL_0030:  nop
+//000052:             numCoresLabel.Content = numProcs;
+    IL_0031:  ldarg.0
+    IL_0032:  ldfld      class [PresentationFramework]System.Windows.Controls.Label NBodySimulation.MainWindow::numCoresLabel
+    IL_0037:  ldloc.0
+    IL_0038:  box        [mscorlib]System.Int32
+    IL_003d:  callvirt   instance void [PresentationFramework]System.Windows.Controls.ContentControl::set_Content(object)
+    IL_0042:  nop
+//000053:         }
+    IL_0043:  ret
+  } // end of method MainWindow::SetNumCoresSliderProperties
+
+  .method private hidebysig instance void 
+          AlgorithmTypeSelection(object sender,
+                                 class [PresentationFramework]System.Windows.Controls.SelectionChangedEventArgs e) cil managed
+  {
+    // Code size       33 (0x21)
+    .maxstack  2
+    .locals init ([0] int32 selection,
+             [1] bool CS$4$0000)
+//000054: 
+//000055:         private void AlgorithmTypeSelection(object sender, SelectionChangedEventArgs e)
+//000056:         {
+    IL_0000:  nop
+//000057:             var selection = expanderSelection.SelectedIndex;
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [PresentationFramework]System.Windows.Controls.ListBox NBodySimulation.MainWindow::expanderSelection
+    IL_0007:  callvirt   instance int32 [PresentationFramework]System.Windows.Controls.Primitives.Selector::get_SelectedIndex()
+    IL_000c:  stloc.0
+//000058:             if (selection != 0)
+    IL_000d:  ldloc.0
+    IL_000e:  ldc.i4.0
+    IL_000f:  ceq
+    IL_0011:  stloc.1
+//000059:                 throw new ArgumentOutOfRangeException("Expander selection has only one choice");
+//000060:         }
+//000061: 
+//000062:         private void NumCoresValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+//000063:         {
+//000064:             Globals.gNumCoresUsed = (int)e.NewValue;
+//000065:             numCoresLabel.Content = e.NewValue.ToString();
+//000066:         }
+//000067: 
+//000068:         private void NumParticlesValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+//000069:         {
+//000070:             int newNumParticles = Convert.ToInt32(e.NewValue);
+//000071:             ResetSimulation(true, newNumParticles);
+//000072:             StartSimulation();
+//000073:         }
+//000074: 
+//000075:         private void StepSizeValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+//000076:         {
+//000077:             m_stepSize = e.NewValue;
+//000078:             ResetSimulation(false, -1);
+//000079:         }
+//000080: 
+//000081:         private void WindowSizeChangedEvent(object sender, SizeChangedEventArgs e)
+//000082:         {
+//000083:             var newCanvasHeight = (this.ActualHeight - windowTopBar.ActualHeight) / 2;
+//000084:             var newCanvasWidth = (this.ActualWidth - windowSideBar.ActualWidth) / 2;
+//000085:             ellipseCanvas.Height = newCanvasHeight;
+//000086:             ellipseCanvas.Width = newCanvasWidth;
+//000087:         }
+//000088: 
+//000089:         private void FillDelegateLists()
+//000090:         {
+//000091:             m_executeAlgorithm = new Dictionary<string, Action<double>>{
+//000092:                 {"Sequential", step => NBodyParallelized.UpdateParticlesParallelFor(step, false)},
+//000093:                 {"Parallel", step => NBodyParallelized.UpdateParticlesParallelFor(step, true)}};
+//000094:         }
+//000095: 
+//000096:         void UpdateVelocity()
+//000097:         {
+//000098:             var algorithmListSelection = (string)algorithmList.SelectedItem;
+//000099:             var expanderSelectionItem = expanderSelection.SelectedIndex;
+//000100:             if (expanderSelectionItem == -1 || algorithmList.SelectedIndex == -1)
+//000101:             {
+//000102:                 var defaultSelection = "Sequential";
+//000103:                 m_executeAlgorithm[defaultSelection](m_stepSize);
+//000104:                 algorithmName.Content = defaultSelection;
+//000105:             }
+//000106:             else
+//000107:             {
+//000108:                 m_executeAlgorithm[algorithmListSelection](m_stepSize);
+//000109:                 algorithmName.Content = algorithmListSelection;
+//000110:             }
+//000111:         }
+//000112: 
+//000113:         void ComputeNextPosition(object sender, EventArgs evArg)
+//000114:         {
+//000115:             m_stopwatch.Restart();
+//000116:             UpdateVelocity();
+//000117: 
+//000118:             int i = 0;
+//000119:             foreach (var e in Globals.globalState)
+//000120:             {
+//000121:                 var xDrag = e.px * Globals.particleSystemCentroid;
+//000122:                 var yDrag = e.py * Globals.particleSystemCentroid;
+//000123:                 var newXVel = Globals.globalState[i].vx;
+//000124:                 var newYVel = Globals.globalState[i].vy;
+//000125:                 var xVel = newXVel + xDrag;
+//000126:                 var yVel = newYVel + yDrag;
+//000127: 
+//000128:                 Canvas.SetLeft(ellipseCanvas.Children[i], 100 * e.px);
+//000129:                 Canvas.SetTop(ellipseCanvas.Children[i], 100 * e.py);
+//000130:                 Globals.globalState[i].px = e.px + xVel * m_stepSize;
+//000131: 
+//000132:                 Globals.globalState[i].py = e.py + yVel * m_stepSize;
+//000133:                 Globals.globalState[i].vx = xVel - xDrag;
+//000134:                 Globals.globalState[i].vy = yVel - yDrag;
+//000135: 
+//000136:                 i++;
+//000137:             }
+//000138: 
+//000139:             var fps = (1.0 / (m_stopwatch.Elapsed.TotalSeconds));
+//000140:             displayTimeElapsed.Content = fps.ToString("F2");
+//000141:         }
+//000142: 
+//000143:         private void StartSimulation()
+//000144:         {
+//000145:             InitParticles();
+//000146:             startButton.IsEnabled = false;
+//000147:             m_timer.Start();
+//000148:             numParticlesLabel.Content = numParticlesSlider.Value;
+//000149:             resetButton.IsEnabled = true;
+//000150:         }
+//000151: 
+//000152:         private void ResetSimulation(bool changeNumber, int newNumParticles)
+//000153:         {
+//000154:             resetButton.IsEnabled = false;
+//000155:             m_timer.Stop();
+//000156:             ellipseCanvas.Children.Clear();
+//000157:             if (changeNumber)
+//000158:                 Globals.changeNumberOfParticles(newNumParticles);
+//000159:             else
+//000160:                 Globals.restart();
+//000161:             startButton.IsEnabled = true;
+//000162:         }
+//000163: 
+//000164:         private void StartButtonClick(object sender, RoutedEventArgs e)
+//000165:         {
+//000166:             StartSimulation();
+//000167:         }
+//000168: 
+//000169:         private void ResetButtonClick(object sender, RoutedEventArgs e)
+//000170:         {
+//000171:             ResetSimulation(false, -1);
+//000172:         }
+//000173: 
+//000174:         private Brush GetRadialBrush(Color edgeColor, Color focalColor)
+//000175:         {
+//000176:             return new RadialGradientBrush(focalColor, edgeColor) {
+//000177:                 GradientOrigin = new Point(0.5, 0.5),
+//000178:                 SpreadMethod = GradientSpreadMethod.Pad
+//000179:             };
+//000180:         }
+//000181: 
+//000182:         public void InitParticles()
+//000183:         {
+//000184:             var pList = Globals.globalState;
+//000185:             int particleIndex = 0;
+//000186:             foreach (var p in pList)
+//000187:             {
+//000188:                 var edgeColor = Color.FromArgb(0x00, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000189:                 var focalColor = Color.FromArgb(0x35, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000190: 
+//000191:                 // get radial brush
+//000192:                 var eBrush = GetRadialBrush(edgeColor, focalColor);
+//000193: 
+//000194:                 var size = System.Math.Pow((p.mass / Globals.nominalMass), 0.3333) * Globals.drawParticleSizeScale;
+//000195: 
+//000196:                 // create new ellipse!
+//000197:                 var curEllipse = new Ellipse() { Fill = eBrush, Height = size, Width = size };
+//000198:                 ellipseCanvas.Children.Add(curEllipse);
+//000199:                 Canvas.SetLeft(curEllipse, 100 * p.px);
+//000200:                 Canvas.SetTop(curEllipse, 100 * p.py);
+//000201: 
+//000202:                 particleIndex++;
+//000203:             }
+//000204:         }
+//000205:     }
+//000206: }
+    IL_0012:  ldloc.1
+    IL_0013:  brtrue.s   IL_0020
+
+//000059:                 throw new ArgumentOutOfRangeException("Expander selection has only one choice");
+    IL_0015:  ldstr      "Expander selection has only one choice"
+    IL_001a:  newobj     instance void [mscorlib]System.ArgumentOutOfRangeException::.ctor(string)
+    IL_001f:  throw
+
+//000060:         }
+    IL_0020:  ret
+  } // end of method MainWindow::AlgorithmTypeSelection
+
+  .method private hidebysig instance void 
+          NumCoresValueChanged(object sender,
+                               class [PresentationFramework]System.Windows.RoutedPropertyChangedEventArgs`1<float64> e) cil managed
+  {
+    // Code size       41 (0x29)
+    .maxstack  2
+    .locals init ([0] float64 CS$0$0000)
+//000061: 
+//000062:         private void NumCoresValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+//000063:         {
+    IL_0000:  nop
+//000064:             Globals.gNumCoresUsed = (int)e.NewValue;
+    IL_0001:  ldarg.2
+    IL_0002:  callvirt   instance !0 class [PresentationFramework]System.Windows.RoutedPropertyChangedEventArgs`1<float64>::get_NewValue()
+    IL_0007:  conv.i4
+    IL_0008:  call       void [NBodySimulationBackend]Globals::set_gNumCoresUsed(int32)
+    IL_000d:  nop
+//000065:             numCoresLabel.Content = e.NewValue.ToString();
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      class [PresentationFramework]System.Windows.Controls.Label NBodySimulation.MainWindow::numCoresLabel
+    IL_0014:  ldarg.2
+    IL_0015:  callvirt   instance !0 class [PresentationFramework]System.Windows.RoutedPropertyChangedEventArgs`1<float64>::get_NewValue()
+    IL_001a:  stloc.0
+    IL_001b:  ldloca.s   CS$0$0000
+    IL_001d:  call       instance string [mscorlib]System.Double::ToString()
+    IL_0022:  callvirt   instance void [PresentationFramework]System.Windows.Controls.ContentControl::set_Content(object)
+    IL_0027:  nop
+//000066:         }
+    IL_0028:  ret
+  } // end of method MainWindow::NumCoresValueChanged
+
+  .method private hidebysig instance void 
+          NumParticlesValueChanged(object sender,
+                                   class [PresentationFramework]System.Windows.RoutedPropertyChangedEventArgs`1<float64> e) cil managed
+  {
+    // Code size       30 (0x1e)
+    .maxstack  3
+    .locals init ([0] int32 newNumParticles)
+//000067: 
+//000068:         private void NumParticlesValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+//000069:         {
+    IL_0000:  nop
+//000070:             int newNumParticles = Convert.ToInt32(e.NewValue);
+    IL_0001:  ldarg.2
+    IL_0002:  callvirt   instance !0 class [PresentationFramework]System.Windows.RoutedPropertyChangedEventArgs`1<float64>::get_NewValue()
+    IL_0007:  call       int32 [mscorlib]System.Convert::ToInt32(float64)
+    IL_000c:  stloc.0
+//000071:             ResetSimulation(true, newNumParticles);
+    IL_000d:  ldarg.0
+    IL_000e:  ldc.i4.1
+    IL_000f:  ldloc.0
+    IL_0010:  call       instance void NBodySimulation.MainWindow::ResetSimulation(bool,
+                                                                                   int32)
+    IL_0015:  nop
+//000072:             StartSimulation();
+    IL_0016:  ldarg.0
+    IL_0017:  call       instance void NBodySimulation.MainWindow::StartSimulation()
+    IL_001c:  nop
+//000073:         }
+    IL_001d:  ret
+  } // end of method MainWindow::NumParticlesValueChanged
+
+  .method private hidebysig instance void 
+          StepSizeValueChanged(object sender,
+                               class [PresentationFramework]System.Windows.RoutedPropertyChangedEventArgs`1<float64> e) cil managed
+  {
+    // Code size       23 (0x17)
+    .maxstack  8
+//000074: 
+//000075:         private void StepSizeValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+//000076:         {
+    IL_0000:  nop
+//000077:             m_stepSize = e.NewValue;
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.2
+    IL_0003:  callvirt   instance !0 class [PresentationFramework]System.Windows.RoutedPropertyChangedEventArgs`1<float64>::get_NewValue()
+    IL_0008:  stfld      float64 NBodySimulation.MainWindow::m_stepSize
+//000078:             ResetSimulation(false, -1);
+    IL_000d:  ldarg.0
+    IL_000e:  ldc.i4.0
+    IL_000f:  ldc.i4.m1
+    IL_0010:  call       instance void NBodySimulation.MainWindow::ResetSimulation(bool,
+                                                                                   int32)
+    IL_0015:  nop
+//000079:         }
+    IL_0016:  ret
+  } // end of method MainWindow::StepSizeValueChanged
+
+  .method private hidebysig instance void 
+          WindowSizeChangedEvent(object sender,
+                                 class [PresentationFramework]System.Windows.SizeChangedEventArgs e) cil managed
+  {
+    // Code size       86 (0x56)
+    .maxstack  2
+    .locals init ([0] float64 newCanvasHeight,
+             [1] float64 newCanvasWidth)
+//000080: 
+//000081:         private void WindowSizeChangedEvent(object sender, SizeChangedEventArgs e)
+//000082:         {
+    IL_0000:  nop
+//000083:             var newCanvasHeight = (this.ActualHeight - windowTopBar.ActualHeight) / 2;
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance float64 [PresentationFramework]System.Windows.FrameworkElement::get_ActualHeight()
+    IL_0007:  ldarg.0
+    IL_0008:  ldfld      class [PresentationFramework]System.Windows.Controls.Grid NBodySimulation.MainWindow::windowTopBar
+    IL_000d:  callvirt   instance float64 [PresentationFramework]System.Windows.FrameworkElement::get_ActualHeight()
+    IL_0012:  sub
+    IL_0013:  ldc.r8     2.
+    IL_001c:  div
+    IL_001d:  stloc.0
+//000084:             var newCanvasWidth = (this.ActualWidth - windowSideBar.ActualWidth) / 2;
+    IL_001e:  ldarg.0
+    IL_001f:  call       instance float64 [PresentationFramework]System.Windows.FrameworkElement::get_ActualWidth()
+    IL_0024:  ldarg.0
+    IL_0025:  ldfld      class [PresentationFramework]System.Windows.Controls.StackPanel NBodySimulation.MainWindow::windowSideBar
+    IL_002a:  callvirt   instance float64 [PresentationFramework]System.Windows.FrameworkElement::get_ActualWidth()
+    IL_002f:  sub
+    IL_0030:  ldc.r8     2.
+    IL_0039:  div
+    IL_003a:  stloc.1
+//000085:             ellipseCanvas.Height = newCanvasHeight;
+    IL_003b:  ldarg.0
+    IL_003c:  ldfld      class [PresentationFramework]System.Windows.Controls.Canvas NBodySimulation.MainWindow::ellipseCanvas
+    IL_0041:  ldloc.0
+    IL_0042:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Height(float64)
+    IL_0047:  nop
+//000086:             ellipseCanvas.Width = newCanvasWidth;
+    IL_0048:  ldarg.0
+    IL_0049:  ldfld      class [PresentationFramework]System.Windows.Controls.Canvas NBodySimulation.MainWindow::ellipseCanvas
+    IL_004e:  ldloc.1
+    IL_004f:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Width(float64)
+    IL_0054:  nop
+//000087:         }
+    IL_0055:  ret
+  } // end of method MainWindow::WindowSizeChangedEvent
+
+  .method private hidebysig instance void 
+          FillDelegateLists() cil managed
+  {
+    // Code size       101 (0x65)
+    .maxstack  6
+    .locals init ([0] class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [mscorlib]System.Action`1<float64>> '<>g__initLocal0')
+//000088: 
+//000089:         private void FillDelegateLists()
+//000090:         {
+    IL_0000:  nop
+//000091:             m_executeAlgorithm = new Dictionary<string, Action<double>>{
+    IL_0001:  ldarg.0
+    IL_0002:  newobj     instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [mscorlib]System.Action`1<float64>>::.ctor()
+    IL_0007:  stloc.0
+    IL_0008:  ldloc.0
+    IL_0009:  ldstr      "Sequential"
+    IL_000e:  ldsfld     class [mscorlib]System.Action`1<float64> NBodySimulation.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate3'
+    IL_0013:  brtrue.s   IL_0028
+
+    IL_0015:  ldnull
+    IL_0016:  ldftn      void NBodySimulation.MainWindow::'<FillDelegateLists>b__1'(float64)
+    IL_001c:  newobj     instance void class [mscorlib]System.Action`1<float64>::.ctor(object,
+                                                                                       native int)
+    IL_0021:  stsfld     class [mscorlib]System.Action`1<float64> NBodySimulation.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate3'
+    IL_0026:  br.s       IL_0028
+
+    IL_0028:  ldsfld     class [mscorlib]System.Action`1<float64> NBodySimulation.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate3'
+    IL_002d:  callvirt   instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [mscorlib]System.Action`1<float64>>::Add(!0,
+                                                                                                                                                     !1)
+    IL_0032:  nop
+    IL_0033:  ldloc.0
+    IL_0034:  ldstr      "Parallel"
+    IL_0039:  ldsfld     class [mscorlib]System.Action`1<float64> NBodySimulation.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate4'
+    IL_003e:  brtrue.s   IL_0053
+
+    IL_0040:  ldnull
+    IL_0041:  ldftn      void NBodySimulation.MainWindow::'<FillDelegateLists>b__2'(float64)
+    IL_0047:  newobj     instance void class [mscorlib]System.Action`1<float64>::.ctor(object,
+                                                                                       native int)
+    IL_004c:  stsfld     class [mscorlib]System.Action`1<float64> NBodySimulation.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate4'
+    IL_0051:  br.s       IL_0053
+
+    IL_0053:  ldsfld     class [mscorlib]System.Action`1<float64> NBodySimulation.MainWindow::'CS$<>9__CachedAnonymousMethodDelegate4'
+    IL_0058:  callvirt   instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [mscorlib]System.Action`1<float64>>::Add(!0,
+                                                                                                                                                     !1)
+    IL_005d:  nop
+    IL_005e:  ldloc.0
+    IL_005f:  stfld      class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [mscorlib]System.Action`1<float64>> NBodySimulation.MainWindow::m_executeAlgorithm
+//000092:                 {"Sequential", step => NBodyParallelized.UpdateParticlesParallelFor(step, false)},
+//000093:                 {"Parallel", step => NBodyParallelized.UpdateParticlesParallelFor(step, true)}};
+//000094:         }
+    IL_0064:  ret
+  } // end of method MainWindow::FillDelegateLists
+
+  .method private hidebysig instance void 
+          UpdateVelocity() cil managed
+  {
+    // Code size       145 (0x91)
+    .maxstack  2
+    .locals init ([0] string algorithmListSelection,
+             [1] int32 expanderSelectionItem,
+             [2] string defaultSelection,
+             [3] bool CS$4$0000)
+//000095: 
+//000096:         void UpdateVelocity()
+//000097:         {
+    IL_0000:  nop
+//000098:             var algorithmListSelection = (string)algorithmList.SelectedItem;
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [PresentationFramework]System.Windows.Controls.ListBox NBodySimulation.MainWindow::algorithmList
+    IL_0007:  callvirt   instance object [PresentationFramework]System.Windows.Controls.Primitives.Selector::get_SelectedItem()
+    IL_000c:  castclass  [mscorlib]System.String
+    IL_0011:  stloc.0
+//000099:             var expanderSelectionItem = expanderSelection.SelectedIndex;
+    IL_0012:  ldarg.0
+    IL_0013:  ldfld      class [PresentationFramework]System.Windows.Controls.ListBox NBodySimulation.MainWindow::expanderSelection
+    IL_0018:  callvirt   instance int32 [PresentationFramework]System.Windows.Controls.Primitives.Selector::get_SelectedIndex()
+    IL_001d:  stloc.1
+//000100:             if (expanderSelectionItem == -1 || algorithmList.SelectedIndex == -1)
+    IL_001e:  ldloc.1
+    IL_001f:  ldc.i4.m1
+    IL_0020:  beq.s      IL_0035
+
+    IL_0022:  ldarg.0
+    IL_0023:  ldfld      class [PresentationFramework]System.Windows.Controls.ListBox NBodySimulation.MainWindow::algorithmList
+    IL_0028:  callvirt   instance int32 [PresentationFramework]System.Windows.Controls.Primitives.Selector::get_SelectedIndex()
+    IL_002d:  ldc.i4.m1
+    IL_002e:  ceq
+    IL_0030:  ldc.i4.0
+    IL_0031:  ceq
+    IL_0033:  br.s       IL_0036
+
+    IL_0035:  ldc.i4.0
+    IL_0036:  stloc.3
+//000101:             {
+//000102:                 var defaultSelection = "Sequential";
+//000103:                 m_executeAlgorithm[defaultSelection](m_stepSize);
+//000104:                 algorithmName.Content = defaultSelection;
+//000105:             }
+//000106:             else
+//000107:             {
+//000108:                 m_executeAlgorithm[algorithmListSelection](m_stepSize);
+//000109:                 algorithmName.Content = algorithmListSelection;
+//000110:             }
+//000111:         }
+//000112: 
+//000113:         void ComputeNextPosition(object sender, EventArgs evArg)
+//000114:         {
+//000115:             m_stopwatch.Restart();
+//000116:             UpdateVelocity();
+//000117: 
+//000118:             int i = 0;
+//000119:             foreach (var e in Globals.globalState)
+//000120:             {
+//000121:                 var xDrag = e.px * Globals.particleSystemCentroid;
+//000122:                 var yDrag = e.py * Globals.particleSystemCentroid;
+//000123:                 var newXVel = Globals.globalState[i].vx;
+//000124:                 var newYVel = Globals.globalState[i].vy;
+//000125:                 var xVel = newXVel + xDrag;
+//000126:                 var yVel = newYVel + yDrag;
+//000127: 
+//000128:                 Canvas.SetLeft(ellipseCanvas.Children[i], 100 * e.px);
+//000129:                 Canvas.SetTop(ellipseCanvas.Children[i], 100 * e.py);
+//000130:                 Globals.globalState[i].px = e.px + xVel * m_stepSize;
+//000131: 
+//000132:                 Globals.globalState[i].py = e.py + yVel * m_stepSize;
+//000133:                 Globals.globalState[i].vx = xVel - xDrag;
+//000134:                 Globals.globalState[i].vy = yVel - yDrag;
+//000135: 
+//000136:                 i++;
+//000137:             }
+//000138: 
+//000139:             var fps = (1.0 / (m_stopwatch.Elapsed.TotalSeconds));
+//000140:             displayTimeElapsed.Content = fps.ToString("F2");
+//000141:         }
+//000142: 
+//000143:         private void StartSimulation()
+//000144:         {
+//000145:             InitParticles();
+//000146:             startButton.IsEnabled = false;
+//000147:             m_timer.Start();
+//000148:             numParticlesLabel.Content = numParticlesSlider.Value;
+//000149:             resetButton.IsEnabled = true;
+//000150:         }
+//000151: 
+//000152:         private void ResetSimulation(bool changeNumber, int newNumParticles)
+//000153:         {
+//000154:             resetButton.IsEnabled = false;
+//000155:             m_timer.Stop();
+//000156:             ellipseCanvas.Children.Clear();
+//000157:             if (changeNumber)
+//000158:                 Globals.changeNumberOfParticles(newNumParticles);
+//000159:             else
+//000160:                 Globals.restart();
+//000161:             startButton.IsEnabled = true;
+//000162:         }
+//000163: 
+//000164:         private void StartButtonClick(object sender, RoutedEventArgs e)
+//000165:         {
+//000166:             StartSimulation();
+//000167:         }
+//000168: 
+//000169:         private void ResetButtonClick(object sender, RoutedEventArgs e)
+//000170:         {
+//000171:             ResetSimulation(false, -1);
+//000172:         }
+//000173: 
+//000174:         private Brush GetRadialBrush(Color edgeColor, Color focalColor)
+//000175:         {
+//000176:             return new RadialGradientBrush(focalColor, edgeColor) {
+//000177:                 GradientOrigin = new Point(0.5, 0.5),
+//000178:                 SpreadMethod = GradientSpreadMethod.Pad
+//000179:             };
+//000180:         }
+//000181: 
+//000182:         public void InitParticles()
+//000183:         {
+//000184:             var pList = Globals.globalState;
+//000185:             int particleIndex = 0;
+//000186:             foreach (var p in pList)
+//000187:             {
+//000188:                 var edgeColor = Color.FromArgb(0x00, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000189:                 var focalColor = Color.FromArgb(0x35, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000190: 
+//000191:                 // get radial brush
+//000192:                 var eBrush = GetRadialBrush(edgeColor, focalColor);
+//000193: 
+//000194:                 var size = System.Math.Pow((p.mass / Globals.nominalMass), 0.3333) * Globals.drawParticleSizeScale;
+//000195: 
+//000196:                 // create new ellipse!
+//000197:                 var curEllipse = new Ellipse() { Fill = eBrush, Height = size, Width = size };
+//000198:                 ellipseCanvas.Children.Add(curEllipse);
+//000199:                 Canvas.SetLeft(curEllipse, 100 * p.px);
+//000200:                 Canvas.SetTop(curEllipse, 100 * p.py);
+//000201: 
+//000202:                 particleIndex++;
+//000203:             }
+//000204:         }
+//000205:     }
+//000206: }
+    IL_0037:  ldloc.3
+    IL_0038:  brtrue.s   IL_0069
+
+//000101:             {
+    IL_003a:  nop
+//000102:                 var defaultSelection = "Sequential";
+    IL_003b:  ldstr      "Sequential"
+    IL_0040:  stloc.2
+//000103:                 m_executeAlgorithm[defaultSelection](m_stepSize);
+    IL_0041:  ldarg.0
+    IL_0042:  ldfld      class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [mscorlib]System.Action`1<float64>> NBodySimulation.MainWindow::m_executeAlgorithm
+    IL_0047:  ldloc.2
+    IL_0048:  callvirt   instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [mscorlib]System.Action`1<float64>>::get_Item(!0)
+    IL_004d:  ldarg.0
+    IL_004e:  ldfld      float64 NBodySimulation.MainWindow::m_stepSize
+    IL_0053:  callvirt   instance void class [mscorlib]System.Action`1<float64>::Invoke(!0)
+    IL_0058:  nop
+//000104:                 algorithmName.Content = defaultSelection;
+    IL_0059:  ldarg.0
+    IL_005a:  ldfld      class [PresentationFramework]System.Windows.Controls.Label NBodySimulation.MainWindow::algorithmName
+    IL_005f:  ldloc.2
+    IL_0060:  callvirt   instance void [PresentationFramework]System.Windows.Controls.ContentControl::set_Content(object)
+    IL_0065:  nop
+//000105:             }
+    IL_0066:  nop
+//000106:             else
+//000107:             {
+//000108:                 m_executeAlgorithm[algorithmListSelection](m_stepSize);
+//000109:                 algorithmName.Content = algorithmListSelection;
+//000110:             }
+//000111:         }
+//000112: 
+//000113:         void ComputeNextPosition(object sender, EventArgs evArg)
+//000114:         {
+//000115:             m_stopwatch.Restart();
+//000116:             UpdateVelocity();
+//000117: 
+//000118:             int i = 0;
+//000119:             foreach (var e in Globals.globalState)
+//000120:             {
+//000121:                 var xDrag = e.px * Globals.particleSystemCentroid;
+//000122:                 var yDrag = e.py * Globals.particleSystemCentroid;
+//000123:                 var newXVel = Globals.globalState[i].vx;
+//000124:                 var newYVel = Globals.globalState[i].vy;
+//000125:                 var xVel = newXVel + xDrag;
+//000126:                 var yVel = newYVel + yDrag;
+//000127: 
+//000128:                 Canvas.SetLeft(ellipseCanvas.Children[i], 100 * e.px);
+//000129:                 Canvas.SetTop(ellipseCanvas.Children[i], 100 * e.py);
+//000130:                 Globals.globalState[i].px = e.px + xVel * m_stepSize;
+//000131: 
+//000132:                 Globals.globalState[i].py = e.py + yVel * m_stepSize;
+//000133:                 Globals.globalState[i].vx = xVel - xDrag;
+//000134:                 Globals.globalState[i].vy = yVel - yDrag;
+//000135: 
+//000136:                 i++;
+//000137:             }
+//000138: 
+//000139:             var fps = (1.0 / (m_stopwatch.Elapsed.TotalSeconds));
+//000140:             displayTimeElapsed.Content = fps.ToString("F2");
+//000141:         }
+//000142: 
+//000143:         private void StartSimulation()
+//000144:         {
+//000145:             InitParticles();
+//000146:             startButton.IsEnabled = false;
+//000147:             m_timer.Start();
+//000148:             numParticlesLabel.Content = numParticlesSlider.Value;
+//000149:             resetButton.IsEnabled = true;
+//000150:         }
+//000151: 
+//000152:         private void ResetSimulation(bool changeNumber, int newNumParticles)
+//000153:         {
+//000154:             resetButton.IsEnabled = false;
+//000155:             m_timer.Stop();
+//000156:             ellipseCanvas.Children.Clear();
+//000157:             if (changeNumber)
+//000158:                 Globals.changeNumberOfParticles(newNumParticles);
+//000159:             else
+//000160:                 Globals.restart();
+//000161:             startButton.IsEnabled = true;
+//000162:         }
+//000163: 
+//000164:         private void StartButtonClick(object sender, RoutedEventArgs e)
+//000165:         {
+//000166:             StartSimulation();
+//000167:         }
+//000168: 
+//000169:         private void ResetButtonClick(object sender, RoutedEventArgs e)
+//000170:         {
+//000171:             ResetSimulation(false, -1);
+//000172:         }
+//000173: 
+//000174:         private Brush GetRadialBrush(Color edgeColor, Color focalColor)
+//000175:         {
+//000176:             return new RadialGradientBrush(focalColor, edgeColor) {
+//000177:                 GradientOrigin = new Point(0.5, 0.5),
+//000178:                 SpreadMethod = GradientSpreadMethod.Pad
+//000179:             };
+//000180:         }
+//000181: 
+//000182:         public void InitParticles()
+//000183:         {
+//000184:             var pList = Globals.globalState;
+//000185:             int particleIndex = 0;
+//000186:             foreach (var p in pList)
+//000187:             {
+//000188:                 var edgeColor = Color.FromArgb(0x00, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000189:                 var focalColor = Color.FromArgb(0x35, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000190: 
+//000191:                 // get radial brush
+//000192:                 var eBrush = GetRadialBrush(edgeColor, focalColor);
+//000193: 
+//000194:                 var size = System.Math.Pow((p.mass / Globals.nominalMass), 0.3333) * Globals.drawParticleSizeScale;
+//000195: 
+//000196:                 // create new ellipse!
+//000197:                 var curEllipse = new Ellipse() { Fill = eBrush, Height = size, Width = size };
+//000198:                 ellipseCanvas.Children.Add(curEllipse);
+//000199:                 Canvas.SetLeft(curEllipse, 100 * p.px);
+//000200:                 Canvas.SetTop(curEllipse, 100 * p.py);
+//000201: 
+//000202:                 particleIndex++;
+//000203:             }
+//000204:         }
+//000205:     }
+//000206: }
+    IL_0067:  br.s       IL_0090
+
+//000107:             {
+    IL_0069:  nop
+//000108:                 m_executeAlgorithm[algorithmListSelection](m_stepSize);
+    IL_006a:  ldarg.0
+    IL_006b:  ldfld      class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [mscorlib]System.Action`1<float64>> NBodySimulation.MainWindow::m_executeAlgorithm
+    IL_0070:  ldloc.0
+    IL_0071:  callvirt   instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [mscorlib]System.Action`1<float64>>::get_Item(!0)
+    IL_0076:  ldarg.0
+    IL_0077:  ldfld      float64 NBodySimulation.MainWindow::m_stepSize
+    IL_007c:  callvirt   instance void class [mscorlib]System.Action`1<float64>::Invoke(!0)
+    IL_0081:  nop
+//000109:                 algorithmName.Content = algorithmListSelection;
+    IL_0082:  ldarg.0
+    IL_0083:  ldfld      class [PresentationFramework]System.Windows.Controls.Label NBodySimulation.MainWindow::algorithmName
+    IL_0088:  ldloc.0
+    IL_0089:  callvirt   instance void [PresentationFramework]System.Windows.Controls.ContentControl::set_Content(object)
+    IL_008e:  nop
+//000110:             }
+    IL_008f:  nop
+//000111:         }
+    IL_0090:  ret
+  } // end of method MainWindow::UpdateVelocity
+
+  .method private hidebysig instance void 
+          ComputeNextPosition(object sender,
+                              class [mscorlib]System.EventArgs evArg) cil managed
+  {
+    // Code size       401 (0x191)
+    .maxstack  4
+    .locals init ([0] int32 i,
+             [1] valuetype [NBodySimulationBackend]Globals/particle e,
+             [2] float64 xDrag,
+             [3] float64 yDrag,
+             [4] float64 newXVel,
+             [5] float64 newYVel,
+             [6] float64 xVel,
+             [7] float64 yVel,
+             [8] float64 fps,
+             [9] valuetype [NBodySimulationBackend]Globals/particle[] CS$6$0000,
+             [10] int32 CS$7$0001,
+             [11] bool CS$4$0002,
+             [12] valuetype [mscorlib]System.TimeSpan CS$0$0003)
+//000112: 
+//000113:         void ComputeNextPosition(object sender, EventArgs evArg)
+//000114:         {
+    IL_0000:  nop
+//000115:             m_stopwatch.Restart();
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [System]System.Diagnostics.Stopwatch NBodySimulation.MainWindow::m_stopwatch
+    IL_0007:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Restart()
+    IL_000c:  nop
+//000116:             UpdateVelocity();
+    IL_000d:  ldarg.0
+    IL_000e:  call       instance void NBodySimulation.MainWindow::UpdateVelocity()
+    IL_0013:  nop
+//000117: 
+//000118:             int i = 0;
+    IL_0014:  ldc.i4.0
+    IL_0015:  stloc.0
+//000119:             foreach (var e in Globals.globalState)
+    IL_0016:  nop
+    IL_0017:  call       valuetype [NBodySimulationBackend]Globals/particle[] [NBodySimulationBackend]Globals::get_globalState()
+    IL_001c:  stloc.s    CS$6$0000
+//000120:             {
+//000121:                 var xDrag = e.px * Globals.particleSystemCentroid;
+//000122:                 var yDrag = e.py * Globals.particleSystemCentroid;
+//000123:                 var newXVel = Globals.globalState[i].vx;
+//000124:                 var newYVel = Globals.globalState[i].vy;
+//000125:                 var xVel = newXVel + xDrag;
+//000126:                 var yVel = newYVel + yDrag;
+//000127: 
+//000128:                 Canvas.SetLeft(ellipseCanvas.Children[i], 100 * e.px);
+//000129:                 Canvas.SetTop(ellipseCanvas.Children[i], 100 * e.py);
+//000130:                 Globals.globalState[i].px = e.px + xVel * m_stepSize;
+//000131: 
+//000132:                 Globals.globalState[i].py = e.py + yVel * m_stepSize;
+//000133:                 Globals.globalState[i].vx = xVel - xDrag;
+//000134:                 Globals.globalState[i].vy = yVel - yDrag;
+//000135: 
+//000136:                 i++;
+//000137:             }
+//000138: 
+//000139:             var fps = (1.0 / (m_stopwatch.Elapsed.TotalSeconds));
+//000140:             displayTimeElapsed.Content = fps.ToString("F2");
+//000141:         }
+//000142: 
+//000143:         private void StartSimulation()
+//000144:         {
+//000145:             InitParticles();
+//000146:             startButton.IsEnabled = false;
+//000147:             m_timer.Start();
+//000148:             numParticlesLabel.Content = numParticlesSlider.Value;
+//000149:             resetButton.IsEnabled = true;
+//000150:         }
+//000151: 
+//000152:         private void ResetSimulation(bool changeNumber, int newNumParticles)
+//000153:         {
+//000154:             resetButton.IsEnabled = false;
+//000155:             m_timer.Stop();
+//000156:             ellipseCanvas.Children.Clear();
+//000157:             if (changeNumber)
+//000158:                 Globals.changeNumberOfParticles(newNumParticles);
+//000159:             else
+//000160:                 Globals.restart();
+//000161:             startButton.IsEnabled = true;
+//000162:         }
+//000163: 
+//000164:         private void StartButtonClick(object sender, RoutedEventArgs e)
+//000165:         {
+//000166:             StartSimulation();
+//000167:         }
+//000168: 
+//000169:         private void ResetButtonClick(object sender, RoutedEventArgs e)
+//000170:         {
+//000171:             ResetSimulation(false, -1);
+//000172:         }
+//000173: 
+//000174:         private Brush GetRadialBrush(Color edgeColor, Color focalColor)
+//000175:         {
+//000176:             return new RadialGradientBrush(focalColor, edgeColor) {
+//000177:                 GradientOrigin = new Point(0.5, 0.5),
+//000178:                 SpreadMethod = GradientSpreadMethod.Pad
+//000179:             };
+//000180:         }
+//000181: 
+//000182:         public void InitParticles()
+//000183:         {
+//000184:             var pList = Globals.globalState;
+//000185:             int particleIndex = 0;
+//000186:             foreach (var p in pList)
+//000187:             {
+//000188:                 var edgeColor = Color.FromArgb(0x00, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000189:                 var focalColor = Color.FromArgb(0x35, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000190: 
+//000191:                 // get radial brush
+//000192:                 var eBrush = GetRadialBrush(edgeColor, focalColor);
+//000193: 
+//000194:                 var size = System.Math.Pow((p.mass / Globals.nominalMass), 0.3333) * Globals.drawParticleSizeScale;
+//000195: 
+//000196:                 // create new ellipse!
+//000197:                 var curEllipse = new Ellipse() { Fill = eBrush, Height = size, Width = size };
+//000198:                 ellipseCanvas.Children.Add(curEllipse);
+//000199:                 Canvas.SetLeft(curEllipse, 100 * p.px);
+//000200:                 Canvas.SetTop(curEllipse, 100 * p.py);
+//000201: 
+//000202:                 particleIndex++;
+//000203:             }
+//000204:         }
+//000205:     }
+//000206: }
+    IL_001e:  ldc.i4.0
+    IL_001f:  stloc.s    CS$7$0001
+    IL_0021:  br         IL_0147
+
+//000119:             foreach (var e in Globals.globalState)
+    IL_0026:  ldloc.s    CS$6$0000
+    IL_0028:  ldloc.s    CS$7$0001
+    IL_002a:  ldelema    [NBodySimulationBackend]Globals/particle
+    IL_002f:  ldobj      [NBodySimulationBackend]Globals/particle
+    IL_0034:  stloc.1
+//000120:             {
+    IL_0035:  nop
+//000121:                 var xDrag = e.px * Globals.particleSystemCentroid;
+    IL_0036:  ldloca.s   e
+    IL_0038:  ldfld      float64 [NBodySimulationBackend]Globals/particle::px
+    IL_003d:  call       float64 [NBodySimulationBackend]Globals::get_particleSystemCentroid()
+    IL_0042:  mul
+    IL_0043:  stloc.2
+//000122:                 var yDrag = e.py * Globals.particleSystemCentroid;
+    IL_0044:  ldloca.s   e
+    IL_0046:  ldfld      float64 [NBodySimulationBackend]Globals/particle::py
+    IL_004b:  call       float64 [NBodySimulationBackend]Globals::get_particleSystemCentroid()
+    IL_0050:  mul
+    IL_0051:  stloc.3
+//000123:                 var newXVel = Globals.globalState[i].vx;
+    IL_0052:  call       valuetype [NBodySimulationBackend]Globals/particle[] [NBodySimulationBackend]Globals::get_globalState()
+    IL_0057:  ldloc.0
+    IL_0058:  ldelema    [NBodySimulationBackend]Globals/particle
+    IL_005d:  ldfld      float64 [NBodySimulationBackend]Globals/particle::vx
+    IL_0062:  stloc.s    newXVel
+//000124:                 var newYVel = Globals.globalState[i].vy;
+    IL_0064:  call       valuetype [NBodySimulationBackend]Globals/particle[] [NBodySimulationBackend]Globals::get_globalState()
+    IL_0069:  ldloc.0
+    IL_006a:  ldelema    [NBodySimulationBackend]Globals/particle
+    IL_006f:  ldfld      float64 [NBodySimulationBackend]Globals/particle::vy
+    IL_0074:  stloc.s    newYVel
+//000125:                 var xVel = newXVel + xDrag;
+    IL_0076:  ldloc.s    newXVel
+    IL_0078:  ldloc.2
+    IL_0079:  add
+    IL_007a:  stloc.s    xVel
+//000126:                 var yVel = newYVel + yDrag;
+    IL_007c:  ldloc.s    newYVel
+    IL_007e:  ldloc.3
+    IL_007f:  add
+    IL_0080:  stloc.s    yVel
+//000127: 
+//000128:                 Canvas.SetLeft(ellipseCanvas.Children[i], 100 * e.px);
+    IL_0082:  ldarg.0
+    IL_0083:  ldfld      class [PresentationFramework]System.Windows.Controls.Canvas NBodySimulation.MainWindow::ellipseCanvas
+    IL_0088:  callvirt   instance class [PresentationFramework]System.Windows.Controls.UIElementCollection [PresentationFramework]System.Windows.Controls.Panel::get_Children()
+    IL_008d:  ldloc.0
+    IL_008e:  callvirt   instance class [PresentationCore]System.Windows.UIElement [PresentationFramework]System.Windows.Controls.UIElementCollection::get_Item(int32)
+    IL_0093:  ldc.r8     100.
+    IL_009c:  ldloca.s   e
+    IL_009e:  ldfld      float64 [NBodySimulationBackend]Globals/particle::px
+    IL_00a3:  mul
+    IL_00a4:  call       void [PresentationFramework]System.Windows.Controls.Canvas::SetLeft(class [PresentationCore]System.Windows.UIElement,
+                                                                                             float64)
+    IL_00a9:  nop
+//000129:                 Canvas.SetTop(ellipseCanvas.Children[i], 100 * e.py);
+    IL_00aa:  ldarg.0
+    IL_00ab:  ldfld      class [PresentationFramework]System.Windows.Controls.Canvas NBodySimulation.MainWindow::ellipseCanvas
+    IL_00b0:  callvirt   instance class [PresentationFramework]System.Windows.Controls.UIElementCollection [PresentationFramework]System.Windows.Controls.Panel::get_Children()
+    IL_00b5:  ldloc.0
+    IL_00b6:  callvirt   instance class [PresentationCore]System.Windows.UIElement [PresentationFramework]System.Windows.Controls.UIElementCollection::get_Item(int32)
+    IL_00bb:  ldc.r8     100.
+    IL_00c4:  ldloca.s   e
+    IL_00c6:  ldfld      float64 [NBodySimulationBackend]Globals/particle::py
+    IL_00cb:  mul
+    IL_00cc:  call       void [PresentationFramework]System.Windows.Controls.Canvas::SetTop(class [PresentationCore]System.Windows.UIElement,
+                                                                                            float64)
+    IL_00d1:  nop
+//000130:                 Globals.globalState[i].px = e.px + xVel * m_stepSize;
+    IL_00d2:  call       valuetype [NBodySimulationBackend]Globals/particle[] [NBodySimulationBackend]Globals::get_globalState()
+    IL_00d7:  ldloc.0
+    IL_00d8:  ldelema    [NBodySimulationBackend]Globals/particle
+    IL_00dd:  ldloca.s   e
+    IL_00df:  ldfld      float64 [NBodySimulationBackend]Globals/particle::px
+    IL_00e4:  ldloc.s    xVel
+    IL_00e6:  ldarg.0
+    IL_00e7:  ldfld      float64 NBodySimulation.MainWindow::m_stepSize
+    IL_00ec:  mul
+    IL_00ed:  add
+    IL_00ee:  stfld      float64 [NBodySimulationBackend]Globals/particle::px
+//000131: 
+//000132:                 Globals.globalState[i].py = e.py + yVel * m_stepSize;
+    IL_00f3:  call       valuetype [NBodySimulationBackend]Globals/particle[] [NBodySimulationBackend]Globals::get_globalState()
+    IL_00f8:  ldloc.0
+    IL_00f9:  ldelema    [NBodySimulationBackend]Globals/particle
+    IL_00fe:  ldloca.s   e
+    IL_0100:  ldfld      float64 [NBodySimulationBackend]Globals/particle::py
+    IL_0105:  ldloc.s    yVel
+    IL_0107:  ldarg.0
+    IL_0108:  ldfld      float64 NBodySimulation.MainWindow::m_stepSize
+    IL_010d:  mul
+    IL_010e:  add
+    IL_010f:  stfld      float64 [NBodySimulationBackend]Globals/particle::py
+//000133:                 Globals.globalState[i].vx = xVel - xDrag;
+    IL_0114:  call       valuetype [NBodySimulationBackend]Globals/particle[] [NBodySimulationBackend]Globals::get_globalState()
+    IL_0119:  ldloc.0
+    IL_011a:  ldelema    [NBodySimulationBackend]Globals/particle
+    IL_011f:  ldloc.s    xVel
+    IL_0121:  ldloc.2
+    IL_0122:  sub
+    IL_0123:  stfld      float64 [NBodySimulationBackend]Globals/particle::vx
+//000134:                 Globals.globalState[i].vy = yVel - yDrag;
+    IL_0128:  call       valuetype [NBodySimulationBackend]Globals/particle[] [NBodySimulationBackend]Globals::get_globalState()
+    IL_012d:  ldloc.0
+    IL_012e:  ldelema    [NBodySimulationBackend]Globals/particle
+    IL_0133:  ldloc.s    yVel
+    IL_0135:  ldloc.3
+    IL_0136:  sub
+    IL_0137:  stfld      float64 [NBodySimulationBackend]Globals/particle::vy
+//000135: 
+//000136:                 i++;
+    IL_013c:  ldloc.0
+    IL_013d:  ldc.i4.1
+    IL_013e:  add
+    IL_013f:  stloc.0
+//000137:             }
+    IL_0140:  nop
+//000138: 
+//000139:             var fps = (1.0 / (m_stopwatch.Elapsed.TotalSeconds));
+//000140:             displayTimeElapsed.Content = fps.ToString("F2");
+//000141:         }
+//000142: 
+//000143:         private void StartSimulation()
+//000144:         {
+//000145:             InitParticles();
+//000146:             startButton.IsEnabled = false;
+//000147:             m_timer.Start();
+//000148:             numParticlesLabel.Content = numParticlesSlider.Value;
+//000149:             resetButton.IsEnabled = true;
+//000150:         }
+//000151: 
+//000152:         private void ResetSimulation(bool changeNumber, int newNumParticles)
+//000153:         {
+//000154:             resetButton.IsEnabled = false;
+//000155:             m_timer.Stop();
+//000156:             ellipseCanvas.Children.Clear();
+//000157:             if (changeNumber)
+//000158:                 Globals.changeNumberOfParticles(newNumParticles);
+//000159:             else
+//000160:                 Globals.restart();
+//000161:             startButton.IsEnabled = true;
+//000162:         }
+//000163: 
+//000164:         private void StartButtonClick(object sender, RoutedEventArgs e)
+//000165:         {
+//000166:             StartSimulation();
+//000167:         }
+//000168: 
+//000169:         private void ResetButtonClick(object sender, RoutedEventArgs e)
+//000170:         {
+//000171:             ResetSimulation(false, -1);
+//000172:         }
+//000173: 
+//000174:         private Brush GetRadialBrush(Color edgeColor, Color focalColor)
+//000175:         {
+//000176:             return new RadialGradientBrush(focalColor, edgeColor) {
+//000177:                 GradientOrigin = new Point(0.5, 0.5),
+//000178:                 SpreadMethod = GradientSpreadMethod.Pad
+//000179:             };
+//000180:         }
+//000181: 
+//000182:         public void InitParticles()
+//000183:         {
+//000184:             var pList = Globals.globalState;
+//000185:             int particleIndex = 0;
+//000186:             foreach (var p in pList)
+//000187:             {
+//000188:                 var edgeColor = Color.FromArgb(0x00, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000189:                 var focalColor = Color.FromArgb(0x35, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000190: 
+//000191:                 // get radial brush
+//000192:                 var eBrush = GetRadialBrush(edgeColor, focalColor);
+//000193: 
+//000194:                 var size = System.Math.Pow((p.mass / Globals.nominalMass), 0.3333) * Globals.drawParticleSizeScale;
+//000195: 
+//000196:                 // create new ellipse!
+//000197:                 var curEllipse = new Ellipse() { Fill = eBrush, Height = size, Width = size };
+//000198:                 ellipseCanvas.Children.Add(curEllipse);
+//000199:                 Canvas.SetLeft(curEllipse, 100 * p.px);
+//000200:                 Canvas.SetTop(curEllipse, 100 * p.py);
+//000201: 
+//000202:                 particleIndex++;
+//000203:             }
+//000204:         }
+//000205:     }
+//000206: }
+    IL_0141:  ldloc.s    CS$7$0001
+    IL_0143:  ldc.i4.1
+    IL_0144:  add
+    IL_0145:  stloc.s    CS$7$0001
+//000119:             foreach (var e in Globals.globalState)
+    IL_0147:  ldloc.s    CS$7$0001
+    IL_0149:  ldloc.s    CS$6$0000
+    IL_014b:  ldlen
+    IL_014c:  conv.i4
+    IL_014d:  clt
+    IL_014f:  stloc.s    CS$4$0002
+//000120:             {
+//000121:                 var xDrag = e.px * Globals.particleSystemCentroid;
+//000122:                 var yDrag = e.py * Globals.particleSystemCentroid;
+//000123:                 var newXVel = Globals.globalState[i].vx;
+//000124:                 var newYVel = Globals.globalState[i].vy;
+//000125:                 var xVel = newXVel + xDrag;
+//000126:                 var yVel = newYVel + yDrag;
+//000127: 
+//000128:                 Canvas.SetLeft(ellipseCanvas.Children[i], 100 * e.px);
+//000129:                 Canvas.SetTop(ellipseCanvas.Children[i], 100 * e.py);
+//000130:                 Globals.globalState[i].px = e.px + xVel * m_stepSize;
+//000131: 
+//000132:                 Globals.globalState[i].py = e.py + yVel * m_stepSize;
+//000133:                 Globals.globalState[i].vx = xVel - xDrag;
+//000134:                 Globals.globalState[i].vy = yVel - yDrag;
+//000135: 
+//000136:                 i++;
+//000137:             }
+//000138: 
+//000139:             var fps = (1.0 / (m_stopwatch.Elapsed.TotalSeconds));
+//000140:             displayTimeElapsed.Content = fps.ToString("F2");
+//000141:         }
+//000142: 
+//000143:         private void StartSimulation()
+//000144:         {
+//000145:             InitParticles();
+//000146:             startButton.IsEnabled = false;
+//000147:             m_timer.Start();
+//000148:             numParticlesLabel.Content = numParticlesSlider.Value;
+//000149:             resetButton.IsEnabled = true;
+//000150:         }
+//000151: 
+//000152:         private void ResetSimulation(bool changeNumber, int newNumParticles)
+//000153:         {
+//000154:             resetButton.IsEnabled = false;
+//000155:             m_timer.Stop();
+//000156:             ellipseCanvas.Children.Clear();
+//000157:             if (changeNumber)
+//000158:                 Globals.changeNumberOfParticles(newNumParticles);
+//000159:             else
+//000160:                 Globals.restart();
+//000161:             startButton.IsEnabled = true;
+//000162:         }
+//000163: 
+//000164:         private void StartButtonClick(object sender, RoutedEventArgs e)
+//000165:         {
+//000166:             StartSimulation();
+//000167:         }
+//000168: 
+//000169:         private void ResetButtonClick(object sender, RoutedEventArgs e)
+//000170:         {
+//000171:             ResetSimulation(false, -1);
+//000172:         }
+//000173: 
+//000174:         private Brush GetRadialBrush(Color edgeColor, Color focalColor)
+//000175:         {
+//000176:             return new RadialGradientBrush(focalColor, edgeColor) {
+//000177:                 GradientOrigin = new Point(0.5, 0.5),
+//000178:                 SpreadMethod = GradientSpreadMethod.Pad
+//000179:             };
+//000180:         }
+//000181: 
+//000182:         public void InitParticles()
+//000183:         {
+//000184:             var pList = Globals.globalState;
+//000185:             int particleIndex = 0;
+//000186:             foreach (var p in pList)
+//000187:             {
+//000188:                 var edgeColor = Color.FromArgb(0x00, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000189:                 var focalColor = Color.FromArgb(0x35, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000190: 
+//000191:                 // get radial brush
+//000192:                 var eBrush = GetRadialBrush(edgeColor, focalColor);
+//000193: 
+//000194:                 var size = System.Math.Pow((p.mass / Globals.nominalMass), 0.3333) * Globals.drawParticleSizeScale;
+//000195: 
+//000196:                 // create new ellipse!
+//000197:                 var curEllipse = new Ellipse() { Fill = eBrush, Height = size, Width = size };
+//000198:                 ellipseCanvas.Children.Add(curEllipse);
+//000199:                 Canvas.SetLeft(curEllipse, 100 * p.px);
+//000200:                 Canvas.SetTop(curEllipse, 100 * p.py);
+//000201: 
+//000202:                 particleIndex++;
+//000203:             }
+//000204:         }
+//000205:     }
+//000206: }
+    IL_0151:  ldloc.s    CS$4$0002
+    IL_0153:  brtrue     IL_0026
+
+//000139:             var fps = (1.0 / (m_stopwatch.Elapsed.TotalSeconds));
+    IL_0158:  ldc.r8     1.
+    IL_0161:  ldarg.0
+    IL_0162:  ldfld      class [System]System.Diagnostics.Stopwatch NBodySimulation.MainWindow::m_stopwatch
+    IL_0167:  callvirt   instance valuetype [mscorlib]System.TimeSpan [System]System.Diagnostics.Stopwatch::get_Elapsed()
+    IL_016c:  stloc.s    CS$0$0003
+    IL_016e:  ldloca.s   CS$0$0003
+    IL_0170:  call       instance float64 [mscorlib]System.TimeSpan::get_TotalSeconds()
+    IL_0175:  div
+    IL_0176:  stloc.s    fps
+//000140:             displayTimeElapsed.Content = fps.ToString("F2");
+    IL_0178:  ldarg.0
+    IL_0179:  ldfld      class [PresentationFramework]System.Windows.Controls.Label NBodySimulation.MainWindow::displayTimeElapsed
+    IL_017e:  ldloca.s   fps
+    IL_0180:  ldstr      "F2"
+    IL_0185:  call       instance string [mscorlib]System.Double::ToString(string)
+    IL_018a:  callvirt   instance void [PresentationFramework]System.Windows.Controls.ContentControl::set_Content(object)
+    IL_018f:  nop
+//000141:         }
+    IL_0190:  ret
+  } // end of method MainWindow::ComputeNextPosition
+
+  .method private hidebysig instance void 
+          StartSimulation() cil managed
+  {
+    // Code size       75 (0x4b)
+    .maxstack  2
+//000142: 
+//000143:         private void StartSimulation()
+//000144:         {
+    IL_0000:  nop
+//000145:             InitParticles();
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void NBodySimulation.MainWindow::InitParticles()
+    IL_0007:  nop
+//000146:             startButton.IsEnabled = false;
+    IL_0008:  ldarg.0
+    IL_0009:  ldfld      class [PresentationFramework]System.Windows.Controls.Button NBodySimulation.MainWindow::startButton
+    IL_000e:  ldc.i4.0
+    IL_000f:  callvirt   instance void [PresentationCore]System.Windows.UIElement::set_IsEnabled(bool)
+    IL_0014:  nop
+//000147:             m_timer.Start();
+    IL_0015:  ldarg.0
+    IL_0016:  ldfld      class [WindowsBase]System.Windows.Threading.DispatcherTimer NBodySimulation.MainWindow::m_timer
+    IL_001b:  callvirt   instance void [WindowsBase]System.Windows.Threading.DispatcherTimer::Start()
+    IL_0020:  nop
+//000148:             numParticlesLabel.Content = numParticlesSlider.Value;
+    IL_0021:  ldarg.0
+    IL_0022:  ldfld      class [PresentationFramework]System.Windows.Controls.Label NBodySimulation.MainWindow::numParticlesLabel
+    IL_0027:  ldarg.0
+    IL_0028:  ldfld      class [PresentationFramework]System.Windows.Controls.Slider NBodySimulation.MainWindow::numParticlesSlider
+    IL_002d:  callvirt   instance float64 [PresentationFramework]System.Windows.Controls.Primitives.RangeBase::get_Value()
+    IL_0032:  box        [mscorlib]System.Double
+    IL_0037:  callvirt   instance void [PresentationFramework]System.Windows.Controls.ContentControl::set_Content(object)
+    IL_003c:  nop
+//000149:             resetButton.IsEnabled = true;
+    IL_003d:  ldarg.0
+    IL_003e:  ldfld      class [PresentationFramework]System.Windows.Controls.Button NBodySimulation.MainWindow::resetButton
+    IL_0043:  ldc.i4.1
+    IL_0044:  callvirt   instance void [PresentationCore]System.Windows.UIElement::set_IsEnabled(bool)
+    IL_0049:  nop
+//000150:         }
+    IL_004a:  ret
+  } // end of method MainWindow::StartSimulation
+
+  .method private hidebysig instance void 
+          ResetSimulation(bool changeNumber,
+                          int32 newNumParticles) cil managed
+  {
+    // Code size       80 (0x50)
+    .maxstack  2
+    .locals init ([0] bool CS$4$0000)
+//000151: 
+//000152:         private void ResetSimulation(bool changeNumber, int newNumParticles)
+//000153:         {
+    IL_0000:  nop
+//000154:             resetButton.IsEnabled = false;
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [PresentationFramework]System.Windows.Controls.Button NBodySimulation.MainWindow::resetButton
+    IL_0007:  ldc.i4.0
+    IL_0008:  callvirt   instance void [PresentationCore]System.Windows.UIElement::set_IsEnabled(bool)
+    IL_000d:  nop
+//000155:             m_timer.Stop();
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      class [WindowsBase]System.Windows.Threading.DispatcherTimer NBodySimulation.MainWindow::m_timer
+    IL_0014:  callvirt   instance void [WindowsBase]System.Windows.Threading.DispatcherTimer::Stop()
+    IL_0019:  nop
+//000156:             ellipseCanvas.Children.Clear();
+    IL_001a:  ldarg.0
+    IL_001b:  ldfld      class [PresentationFramework]System.Windows.Controls.Canvas NBodySimulation.MainWindow::ellipseCanvas
+    IL_0020:  callvirt   instance class [PresentationFramework]System.Windows.Controls.UIElementCollection [PresentationFramework]System.Windows.Controls.Panel::get_Children()
+    IL_0025:  callvirt   instance void [PresentationFramework]System.Windows.Controls.UIElementCollection::Clear()
+    IL_002a:  nop
+//000157:             if (changeNumber)
+    IL_002b:  ldarg.1
+    IL_002c:  ldc.i4.0
+    IL_002d:  ceq
+    IL_002f:  stloc.0
+//000158:                 Globals.changeNumberOfParticles(newNumParticles);
+//000159:             else
+//000160:                 Globals.restart();
+//000161:             startButton.IsEnabled = true;
+//000162:         }
+//000163: 
+//000164:         private void StartButtonClick(object sender, RoutedEventArgs e)
+//000165:         {
+//000166:             StartSimulation();
+//000167:         }
+//000168: 
+//000169:         private void ResetButtonClick(object sender, RoutedEventArgs e)
+//000170:         {
+//000171:             ResetSimulation(false, -1);
+//000172:         }
+//000173: 
+//000174:         private Brush GetRadialBrush(Color edgeColor, Color focalColor)
+//000175:         {
+//000176:             return new RadialGradientBrush(focalColor, edgeColor) {
+//000177:                 GradientOrigin = new Point(0.5, 0.5),
+//000178:                 SpreadMethod = GradientSpreadMethod.Pad
+//000179:             };
+//000180:         }
+//000181: 
+//000182:         public void InitParticles()
+//000183:         {
+//000184:             var pList = Globals.globalState;
+//000185:             int particleIndex = 0;
+//000186:             foreach (var p in pList)
+//000187:             {
+//000188:                 var edgeColor = Color.FromArgb(0x00, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000189:                 var focalColor = Color.FromArgb(0x35, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000190: 
+//000191:                 // get radial brush
+//000192:                 var eBrush = GetRadialBrush(edgeColor, focalColor);
+//000193: 
+//000194:                 var size = System.Math.Pow((p.mass / Globals.nominalMass), 0.3333) * Globals.drawParticleSizeScale;
+//000195: 
+//000196:                 // create new ellipse!
+//000197:                 var curEllipse = new Ellipse() { Fill = eBrush, Height = size, Width = size };
+//000198:                 ellipseCanvas.Children.Add(curEllipse);
+//000199:                 Canvas.SetLeft(curEllipse, 100 * p.px);
+//000200:                 Canvas.SetTop(curEllipse, 100 * p.py);
+//000201: 
+//000202:                 particleIndex++;
+//000203:             }
+//000204:         }
+//000205:     }
+//000206: }
+    IL_0030:  ldloc.0
+    IL_0031:  brtrue.s   IL_003c
+
+//000158:                 Globals.changeNumberOfParticles(newNumParticles);
+    IL_0033:  ldarg.2
+    IL_0034:  call       void [NBodySimulationBackend]Globals::changeNumberOfParticles(int32)
+    IL_0039:  nop
+//000159:             else
+//000160:                 Globals.restart();
+//000161:             startButton.IsEnabled = true;
+//000162:         }
+//000163: 
+//000164:         private void StartButtonClick(object sender, RoutedEventArgs e)
+//000165:         {
+//000166:             StartSimulation();
+//000167:         }
+//000168: 
+//000169:         private void ResetButtonClick(object sender, RoutedEventArgs e)
+//000170:         {
+//000171:             ResetSimulation(false, -1);
+//000172:         }
+//000173: 
+//000174:         private Brush GetRadialBrush(Color edgeColor, Color focalColor)
+//000175:         {
+//000176:             return new RadialGradientBrush(focalColor, edgeColor) {
+//000177:                 GradientOrigin = new Point(0.5, 0.5),
+//000178:                 SpreadMethod = GradientSpreadMethod.Pad
+//000179:             };
+//000180:         }
+//000181: 
+//000182:         public void InitParticles()
+//000183:         {
+//000184:             var pList = Globals.globalState;
+//000185:             int particleIndex = 0;
+//000186:             foreach (var p in pList)
+//000187:             {
+//000188:                 var edgeColor = Color.FromArgb(0x00, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000189:                 var focalColor = Color.FromArgb(0x35, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000190: 
+//000191:                 // get radial brush
+//000192:                 var eBrush = GetRadialBrush(edgeColor, focalColor);
+//000193: 
+//000194:                 var size = System.Math.Pow((p.mass / Globals.nominalMass), 0.3333) * Globals.drawParticleSizeScale;
+//000195: 
+//000196:                 // create new ellipse!
+//000197:                 var curEllipse = new Ellipse() { Fill = eBrush, Height = size, Width = size };
+//000198:                 ellipseCanvas.Children.Add(curEllipse);
+//000199:                 Canvas.SetLeft(curEllipse, 100 * p.px);
+//000200:                 Canvas.SetTop(curEllipse, 100 * p.py);
+//000201: 
+//000202:                 particleIndex++;
+//000203:             }
+//000204:         }
+//000205:     }
+//000206: }
+    IL_003a:  br.s       IL_0042
+
+//000160:                 Globals.restart();
+    IL_003c:  call       void [NBodySimulationBackend]Globals::restart()
+    IL_0041:  nop
+//000161:             startButton.IsEnabled = true;
+    IL_0042:  ldarg.0
+    IL_0043:  ldfld      class [PresentationFramework]System.Windows.Controls.Button NBodySimulation.MainWindow::startButton
+    IL_0048:  ldc.i4.1
+    IL_0049:  callvirt   instance void [PresentationCore]System.Windows.UIElement::set_IsEnabled(bool)
+    IL_004e:  nop
+//000162:         }
+    IL_004f:  ret
+  } // end of method MainWindow::ResetSimulation
+
+  .method private hidebysig instance void 
+          StartButtonClick(object sender,
+                           class [PresentationCore]System.Windows.RoutedEventArgs e) cil managed
+  {
+    // Code size       9 (0x9)
+    .maxstack  8
+//000163: 
+//000164:         private void StartButtonClick(object sender, RoutedEventArgs e)
+//000165:         {
+    IL_0000:  nop
+//000166:             StartSimulation();
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void NBodySimulation.MainWindow::StartSimulation()
+    IL_0007:  nop
+//000167:         }
+    IL_0008:  ret
+  } // end of method MainWindow::StartButtonClick
+
+  .method private hidebysig instance void 
+          ResetButtonClick(object sender,
+                           class [PresentationCore]System.Windows.RoutedEventArgs e) cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  8
+//000168: 
+//000169:         private void ResetButtonClick(object sender, RoutedEventArgs e)
+//000170:         {
+    IL_0000:  nop
+//000171:             ResetSimulation(false, -1);
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.0
+    IL_0003:  ldc.i4.m1
+    IL_0004:  call       instance void NBodySimulation.MainWindow::ResetSimulation(bool,
+                                                                                   int32)
+    IL_0009:  nop
+//000172:         }
+    IL_000a:  ret
+  } // end of method MainWindow::ResetButtonClick
+
+  .method private hidebysig instance class [PresentationCore]System.Windows.Media.Brush 
+          GetRadialBrush(valuetype [PresentationCore]System.Windows.Media.Color edgeColor,
+                         valuetype [PresentationCore]System.Windows.Media.Color focalColor) cil managed
+  {
+    // Code size       53 (0x35)
+    .maxstack  4
+    .locals init ([0] class [PresentationCore]System.Windows.Media.RadialGradientBrush '<>g__initLocal5',
+             [1] class [PresentationCore]System.Windows.Media.Brush CS$1$0000)
+//000173: 
+//000174:         private Brush GetRadialBrush(Color edgeColor, Color focalColor)
+//000175:         {
+    IL_0000:  nop
+//000176:             return new RadialGradientBrush(focalColor, edgeColor) {
+    IL_0001:  ldarg.2
+    IL_0002:  ldarg.1
+    IL_0003:  newobj     instance void [PresentationCore]System.Windows.Media.RadialGradientBrush::.ctor(valuetype [PresentationCore]System.Windows.Media.Color,
+                                                                                                         valuetype [PresentationCore]System.Windows.Media.Color)
+    IL_0008:  stloc.0
+    IL_0009:  ldloc.0
+    IL_000a:  ldc.r8     0.5
+    IL_0013:  ldc.r8     0.5
+    IL_001c:  newobj     instance void [WindowsBase]System.Windows.Point::.ctor(float64,
+                                                                                float64)
+    IL_0021:  callvirt   instance void [PresentationCore]System.Windows.Media.RadialGradientBrush::set_GradientOrigin(valuetype [WindowsBase]System.Windows.Point)
+    IL_0026:  nop
+    IL_0027:  ldloc.0
+    IL_0028:  ldc.i4.0
+    IL_0029:  callvirt   instance void [PresentationCore]System.Windows.Media.GradientBrush::set_SpreadMethod(valuetype [PresentationCore]System.Windows.Media.GradientSpreadMethod)
+    IL_002e:  nop
+    IL_002f:  ldloc.0
+    IL_0030:  stloc.1
+    IL_0031:  br.s       IL_0033
+
+//000177:                 GradientOrigin = new Point(0.5, 0.5),
+//000178:                 SpreadMethod = GradientSpreadMethod.Pad
+//000179:             };
+//000180:         }
+    IL_0033:  ldloc.1
+    IL_0034:  ret
+  } // end of method MainWindow::GetRadialBrush
+
+  .method public hidebysig instance void 
+          InitParticles() cil managed
+  {
+    // Code size       322 (0x142)
+    .maxstack  4
+    .locals init ([0] valuetype [NBodySimulationBackend]Globals/particle[] pList,
+             [1] int32 particleIndex,
+             [2] valuetype [NBodySimulationBackend]Globals/particle p,
+             [3] valuetype [PresentationCore]System.Windows.Media.Color edgeColor,
+             [4] valuetype [PresentationCore]System.Windows.Media.Color focalColor,
+             [5] class [PresentationCore]System.Windows.Media.Brush eBrush,
+             [6] float64 size,
+             [7] class [PresentationFramework]System.Windows.Shapes.Ellipse curEllipse,
+             [8] class [PresentationFramework]System.Windows.Shapes.Ellipse '<>g__initLocal6',
+             [9] valuetype [NBodySimulationBackend]Globals/particle[] CS$6$0000,
+             [10] int32 CS$7$0001,
+             [11] valuetype [PresentationCore]System.Windows.Media.Color CS$0$0002,
+             [12] bool CS$4$0003)
+//000181: 
+//000182:         public void InitParticles()
+//000183:         {
+    IL_0000:  nop
+//000184:             var pList = Globals.globalState;
+    IL_0001:  call       valuetype [NBodySimulationBackend]Globals/particle[] [NBodySimulationBackend]Globals::get_globalState()
+    IL_0006:  stloc.0
+//000185:             int particleIndex = 0;
+    IL_0007:  ldc.i4.0
+    IL_0008:  stloc.1
+//000186:             foreach (var p in pList)
+    IL_0009:  nop
+    IL_000a:  ldloc.0
+    IL_000b:  stloc.s    CS$6$0000
+//000187:             {
+//000188:                 var edgeColor = Color.FromArgb(0x00, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000189:                 var focalColor = Color.FromArgb(0x35, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000190: 
+//000191:                 // get radial brush
+//000192:                 var eBrush = GetRadialBrush(edgeColor, focalColor);
+//000193: 
+//000194:                 var size = System.Math.Pow((p.mass / Globals.nominalMass), 0.3333) * Globals.drawParticleSizeScale;
+//000195: 
+//000196:                 // create new ellipse!
+//000197:                 var curEllipse = new Ellipse() { Fill = eBrush, Height = size, Width = size };
+//000198:                 ellipseCanvas.Children.Add(curEllipse);
+//000199:                 Canvas.SetLeft(curEllipse, 100 * p.px);
+//000200:                 Canvas.SetTop(curEllipse, 100 * p.py);
+//000201: 
+//000202:                 particleIndex++;
+//000203:             }
+//000204:         }
+//000205:     }
+//000206: }
+    IL_000d:  ldc.i4.0
+    IL_000e:  stloc.s    CS$7$0001
+    IL_0010:  br         IL_0130
+
+//000186:             foreach (var p in pList)
+    IL_0015:  ldloc.s    CS$6$0000
+    IL_0017:  ldloc.s    CS$7$0001
+    IL_0019:  ldelema    [NBodySimulationBackend]Globals/particle
+    IL_001e:  ldobj      [NBodySimulationBackend]Globals/particle
+    IL_0023:  stloc.2
+//000187:             {
+    IL_0024:  nop
+//000188:                 var edgeColor = Color.FromArgb(0x00, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+    IL_0025:  ldc.i4.0
+    IL_0026:  call       valuetype [PresentationCore]System.Windows.Media.Color [NBodySimulationBackend]Globals::get_defaultFocalColor()
+    IL_002b:  stloc.s    CS$0$0002
+    IL_002d:  ldloca.s   CS$0$0002
+    IL_002f:  call       instance uint8 [PresentationCore]System.Windows.Media.Color::get_R()
+    IL_0034:  call       valuetype [PresentationCore]System.Windows.Media.Color [NBodySimulationBackend]Globals::get_defaultFocalColor()
+    IL_0039:  stloc.s    CS$0$0002
+    IL_003b:  ldloca.s   CS$0$0002
+    IL_003d:  call       instance uint8 [PresentationCore]System.Windows.Media.Color::get_G()
+    IL_0042:  call       valuetype [PresentationCore]System.Windows.Media.Color [NBodySimulationBackend]Globals::get_defaultFocalColor()
+    IL_0047:  stloc.s    CS$0$0002
+    IL_0049:  ldloca.s   CS$0$0002
+    IL_004b:  call       instance uint8 [PresentationCore]System.Windows.Media.Color::get_B()
+    IL_0050:  call       valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.Color::FromArgb(uint8,
+                                                                                                                                       uint8,
+                                                                                                                                       uint8,
+                                                                                                                                       uint8)
+    IL_0055:  stloc.3
+//000189:                 var focalColor = Color.FromArgb(0x35, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+    IL_0056:  ldc.i4.s   53
+    IL_0058:  call       valuetype [PresentationCore]System.Windows.Media.Color [NBodySimulationBackend]Globals::get_defaultFocalColor()
+    IL_005d:  stloc.s    CS$0$0002
+    IL_005f:  ldloca.s   CS$0$0002
+    IL_0061:  call       instance uint8 [PresentationCore]System.Windows.Media.Color::get_R()
+    IL_0066:  call       valuetype [PresentationCore]System.Windows.Media.Color [NBodySimulationBackend]Globals::get_defaultFocalColor()
+    IL_006b:  stloc.s    CS$0$0002
+    IL_006d:  ldloca.s   CS$0$0002
+    IL_006f:  call       instance uint8 [PresentationCore]System.Windows.Media.Color::get_G()
+    IL_0074:  call       valuetype [PresentationCore]System.Windows.Media.Color [NBodySimulationBackend]Globals::get_defaultFocalColor()
+    IL_0079:  stloc.s    CS$0$0002
+    IL_007b:  ldloca.s   CS$0$0002
+    IL_007d:  call       instance uint8 [PresentationCore]System.Windows.Media.Color::get_B()
+    IL_0082:  call       valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.Color::FromArgb(uint8,
+                                                                                                                                       uint8,
+                                                                                                                                       uint8,
+                                                                                                                                       uint8)
+    IL_0087:  stloc.s    focalColor
+//000190: 
+//000191:                 // get radial brush
+//000192:                 var eBrush = GetRadialBrush(edgeColor, focalColor);
+    IL_0089:  ldarg.0
+    IL_008a:  ldloc.3
+    IL_008b:  ldloc.s    focalColor
+    IL_008d:  call       instance class [PresentationCore]System.Windows.Media.Brush NBodySimulation.MainWindow::GetRadialBrush(valuetype [PresentationCore]System.Windows.Media.Color,
+                                                                                                                                valuetype [PresentationCore]System.Windows.Media.Color)
+    IL_0092:  stloc.s    eBrush
+//000193: 
+//000194:                 var size = System.Math.Pow((p.mass / Globals.nominalMass), 0.3333) * Globals.drawParticleSizeScale;
+    IL_0094:  ldloca.s   p
+    IL_0096:  ldfld      float64 [NBodySimulationBackend]Globals/particle::mass
+    IL_009b:  call       float64 [NBodySimulationBackend]Globals::get_nominalMass()
+    IL_00a0:  div
+    IL_00a1:  ldc.r8     0.33329999999999999
+    IL_00aa:  call       float64 [mscorlib]System.Math::Pow(float64,
+                                                            float64)
+    IL_00af:  call       float64 [NBodySimulationBackend]Globals::get_drawParticleSizeScale()
+    IL_00b4:  mul
+    IL_00b5:  stloc.s    size
+//000195: 
+//000196:                 // create new ellipse!
+//000197:                 var curEllipse = new Ellipse() { Fill = eBrush, Height = size, Width = size };
+    IL_00b7:  newobj     instance void [PresentationFramework]System.Windows.Shapes.Ellipse::.ctor()
+    IL_00bc:  stloc.s    '<>g__initLocal6'
+    IL_00be:  ldloc.s    '<>g__initLocal6'
+    IL_00c0:  ldloc.s    eBrush
+    IL_00c2:  callvirt   instance void [PresentationFramework]System.Windows.Shapes.Shape::set_Fill(class [PresentationCore]System.Windows.Media.Brush)
+    IL_00c7:  nop
+    IL_00c8:  ldloc.s    '<>g__initLocal6'
+    IL_00ca:  ldloc.s    size
+    IL_00cc:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Height(float64)
+    IL_00d1:  nop
+    IL_00d2:  ldloc.s    '<>g__initLocal6'
+    IL_00d4:  ldloc.s    size
+    IL_00d6:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Width(float64)
+    IL_00db:  nop
+    IL_00dc:  ldloc.s    '<>g__initLocal6'
+    IL_00de:  stloc.s    curEllipse
+//000198:                 ellipseCanvas.Children.Add(curEllipse);
+    IL_00e0:  ldarg.0
+    IL_00e1:  ldfld      class [PresentationFramework]System.Windows.Controls.Canvas NBodySimulation.MainWindow::ellipseCanvas
+    IL_00e6:  callvirt   instance class [PresentationFramework]System.Windows.Controls.UIElementCollection [PresentationFramework]System.Windows.Controls.Panel::get_Children()
+    IL_00eb:  ldloc.s    curEllipse
+    IL_00ed:  callvirt   instance int32 [PresentationFramework]System.Windows.Controls.UIElementCollection::Add(class [PresentationCore]System.Windows.UIElement)
+    IL_00f2:  pop
+//000199:                 Canvas.SetLeft(curEllipse, 100 * p.px);
+    IL_00f3:  ldloc.s    curEllipse
+    IL_00f5:  ldc.r8     100.
+    IL_00fe:  ldloca.s   p
+    IL_0100:  ldfld      float64 [NBodySimulationBackend]Globals/particle::px
+    IL_0105:  mul
+    IL_0106:  call       void [PresentationFramework]System.Windows.Controls.Canvas::SetLeft(class [PresentationCore]System.Windows.UIElement,
+                                                                                             float64)
+    IL_010b:  nop
+//000200:                 Canvas.SetTop(curEllipse, 100 * p.py);
+    IL_010c:  ldloc.s    curEllipse
+    IL_010e:  ldc.r8     100.
+    IL_0117:  ldloca.s   p
+    IL_0119:  ldfld      float64 [NBodySimulationBackend]Globals/particle::py
+    IL_011e:  mul
+    IL_011f:  call       void [PresentationFramework]System.Windows.Controls.Canvas::SetTop(class [PresentationCore]System.Windows.UIElement,
+                                                                                            float64)
+    IL_0124:  nop
+//000201: 
+//000202:                 particleIndex++;
+    IL_0125:  ldloc.1
+    IL_0126:  ldc.i4.1
+    IL_0127:  add
+    IL_0128:  stloc.1
+//000203:             }
+    IL_0129:  nop
+//000204:         }
+//000205:     }
+//000206: }
+    IL_012a:  ldloc.s    CS$7$0001
+    IL_012c:  ldc.i4.1
+    IL_012d:  add
+    IL_012e:  stloc.s    CS$7$0001
+//000186:             foreach (var p in pList)
+    IL_0130:  ldloc.s    CS$7$0001
+    IL_0132:  ldloc.s    CS$6$0000
+    IL_0134:  ldlen
+    IL_0135:  conv.i4
+    IL_0136:  clt
+    IL_0138:  stloc.s    CS$4$0003
+//000187:             {
+//000188:                 var edgeColor = Color.FromArgb(0x00, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000189:                 var focalColor = Color.FromArgb(0x35, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000190: 
+//000191:                 // get radial brush
+//000192:                 var eBrush = GetRadialBrush(edgeColor, focalColor);
+//000193: 
+//000194:                 var size = System.Math.Pow((p.mass / Globals.nominalMass), 0.3333) * Globals.drawParticleSizeScale;
+//000195: 
+//000196:                 // create new ellipse!
+//000197:                 var curEllipse = new Ellipse() { Fill = eBrush, Height = size, Width = size };
+//000198:                 ellipseCanvas.Children.Add(curEllipse);
+//000199:                 Canvas.SetLeft(curEllipse, 100 * p.px);
+//000200:                 Canvas.SetTop(curEllipse, 100 * p.py);
+//000201: 
+//000202:                 particleIndex++;
+//000203:             }
+//000204:         }
+//000205:     }
+//000206: }
+    IL_013a:  ldloc.s    CS$4$0003
+    IL_013c:  brtrue     IL_0015
+
+//000204:         }
+    IL_0141:  ret
+  } // end of method MainWindow::InitParticles
+
+  .method public hidebysig newslot virtual final 
+          instance void  InitializeComponent() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       45 (0x2d)
+    .maxstack  3
+    .locals init ([0] class [System]System.Uri resourceLocater,
+             [1] bool CS$4$0000)
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\MainWindow.g.cs' 
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      bool NBodySimulation.MainWindow::_contentLoaded
+    IL_0007:  ldc.i4.0
+    IL_0008:  ceq
+    IL_000a:  stloc.1
+    IL_000b:  ldloc.1
+    IL_000c:  brtrue.s   IL_0011
+
+    IL_000e:  nop
+    IL_000f:  br.s       IL_002c
+
+    IL_0011:  ldarg.0
+    IL_0012:  ldc.i4.1
+    IL_0013:  stfld      bool NBodySimulation.MainWindow::_contentLoaded
+    IL_0018:  ldstr      "/NBodySimulation;component/mainwindow.xaml"
+    IL_001d:  ldc.i4.2
+    IL_001e:  newobj     instance void [System]System.Uri::.ctor(string,
+                                                                 valuetype [System]System.UriKind)
+    IL_0023:  stloc.0
+// Source File 'c:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\MainWindow.xaml' 
+//000001: ?<Window x:Class="NBodySimulation.MainWindow"
+    IL_0024:  ldarg.0
+    IL_0025:  ldloc.0
+    IL_0026:  call       void [PresentationFramework]System.Windows.Application::LoadComponent(object,
+                                                                                               class [System]System.Uri)
+    IL_002b:  nop
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\MainWindow.g.cs' 
+    IL_002c:  ret
+  } // end of method MainWindow::InitializeComponent
+
+  .method private hidebysig newslot virtual final 
+          instance void  System.Windows.Markup.IComponentConnector.Connect(int32 connectionId,
+                                                                           object target) cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .override [System.Xaml]System.Windows.Markup.IComponentConnector::Connect
+    // Code size       417 (0x1a1)
+    .maxstack  4
+    .locals init ([0] int32 CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  stloc.0
+    IL_0003:  ldloc.0
+    IL_0004:  ldc.i4.1
+    IL_0005:  sub
+    IL_0006:  switch     ( 
+                          IL_004c,
+                          IL_005d,
+                          IL_0086,
+                          IL_0097,
+                          IL_00c0,
+                          IL_00d1,
+                          IL_00e2,
+                          IL_00f3,
+                          IL_0104,
+                          IL_0115,
+                          IL_013b,
+                          IL_0161,
+                          IL_016f,
+                          IL_017d,
+                          IL_018b)
+    IL_0047:  br         IL_0199
+
+    IL_004c:  ldarg.0
+    IL_004d:  ldarg.2
+    IL_004e:  castclass  [PresentationFramework]System.Windows.Controls.Label
+    IL_0053:  stfld      class [PresentationFramework]System.Windows.Controls.Label NBodySimulation.MainWindow::numCoresLabel
+    IL_0058:  br         IL_01a0
+
+    IL_005d:  ldarg.0
+    IL_005e:  ldarg.2
+    IL_005f:  castclass  [PresentationFramework]System.Windows.Controls.Slider
+    IL_0064:  stfld      class [PresentationFramework]System.Windows.Controls.Slider NBodySimulation.MainWindow::numCoresSlider
+// Source File 'c:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\MainWindow.xaml' 
+//000028:                                 IsSnapToTickEnabled="True" Foreground="White" TickPlacement="BottomRight" SelectionStart="1" Minimum="1" TickFrequency="1" ValueChanged="NumCoresValueChanged"/>
+    IL_0069:  ldarg.0
+    IL_006a:  ldfld      class [PresentationFramework]System.Windows.Controls.Slider NBodySimulation.MainWindow::numCoresSlider
+    IL_006f:  ldarg.0
+    IL_0070:  ldftn      instance void NBodySimulation.MainWindow::NumCoresValueChanged(object,
+                                                                                        class [PresentationFramework]System.Windows.RoutedPropertyChangedEventArgs`1<float64>)
+    IL_0076:  newobj     instance void class [PresentationFramework]System.Windows.RoutedPropertyChangedEventHandler`1<float64>::.ctor(object,
+                                                                                                                                       native int)
+    IL_007b:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Primitives.RangeBase::add_ValueChanged(class [PresentationFramework]System.Windows.RoutedPropertyChangedEventHandler`1<float64>)
+    IL_0080:  nop
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\MainWindow.g.cs' 
+    IL_0081:  br         IL_01a0
+
+    IL_0086:  ldarg.0
+    IL_0087:  ldarg.2
+    IL_0088:  castclass  [PresentationFramework]System.Windows.Controls.StackPanel
+    IL_008d:  stfld      class [PresentationFramework]System.Windows.Controls.StackPanel NBodySimulation.MainWindow::windowSideBar
+    IL_0092:  br         IL_01a0
+
+    IL_0097:  ldarg.0
+    IL_0098:  ldarg.2
+    IL_0099:  castclass  [PresentationFramework]System.Windows.Controls.ListBox
+    IL_009e:  stfld      class [PresentationFramework]System.Windows.Controls.ListBox NBodySimulation.MainWindow::expanderSelection
+// Source File 'c:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\MainWindow.xaml' 
+//000034:                                 <ListBox Background="Black" SelectionMode="Single" x:Name="expanderSelection" SelectionChanged="AlgorithmTypeSelection">
+    IL_00a3:  ldarg.0
+    IL_00a4:  ldfld      class [PresentationFramework]System.Windows.Controls.ListBox NBodySimulation.MainWindow::expanderSelection
+    IL_00a9:  ldarg.0
+    IL_00aa:  ldftn      instance void NBodySimulation.MainWindow::AlgorithmTypeSelection(object,
+                                                                                          class [PresentationFramework]System.Windows.Controls.SelectionChangedEventArgs)
+    IL_00b0:  newobj     instance void [PresentationFramework]System.Windows.Controls.SelectionChangedEventHandler::.ctor(object,
+                                                                                                                          native int)
+    IL_00b5:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Primitives.Selector::add_SelectionChanged(class [PresentationFramework]System.Windows.Controls.SelectionChangedEventHandler)
+    IL_00ba:  nop
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\MainWindow.g.cs' 
+    IL_00bb:  br         IL_01a0
+
+    IL_00c0:  ldarg.0
+    IL_00c1:  ldarg.2
+    IL_00c2:  castclass  [PresentationFramework]System.Windows.Controls.Expander
+    IL_00c7:  stfld      class [PresentationFramework]System.Windows.Controls.Expander NBodySimulation.MainWindow::expandUnoptimized
+    IL_00cc:  br         IL_01a0
+
+    IL_00d1:  ldarg.0
+    IL_00d2:  ldarg.2
+    IL_00d3:  castclass  [PresentationFramework]System.Windows.Controls.ListBox
+    IL_00d8:  stfld      class [PresentationFramework]System.Windows.Controls.ListBox NBodySimulation.MainWindow::algorithmList
+    IL_00dd:  br         IL_01a0
+
+    IL_00e2:  ldarg.0
+    IL_00e3:  ldarg.2
+    IL_00e4:  castclass  [PresentationFramework]System.Windows.Controls.Label
+    IL_00e9:  stfld      class [PresentationFramework]System.Windows.Controls.Label NBodySimulation.MainWindow::algorithmName
+    IL_00ee:  br         IL_01a0
+
+    IL_00f3:  ldarg.0
+    IL_00f4:  ldarg.2
+    IL_00f5:  castclass  [PresentationFramework]System.Windows.Controls.Label
+    IL_00fa:  stfld      class [PresentationFramework]System.Windows.Controls.Label NBodySimulation.MainWindow::timeElapsed
+    IL_00ff:  br         IL_01a0
+
+    IL_0104:  ldarg.0
+    IL_0105:  ldarg.2
+    IL_0106:  castclass  [PresentationFramework]System.Windows.Controls.Label
+    IL_010b:  stfld      class [PresentationFramework]System.Windows.Controls.Label NBodySimulation.MainWindow::displayTimeElapsed
+    IL_0110:  br         IL_01a0
+
+    IL_0115:  ldarg.0
+    IL_0116:  ldarg.2
+    IL_0117:  castclass  [PresentationFramework]System.Windows.Controls.Button
+    IL_011c:  stfld      class [PresentationFramework]System.Windows.Controls.Button NBodySimulation.MainWindow::startButton
+// Source File 'c:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\MainWindow.xaml' 
+//000076:                                         BorderBrush="Orange" FontSize="15" Width="75" Click="StartButtonClick">Start</Button>
+    IL_0121:  ldarg.0
+    IL_0122:  ldfld      class [PresentationFramework]System.Windows.Controls.Button NBodySimulation.MainWindow::startButton
+    IL_0127:  ldarg.0
+    IL_0128:  ldftn      instance void NBodySimulation.MainWindow::StartButtonClick(object,
+                                                                                    class [PresentationCore]System.Windows.RoutedEventArgs)
+    IL_012e:  newobj     instance void [PresentationCore]System.Windows.RoutedEventHandler::.ctor(object,
+                                                                                                  native int)
+    IL_0133:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Primitives.ButtonBase::add_Click(class [PresentationCore]System.Windows.RoutedEventHandler)
+    IL_0138:  nop
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\MainWindow.g.cs' 
+    IL_0139:  br.s       IL_01a0
+
+    IL_013b:  ldarg.0
+    IL_013c:  ldarg.2
+    IL_013d:  castclass  [PresentationFramework]System.Windows.Controls.Button
+    IL_0142:  stfld      class [PresentationFramework]System.Windows.Controls.Button NBodySimulation.MainWindow::resetButton
+// Source File 'c:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\MainWindow.xaml' 
+//000077:                                 <Button x:Name="resetButton" Margin="5" Background="Black" Foreground="White" BorderBrush="Orange" FontSize="15" Width="75" Click="ResetButtonClick">Reset</Button>
+    IL_0147:  ldarg.0
+    IL_0148:  ldfld      class [PresentationFramework]System.Windows.Controls.Button NBodySimulation.MainWindow::resetButton
+    IL_014d:  ldarg.0
+    IL_014e:  ldftn      instance void NBodySimulation.MainWindow::ResetButtonClick(object,
+                                                                                    class [PresentationCore]System.Windows.RoutedEventArgs)
+    IL_0154:  newobj     instance void [PresentationCore]System.Windows.RoutedEventHandler::.ctor(object,
+                                                                                                  native int)
+    IL_0159:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Primitives.ButtonBase::add_Click(class [PresentationCore]System.Windows.RoutedEventHandler)
+    IL_015e:  nop
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\obj\x86\Debug\MainWindow.g.cs' 
+    IL_015f:  br.s       IL_01a0
+
+    IL_0161:  ldarg.0
+    IL_0162:  ldarg.2
+    IL_0163:  castclass  [PresentationFramework]System.Windows.Controls.Canvas
+    IL_0168:  stfld      class [PresentationFramework]System.Windows.Controls.Canvas NBodySimulation.MainWindow::ellipseCanvas
+    IL_016d:  br.s       IL_01a0
+
+    IL_016f:  ldarg.0
+    IL_0170:  ldarg.2
+    IL_0171:  castclass  [PresentationFramework]System.Windows.Controls.Grid
+    IL_0176:  stfld      class [PresentationFramework]System.Windows.Controls.Grid NBodySimulation.MainWindow::windowTopBar
+    IL_017b:  br.s       IL_01a0
+
+    IL_017d:  ldarg.0
+    IL_017e:  ldarg.2
+    IL_017f:  castclass  [PresentationFramework]System.Windows.Controls.Label
+    IL_0184:  stfld      class [PresentationFramework]System.Windows.Controls.Label NBodySimulation.MainWindow::numParticlesLabel
+    IL_0189:  br.s       IL_01a0
+
+    IL_018b:  ldarg.0
+    IL_018c:  ldarg.2
+    IL_018d:  castclass  [PresentationFramework]System.Windows.Controls.Slider
+    IL_0192:  stfld      class [PresentationFramework]System.Windows.Controls.Slider NBodySimulation.MainWindow::numParticlesSlider
+    IL_0197:  br.s       IL_01a0
+
+    IL_0199:  ldarg.0
+    IL_019a:  ldc.i4.1
+    IL_019b:  stfld      bool NBodySimulation.MainWindow::_contentLoaded
+    IL_01a0:  ret
+  } // end of method MainWindow::System.Windows.Markup.IComponentConnector.Connect
+
+  .method private hidebysig static void  '<FillDelegateLists>b__1'(float64 step) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\MainWindow.xaml.cs' 
+//000092:                 {"Sequential", step => NBodyParallelized.UpdateParticlesParallelFor(step, false)},
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.0
+    IL_0002:  call       void [NBodySimulationBackend]NBodyParallelized::UpdateParticlesParallelFor(float64,
+                                                                                                    bool)
+    IL_0007:  nop
+//000093:                 {"Parallel", step => NBodyParallelized.UpdateParticlesParallelFor(step, true)}};
+//000094:         }
+//000095: 
+//000096:         void UpdateVelocity()
+//000097:         {
+//000098:             var algorithmListSelection = (string)algorithmList.SelectedItem;
+//000099:             var expanderSelectionItem = expanderSelection.SelectedIndex;
+//000100:             if (expanderSelectionItem == -1 || algorithmList.SelectedIndex == -1)
+//000101:             {
+//000102:                 var defaultSelection = "Sequential";
+//000103:                 m_executeAlgorithm[defaultSelection](m_stepSize);
+//000104:                 algorithmName.Content = defaultSelection;
+//000105:             }
+//000106:             else
+//000107:             {
+//000108:                 m_executeAlgorithm[algorithmListSelection](m_stepSize);
+//000109:                 algorithmName.Content = algorithmListSelection;
+//000110:             }
+//000111:         }
+//000112: 
+//000113:         void ComputeNextPosition(object sender, EventArgs evArg)
+//000114:         {
+//000115:             m_stopwatch.Restart();
+//000116:             UpdateVelocity();
+//000117: 
+//000118:             int i = 0;
+//000119:             foreach (var e in Globals.globalState)
+//000120:             {
+//000121:                 var xDrag = e.px * Globals.particleSystemCentroid;
+//000122:                 var yDrag = e.py * Globals.particleSystemCentroid;
+//000123:                 var newXVel = Globals.globalState[i].vx;
+//000124:                 var newYVel = Globals.globalState[i].vy;
+//000125:                 var xVel = newXVel + xDrag;
+//000126:                 var yVel = newYVel + yDrag;
+//000127: 
+//000128:                 Canvas.SetLeft(ellipseCanvas.Children[i], 100 * e.px);
+//000129:                 Canvas.SetTop(ellipseCanvas.Children[i], 100 * e.py);
+//000130:                 Globals.globalState[i].px = e.px + xVel * m_stepSize;
+//000131: 
+//000132:                 Globals.globalState[i].py = e.py + yVel * m_stepSize;
+//000133:                 Globals.globalState[i].vx = xVel - xDrag;
+//000134:                 Globals.globalState[i].vy = yVel - yDrag;
+//000135: 
+//000136:                 i++;
+//000137:             }
+//000138: 
+//000139:             var fps = (1.0 / (m_stopwatch.Elapsed.TotalSeconds));
+//000140:             displayTimeElapsed.Content = fps.ToString("F2");
+//000141:         }
+//000142: 
+//000143:         private void StartSimulation()
+//000144:         {
+//000145:             InitParticles();
+//000146:             startButton.IsEnabled = false;
+//000147:             m_timer.Start();
+//000148:             numParticlesLabel.Content = numParticlesSlider.Value;
+//000149:             resetButton.IsEnabled = true;
+//000150:         }
+//000151: 
+//000152:         private void ResetSimulation(bool changeNumber, int newNumParticles)
+//000153:         {
+//000154:             resetButton.IsEnabled = false;
+//000155:             m_timer.Stop();
+//000156:             ellipseCanvas.Children.Clear();
+//000157:             if (changeNumber)
+//000158:                 Globals.changeNumberOfParticles(newNumParticles);
+//000159:             else
+//000160:                 Globals.restart();
+//000161:             startButton.IsEnabled = true;
+//000162:         }
+//000163: 
+//000164:         private void StartButtonClick(object sender, RoutedEventArgs e)
+//000165:         {
+//000166:             StartSimulation();
+//000167:         }
+//000168: 
+//000169:         private void ResetButtonClick(object sender, RoutedEventArgs e)
+//000170:         {
+//000171:             ResetSimulation(false, -1);
+//000172:         }
+//000173: 
+//000174:         private Brush GetRadialBrush(Color edgeColor, Color focalColor)
+//000175:         {
+//000176:             return new RadialGradientBrush(focalColor, edgeColor) {
+//000177:                 GradientOrigin = new Point(0.5, 0.5),
+//000178:                 SpreadMethod = GradientSpreadMethod.Pad
+//000179:             };
+//000180:         }
+//000181: 
+//000182:         public void InitParticles()
+//000183:         {
+//000184:             var pList = Globals.globalState;
+//000185:             int particleIndex = 0;
+//000186:             foreach (var p in pList)
+//000187:             {
+//000188:                 var edgeColor = Color.FromArgb(0x00, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000189:                 var focalColor = Color.FromArgb(0x35, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000190: 
+//000191:                 // get radial brush
+//000192:                 var eBrush = GetRadialBrush(edgeColor, focalColor);
+//000193: 
+//000194:                 var size = System.Math.Pow((p.mass / Globals.nominalMass), 0.3333) * Globals.drawParticleSizeScale;
+//000195: 
+//000196:                 // create new ellipse!
+//000197:                 var curEllipse = new Ellipse() { Fill = eBrush, Height = size, Width = size };
+//000198:                 ellipseCanvas.Children.Add(curEllipse);
+//000199:                 Canvas.SetLeft(curEllipse, 100 * p.px);
+//000200:                 Canvas.SetTop(curEllipse, 100 * p.py);
+//000201: 
+//000202:                 particleIndex++;
+//000203:             }
+//000204:         }
+//000205:     }
+//000206: }
+    IL_0008:  ret
+  } // end of method MainWindow::'<FillDelegateLists>b__1'
+
+  .method private hidebysig static void  '<FillDelegateLists>b__2'(float64 step) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+//000093:                 {"Parallel", step => NBodyParallelized.UpdateParticlesParallelFor(step, true)}};
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.1
+    IL_0002:  call       void [NBodySimulationBackend]NBodyParallelized::UpdateParticlesParallelFor(float64,
+                                                                                                    bool)
+    IL_0007:  nop
+//000094:         }
+//000095: 
+//000096:         void UpdateVelocity()
+//000097:         {
+//000098:             var algorithmListSelection = (string)algorithmList.SelectedItem;
+//000099:             var expanderSelectionItem = expanderSelection.SelectedIndex;
+//000100:             if (expanderSelectionItem == -1 || algorithmList.SelectedIndex == -1)
+//000101:             {
+//000102:                 var defaultSelection = "Sequential";
+//000103:                 m_executeAlgorithm[defaultSelection](m_stepSize);
+//000104:                 algorithmName.Content = defaultSelection;
+//000105:             }
+//000106:             else
+//000107:             {
+//000108:                 m_executeAlgorithm[algorithmListSelection](m_stepSize);
+//000109:                 algorithmName.Content = algorithmListSelection;
+//000110:             }
+//000111:         }
+//000112: 
+//000113:         void ComputeNextPosition(object sender, EventArgs evArg)
+//000114:         {
+//000115:             m_stopwatch.Restart();
+//000116:             UpdateVelocity();
+//000117: 
+//000118:             int i = 0;
+//000119:             foreach (var e in Globals.globalState)
+//000120:             {
+//000121:                 var xDrag = e.px * Globals.particleSystemCentroid;
+//000122:                 var yDrag = e.py * Globals.particleSystemCentroid;
+//000123:                 var newXVel = Globals.globalState[i].vx;
+//000124:                 var newYVel = Globals.globalState[i].vy;
+//000125:                 var xVel = newXVel + xDrag;
+//000126:                 var yVel = newYVel + yDrag;
+//000127: 
+//000128:                 Canvas.SetLeft(ellipseCanvas.Children[i], 100 * e.px);
+//000129:                 Canvas.SetTop(ellipseCanvas.Children[i], 100 * e.py);
+//000130:                 Globals.globalState[i].px = e.px + xVel * m_stepSize;
+//000131: 
+//000132:                 Globals.globalState[i].py = e.py + yVel * m_stepSize;
+//000133:                 Globals.globalState[i].vx = xVel - xDrag;
+//000134:                 Globals.globalState[i].vy = yVel - yDrag;
+//000135: 
+//000136:                 i++;
+//000137:             }
+//000138: 
+//000139:             var fps = (1.0 / (m_stopwatch.Elapsed.TotalSeconds));
+//000140:             displayTimeElapsed.Content = fps.ToString("F2");
+//000141:         }
+//000142: 
+//000143:         private void StartSimulation()
+//000144:         {
+//000145:             InitParticles();
+//000146:             startButton.IsEnabled = false;
+//000147:             m_timer.Start();
+//000148:             numParticlesLabel.Content = numParticlesSlider.Value;
+//000149:             resetButton.IsEnabled = true;
+//000150:         }
+//000151: 
+//000152:         private void ResetSimulation(bool changeNumber, int newNumParticles)
+//000153:         {
+//000154:             resetButton.IsEnabled = false;
+//000155:             m_timer.Stop();
+//000156:             ellipseCanvas.Children.Clear();
+//000157:             if (changeNumber)
+//000158:                 Globals.changeNumberOfParticles(newNumParticles);
+//000159:             else
+//000160:                 Globals.restart();
+//000161:             startButton.IsEnabled = true;
+//000162:         }
+//000163: 
+//000164:         private void StartButtonClick(object sender, RoutedEventArgs e)
+//000165:         {
+//000166:             StartSimulation();
+//000167:         }
+//000168: 
+//000169:         private void ResetButtonClick(object sender, RoutedEventArgs e)
+//000170:         {
+//000171:             ResetSimulation(false, -1);
+//000172:         }
+//000173: 
+//000174:         private Brush GetRadialBrush(Color edgeColor, Color focalColor)
+//000175:         {
+//000176:             return new RadialGradientBrush(focalColor, edgeColor) {
+//000177:                 GradientOrigin = new Point(0.5, 0.5),
+//000178:                 SpreadMethod = GradientSpreadMethod.Pad
+//000179:             };
+//000180:         }
+//000181: 
+//000182:         public void InitParticles()
+//000183:         {
+//000184:             var pList = Globals.globalState;
+//000185:             int particleIndex = 0;
+//000186:             foreach (var p in pList)
+//000187:             {
+//000188:                 var edgeColor = Color.FromArgb(0x00, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000189:                 var focalColor = Color.FromArgb(0x35, Globals.defaultFocalColor.R, Globals.defaultFocalColor.G, Globals.defaultFocalColor.B);
+//000190: 
+//000191:                 // get radial brush
+//000192:                 var eBrush = GetRadialBrush(edgeColor, focalColor);
+//000193: 
+//000194:                 var size = System.Math.Pow((p.mass / Globals.nominalMass), 0.3333) * Globals.drawParticleSizeScale;
+//000195: 
+//000196:                 // create new ellipse!
+//000197:                 var curEllipse = new Ellipse() { Fill = eBrush, Height = size, Width = size };
+//000198:                 ellipseCanvas.Children.Add(curEllipse);
+//000199:                 Canvas.SetLeft(curEllipse, 100 * p.px);
+//000200:                 Canvas.SetTop(curEllipse, 100 * p.py);
+//000201: 
+//000202:                 particleIndex++;
+//000203:             }
+//000204:         }
+//000205:     }
+//000206: }
+    IL_0008:  ret
+  } // end of method MainWindow::'<FillDelegateLists>b__2'
+
+} // end of class NBodySimulation.MainWindow
+
+.class private auto ansi sealed beforefieldinit NBodySimulation.Properties.Settings
+       extends [System]System.Configuration.ApplicationSettingsBase
+{
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 4B 4D 69 63 72 6F 73 6F 66 74 2E 56 69 73   // ..KMicrosoft.Vis
+                                                                                                  75 61 6C 53 74 75 64 69 6F 2E 45 64 69 74 6F 72   // ualStudio.Editor
+                                                                                                  73 2E 53 65 74 74 69 6E 67 73 44 65 73 69 67 6E   // s.SettingsDesign
+                                                                                                  65 72 2E 53 65 74 74 69 6E 67 73 53 69 6E 67 6C   // er.SettingsSingl
+                                                                                                  65 46 69 6C 65 47 65 6E 65 72 61 74 6F 72 08 31   // eFileGenerator.1
+                                                                                                  30 2E 30 2E 30 2E 30 00 00 )                      // 0.0.0.0..
+  .field private static class NBodySimulation.Properties.Settings defaultInstance
+  .method public hidebysig specialname static 
+          class NBodySimulation.Properties.Settings 
+          get_Default() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class NBodySimulation.Properties.Settings CS$1$0000)
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\Properties\Settings.Designer.cs' 
+//000025:             {
+    IL_0000:  nop
+//000026:                 return defaultInstance;
+    IL_0001:  ldsfld     class NBodySimulation.Properties.Settings NBodySimulation.Properties.Settings::defaultInstance
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000027:             }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Settings::get_Default
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [System]System.Configuration.ApplicationSettingsBase::.ctor()
+    IL_0006:  ret
+  } // end of method Settings::.ctor
+
+  .method private hidebysig specialname rtspecialname static 
+          void  .cctor() cil managed
+  {
+    // Code size       21 (0x15)
+    .maxstack  8
+//000020:         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+    IL_0000:  newobj     instance void NBodySimulation.Properties.Settings::.ctor()
+    IL_0005:  call       class [System]System.Configuration.SettingsBase [System]System.Configuration.SettingsBase::Synchronized(class [System]System.Configuration.SettingsBase)
+    IL_000a:  castclass  NBodySimulation.Properties.Settings
+    IL_000f:  stsfld     class NBodySimulation.Properties.Settings NBodySimulation.Properties.Settings::defaultInstance
+//000021: 
+//000022:         public static Settings Default
+//000023:         {
+//000024:             get
+//000025:             {
+//000026:                 return defaultInstance;
+//000027:             }
+//000028:         }
+//000029:     }
+//000030: }
+    IL_0014:  ret
+  } // end of method Settings::.cctor
+
+  .property class NBodySimulation.Properties.Settings
+          Default()
+  {
+    .get class NBodySimulation.Properties.Settings NBodySimulation.Properties.Settings::get_Default()
+  } // end of property Settings::Default
+} // end of class NBodySimulation.Properties.Settings
+
+.class private auto ansi beforefieldinit NBodySimulation.Properties.Resources
+       extends [mscorlib]System.Object
+{
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 33 53 79 73 74 65 6D 2E 52 65 73 6F 75 72   // ..3System.Resour
+                                                                                                  63 65 73 2E 54 6F 6F 6C 73 2E 53 74 72 6F 6E 67   // ces.Tools.Strong
+                                                                                                  6C 79 54 79 70 65 64 52 65 73 6F 75 72 63 65 42   // lyTypedResourceB
+                                                                                                  75 69 6C 64 65 72 07 34 2E 30 2E 30 2E 30 00 00 ) // uilder.4.0.0.0..
+  .field private static class [mscorlib]System.Resources.ResourceManager resourceMan
+  .field private static class [mscorlib]System.Globalization.CultureInfo resourceCulture
+  .method assembly hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       10 (0xa)
+    .maxstack  8
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\Properties\Resources.Designer.cs' 
+//000032:         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+//000033:         internal Resources()
+//000034:         {
+    IL_0007:  nop
+//000035:         }
+    IL_0008:  nop
+    IL_0009:  ret
+  } // end of method Resources::.ctor
+
+  .method assembly hidebysig specialname static 
+          class [mscorlib]System.Resources.ResourceManager 
+          get_ResourceManager() cil managed
+  {
+    // Code size       60 (0x3c)
+    .maxstack  3
+    .locals init ([0] class [mscorlib]System.Resources.ResourceManager temp,
+             [1] class [mscorlib]System.Resources.ResourceManager CS$1$0000,
+             [2] bool CS$4$0001)
+//000036: 
+//000037:         /// <summary>
+//000038:         ///   Returns the cached ResourceManager instance used by this class.
+//000039:         /// </summary>
+//000040:         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+//000041:         internal static global::System.Resources.ResourceManager ResourceManager
+//000042:         {
+//000043:             get
+//000044:             {
+    IL_0000:  nop
+//000045:                 if ((resourceMan == null))
+    IL_0001:  ldsfld     class [mscorlib]System.Resources.ResourceManager NBodySimulation.Properties.Resources::resourceMan
+    IL_0006:  ldnull
+    IL_0007:  ceq
+    IL_0009:  ldc.i4.0
+    IL_000a:  ceq
+    IL_000c:  stloc.2
+//000046:                 {
+//000047:                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NBodySimulation.Properties.Resources", typeof(Resources).Assembly);
+//000048:                     resourceMan = temp;
+//000049:                 }
+//000050:                 return resourceMan;
+//000051:             }
+//000052:         }
+//000053: 
+//000054:         /// <summary>
+//000055:         ///   Overrides the current thread's CurrentUICulture property for all
+//000056:         ///   resource lookups using this strongly typed resource class.
+//000057:         /// </summary>
+//000058:         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+//000059:         internal static global::System.Globalization.CultureInfo Culture
+//000060:         {
+//000061:             get
+//000062:             {
+//000063:                 return resourceCulture;
+//000064:             }
+//000065:             set
+//000066:             {
+//000067:                 resourceCulture = value;
+//000068:             }
+//000069:         }
+//000070:     }
+//000071: }
+    IL_000d:  ldloc.2
+    IL_000e:  brtrue.s   IL_0032
+
+//000046:                 {
+    IL_0010:  nop
+//000047:                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NBodySimulation.Properties.Resources", typeof(Resources).Assembly);
+    IL_0011:  ldstr      "NBodySimulation.Properties.Resources"
+    IL_0016:  ldtoken    NBodySimulation.Properties.Resources
+    IL_001b:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_0020:  callvirt   instance class [mscorlib]System.Reflection.Assembly [mscorlib]System.Type::get_Assembly()
+    IL_0025:  newobj     instance void [mscorlib]System.Resources.ResourceManager::.ctor(string,
+                                                                                         class [mscorlib]System.Reflection.Assembly)
+    IL_002a:  stloc.0
+//000048:                     resourceMan = temp;
+    IL_002b:  ldloc.0
+    IL_002c:  stsfld     class [mscorlib]System.Resources.ResourceManager NBodySimulation.Properties.Resources::resourceMan
+//000049:                 }
+    IL_0031:  nop
+//000050:                 return resourceMan;
+    IL_0032:  ldsfld     class [mscorlib]System.Resources.ResourceManager NBodySimulation.Properties.Resources::resourceMan
+    IL_0037:  stloc.1
+    IL_0038:  br.s       IL_003a
+
+//000051:             }
+    IL_003a:  ldloc.1
+    IL_003b:  ret
+  } // end of method Resources::get_ResourceManager
+
+  .method assembly hidebysig specialname static 
+          class [mscorlib]System.Globalization.CultureInfo 
+          get_Culture() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Globalization.CultureInfo CS$1$0000)
+//000052:         }
+//000053: 
+//000054:         /// <summary>
+//000055:         ///   Overrides the current thread's CurrentUICulture property for all
+//000056:         ///   resource lookups using this strongly typed resource class.
+//000057:         /// </summary>
+//000058:         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+//000059:         internal static global::System.Globalization.CultureInfo Culture
+//000060:         {
+//000061:             get
+//000062:             {
+    IL_0000:  nop
+//000063:                 return resourceCulture;
+    IL_0001:  ldsfld     class [mscorlib]System.Globalization.CultureInfo NBodySimulation.Properties.Resources::resourceCulture
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000064:             }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Resources::get_Culture
+
+  .method assembly hidebysig specialname static 
+          void  set_Culture(class [mscorlib]System.Globalization.CultureInfo 'value') cil managed
+  {
+    // Code size       8 (0x8)
+    .maxstack  8
+//000065:             set
+//000066:             {
+    IL_0000:  nop
+//000067:                 resourceCulture = value;
+    IL_0001:  ldarg.0
+    IL_0002:  stsfld     class [mscorlib]System.Globalization.CultureInfo NBodySimulation.Properties.Resources::resourceCulture
+//000068:             }
+    IL_0007:  ret
+  } // end of method Resources::set_Culture
+
+  .property class [mscorlib]System.Resources.ResourceManager
+          ResourceManager()
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 02 00 00 00 00 00 ) 
+    .get class [mscorlib]System.Resources.ResourceManager NBodySimulation.Properties.Resources::get_ResourceManager()
+  } // end of property Resources::ResourceManager
+  .property class [mscorlib]System.Globalization.CultureInfo
+          Culture()
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 02 00 00 00 00 00 ) 
+    .get class [mscorlib]System.Globalization.CultureInfo NBodySimulation.Properties.Resources::get_Culture()
+    .set void NBodySimulation.Properties.Resources::set_Culture(class [mscorlib]System.Globalization.CultureInfo)
+  } // end of property Resources::Culture
+} // end of class NBodySimulation.Properties.Resources
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

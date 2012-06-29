@@ -1,0 +1,766 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.0.30319.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v2.0.50727
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 2:0:0:0
+}
+.assembly extern FSharp.Core
+{
+  .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
+  .ver 2:0:0:0
+}
+.assembly Reflection
+{
+  .custom instance void [FSharp.Core]Microsoft.FSharp.Core.FSharpInterfaceDataVersionAttribute::.ctor(int32,
+                                                                                                      int32,
+                                                                                                      int32) = ( 01 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 ) 
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 01 01 00 00 00 00 ) 
+
+  .hash algorithm 0x00008004
+  .ver 0:0:0:0
+}
+.mresource public FSharpSignatureData.Reflection
+{
+  // Offset: 0x00000000 Length: 0x0000081D
+}
+.mresource public FSharpOptimizationData.Reflection
+{
+  // Offset: 0x00000828 Length: 0x00000228
+}
+.module Reflection.exe
+// MVID: {4F77CBFD-9999-AC4D-A745-0383FDCB774F}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000001    //  ILONLY
+// Image base: 0x003C0000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class public abstract auto ansi sealed Program
+       extends [mscorlib]System.Object
+{
+  .custom instance void [FSharp.Core]Microsoft.FSharp.Core.CompilationMappingAttribute::.ctor(valuetype [FSharp.Core]Microsoft.FSharp.Core.SourceConstructFlags) = ( 01 00 07 00 00 00 00 00 ) 
+  .class auto ansi serializable nested public Person
+         extends [mscorlib]System.Object
+  {
+    .custom instance void [FSharp.Core]Microsoft.FSharp.Core.CompilationMappingAttribute::.ctor(valuetype [FSharp.Core]Microsoft.FSharp.Core.SourceConstructFlags) = ( 01 00 03 00 00 00 00 00 ) 
+    .field assembly string ln
+    .field assembly string fn
+    .field assembly int32 age
+    .method public specialname rtspecialname 
+            instance void  .ctor(string fn,
+                                 string ln,
+                                 int32 a) cil managed
+    {
+      // Code size       31 (0x1f)
+      .maxstack  4
+      .language '{AB4F38C9-B6E6-43BA-BE3B-58080B2CCCE3}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\Reflection\Program.fs' 
+//000004: type Person(fn : string, ln: string, a : int) =
+      IL_0000:  ldarg.0
+      IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0006:  ldarg.0
+      IL_0007:  pop
+      IL_0008:  nop
+      IL_0009:  ldarg.0
+      IL_000a:  ldarg.1
+      IL_000b:  stfld      string Program/Person::fn
+      IL_0010:  ldarg.0
+      IL_0011:  ldarg.2
+      IL_0012:  stfld      string Program/Person::ln
+//000005:     let mutable age = a
+      IL_0017:  ldarg.0
+      IL_0018:  ldarg.3
+      IL_0019:  stfld      int32 Program/Person::age
+//000004: type Person(fn : string, ln: string, a : int) =
+      IL_001e:  ret
+    } // end of method Person::.ctor
+
+    .method public specialname instance string 
+            get_FirstName() cil managed
+    {
+      // Code size       8 (0x8)
+      .maxstack  3
+//000005:     let mutable age = a
+//000006:     member p.FirstName = fn
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  ldfld      string Program/Person::fn
+      IL_0007:  ret
+    } // end of method Person::get_FirstName
+
+    .method public specialname instance string 
+            get_LastName() cil managed
+    {
+      // Code size       8 (0x8)
+      .maxstack  3
+//000007:     member p.LastName = ln
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  ldfld      string Program/Person::ln
+      IL_0007:  ret
+    } // end of method Person::get_LastName
+
+    .method public specialname instance int32 
+            get_Age() cil managed
+    {
+      // Code size       8 (0x8)
+      .maxstack  3
+//000008:     member p.Age with get() = age and set(v) = age <- v
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  ldfld      int32 Program/Person::age
+      IL_0007:  ret
+    } // end of method Person::get_Age
+
+    .method public specialname instance void 
+            set_Age(int32 v) cil managed
+    {
+      // Code size       9 (0x9)
+      .maxstack  4
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  ldarg.1
+      IL_0003:  stfld      int32 Program/Person::age
+      IL_0008:  ret
+    } // end of method Person::set_Age
+
+    .method public instance void  WaxEloquently(int32 length) cil managed
+    {
+      // Code size       40 (0x28)
+      .maxstack  4
+//000009:     member p.WaxEloquently (length : int)=
+//000010:             Console.WriteLine(
+      IL_0000:  nop
+      IL_0001:  ldstr      "I speak for "
+      IL_0006:  ldarga.s   length
+      IL_0008:  constrained. [mscorlib]System.Int32
+      IL_000e:  callvirt   instance string [mscorlib]System.Object::ToString()
+      IL_0013:  call       string [mscorlib]System.String::Concat(string,
+                                                                  string)
+      IL_0018:  ldstr      "mins"
+      IL_001d:  call       string [mscorlib]System.String::Concat(string,
+                                                                  string)
+      IL_0022:  call       void [mscorlib]System.Console::WriteLine(string)
+      IL_0027:  ret
+    } // end of method Person::WaxEloquently
+
+    .method public instance void  WaxEloquently(string[] subject) cil managed
+    {
+      .param [1]
+      .custom instance void [mscorlib]System.ParamArrayAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       84 (0x54)
+      .maxstack  5
+      .locals init ([0] class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<string,class [FSharp.Core]Microsoft.FSharp.Core.Unit> V_0,
+               [1] string[] V_1,
+               [2] int32 V_2,
+               [3] int32 V_3,
+               [4] int32 V_4)
+//000011:                 "I speak for " + length.ToString() + "mins")
+//000012:     member p.WaxEloquently ([<ParamArray>] subject : string array) =
+//000013:         Array.iter
+      IL_0000:  nop
+      IL_0001:  newobj     instance void Program/WaxEloquently@14::.ctor()
+      IL_0006:  stloc.0
+      IL_0007:  ldarg.1
+      IL_0008:  stloc.1
+      IL_0009:  ldloc.1
+      IL_000a:  box        string[]
+      IL_000f:  brfalse.s  IL_0013
+
+      IL_0011:  br.s       IL_0026
+
+//000014:             (fun (subj : string) -> 
+//000015:                 Console.WriteLine("I speak on " + subj))
+//000016:             subject            
+//000017:     override p.ToString() =
+//000018:         String.Format("[Person: {0} {1} {2}]",
+//000019:             p.FirstName, p.LastName, p.Age)
+//000020: 
+//000021: type Pet(n: string, a : int) =
+//000022:     let mutable age = a
+//000023:     member p.Name = n
+//000024:     member p.Age with get() = age and set(v) = age <- v
+//000025:     override p.ToString() =
+//000026:         String.Format("[Pet: {0} {1}]", p.Name, p.Age)
+//000027: 
+//000028: [<EntryPoint>]
+//000029: let main(args : string array) =
+//000030:     let p = new Person("Katie", "Ellison", 30)
+//000031:     let pt1 = p.GetType()
+//000032:     let pt2 = Type.GetType("System.Object")
+//000033:     let pt3 = typeof<Person>
+//000034:     pt1.GetMembers() |>
+//000035:         Array.filter 
+//000036:             (fun (mi : MemberInfo) -> 
+//000037:                 mi.MemberType = MemberTypes.Property) |>
+//000038:         Array.iter 
+//000039:             (fun (pi : MemberInfo) -> 
+//000040:                 Console.WriteLine("Found {0}", pi.Name))
+//000041:     Console.WriteLine("Done")
+//000042:     0
+//000043: 
+//000044: // Dynamic programming examples
+//000045: 
+//000046: (* Matt's example: accesses op[]
+//000047: 
+//000048: let inline (?) this key =
+//000049:   ( ^a : (member get_Item : ^b -> ^c) (this,key))
+//000050:  
+//000051: let inline (?<-) this key value =
+//000052:   ( ^a : (member set_Item : ^b * ^c -> ^d) (this,key,value))
+//000053: 
+//000054: *)
+//000055: 
+//000056: 
+//000057: //open System.Reflection
+//000058: //open Microsoft.FSharp.Reflection
+//000059: //
+//000060: //
+//000061: //type dynamic(value : obj) =
+//000062: //    let ty = value.GetType()
+//000063: //    member d.Type = ty
+//000064: //    member d.Val with get() = value
+//000065: //    member d.Cast<'a>() = value :?> 'a
+//000066: //
+//000067: //    override d.ToString() =
+//000068: //        System.String.Format("[dynamic: {0}]", d.Val.ToString())
+//000069: //
+//000070: //    member d.Exec(str, [<System.ParamArray>] args : obj array) =
+//000071: //        dynamic (ty.InvokeMember(str, , null, value, args))
+//000072: // 
+//000073: //    member d.Item 
+//000074: //        with get str = d.Exec(str)
+//000075: //
+//000076: //
+//000077: //        
+//000078: //    
+//000079: //let (?) this mem args =
+//000080: //    let flags = BindingFlags.GetProperty |||
+//000081: //                BindingFlags.InvokeMethod
+//000082: //    let args =
+//000083: //        if box args = null then
+//000084: //            [| |]
+//000085: //        elif FSharpType.IsTuple (args.GetType()) then
+//000086: //            FSharpValue.GetTupleFields args
+//000087: //        else
+//000088: //            [| args |]
+//000089: //    this.GetType().InvokeMember(mem, flags, null, this, args)
+//000090: //
+//000091: //let (?<-) this prop newval =
+//000092: //    this.GetType().InvokeMember(prop, BindingFlags.SetProperty, null, this, [|newval|])
+//000093: //
+//000094: //[<Example("dynamic examples")>]
+//000095: //let dynamic_examples() =
+//000096: //    let p = new Person("Ken", "Sipe", 40)
+//000097: //    let p2 = new Pet("Fluffy", 1)
+//000098: //    
+//000099: ////    let d = dynamic p
+//000100: ////    System.Console.WriteLine(d)
+//000101: ////    System.Console.WriteLine(d.["FirstName"])
+//000102: ////    let d2 = dynamic (Pet("Fluffy", 2))
+//000103: ////    System.Console.WriteLine(d2.Val)
+//000104: ////    d.Exec("WaxEloquently", "Java", "C#", "F#") |> ignore
+//000105: //    
+//000106: //    let o = p :> obj
+//000107: //    System.Console.WriteLine("Ken is {0}", (o?Age).ToString())
+//000108: //    o?WaxEloquently("Java", "C#", "F#")
+//000109: //    let o2 = p2 :> obj
+//000110: //    System.Console.WriteLine("Fluffy is {0}", (o2?Age).ToString())
+//000111: //    o2?Age <- 2
+//000112: //    System.Console.WriteLine("Fluffy is now {0}", (o2?Age).ToString())
+//000113: //    
+//000114: //    ()
+      IL_0013:  ldstr      "array"
+      IL_0018:  newobj     instance void [mscorlib]System.ArgumentNullException::.ctor(string)
+      IL_001d:  call       !!0 [FSharp.Core]Microsoft.FSharp.Core.Operators::Raise<class [FSharp.Core]Microsoft.FSharp.Core.Unit>(class [mscorlib]System.Exception)
+      IL_0022:  pop
+      IL_0023:  nop
+      IL_0024:  br.s       IL_0027
+
+      IL_0026:  nop
+      IL_0027:  ldloc.1
+      IL_0028:  ldlen
+      IL_0029:  conv.i4
+      IL_002a:  stloc.2
+      IL_002b:  ldc.i4.0
+      IL_002c:  stloc.s    V_4
+      IL_002e:  ldloc.2
+      IL_002f:  ldc.i4.1
+      IL_0030:  sub
+      IL_0031:  stloc.3
+      IL_0032:  ldloc.3
+      IL_0033:  ldloc.s    V_4
+      IL_0035:  blt.s      IL_0053
+
+//000013:         Array.iter
+      IL_0037:  ldloc.0
+      IL_0038:  ldloc.1
+      IL_0039:  ldloc.s    V_4
+      IL_003b:  ldelem     [mscorlib]System.String
+      IL_0040:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<string,class [FSharp.Core]Microsoft.FSharp.Core.Unit>::Invoke(!0)
+      IL_0045:  pop
+      IL_0046:  ldloc.s    V_4
+      IL_0048:  ldc.i4.1
+      IL_0049:  add
+      IL_004a:  stloc.s    V_4
+      IL_004c:  ldloc.s    V_4
+      IL_004e:  ldloc.3
+      IL_004f:  ldc.i4.1
+      IL_0050:  add
+      IL_0051:  bne.un.s   IL_0037
+
+      IL_0053:  ret
+    } // end of method Person::WaxEloquently
+
+    .method public hidebysig virtual instance string 
+            ToString() cil managed
+    {
+      // Code size       35 (0x23)
+      .maxstack  6
+//000014:             (fun (subj : string) -> 
+//000015:                 Console.WriteLine("I speak on " + subj))
+//000016:             subject            
+//000017:     override p.ToString() =
+//000018:         String.Format("[Person: {0} {1} {2}]",
+      IL_0000:  nop
+      IL_0001:  ldstr      "[Person: {0} {1} {2}]"
+      IL_0006:  ldarg.0
+      IL_0007:  call       instance string Program/Person::get_FirstName()
+      IL_000c:  ldarg.0
+      IL_000d:  call       instance string Program/Person::get_LastName()
+      IL_0012:  ldarg.0
+      IL_0013:  call       instance int32 Program/Person::get_Age()
+      IL_0018:  box        [mscorlib]System.Int32
+      IL_001d:  call       string [mscorlib]System.String::Format(string,
+                                                                  object,
+                                                                  object,
+                                                                  object)
+      IL_0022:  ret
+    } // end of method Person::ToString
+
+    .property instance string FirstName()
+    {
+      .get instance string Program/Person::get_FirstName()
+    } // end of property Person::FirstName
+    .property instance string LastName()
+    {
+      .get instance string Program/Person::get_LastName()
+    } // end of property Person::LastName
+    .property instance int32 Age()
+    {
+      .set instance void Program/Person::set_Age(int32)
+      .get instance int32 Program/Person::get_Age()
+    } // end of property Person::Age
+  } // end of class Person
+
+  .class auto ansi serializable nested assembly beforefieldinit WaxEloquently@14
+         extends class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<string,class [FSharp.Core]Microsoft.FSharp.Core.Unit>
+  {
+    .method assembly specialname rtspecialname 
+            instance void  .ctor() cil managed
+    {
+      // Code size       7 (0x7)
+      .maxstack  8
+      IL_0000:  ldarg.0
+      IL_0001:  call       instance void class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<string,class [FSharp.Core]Microsoft.FSharp.Core.Unit>::.ctor()
+      IL_0006:  ret
+    } // end of method WaxEloquently@14::.ctor
+
+    .method public strict virtual instance class [FSharp.Core]Microsoft.FSharp.Core.Unit 
+            Invoke(string subj) cil managed
+    {
+      // Code size       19 (0x13)
+      .maxstack  6
+//000015:                 Console.WriteLine("I speak on " + subj))
+      IL_0000:  nop
+      IL_0001:  ldstr      "I speak on "
+      IL_0006:  ldarg.1
+      IL_0007:  call       string [mscorlib]System.String::Concat(string,
+                                                                  string)
+      IL_000c:  call       void [mscorlib]System.Console::WriteLine(string)
+      IL_0011:  ldnull
+      IL_0012:  ret
+    } // end of method WaxEloquently@14::Invoke
+
+  } // end of class WaxEloquently@14
+
+  .class auto ansi serializable nested public Pet
+         extends [mscorlib]System.Object
+  {
+    .custom instance void [FSharp.Core]Microsoft.FSharp.Core.CompilationMappingAttribute::.ctor(valuetype [FSharp.Core]Microsoft.FSharp.Core.SourceConstructFlags) = ( 01 00 03 00 00 00 00 00 ) 
+    .field assembly string n
+    .field assembly int32 age
+    .method public specialname rtspecialname 
+            instance void  .ctor(string n,
+                                 int32 a) cil managed
+    {
+      // Code size       24 (0x18)
+      .maxstack  4
+//000016:             subject            
+//000017:     override p.ToString() =
+//000018:         String.Format("[Person: {0} {1} {2}]",
+//000019:             p.FirstName, p.LastName, p.Age)
+//000020: 
+//000021: type Pet(n: string, a : int) =
+      IL_0000:  ldarg.0
+      IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0006:  ldarg.0
+      IL_0007:  pop
+      IL_0008:  nop
+      IL_0009:  ldarg.0
+      IL_000a:  ldarg.1
+      IL_000b:  stfld      string Program/Pet::n
+//000022:     let mutable age = a
+      IL_0010:  ldarg.0
+      IL_0011:  ldarg.2
+      IL_0012:  stfld      int32 Program/Pet::age
+//000021: type Pet(n: string, a : int) =
+      IL_0017:  ret
+    } // end of method Pet::.ctor
+
+    .method public specialname instance string 
+            get_Name() cil managed
+    {
+      // Code size       8 (0x8)
+      .maxstack  3
+//000022:     let mutable age = a
+//000023:     member p.Name = n
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  ldfld      string Program/Pet::n
+      IL_0007:  ret
+    } // end of method Pet::get_Name
+
+    .method public specialname instance int32 
+            get_Age() cil managed
+    {
+      // Code size       8 (0x8)
+      .maxstack  3
+//000024:     member p.Age with get() = age and set(v) = age <- v
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  ldfld      int32 Program/Pet::age
+      IL_0007:  ret
+    } // end of method Pet::get_Age
+
+    .method public specialname instance void 
+            set_Age(int32 v) cil managed
+    {
+      // Code size       9 (0x9)
+      .maxstack  4
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  ldarg.1
+      IL_0003:  stfld      int32 Program/Pet::age
+      IL_0008:  ret
+    } // end of method Pet::set_Age
+
+    .method public hidebysig virtual instance string 
+            ToString() cil managed
+    {
+      // Code size       29 (0x1d)
+      .maxstack  5
+//000025:     override p.ToString() =
+//000026:         String.Format("[Pet: {0} {1}]", p.Name, p.Age)
+      IL_0000:  nop
+      IL_0001:  ldstr      "[Pet: {0} {1}]"
+      IL_0006:  ldarg.0
+      IL_0007:  call       instance string Program/Pet::get_Name()
+      IL_000c:  ldarg.0
+      IL_000d:  call       instance int32 Program/Pet::get_Age()
+      IL_0012:  box        [mscorlib]System.Int32
+      IL_0017:  call       string [mscorlib]System.String::Format(string,
+                                                                  object,
+                                                                  object)
+      IL_001c:  ret
+    } // end of method Pet::ToString
+
+    .property instance string Name()
+    {
+      .get instance string Program/Pet::get_Name()
+    } // end of property Pet::Name
+    .property instance int32 Age()
+    {
+      .set instance void Program/Pet::set_Age(int32)
+      .get instance int32 Program/Pet::get_Age()
+    } // end of property Pet::Age
+  } // end of class Pet
+
+  .class auto ansi serializable nested assembly beforefieldinit main@36
+         extends class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [mscorlib]System.Reflection.MemberInfo,bool>
+  {
+    .method assembly specialname rtspecialname 
+            instance void  .ctor() cil managed
+    {
+      // Code size       7 (0x7)
+      .maxstack  8
+      IL_0000:  ldarg.0
+      IL_0001:  call       instance void class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [mscorlib]System.Reflection.MemberInfo,bool>::.ctor()
+      IL_0006:  ret
+    } // end of method main@36::.ctor
+
+    .method public strict virtual instance bool 
+            Invoke(class [mscorlib]System.Reflection.MemberInfo mi) cil managed
+    {
+      // Code size       12 (0xc)
+      .maxstack  6
+//000027: 
+//000028: [<EntryPoint>]
+//000029: let main(args : string array) =
+//000030:     let p = new Person("Katie", "Ellison", 30)
+//000031:     let pt1 = p.GetType()
+//000032:     let pt2 = Type.GetType("System.Object")
+//000033:     let pt3 = typeof<Person>
+//000034:     pt1.GetMembers() |>
+//000035:         Array.filter 
+//000036:             (fun (mi : MemberInfo) -> 
+//000037:                 mi.MemberType = MemberTypes.Property) |>
+      IL_0000:  nop
+      IL_0001:  ldarg.1
+      IL_0002:  callvirt   instance valuetype [mscorlib]System.Reflection.MemberTypes [mscorlib]System.Reflection.MemberInfo::get_MemberType()
+      IL_0007:  ldc.i4.s   16
+      IL_0009:  ceq
+      IL_000b:  ret
+    } // end of method main@36::Invoke
+
+  } // end of class main@36
+
+  .class auto ansi serializable nested assembly beforefieldinit 'main@39-1'
+         extends class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [mscorlib]System.Reflection.MemberInfo,class [FSharp.Core]Microsoft.FSharp.Core.Unit>
+  {
+    .method assembly specialname rtspecialname 
+            instance void  .ctor() cil managed
+    {
+      // Code size       7 (0x7)
+      .maxstack  8
+      IL_0000:  ldarg.0
+      IL_0001:  call       instance void class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [mscorlib]System.Reflection.MemberInfo,class [FSharp.Core]Microsoft.FSharp.Core.Unit>::.ctor()
+      IL_0006:  ret
+    } // end of method 'main@39-1'::.ctor
+
+    .method public strict virtual instance class [FSharp.Core]Microsoft.FSharp.Core.Unit 
+            Invoke(class [mscorlib]System.Reflection.MemberInfo pi) cil managed
+    {
+      // Code size       19 (0x13)
+      .maxstack  6
+//000038:         Array.iter 
+//000039:             (fun (pi : MemberInfo) -> 
+//000040:                 Console.WriteLine("Found {0}", pi.Name))
+      IL_0000:  nop
+      IL_0001:  ldstr      "Found {0}"
+      IL_0006:  ldarg.1
+      IL_0007:  callvirt   instance string [mscorlib]System.Reflection.MemberInfo::get_Name()
+      IL_000c:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                    object)
+      IL_0011:  ldnull
+      IL_0012:  ret
+    } // end of method 'main@39-1'::Invoke
+
+  } // end of class 'main@39-1'
+
+  .method public static int32  main(string[] args) cil managed
+  {
+    .entrypoint
+    .custom instance void [FSharp.Core]Microsoft.FSharp.Core.EntryPointAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       172 (0xac)
+    .maxstack  5
+    .locals init ([0] class Program/Person p,
+             [1] class [mscorlib]System.Type pt1,
+             [2] class [mscorlib]System.Type pt2,
+             [3] class [mscorlib]System.Type pt3,
+             [4] class [mscorlib]System.Reflection.MemberInfo[] V_4,
+             [5] class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [mscorlib]System.Reflection.MemberInfo,class [FSharp.Core]Microsoft.FSharp.Core.Unit> V_5,
+             [6] class [mscorlib]System.Reflection.MemberInfo[] V_6,
+             [7] int32 V_7,
+             [8] int32 V_8,
+             [9] int32 V_9)
+//000030:     let p = new Person("Katie", "Ellison", 30)
+    IL_0000:  nop
+    IL_0001:  ldstr      "Katie"
+    IL_0006:  ldstr      "Ellison"
+    IL_000b:  ldc.i4.s   30
+    IL_000d:  newobj     instance void Program/Person::.ctor(string,
+                                                             string,
+                                                             int32)
+    IL_0012:  stloc.0
+//000031:     let pt1 = p.GetType()
+    IL_0013:  ldloc.0
+    IL_0014:  call       instance class [mscorlib]System.Type [mscorlib]System.Object::GetType()
+    IL_0019:  stloc.1
+//000032:     let pt2 = Type.GetType("System.Object")
+    IL_001a:  ldstr      "System.Object"
+    IL_001f:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetType(string)
+    IL_0024:  stloc.2
+//000033:     let pt3 = typeof<Person>
+    IL_0025:  ldtoken    Program/Person
+    IL_002a:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_002f:  stloc.3
+//000034:     pt1.GetMembers() |>
+    IL_0030:  newobj     instance void Program/main@36::.ctor()
+    IL_0035:  ldloc.1
+    IL_0036:  callvirt   instance class [mscorlib]System.Reflection.MemberInfo[] [mscorlib]System.Type::GetMembers()
+    IL_003b:  call       !!0[] [FSharp.Core]Microsoft.FSharp.Collections.ArrayModule::Filter<class [mscorlib]System.Reflection.MemberInfo>(class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<!!0,bool>,
+                                                                                                                                           !!0[])
+    IL_0040:  stloc.s    V_4
+    IL_0042:  newobj     instance void Program/'main@39-1'::.ctor()
+    IL_0047:  stloc.s    V_5
+    IL_0049:  ldloc.s    V_4
+    IL_004b:  stloc.s    V_6
+    IL_004d:  ldloc.s    V_6
+    IL_004f:  box        class [mscorlib]System.Reflection.MemberInfo[]
+    IL_0054:  brfalse.s  IL_0058
+
+    IL_0056:  br.s       IL_006b
+
+//000035:         Array.filter 
+//000036:             (fun (mi : MemberInfo) -> 
+//000037:                 mi.MemberType = MemberTypes.Property) |>
+//000038:         Array.iter 
+//000039:             (fun (pi : MemberInfo) -> 
+//000040:                 Console.WriteLine("Found {0}", pi.Name))
+//000041:     Console.WriteLine("Done")
+//000042:     0
+//000043: 
+//000044: // Dynamic programming examples
+//000045: 
+//000046: (* Matt's example: accesses op[]
+//000047: 
+//000048: let inline (?) this key =
+//000049:   ( ^a : (member get_Item : ^b -> ^c) (this,key))
+//000050:  
+//000051: let inline (?<-) this key value =
+//000052:   ( ^a : (member set_Item : ^b * ^c -> ^d) (this,key,value))
+//000053: 
+//000054: *)
+//000055: 
+//000056: 
+//000057: //open System.Reflection
+//000058: //open Microsoft.FSharp.Reflection
+//000059: //
+//000060: //
+//000061: //type dynamic(value : obj) =
+//000062: //    let ty = value.GetType()
+//000063: //    member d.Type = ty
+//000064: //    member d.Val with get() = value
+//000065: //    member d.Cast<'a>() = value :?> 'a
+//000066: //
+//000067: //    override d.ToString() =
+//000068: //        System.String.Format("[dynamic: {0}]", d.Val.ToString())
+//000069: //
+//000070: //    member d.Exec(str, [<System.ParamArray>] args : obj array) =
+//000071: //        dynamic (ty.InvokeMember(str, , null, value, args))
+//000072: // 
+//000073: //    member d.Item 
+//000074: //        with get str = d.Exec(str)
+//000075: //
+//000076: //
+//000077: //        
+//000078: //    
+//000079: //let (?) this mem args =
+//000080: //    let flags = BindingFlags.GetProperty |||
+//000081: //                BindingFlags.InvokeMethod
+//000082: //    let args =
+//000083: //        if box args = null then
+//000084: //            [| |]
+//000085: //        elif FSharpType.IsTuple (args.GetType()) then
+//000086: //            FSharpValue.GetTupleFields args
+//000087: //        else
+//000088: //            [| args |]
+//000089: //    this.GetType().InvokeMember(mem, flags, null, this, args)
+//000090: //
+//000091: //let (?<-) this prop newval =
+//000092: //    this.GetType().InvokeMember(prop, BindingFlags.SetProperty, null, this, [|newval|])
+//000093: //
+//000094: //[<Example("dynamic examples")>]
+//000095: //let dynamic_examples() =
+//000096: //    let p = new Person("Ken", "Sipe", 40)
+//000097: //    let p2 = new Pet("Fluffy", 1)
+//000098: //    
+//000099: ////    let d = dynamic p
+//000100: ////    System.Console.WriteLine(d)
+//000101: ////    System.Console.WriteLine(d.["FirstName"])
+//000102: ////    let d2 = dynamic (Pet("Fluffy", 2))
+//000103: ////    System.Console.WriteLine(d2.Val)
+//000104: ////    d.Exec("WaxEloquently", "Java", "C#", "F#") |> ignore
+//000105: //    
+//000106: //    let o = p :> obj
+//000107: //    System.Console.WriteLine("Ken is {0}", (o?Age).ToString())
+//000108: //    o?WaxEloquently("Java", "C#", "F#")
+//000109: //    let o2 = p2 :> obj
+//000110: //    System.Console.WriteLine("Fluffy is {0}", (o2?Age).ToString())
+//000111: //    o2?Age <- 2
+//000112: //    System.Console.WriteLine("Fluffy is now {0}", (o2?Age).ToString())
+//000113: //    
+//000114: //    ()
+    IL_0058:  ldstr      "array"
+    IL_005d:  newobj     instance void [mscorlib]System.ArgumentNullException::.ctor(string)
+    IL_0062:  call       !!0 [FSharp.Core]Microsoft.FSharp.Core.Operators::Raise<class [FSharp.Core]Microsoft.FSharp.Core.Unit>(class [mscorlib]System.Exception)
+    IL_0067:  pop
+    IL_0068:  nop
+    IL_0069:  br.s       IL_006c
+
+    IL_006b:  nop
+    IL_006c:  ldloc.s    V_6
+    IL_006e:  ldlen
+    IL_006f:  conv.i4
+    IL_0070:  stloc.s    V_7
+    IL_0072:  ldc.i4.0
+    IL_0073:  stloc.s    V_9
+    IL_0075:  ldloc.s    V_7
+    IL_0077:  ldc.i4.1
+    IL_0078:  sub
+    IL_0079:  stloc.s    V_8
+    IL_007b:  ldloc.s    V_8
+    IL_007d:  ldloc.s    V_9
+    IL_007f:  blt.s      IL_00a0
+
+//000038:         Array.iter 
+    IL_0081:  ldloc.s    V_5
+    IL_0083:  ldloc.s    V_6
+    IL_0085:  ldloc.s    V_9
+    IL_0087:  ldelem     [mscorlib]System.Reflection.MemberInfo
+    IL_008c:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [mscorlib]System.Reflection.MemberInfo,class [FSharp.Core]Microsoft.FSharp.Core.Unit>::Invoke(!0)
+    IL_0091:  pop
+    IL_0092:  ldloc.s    V_9
+    IL_0094:  ldc.i4.1
+    IL_0095:  add
+    IL_0096:  stloc.s    V_9
+    IL_0098:  ldloc.s    V_9
+    IL_009a:  ldloc.s    V_8
+    IL_009c:  ldc.i4.1
+    IL_009d:  add
+    IL_009e:  bne.un.s   IL_0081
+
+//000039:             (fun (pi : MemberInfo) -> 
+//000040:                 Console.WriteLine("Found {0}", pi.Name))
+//000041:     Console.WriteLine("Done")
+    IL_00a0:  ldstr      "Done"
+    IL_00a5:  call       void [mscorlib]System.Console::WriteLine(string)
+//000042:     0
+    IL_00aa:  ldc.i4.0
+    IL_00ab:  ret
+  } // end of method Program::main
+
+} // end of class Program
+
+.class private abstract auto ansi sealed '<StartupCode$Reflection>'.$Program
+       extends [mscorlib]System.Object
+{
+} // end of class '<StartupCode$Reflection>'.$Program
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

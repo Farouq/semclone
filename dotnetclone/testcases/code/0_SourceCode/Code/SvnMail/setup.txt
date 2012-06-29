@@ -1,0 +1,7 @@
+Instructions for setup:
+
+1. compile the F# code into an exe assembly
+2. enter valid entries in the config file
+3. place the exe and config file on the Subversion server
+4. update the post-commit.bat to point to the exe
+5. place the post-commit.bat in the desired svn repository's "hooks" directory

@@ -1,0 +1,5 @@
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_CSharp\bin\Debug\ParallelGrep.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_CSharp\bin\Debug\ParallelGrep.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_CSharp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_CSharp\obj\Debug\ParallelGrep.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_CSharp\obj\Debug\ParallelGrep.pdb

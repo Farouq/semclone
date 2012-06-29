@@ -1,0 +1,1676 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\Program.cs" startline="19" endline="23"><![CDATA[
+         {
+             Application.EnableVisualStyles();
+             Application.SetCompatibleTextRenderingDefault(false);
+             Application.Run(new MainForm());
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\GameOfLifeLogic.cs" startline="32" endline="57"><![CDATA[
+         public GameBoard(int width, int height, double initialDensity, ObjectPool<Bitmap> pool)
+         {
+             // Validate parameters
+             if (width < 1) throw new ArgumentOutOfRangeException("width");
+             if (height < 1) throw new ArgumentOutOfRangeException("height");
+             if (pool == null) throw new ArgumentNullException("pool");
+             if (initialDensity < 0 || initialDensity > 1) throw new ArgumentOutOfRangeException("initialDensity");
+ 
+             // Store parameters
+             _pool = pool;
+             Width = width;
+             Height = height;
+ 
+             // Create the storage arrays
+             _scratch = new Color?[2][,] { new Color?[width, height], new Color?[width, height] };
+ 
+             // Populate the board randomly based on the provided initial density
+             Random rand = new Random();
+             for (int i = 0; i < width; i ++)
+             {
+                 for (int j = 0; j < height; j++)
+                 {
+                     _scratch[_currentIndex][i, j] = (rand.NextDouble() < initialDensity) ? Color.FromArgb(rand.Next()) 
+                 }
+             }
+         }
+ 
+         /// <summary>Moves to the next stage of the game, returning a Bitmap that represents the state of the board.</summary>
+         /// <returns>A bitmap that represents the state of the board.</returns>
+         /// <remarks>The returned Bitmap should be added back to the pool supplied to the constructor when usage of it is complete.</remarks>
+         public Bitmap MoveNext()
+         {
+             // Get the current and next stage board arrays
+             int nextIndex = (_currentIndex + 1) % 2;
+             Color?[,] current = _scratch[_currentIndex];
+             Color?[,] next = _scratch[nextIndex];
+             Random rand = new Random();
+ 
+             // Get a Bitmap from the pool to use
+             var bmp = _pool.GetObject();
+             using (FastBitmap fastBmp = new FastBitmap(bmp))
+             {
+                 // For every row
+                 Action<int> body = i =>
+                 {
+                     // For every column
+                     for (int j = 0; j < Height; j++)
+                     {
+                         int count = 0;
+                         int r = 0, g = 0, b = 0;
+ 
+                         // Count neighbors
+                         for (int x = i - 1; x <= i + 1; x++)
+                         {
+                             for (int y = j - 1; y <= j + 1; y++)
+                             {
+                                 if ((x == i && j == y) || x < 0 || x >= Width || y < 0 || y >= Height) continue;
+                                 Color? c = current[x, y];
+                                 if (c.HasValue)
+                                 {
+                                     count++;
+                                     r += c.Value.R;
+                                     g += c.Value.G;
+                                     b += c.Value.B;
+                                 }
+                             }
+                         }
+ 
+                         // Heuristic for alive or dead based on neighbor count and current state
+                         if (count < 1 || count >= 4) next[i, j] = null;
+                         else if (current[i, j].HasValue && (count == 2 || count == 3)) next[i, j] = current[i, j];
+                         else if (!current[i, j].HasValue && count == 3) next[i, j] = Color.FromArgb(r / count, g / count, b / count);
+                         else next[i, j] = null;
+ 
+                         // Render the cell
+                         fastBmp.SetColor(i, j, current[i, j] ?? Color.White);
+                     }
+                 };
+ 
+                 // Process the rows serially or in parallel based on the RunParallel property setting
+                 if (RunParallel)
+                 {
+                     Parallel.For(0, Width, 
+                         body);
+                 }
+                 else
+                 {
+                     for (int i = 0; i < Width; i++) 
+                         body(i);
+                 }
+             }
+ 
+             // Update and return
+             _currentIndex = nextIndex;
+             return bmp;
+         }
+ 
+         /// <summary>Gets the width of the board.</summary>
+         public int Width { get; private set; }
+         /// <summary>Gets the height of the board.</summary>
+         public int Height { get; private set; }
+         /// <summary>Gets or sets whether to run in parallel.</summary>
+         public bool RunParallel { get; set; }
+     }
+ }
+             if (width < 1) throw new ArgumentOutOfRangeException("width");
+             if (height < 1) throw new ArgumentOutOfRangeException("height");
+             if (pool == null) throw new ArgumentNullException("pool");
+             if (initialDensity < 0 || initialDensity > 1) throw new ArgumentOutOfRangeException("initialDensity");
+ 
+             // Store parameters
+             _pool = pool;
+             Width = width;
+             Height = height;
+ 
+             // Create the storage arrays
+             _scratch = new Color?[2][,] { new Color?[width, height], new Color?[width, height] };
+ 
+             // Populate the board randomly based on the provided initial density
+             Random rand = new Random();
+             for (int i = 0; i < width; i ++)
+             {
+                 for (int j = 0; j < height; j++)
+                 {
+                     _scratch[_currentIndex][i, j] = (rand.NextDouble() < initialDensity) ? Color.FromArgb(rand.Next()) 
+                 }
+             }
+         }
+ 
+         /// <summary>Moves to the next stage of the game, returning a Bitmap that represents the state of the board.</summary>
+         /// <returns>A bitmap that represents the state of the board.</returns>
+         /// <remarks>The returned Bitmap should be added back to the pool supplied to the constructor when usage of it is complete.</remarks>
+         public Bitmap MoveNext()
+         {
+             // Get the current and next stage board arrays
+             int nextIndex = (_currentIndex + 1) % 2;
+             Color?[,] current = _scratch[_currentIndex];
+             Color?[,] next = _scratch[nextIndex];
+             Random rand = new Random();
+ 
+             // Get a Bitmap from the pool to use
+             var bmp = _pool.GetObject();
+             using (FastBitmap fastBmp = new FastBitmap(bmp))
+             {
+                 // For every row
+                 Action<int> body = i =>
+                 {
+                     // For every column
+                     for (int j = 0; j < Height; j++)
+                     {
+                         int count = 0;
+                         int r = 0, g = 0, b = 0;
+ 
+                         // Count neighbors
+                         for (int x = i - 1; x <= i + 1; x++)
+                         {
+                             for (int y = j - 1; y <= j + 1; y++)
+                             {
+                                 if ((x == i && j == y) || x < 0 || x >= Width || y < 0 || y >= Height) continue;
+                                 Color? c = current[x, y];
+                                 if (c.HasValue)
+                                 {
+                                     count++;
+                                     r += c.Value.R;
+                                     g += c.Value.G;
+                                     b += c.Value.B;
+                                 }
+                             }
+                         }
+ 
+                         // Heuristic for alive or dead based on neighbor count and current state
+                         if (count < 1 || count >= 4) next[i, j] = null;
+                         else if (current[i, j].HasValue && (count == 2 || count == 3)) next[i, j] = current[i, j];
+                         else if (!current[i, j].HasValue && count == 3) next[i, j] = Color.FromArgb(r / count, g / count, b / count);
+                         else next[i, j] = null;
+ 
+                         // Render the cell
+                         fastBmp.SetColor(i, j, current[i, j] ?? Color.White);
+                     }
+                 };
+ 
+                 // Process the rows serially or in parallel based on the RunParallel property setting
+                 if (RunParallel)
+                 {
+                     Parallel.For(0, Width, 
+                         body);
+                 }
+                 else
+                 {
+                     for (int i = 0; i < Width; i++) 
+                         body(i);
+                 }
+             }
+ 
+             // Update and return
+             _currentIndex = nextIndex;
+             return bmp;
+         }
+ 
+         /// <summary>Gets the width of the board.</summary>
+         public int Width { get; private set; }
+         /// <summary>Gets the height of the board.</summary>
+         public int Height { get; private set; }
+         /// <summary>Gets or sets whether to run in parallel.</summary>
+         public bool RunParallel { get; set; }
+     }
+ }
+             if (height < 1) throw new ArgumentOutOfRangeException("height");
+             if (pool == null) throw new ArgumentNullException("pool");
+             if (initialDensity < 0 || initialDensity > 1) throw new ArgumentOutOfRangeException("initialDensity");
+ 
+             // Store parameters
+             _pool = pool;
+             Width = width;
+             Height = height;
+ 
+             // Create the storage arrays
+             _scratch = new Color?[2][,] { new Color?[width, height], new Color?[width, height] };
+ 
+             // Populate the board randomly based on the provided initial density
+             Random rand = new Random();
+             for (int i = 0; i < width; i ++)
+             {
+                 for (int j = 0; j < height; j++)
+                 {
+                     _scratch[_currentIndex][i, j] = (rand.NextDouble() < initialDensity) ? Color.FromArgb(rand.Next()) 
+                 }
+             }
+         }
+ 
+         /// <summary>Moves to the next stage of the game, returning a Bitmap that represents the state of the board.</summary>
+         /// <returns>A bitmap that represents the state of the board.</returns>
+         /// <remarks>The returned Bitmap should be added back to the pool supplied to the constructor when usage of it is complete.</remarks>
+         public Bitmap MoveNext()
+         {
+             // Get the current and next stage board arrays
+             int nextIndex = (_currentIndex + 1) % 2;
+             Color?[,] current = _scratch[_currentIndex];
+             Color?[,] next = _scratch[nextIndex];
+             Random rand = new Random();
+ 
+             // Get a Bitmap from the pool to use
+             var bmp = _pool.GetObject();
+             using (FastBitmap fastBmp = new FastBitmap(bmp))
+             {
+                 // For every row
+                 Action<int> body = i =>
+                 {
+                     // For every column
+                     for (int j = 0; j < Height; j++)
+                     {
+                         int count = 0;
+                         int r = 0, g = 0, b = 0;
+ 
+                         // Count neighbors
+                         for (int x = i - 1; x <= i + 1; x++)
+                         {
+                             for (int y = j - 1; y <= j + 1; y++)
+                             {
+                                 if ((x == i && j == y) || x < 0 || x >= Width || y < 0 || y >= Height) continue;
+                                 Color? c = current[x, y];
+                                 if (c.HasValue)
+                                 {
+                                     count++;
+                                     r += c.Value.R;
+                                     g += c.Value.G;
+                                     b += c.Value.B;
+                                 }
+                             }
+                         }
+ 
+                         // Heuristic for alive or dead based on neighbor count and current state
+                         if (count < 1 || count >= 4) next[i, j] = null;
+                         else if (current[i, j].HasValue && (count == 2 || count == 3)) next[i, j] = current[i, j];
+                         else if (!current[i, j].HasValue && count == 3) next[i, j] = Color.FromArgb(r / count, g / count, b / count);
+                         else next[i, j] = null;
+ 
+                         // Render the cell
+                         fastBmp.SetColor(i, j, current[i, j] ?? Color.White);
+                     }
+                 };
+ 
+                 // Process the rows serially or in parallel based on the RunParallel property setting
+                 if (RunParallel)
+                 {
+                     Parallel.For(0, Width, 
+                         body);
+                 }
+                 else
+                 {
+                     for (int i = 0; i < Width; i++) 
+                         body(i);
+                 }
+             }
+ 
+             // Update and return
+             _currentIndex = nextIndex;
+             return bmp;
+         }
+ 
+         /// <summary>Gets the width of the board.</summary>
+         public int Width { get; private set; }
+         /// <summary>Gets the height of the board.</summary>
+         public int Height { get; private set; }
+         /// <summary>Gets or sets whether to run in parallel.</summary>
+         public bool RunParallel { get; set; }
+     }
+ }
+             if (pool == null) throw new ArgumentNullException("pool");
+             if (initialDensity < 0 || initialDensity > 1) throw new ArgumentOutOfRangeException("initialDensity");
+ 
+             // Store parameters
+             _pool = pool;
+             Width = width;
+             Height = height;
+ 
+             // Create the storage arrays
+             _scratch = new Color?[2][,] { new Color?[width, height], new Color?[width, height] };
+ 
+             // Populate the board randomly based on the provided initial density
+             Random rand = new Random();
+             for (int i = 0; i < width; i ++)
+             {
+                 for (int j = 0; j < height; j++)
+                 {
+                     _scratch[_currentIndex][i, j] = (rand.NextDouble() < initialDensity) ? Color.FromArgb(rand.Next()) 
+                 }
+             }
+         }
+ 
+         /// <summary>Moves to the next stage of the game, returning a Bitmap that represents the state of the board.</summary>
+         /// <returns>A bitmap that represents the state of the board.</returns>
+         /// <remarks>The returned Bitmap should be added back to the pool supplied to the constructor when usage of it is complete.</remarks>
+         public Bitmap MoveNext()
+         {
+             // Get the current and next stage board arrays
+             int nextIndex = (_currentIndex + 1) % 2;
+             Color?[,] current = _scratch[_currentIndex];
+             Color?[,] next = _scratch[nextIndex];
+             Random rand = new Random();
+ 
+             // Get a Bitmap from the pool to use
+             var bmp = _pool.GetObject();
+             using (FastBitmap fastBmp = new FastBitmap(bmp))
+             {
+                 // For every row
+                 Action<int> body = i =>
+                 {
+                     // For every column
+                     for (int j = 0; j < Height; j++)
+                     {
+                         int count = 0;
+                         int r = 0, g = 0, b = 0;
+ 
+                         // Count neighbors
+                         for (int x = i - 1; x <= i + 1; x++)
+                         {
+                             for (int y = j - 1; y <= j + 1; y++)
+                             {
+                                 if ((x == i && j == y) || x < 0 || x >= Width || y < 0 || y >= Height) continue;
+                                 Color? c = current[x, y];
+                                 if (c.HasValue)
+                                 {
+                                     count++;
+                                     r += c.Value.R;
+                                     g += c.Value.G;
+                                     b += c.Value.B;
+                                 }
+                             }
+                         }
+ 
+                         // Heuristic for alive or dead based on neighbor count and current state
+                         if (count < 1 || count >= 4) next[i, j] = null;
+                         else if (current[i, j].HasValue && (count == 2 || count == 3)) next[i, j] = current[i, j];
+                         else if (!current[i, j].HasValue && count == 3) next[i, j] = Color.FromArgb(r / count, g / count, b / count);
+                         else next[i, j] = null;
+ 
+                         // Render the cell
+                         fastBmp.SetColor(i, j, current[i, j] ?? Color.White);
+                     }
+                 };
+ 
+                 // Process the rows serially or in parallel based on the RunParallel property setting
+                 if (RunParallel)
+                 {
+                     Parallel.For(0, Width, 
+                         body);
+                 }
+                 else
+                 {
+                     for (int i = 0; i < Width; i++) 
+                         body(i);
+                 }
+             }
+ 
+             // Update and return
+             _currentIndex = nextIndex;
+             return bmp;
+         }
+ 
+         /// <summary>Gets the width of the board.</summary>
+         public int Width { get; private set; }
+         /// <summary>Gets the height of the board.</summary>
+         public int Height { get; private set; }
+         /// <summary>Gets or sets whether to run in parallel.</summary>
+         public bool RunParallel { get; set; }
+     }
+ }
+             if (initialDensity < 0 || initialDensity > 1) throw new ArgumentOutOfRangeException("initialDensity");
+ 
+             // Store parameters
+             _pool = pool;
+             Width = width;
+             Height = height;
+ 
+             // Create the storage arrays
+             _scratch = new Color?[2][,] { new Color?[width, height], new Color?[width, height] };
+ 
+             // Populate the board randomly based on the provided initial density
+             Random rand = new Random();
+             for (int i = 0; i < width; i ++)
+             {
+                 for (int j = 0; j < height; j++)
+                 {
+                     _scratch[_currentIndex][i, j] = (rand.NextDouble() < initialDensity) ? Color.FromArgb(rand.Next()) 
+                 }
+             }
+         }
+ 
+         /// <summary>Moves to the next stage of the game, returning a Bitmap that represents the state of the board.</summary>
+         /// <returns>A bitmap that represents the state of the board.</returns>
+         /// <remarks>The returned Bitmap should be added back to the pool supplied to the constructor when usage of it is complete.</remarks>
+         public Bitmap MoveNext()
+         {
+             // Get the current and next stage board arrays
+             int nextIndex = (_currentIndex + 1) % 2;
+             Color?[,] current = _scratch[_currentIndex];
+             Color?[,] next = _scratch[nextIndex];
+             Random rand = new Random();
+ 
+             // Get a Bitmap from the pool to use
+             var bmp = _pool.GetObject();
+             using (FastBitmap fastBmp = new FastBitmap(bmp))
+             {
+                 // For every row
+                 Action<int> body = i =>
+                 {
+                     // For every column
+                     for (int j = 0; j < Height; j++)
+                     {
+                         int count = 0;
+                         int r = 0, g = 0, b = 0;
+ 
+                         // Count neighbors
+                         for (int x = i - 1; x <= i + 1; x++)
+                         {
+                             for (int y = j - 1; y <= j + 1; y++)
+                             {
+                                 if ((x == i && j == y) || x < 0 || x >= Width || y < 0 || y >= Height) continue;
+                                 Color? c = current[x, y];
+                                 if (c.HasValue)
+                                 {
+                                     count++;
+                                     r += c.Value.R;
+                                     g += c.Value.G;
+                                     b += c.Value.B;
+                                 }
+                             }
+                         }
+ 
+                         // Heuristic for alive or dead based on neighbor count and current state
+                         if (count < 1 || count >= 4) next[i, j] = null;
+                         else if (current[i, j].HasValue && (count == 2 || count == 3)) next[i, j] = current[i, j];
+                         else if (!current[i, j].HasValue && count == 3) next[i, j] = Color.FromArgb(r / count, g / count, b / count);
+                         else next[i, j] = null;
+ 
+                         // Render the cell
+                         fastBmp.SetColor(i, j, current[i, j] ?? Color.White);
+                     }
+                 };
+ 
+                 // Process the rows serially or in parallel based on the RunParallel property setting
+                 if (RunParallel)
+                 {
+                     Parallel.For(0, Width, 
+                         body);
+                 }
+                 else
+                 {
+                     for (int i = 0; i < Width; i++) 
+                         body(i);
+                 }
+             }
+ 
+             // Update and return
+             _currentIndex = nextIndex;
+             return bmp;
+         }
+ 
+         /// <summary>Gets the width of the board.</summary>
+         public int Width { get; private set; }
+         /// <summary>Gets the height of the board.</summary>
+         public int Height { get; private set; }
+         /// <summary>Gets or sets whether to run in parallel.</summary>
+         public bool RunParallel { get; set; }
+     }
+ }
+             {
+                 for (int j = 0; j < height; j++)
+                 {
+                     _scratch[_currentIndex][i, j] = (rand.NextDouble() < initialDensity) ? Color.FromArgb(rand.Next()) 
+                 }
+             }
+         }
+ 
+         /// <summary>Moves to the next stage of the game, returning a Bitmap that represents the state of the board.</summary>
+         /// <returns>A bitmap that represents the state of the board.</returns>
+         /// <remarks>The returned Bitmap should be added back to the pool supplied to the constructor when usage of it is complete.</remarks>
+         public Bitmap MoveNext()
+         {
+             // Get the current and next stage board arrays
+             int nextIndex = (_currentIndex + 1) % 2;
+             Color?[,] current = _scratch[_currentIndex];
+             Color?[,] next = _scratch[nextIndex];
+             Random rand = new Random();
+ 
+             // Get a Bitmap from the pool to use
+             var bmp = _pool.GetObject();
+             using (FastBitmap fastBmp = new FastBitmap(bmp))
+             {
+                 // For every row
+                 Action<int> body = i =>
+                 {
+                     // For every column
+                     for (int j = 0; j < Height; j++)
+                     {
+                         int count = 0;
+                         int r = 0, g = 0, b = 0;
+ 
+                         // Count neighbors
+                         for (int x = i - 1; x <= i + 1; x++)
+                         {
+                             for (int y = j - 1; y <= j + 1; y++)
+                             {
+                                 if ((x == i && j == y) || x < 0 || x >= Width || y < 0 || y >= Height) continue;
+                                 Color? c = current[x, y];
+                                 if (c.HasValue)
+                                 {
+                                     count++;
+                                     r += c.Value.R;
+                                     g += c.Value.G;
+                                     b += c.Value.B;
+                                 }
+                             }
+                         }
+ 
+                         // Heuristic for alive or dead based on neighbor count and current state
+                         if (count < 1 || count >= 4) next[i, j] = null;
+                         else if (current[i, j].HasValue && (count == 2 || count == 3)) next[i, j] = current[i, j];
+                         else if (!current[i, j].HasValue && count == 3) next[i, j] = Color.FromArgb(r / count, g / count, b / count);
+                         else next[i, j] = null;
+ 
+                         // Render the cell
+                         fastBmp.SetColor(i, j, current[i, j] ?? Color.White);
+                     }
+                 };
+ 
+                 // Process the rows serially or in parallel based on the RunParallel property setting
+                 if (RunParallel)
+                 {
+                     Parallel.For(0, Width, 
+                         body);
+                 }
+                 else
+                 {
+                     for (int i = 0; i < Width; i++) 
+                         body(i);
+                 }
+             }
+ 
+             // Update and return
+             _currentIndex = nextIndex;
+             return bmp;
+         }
+ 
+         /// <summary>Gets the width of the board.</summary>
+         public int Width { get; private set; }
+         /// <summary>Gets the height of the board.</summary>
+         public int Height { get; private set; }
+         /// <summary>Gets or sets whether to run in parallel.</summary>
+         public bool RunParallel { get; set; }
+     }
+ }
+                 {
+                     _scratch[_currentIndex][i, j] = (rand.NextDouble() < initialDensity) ? Color.FromArgb(rand.Next()) 
+                 }
+                 for (int j = 0; j < height; j++)
+                 {
+                     _scratch[_currentIndex][i, j] = (rand.NextDouble() < initialDensity) ? Color.FromArgb(rand.Next()) 
+                 }
+             }
+         }
+ 
+         /// <summary>Moves to the next stage of the game, returning a Bitmap that represents the state of the board.</summary>
+         /// <returns>A bitmap that represents the state of the board.</returns>
+         /// <remarks>The returned Bitmap should be added back to the pool supplied to the constructor when usage of it is complete.</remarks>
+         public Bitmap MoveNext()
+         {
+             // Get the current and next stage board arrays
+             int nextIndex = (_currentIndex + 1) % 2;
+             Color?[,] current = _scratch[_currentIndex];
+             Color?[,] next = _scratch[nextIndex];
+             Random rand = new Random();
+ 
+             // Get a Bitmap from the pool to use
+             var bmp = _pool.GetObject();
+             using (FastBitmap fastBmp = new FastBitmap(bmp))
+             {
+                 // For every row
+                 Action<int> body = i =>
+                 {
+                     // For every column
+                     for (int j = 0; j < Height; j++)
+                     {
+                         int count = 0;
+                         int r = 0, g = 0, b = 0;
+ 
+                         // Count neighbors
+                         for (int x = i - 1; x <= i + 1; x++)
+                         {
+                             for (int y = j - 1; y <= j + 1; y++)
+                             {
+                                 if ((x == i && j == y) || x < 0 || x >= Width || y < 0 || y >= Height) continue;
+                                 Color? c = current[x, y];
+                                 if (c.HasValue)
+                                 {
+                                     count++;
+                                     r += c.Value.R;
+                                     g += c.Value.G;
+                                     b += c.Value.B;
+                                 }
+                             }
+                         }
+ 
+                         // Heuristic for alive or dead based on neighbor count and current state
+                         if (count < 1 || count >= 4) next[i, j] = null;
+                         else if (current[i, j].HasValue && (count == 2 || count == 3)) next[i, j] = current[i, j];
+                         else if (!current[i, j].HasValue && count == 3) next[i, j] = Color.FromArgb(r / count, g / count, b / count);
+                         else next[i, j] = null;
+ 
+                         // Render the cell
+                         fastBmp.SetColor(i, j, current[i, j] ?? Color.White);
+                     }
+                 };
+ 
+                 // Process the rows serially or in parallel based on the RunParallel property setting
+                 if (RunParallel)
+                 {
+                     Parallel.For(0, Width, 
+                         body);
+                 }
+                 else
+                 {
+                     for (int i = 0; i < Width; i++) 
+                         body(i);
+                 }
+             }
+ 
+             // Update and return
+             _currentIndex = nextIndex;
+             return bmp;
+         }
+ 
+         /// <summary>Gets the width of the board.</summary>
+         public int Width { get; private set; }
+         /// <summary>Gets the height of the board.</summary>
+         public int Height { get; private set; }
+         /// <summary>Gets or sets whether to run in parallel.</summary>
+         public bool RunParallel { get; set; }
+     }
+ }
+             }
+             for (int i = 0; i < width; i ++)
+             {
+                 for (int j = 0; j < height; j++)
+                 {
+                     _scratch[_currentIndex][i, j] = (rand.NextDouble() < initialDensity) ? Color.FromArgb(rand.Next()) 
+                 }
+             }
+         }
+ 
+         /// <summary>Moves to the next stage of the game, returning a Bitmap that represents the state of the board.</summary>
+         /// <returns>A bitmap that represents the state of the board.</returns>
+         /// <remarks>The returned Bitmap should be added back to the pool supplied to the constructor when usage of it is complete.</remarks>
+         public Bitmap MoveNext()
+         {
+             // Get the current and next stage board arrays
+             int nextIndex = (_currentIndex + 1) % 2;
+             Color?[,] current = _scratch[_currentIndex];
+             Color?[,] next = _scratch[nextIndex];
+             Random rand = new Random();
+ 
+             // Get a Bitmap from the pool to use
+             var bmp = _pool.GetObject();
+             using (FastBitmap fastBmp = new FastBitmap(bmp))
+             {
+                 // For every row
+                 Action<int> body = i =>
+                 {
+                     // For every column
+                     for (int j = 0; j < Height; j++)
+                     {
+                         int count = 0;
+                         int r = 0, g = 0, b = 0;
+ 
+                         // Count neighbors
+                         for (int x = i - 1; x <= i + 1; x++)
+                         {
+                             for (int y = j - 1; y <= j + 1; y++)
+                             {
+                                 if ((x == i && j == y) || x < 0 || x >= Width || y < 0 || y >= Height) continue;
+                                 Color? c = current[x, y];
+                                 if (c.HasValue)
+                                 {
+                                     count++;
+                                     r += c.Value.R;
+                                     g += c.Value.G;
+                                     b += c.Value.B;
+                                 }
+                             }
+                         }
+ 
+                         // Heuristic for alive or dead based on neighbor count and current state
+                         if (count < 1 || count >= 4) next[i, j] = null;
+                         else if (current[i, j].HasValue && (count == 2 || count == 3)) next[i, j] = current[i, j];
+                         else if (!current[i, j].HasValue && count == 3) next[i, j] = Color.FromArgb(r / count, g / count, b / count);
+                         else next[i, j] = null;
+ 
+                         // Render the cell
+                         fastBmp.SetColor(i, j, current[i, j] ?? Color.White);
+                     }
+                 };
+ 
+                 // Process the rows serially or in parallel based on the RunParallel property setting
+                 if (RunParallel)
+                 {
+                     Parallel.For(0, Width, 
+                         body);
+                 }
+                 else
+                 {
+                     for (int i = 0; i < Width; i++) 
+                         body(i);
+                 }
+             }
+ 
+             // Update and return
+             _currentIndex = nextIndex;
+             return bmp;
+         }
+ 
+         /// <summary>Gets the width of the board.</summary>
+         public int Width { get; private set; }
+         /// <summary>Gets the height of the board.</summary>
+         public int Height { get; private set; }
+         /// <summary>Gets or sets whether to run in parallel.</summary>
+         public bool RunParallel { get; set; }
+     }
+ }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\GameOfLifeLogic.cs" startline="58" endline="127"><![CDATA[
+ 
+         /// <summary>Moves to the next stage of the game, returning a Bitmap that represents the state of the board.</summary>
+         /// <returns>A bitmap that represents the state of the board.</returns>
+         /// <remarks>The returned Bitmap should be added back to the pool supplied to the constructor when usage of it is complete.</remarks>
+         public Bitmap MoveNext()
+         {
+             // Get the current and next stage board arrays
+             int nextIndex = (_currentIndex + 1) % 2;
+             Color?[,] current = _scratch[_currentIndex];
+             Color?[,] next = _scratch[nextIndex];
+             Random rand = new Random();
+ 
+             // Get a Bitmap from the pool to use
+             var bmp = _pool.GetObject();
+             using (FastBitmap fastBmp = new FastBitmap(bmp))
+             {
+                 // For every row
+                 Action<int> body = i =>
+                 {
+                     // For every column
+                     for (int j = 0; j < Height; j++)
+                     {
+                         int count = 0;
+                         int r = 0, g = 0, b = 0;
+ 
+                         // Count neighbors
+                         for (int x = i - 1; x <= i + 1; x++)
+                         {
+                             for (int y = j - 1; y <= j + 1; y++)
+                             {
+                                 if ((x == i && j == y) || x < 0 || x >= Width || y < 0 || y >= Height) continue;
+                                 Color? c = current[x, y];
+                                 if (c.HasValue)
+                                 {
+                                     count++;
+                                     r += c.Value.R;
+                                     g += c.Value.G;
+                                     b += c.Value.B;
+                                 }
+                             }
+                         }
+ 
+                         // Heuristic for alive or dead based on neighbor count and current state
+                         if (count < 1 || count >= 4) next[i, j] = null;
+                         else if (current[i, j].HasValue && (count == 2 || count == 3)) next[i, j] = current[i, j];
+                         else if (!current[i, j].HasValue && count == 3) next[i, j] = Color.FromArgb(r / count, g / count, b / count);
+                         else next[i, j] = null;
+ 
+                         // Render the cell
+                         fastBmp.SetColor(i, j, current[i, j] ?? Color.White);
+                     }
+                 };
+ 
+                 // Process the rows serially or in parallel based on the RunParallel property setting
+                 if (RunParallel)
+                 {
+                     Parallel.For(0, Width, 
+                         body);
+                 }
+                 else
+                 {
+                     for (int i = 0; i < Width; i++) 
+                         body(i);
+                 }
+             }
+ 
+             // Update and return
+             _currentIndex = nextIndex;
+             return bmp;
+         }
+ 
+         /// <summary>Gets the width of the board.</summary>
+         public int Width { get; private set; }
+         /// <summary>Gets the height of the board.</summary>
+         public int Height { get; private set; }
+         /// <summary>Gets or sets whether to run in parallel.</summary>
+         public bool RunParallel { get; set; }
+     }
+ }
+         {
+             // Get the current and next stage board arrays
+             int nextIndex = (_currentIndex + 1) % 2;
+             Color?[,] current = _scratch[_currentIndex];
+             Color?[,] next = _scratch[nextIndex];
+             Random rand = new Random();
+ 
+             // Get a Bitmap from the pool to use
+             var bmp = _pool.GetObject();
+             using (FastBitmap fastBmp = new FastBitmap(bmp))
+             {
+                 // For every row
+                 Action<int> body = i =>
+                 {
+                     // For every column
+                     for (int j = 0; j < Height; j++)
+                     {
+                         int count = 0;
+                         int r = 0, g = 0, b = 0;
+ 
+                         // Count neighbors
+                         for (int x = i - 1; x <= i + 1; x++)
+                         {
+                             for (int y = j - 1; y <= j + 1; y++)
+                             {
+                                 if ((x == i && j == y) || x < 0 || x >= Width || y < 0 || y >= Height) continue;
+                                 Color? c = current[x, y];
+                                 if (c.HasValue)
+                                 {
+                                     count++;
+                                     r += c.Value.R;
+                                     g += c.Value.G;
+                                     b += c.Value.B;
+                                 }
+                             }
+                         }
+ 
+                         // Heuristic for alive or dead based on neighbor count and current state
+                         if (count < 1 || count >= 4) next[i, j] = null;
+                         else if (current[i, j].HasValue && (count == 2 || count == 3)) next[i, j] = current[i, j];
+                         else if (!current[i, j].HasValue && count == 3) next[i, j] = Color.FromArgb(r / count, g / count, b / count);
+                         else next[i, j] = null;
+ 
+                         // Render the cell
+                         fastBmp.SetColor(i, j, current[i, j] ?? Color.White);
+                     }
+                 };
+ 
+                 // Process the rows serially or in parallel based on the RunParallel property setting
+                 if (RunParallel)
+                 {
+                     Parallel.For(0, Width, 
+                         body);
+                 }
+                 else
+                 {
+                     for (int i = 0; i < Width; i++) 
+                         body(i);
+                 }
+             }
+ 
+             // Update and return
+             _currentIndex = nextIndex;
+             return bmp;
+         }
+ 
+         /// <summary>Gets the width of the board.</summary>
+         public int Width { get; private set; }
+         /// <summary>Gets the height of the board.</summary>
+         public int Height { get; private set; }
+         /// <summary>Gets or sets whether to run in parallel.</summary>
+         public bool RunParallel { get; set; }
+     }
+ }
+             using (FastBitmap fastBmp = new FastBitmap(bmp))
+             {
+                 // For every row
+                 Action<int> body = i =>
+                 {
+                     // For every column
+                     for (int j = 0; j < Height; j++)
+                     {
+                         int count = 0;
+                         int r = 0, g = 0, b = 0;
+ 
+                         // Count neighbors
+                         for (int x = i - 1; x <= i + 1; x++)
+                         {
+                             for (int y = j - 1; y <= j + 1; y++)
+                             {
+                                 if ((x == i && j == y) || x < 0 || x >= Width || y < 0 || y >= Height) continue;
+                                 Color? c = current[x, y];
+                                 if (c.HasValue)
+                                 {
+                                     count++;
+                                     r += c.Value.R;
+                                     g += c.Value.G;
+                                     b += c.Value.B;
+                                 }
+                             }
+                         }
+ 
+                         // Heuristic for alive or dead based on neighbor count and current state
+                         if (count < 1 || count >= 4) next[i, j] = null;
+                         else if (current[i, j].HasValue && (count == 2 || count == 3)) next[i, j] = current[i, j];
+                         else if (!current[i, j].HasValue && count == 3) next[i, j] = Color.FromArgb(r / count, g / count, b / count);
+                         else next[i, j] = null;
+ 
+                         // Render the cell
+                         fastBmp.SetColor(i, j, current[i, j] ?? Color.White);
+                     }
+                 };
+ 
+                 // Process the rows serially or in parallel based on the RunParallel property setting
+                 if (RunParallel)
+                 {
+                     Parallel.For(0, Width, 
+                         body);
+                 }
+                 else
+                 {
+                     for (int i = 0; i < Width; i++) 
+                         body(i);
+                 }
+             }
+ 
+             // Update and return
+             _currentIndex = nextIndex;
+             return bmp;
+         }
+ 
+         /// <summary>Gets the width of the board.</summary>
+         public int Width { get; private set; }
+         /// <summary>Gets the height of the board.</summary>
+         public int Height { get; private set; }
+         /// <summary>Gets or sets whether to run in parallel.</summary>
+         public bool RunParallel { get; set; }
+     }
+ }
+                 {
+                     Parallel.For(0, Width, 
+                         body);
+                 }
+                 else
+                 {
+                     for (int i = 0; i < Width; i++) 
+                         body(i);
+                 }
+             }
+ 
+             // Update and return
+             _currentIndex = nextIndex;
+             return bmp;
+         }
+ 
+         /// <summary>Gets the width of the board.</summary>
+         public int Width { get; private set; }
+         /// <summary>Gets the height of the board.</summary>
+         public int Height { get; private set; }
+         /// <summary>Gets or sets whether to run in parallel.</summary>
+         public bool RunParallel { get; set; }
+     }
+ }
+                 {
+                     for (int i = 0; i < Width; i++) 
+                         body(i);
+                 }
+             }
+ 
+             // Update and return
+             _currentIndex = nextIndex;
+             return bmp;
+         }
+ 
+         /// <summary>Gets the width of the board.</summary>
+         public int Width { get; private set; }
+         /// <summary>Gets the height of the board.</summary>
+         public int Height { get; private set; }
+         /// <summary>Gets or sets whether to run in parallel.</summary>
+         public bool RunParallel { get; set; }
+     }
+ }
+                         body(i);
+                     for (int i = 0; i < Width; i++) 
+                         body(i);
+                 }
+             }
+ 
+             // Update and return
+             _currentIndex = nextIndex;
+             return bmp;
+         }
+ 
+         /// <summary>Gets the width of the board.</summary>
+         public int Width { get; private set; }
+         /// <summary>Gets the height of the board.</summary>
+         public int Height { get; private set; }
+         /// <summary>Gets or sets whether to run in parallel.</summary>
+         public bool RunParallel { get; set; }
+     }
+ }
+                 }
+             }
+ 
+             // Update and return
+             _currentIndex = nextIndex;
+             return bmp;
+         }
+ 
+         /// <summary>Gets the width of the board.</summary>
+         public int Width { get; private set; }
+         /// <summary>Gets the height of the board.</summary>
+         public int Height { get; private set; }
+         /// <summary>Gets or sets whether to run in parallel.</summary>
+         public bool RunParallel { get; set; }
+     }
+ }
+             _currentIndex = nextIndex;
+             return bmp;
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\GameOfLifeLogic.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\GameOfLifeLogic.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\GameOfLifeLogic.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\GameOfLifeLogic.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\GameOfLifeLogic.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\GameOfLifeLogic.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\Properties\Settings.Designer.cs" startline="21" endline="23"><![CDATA[
+             get {
+                 return defaultInstance;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\Properties\Settings.Designer.cs" startline="18" endline="26"><![CDATA[
+         private static Settings defaultInstance = ((Settings)(global
+         
+         public static Settings Default {
+             get {
+                 return defaultInstance;
+             }
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\Properties\Resources.Designer.cs" startline="31" endline="33"><![CDATA[
+         [global
+         internal Resources() {
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\Properties\Resources.Designer.cs" startline="34" endline="46"><![CDATA[
+         
+         /// <summary>
+         ///   Returns the cached ResourceManager instance used by this class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 if (object.ReferenceEquals(resourceMan, null)) {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+         }
+         
+         /// <summary>
+         ///   Overrides the current thread's CurrentUICulture property for all
+         ///   resource lookups using this strongly typed resource class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 return resourceCulture;
+             }
+             set {
+                 resourceCulture = value;
+             }
+         }
+     }
+ }
+                 if (object.ReferenceEquals(resourceMan, null)) {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\Properties\Resources.Designer.cs" startline="47" endline="57"><![CDATA[
+         }
+         
+         /// <summary>
+         ///   Overrides the current thread's CurrentUICulture property for all
+         ///   resource lookups using this strongly typed resource class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 return resourceCulture;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\Properties\Resources.Designer.cs" startline="58" endline="60"><![CDATA[
+             set {
+                 resourceCulture = value;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\MainForm.cs" startline="8" endline="24"><![CDATA[
+         private System.ComponentModel.IContainer components = null;
+         public MainForm()
+         {
+             InitializeComponent();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\MainForm.cs" startline="25" endline="34"><![CDATA[
+ 
+         /// <summary>Used to cancel the current game.</summary>
+         private CancellationTokenSource _cancellation;
+         /// <summary>The current game.</summary>
+         private GameBoard _game;
+ 
+         private void chkParallel_CheckedChanged(object sender, EventArgs e)
+         {
+             if (_game != null) _game.RunParallel = chkParallel.Checked;
+         }
+ 
+         /// <summary>Run a game.</summary>
+         private void btnRun_Click(object sender, EventArgs e)
+         {
+             // If no game is currently running, run one
+             if (_cancellation == null)
+             {
+                 // Clear the current image, get the size of the board to use, initialize cancellation,
+                 // and prepare the form for game running.
+                 pictureBox1.Image = null;
+                 int width = pictureBox1.Width, height = pictureBox1.Height;
+                 _cancellation = new CancellationTokenSource();
+                 var token = _cancellation.Token;
+                 lblDensity.Visible = false;
+                 tbDensity.Visible = false;
+                 btnRun.Text = "Stop";
+                 double initialDensity = tbDensity.Value / 1000.0;
+ 
+                 // Initialize the object pool and the game board
+                 var pool = new ObjectPool<Bitmap>(() => new Bitmap(width, height));
+                 _game = new GameBoard(width, height, initialDensity, pool) { RunParallel = chkParallel.Checked };
+ 
+                 // Run the game on a background thread
+                 Task.Factory.StartNew(() =>
+                 {
+                     // Run until cancellation is requested
+                     var sw = new Stopwatch();
+                     while (!token.IsCancellationRequested)
+                     {
+                         // Move to the next board, timing how long it takes
+                         sw.Restart();
+                         Bitmap bmp = _game.MoveNext();
+                         var framesPerSecond = 1 / sw.Elapsed.TotalSeconds;
+ 
+                         // Update the UI with the new board image
+                         BeginInvoke((Action)(() =>
+                         {
+                             lblFramesPerSecond.Text = String.Format("Frames / Sec
+                             var old = (Bitmap)pictureBox1.Image;
+                             pictureBox1.Image = bmp;
+                             if (old != null) pool.PutObject(old);
+                         }));
+                     }
+                     
+                     // When the game is done, reset the board.
+                 }, token).ContinueWith(_ =>
+                 {
+                     _cancellation = null;
+                     btnRun.Text = "Start";
+                     lblDensity.Visible = true;
+                     tbDensity.Visible = true;
+                 }, TaskScheduler.FromCurrentSynchronizationContext());
+             }
+ 
+                 // If a game is currently running, cancel it
+             else _cancellation.Cancel();
+         }
+     }
+ }
+             if (_game != null) _game.RunParallel = chkParallel.Checked;
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\MainForm.cs" startline="35" endline="91"><![CDATA[
+ 
+         /// <summary>Run a game.</summary>
+         private void btnRun_Click(object sender, EventArgs e)
+         {
+             // If no game is currently running, run one
+             if (_cancellation == null)
+             {
+                 // Clear the current image, get the size of the board to use, initialize cancellation,
+                 // and prepare the form for game running.
+                 pictureBox1.Image = null;
+                 int width = pictureBox1.Width, height = pictureBox1.Height;
+                 _cancellation = new CancellationTokenSource();
+                 var token = _cancellation.Token;
+                 lblDensity.Visible = false;
+                 tbDensity.Visible = false;
+                 btnRun.Text = "Stop";
+                 double initialDensity = tbDensity.Value / 1000.0;
+ 
+                 // Initialize the object pool and the game board
+                 var pool = new ObjectPool<Bitmap>(() => new Bitmap(width, height));
+                 _game = new GameBoard(width, height, initialDensity, pool) { RunParallel = chkParallel.Checked };
+ 
+                 // Run the game on a background thread
+                 Task.Factory.StartNew(() =>
+                 {
+                     // Run until cancellation is requested
+                     var sw = new Stopwatch();
+                     while (!token.IsCancellationRequested)
+                     {
+                         // Move to the next board, timing how long it takes
+                         sw.Restart();
+                         Bitmap bmp = _game.MoveNext();
+                         var framesPerSecond = 1 / sw.Elapsed.TotalSeconds;
+ 
+                         // Update the UI with the new board image
+                         BeginInvoke((Action)(() =>
+                         {
+                             lblFramesPerSecond.Text = String.Format("Frames / Sec
+                             var old = (Bitmap)pictureBox1.Image;
+                             pictureBox1.Image = bmp;
+                             if (old != null) pool.PutObject(old);
+                         }));
+                     }
+                     
+                     // When the game is done, reset the board.
+                 }, token).ContinueWith(_ =>
+                 {
+                     _cancellation = null;
+                     btnRun.Text = "Start";
+                     lblDensity.Visible = true;
+                     tbDensity.Visible = true;
+                 }, TaskScheduler.FromCurrentSynchronizationContext());
+             }
+ 
+                 // If a game is currently running, cancel it
+             else _cancellation.Cancel();
+         }
+     }
+ }
+         {
+             // If no game is currently running, run one
+             if (_cancellation == null)
+             {
+                 // Clear the current image, get the size of the board to use, initialize cancellation,
+                 // and prepare the form for game running.
+                 pictureBox1.Image = null;
+                 int width = pictureBox1.Width, height = pictureBox1.Height;
+                 _cancellation = new CancellationTokenSource();
+                 var token = _cancellation.Token;
+                 lblDensity.Visible = false;
+                 tbDensity.Visible = false;
+                 btnRun.Text = "Stop";
+                 double initialDensity = tbDensity.Value / 1000.0;
+ 
+                 // Initialize the object pool and the game board
+                 var pool = new ObjectPool<Bitmap>(() => new Bitmap(width, height));
+                 _game = new GameBoard(width, height, initialDensity, pool) { RunParallel = chkParallel.Checked };
+ 
+                 // Run the game on a background thread
+                 Task.Factory.StartNew(() =>
+                 {
+                     // Run until cancellation is requested
+                     var sw = new Stopwatch();
+                     while (!token.IsCancellationRequested)
+                     {
+                         // Move to the next board, timing how long it takes
+                         sw.Restart();
+                         Bitmap bmp = _game.MoveNext();
+                         var framesPerSecond = 1 / sw.Elapsed.TotalSeconds;
+ 
+                         // Update the UI with the new board image
+                         BeginInvoke((Action)(() =>
+                         {
+                             lblFramesPerSecond.Text = String.Format("Frames / Sec
+                             var old = (Bitmap)pictureBox1.Image;
+                             pictureBox1.Image = bmp;
+                             if (old != null) pool.PutObject(old);
+                         }));
+                     }
+                     
+                     // When the game is done, reset the board.
+                 }, token).ContinueWith(_ =>
+                 {
+                     _cancellation = null;
+                     btnRun.Text = "Start";
+                     lblDensity.Visible = true;
+                     tbDensity.Visible = true;
+                 }, TaskScheduler.FromCurrentSynchronizationContext());
+             }
+ 
+                 // If a game is currently running, cancel it
+             else _cancellation.Cancel();
+         }
+     }
+ }
+             {
+                 // Clear the current image, get the size of the board to use, initialize cancellation,
+                 // and prepare the form for game running.
+                 pictureBox1.Image = null;
+                 int width = pictureBox1.Width, height = pictureBox1.Height;
+                 _cancellation = new CancellationTokenSource();
+                 var token = _cancellation.Token;
+                 lblDensity.Visible = false;
+                 tbDensity.Visible = false;
+                 btnRun.Text = "Stop";
+                 double initialDensity = tbDensity.Value / 1000.0;
+ 
+                 // Initialize the object pool and the game board
+                 var pool = new ObjectPool<Bitmap>(() => new Bitmap(width, height));
+                 _game = new GameBoard(width, height, initialDensity, pool) { RunParallel = chkParallel.Checked };
+ 
+                 // Run the game on a background thread
+                 Task.Factory.StartNew(() =>
+                 {
+                     // Run until cancellation is requested
+                     var sw = new Stopwatch();
+                     while (!token.IsCancellationRequested)
+                     {
+                         // Move to the next board, timing how long it takes
+                         sw.Restart();
+                         Bitmap bmp = _game.MoveNext();
+                         var framesPerSecond = 1 / sw.Elapsed.TotalSeconds;
+ 
+                         // Update the UI with the new board image
+                         BeginInvoke((Action)(() =>
+                         {
+                             lblFramesPerSecond.Text = String.Format("Frames / Sec
+                             var old = (Bitmap)pictureBox1.Image;
+                             pictureBox1.Image = bmp;
+                             if (old != null) pool.PutObject(old);
+                         }));
+                     }
+                     
+                     // When the game is done, reset the board.
+                 }, token).ContinueWith(_ =>
+                 {
+                     _cancellation = null;
+                     btnRun.Text = "Start";
+                     lblDensity.Visible = true;
+                     tbDensity.Visible = true;
+                 }, TaskScheduler.FromCurrentSynchronizationContext());
+             }
+ 
+                 // If a game is currently running, cancel it
+             else _cancellation.Cancel();
+         }
+     }
+ }
+             else _cancellation.Cancel();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\MainForm.Designer.cs" startline="15" endline="21"><![CDATA[
+         {
+             if (disposing && (components != null))
+             {
+                 components.Dispose();
+             }
+             base.Dispose(disposing);
+         }
+ 
+         #region Windows Form Designer generated code
+ 
+         /// <summary>
+         /// Required method for Designer support - do not modify
+         /// the contents of this method with the code editor.
+         /// </summary>
+         private void InitializeComponent()
+         {
+             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+             this.btnRun = new System.Windows.Forms.Button();
+             this.chkParallel = new System.Windows.Forms.CheckBox();
+             this.tbDensity = new System.Windows.Forms.TrackBar();
+             this.lblDensity = new System.Windows.Forms.Label();
+             this.lblFramesPerSecond = new System.Windows.Forms.Label();
+             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+             ((System.ComponentModel.ISupportInitialize)(this.tbDensity)).BeginInit();
+             this.SuspendLayout();
+             // 
+             // pictureBox1
+             // 
+             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                         | System.Windows.Forms.AnchorStyles.Left)
+                         | System.Windows.Forms.AnchorStyles.Right)));
+             this.pictureBox1.BackColor = System.Drawing.Color.White;
+             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+             this.pictureBox1.Location = new System.Drawing.Point(12, 41);
+             this.pictureBox1.Name = "pictureBox1";
+             this.pictureBox1.Size = new System.Drawing.Size(464, 413);
+             this.pictureBox1.TabIndex = 0;
+             this.pictureBox1.TabStop = false;
+             // 
+             // btnRun
+             // 
+             this.btnRun.Location = new System.Drawing.Point(12, 12);
+             this.btnRun.Name = "btnRun";
+             this.btnRun.Size = new System.Drawing.Size(75, 23);
+             this.btnRun.TabIndex = 1;
+             this.btnRun.Text = "Start";
+             this.btnRun.UseVisualStyleBackColor = true;
+             this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
+             // 
+             // chkParallel
+             // 
+             this.chkParallel.AutoSize = true;
+             this.chkParallel.Location = new System.Drawing.Point(93, 16);
+             this.chkParallel.Name = "chkParallel";
+             this.chkParallel.Size = new System.Drawing.Size(66, 17);
+             this.chkParallel.TabIndex = 2;
+             this.chkParallel.Text = "Parallel?";
+             this.chkParallel.UseVisualStyleBackColor = true;
+             this.chkParallel.CheckedChanged += new System.EventHandler(this.chkParallel_CheckedChanged);
+             // 
+             // tbDensity
+             // 
+             this.tbDensity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                         | System.Windows.Forms.AnchorStyles.Right)));
+             this.tbDensity.Location = new System.Drawing.Point(325, 12);
+             this.tbDensity.Maximum = 1000;
+             this.tbDensity.Minimum = 1;
+             this.tbDensity.Name = "tbDensity";
+             this.tbDensity.Size = new System.Drawing.Size(151, 45);
+             this.tbDensity.TabIndex = 3;
+             this.tbDensity.TickStyle = System.Windows.Forms.TickStyle.None;
+             this.tbDensity.Value = 100;
+             // 
+             // lblDensity
+             // 
+             this.lblDensity.AutoSize = true;
+             this.lblDensity.Location = new System.Drawing.Point(250, 16);
+             this.lblDensity.Name = "lblDensity";
+             this.lblDensity.Size = new System.Drawing.Size(69, 13);
+             this.lblDensity.TabIndex = 4;
+             this.lblDensity.Text = "Initial Density";
+             // 
+             // lblFramesPerSecond
+             // 
+             this.lblFramesPerSecond.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+             this.lblFramesPerSecond.AutoSize = true;
+             this.lblFramesPerSecond.Location = new System.Drawing.Point(13, 457);
+             this.lblFramesPerSecond.Name = "lblFramesPerSecond";
+             this.lblFramesPerSecond.Size = new System.Drawing.Size(77, 13);
+             this.lblFramesPerSecond.TabIndex = 5;
+             this.lblFramesPerSecond.Text = "Frames / Sec
+             // 
+             // MainForm
+             // 
+             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+             this.ClientSize = new System.Drawing.Size(488, 482);
+             this.Controls.Add(this.lblFramesPerSecond);
+             this.Controls.Add(this.lblDensity);
+             this.Controls.Add(this.chkParallel);
+             this.Controls.Add(this.btnRun);
+             this.Controls.Add(this.pictureBox1);
+             this.Controls.Add(this.tbDensity);
+             this.Name = "MainForm";
+             this.Text = "Conway\'s Game Of Life";
+             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+             ((System.ComponentModel.ISupportInitialize)(this.tbDensity)).EndInit();
+             this.ResumeLayout(false);
+             this.PerformLayout();
+ 
+         }
+ 
+         #endregion
+ 
+         private System.Windows.Forms.PictureBox pictureBox1;
+         private System.Windows.Forms.Button btnRun;
+         private System.Windows.Forms.CheckBox chkParallel;
+         private System.Windows.Forms.TrackBar tbDensity;
+         private System.Windows.Forms.Label lblDensity;
+         private System.Windows.Forms.Label lblFramesPerSecond;
+     }
+ }
+ 
+             {
+                 components.Dispose();
+             }
+             base.Dispose(disposing);
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\MainForm.Designer.cs" startline="22" endline="125"><![CDATA[
+ 
+         #region Windows Form Designer generated code
+ 
+         /// <summary>
+         /// Required method for Designer support - do not modify
+         /// the contents of this method with the code editor.
+         /// </summary>
+         private void InitializeComponent()
+         {
+             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+             this.btnRun = new System.Windows.Forms.Button();
+             this.chkParallel = new System.Windows.Forms.CheckBox();
+             this.tbDensity = new System.Windows.Forms.TrackBar();
+             this.lblDensity = new System.Windows.Forms.Label();
+             this.lblFramesPerSecond = new System.Windows.Forms.Label();
+             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+             ((System.ComponentModel.ISupportInitialize)(this.tbDensity)).BeginInit();
+             this.SuspendLayout();
+             // 
+             // pictureBox1
+             // 
+             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                         | System.Windows.Forms.AnchorStyles.Left)
+                         | System.Windows.Forms.AnchorStyles.Right)));
+             this.pictureBox1.BackColor = System.Drawing.Color.White;
+             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+             this.pictureBox1.Location = new System.Drawing.Point(12, 41);
+             this.pictureBox1.Name = "pictureBox1";
+             this.pictureBox1.Size = new System.Drawing.Size(464, 413);
+             this.pictureBox1.TabIndex = 0;
+             this.pictureBox1.TabStop = false;
+             // 
+             // btnRun
+             // 
+             this.btnRun.Location = new System.Drawing.Point(12, 12);
+             this.btnRun.Name = "btnRun";
+             this.btnRun.Size = new System.Drawing.Size(75, 23);
+             this.btnRun.TabIndex = 1;
+             this.btnRun.Text = "Start";
+             this.btnRun.UseVisualStyleBackColor = true;
+             this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
+             // 
+             // chkParallel
+             // 
+             this.chkParallel.AutoSize = true;
+             this.chkParallel.Location = new System.Drawing.Point(93, 16);
+             this.chkParallel.Name = "chkParallel";
+             this.chkParallel.Size = new System.Drawing.Size(66, 17);
+             this.chkParallel.TabIndex = 2;
+             this.chkParallel.Text = "Parallel?";
+             this.chkParallel.UseVisualStyleBackColor = true;
+             this.chkParallel.CheckedChanged += new System.EventHandler(this.chkParallel_CheckedChanged);
+             // 
+             // tbDensity
+             // 
+             this.tbDensity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                         | System.Windows.Forms.AnchorStyles.Right)));
+             this.tbDensity.Location = new System.Drawing.Point(325, 12);
+             this.tbDensity.Maximum = 1000;
+             this.tbDensity.Minimum = 1;
+             this.tbDensity.Name = "tbDensity";
+             this.tbDensity.Size = new System.Drawing.Size(151, 45);
+             this.tbDensity.TabIndex = 3;
+             this.tbDensity.TickStyle = System.Windows.Forms.TickStyle.None;
+             this.tbDensity.Value = 100;
+             // 
+             // lblDensity
+             // 
+             this.lblDensity.AutoSize = true;
+             this.lblDensity.Location = new System.Drawing.Point(250, 16);
+             this.lblDensity.Name = "lblDensity";
+             this.lblDensity.Size = new System.Drawing.Size(69, 13);
+             this.lblDensity.TabIndex = 4;
+             this.lblDensity.Text = "Initial Density";
+             // 
+             // lblFramesPerSecond
+             // 
+             this.lblFramesPerSecond.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+             this.lblFramesPerSecond.AutoSize = true;
+             this.lblFramesPerSecond.Location = new System.Drawing.Point(13, 457);
+             this.lblFramesPerSecond.Name = "lblFramesPerSecond";
+             this.lblFramesPerSecond.Size = new System.Drawing.Size(77, 13);
+             this.lblFramesPerSecond.TabIndex = 5;
+             this.lblFramesPerSecond.Text = "Frames / Sec
+             // 
+             // MainForm
+             // 
+             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+             this.ClientSize = new System.Drawing.Size(488, 482);
+             this.Controls.Add(this.lblFramesPerSecond);
+             this.Controls.Add(this.lblDensity);
+             this.Controls.Add(this.chkParallel);
+             this.Controls.Add(this.btnRun);
+             this.Controls.Add(this.pictureBox1);
+             this.Controls.Add(this.tbDensity);
+             this.Name = "MainForm";
+             this.Text = "Conway\'s Game Of Life";
+             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+             ((System.ComponentModel.ISupportInitialize)(this.tbDensity)).EndInit();
+             this.ResumeLayout(false);
+             this.PerformLayout();
+ 
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\MainForm.cs" startline="81" endline="93"><![CDATA[
+                 {
+                     _cancellation = null;
+                     btnRun.Text = "Start";
+                     lblDensity.Visible = true;
+                     tbDensity.Visible = true;
+                 }, TaskScheduler.FromCurrentSynchronizationContext());
+             }
+ 
+                 // If a game is currently running, cancel it
+             else _cancellation.Cancel();
+         }
+     }
+ }
+]]></source>
+</source_elements></project>

@@ -1,0 +1,2331 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.0.30319.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern PresentationFramework
+{
+  .publickeytoken = (31 BF 38 56 AD 36 4E 35 )                         // 1.8V.6N5
+  .ver 4:0:0:0
+}
+.assembly extern System.Xaml
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern System
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern WindowsBase
+{
+  .publickeytoken = (31 BF 38 56 AD 36 4E 35 )                         // 1.8V.6N5
+  .ver 4:0:0:0
+}
+.assembly extern PresentationCore
+{
+  .publickeytoken = (31 BF 38 56 AD 36 4E 35 )                         // 1.8V.6N5
+  .ver 4:0:0:0
+}
+.assembly extern ParallelExtensionsExtras
+{
+  .ver 1:2:0:0
+}
+.assembly extern System.Core
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly AcmePizza
+{
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 1A 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 01 00 54   // ,Version=v4.0..T
+                                                                                                        0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C   // ..FrameworkDispl
+                                                                                                        61 79 4E 61 6D 65 10 2E 4E 45 54 20 46 72 61 6D   // ayName..NET Fram
+                                                                                                        65 77 6F 72 6B 20 34 )                            // ework 4
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 09 41 63 6D 65 50 69 7A 7A 61 00 00 )       // ...AcmePizza..
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [PresentationFramework]System.Windows.ThemeInfoAttribute::.ctor(valuetype [PresentationFramework]System.Windows.ResourceDictionaryLocation,
+                                                                                        valuetype [PresentationFramework]System.Windows.ResourceDictionaryLocation) = ( 01 00 00 00 00 00 01 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 15 4D 69 63 72 6F 73 6F 66 74 20 43 6F 72   // ...Microsoft Cor
+                                                                                                70 6F 72 61 74 69 6F 6E 00 00 )                   // poration..
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 09 41 63 6D 65 50 69 7A 7A 61 00 00 )       // ...AcmePizza..
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 39 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ..9Copyright .. 
+                                                                                                  4D 69 63 72 6F 73 6F 66 74 20 43 6F 72 70 6F 72   // Microsoft Corpor
+                                                                                                  61 74 69 6F 6E 2E 20 20 41 6C 6C 20 72 69 67 68   // ation.  All righ
+                                                                                                  74 73 20 72 65 73 65 72 76 65 64 2E 00 00 )       // ts reserved...
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.mresource public AcmePizza.Properties.Resources.resources
+{
+  // Offset: 0x00000000 Length: 0x000000B4
+}
+.mresource public AcmePizza.g.resources
+{
+  // Offset: 0x000000B8 Length: 0x0001E335
+}
+.module AcmePizza.exe
+// MVID: {14D05149-ED93-40B7-A9B7-C8A4A763DEB6}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0002       // WINDOWS_GUI
+.corflags 0x00000001    //  ILONLY
+// Image base: 0x00600000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class public auto ansi beforefieldinit AcmePizza.PizzaSizeCircle
+       extends [PresentationFramework]System.Windows.Controls.UserControl
+       implements [System.Xaml]System.Windows.Markup.IComponentConnector
+{
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 16 50 72 65 73 65 6E 74 61 74 69 6F 6E 42   // ...PresentationB
+                                                                                                  75 69 6C 64 54 61 73 6B 73 07 34 2E 30 2E 30 2E   // uildTasks.4.0.0.
+                                                                                                  30 00 00 )                                        // 0..
+  .field public static initonly class [WindowsBase]System.Windows.DependencyProperty PizzaSizeProperty
+  .field assembly class [PresentationFramework]System.Windows.Controls.Grid layoutRoot
+  .field assembly class [PresentationFramework]System.Windows.Shapes.Ellipse circle
+  .field assembly class [PresentationFramework]System.Windows.Controls.TextBlock label
+  .field private bool _contentLoaded
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       17 (0x11)
+    .maxstack  8
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\PizzaSizeCircle.xaml.cs' 
+//000021:         public PizzaSizeCircle()
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [PresentationFramework]System.Windows.Controls.UserControl::.ctor()
+    IL_0006:  nop
+//000022:         {
+    IL_0007:  nop
+//000023:             InitializeComponent();
+    IL_0008:  ldarg.0
+    IL_0009:  call       instance void AcmePizza.PizzaSizeCircle::InitializeComponent()
+    IL_000e:  nop
+//000024:         }
+    IL_000f:  nop
+    IL_0010:  ret
+  } // end of method PizzaSizeCircle::.ctor
+
+  .method public hidebysig specialname instance int32 
+          get_PizzaSize() cil managed
+  {
+    // Code size       22 (0x16)
+    .maxstack  2
+    .locals init ([0] int32 CS$1$0000)
+//000025: 
+//000026:         public int PizzaSize
+//000027:         {
+//000028:             get
+//000029:             {
+    IL_0000:  nop
+//000030:                 return (int)this.GetValue(PizzaSizeProperty);
+    IL_0001:  ldarg.0
+    IL_0002:  ldsfld     class [WindowsBase]System.Windows.DependencyProperty AcmePizza.PizzaSizeCircle::PizzaSizeProperty
+    IL_0007:  call       instance object [WindowsBase]System.Windows.DependencyObject::GetValue(class [WindowsBase]System.Windows.DependencyProperty)
+    IL_000c:  unbox.any  [mscorlib]System.Int32
+    IL_0011:  stloc.0
+    IL_0012:  br.s       IL_0014
+
+//000031:             }
+    IL_0014:  ldloc.0
+    IL_0015:  ret
+  } // end of method PizzaSizeCircle::get_PizzaSize
+
+  .method public hidebysig specialname instance void 
+          set_PizzaSize(int32 'value') cil managed
+  {
+    // Code size       20 (0x14)
+    .maxstack  8
+//000032:             set
+//000033:             {
+    IL_0000:  nop
+//000034:                 this.SetValue(PizzaSizeProperty, value);
+    IL_0001:  ldarg.0
+    IL_0002:  ldsfld     class [WindowsBase]System.Windows.DependencyProperty AcmePizza.PizzaSizeCircle::PizzaSizeProperty
+    IL_0007:  ldarg.1
+    IL_0008:  box        [mscorlib]System.Int32
+    IL_000d:  call       instance void [WindowsBase]System.Windows.DependencyObject::SetValue(class [WindowsBase]System.Windows.DependencyProperty,
+                                                                                              object)
+    IL_0012:  nop
+//000035:          
+//000036:             }
+    IL_0013:  ret
+  } // end of method PizzaSizeCircle::set_PizzaSize
+
+  .method private hidebysig static void  PizzaSizeChangedCallBack(class [WindowsBase]System.Windows.DependencyObject 'property',
+                                                                  valuetype [WindowsBase]System.Windows.DependencyPropertyChangedEventArgs args) cil managed
+  {
+    // Code size       374 (0x176)
+    .maxstack  2
+    .locals init ([0] class AcmePizza.PizzaSizeCircle control,
+             [1] int32 CS$4$0000)
+//000037:         }
+//000038: 
+//000039:         static void PizzaSizeChangedCallBack(DependencyObject property, DependencyPropertyChangedEventArgs args)
+//000040:         {
+    IL_0000:  nop
+//000041:             var control = (PizzaSizeCircle)property;
+    IL_0001:  ldarg.0
+    IL_0002:  castclass  AcmePizza.PizzaSizeCircle
+    IL_0007:  stloc.0
+//000042:             switch ((int)args.NewValue)
+    IL_0008:  ldarga.s   args
+    IL_000a:  call       instance object [WindowsBase]System.Windows.DependencyPropertyChangedEventArgs::get_NewValue()
+    IL_000f:  unbox.any  [mscorlib]System.Int32
+    IL_0014:  stloc.1
+//000043:             {
+//000044:                 case 11:
+//000045:                     control.circle.Width = 30;
+//000046:                     control.circle.Height = 30;
+//000047:                     control.layoutRoot.Width = 30;
+//000048:                     control.layoutRoot.Height = 30;
+//000049:                     control.label.Text = "11";
+//000050:                     break;
+//000051:                 case 13:
+//000052:                     control.circle.Width = 50;
+//000053:                     control.circle.Height = 50;
+//000054:                     control.layoutRoot.Width = 50;
+//000055:                     control.layoutRoot.Height = 50;
+//000056:                     control.label.Text = "13";
+//000057:                     break;
+//000058:                 case 17:
+//000059:                     control.circle.Width = 75;
+//000060:                     control.circle.Height = 75;
+//000061:                     control.layoutRoot.Width = 75;
+//000062:                     control.layoutRoot.Height = 75;
+//000063:                     control.label.Text = "17";
+//000064:                     break;
+//000065:                 default:
+//000066:                     throw new ArgumentOutOfRangeException();
+//000067:             }
+//000068:         }
+//000069: 
+//000070:         public static readonly DependencyProperty PizzaSizeProperty =
+//000071:             DependencyProperty.Register("PizzaSize", typeof(int), typeof(PizzaSizeCircle),
+//000072:             new UIPropertyMetadata(17, new PropertyChangedCallback(PizzaSizeChangedCallBack)));
+//000073:         
+//000074:     }
+//000075: }
+    IL_0015:  ldloc.1
+    IL_0016:  ldc.i4.s   11
+    IL_0018:  sub
+    IL_0019:  switch     ( 
+                          IL_0037,
+                          IL_016f,
+                          IL_00a1)
+    IL_002a:  ldloc.1
+    IL_002b:  ldc.i4.s   17
+    IL_002d:  beq        IL_0108
+
+    IL_0032:  br         IL_016f
+
+//000045:                     control.circle.Width = 30;
+    IL_0037:  ldloc.0
+    IL_0038:  ldfld      class [PresentationFramework]System.Windows.Shapes.Ellipse AcmePizza.PizzaSizeCircle::circle
+    IL_003d:  ldc.r8     30.
+    IL_0046:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Width(float64)
+    IL_004b:  nop
+//000046:                     control.circle.Height = 30;
+    IL_004c:  ldloc.0
+    IL_004d:  ldfld      class [PresentationFramework]System.Windows.Shapes.Ellipse AcmePizza.PizzaSizeCircle::circle
+    IL_0052:  ldc.r8     30.
+    IL_005b:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Height(float64)
+    IL_0060:  nop
+//000047:                     control.layoutRoot.Width = 30;
+    IL_0061:  ldloc.0
+    IL_0062:  ldfld      class [PresentationFramework]System.Windows.Controls.Grid AcmePizza.PizzaSizeCircle::layoutRoot
+    IL_0067:  ldc.r8     30.
+    IL_0070:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Width(float64)
+    IL_0075:  nop
+//000048:                     control.layoutRoot.Height = 30;
+    IL_0076:  ldloc.0
+    IL_0077:  ldfld      class [PresentationFramework]System.Windows.Controls.Grid AcmePizza.PizzaSizeCircle::layoutRoot
+    IL_007c:  ldc.r8     30.
+    IL_0085:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Height(float64)
+    IL_008a:  nop
+//000049:                     control.label.Text = "11";
+    IL_008b:  ldloc.0
+    IL_008c:  ldfld      class [PresentationFramework]System.Windows.Controls.TextBlock AcmePizza.PizzaSizeCircle::label
+    IL_0091:  ldstr      "11"
+    IL_0096:  callvirt   instance void [PresentationFramework]System.Windows.Controls.TextBlock::set_Text(string)
+    IL_009b:  nop
+//000050:                     break;
+    IL_009c:  br         IL_0175
+
+//000051:                 case 13:
+//000052:                     control.circle.Width = 50;
+    IL_00a1:  ldloc.0
+    IL_00a2:  ldfld      class [PresentationFramework]System.Windows.Shapes.Ellipse AcmePizza.PizzaSizeCircle::circle
+    IL_00a7:  ldc.r8     50.
+    IL_00b0:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Width(float64)
+    IL_00b5:  nop
+//000053:                     control.circle.Height = 50;
+    IL_00b6:  ldloc.0
+    IL_00b7:  ldfld      class [PresentationFramework]System.Windows.Shapes.Ellipse AcmePizza.PizzaSizeCircle::circle
+    IL_00bc:  ldc.r8     50.
+    IL_00c5:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Height(float64)
+    IL_00ca:  nop
+//000054:                     control.layoutRoot.Width = 50;
+    IL_00cb:  ldloc.0
+    IL_00cc:  ldfld      class [PresentationFramework]System.Windows.Controls.Grid AcmePizza.PizzaSizeCircle::layoutRoot
+    IL_00d1:  ldc.r8     50.
+    IL_00da:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Width(float64)
+    IL_00df:  nop
+//000055:                     control.layoutRoot.Height = 50;
+    IL_00e0:  ldloc.0
+    IL_00e1:  ldfld      class [PresentationFramework]System.Windows.Controls.Grid AcmePizza.PizzaSizeCircle::layoutRoot
+    IL_00e6:  ldc.r8     50.
+    IL_00ef:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Height(float64)
+    IL_00f4:  nop
+//000056:                     control.label.Text = "13";
+    IL_00f5:  ldloc.0
+    IL_00f6:  ldfld      class [PresentationFramework]System.Windows.Controls.TextBlock AcmePizza.PizzaSizeCircle::label
+    IL_00fb:  ldstr      "13"
+    IL_0100:  callvirt   instance void [PresentationFramework]System.Windows.Controls.TextBlock::set_Text(string)
+    IL_0105:  nop
+//000057:                     break;
+    IL_0106:  br.s       IL_0175
+
+//000058:                 case 17:
+//000059:                     control.circle.Width = 75;
+    IL_0108:  ldloc.0
+    IL_0109:  ldfld      class [PresentationFramework]System.Windows.Shapes.Ellipse AcmePizza.PizzaSizeCircle::circle
+    IL_010e:  ldc.r8     75.
+    IL_0117:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Width(float64)
+    IL_011c:  nop
+//000060:                     control.circle.Height = 75;
+    IL_011d:  ldloc.0
+    IL_011e:  ldfld      class [PresentationFramework]System.Windows.Shapes.Ellipse AcmePizza.PizzaSizeCircle::circle
+    IL_0123:  ldc.r8     75.
+    IL_012c:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Height(float64)
+    IL_0131:  nop
+//000061:                     control.layoutRoot.Width = 75;
+    IL_0132:  ldloc.0
+    IL_0133:  ldfld      class [PresentationFramework]System.Windows.Controls.Grid AcmePizza.PizzaSizeCircle::layoutRoot
+    IL_0138:  ldc.r8     75.
+    IL_0141:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Width(float64)
+    IL_0146:  nop
+//000062:                     control.layoutRoot.Height = 75;
+    IL_0147:  ldloc.0
+    IL_0148:  ldfld      class [PresentationFramework]System.Windows.Controls.Grid AcmePizza.PizzaSizeCircle::layoutRoot
+    IL_014d:  ldc.r8     75.
+    IL_0156:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Height(float64)
+    IL_015b:  nop
+//000063:                     control.label.Text = "17";
+    IL_015c:  ldloc.0
+    IL_015d:  ldfld      class [PresentationFramework]System.Windows.Controls.TextBlock AcmePizza.PizzaSizeCircle::label
+    IL_0162:  ldstr      "17"
+    IL_0167:  callvirt   instance void [PresentationFramework]System.Windows.Controls.TextBlock::set_Text(string)
+    IL_016c:  nop
+//000064:                     break;
+    IL_016d:  br.s       IL_0175
+
+//000065:                 default:
+//000066:                     throw new ArgumentOutOfRangeException();
+    IL_016f:  newobj     instance void [mscorlib]System.ArgumentOutOfRangeException::.ctor()
+    IL_0174:  throw
+
+//000067:             }
+//000068:         }
+    IL_0175:  ret
+  } // end of method PizzaSizeCircle::PizzaSizeChangedCallBack
+
+  .method public hidebysig newslot virtual final 
+          instance void  InitializeComponent() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       45 (0x2d)
+    .maxstack  3
+    .locals init ([0] class [System]System.Uri resourceLocater,
+             [1] bool CS$4$0000)
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\PizzaSizeCircle.g.cs' 
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      bool AcmePizza.PizzaSizeCircle::_contentLoaded
+    IL_0007:  ldc.i4.0
+    IL_0008:  ceq
+    IL_000a:  stloc.1
+    IL_000b:  ldloc.1
+    IL_000c:  brtrue.s   IL_0011
+
+    IL_000e:  nop
+    IL_000f:  br.s       IL_002c
+
+    IL_0011:  ldarg.0
+    IL_0012:  ldc.i4.1
+    IL_0013:  stfld      bool AcmePizza.PizzaSizeCircle::_contentLoaded
+    IL_0018:  ldstr      "/AcmePizza;component/pizzasizecircle.xaml"
+    IL_001d:  ldc.i4.2
+    IL_001e:  newobj     instance void [System]System.Uri::.ctor(string,
+                                                                 valuetype [System]System.UriKind)
+    IL_0023:  stloc.0
+// Source File 'c:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\PizzaSizeCircle.xaml' 
+//000001: ?    <!--A user control that changes the appearance of a circle (and text label)
+    IL_0024:  ldarg.0
+    IL_0025:  ldloc.0
+    IL_0026:  call       void [PresentationFramework]System.Windows.Application::LoadComponent(object,
+                                                                                               class [System]System.Uri)
+    IL_002b:  nop
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\PizzaSizeCircle.g.cs' 
+    IL_002c:  ret
+  } // end of method PizzaSizeCircle::InitializeComponent
+
+  .method private hidebysig newslot virtual final 
+          instance void  System.Windows.Markup.IComponentConnector.Connect(int32 connectionId,
+                                                                           object target) cil managed
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .override [System.Xaml]System.Windows.Markup.IComponentConnector::Connect
+    // Code size       75 (0x4b)
+    .maxstack  2
+    .locals init ([0] int32 CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  stloc.0
+    IL_0003:  ldloc.0
+    IL_0004:  ldc.i4.1
+    IL_0005:  sub
+    IL_0006:  switch     ( 
+                          IL_0019,
+                          IL_0027,
+                          IL_0035)
+    IL_0017:  br.s       IL_0043
+
+    IL_0019:  ldarg.0
+    IL_001a:  ldarg.2
+    IL_001b:  castclass  [PresentationFramework]System.Windows.Controls.Grid
+    IL_0020:  stfld      class [PresentationFramework]System.Windows.Controls.Grid AcmePizza.PizzaSizeCircle::layoutRoot
+    IL_0025:  br.s       IL_004a
+
+    IL_0027:  ldarg.0
+    IL_0028:  ldarg.2
+    IL_0029:  castclass  [PresentationFramework]System.Windows.Shapes.Ellipse
+    IL_002e:  stfld      class [PresentationFramework]System.Windows.Shapes.Ellipse AcmePizza.PizzaSizeCircle::circle
+    IL_0033:  br.s       IL_004a
+
+    IL_0035:  ldarg.0
+    IL_0036:  ldarg.2
+    IL_0037:  castclass  [PresentationFramework]System.Windows.Controls.TextBlock
+    IL_003c:  stfld      class [PresentationFramework]System.Windows.Controls.TextBlock AcmePizza.PizzaSizeCircle::label
+    IL_0041:  br.s       IL_004a
+
+    IL_0043:  ldarg.0
+    IL_0044:  ldc.i4.1
+    IL_0045:  stfld      bool AcmePizza.PizzaSizeCircle::_contentLoaded
+    IL_004a:  ret
+  } // end of method PizzaSizeCircle::System.Windows.Markup.IComponentConnector.Connect
+
+  .method private hidebysig specialname rtspecialname static 
+          void  .cctor() cil managed
+  {
+    // Code size       60 (0x3c)
+    .maxstack  8
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\PizzaSizeCircle.xaml.cs' 
+//000070:         public static readonly DependencyProperty PizzaSizeProperty =
+    IL_0000:  ldstr      "PizzaSize"
+    IL_0005:  ldtoken    [mscorlib]System.Int32
+    IL_000a:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_000f:  ldtoken    AcmePizza.PizzaSizeCircle
+    IL_0014:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_0019:  ldc.i4.s   17
+    IL_001b:  box        [mscorlib]System.Int32
+    IL_0020:  ldnull
+    IL_0021:  ldftn      void AcmePizza.PizzaSizeCircle::PizzaSizeChangedCallBack(class [WindowsBase]System.Windows.DependencyObject,
+                                                                                  valuetype [WindowsBase]System.Windows.DependencyPropertyChangedEventArgs)
+    IL_0027:  newobj     instance void [WindowsBase]System.Windows.PropertyChangedCallback::.ctor(object,
+                                                                                                  native int)
+    IL_002c:  newobj     instance void [PresentationCore]System.Windows.UIPropertyMetadata::.ctor(object,
+                                                                                                  class [WindowsBase]System.Windows.PropertyChangedCallback)
+    IL_0031:  call       class [WindowsBase]System.Windows.DependencyProperty [WindowsBase]System.Windows.DependencyProperty::Register(string,
+                                                                                                                                       class [mscorlib]System.Type,
+                                                                                                                                       class [mscorlib]System.Type,
+                                                                                                                                       class [WindowsBase]System.Windows.PropertyMetadata)
+    IL_0036:  stsfld     class [WindowsBase]System.Windows.DependencyProperty AcmePizza.PizzaSizeCircle::PizzaSizeProperty
+//000071:             DependencyProperty.Register("PizzaSize", typeof(int), typeof(PizzaSizeCircle),
+//000072:             new UIPropertyMetadata(17, new PropertyChangedCallback(PizzaSizeChangedCallBack)));
+//000073:         
+//000074:     }
+//000075: }
+    IL_003b:  ret
+  } // end of method PizzaSizeCircle::.cctor
+
+  .property instance int32 PizzaSize()
+  {
+    .get instance int32 AcmePizza.PizzaSizeCircle::get_PizzaSize()
+    .set instance void AcmePizza.PizzaSizeCircle::set_PizzaSize(int32)
+  } // end of property PizzaSizeCircle::PizzaSize
+} // end of class AcmePizza.PizzaSizeCircle
+
+.class public auto ansi beforefieldinit AcmePizza.Window1
+       extends [PresentationFramework]System.Windows.Window
+       implements [System.Xaml]System.Windows.Markup.IComponentConnector
+{
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 16 50 72 65 73 65 6E 74 61 74 69 6F 6E 42   // ...PresentationB
+                                                                                                  75 69 6C 64 54 61 73 6B 73 07 34 2E 30 2E 30 2E   // uildTasks.4.0.0.
+                                                                                                  30 00 00 )                                        // 0..
+  .field private class [mscorlib]System.Collections.Concurrent.IProducerConsumerCollection`1<valuetype AcmePizza.PizzaOrder> m_orders
+  .field private static class [mscorlib]System.Random m_rand
+  .field assembly class [PresentationFramework]System.Windows.Controls.ItemsControl ordersList
+  .field assembly class [PresentationFramework]System.Windows.Controls.TextBlock textBlock1
+  .field assembly class [PresentationFramework]System.Windows.Controls.TextBlock textBlock2
+  .field assembly class [PresentationFramework]System.Windows.Controls.Image image1
+  .field assembly class [PresentationFramework]System.Windows.Controls.Button processNextOrderButton
+  .field private bool _contentLoaded
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       38 (0x26)
+    .maxstack  2
+    .locals init ([0] class [ParallelExtensionsExtras]System.Collections.Concurrent.ObservableConcurrentCollection`1<valuetype AcmePizza.PizzaOrder> orders)
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Window1.xaml.cs' 
+//000027:         public Window1()
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [PresentationFramework]System.Windows.Window::.ctor()
+    IL_0006:  nop
+//000028:         {
+    IL_0007:  nop
+//000029:             InitializeComponent();
+    IL_0008:  ldarg.0
+    IL_0009:  call       instance void AcmePizza.Window1::InitializeComponent()
+    IL_000e:  nop
+//000030: 
+//000031:             // intialize the bindable collection and set it as the data context
+//000032:             var orders = new ObservableConcurrentCollection<PizzaOrder>();
+    IL_000f:  newobj     instance void class [ParallelExtensionsExtras]System.Collections.Concurrent.ObservableConcurrentCollection`1<valuetype AcmePizza.PizzaOrder>::.ctor()
+    IL_0014:  stloc.0
+//000033:             // store the observable collection as an explicity producer consumer 
+//000034:             // collection that has tryadd and tryremove operations
+//000035:             m_orders = orders;
+    IL_0015:  ldarg.0
+    IL_0016:  ldloc.0
+    IL_0017:  stfld      class [mscorlib]System.Collections.Concurrent.IProducerConsumerCollection`1<valuetype AcmePizza.PizzaOrder> AcmePizza.Window1::m_orders
+//000036:             // set the AcmePizza as the defaut
+//000037:             this.DataContext = orders;
+    IL_001c:  ldarg.0
+    IL_001d:  ldloc.0
+    IL_001e:  call       instance void [PresentationFramework]System.Windows.FrameworkElement::set_DataContext(object)
+    IL_0023:  nop
+//000038:         }
+    IL_0024:  nop
+    IL_0025:  ret
+  } // end of method Window1::.ctor
+
+  .method private hidebysig instance void 
+          Window_Loaded(object sender,
+                        class [mscorlib]System.EventArgs e) cil managed
+  {
+    // Code size       98 (0x62)
+    .maxstack  4
+//000039: 
+//000040:         private void Window_Loaded(object sender, EventArgs e)
+//000041:         {
+    IL_0000:  nop
+//000042:             // launch four threads that mimic various sources
+//000043:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Fax); }, TaskCreationOptions.AttachedToParent);
+    IL_0001:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_0006:  ldarg.0
+    IL_0007:  ldftn      instance void AcmePizza.Window1::'<Window_Loaded>b__0'()
+    IL_000d:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_0012:  ldc.i4.4
+    IL_0013:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.Tasks.TaskCreationOptions)
+    IL_0018:  pop
+//000044:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Internet); }, TaskCreationOptions.AttachedToParent);
+    IL_0019:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_001e:  ldarg.0
+    IL_001f:  ldftn      instance void AcmePizza.Window1::'<Window_Loaded>b__1'()
+    IL_0025:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_002a:  ldc.i4.4
+    IL_002b:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.Tasks.TaskCreationOptions)
+    IL_0030:  pop
+//000045:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Phone); }, TaskCreationOptions.AttachedToParent);
+    IL_0031:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_0036:  ldarg.0
+    IL_0037:  ldftn      instance void AcmePizza.Window1::'<Window_Loaded>b__2'()
+    IL_003d:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_0042:  ldc.i4.4
+    IL_0043:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.Tasks.TaskCreationOptions)
+    IL_0048:  pop
+//000046:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.WalkIn); }, TaskCreationOptions.AttachedToParent);
+    IL_0049:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_004e:  ldarg.0
+    IL_004f:  ldftn      instance void AcmePizza.Window1::'<Window_Loaded>b__3'()
+    IL_0055:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_005a:  ldc.i4.4
+    IL_005b:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.Tasks.TaskCreationOptions)
+    IL_0060:  pop
+//000047:         }
+    IL_0061:  ret
+  } // end of method Window1::Window_Loaded
+
+  .method private hidebysig instance void 
+          OrdererThread(valuetype AcmePizza.OrderSource source) cil managed
+  {
+    // Code size       65 (0x41)
+    .maxstack  3
+    .locals init ([0] int32 i,
+             [1] bool CS$4$0000)
+//000048: 
+//000049:         private void OrdererThread(OrderSource source)
+//000050:         {
+    IL_0000:  nop
+//000051:             for ( int i = 0; i < 10; ++i )
+    IL_0001:  ldc.i4.0
+    IL_0002:  stloc.0
+//000052:             {
+//000053:                 // submit random order
+//000054:                 m_orders.TryAdd( GenerateRandomOrder(source));
+//000055:                 // sleep for a random period
+//000056:                 Thread.Sleep(m_rand.Next(1000, 4001));
+//000057:             }
+//000058:         }
+//000059: 
+//000060:         private static PizzaOrder GenerateRandomOrder(OrderSource source)
+//000061:         {
+//000062:             // source
+//000063:             var order = new PizzaOrder { Source = source };
+//000064:             // delivery
+//000065:             order.IsDelivery = m_rand.Next(0, 2) == 0 ? true : false;
+//000066:             // phone number
+//000067:             var areaCode = m_rand.Next(0, 2) == 0 ? 425 : 206;
+//000068:             var firstThreeDigits = m_rand.Next(100, 1000);
+//000069:             var lastFourDigits = m_rand.Next(0, 10000);
+//000070:             order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"));
+//000071:             // size
+//000072:             switch (m_rand.Next(0, 3))
+//000073:             {
+//000074:                 case 0: order.Size = 11; break;
+//000075:                 case 1: order.Size = 13; break;
+//000076:                 case 2: order.Size = 17; break;
+//000077:             }
+//000078:             // toppings
+//000079:             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+//000080:             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+//000081:             for (int j = 0; j < order.Toppings.Length; ++j)
+//000082:             {
+//000083:                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+//000084:                 order.Toppings[j] = availToppings[toppingIndex];
+//000085:                 availToppings.RemoveAt(toppingIndex);
+//000086:             }
+//000087:             return order;
+//000088:         }
+//000089: 
+//000090:         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+//000091:         {
+//000092:             // attempt to get an order from the queue
+//000093:             PizzaOrder nextOrder;
+//000094:             if ( !m_orders.TryTake( out nextOrder ) )
+//000095:             {
+//000096:                 MessageBox.Show( "No orders available.  Please try again later.");
+//000097:                 return;
+//000098:             }
+//000099:             // if successful launch an order window
+//000100:             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+//000101:             currentOrderWindow.Show();
+//000102:         }
+//000103:     }
+//000104: }
+    IL_0003:  br.s       IL_0037
+
+//000052:             {
+    IL_0005:  nop
+//000053:                 // submit random order
+//000054:                 m_orders.TryAdd( GenerateRandomOrder(source));
+    IL_0006:  ldarg.0
+    IL_0007:  ldfld      class [mscorlib]System.Collections.Concurrent.IProducerConsumerCollection`1<valuetype AcmePizza.PizzaOrder> AcmePizza.Window1::m_orders
+    IL_000c:  ldarg.1
+    IL_000d:  call       valuetype AcmePizza.PizzaOrder AcmePizza.Window1::GenerateRandomOrder(valuetype AcmePizza.OrderSource)
+    IL_0012:  callvirt   instance bool class [mscorlib]System.Collections.Concurrent.IProducerConsumerCollection`1<valuetype AcmePizza.PizzaOrder>::TryAdd(!0)
+    IL_0017:  pop
+//000055:                 // sleep for a random period
+//000056:                 Thread.Sleep(m_rand.Next(1000, 4001));
+    IL_0018:  ldsfld     class [mscorlib]System.Random AcmePizza.Window1::m_rand
+    IL_001d:  ldc.i4     0x3e8
+    IL_0022:  ldc.i4     0xfa1
+    IL_0027:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_002c:  call       void [mscorlib]System.Threading.Thread::Sleep(int32)
+    IL_0031:  nop
+//000057:             }
+    IL_0032:  nop
+//000051:             for ( int i = 0; i < 10; ++i )
+    IL_0033:  ldloc.0
+    IL_0034:  ldc.i4.1
+    IL_0035:  add
+    IL_0036:  stloc.0
+    IL_0037:  ldloc.0
+    IL_0038:  ldc.i4.s   10
+    IL_003a:  clt
+    IL_003c:  stloc.1
+//000052:             {
+//000053:                 // submit random order
+//000054:                 m_orders.TryAdd( GenerateRandomOrder(source));
+//000055:                 // sleep for a random period
+//000056:                 Thread.Sleep(m_rand.Next(1000, 4001));
+//000057:             }
+//000058:         }
+//000059: 
+//000060:         private static PizzaOrder GenerateRandomOrder(OrderSource source)
+//000061:         {
+//000062:             // source
+//000063:             var order = new PizzaOrder { Source = source };
+//000064:             // delivery
+//000065:             order.IsDelivery = m_rand.Next(0, 2) == 0 ? true : false;
+//000066:             // phone number
+//000067:             var areaCode = m_rand.Next(0, 2) == 0 ? 425 : 206;
+//000068:             var firstThreeDigits = m_rand.Next(100, 1000);
+//000069:             var lastFourDigits = m_rand.Next(0, 10000);
+//000070:             order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"));
+//000071:             // size
+//000072:             switch (m_rand.Next(0, 3))
+//000073:             {
+//000074:                 case 0: order.Size = 11; break;
+//000075:                 case 1: order.Size = 13; break;
+//000076:                 case 2: order.Size = 17; break;
+//000077:             }
+//000078:             // toppings
+//000079:             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+//000080:             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+//000081:             for (int j = 0; j < order.Toppings.Length; ++j)
+//000082:             {
+//000083:                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+//000084:                 order.Toppings[j] = availToppings[toppingIndex];
+//000085:                 availToppings.RemoveAt(toppingIndex);
+//000086:             }
+//000087:             return order;
+//000088:         }
+//000089: 
+//000090:         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+//000091:         {
+//000092:             // attempt to get an order from the queue
+//000093:             PizzaOrder nextOrder;
+//000094:             if ( !m_orders.TryTake( out nextOrder ) )
+//000095:             {
+//000096:                 MessageBox.Show( "No orders available.  Please try again later.");
+//000097:                 return;
+//000098:             }
+//000099:             // if successful launch an order window
+//000100:             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+//000101:             currentOrderWindow.Show();
+//000102:         }
+//000103:     }
+//000104: }
+    IL_003d:  ldloc.1
+    IL_003e:  brtrue.s   IL_0005
+
+//000058:         }
+    IL_0040:  ret
+  } // end of method Window1::OrdererThread
+
+  .method private hidebysig static valuetype AcmePizza.PizzaOrder 
+          GenerateRandomOrder(valuetype AcmePizza.OrderSource source) cil managed
+  {
+    // Code size       363 (0x16b)
+    .maxstack  6
+    .locals init ([0] valuetype AcmePizza.PizzaOrder order,
+             [1] int32 areaCode,
+             [2] int32 firstThreeDigits,
+             [3] int32 lastFourDigits,
+             [4] class [mscorlib]System.Collections.Generic.List`1<valuetype AcmePizza.PizzaToppings> availToppings,
+             [5] int32 j,
+             [6] int32 toppingIndex,
+             [7] valuetype AcmePizza.PizzaOrder '<>g__initLocal4',
+             [8] valuetype AcmePizza.PizzaOrder CS$1$0000,
+             [9] int32 CS$4$0001,
+             [10] bool CS$4$0002)
+//000059: 
+//000060:         private static PizzaOrder GenerateRandomOrder(OrderSource source)
+//000061:         {
+    IL_0000:  nop
+//000062:             // source
+//000063:             var order = new PizzaOrder { Source = source };
+    IL_0001:  ldloca.s   '<>g__initLocal4'
+    IL_0003:  initobj    AcmePizza.PizzaOrder
+    IL_0009:  ldloca.s   '<>g__initLocal4'
+    IL_000b:  ldarg.0
+    IL_000c:  call       instance void AcmePizza.PizzaOrder::set_Source(valuetype AcmePizza.OrderSource)
+    IL_0011:  nop
+    IL_0012:  ldloc.s    '<>g__initLocal4'
+    IL_0014:  stloc.0
+//000064:             // delivery
+//000065:             order.IsDelivery = m_rand.Next(0, 2) == 0 ? true : false;
+    IL_0015:  ldloca.s   order
+    IL_0017:  ldsfld     class [mscorlib]System.Random AcmePizza.Window1::m_rand
+    IL_001c:  ldc.i4.0
+    IL_001d:  ldc.i4.2
+    IL_001e:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_0023:  brfalse.s  IL_0028
+
+    IL_0025:  ldc.i4.0
+    IL_0026:  br.s       IL_0029
+
+    IL_0028:  ldc.i4.1
+    IL_0029:  call       instance void AcmePizza.PizzaOrder::set_IsDelivery(bool)
+    IL_002e:  nop
+//000066:             // phone number
+//000067:             var areaCode = m_rand.Next(0, 2) == 0 ? 425 : 206;
+    IL_002f:  ldsfld     class [mscorlib]System.Random AcmePizza.Window1::m_rand
+    IL_0034:  ldc.i4.0
+    IL_0035:  ldc.i4.2
+    IL_0036:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_003b:  brfalse.s  IL_0044
+
+    IL_003d:  ldc.i4     0xce
+    IL_0042:  br.s       IL_0049
+
+    IL_0044:  ldc.i4     0x1a9
+    IL_0049:  stloc.1
+//000068:             var firstThreeDigits = m_rand.Next(100, 1000);
+    IL_004a:  ldsfld     class [mscorlib]System.Random AcmePizza.Window1::m_rand
+    IL_004f:  ldc.i4.s   100
+    IL_0051:  ldc.i4     0x3e8
+    IL_0056:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_005b:  stloc.2
+//000069:             var lastFourDigits = m_rand.Next(0, 10000);
+    IL_005c:  ldsfld     class [mscorlib]System.Random AcmePizza.Window1::m_rand
+    IL_0061:  ldc.i4.0
+    IL_0062:  ldc.i4     0x2710
+    IL_0067:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_006c:  stloc.3
+//000070:             order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"));
+    IL_006d:  ldloca.s   order
+    IL_006f:  ldstr      "({0}) {1}-{2}"
+    IL_0074:  ldloc.1
+    IL_0075:  box        [mscorlib]System.Int32
+    IL_007a:  ldloc.2
+    IL_007b:  box        [mscorlib]System.Int32
+    IL_0080:  ldloca.s   lastFourDigits
+    IL_0082:  ldstr      "D4"
+    IL_0087:  call       instance string [mscorlib]System.Int32::ToString(string)
+    IL_008c:  call       string [mscorlib]System.String::Format(string,
+                                                                object,
+                                                                object,
+                                                                object)
+    IL_0091:  call       instance void AcmePizza.PizzaOrder::set_PhoneNumber(string)
+    IL_0096:  nop
+//000071:             // size
+//000072:             switch (m_rand.Next(0, 3))
+    IL_0097:  ldsfld     class [mscorlib]System.Random AcmePizza.Window1::m_rand
+    IL_009c:  ldc.i4.0
+    IL_009d:  ldc.i4.3
+    IL_009e:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_00a3:  stloc.s    CS$4$0001
+//000073:             {
+//000074:                 case 0: order.Size = 11; break;
+//000075:                 case 1: order.Size = 13; break;
+//000076:                 case 2: order.Size = 17; break;
+//000077:             }
+//000078:             // toppings
+//000079:             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+//000080:             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+//000081:             for (int j = 0; j < order.Toppings.Length; ++j)
+//000082:             {
+//000083:                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+//000084:                 order.Toppings[j] = availToppings[toppingIndex];
+//000085:                 availToppings.RemoveAt(toppingIndex);
+//000086:             }
+//000087:             return order;
+//000088:         }
+//000089: 
+//000090:         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+//000091:         {
+//000092:             // attempt to get an order from the queue
+//000093:             PizzaOrder nextOrder;
+//000094:             if ( !m_orders.TryTake( out nextOrder ) )
+//000095:             {
+//000096:                 MessageBox.Show( "No orders available.  Please try again later.");
+//000097:                 return;
+//000098:             }
+//000099:             // if successful launch an order window
+//000100:             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+//000101:             currentOrderWindow.Show();
+//000102:         }
+//000103:     }
+//000104: }
+    IL_00a5:  ldloc.s    CS$4$0001
+    IL_00a7:  switch     ( 
+                          IL_00ba,
+                          IL_00c6,
+                          IL_00d2)
+    IL_00b8:  br.s       IL_00de
+
+//000074:                 case 0: order.Size = 11; break;
+    IL_00ba:  ldloca.s   order
+    IL_00bc:  ldc.i4.s   11
+    IL_00be:  call       instance void AcmePizza.PizzaOrder::set_Size(int32)
+    IL_00c3:  nop
+    IL_00c4:  br.s       IL_00de
+
+//000075:                 case 1: order.Size = 13; break;
+    IL_00c6:  ldloca.s   order
+    IL_00c8:  ldc.i4.s   13
+    IL_00ca:  call       instance void AcmePizza.PizzaOrder::set_Size(int32)
+    IL_00cf:  nop
+    IL_00d0:  br.s       IL_00de
+
+//000076:                 case 2: order.Size = 17; break;
+    IL_00d2:  ldloca.s   order
+    IL_00d4:  ldc.i4.s   17
+    IL_00d6:  call       instance void AcmePizza.PizzaOrder::set_Size(int32)
+    IL_00db:  nop
+    IL_00dc:  br.s       IL_00de
+
+//000077:             }
+//000078:             // toppings
+//000079:             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+    IL_00de:  ldtoken    AcmePizza.PizzaToppings
+    IL_00e3:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_00e8:  call       class [mscorlib]System.Array [mscorlib]System.Enum::GetValues(class [mscorlib]System.Type)
+    IL_00ed:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0> [System.Core]System.Linq.Enumerable::Cast<valuetype AcmePizza.PizzaToppings>(class [mscorlib]System.Collections.IEnumerable)
+    IL_00f2:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<valuetype AcmePizza.PizzaToppings>::.ctor(class [mscorlib]System.Collections.Generic.IEnumerable`1<!0>)
+    IL_00f7:  stloc.s    availToppings
+//000080:             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+    IL_00f9:  ldloca.s   order
+    IL_00fb:  ldsfld     class [mscorlib]System.Random AcmePizza.Window1::m_rand
+    IL_0100:  ldc.i4.1
+    IL_0101:  ldc.i4.5
+    IL_0102:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_0107:  newarr     AcmePizza.PizzaToppings
+    IL_010c:  call       instance void AcmePizza.PizzaOrder::set_Toppings(valuetype AcmePizza.PizzaToppings[])
+    IL_0111:  nop
+//000081:             for (int j = 0; j < order.Toppings.Length; ++j)
+    IL_0112:  ldc.i4.0
+    IL_0113:  stloc.s    j
+//000082:             {
+//000083:                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+//000084:                 order.Toppings[j] = availToppings[toppingIndex];
+//000085:                 availToppings.RemoveAt(toppingIndex);
+//000086:             }
+//000087:             return order;
+//000088:         }
+//000089: 
+//000090:         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+//000091:         {
+//000092:             // attempt to get an order from the queue
+//000093:             PizzaOrder nextOrder;
+//000094:             if ( !m_orders.TryTake( out nextOrder ) )
+//000095:             {
+//000096:                 MessageBox.Show( "No orders available.  Please try again later.");
+//000097:                 return;
+//000098:             }
+//000099:             // if successful launch an order window
+//000100:             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+//000101:             currentOrderWindow.Show();
+//000102:         }
+//000103:     }
+//000104: }
+    IL_0115:  br.s       IL_0150
+
+//000082:             {
+    IL_0117:  nop
+//000083:                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+    IL_0118:  ldsfld     class [mscorlib]System.Random AcmePizza.Window1::m_rand
+    IL_011d:  ldc.i4.0
+    IL_011e:  ldloc.s    availToppings
+    IL_0120:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<valuetype AcmePizza.PizzaToppings>::get_Count()
+    IL_0125:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_012a:  stloc.s    toppingIndex
+//000084:                 order.Toppings[j] = availToppings[toppingIndex];
+    IL_012c:  ldloca.s   order
+    IL_012e:  call       instance valuetype AcmePizza.PizzaToppings[] AcmePizza.PizzaOrder::get_Toppings()
+    IL_0133:  ldloc.s    j
+    IL_0135:  ldloc.s    availToppings
+    IL_0137:  ldloc.s    toppingIndex
+    IL_0139:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<valuetype AcmePizza.PizzaToppings>::get_Item(int32)
+    IL_013e:  stelem.i4
+//000085:                 availToppings.RemoveAt(toppingIndex);
+    IL_013f:  ldloc.s    availToppings
+    IL_0141:  ldloc.s    toppingIndex
+    IL_0143:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<valuetype AcmePizza.PizzaToppings>::RemoveAt(int32)
+    IL_0148:  nop
+//000086:             }
+    IL_0149:  nop
+//000081:             for (int j = 0; j < order.Toppings.Length; ++j)
+    IL_014a:  ldloc.s    j
+    IL_014c:  ldc.i4.1
+    IL_014d:  add
+    IL_014e:  stloc.s    j
+    IL_0150:  ldloc.s    j
+    IL_0152:  ldloca.s   order
+    IL_0154:  call       instance valuetype AcmePizza.PizzaToppings[] AcmePizza.PizzaOrder::get_Toppings()
+    IL_0159:  ldlen
+    IL_015a:  conv.i4
+    IL_015b:  clt
+    IL_015d:  stloc.s    CS$4$0002
+//000082:             {
+//000083:                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+//000084:                 order.Toppings[j] = availToppings[toppingIndex];
+//000085:                 availToppings.RemoveAt(toppingIndex);
+//000086:             }
+//000087:             return order;
+//000088:         }
+//000089: 
+//000090:         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+//000091:         {
+//000092:             // attempt to get an order from the queue
+//000093:             PizzaOrder nextOrder;
+//000094:             if ( !m_orders.TryTake( out nextOrder ) )
+//000095:             {
+//000096:                 MessageBox.Show( "No orders available.  Please try again later.");
+//000097:                 return;
+//000098:             }
+//000099:             // if successful launch an order window
+//000100:             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+//000101:             currentOrderWindow.Show();
+//000102:         }
+//000103:     }
+//000104: }
+    IL_015f:  ldloc.s    CS$4$0002
+    IL_0161:  brtrue.s   IL_0117
+
+//000087:             return order;
+    IL_0163:  ldloc.0
+    IL_0164:  stloc.s    CS$1$0000
+    IL_0166:  br.s       IL_0168
+
+//000088:         }
+    IL_0168:  ldloc.s    CS$1$0000
+    IL_016a:  ret
+  } // end of method Window1::GenerateRandomOrder
+
+  .method private hidebysig instance void 
+          processNextOrderButton_Click(object sender,
+                                       class [PresentationCore]System.Windows.RoutedEventArgs e) cil managed
+  {
+    // Code size       47 (0x2f)
+    .maxstack  2
+    .locals init ([0] valuetype AcmePizza.PizzaOrder nextOrder,
+             [1] class AcmePizza.CurrentOrderWindow currentOrderWindow,
+             [2] bool CS$4$0000)
+//000089: 
+//000090:         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+//000091:         {
+    IL_0000:  nop
+//000092:             // attempt to get an order from the queue
+//000093:             PizzaOrder nextOrder;
+//000094:             if ( !m_orders.TryTake( out nextOrder ) )
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [mscorlib]System.Collections.Concurrent.IProducerConsumerCollection`1<valuetype AcmePizza.PizzaOrder> AcmePizza.Window1::m_orders
+    IL_0007:  ldloca.s   nextOrder
+    IL_0009:  callvirt   instance bool class [mscorlib]System.Collections.Concurrent.IProducerConsumerCollection`1<valuetype AcmePizza.PizzaOrder>::TryTake(!0&)
+    IL_000e:  stloc.2
+//000095:             {
+//000096:                 MessageBox.Show( "No orders available.  Please try again later.");
+//000097:                 return;
+//000098:             }
+//000099:             // if successful launch an order window
+//000100:             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+//000101:             currentOrderWindow.Show();
+//000102:         }
+//000103:     }
+//000104: }
+    IL_000f:  ldloc.2
+    IL_0010:  brtrue.s   IL_0020
+
+//000095:             {
+    IL_0012:  nop
+//000096:                 MessageBox.Show( "No orders available.  Please try again later.");
+    IL_0013:  ldstr      "No orders available.  Please try again later."
+    IL_0018:  call       valuetype [PresentationFramework]System.Windows.MessageBoxResult [PresentationFramework]System.Windows.MessageBox::Show(string)
+    IL_001d:  pop
+//000097:                 return;
+    IL_001e:  br.s       IL_002e
+
+//000098:             }
+//000099:             // if successful launch an order window
+//000100:             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+    IL_0020:  ldloc.0
+    IL_0021:  newobj     instance void AcmePizza.CurrentOrderWindow::.ctor(valuetype AcmePizza.PizzaOrder)
+    IL_0026:  stloc.1
+//000101:             currentOrderWindow.Show();
+    IL_0027:  ldloc.1
+    IL_0028:  callvirt   instance void [PresentationFramework]System.Windows.Window::Show()
+    IL_002d:  nop
+//000102:         }
+    IL_002e:  ret
+  } // end of method Window1::processNextOrderButton_Click
+
+  .method public hidebysig newslot virtual final 
+          instance void  InitializeComponent() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       45 (0x2d)
+    .maxstack  3
+    .locals init ([0] class [System]System.Uri resourceLocater,
+             [1] bool CS$4$0000)
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\Window1.g.cs' 
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      bool AcmePizza.Window1::_contentLoaded
+    IL_0007:  ldc.i4.0
+    IL_0008:  ceq
+    IL_000a:  stloc.1
+    IL_000b:  ldloc.1
+    IL_000c:  brtrue.s   IL_0011
+
+    IL_000e:  nop
+    IL_000f:  br.s       IL_002c
+
+    IL_0011:  ldarg.0
+    IL_0012:  ldc.i4.1
+    IL_0013:  stfld      bool AcmePizza.Window1::_contentLoaded
+    IL_0018:  ldstr      "/AcmePizza;component/window1.xaml"
+    IL_001d:  ldc.i4.2
+    IL_001e:  newobj     instance void [System]System.Uri::.ctor(string,
+                                                                 valuetype [System]System.UriKind)
+    IL_0023:  stloc.0
+// Source File 'c:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Window1.xaml' 
+//000001: ?<Window x:Class="AcmePizza.Window1"
+    IL_0024:  ldarg.0
+    IL_0025:  ldloc.0
+    IL_0026:  call       void [PresentationFramework]System.Windows.Application::LoadComponent(object,
+                                                                                               class [System]System.Uri)
+    IL_002b:  nop
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\Window1.g.cs' 
+    IL_002c:  ret
+  } // end of method Window1::InitializeComponent
+
+  .method private hidebysig newslot virtual final 
+          instance void  System.Windows.Markup.IComponentConnector.Connect(int32 connectionId,
+                                                                           object target) cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .override [System.Xaml]System.Windows.Markup.IComponentConnector::Connect
+    // Code size       165 (0xa5)
+    .maxstack  4
+    .locals init ([0] int32 CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  stloc.0
+    IL_0003:  ldloc.0
+    IL_0004:  ldc.i4.1
+    IL_0005:  sub
+    IL_0006:  switch     ( 
+                          IL_0025,
+                          IL_003f,
+                          IL_004d,
+                          IL_005b,
+                          IL_0069,
+                          IL_0077)
+    IL_0023:  br.s       IL_009d
+
+// Source File 'c:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Window1.xaml' 
+//000006:     Loaded="Window_Loaded" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="CanResize"
+    IL_0025:  ldarg.2
+    IL_0026:  castclass  AcmePizza.Window1
+    IL_002b:  ldarg.0
+    IL_002c:  ldftn      instance void AcmePizza.Window1::Window_Loaded(object,
+                                                                        class [mscorlib]System.EventArgs)
+    IL_0032:  newobj     instance void [PresentationCore]System.Windows.RoutedEventHandler::.ctor(object,
+                                                                                                  native int)
+    IL_0037:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::add_Loaded(class [PresentationCore]System.Windows.RoutedEventHandler)
+    IL_003c:  nop
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\Window1.g.cs' 
+    IL_003d:  br.s       IL_00a4
+
+    IL_003f:  ldarg.0
+    IL_0040:  ldarg.2
+    IL_0041:  castclass  [PresentationFramework]System.Windows.Controls.ItemsControl
+    IL_0046:  stfld      class [PresentationFramework]System.Windows.Controls.ItemsControl AcmePizza.Window1::ordersList
+    IL_004b:  br.s       IL_00a4
+
+    IL_004d:  ldarg.0
+    IL_004e:  ldarg.2
+    IL_004f:  castclass  [PresentationFramework]System.Windows.Controls.TextBlock
+    IL_0054:  stfld      class [PresentationFramework]System.Windows.Controls.TextBlock AcmePizza.Window1::textBlock1
+    IL_0059:  br.s       IL_00a4
+
+    IL_005b:  ldarg.0
+    IL_005c:  ldarg.2
+    IL_005d:  castclass  [PresentationFramework]System.Windows.Controls.TextBlock
+    IL_0062:  stfld      class [PresentationFramework]System.Windows.Controls.TextBlock AcmePizza.Window1::textBlock2
+    IL_0067:  br.s       IL_00a4
+
+    IL_0069:  ldarg.0
+    IL_006a:  ldarg.2
+    IL_006b:  castclass  [PresentationFramework]System.Windows.Controls.Image
+    IL_0070:  stfld      class [PresentationFramework]System.Windows.Controls.Image AcmePizza.Window1::image1
+    IL_0075:  br.s       IL_00a4
+
+    IL_0077:  ldarg.0
+    IL_0078:  ldarg.2
+    IL_0079:  castclass  [PresentationFramework]System.Windows.Controls.Button
+    IL_007e:  stfld      class [PresentationFramework]System.Windows.Controls.Button AcmePizza.Window1::processNextOrderButton
+// Source File 'c:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Window1.xaml' 
+//000037:         <Button Name="processNextOrderButton" Click="processNextOrderButton_Click" Margin="0,13,0,12" HorizontalAlignment="Right" Width="164">Process Next Order</Button>
+    IL_0083:  ldarg.0
+    IL_0084:  ldfld      class [PresentationFramework]System.Windows.Controls.Button AcmePizza.Window1::processNextOrderButton
+    IL_0089:  ldarg.0
+    IL_008a:  ldftn      instance void AcmePizza.Window1::processNextOrderButton_Click(object,
+                                                                                       class [PresentationCore]System.Windows.RoutedEventArgs)
+    IL_0090:  newobj     instance void [PresentationCore]System.Windows.RoutedEventHandler::.ctor(object,
+                                                                                                  native int)
+    IL_0095:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Primitives.ButtonBase::add_Click(class [PresentationCore]System.Windows.RoutedEventHandler)
+    IL_009a:  nop
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\Window1.g.cs' 
+    IL_009b:  br.s       IL_00a4
+
+    IL_009d:  ldarg.0
+    IL_009e:  ldc.i4.1
+    IL_009f:  stfld      bool AcmePizza.Window1::_contentLoaded
+    IL_00a4:  ret
+  } // end of method Window1::System.Windows.Markup.IComponentConnector.Connect
+
+  .method private hidebysig instance void 
+          '<Window_Loaded>b__0'() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  8
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Window1.xaml.cs' 
+//000043:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Fax); }, TaskCreationOptions.AttachedToParent);
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.3
+    IL_0003:  call       instance void AcmePizza.Window1::OrdererThread(valuetype AcmePizza.OrderSource)
+    IL_0008:  nop
+//000044:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Internet); }, TaskCreationOptions.AttachedToParent);
+//000045:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Phone); }, TaskCreationOptions.AttachedToParent);
+//000046:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.WalkIn); }, TaskCreationOptions.AttachedToParent);
+//000047:         }
+//000048: 
+//000049:         private void OrdererThread(OrderSource source)
+//000050:         {
+//000051:             for ( int i = 0; i < 10; ++i )
+//000052:             {
+//000053:                 // submit random order
+//000054:                 m_orders.TryAdd( GenerateRandomOrder(source));
+//000055:                 // sleep for a random period
+//000056:                 Thread.Sleep(m_rand.Next(1000, 4001));
+//000057:             }
+//000058:         }
+//000059: 
+//000060:         private static PizzaOrder GenerateRandomOrder(OrderSource source)
+//000061:         {
+//000062:             // source
+//000063:             var order = new PizzaOrder { Source = source };
+//000064:             // delivery
+//000065:             order.IsDelivery = m_rand.Next(0, 2) == 0 ? true : false;
+//000066:             // phone number
+//000067:             var areaCode = m_rand.Next(0, 2) == 0 ? 425 : 206;
+//000068:             var firstThreeDigits = m_rand.Next(100, 1000);
+//000069:             var lastFourDigits = m_rand.Next(0, 10000);
+//000070:             order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"));
+//000071:             // size
+//000072:             switch (m_rand.Next(0, 3))
+//000073:             {
+//000074:                 case 0: order.Size = 11; break;
+//000075:                 case 1: order.Size = 13; break;
+//000076:                 case 2: order.Size = 17; break;
+//000077:             }
+//000078:             // toppings
+//000079:             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+//000080:             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+//000081:             for (int j = 0; j < order.Toppings.Length; ++j)
+//000082:             {
+//000083:                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+//000084:                 order.Toppings[j] = availToppings[toppingIndex];
+//000085:                 availToppings.RemoveAt(toppingIndex);
+//000086:             }
+//000087:             return order;
+//000088:         }
+//000089: 
+//000090:         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+//000091:         {
+//000092:             // attempt to get an order from the queue
+//000093:             PizzaOrder nextOrder;
+//000094:             if ( !m_orders.TryTake( out nextOrder ) )
+//000095:             {
+//000096:                 MessageBox.Show( "No orders available.  Please try again later.");
+//000097:                 return;
+//000098:             }
+//000099:             // if successful launch an order window
+//000100:             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+//000101:             currentOrderWindow.Show();
+//000102:         }
+//000103:     }
+//000104: }
+    IL_0009:  ret
+  } // end of method Window1::'<Window_Loaded>b__0'
+
+  .method private hidebysig instance void 
+          '<Window_Loaded>b__1'() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  8
+//000044:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Internet); }, TaskCreationOptions.AttachedToParent);
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.1
+    IL_0003:  call       instance void AcmePizza.Window1::OrdererThread(valuetype AcmePizza.OrderSource)
+    IL_0008:  nop
+//000045:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Phone); }, TaskCreationOptions.AttachedToParent);
+//000046:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.WalkIn); }, TaskCreationOptions.AttachedToParent);
+//000047:         }
+//000048: 
+//000049:         private void OrdererThread(OrderSource source)
+//000050:         {
+//000051:             for ( int i = 0; i < 10; ++i )
+//000052:             {
+//000053:                 // submit random order
+//000054:                 m_orders.TryAdd( GenerateRandomOrder(source));
+//000055:                 // sleep for a random period
+//000056:                 Thread.Sleep(m_rand.Next(1000, 4001));
+//000057:             }
+//000058:         }
+//000059: 
+//000060:         private static PizzaOrder GenerateRandomOrder(OrderSource source)
+//000061:         {
+//000062:             // source
+//000063:             var order = new PizzaOrder { Source = source };
+//000064:             // delivery
+//000065:             order.IsDelivery = m_rand.Next(0, 2) == 0 ? true : false;
+//000066:             // phone number
+//000067:             var areaCode = m_rand.Next(0, 2) == 0 ? 425 : 206;
+//000068:             var firstThreeDigits = m_rand.Next(100, 1000);
+//000069:             var lastFourDigits = m_rand.Next(0, 10000);
+//000070:             order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"));
+//000071:             // size
+//000072:             switch (m_rand.Next(0, 3))
+//000073:             {
+//000074:                 case 0: order.Size = 11; break;
+//000075:                 case 1: order.Size = 13; break;
+//000076:                 case 2: order.Size = 17; break;
+//000077:             }
+//000078:             // toppings
+//000079:             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+//000080:             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+//000081:             for (int j = 0; j < order.Toppings.Length; ++j)
+//000082:             {
+//000083:                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+//000084:                 order.Toppings[j] = availToppings[toppingIndex];
+//000085:                 availToppings.RemoveAt(toppingIndex);
+//000086:             }
+//000087:             return order;
+//000088:         }
+//000089: 
+//000090:         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+//000091:         {
+//000092:             // attempt to get an order from the queue
+//000093:             PizzaOrder nextOrder;
+//000094:             if ( !m_orders.TryTake( out nextOrder ) )
+//000095:             {
+//000096:                 MessageBox.Show( "No orders available.  Please try again later.");
+//000097:                 return;
+//000098:             }
+//000099:             // if successful launch an order window
+//000100:             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+//000101:             currentOrderWindow.Show();
+//000102:         }
+//000103:     }
+//000104: }
+    IL_0009:  ret
+  } // end of method Window1::'<Window_Loaded>b__1'
+
+  .method private hidebysig instance void 
+          '<Window_Loaded>b__2'() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  8
+//000045:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Phone); }, TaskCreationOptions.AttachedToParent);
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.0
+    IL_0003:  call       instance void AcmePizza.Window1::OrdererThread(valuetype AcmePizza.OrderSource)
+    IL_0008:  nop
+//000046:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.WalkIn); }, TaskCreationOptions.AttachedToParent);
+//000047:         }
+//000048: 
+//000049:         private void OrdererThread(OrderSource source)
+//000050:         {
+//000051:             for ( int i = 0; i < 10; ++i )
+//000052:             {
+//000053:                 // submit random order
+//000054:                 m_orders.TryAdd( GenerateRandomOrder(source));
+//000055:                 // sleep for a random period
+//000056:                 Thread.Sleep(m_rand.Next(1000, 4001));
+//000057:             }
+//000058:         }
+//000059: 
+//000060:         private static PizzaOrder GenerateRandomOrder(OrderSource source)
+//000061:         {
+//000062:             // source
+//000063:             var order = new PizzaOrder { Source = source };
+//000064:             // delivery
+//000065:             order.IsDelivery = m_rand.Next(0, 2) == 0 ? true : false;
+//000066:             // phone number
+//000067:             var areaCode = m_rand.Next(0, 2) == 0 ? 425 : 206;
+//000068:             var firstThreeDigits = m_rand.Next(100, 1000);
+//000069:             var lastFourDigits = m_rand.Next(0, 10000);
+//000070:             order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"));
+//000071:             // size
+//000072:             switch (m_rand.Next(0, 3))
+//000073:             {
+//000074:                 case 0: order.Size = 11; break;
+//000075:                 case 1: order.Size = 13; break;
+//000076:                 case 2: order.Size = 17; break;
+//000077:             }
+//000078:             // toppings
+//000079:             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+//000080:             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+//000081:             for (int j = 0; j < order.Toppings.Length; ++j)
+//000082:             {
+//000083:                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+//000084:                 order.Toppings[j] = availToppings[toppingIndex];
+//000085:                 availToppings.RemoveAt(toppingIndex);
+//000086:             }
+//000087:             return order;
+//000088:         }
+//000089: 
+//000090:         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+//000091:         {
+//000092:             // attempt to get an order from the queue
+//000093:             PizzaOrder nextOrder;
+//000094:             if ( !m_orders.TryTake( out nextOrder ) )
+//000095:             {
+//000096:                 MessageBox.Show( "No orders available.  Please try again later.");
+//000097:                 return;
+//000098:             }
+//000099:             // if successful launch an order window
+//000100:             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+//000101:             currentOrderWindow.Show();
+//000102:         }
+//000103:     }
+//000104: }
+    IL_0009:  ret
+  } // end of method Window1::'<Window_Loaded>b__2'
+
+  .method private hidebysig instance void 
+          '<Window_Loaded>b__3'() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  8
+//000046:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.WalkIn); }, TaskCreationOptions.AttachedToParent);
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.2
+    IL_0003:  call       instance void AcmePizza.Window1::OrdererThread(valuetype AcmePizza.OrderSource)
+    IL_0008:  nop
+//000047:         }
+//000048: 
+//000049:         private void OrdererThread(OrderSource source)
+//000050:         {
+//000051:             for ( int i = 0; i < 10; ++i )
+//000052:             {
+//000053:                 // submit random order
+//000054:                 m_orders.TryAdd( GenerateRandomOrder(source));
+//000055:                 // sleep for a random period
+//000056:                 Thread.Sleep(m_rand.Next(1000, 4001));
+//000057:             }
+//000058:         }
+//000059: 
+//000060:         private static PizzaOrder GenerateRandomOrder(OrderSource source)
+//000061:         {
+//000062:             // source
+//000063:             var order = new PizzaOrder { Source = source };
+//000064:             // delivery
+//000065:             order.IsDelivery = m_rand.Next(0, 2) == 0 ? true : false;
+//000066:             // phone number
+//000067:             var areaCode = m_rand.Next(0, 2) == 0 ? 425 : 206;
+//000068:             var firstThreeDigits = m_rand.Next(100, 1000);
+//000069:             var lastFourDigits = m_rand.Next(0, 10000);
+//000070:             order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"));
+//000071:             // size
+//000072:             switch (m_rand.Next(0, 3))
+//000073:             {
+//000074:                 case 0: order.Size = 11; break;
+//000075:                 case 1: order.Size = 13; break;
+//000076:                 case 2: order.Size = 17; break;
+//000077:             }
+//000078:             // toppings
+//000079:             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+//000080:             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+//000081:             for (int j = 0; j < order.Toppings.Length; ++j)
+//000082:             {
+//000083:                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+//000084:                 order.Toppings[j] = availToppings[toppingIndex];
+//000085:                 availToppings.RemoveAt(toppingIndex);
+//000086:             }
+//000087:             return order;
+//000088:         }
+//000089: 
+//000090:         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+//000091:         {
+//000092:             // attempt to get an order from the queue
+//000093:             PizzaOrder nextOrder;
+//000094:             if ( !m_orders.TryTake( out nextOrder ) )
+//000095:             {
+//000096:                 MessageBox.Show( "No orders available.  Please try again later.");
+//000097:                 return;
+//000098:             }
+//000099:             // if successful launch an order window
+//000100:             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+//000101:             currentOrderWindow.Show();
+//000102:         }
+//000103:     }
+//000104: }
+    IL_0009:  ret
+  } // end of method Window1::'<Window_Loaded>b__3'
+
+  .method private hidebysig specialname rtspecialname static 
+          void  .cctor() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  8
+//000025:         private static Random m_rand = new ThreadSafeRandom();
+    IL_0000:  newobj     instance void [ParallelExtensionsExtras]System.Threading.ThreadSafeRandom::.ctor()
+    IL_0005:  stsfld     class [mscorlib]System.Random AcmePizza.Window1::m_rand
+//000026: 
+//000027:         public Window1()
+//000028:         {
+//000029:             InitializeComponent();
+//000030: 
+//000031:             // intialize the bindable collection and set it as the data context
+//000032:             var orders = new ObservableConcurrentCollection<PizzaOrder>();
+//000033:             // store the observable collection as an explicity producer consumer 
+//000034:             // collection that has tryadd and tryremove operations
+//000035:             m_orders = orders;
+//000036:             // set the AcmePizza as the defaut
+//000037:             this.DataContext = orders;
+//000038:         }
+//000039: 
+//000040:         private void Window_Loaded(object sender, EventArgs e)
+//000041:         {
+//000042:             // launch four threads that mimic various sources
+//000043:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Fax); }, TaskCreationOptions.AttachedToParent);
+//000044:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Internet); }, TaskCreationOptions.AttachedToParent);
+//000045:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Phone); }, TaskCreationOptions.AttachedToParent);
+//000046:             Task.Factory.StartNew(() => { OrdererThread(OrderSource.WalkIn); }, TaskCreationOptions.AttachedToParent);
+//000047:         }
+//000048: 
+//000049:         private void OrdererThread(OrderSource source)
+//000050:         {
+//000051:             for ( int i = 0; i < 10; ++i )
+//000052:             {
+//000053:                 // submit random order
+//000054:                 m_orders.TryAdd( GenerateRandomOrder(source));
+//000055:                 // sleep for a random period
+//000056:                 Thread.Sleep(m_rand.Next(1000, 4001));
+//000057:             }
+//000058:         }
+//000059: 
+//000060:         private static PizzaOrder GenerateRandomOrder(OrderSource source)
+//000061:         {
+//000062:             // source
+//000063:             var order = new PizzaOrder { Source = source };
+//000064:             // delivery
+//000065:             order.IsDelivery = m_rand.Next(0, 2) == 0 ? true : false;
+//000066:             // phone number
+//000067:             var areaCode = m_rand.Next(0, 2) == 0 ? 425 : 206;
+//000068:             var firstThreeDigits = m_rand.Next(100, 1000);
+//000069:             var lastFourDigits = m_rand.Next(0, 10000);
+//000070:             order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"));
+//000071:             // size
+//000072:             switch (m_rand.Next(0, 3))
+//000073:             {
+//000074:                 case 0: order.Size = 11; break;
+//000075:                 case 1: order.Size = 13; break;
+//000076:                 case 2: order.Size = 17; break;
+//000077:             }
+//000078:             // toppings
+//000079:             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+//000080:             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+//000081:             for (int j = 0; j < order.Toppings.Length; ++j)
+//000082:             {
+//000083:                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+//000084:                 order.Toppings[j] = availToppings[toppingIndex];
+//000085:                 availToppings.RemoveAt(toppingIndex);
+//000086:             }
+//000087:             return order;
+//000088:         }
+//000089: 
+//000090:         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+//000091:         {
+//000092:             // attempt to get an order from the queue
+//000093:             PizzaOrder nextOrder;
+//000094:             if ( !m_orders.TryTake( out nextOrder ) )
+//000095:             {
+//000096:                 MessageBox.Show( "No orders available.  Please try again later.");
+//000097:                 return;
+//000098:             }
+//000099:             // if successful launch an order window
+//000100:             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+//000101:             currentOrderWindow.Show();
+//000102:         }
+//000103:     }
+//000104: }
+    IL_000a:  ret
+  } // end of method Window1::.cctor
+
+} // end of class AcmePizza.Window1
+
+.class public auto ansi beforefieldinit AcmePizza.CurrentOrderWindow
+       extends [PresentationFramework]System.Windows.Window
+       implements [System.Xaml]System.Windows.Markup.IComponentConnector
+{
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 16 50 72 65 73 65 6E 74 61 74 69 6F 6E 42   // ...PresentationB
+                                                                                                  75 69 6C 64 54 61 73 6B 73 07 34 2E 30 2E 30 2E   // uildTasks.4.0.0.
+                                                                                                  30 00 00 )                                        // 0..
+  .field private class [System]System.Collections.ObjectModel.ObservableCollection`1<valuetype AcmePizza.PizzaOrder> m_currentOrder
+  .field assembly class [PresentationFramework]System.Windows.Controls.ItemsControl currOrder
+  .field private bool _contentLoaded
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor(valuetype AcmePizza.PizzaOrder order) cil managed
+  {
+    // Code size       54 (0x36)
+    .maxstack  8
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\CurrentOrderWindow.xaml.cs' 
+//000022:         public CurrentOrderWindow(PizzaOrder order)
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [PresentationFramework]System.Windows.Window::.ctor()
+    IL_0006:  nop
+//000023:         {
+    IL_0007:  nop
+//000024:             InitializeComponent();
+    IL_0008:  ldarg.0
+    IL_0009:  call       instance void AcmePizza.CurrentOrderWindow::InitializeComponent()
+    IL_000e:  nop
+//000025:             // show the current order by binding to a collection of one.
+//000026:             m_currentOrder = new ObservableCollection<PizzaOrder>();
+    IL_000f:  ldarg.0
+    IL_0010:  newobj     instance void class [System]System.Collections.ObjectModel.ObservableCollection`1<valuetype AcmePizza.PizzaOrder>::.ctor()
+    IL_0015:  stfld      class [System]System.Collections.ObjectModel.ObservableCollection`1<valuetype AcmePizza.PizzaOrder> AcmePizza.CurrentOrderWindow::m_currentOrder
+//000027:             this.DataContext = m_currentOrder;
+    IL_001a:  ldarg.0
+    IL_001b:  ldarg.0
+    IL_001c:  ldfld      class [System]System.Collections.ObjectModel.ObservableCollection`1<valuetype AcmePizza.PizzaOrder> AcmePizza.CurrentOrderWindow::m_currentOrder
+    IL_0021:  call       instance void [PresentationFramework]System.Windows.FrameworkElement::set_DataContext(object)
+    IL_0026:  nop
+//000028:             m_currentOrder.Add(order);
+    IL_0027:  ldarg.0
+    IL_0028:  ldfld      class [System]System.Collections.ObjectModel.ObservableCollection`1<valuetype AcmePizza.PizzaOrder> AcmePizza.CurrentOrderWindow::m_currentOrder
+    IL_002d:  ldarg.1
+    IL_002e:  callvirt   instance void class [mscorlib]System.Collections.ObjectModel.Collection`1<valuetype AcmePizza.PizzaOrder>::Add(!0)
+    IL_0033:  nop
+//000029:         }
+    IL_0034:  nop
+    IL_0035:  ret
+  } // end of method CurrentOrderWindow::.ctor
+
+  .method private hidebysig instance void 
+          Image_MouseDown(object sender,
+                          class [PresentationCore]System.Windows.Input.MouseButtonEventArgs e) cil managed
+  {
+    // Code size       9 (0x9)
+    .maxstack  8
+//000030: 
+//000031:         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+//000032:         {
+    IL_0000:  nop
+//000033:             this.Close();
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void [PresentationFramework]System.Windows.Window::Close()
+    IL_0007:  nop
+//000034:         }
+    IL_0008:  ret
+  } // end of method CurrentOrderWindow::Image_MouseDown
+
+  .method public hidebysig newslot virtual final 
+          instance void  InitializeComponent() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       45 (0x2d)
+    .maxstack  3
+    .locals init ([0] class [System]System.Uri resourceLocater,
+             [1] bool CS$4$0000)
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\CurrentOrderWindow.g.cs' 
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      bool AcmePizza.CurrentOrderWindow::_contentLoaded
+    IL_0007:  ldc.i4.0
+    IL_0008:  ceq
+    IL_000a:  stloc.1
+    IL_000b:  ldloc.1
+    IL_000c:  brtrue.s   IL_0011
+
+    IL_000e:  nop
+    IL_000f:  br.s       IL_002c
+
+    IL_0011:  ldarg.0
+    IL_0012:  ldc.i4.1
+    IL_0013:  stfld      bool AcmePizza.CurrentOrderWindow::_contentLoaded
+    IL_0018:  ldstr      "/AcmePizza;component/currentorderwindow.xaml"
+    IL_001d:  ldc.i4.2
+    IL_001e:  newobj     instance void [System]System.Uri::.ctor(string,
+                                                                 valuetype [System]System.UriKind)
+    IL_0023:  stloc.0
+// Source File 'c:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\CurrentOrderWindow.xaml' 
+//000001: ?<!--A window that displays a pizza order size in full screen mode-->    
+    IL_0024:  ldarg.0
+    IL_0025:  ldloc.0
+    IL_0026:  call       void [PresentationFramework]System.Windows.Application::LoadComponent(object,
+                                                                                               class [System]System.Uri)
+    IL_002b:  nop
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\CurrentOrderWindow.g.cs' 
+    IL_002c:  ret
+  } // end of method CurrentOrderWindow::InitializeComponent
+
+  .method private hidebysig newslot virtual final 
+          instance void  System.Windows.Markup.IComponentConnector.Connect(int32 connectionId,
+                                                                           object target) cil managed
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .override [System.Xaml]System.Windows.Markup.IComponentConnector::Connect
+    // Code size       69 (0x45)
+    .maxstack  4
+    .locals init ([0] int32 CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  stloc.0
+    IL_0003:  ldloc.0
+    IL_0004:  ldc.i4.1
+    IL_0005:  sub
+    IL_0006:  switch     ( 
+                          IL_0015,
+                          IL_0023)
+    IL_0013:  br.s       IL_003d
+
+    IL_0015:  ldarg.0
+    IL_0016:  ldarg.2
+    IL_0017:  castclass  [PresentationFramework]System.Windows.Controls.ItemsControl
+    IL_001c:  stfld      class [PresentationFramework]System.Windows.Controls.ItemsControl AcmePizza.CurrentOrderWindow::currOrder
+    IL_0021:  br.s       IL_0044
+
+// Source File 'c:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\CurrentOrderWindow.xaml' 
+//000029:         <Image Source="closeorder.png" Canvas.Right="55" Canvas.Top="20" MouseDown="Image_MouseDown"/>        
+    IL_0023:  ldarg.2
+    IL_0024:  castclass  [PresentationFramework]System.Windows.Controls.Image
+    IL_0029:  ldarg.0
+    IL_002a:  ldftn      instance void AcmePizza.CurrentOrderWindow::Image_MouseDown(object,
+                                                                                     class [PresentationCore]System.Windows.Input.MouseButtonEventArgs)
+    IL_0030:  newobj     instance void [PresentationCore]System.Windows.Input.MouseButtonEventHandler::.ctor(object,
+                                                                                                             native int)
+    IL_0035:  callvirt   instance void [PresentationCore]System.Windows.UIElement::add_MouseDown(class [PresentationCore]System.Windows.Input.MouseButtonEventHandler)
+    IL_003a:  nop
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\CurrentOrderWindow.g.cs' 
+    IL_003b:  br.s       IL_0044
+
+    IL_003d:  ldarg.0
+    IL_003e:  ldc.i4.1
+    IL_003f:  stfld      bool AcmePizza.CurrentOrderWindow::_contentLoaded
+    IL_0044:  ret
+  } // end of method CurrentOrderWindow::System.Windows.Markup.IComponentConnector.Connect
+
+} // end of class AcmePizza.CurrentOrderWindow
+
+.class public auto ansi beforefieldinit AcmePizza.App
+       extends [PresentationFramework]System.Windows.Application
+{
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 16 50 72 65 73 65 6E 74 61 74 69 6F 6E 42   // ...PresentationB
+                                                                                                  75 69 6C 64 54 61 73 6B 73 07 34 2E 30 2E 30 2E   // uildTasks.4.0.0.
+                                                                                                  30 00 00 )                                        // 0..
+  .field private bool _contentLoaded
+  .method public hidebysig instance void 
+          InitializeComponent() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       63 (0x3f)
+    .maxstack  4
+    .locals init ([0] class [System]System.Uri resourceLocater,
+             [1] bool CS$4$0000)
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\App.g.cs' 
+//000050:         public void InitializeComponent() {
+    IL_0000:  nop
+//000051:             if (_contentLoaded) {
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      bool AcmePizza.App::_contentLoaded
+    IL_0007:  ldc.i4.0
+    IL_0008:  ceq
+    IL_000a:  stloc.1
+//000052:                 return;
+//000053:             }
+//000054:             _contentLoaded = true;
+//000055:             
+//000056:             #line 5 "..\..\App.xaml"
+//000057:             this.StartupUri = new System.Uri("Window1.xaml", System.UriKind.Relative);
+//000058:             
+//000059:             #line default
+//000060:             #line hidden
+//000061:             System.Uri resourceLocater = new System.Uri("/AcmePizza;component/app.xaml", System.UriKind.Relative);
+//000062:             
+//000063:             #line 1 "..\..\App.xaml"
+//000064:             System.Windows.Application.LoadComponent(this, resourceLocater);
+//000065:             
+//000066:             #line default
+//000067:             #line hidden
+//000068:         }
+//000069:         
+//000070:         /// <summary>
+//000071:         /// Application Entry Point.
+//000072:         /// </summary>
+//000073:         [System.STAThreadAttribute()]
+//000074:         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+//000075:         public static void Main() {
+//000076:             AcmePizza.App app = new AcmePizza.App();
+//000077:             app.InitializeComponent();
+//000078:             app.Run();
+//000079:         }
+//000080:     }
+//000081: }
+//000082: 
+    IL_000b:  ldloc.1
+    IL_000c:  brtrue.s   IL_0011
+
+//000051:             if (_contentLoaded) {
+    IL_000e:  nop
+//000052:                 return;
+    IL_000f:  br.s       IL_003e
+
+//000053:             }
+//000054:             _contentLoaded = true;
+    IL_0011:  ldarg.0
+    IL_0012:  ldc.i4.1
+    IL_0013:  stfld      bool AcmePizza.App::_contentLoaded
+// Source File 'c:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\App.xaml' 
+//000005:     StartupUri="Window1.xaml">
+    IL_0018:  ldarg.0
+    IL_0019:  ldstr      "Window1.xaml"
+    IL_001e:  ldc.i4.2
+    IL_001f:  newobj     instance void [System]System.Uri::.ctor(string,
+                                                                 valuetype [System]System.UriKind)
+    IL_0024:  call       instance void [PresentationFramework]System.Windows.Application::set_StartupUri(class [System]System.Uri)
+    IL_0029:  nop
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\App.g.cs' 
+    IL_002a:  ldstr      "/AcmePizza;component/app.xaml"
+    IL_002f:  ldc.i4.2
+    IL_0030:  newobj     instance void [System]System.Uri::.ctor(string,
+                                                                 valuetype [System]System.UriKind)
+    IL_0035:  stloc.0
+// Source File 'c:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\App.xaml' 
+//000001: ?<Application x:Class="AcmePizza.App"
+    IL_0036:  ldarg.0
+    IL_0037:  ldloc.0
+    IL_0038:  call       void [PresentationFramework]System.Windows.Application::LoadComponent(object,
+                                                                                               class [System]System.Uri)
+    IL_003d:  nop
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\App.g.cs' 
+    IL_003e:  ret
+  } // end of method App::InitializeComponent
+
+  .method public hidebysig static void  Main() cil managed
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.STAThreadAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       22 (0x16)
+    .maxstack  1
+    .locals init ([0] class AcmePizza.App app)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void AcmePizza.App::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  callvirt   instance void AcmePizza.App::InitializeComponent()
+    IL_000d:  nop
+    IL_000e:  ldloc.0
+    IL_000f:  callvirt   instance int32 [PresentationFramework]System.Windows.Application::Run()
+    IL_0014:  pop
+    IL_0015:  ret
+  } // end of method App::Main
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [PresentationFramework]System.Windows.Application::.ctor()
+    IL_0006:  ret
+  } // end of method App::.ctor
+
+} // end of class AcmePizza.App
+
+.class private auto ansi beforefieldinit AcmePizza.Properties.Resources
+       extends [mscorlib]System.Object
+{
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 33 53 79 73 74 65 6D 2E 52 65 73 6F 75 72   // ..3System.Resour
+                                                                                                  63 65 73 2E 54 6F 6F 6C 73 2E 53 74 72 6F 6E 67   // ces.Tools.Strong
+                                                                                                  6C 79 54 79 70 65 64 52 65 73 6F 75 72 63 65 42   // lyTypedResourceB
+                                                                                                  75 69 6C 64 65 72 07 34 2E 30 2E 30 2E 30 00 00 ) // uilder.4.0.0.0..
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Resources.ResourceManager resourceMan
+  .field private static class [mscorlib]System.Globalization.CultureInfo resourceCulture
+  .method assembly hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       10 (0xa)
+    .maxstack  8
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Resources.Designer.cs' 
+//000031:         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+//000032:         internal Resources() {
+    IL_0007:  nop
+//000033:         }
+    IL_0008:  nop
+    IL_0009:  ret
+  } // end of method Resources::.ctor
+
+  .method assembly hidebysig specialname static 
+          class [mscorlib]System.Resources.ResourceManager 
+          get_ResourceManager() cil managed
+  {
+    // Code size       63 (0x3f)
+    .maxstack  3
+    .locals init ([0] class [mscorlib]System.Resources.ResourceManager temp,
+             [1] class [mscorlib]System.Resources.ResourceManager CS$1$0000,
+             [2] bool CS$4$0001)
+//000034:         
+//000035:         /// <summary>
+//000036:         ///   Returns the cached ResourceManager instance used by this class.
+//000037:         /// </summary>
+//000038:         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+//000039:         internal static global::System.Resources.ResourceManager ResourceManager {
+//000040:             get {
+    IL_0000:  nop
+//000041:                 if (object.ReferenceEquals(resourceMan, null)) {
+    IL_0001:  ldsfld     class [mscorlib]System.Resources.ResourceManager AcmePizza.Properties.Resources::resourceMan
+    IL_0006:  ldnull
+    IL_0007:  call       bool [mscorlib]System.Object::ReferenceEquals(object,
+                                                                       object)
+    IL_000c:  ldc.i4.0
+    IL_000d:  ceq
+    IL_000f:  stloc.2
+//000042:                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AcmePizza.Properties.Resources", typeof(Resources).Assembly);
+//000043:                     resourceMan = temp;
+//000044:                 }
+//000045:                 return resourceMan;
+//000046:             }
+//000047:         }
+//000048:         
+//000049:         /// <summary>
+//000050:         ///   Overrides the current thread's CurrentUICulture property for all
+//000051:         ///   resource lookups using this strongly typed resource class.
+//000052:         /// </summary>
+//000053:         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+//000054:         internal static global::System.Globalization.CultureInfo Culture {
+//000055:             get {
+//000056:                 return resourceCulture;
+//000057:             }
+//000058:             set {
+//000059:                 resourceCulture = value;
+//000060:             }
+//000061:         }
+//000062:     }
+//000063: }
+    IL_0010:  ldloc.2
+    IL_0011:  brtrue.s   IL_0035
+
+//000041:                 if (object.ReferenceEquals(resourceMan, null)) {
+    IL_0013:  nop
+//000042:                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AcmePizza.Properties.Resources", typeof(Resources).Assembly);
+    IL_0014:  ldstr      "AcmePizza.Properties.Resources"
+    IL_0019:  ldtoken    AcmePizza.Properties.Resources
+    IL_001e:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_0023:  callvirt   instance class [mscorlib]System.Reflection.Assembly [mscorlib]System.Type::get_Assembly()
+    IL_0028:  newobj     instance void [mscorlib]System.Resources.ResourceManager::.ctor(string,
+                                                                                         class [mscorlib]System.Reflection.Assembly)
+    IL_002d:  stloc.0
+//000043:                     resourceMan = temp;
+    IL_002e:  ldloc.0
+    IL_002f:  stsfld     class [mscorlib]System.Resources.ResourceManager AcmePizza.Properties.Resources::resourceMan
+//000044:                 }
+    IL_0034:  nop
+//000045:                 return resourceMan;
+    IL_0035:  ldsfld     class [mscorlib]System.Resources.ResourceManager AcmePizza.Properties.Resources::resourceMan
+    IL_003a:  stloc.1
+    IL_003b:  br.s       IL_003d
+
+//000046:             }
+    IL_003d:  ldloc.1
+    IL_003e:  ret
+  } // end of method Resources::get_ResourceManager
+
+  .method assembly hidebysig specialname static 
+          class [mscorlib]System.Globalization.CultureInfo 
+          get_Culture() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Globalization.CultureInfo CS$1$0000)
+//000047:         }
+//000048:         
+//000049:         /// <summary>
+//000050:         ///   Overrides the current thread's CurrentUICulture property for all
+//000051:         ///   resource lookups using this strongly typed resource class.
+//000052:         /// </summary>
+//000053:         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+//000054:         internal static global::System.Globalization.CultureInfo Culture {
+//000055:             get {
+    IL_0000:  nop
+//000056:                 return resourceCulture;
+    IL_0001:  ldsfld     class [mscorlib]System.Globalization.CultureInfo AcmePizza.Properties.Resources::resourceCulture
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000057:             }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Resources::get_Culture
+
+  .method assembly hidebysig specialname static 
+          void  set_Culture(class [mscorlib]System.Globalization.CultureInfo 'value') cil managed
+  {
+    // Code size       8 (0x8)
+    .maxstack  8
+//000058:             set {
+    IL_0000:  nop
+//000059:                 resourceCulture = value;
+    IL_0001:  ldarg.0
+    IL_0002:  stsfld     class [mscorlib]System.Globalization.CultureInfo AcmePizza.Properties.Resources::resourceCulture
+//000060:             }
+    IL_0007:  ret
+  } // end of method Resources::set_Culture
+
+  .property class [mscorlib]System.Resources.ResourceManager
+          ResourceManager()
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 02 00 00 00 00 00 ) 
+    .get class [mscorlib]System.Resources.ResourceManager AcmePizza.Properties.Resources::get_ResourceManager()
+  } // end of property Resources::ResourceManager
+  .property class [mscorlib]System.Globalization.CultureInfo
+          Culture()
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 02 00 00 00 00 00 ) 
+    .get class [mscorlib]System.Globalization.CultureInfo AcmePizza.Properties.Resources::get_Culture()
+    .set void AcmePizza.Properties.Resources::set_Culture(class [mscorlib]System.Globalization.CultureInfo)
+  } // end of property Resources::Culture
+} // end of class AcmePizza.Properties.Resources
+
+.class private auto ansi sealed beforefieldinit AcmePizza.Properties.Settings
+       extends [System]System.Configuration.ApplicationSettingsBase
+{
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 4B 4D 69 63 72 6F 73 6F 66 74 2E 56 69 73   // ..KMicrosoft.Vis
+                                                                                                  75 61 6C 53 74 75 64 69 6F 2E 45 64 69 74 6F 72   // ualStudio.Editor
+                                                                                                  73 2E 53 65 74 74 69 6E 67 73 44 65 73 69 67 6E   // s.SettingsDesign
+                                                                                                  65 72 2E 53 65 74 74 69 6E 67 73 53 69 6E 67 6C   // er.SettingsSingl
+                                                                                                  65 46 69 6C 65 47 65 6E 65 72 61 74 6F 72 08 31   // eFileGenerator.1
+                                                                                                  30 2E 30 2E 30 2E 30 00 00 )                      // 0.0.0.0..
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class AcmePizza.Properties.Settings defaultInstance
+  .method public hidebysig specialname static 
+          class AcmePizza.Properties.Settings 
+          get_Default() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class AcmePizza.Properties.Settings CS$1$0000)
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Settings.Designer.cs' 
+//000021:             get {
+    IL_0000:  nop
+//000022:                 return defaultInstance;
+    IL_0001:  ldsfld     class AcmePizza.Properties.Settings AcmePizza.Properties.Settings::defaultInstance
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000023:             }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Settings::get_Default
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [System]System.Configuration.ApplicationSettingsBase::.ctor()
+    IL_0006:  ret
+  } // end of method Settings::.ctor
+
+  .method private hidebysig specialname rtspecialname static 
+          void  .cctor() cil managed
+  {
+    // Code size       21 (0x15)
+    .maxstack  8
+//000018:         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+    IL_0000:  newobj     instance void AcmePizza.Properties.Settings::.ctor()
+    IL_0005:  call       class [System]System.Configuration.SettingsBase [System]System.Configuration.SettingsBase::Synchronized(class [System]System.Configuration.SettingsBase)
+    IL_000a:  castclass  AcmePizza.Properties.Settings
+    IL_000f:  stsfld     class AcmePizza.Properties.Settings AcmePizza.Properties.Settings::defaultInstance
+//000019:         
+//000020:         public static Settings Default {
+//000021:             get {
+//000022:                 return defaultInstance;
+//000023:             }
+//000024:         }
+//000025:     }
+//000026: }
+    IL_0014:  ret
+  } // end of method Settings::.cctor
+
+  .property class AcmePizza.Properties.Settings
+          Default()
+  {
+    .get class AcmePizza.Properties.Settings AcmePizza.Properties.Settings::get_Default()
+  } // end of property Settings::Default
+} // end of class AcmePizza.Properties.Settings
+
+.class public auto ansi sealed AcmePizza.PizzaToppings
+       extends [mscorlib]System.Enum
+{
+  .field public specialname rtspecialname int32 value__
+  .field public static literal valuetype AcmePizza.PizzaToppings Mushrooms = int32(0x00000000)
+  .field public static literal valuetype AcmePizza.PizzaToppings Olives = int32(0x00000001)
+  .field public static literal valuetype AcmePizza.PizzaToppings Sausage = int32(0x00000002)
+  .field public static literal valuetype AcmePizza.PizzaToppings Pepperoni = int32(0x00000003)
+  .field public static literal valuetype AcmePizza.PizzaToppings Cheese = int32(0x00000004)
+  .field public static literal valuetype AcmePizza.PizzaToppings Onions = int32(0x00000005)
+  .field public static literal valuetype AcmePizza.PizzaToppings BellPeppers = int32(0x00000006)
+  .field public static literal valuetype AcmePizza.PizzaToppings Bacon = int32(0x00000007)
+  .field public static literal valuetype AcmePizza.PizzaToppings Chicken = int32(0x00000008)
+  .field public static literal valuetype AcmePizza.PizzaToppings Artichokes = int32(0x00000009)
+} // end of class AcmePizza.PizzaToppings
+
+.class public auto ansi sealed AcmePizza.OrderSource
+       extends [mscorlib]System.Enum
+{
+  .field public specialname rtspecialname int32 value__
+  .field public static literal valuetype AcmePizza.OrderSource Phone = int32(0x00000000)
+  .field public static literal valuetype AcmePizza.OrderSource Internet = int32(0x00000001)
+  .field public static literal valuetype AcmePizza.OrderSource WalkIn = int32(0x00000002)
+  .field public static literal valuetype AcmePizza.OrderSource Fax = int32(0x00000003)
+} // end of class AcmePizza.OrderSource
+
+.class public sequential ansi sealed beforefieldinit AcmePizza.PizzaOrder
+       extends [mscorlib]System.ValueType
+{
+  .field private valuetype AcmePizza.OrderSource '<Source>k__BackingField'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private string '<PhoneNumber>k__BackingField'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private int32 '<Size>k__BackingField'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private bool '<IsDelivery>k__BackingField'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private valuetype AcmePizza.PizzaToppings[] '<Toppings>k__BackingField'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .method public hidebysig specialname instance valuetype AcmePizza.OrderSource 
+          get_Source() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (valuetype AcmePizza.OrderSource V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      valuetype AcmePizza.OrderSource AcmePizza.PizzaOrder::'<Source>k__BackingField'
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method PizzaOrder::get_Source
+
+  .method public hidebysig specialname instance void 
+          set_Source(valuetype AcmePizza.OrderSource 'value') cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       8 (0x8)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      valuetype AcmePizza.OrderSource AcmePizza.PizzaOrder::'<Source>k__BackingField'
+    IL_0007:  ret
+  } // end of method PizzaOrder::set_Source
+
+  .method public hidebysig specialname instance string 
+          get_PhoneNumber() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (string V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      string AcmePizza.PizzaOrder::'<PhoneNumber>k__BackingField'
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method PizzaOrder::get_PhoneNumber
+
+  .method public hidebysig specialname instance void 
+          set_PhoneNumber(string 'value') cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       8 (0x8)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      string AcmePizza.PizzaOrder::'<PhoneNumber>k__BackingField'
+    IL_0007:  ret
+  } // end of method PizzaOrder::set_PhoneNumber
+
+  .method public hidebysig specialname instance int32 
+          get_Size() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (int32 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      int32 AcmePizza.PizzaOrder::'<Size>k__BackingField'
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method PizzaOrder::get_Size
+
+  .method public hidebysig specialname instance void 
+          set_Size(int32 'value') cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       8 (0x8)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      int32 AcmePizza.PizzaOrder::'<Size>k__BackingField'
+    IL_0007:  ret
+  } // end of method PizzaOrder::set_Size
+
+  .method public hidebysig specialname instance bool 
+          get_IsDelivery() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (bool V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      bool AcmePizza.PizzaOrder::'<IsDelivery>k__BackingField'
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method PizzaOrder::get_IsDelivery
+
+  .method public hidebysig specialname instance void 
+          set_IsDelivery(bool 'value') cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       8 (0x8)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      bool AcmePizza.PizzaOrder::'<IsDelivery>k__BackingField'
+    IL_0007:  ret
+  } // end of method PizzaOrder::set_IsDelivery
+
+  .method public hidebysig specialname instance valuetype AcmePizza.PizzaToppings[] 
+          get_Toppings() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (valuetype AcmePizza.PizzaToppings[] V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      valuetype AcmePizza.PizzaToppings[] AcmePizza.PizzaOrder::'<Toppings>k__BackingField'
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method PizzaOrder::get_Toppings
+
+  .method public hidebysig specialname instance void 
+          set_Toppings(valuetype AcmePizza.PizzaToppings[] 'value') cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       8 (0x8)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      valuetype AcmePizza.PizzaToppings[] AcmePizza.PizzaOrder::'<Toppings>k__BackingField'
+    IL_0007:  ret
+  } // end of method PizzaOrder::set_Toppings
+
+  .property instance valuetype AcmePizza.OrderSource
+          Source()
+  {
+    .set instance void AcmePizza.PizzaOrder::set_Source(valuetype AcmePizza.OrderSource)
+    .get instance valuetype AcmePizza.OrderSource AcmePizza.PizzaOrder::get_Source()
+  } // end of property PizzaOrder::Source
+  .property instance string PhoneNumber()
+  {
+    .get instance string AcmePizza.PizzaOrder::get_PhoneNumber()
+    .set instance void AcmePizza.PizzaOrder::set_PhoneNumber(string)
+  } // end of property PizzaOrder::PhoneNumber
+  .property instance int32 Size()
+  {
+    .set instance void AcmePizza.PizzaOrder::set_Size(int32)
+    .get instance int32 AcmePizza.PizzaOrder::get_Size()
+  } // end of property PizzaOrder::Size
+  .property instance bool IsDelivery()
+  {
+    .set instance void AcmePizza.PizzaOrder::set_IsDelivery(bool)
+    .get instance bool AcmePizza.PizzaOrder::get_IsDelivery()
+  } // end of property PizzaOrder::IsDelivery
+  .property instance valuetype AcmePizza.PizzaToppings[]
+          Toppings()
+  {
+    .get instance valuetype AcmePizza.PizzaToppings[] AcmePizza.PizzaOrder::get_Toppings()
+    .set instance void AcmePizza.PizzaOrder::set_Toppings(valuetype AcmePizza.PizzaToppings[])
+  } // end of property PizzaOrder::Toppings
+} // end of class AcmePizza.PizzaOrder
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

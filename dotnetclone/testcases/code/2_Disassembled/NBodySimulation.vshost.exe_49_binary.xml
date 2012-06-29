@@ -1,0 +1,30 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\Properties\Resources.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NBodySimulation\NBodySimulation\Properties\Resources.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       37 (0x25)
+    .maxstack  8
+    IL_0000:  call       class [mscorlib_2]System.Threading.EventWaitHandle [Microsoft.VisualStudio.HostingProcess.Utilities.Sync]Microsoft.VisualStudio.HostingProcess.Synchronize::get_HostingProcessInitialized()
+    IL_0005:  brfalse.s  IL_0024
+
+    IL_0007:  call       class [mscorlib_2]System.Threading.EventWaitHandle [Microsoft.VisualStudio.HostingProcess.Utilities.Sync]Microsoft.VisualStudio.HostingProcess.Synchronize::get_HostingProcessInitialized()
+    IL_000c:  callvirt   instance bool [mscorlib]System.Threading.EventWaitHandle::Set()
+    IL_0011:  pop
+    IL_0012:  call       class [mscorlib_2]System.Threading.ManualResetEvent [Microsoft.VisualStudio.HostingProcess.Utilities.Sync]Microsoft.VisualStudio.HostingProcess.Synchronize::get_StartRunningUsersAssembly()
+    IL_0017:  brfalse.s  IL_0024
+
+    IL_0019:  call       class [mscorlib_2]System.Threading.ManualResetEvent [Microsoft.VisualStudio.HostingProcess.Utilities.Sync]Microsoft.VisualStudio.HostingProcess.Synchronize::get_StartRunningUsersAssembly()
+    IL_001e:  callvirt   instance bool [mscorlib]System.Threading.WaitHandle::WaitOne()
+    IL_0023:  pop
+    IL_0024:  ret
+]]></source>
+</source_elements></project>

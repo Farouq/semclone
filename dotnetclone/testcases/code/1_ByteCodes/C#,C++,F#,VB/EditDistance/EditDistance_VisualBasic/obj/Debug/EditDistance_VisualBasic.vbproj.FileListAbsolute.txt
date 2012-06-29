@@ -1,0 +1,8 @@
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_VisualBasic\bin\Debug\EditDistance.exe.config
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_VisualBasic\bin\Debug\EditDistance.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_VisualBasic\bin\Debug\EditDistance.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_VisualBasic\bin\Debug\ParallelExtensionsExtras.dll
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_VisualBasic\bin\Debug\ParallelExtensionsExtras.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_VisualBasic\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_VisualBasic\obj\Debug\EditDistance.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_VisualBasic\obj\Debug\EditDistance.pdb

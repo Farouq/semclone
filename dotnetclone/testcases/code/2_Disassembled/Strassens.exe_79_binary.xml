@@ -1,0 +1,3515 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\MainForm.cs" startline="25" endline="31"><![CDATA[
+  {
+    // Code size       39 (0x27)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.r8     0.0
+    IL_000a:  stfld      float64 Strassens.MainForm::_max
+    IL_000f:  ldarg.0
+    IL_0010:  ldnull
+    IL_0011:  stfld      class [System]System.ComponentModel.IContainer Strassens.MainForm::components
+    IL_0016:  ldarg.0
+    IL_0017:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::.ctor()
+    IL_001c:  nop
+    IL_001d:  nop
+    IL_001e:  ldarg.0
+    IL_001f:  call       instance void Strassens.MainForm::InitializeComponent()
+    IL_0024:  nop
+    IL_0025:  nop
+    IL_0026:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\MainForm.cs" startline="32" endline="37"><![CDATA[
+  {
+    // Code size       20 (0x14)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       class [mscorlib]System.Threading.Tasks.TaskScheduler [mscorlib]System.Threading.Tasks.TaskScheduler::FromCurrentSynchronizationContext()
+    IL_0007:  stfld      class [mscorlib]System.Threading.Tasks.TaskScheduler Strassens.MainForm::_uiScheduler
+    IL_000c:  ldarg.0
+    IL_000d:  call       instance void Strassens.MainForm::SetupPoints()
+    IL_0012:  nop
+    IL_0013:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\MainForm.cs" startline="38" endline="49"><![CDATA[
+  {
+    // Code size       450 (0x1c2)
+    .maxstack  7
+    .locals init ([0] object[] CS$0$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.0
+    IL_0003:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_0008:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_000d:  ldc.i4.0
+    IL_000e:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::get_Item(int32)
+    IL_0013:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::get_Points()
+    IL_0018:  ldarg.0
+    IL_0019:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_001e:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_0023:  ldc.i4.0
+    IL_0024:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::get_Item(int32)
+    IL_0029:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::get_Points()
+    IL_002e:  ldstr      "Naive"
+    IL_0033:  ldc.i4.1
+    IL_0034:  newarr     [mscorlib]System.Object
+    IL_0039:  stloc.0
+    IL_003a:  ldloc.0
+    IL_003b:  ldc.i4.0
+    IL_003c:  ldc.r8     0.0
+    IL_0045:  box        [mscorlib]System.Double
+    IL_004a:  stelem.ref
+    IL_004b:  ldloc.0
+    IL_004c:  callvirt   instance int32 [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection::AddXY(object,
+                                                                                                                                                           object[])
+    IL_0051:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint>::get_Item(int32)
+    IL_0056:  stfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint Strassens.MainForm::_naive
+    IL_005b:  ldarg.0
+    IL_005c:  ldarg.0
+    IL_005d:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_0062:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_0067:  ldc.i4.0
+    IL_0068:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::get_Item(int32)
+    IL_006d:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::get_Points()
+    IL_0072:  ldarg.0
+    IL_0073:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_0078:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_007d:  ldc.i4.0
+    IL_007e:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::get_Item(int32)
+    IL_0083:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::get_Points()
+    IL_0088:  ldstr      "Naive Parallel"
+    IL_008d:  ldc.i4.1
+    IL_008e:  newarr     [mscorlib]System.Object
+    IL_0093:  stloc.0
+    IL_0094:  ldloc.0
+    IL_0095:  ldc.i4.0
+    IL_0096:  ldc.r8     0.0
+    IL_009f:  box        [mscorlib]System.Double
+    IL_00a4:  stelem.ref
+    IL_00a5:  ldloc.0
+    IL_00a6:  callvirt   instance int32 [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection::AddXY(object,
+                                                                                                                                                           object[])
+    IL_00ab:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint>::get_Item(int32)
+    IL_00b0:  stfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint Strassens.MainForm::_naiveParallel
+    IL_00b5:  ldarg.0
+    IL_00b6:  ldarg.0
+    IL_00b7:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_00bc:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_00c1:  ldc.i4.0
+    IL_00c2:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::get_Item(int32)
+    IL_00c7:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::get_Points()
+    IL_00cc:  ldarg.0
+    IL_00cd:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_00d2:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_00d7:  ldc.i4.0
+    IL_00d8:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::get_Item(int32)
+    IL_00dd:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::get_Points()
+    IL_00e2:  ldstr      "Strassen's"
+    IL_00e7:  ldc.i4.1
+    IL_00e8:  newarr     [mscorlib]System.Object
+    IL_00ed:  stloc.0
+    IL_00ee:  ldloc.0
+    IL_00ef:  ldc.i4.0
+    IL_00f0:  ldc.r8     0.0
+    IL_00f9:  box        [mscorlib]System.Double
+    IL_00fe:  stelem.ref
+    IL_00ff:  ldloc.0
+    IL_0100:  callvirt   instance int32 [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection::AddXY(object,
+                                                                                                                                                           object[])
+    IL_0105:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint>::get_Item(int32)
+    IL_010a:  stfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint Strassens.MainForm::_strassens
+    IL_010f:  ldarg.0
+    IL_0110:  ldarg.0
+    IL_0111:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_0116:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_011b:  ldc.i4.0
+    IL_011c:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::get_Item(int32)
+    IL_0121:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::get_Points()
+    IL_0126:  ldarg.0
+    IL_0127:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_012c:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_0131:  ldc.i4.0
+    IL_0132:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::get_Item(int32)
+    IL_0137:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::get_Points()
+    IL_013c:  ldstr      "Strassen's Parallel"
+    IL_0141:  ldc.i4.1
+    IL_0142:  newarr     [mscorlib]System.Object
+    IL_0147:  stloc.0
+    IL_0148:  ldloc.0
+    IL_0149:  ldc.i4.0
+    IL_014a:  ldc.r8     0.0
+    IL_0153:  box        [mscorlib]System.Double
+    IL_0158:  stelem.ref
+    IL_0159:  ldloc.0
+    IL_015a:  callvirt   instance int32 [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection::AddXY(object,
+                                                                                                                                                           object[])
+    IL_015f:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint>::get_Item(int32)
+    IL_0164:  stfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint Strassens.MainForm::_strassensParallel
+    IL_0169:  ldarg.0
+    IL_016a:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_016f:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartAreaCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_ChartAreas()
+    IL_0174:  ldc.i4.0
+    IL_0175:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea>::get_Item(int32)
+    IL_017a:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisY()
+    IL_017f:  ldc.r8     0.0
+    IL_0188:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::set_Minimum(float64)
+    IL_018d:  nop
+    IL_018e:  ldarg.0
+    IL_018f:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_0194:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartAreaCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_ChartAreas()
+    IL_0199:  ldc.i4.0
+    IL_019a:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea>::get_Item(int32)
+    IL_019f:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisY()
+    IL_01a4:  ldc.r8     10.
+    IL_01ad:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::set_Maximum(float64)
+    IL_01b2:  nop
+    IL_01b3:  ldarg.0
+    IL_01b4:  call       instance void Strassens.MainForm::ClearPointValues()
+    IL_01b9:  nop
+    IL_01ba:  ldarg.0
+    IL_01bb:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::Invalidate()
+    IL_01c0:  nop
+    IL_01c1:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\MainForm.cs" startline="50" endline="61"><![CDATA[
+  {
+    // Code size       156 (0x9c)
+    .maxstack  4
+    .locals init ([0] class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint point,
+             [1] class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint[] CS$0$0000,
+             [2] class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint[] CS$6$0001,
+             [3] int32 CS$7$0002,
+             [4] object[] CS$0$0003,
+             [5] bool CS$4$0004)
+    IL_0000:  nop
+    IL_0001:  nop
+    IL_0002:  ldc.i4.4
+    IL_0003:  newarr     [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint
+    IL_0008:  stloc.1
+    IL_0009:  ldloc.1
+    IL_000a:  ldc.i4.0
+    IL_000b:  ldarg.0
+    IL_000c:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint Strassens.MainForm::_naive
+    IL_0011:  stelem.ref
+    IL_0012:  ldloc.1
+    IL_0013:  ldc.i4.1
+    IL_0014:  ldarg.0
+    IL_0015:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint Strassens.MainForm::_naiveParallel
+    IL_001a:  stelem.ref
+    IL_001b:  ldloc.1
+    IL_001c:  ldc.i4.2
+    IL_001d:  ldarg.0
+    IL_001e:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint Strassens.MainForm::_strassens
+    IL_0023:  stelem.ref
+    IL_0024:  ldloc.1
+    IL_0025:  ldc.i4.3
+    IL_0026:  ldarg.0
+    IL_0027:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint Strassens.MainForm::_strassensParallel
+    IL_002c:  stelem.ref
+    IL_002d:  ldloc.1
+    IL_002e:  stloc.2
+    IL_002f:  ldc.i4.0
+    IL_0030:  stloc.3
+    IL_0031:  br.s       IL_0083
+
+    IL_0033:  ldloc.2
+    IL_0034:  ldloc.3
+    IL_0035:  ldelem.ref
+    IL_0036:  stloc.0
+    IL_0037:  nop
+    IL_0038:  ldloc.0
+    IL_0039:  ldc.i4.1
+    IL_003a:  newarr     [mscorlib]System.Object
+    IL_003f:  stloc.s    CS$0$0003
+    IL_0041:  ldloc.s    CS$0$0003
+    IL_0043:  ldc.i4.0
+    IL_0044:  ldc.i4.0
+    IL_0045:  box        [mscorlib]System.Int32
+    IL_004a:  stelem.ref
+    IL_004b:  ldloc.s    CS$0$0003
+    IL_004d:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint::SetValueY(object[])
+    IL_0052:  nop
+    IL_0053:  ldloc.0
+    IL_0054:  ldstr      ""
+    IL_0059:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_ToolTip(string)
+    IL_005e:  nop
+    IL_005f:  ldloc.0
+    IL_0060:  ldstr      ""
+    IL_0065:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_Label(string)
+    IL_006a:  nop
+    IL_006b:  ldloc.0
+    IL_006c:  ldloc.0
+    IL_006d:  callvirt   instance class [System.Drawing]System.Drawing.Font [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::get_Font()
+    IL_0072:  ldc.i4.1
+    IL_0073:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(class [System.Drawing]System.Drawing.Font,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle)
+    IL_0078:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_007d:  nop
+    IL_007e:  nop
+    IL_007f:  ldloc.3
+    IL_0080:  ldc.i4.1
+    IL_0081:  add
+    IL_0082:  stloc.3
+    IL_0083:  ldloc.3
+    IL_0084:  ldloc.2
+    IL_0085:  ldlen
+    IL_0086:  conv.i4
+    IL_0087:  clt
+    IL_0089:  stloc.s    CS$4$0004
+    IL_008b:  ldloc.s    CS$4$0004
+    IL_008d:  brtrue.s   IL_0033
+
+    IL_008f:  ldarg.0
+    IL_0090:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_0095:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::Invalidate()
+    IL_009a:  nop
+    IL_009b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\MainForm.cs" startline="62" endline="107"><![CDATA[
+  {
+    // Code size       230 (0xe6)
+    .maxstack  4
+    .locals init ([0] class Strassens.MainForm/'<>c__DisplayClass7' 'CS$<>8__locals8',
+             [1] class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task> 'CS$<>9__CachedAnonymousMethodDelegate6',
+             [2] bool CS$4$0000)
+    IL_0000:  ldnull
+    IL_0001:  stloc.1
+    IL_0002:  nop
+    IL_0003:  ldarg.0
+    IL_0004:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource Strassens.MainForm::_cancellation
+    IL_0009:  ldnull
+    IL_000a:  ceq
+    IL_000c:  ldc.i4.0
+    IL_000d:  ceq
+    IL_000f:  stloc.2
+    IL_0010:  ldloc.2
+    IL_0011:  brtrue     IL_00d8
+
+    IL_0016:  newobj     instance void Strassens.MainForm/'<>c__DisplayClass7'::.ctor()
+    IL_001b:  stloc.0
+    IL_001c:  ldloc.0
+    IL_001d:  ldarg.0
+    IL_001e:  stfld      class Strassens.MainForm Strassens.MainForm/'<>c__DisplayClass7'::'<>4__this'
+    IL_0023:  nop
+    IL_0024:  ldarg.0
+    IL_0025:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button Strassens.MainForm::btnCompute
+    IL_002a:  ldstr      "Cancel"
+    IL_002f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_0034:  nop
+    IL_0035:  ldloc.0
+    IL_0036:  ldc.i4.0
+    IL_0037:  stfld      int32 Strassens.MainForm/'<>c__DisplayClass7'::matrixSize
+    IL_003c:  ldarg.0
+    IL_003d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox Strassens.MainForm::cbMatrixSize
+    IL_0042:  callvirt   instance string [System.Windows.Forms]System.Windows.Forms.Control::get_Text()
+    IL_0047:  ldloc.0
+    IL_0048:  ldflda     int32 Strassens.MainForm/'<>c__DisplayClass7'::matrixSize
+    IL_004d:  call       bool [mscorlib]System.Int32::TryParse(string,
+                                                               int32&)
+    IL_0052:  stloc.2
+    IL_0053:  ldloc.2
+    IL_0054:  brtrue.s   IL_005b
+
+    IL_0056:  br         IL_00e5
+
+    IL_005b:  ldarg.0
+    IL_005c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar Strassens.MainForm::progressBar1
+    IL_0061:  ldc.i4.1
+    IL_0062:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Visible(bool)
+    IL_0067:  nop
+    IL_0068:  ldarg.0
+    IL_0069:  call       instance void Strassens.MainForm::ClearPointValues()
+    IL_006e:  nop
+    IL_006f:  ldarg.0
+    IL_0070:  ldc.r8     0.0
+    IL_0079:  stfld      float64 Strassens.MainForm::_max
+    IL_007e:  ldarg.0
+    IL_007f:  newobj     instance void [mscorlib]System.Threading.CancellationTokenSource::.ctor()
+    IL_0084:  stfld      class [mscorlib]System.Threading.CancellationTokenSource Strassens.MainForm::_cancellation
+    IL_0089:  ldloc.0
+    IL_008a:  ldarg.0
+    IL_008b:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource Strassens.MainForm::_cancellation
+    IL_0090:  callvirt   instance valuetype [mscorlib]System.Threading.CancellationToken [mscorlib]System.Threading.CancellationTokenSource::get_Token()
+    IL_0095:  stfld      valuetype [mscorlib]System.Threading.CancellationToken Strassens.MainForm/'<>c__DisplayClass7'::token
+    IL_009a:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_009f:  ldloc.0
+    IL_00a0:  ldftn      instance void Strassens.MainForm/'<>c__DisplayClass7'::'<btnCompute_Click>b__1'()
+    IL_00a6:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_00ab:  ldloc.0
+    IL_00ac:  ldfld      valuetype [mscorlib]System.Threading.CancellationToken Strassens.MainForm/'<>c__DisplayClass7'::token
+    IL_00b1:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.CancellationToken)
+    IL_00b6:  ldloc.1
+    IL_00b7:  brtrue.s   IL_00c8
+
+    IL_00b9:  ldarg.0
+    IL_00ba:  ldftn      instance void Strassens.MainForm::'<btnCompute_Click>b__0'(class [mscorlib]System.Threading.Tasks.Task)
+    IL_00c0:  newobj     instance void class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task>::.ctor(object,
+                                                                                                                           native int)
+    IL_00c5:  stloc.1
+    IL_00c6:  br.s       IL_00c8
+
+    IL_00c8:  ldloc.1
+    IL_00c9:  ldarg.0
+    IL_00ca:  ldfld      class [mscorlib]System.Threading.Tasks.TaskScheduler Strassens.MainForm::_uiScheduler
+    IL_00cf:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.Task::ContinueWith(class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task>,
+                                                                                                                                  class [mscorlib]System.Threading.Tasks.TaskScheduler)
+    IL_00d4:  pop
+    IL_00d5:  nop
+    IL_00d6:  br.s       IL_00e4
+
+    IL_00d8:  ldarg.0
+    IL_00d9:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource Strassens.MainForm::_cancellation
+    IL_00de:  callvirt   instance void [mscorlib]System.Threading.CancellationTokenSource::Cancel()
+    IL_00e3:  nop
+    IL_00e4:  nop
+    IL_00e5:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\MainForm.cs" startline="108" endline="123"><![CDATA[
+  {
+    // Code size       65 (0x41)
+    .maxstack  5
+    .locals init ([0] class Strassens.MainForm/'<>c__DisplayClass14' 'CS$<>8__locals15')
+    IL_0000:  newobj     instance void Strassens.MainForm/'<>c__DisplayClass14'::.ctor()
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldarg.1
+    IL_0008:  stfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint Strassens.MainForm/'<>c__DisplayClass14'::point
+    IL_000d:  ldloc.0
+    IL_000e:  ldarg.2
+    IL_000f:  stfld      float64 Strassens.MainForm/'<>c__DisplayClass14'::seconds
+    IL_0014:  ldloc.0
+    IL_0015:  ldarg.0
+    IL_0016:  stfld      class Strassens.MainForm Strassens.MainForm/'<>c__DisplayClass14'::'<>4__this'
+    IL_001b:  nop
+    IL_001c:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_0021:  ldloc.0
+    IL_0022:  ldftn      instance void Strassens.MainForm/'<>c__DisplayClass14'::'<SetPoint>b__13'()
+    IL_0028:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_002d:  call       valuetype [mscorlib]System.Threading.CancellationToken [mscorlib]System.Threading.CancellationToken::get_None()
+    IL_0032:  ldc.i4.0
+    IL_0033:  ldarg.0
+    IL_0034:  ldfld      class [mscorlib]System.Threading.Tasks.TaskScheduler Strassens.MainForm::_uiScheduler
+    IL_0039:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.CancellationToken,
+                                                                                                                                     valuetype [mscorlib]System.Threading.Tasks.TaskCreationOptions,
+                                                                                                                                     class [mscorlib]System.Threading.Tasks.TaskScheduler)
+    IL_003e:  pop
+    IL_003f:  nop
+    IL_0040:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\MainForm.cs" startline="124" endline="130"><![CDATA[
+  {
+    // Code size       25 (0x19)
+    .maxstack  1
+    .locals init ([0] class [System]System.Diagnostics.Stopwatch sw,
+             [1] valuetype [mscorlib]System.TimeSpan CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  call       class [System]System.Diagnostics.Stopwatch [System]System.Diagnostics.Stopwatch::StartNew()
+    IL_0006:  stloc.0
+    IL_0007:  ldarg.0
+    IL_0008:  callvirt   instance void [mscorlib]System.Action::Invoke()
+    IL_000d:  nop
+    IL_000e:  ldloc.0
+    IL_000f:  callvirt   instance valuetype [mscorlib]System.TimeSpan [System]System.Diagnostics.Stopwatch::get_Elapsed()
+    IL_0014:  stloc.1
+    IL_0015:  br.s       IL_0017
+
+    IL_0017:  ldloc.1
+    IL_0018:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\MainForm.Designer.cs" startline="15" endline="21"><![CDATA[
+  {
+    // Code size       43 (0x2b)
+    .maxstack  2
+    .locals init ([0] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  brfalse.s  IL_000f
+
+    IL_0004:  ldarg.0
+    IL_0005:  ldfld      class [System]System.ComponentModel.IContainer Strassens.MainForm::components
+    IL_000a:  ldnull
+    IL_000b:  ceq
+    IL_000d:  br.s       IL_0010
+
+    IL_000f:  ldc.i4.1
+    IL_0010:  stloc.0
+    IL_0011:  ldloc.0
+    IL_0012:  brtrue.s   IL_0022
+
+    IL_0014:  nop
+    IL_0015:  ldarg.0
+    IL_0016:  ldfld      class [System]System.ComponentModel.IContainer Strassens.MainForm::components
+    IL_001b:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+    IL_0020:  nop
+    IL_0021:  nop
+    IL_0022:  ldarg.0
+    IL_0023:  ldarg.1
+    IL_0024:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::Dispose(bool)
+    IL_0029:  nop
+    IL_002a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\MainForm.Designer.cs" startline="22" endline="137"><![CDATA[
+  {
+    // Code size       1339 (0x53b)
+    .maxstack  7
+    .locals init ([0] class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2,
+             [1] class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series series2,
+             [2] object[] CS$0$0000)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  newobj     instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::.ctor()
+    IL_000c:  stloc.1
+    IL_000d:  ldarg.0
+    IL_000e:  newobj     instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::.ctor()
+    IL_0013:  stfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_0018:  ldarg.0
+    IL_0019:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::.ctor()
+    IL_001e:  stfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox Strassens.MainForm::cbMatrixSize
+    IL_0023:  ldarg.0
+    IL_0024:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Button::.ctor()
+    IL_0029:  stfld      class [System.Windows.Forms]System.Windows.Forms.Button Strassens.MainForm::btnCompute
+    IL_002e:  ldarg.0
+    IL_002f:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.ProgressBar::.ctor()
+    IL_0034:  stfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar Strassens.MainForm::progressBar1
+    IL_0039:  ldarg.0
+    IL_003a:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_003f:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::BeginInit()
+    IL_0044:  nop
+    IL_0045:  ldarg.0
+    IL_0046:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::SuspendLayout()
+    IL_004b:  nop
+    IL_004c:  ldarg.0
+    IL_004d:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_0052:  ldc.i4.s   15
+    IL_0054:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_0059:  nop
+    IL_005a:  ldarg.0
+    IL_005b:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_0060:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_WhiteSmoke()
+    IL_0065:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_BackColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_006a:  nop
+    IL_006b:  ldarg.0
+    IL_006c:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_0071:  ldc.i4.6
+    IL_0072:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::set_BackGradientStyle(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.GradientStyle)
+    IL_0077:  nop
+    IL_0078:  ldloc.0
+    IL_0079:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisX()
+    IL_007e:  ldc.i4.0
+    IL_007f:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::set_IsLabelAutoFit(bool)
+    IL_0084:  nop
+    IL_0085:  ldloc.0
+    IL_0086:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisX()
+    IL_008b:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::get_LabelStyle()
+    IL_0090:  ldstr      "Microsoft Sans Serif"
+    IL_0095:  ldc.r4     12.
+    IL_009a:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32)
+    IL_009f:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_00a4:  nop
+    IL_00a5:  ldloc.0
+    IL_00a6:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisY()
+    IL_00ab:  ldc.i4.0
+    IL_00ac:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::set_IsLabelAutoFit(bool)
+    IL_00b1:  nop
+    IL_00b2:  ldloc.0
+    IL_00b3:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisY()
+    IL_00b8:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::get_LabelStyle()
+    IL_00bd:  ldstr      "Microsoft Sans Serif"
+    IL_00c2:  ldc.r4     12.
+    IL_00c7:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32)
+    IL_00cc:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_00d1:  nop
+    IL_00d2:  ldloc.0
+    IL_00d3:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisY()
+    IL_00d8:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::get_LabelStyle()
+    IL_00dd:  ldstr      "F2"
+    IL_00e2:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle::set_Format(string)
+    IL_00e7:  nop
+    IL_00e8:  ldloc.0
+    IL_00e9:  ldc.i4     0xff
+    IL_00ee:  ldc.i4     0xff
+    IL_00f3:  ldc.i4     0xc0
+    IL_00f8:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::FromArgb(int32,
+                                                                                                                       int32,
+                                                                                                                       int32)
+    IL_00fd:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::set_BackColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_0102:  nop
+    IL_0103:  ldloc.0
+    IL_0104:  ldc.i4.4
+    IL_0105:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::set_BackGradientStyle(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.GradientStyle)
+    IL_010a:  nop
+    IL_010b:  ldloc.0
+    IL_010c:  ldc.i4     0xff
+    IL_0111:  ldc.i4     0xe0
+    IL_0116:  ldc.i4     0xc0
+    IL_011b:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::FromArgb(int32,
+                                                                                                                       int32,
+                                                                                                                       int32)
+    IL_0120:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::set_BackSecondaryColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_0125:  nop
+    IL_0126:  ldloc.0
+    IL_0127:  ldstr      "ChartArea1"
+    IL_012c:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartNamedElement::set_Name(string)
+    IL_0131:  nop
+    IL_0132:  ldarg.0
+    IL_0133:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_0138:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartAreaCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_ChartAreas()
+    IL_013d:  ldloc.0
+    IL_013e:  callvirt   instance void class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea>::Add(!0)
+    IL_0143:  nop
+    IL_0144:  ldarg.0
+    IL_0145:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_014a:  ldc.i4.s   18
+    IL_014c:  ldc.i4.s   65
+    IL_014e:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0153:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0158:  nop
+    IL_0159:  ldarg.0
+    IL_015a:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_015f:  ldc.i4.4
+    IL_0160:  ldc.i4.5
+    IL_0161:  ldc.i4.4
+    IL_0162:  ldc.i4.5
+    IL_0163:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Padding::.ctor(int32,
+                                                                                                 int32,
+                                                                                                 int32,
+                                                                                                 int32)
+    IL_0168:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Margin(valuetype [System.Windows.Forms]System.Windows.Forms.Padding)
+    IL_016d:  nop
+    IL_016e:  ldarg.0
+    IL_016f:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_0174:  ldstr      "chart1"
+    IL_0179:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_017e:  nop
+    IL_017f:  ldarg.0
+    IL_0180:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_0185:  ldc.i4.0
+    IL_0186:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::set_Palette(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartColorPalette)
+    IL_018b:  nop
+    IL_018c:  ldloc.1
+    IL_018d:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_MintCream()
+    IL_0192:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_BackSecondaryColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_0197:  nop
+    IL_0198:  ldloc.1
+    IL_0199:  ldstr      "ChartArea1"
+    IL_019e:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::set_ChartArea(string)
+    IL_01a3:  nop
+    IL_01a4:  ldloc.1
+    IL_01a5:  ldstr      "DrawingStyle=Cylinder, LabelStyle=Top"
+    IL_01aa:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_CustomProperties(string)
+    IL_01af:  nop
+    IL_01b0:  ldloc.1
+    IL_01b1:  ldstr      "Microsoft Sans Serif"
+    IL_01b6:  ldc.r4     12.
+    IL_01bb:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32)
+    IL_01c0:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_01c5:  nop
+    IL_01c6:  ldloc.1
+    IL_01c7:  ldstr      "chartSeries1"
+    IL_01cc:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartNamedElement::set_Name(string)
+    IL_01d1:  nop
+    IL_01d2:  ldloc.1
+    IL_01d3:  ldc.i4.7
+    IL_01d4:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::set_XValueType(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartValueType)
+    IL_01d9:  nop
+    IL_01da:  ldloc.1
+    IL_01db:  ldc.i4.1
+    IL_01dc:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::set_YValueType(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartValueType)
+    IL_01e1:  nop
+    IL_01e2:  ldarg.0
+    IL_01e3:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_01e8:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_01ed:  ldloc.1
+    IL_01ee:  callvirt   instance void class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::Add(!0)
+    IL_01f3:  nop
+    IL_01f4:  ldarg.0
+    IL_01f5:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_01fa:  ldc.i4     0x34c
+    IL_01ff:  ldc.i4     0x205
+    IL_0204:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0209:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_020e:  nop
+    IL_020f:  ldarg.0
+    IL_0210:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_0215:  ldc.i4.0
+    IL_0216:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_021b:  nop
+    IL_021c:  ldarg.0
+    IL_021d:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_0222:  ldc.i4.2
+    IL_0223:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::set_TextAntiAliasingQuality(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality)
+    IL_0228:  nop
+    IL_0229:  ldarg.0
+    IL_022a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox Strassens.MainForm::cbMatrixSize
+    IL_022f:  ldc.i4.3
+    IL_0230:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::set_AutoCompleteMode(valuetype [System.Windows.Forms]System.Windows.Forms.AutoCompleteMode)
+    IL_0235:  nop
+    IL_0236:  ldarg.0
+    IL_0237:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox Strassens.MainForm::cbMatrixSize
+    IL_023c:  ldc.i4     0x100
+    IL_0241:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::set_AutoCompleteSource(valuetype [System.Windows.Forms]System.Windows.Forms.AutoCompleteSource)
+    IL_0246:  nop
+    IL_0247:  ldarg.0
+    IL_0248:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox Strassens.MainForm::cbMatrixSize
+    IL_024d:  ldc.i4.1
+    IL_024e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListControl::set_FormattingEnabled(bool)
+    IL_0253:  nop
+    IL_0254:  ldarg.0
+    IL_0255:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox Strassens.MainForm::cbMatrixSize
+    IL_025a:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox/ObjectCollection [System.Windows.Forms]System.Windows.Forms.ComboBox::get_Items()
+    IL_025f:  ldc.i4.s   10
+    IL_0261:  newarr     [mscorlib]System.Object
+    IL_0266:  stloc.2
+    IL_0267:  ldloc.2
+    IL_0268:  ldc.i4.0
+    IL_0269:  ldstr      "16"
+    IL_026e:  stelem.ref
+    IL_026f:  ldloc.2
+    IL_0270:  ldc.i4.1
+    IL_0271:  ldstr      "32"
+    IL_0276:  stelem.ref
+    IL_0277:  ldloc.2
+    IL_0278:  ldc.i4.2
+    IL_0279:  ldstr      "64"
+    IL_027e:  stelem.ref
+    IL_027f:  ldloc.2
+    IL_0280:  ldc.i4.3
+    IL_0281:  ldstr      "128"
+    IL_0286:  stelem.ref
+    IL_0287:  ldloc.2
+    IL_0288:  ldc.i4.4
+    IL_0289:  ldstr      "256"
+    IL_028e:  stelem.ref
+    IL_028f:  ldloc.2
+    IL_0290:  ldc.i4.5
+    IL_0291:  ldstr      "512"
+    IL_0296:  stelem.ref
+    IL_0297:  ldloc.2
+    IL_0298:  ldc.i4.6
+    IL_0299:  ldstr      "1024"
+    IL_029e:  stelem.ref
+    IL_029f:  ldloc.2
+    IL_02a0:  ldc.i4.7
+    IL_02a1:  ldstr      "2048"
+    IL_02a6:  stelem.ref
+    IL_02a7:  ldloc.2
+    IL_02a8:  ldc.i4.8
+    IL_02a9:  ldstr      "4096"
+    IL_02ae:  stelem.ref
+    IL_02af:  ldloc.2
+    IL_02b0:  ldc.i4.s   9
+    IL_02b2:  ldstr      "8192"
+    IL_02b7:  stelem.ref
+    IL_02b8:  ldloc.2
+    IL_02b9:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox/ObjectCollection::AddRange(object[])
+    IL_02be:  nop
+    IL_02bf:  ldarg.0
+    IL_02c0:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox Strassens.MainForm::cbMatrixSize
+    IL_02c5:  ldc.i4.s   20
+    IL_02c7:  ldc.i4.s   20
+    IL_02c9:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_02ce:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_02d3:  nop
+    IL_02d4:  ldarg.0
+    IL_02d5:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox Strassens.MainForm::cbMatrixSize
+    IL_02da:  ldc.i4.4
+    IL_02db:  ldc.i4.5
+    IL_02dc:  ldc.i4.4
+    IL_02dd:  ldc.i4.5
+    IL_02de:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Padding::.ctor(int32,
+                                                                                                 int32,
+                                                                                                 int32,
+                                                                                                 int32)
+    IL_02e3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Margin(valuetype [System.Windows.Forms]System.Windows.Forms.Padding)
+    IL_02e8:  nop
+    IL_02e9:  ldarg.0
+    IL_02ea:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox Strassens.MainForm::cbMatrixSize
+    IL_02ef:  ldstr      "cbMatrixSize"
+    IL_02f4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_02f9:  nop
+    IL_02fa:  ldarg.0
+    IL_02fb:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox Strassens.MainForm::cbMatrixSize
+    IL_0300:  ldc.i4.s   121
+    IL_0302:  ldc.i4.s   28
+    IL_0304:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0309:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_030e:  nop
+    IL_030f:  ldarg.0
+    IL_0310:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox Strassens.MainForm::cbMatrixSize
+    IL_0315:  ldc.i4.1
+    IL_0316:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_031b:  nop
+    IL_031c:  ldarg.0
+    IL_031d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox Strassens.MainForm::cbMatrixSize
+    IL_0322:  ldstr      "512"
+    IL_0327:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_032c:  nop
+    IL_032d:  ldarg.0
+    IL_032e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button Strassens.MainForm::btnCompute
+    IL_0333:  ldc.i4     0x98
+    IL_0338:  ldc.i4.s   20
+    IL_033a:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_033f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0344:  nop
+    IL_0345:  ldarg.0
+    IL_0346:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button Strassens.MainForm::btnCompute
+    IL_034b:  ldc.i4.4
+    IL_034c:  ldc.i4.5
+    IL_034d:  ldc.i4.4
+    IL_034e:  ldc.i4.5
+    IL_034f:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Padding::.ctor(int32,
+                                                                                                 int32,
+                                                                                                 int32,
+                                                                                                 int32)
+    IL_0354:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Margin(valuetype [System.Windows.Forms]System.Windows.Forms.Padding)
+    IL_0359:  nop
+    IL_035a:  ldarg.0
+    IL_035b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button Strassens.MainForm::btnCompute
+    IL_0360:  ldstr      "btnCompute"
+    IL_0365:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_036a:  nop
+    IL_036b:  ldarg.0
+    IL_036c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button Strassens.MainForm::btnCompute
+    IL_0371:  ldc.i4.s   112
+    IL_0373:  ldc.i4.s   35
+    IL_0375:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_037a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_037f:  nop
+    IL_0380:  ldarg.0
+    IL_0381:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button Strassens.MainForm::btnCompute
+    IL_0386:  ldc.i4.2
+    IL_0387:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_038c:  nop
+    IL_038d:  ldarg.0
+    IL_038e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button Strassens.MainForm::btnCompute
+    IL_0393:  ldstr      "Compute"
+    IL_0398:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_039d:  nop
+    IL_039e:  ldarg.0
+    IL_039f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button Strassens.MainForm::btnCompute
+    IL_03a4:  ldc.i4.1
+    IL_03a5:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_UseVisualStyleBackColor(bool)
+    IL_03aa:  nop
+    IL_03ab:  ldarg.0
+    IL_03ac:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button Strassens.MainForm::btnCompute
+    IL_03b1:  ldarg.0
+    IL_03b2:  ldftn      instance void Strassens.MainForm::btnCompute_Click(object,
+                                                                            class [mscorlib]System.EventArgs)
+    IL_03b8:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_03bd:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::add_Click(class [mscorlib]System.EventHandler)
+    IL_03c2:  nop
+    IL_03c3:  ldarg.0
+    IL_03c4:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar Strassens.MainForm::progressBar1
+    IL_03c9:  ldc.i4.s   13
+    IL_03cb:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_03d0:  nop
+    IL_03d1:  ldarg.0
+    IL_03d2:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar Strassens.MainForm::progressBar1
+    IL_03d7:  ldc.i4     0x112
+    IL_03dc:  ldc.i4.s   20
+    IL_03de:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_03e3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_03e8:  nop
+    IL_03e9:  ldarg.0
+    IL_03ea:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar Strassens.MainForm::progressBar1
+    IL_03ef:  ldc.i4.4
+    IL_03f0:  ldc.i4.5
+    IL_03f1:  ldc.i4.4
+    IL_03f2:  ldc.i4.5
+    IL_03f3:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Padding::.ctor(int32,
+                                                                                                 int32,
+                                                                                                 int32,
+                                                                                                 int32)
+    IL_03f8:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Margin(valuetype [System.Windows.Forms]System.Windows.Forms.Padding)
+    IL_03fd:  nop
+    IL_03fe:  ldarg.0
+    IL_03ff:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar Strassens.MainForm::progressBar1
+    IL_0404:  ldstr      "progressBar1"
+    IL_0409:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_040e:  nop
+    IL_040f:  ldarg.0
+    IL_0410:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar Strassens.MainForm::progressBar1
+    IL_0415:  ldc.i4     0x24c
+    IL_041a:  ldc.i4.s   35
+    IL_041c:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0421:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0426:  nop
+    IL_0427:  ldarg.0
+    IL_0428:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar Strassens.MainForm::progressBar1
+    IL_042d:  ldc.i4.2
+    IL_042e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ProgressBar::set_Style(valuetype [System.Windows.Forms]System.Windows.Forms.ProgressBarStyle)
+    IL_0433:  nop
+    IL_0434:  ldarg.0
+    IL_0435:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar Strassens.MainForm::progressBar1
+    IL_043a:  ldc.i4.3
+    IL_043b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0440:  nop
+    IL_0441:  ldarg.0
+    IL_0442:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar Strassens.MainForm::progressBar1
+    IL_0447:  ldc.i4.0
+    IL_0448:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Visible(bool)
+    IL_044d:  nop
+    IL_044e:  ldarg.0
+    IL_044f:  ldc.r4     9.
+    IL_0454:  ldc.r4     20.
+    IL_0459:  newobj     instance void [System.Drawing]System.Drawing.SizeF::.ctor(float32,
+                                                                                   float32)
+    IL_045e:  call       instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::set_AutoScaleDimensions(valuetype [System.Drawing]System.Drawing.SizeF)
+    IL_0463:  nop
+    IL_0464:  ldarg.0
+    IL_0465:  ldc.i4.1
+    IL_0466:  call       instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::set_AutoScaleMode(valuetype [System.Windows.Forms]System.Windows.Forms.AutoScaleMode)
+    IL_046b:  nop
+    IL_046c:  ldarg.0
+    IL_046d:  ldc.i4     0x370
+    IL_0472:  ldc.i4     0x258
+    IL_0477:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_047c:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::set_ClientSize(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0481:  nop
+    IL_0482:  ldarg.0
+    IL_0483:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0488:  ldarg.0
+    IL_0489:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar Strassens.MainForm::progressBar1
+    IL_048e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0493:  nop
+    IL_0494:  ldarg.0
+    IL_0495:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_049a:  ldarg.0
+    IL_049b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button Strassens.MainForm::btnCompute
+    IL_04a0:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_04a5:  nop
+    IL_04a6:  ldarg.0
+    IL_04a7:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_04ac:  ldarg.0
+    IL_04ad:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox Strassens.MainForm::cbMatrixSize
+    IL_04b2:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_04b7:  nop
+    IL_04b8:  ldarg.0
+    IL_04b9:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_04be:  ldarg.0
+    IL_04bf:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_04c4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_04c9:  nop
+    IL_04ca:  ldarg.0
+    IL_04cb:  ldstr      "Microsoft Sans Serif"
+    IL_04d0:  ldc.r4     12.
+    IL_04d5:  ldc.i4.0
+    IL_04d6:  ldc.i4.3
+    IL_04d7:  ldc.i4.0
+    IL_04d8:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle,
+                                                                                  valuetype [System.Drawing]System.Drawing.GraphicsUnit,
+                                                                                  uint8)
+    IL_04dd:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_04e2:  nop
+    IL_04e3:  ldarg.0
+    IL_04e4:  ldc.i4.6
+    IL_04e5:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::set_FormBorderStyle(valuetype [System.Windows.Forms]System.Windows.Forms.FormBorderStyle)
+    IL_04ea:  nop
+    IL_04eb:  ldarg.0
+    IL_04ec:  ldc.i4.4
+    IL_04ed:  ldc.i4.5
+    IL_04ee:  ldc.i4.4
+    IL_04ef:  ldc.i4.5
+    IL_04f0:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Padding::.ctor(int32,
+                                                                                                 int32,
+                                                                                                 int32,
+                                                                                                 int32)
+    IL_04f5:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::set_Margin(valuetype [System.Windows.Forms]System.Windows.Forms.Padding)
+    IL_04fa:  nop
+    IL_04fb:  ldarg.0
+    IL_04fc:  ldstr      "MainForm"
+    IL_0501:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0506:  nop
+    IL_0507:  ldarg.0
+    IL_0508:  ldstr      "Matrix Multiplication"
+    IL_050d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_0512:  nop
+    IL_0513:  ldarg.0
+    IL_0514:  ldarg.0
+    IL_0515:  ldftn      instance void Strassens.MainForm::MainForm_Load(object,
+                                                                         class [mscorlib]System.EventArgs)
+    IL_051b:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_0520:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::add_Load(class [mscorlib]System.EventHandler)
+    IL_0525:  nop
+    IL_0526:  ldarg.0
+    IL_0527:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart Strassens.MainForm::chart1
+    IL_052c:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::EndInit()
+    IL_0531:  nop
+    IL_0532:  ldarg.0
+    IL_0533:  ldc.i4.0
+    IL_0534:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::ResumeLayout(bool)
+    IL_0539:  nop
+    IL_053a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\MainForm.cs" startline="99" endline="132"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       69 (0x45)
+    .maxstack  2
+    .locals init ([0] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldnull
+    IL_0003:  stfld      class [mscorlib]System.Threading.CancellationTokenSource Strassens.MainForm::_cancellation
+    IL_0008:  ldarg.0
+    IL_0009:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button Strassens.MainForm::btnCompute
+    IL_000e:  ldstr      "Compute"
+    IL_0013:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_0018:  nop
+    IL_0019:  ldarg.0
+    IL_001a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar Strassens.MainForm::progressBar1
+    IL_001f:  ldc.i4.0
+    IL_0020:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Visible(bool)
+    IL_0025:  nop
+    IL_0026:  ldarg.1
+    IL_0027:  callvirt   instance bool [mscorlib]System.Threading.Tasks.Task::get_IsFaulted()
+    IL_002c:  ldc.i4.0
+    IL_002d:  ceq
+    IL_002f:  stloc.0
+    IL_0030:  ldloc.0
+    IL_0031:  brtrue.s   IL_0044
+
+    IL_0033:  ldarg.1
+    IL_0034:  callvirt   instance class [mscorlib]System.AggregateException [mscorlib]System.Threading.Tasks.Task::get_Exception()
+    IL_0039:  callvirt   instance string [mscorlib]System.Object::ToString()
+    IL_003e:  call       valuetype [System.Windows.Forms]System.Windows.Forms.DialogResult [System.Windows.Forms]System.Windows.Forms.MessageBox::Show(string)
+    IL_0043:  pop
+    IL_0044:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Properties\Resources.Designer.cs" startline="31" endline="33"><![CDATA[
+  {
+    // Code size       10 (0xa)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  nop
+    IL_0009:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Properties\Resources.Designer.cs" startline="34" endline="46"><![CDATA[
+  {
+    // Code size       63 (0x3f)
+    .maxstack  3
+    .locals init ([0] class [mscorlib]System.Resources.ResourceManager temp,
+             [1] class [mscorlib]System.Resources.ResourceManager CS$1$0000,
+             [2] bool CS$4$0001)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Resources.ResourceManager Strassens.Properties.Resources::resourceMan
+    IL_0006:  ldnull
+    IL_0007:  call       bool [mscorlib]System.Object::ReferenceEquals(object,
+                                                                       object)
+    IL_000c:  ldc.i4.0
+    IL_000d:  ceq
+    IL_000f:  stloc.2
+    IL_0010:  ldloc.2
+    IL_0011:  brtrue.s   IL_0035
+
+    IL_0013:  nop
+    IL_0014:  ldstr      "Strassens.Properties.Resources"
+    IL_0019:  ldtoken    Strassens.Properties.Resources
+    IL_001e:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_0023:  callvirt   instance class [mscorlib]System.Reflection.Assembly [mscorlib]System.Type::get_Assembly()
+    IL_0028:  newobj     instance void [mscorlib]System.Resources.ResourceManager::.ctor(string,
+                                                                                         class [mscorlib]System.Reflection.Assembly)
+    IL_002d:  stloc.0
+    IL_002e:  ldloc.0
+    IL_002f:  stsfld     class [mscorlib]System.Resources.ResourceManager Strassens.Properties.Resources::resourceMan
+    IL_0034:  nop
+    IL_0035:  ldsfld     class [mscorlib]System.Resources.ResourceManager Strassens.Properties.Resources::resourceMan
+    IL_003a:  stloc.1
+    IL_003b:  br.s       IL_003d
+
+    IL_003d:  ldloc.1
+    IL_003e:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Properties\Resources.Designer.cs" startline="47" endline="57"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Globalization.CultureInfo CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Globalization.CultureInfo Strassens.Properties.Resources::resourceCulture
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Properties\Resources.Designer.cs" startline="58" endline="60"><![CDATA[
+  {
+    // Code size       8 (0x8)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  stsfld     class [mscorlib]System.Globalization.CultureInfo Strassens.Properties.Resources::resourceCulture
+    IL_0007:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Program.cs" startline="19" endline="23"><![CDATA[
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.STAThreadAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       26 (0x1a)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  call       void [System.Windows.Forms]System.Windows.Forms.Application::EnableVisualStyles()
+    IL_0006:  nop
+    IL_0007:  ldc.i4.0
+    IL_0008:  call       void [System.Windows.Forms]System.Windows.Forms.Application::SetCompatibleTextRenderingDefault(bool)
+    IL_000d:  nop
+    IL_000e:  newobj     instance void Strassens.MainForm::.ctor()
+    IL_0013:  call       void [System.Windows.Forms]System.Windows.Forms.Application::Run(class [System.Windows.Forms]System.Windows.Forms.Form)
+    IL_0018:  nop
+    IL_0019:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Properties\Settings.Designer.cs" startline="21" endline="23"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class Strassens.Properties.Settings CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class Strassens.Properties.Settings Strassens.Properties.Settings::defaultInstance
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [System]System.Configuration.ApplicationSettingsBase::.ctor()
+    IL_0006:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Properties\Settings.Designer.cs" startline="18" endline="26"><![CDATA[
+  {
+    // Code size       21 (0x15)
+    .maxstack  8
+    IL_0000:  newobj     instance void Strassens.Properties.Settings::.ctor()
+    IL_0005:  call       class [System]System.Configuration.SettingsBase [System]System.Configuration.SettingsBase::Synchronized(class [System]System.Configuration.SettingsBase)
+    IL_000a:  castclass  Strassens.Properties.Settings
+    IL_000f:  stsfld     class Strassens.Properties.Settings Strassens.Properties.Settings::defaultInstance
+    IL_0014:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="23" endline="31"><![CDATA[
+  {
+    // Code size       100 (0x64)
+    .maxstack  3
+    .locals init ([0] bool CS$4$0000,
+             [1] native int CS$0$0001)
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  ldsfld     int32[] Matrix::_validSizes
+    IL_000d:  ldarg.1
+    IL_000e:  call       bool [System.Core]System.Linq.Enumerable::Contains<int32>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                   !!0)
+    IL_0013:  stloc.0
+    IL_0014:  ldloc.0
+    IL_0015:  brtrue.s   IL_0022
+
+    IL_0017:  ldstr      "size"
+    IL_001c:  newobj     instance void [mscorlib]System.ArgumentOutOfRangeException::.ctor(string)
+    IL_0021:  throw
+
+    IL_0022:  ldarg.0
+    IL_0023:  ldarg.1
+    IL_0024:  stfld      int32 Matrix::_size
+    IL_0029:  ldarg.0
+    IL_002a:  ldarg.1
+    IL_002b:  ldarg.1
+    IL_002c:  mul
+    IL_002d:  newarr     [mscorlib]System.Int32
+    IL_0032:  stfld      int32[] Matrix::_data
+    IL_0037:  ldarg.0
+    IL_0038:  ldarg.0
+    IL_0039:  ldfld      int32[] Matrix::_data
+    IL_003e:  ldc.i4.3
+    IL_003f:  call       valuetype [mscorlib]System.Runtime.InteropServices.GCHandle [mscorlib]System.Runtime.InteropServices.GCHandle::Alloc(object,
+                                                                                                                                              valuetype [mscorlib]System.Runtime.InteropServices.GCHandleType)
+    IL_0044:  stfld      valuetype [mscorlib]System.Runtime.InteropServices.GCHandle Matrix::_dataPtrHandle
+    IL_0049:  ldarg.0
+    IL_004a:  ldarg.0
+    IL_004b:  ldflda     valuetype [mscorlib]System.Runtime.InteropServices.GCHandle Matrix::_dataPtrHandle
+    IL_0050:  call       instance native int [mscorlib]System.Runtime.InteropServices.GCHandle::AddrOfPinnedObject()
+    IL_0055:  stloc.1
+    IL_0056:  ldloca.s   CS$0$0001
+    IL_0058:  call       instance void* [mscorlib]System.IntPtr::ToPointer()
+    IL_005d:  stfld      int32* Matrix::_dataPtr
+    IL_0062:  nop
+    IL_0063:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="32" endline="33"><![CDATA[
+  {
+    // Code size       21 (0x15)
+    .maxstack  1
+    .try
+    {
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  call       instance void Matrix::Dispose()
+      IL_0007:  nop
+      IL_0008:  nop
+      IL_0009:  leave.s    IL_0013
+
+    }  // end .try
+    finally
+    {
+      IL_000b:  ldarg.0
+      IL_000c:  call       instance void [mscorlib]System.Object::Finalize()
+      IL_0011:  nop
+      IL_0012:  endfinally
+    }  // end handler
+    IL_0013:  nop
+    IL_0014:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="34" endline="41"><![CDATA[
+  {
+    // Code size       36 (0x24)
+    .maxstack  2
+    .locals init ([0] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      int32[] Matrix::_data
+    IL_0007:  ldnull
+    IL_0008:  ceq
+    IL_000a:  stloc.0
+    IL_000b:  ldloc.0
+    IL_000c:  brtrue.s   IL_0023
+
+    IL_000e:  nop
+    IL_000f:  ldarg.0
+    IL_0010:  ldflda     valuetype [mscorlib]System.Runtime.InteropServices.GCHandle Matrix::_dataPtrHandle
+    IL_0015:  call       instance void [mscorlib]System.Runtime.InteropServices.GCHandle::Free()
+    IL_001a:  nop
+    IL_001b:  ldarg.0
+    IL_001c:  ldnull
+    IL_001d:  stfld      int32[] Matrix::_data
+    IL_0022:  nop
+    IL_0023:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="42" endline="43"><![CDATA[
+  {
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] int32[] CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  ldsfld     int32[] Matrix::_validSizes
+    IL_0006:  call       !!0[] [System.Core]System.Linq.Enumerable::ToArray<int32>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="44" endline="52"><![CDATA[
+  {
+    // Code size       50 (0x32)
+    .maxstack  4
+    .locals init ([0] class [mscorlib]System.Random rand,
+             [1] int32 i,
+             [2] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void [mscorlib]System.Random::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldc.i4.0
+    IL_0008:  stloc.1
+    IL_0009:  br.s       IL_0022
+
+    IL_000b:  nop
+    IL_000c:  ldarg.0
+    IL_000d:  ldfld      int32[] Matrix::_data
+    IL_0012:  ldloc.1
+    IL_0013:  ldloc.0
+    IL_0014:  callvirt   instance int32 [mscorlib]System.Random::Next()
+    IL_0019:  ldc.i4.s   127
+    IL_001b:  rem
+    IL_001c:  stelem.i4
+    IL_001d:  nop
+    IL_001e:  ldloc.1
+    IL_001f:  ldc.i4.1
+    IL_0020:  add
+    IL_0021:  stloc.1
+    IL_0022:  ldloc.1
+    IL_0023:  ldarg.0
+    IL_0024:  ldfld      int32[] Matrix::_data
+    IL_0029:  ldlen
+    IL_002a:  conv.i4
+    IL_002b:  clt
+    IL_002d:  stloc.2
+    IL_002e:  ldloc.2
+    IL_002f:  brtrue.s   IL_000b
+
+    IL_0031:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="53" endline="59"><![CDATA[
+  {
+    // Code size       78 (0x4e)
+    .maxstack  3
+    .locals init ([0] int32 i,
+             [1] bool CS$1$0000,
+             [2] bool CS$4$0001)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      int32 Matrix::_size
+    IL_0007:  ldarg.1
+    IL_0008:  ldfld      int32 Matrix::_size
+    IL_000d:  ceq
+    IL_000f:  stloc.2
+    IL_0010:  ldloc.2
+    IL_0011:  brtrue.s   IL_0017
+
+    IL_0013:  ldc.i4.0
+    IL_0014:  stloc.1
+    IL_0015:  br.s       IL_004c
+
+    IL_0017:  ldc.i4.0
+    IL_0018:  stloc.0
+    IL_0019:  br.s       IL_0039
+
+    IL_001b:  ldarg.0
+    IL_001c:  ldfld      int32[] Matrix::_data
+    IL_0021:  ldloc.0
+    IL_0022:  ldelem.i4
+    IL_0023:  ldarg.1
+    IL_0024:  ldfld      int32[] Matrix::_data
+    IL_0029:  ldloc.0
+    IL_002a:  ldelem.i4
+    IL_002b:  ceq
+    IL_002d:  stloc.2
+    IL_002e:  ldloc.2
+    IL_002f:  brtrue.s   IL_0035
+
+    IL_0031:  ldc.i4.0
+    IL_0032:  stloc.1
+    IL_0033:  br.s       IL_004c
+
+    IL_0035:  ldloc.0
+    IL_0036:  ldc.i4.1
+    IL_0037:  add
+    IL_0038:  stloc.0
+    IL_0039:  ldloc.0
+    IL_003a:  ldarg.0
+    IL_003b:  ldfld      int32[] Matrix::_data
+    IL_0040:  ldlen
+    IL_0041:  conv.i4
+    IL_0042:  clt
+    IL_0044:  stloc.2
+    IL_0045:  ldloc.2
+    IL_0046:  brtrue.s   IL_001b
+
+    IL_0048:  ldc.i4.1
+    IL_0049:  stloc.1
+    IL_004a:  br.s       IL_004c
+
+    IL_004c:  ldloc.1
+    IL_004d:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="60" endline="71"><![CDATA[
+  {
+    // Code size       92 (0x5c)
+    .maxstack  16
+    .locals init ([0] int32 N,
+             [1] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldfld      int32 Matrix::_size
+    IL_0007:  ldarg.2
+    IL_0008:  ldfld      int32 Matrix::_size
+    IL_000d:  bne.un.s   IL_001f
+
+    IL_000f:  ldarg.1
+    IL_0010:  ldfld      int32 Matrix::_size
+    IL_0015:  ldarg.3
+    IL_0016:  ldfld      int32 Matrix::_size
+    IL_001b:  ceq
+    IL_001d:  br.s       IL_0020
+
+    IL_001f:  ldc.i4.0
+    IL_0020:  stloc.1
+    IL_0021:  ldloc.1
+    IL_0022:  brtrue.s   IL_002f
+
+    IL_0024:  ldstr      "src1"
+    IL_0029:  newobj     instance void [mscorlib]System.ArgumentOutOfRangeException::.ctor(string)
+    IL_002e:  throw
+
+    IL_002f:  ldarg.1
+    IL_0030:  ldfld      int32 Matrix::_size
+    IL_0035:  stloc.0
+    IL_0036:  ldarg.0
+    IL_0037:  ldloc.0
+    IL_0038:  ldloc.0
+    IL_0039:  ldloc.0
+    IL_003a:  ldarg.1
+    IL_003b:  ldfld      int32* Matrix::_dataPtr
+    IL_0040:  ldc.i4.0
+    IL_0041:  ldc.i4.0
+    IL_0042:  ldloc.0
+    IL_0043:  ldarg.2
+    IL_0044:  ldfld      int32* Matrix::_dataPtr
+    IL_0049:  ldc.i4.0
+    IL_004a:  ldc.i4.0
+    IL_004b:  ldloc.0
+    IL_004c:  ldarg.3
+    IL_004d:  ldfld      int32* Matrix::_dataPtr
+    IL_0052:  ldc.i4.0
+    IL_0053:  ldc.i4.0
+    IL_0054:  ldloc.0
+    IL_0055:  call       void Matrix::matrix_mult_serial(valuetype [mscorlib]System.Threading.CancellationToken,
+                                                         int32,
+                                                         int32,
+                                                         int32,
+                                                         int32*,
+                                                         int32,
+                                                         int32,
+                                                         int32,
+                                                         int32*,
+                                                         int32,
+                                                         int32,
+                                                         int32,
+                                                         int32*,
+                                                         int32,
+                                                         int32,
+                                                         int32)
+    IL_005a:  nop
+    IL_005b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="72" endline="83"><![CDATA[
+  {
+    // Code size       92 (0x5c)
+    .maxstack  16
+    .locals init ([0] int32 N,
+             [1] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldfld      int32 Matrix::_size
+    IL_0007:  ldarg.2
+    IL_0008:  ldfld      int32 Matrix::_size
+    IL_000d:  bne.un.s   IL_001f
+
+    IL_000f:  ldarg.1
+    IL_0010:  ldfld      int32 Matrix::_size
+    IL_0015:  ldarg.3
+    IL_0016:  ldfld      int32 Matrix::_size
+    IL_001b:  ceq
+    IL_001d:  br.s       IL_0020
+
+    IL_001f:  ldc.i4.0
+    IL_0020:  stloc.1
+    IL_0021:  ldloc.1
+    IL_0022:  brtrue.s   IL_002f
+
+    IL_0024:  ldstr      "src1"
+    IL_0029:  newobj     instance void [mscorlib]System.ArgumentOutOfRangeException::.ctor(string)
+    IL_002e:  throw
+
+    IL_002f:  ldarg.1
+    IL_0030:  ldfld      int32 Matrix::_size
+    IL_0035:  stloc.0
+    IL_0036:  ldarg.0
+    IL_0037:  ldloc.0
+    IL_0038:  ldloc.0
+    IL_0039:  ldloc.0
+    IL_003a:  ldarg.1
+    IL_003b:  ldfld      int32* Matrix::_dataPtr
+    IL_0040:  ldc.i4.0
+    IL_0041:  ldc.i4.0
+    IL_0042:  ldloc.0
+    IL_0043:  ldarg.2
+    IL_0044:  ldfld      int32* Matrix::_dataPtr
+    IL_0049:  ldc.i4.0
+    IL_004a:  ldc.i4.0
+    IL_004b:  ldloc.0
+    IL_004c:  ldarg.3
+    IL_004d:  ldfld      int32* Matrix::_dataPtr
+    IL_0052:  ldc.i4.0
+    IL_0053:  ldc.i4.0
+    IL_0054:  ldloc.0
+    IL_0055:  call       void Matrix::matrix_mult_parallel(valuetype [mscorlib]System.Threading.CancellationToken,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32)
+    IL_005a:  nop
+    IL_005b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="84" endline="96"><![CDATA[
+  {
+    // Code size       92 (0x5c)
+    .maxstack  15
+    .locals init ([0] int32 N,
+             [1] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldfld      int32 Matrix::_size
+    IL_0007:  ldarg.2
+    IL_0008:  ldfld      int32 Matrix::_size
+    IL_000d:  bne.un.s   IL_001f
+
+    IL_000f:  ldarg.1
+    IL_0010:  ldfld      int32 Matrix::_size
+    IL_0015:  ldarg.3
+    IL_0016:  ldfld      int32 Matrix::_size
+    IL_001b:  ceq
+    IL_001d:  br.s       IL_0020
+
+    IL_001f:  ldc.i4.0
+    IL_0020:  stloc.1
+    IL_0021:  ldloc.1
+    IL_0022:  brtrue.s   IL_002f
+
+    IL_0024:  ldstr      "src1"
+    IL_0029:  newobj     instance void [mscorlib]System.ArgumentOutOfRangeException::.ctor(string)
+    IL_002e:  throw
+
+    IL_002f:  ldarg.1
+    IL_0030:  ldfld      int32 Matrix::_size
+    IL_0035:  stloc.0
+    IL_0036:  ldarg.0
+    IL_0037:  ldloc.0
+    IL_0038:  ldarg.1
+    IL_0039:  ldfld      int32* Matrix::_dataPtr
+    IL_003e:  ldc.i4.0
+    IL_003f:  ldc.i4.0
+    IL_0040:  ldloc.0
+    IL_0041:  ldarg.2
+    IL_0042:  ldfld      int32* Matrix::_dataPtr
+    IL_0047:  ldc.i4.0
+    IL_0048:  ldc.i4.0
+    IL_0049:  ldloc.0
+    IL_004a:  ldarg.3
+    IL_004b:  ldfld      int32* Matrix::_dataPtr
+    IL_0050:  ldc.i4.0
+    IL_0051:  ldc.i4.0
+    IL_0052:  ldloc.0
+    IL_0053:  ldc.i4.s   64
+    IL_0055:  call       void Matrix::strassen_mult_serial(valuetype [mscorlib]System.Threading.CancellationToken,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32)
+    IL_005a:  nop
+    IL_005b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="97" endline="109"><![CDATA[
+  {
+    // Code size       92 (0x5c)
+    .maxstack  15
+    .locals init ([0] int32 N,
+             [1] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldfld      int32 Matrix::_size
+    IL_0007:  ldarg.2
+    IL_0008:  ldfld      int32 Matrix::_size
+    IL_000d:  bne.un.s   IL_001f
+
+    IL_000f:  ldarg.1
+    IL_0010:  ldfld      int32 Matrix::_size
+    IL_0015:  ldarg.3
+    IL_0016:  ldfld      int32 Matrix::_size
+    IL_001b:  ceq
+    IL_001d:  br.s       IL_0020
+
+    IL_001f:  ldc.i4.0
+    IL_0020:  stloc.1
+    IL_0021:  ldloc.1
+    IL_0022:  brtrue.s   IL_002f
+
+    IL_0024:  ldstr      "src1"
+    IL_0029:  newobj     instance void [mscorlib]System.ArgumentOutOfRangeException::.ctor(string)
+    IL_002e:  throw
+
+    IL_002f:  ldarg.1
+    IL_0030:  ldfld      int32 Matrix::_size
+    IL_0035:  stloc.0
+    IL_0036:  ldarg.0
+    IL_0037:  ldloc.0
+    IL_0038:  ldarg.1
+    IL_0039:  ldfld      int32* Matrix::_dataPtr
+    IL_003e:  ldc.i4.0
+    IL_003f:  ldc.i4.0
+    IL_0040:  ldloc.0
+    IL_0041:  ldarg.2
+    IL_0042:  ldfld      int32* Matrix::_dataPtr
+    IL_0047:  ldc.i4.0
+    IL_0048:  ldc.i4.0
+    IL_0049:  ldloc.0
+    IL_004a:  ldarg.3
+    IL_004b:  ldfld      int32* Matrix::_dataPtr
+    IL_0050:  ldc.i4.0
+    IL_0051:  ldc.i4.0
+    IL_0052:  ldloc.0
+    IL_0053:  ldc.i4.s   64
+    IL_0055:  call       void Matrix::strassen_mult_parallel(valuetype [mscorlib]System.Threading.CancellationToken,
+                                                             int32,
+                                                             int32*,
+                                                             int32,
+                                                             int32,
+                                                             int32,
+                                                             int32*,
+                                                             int32,
+                                                             int32,
+                                                             int32,
+                                                             int32*,
+                                                             int32,
+                                                             int32,
+                                                             int32,
+                                                             int32)
+    IL_005a:  nop
+    IL_005b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="110" endline="124"><![CDATA[
+  {
+    // Code size       90 (0x5a)
+    .maxstack  5
+    .locals init ([0] int32 i,
+             [1] int32 j,
+             [2] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldc.i4.0
+    IL_0002:  stloc.0
+    IL_0003:  br.s       IL_0051
+
+    IL_0005:  ldc.i4.0
+    IL_0006:  stloc.1
+    IL_0007:  br.s       IL_0045
+
+    IL_0009:  ldarg.s    C
+    IL_000b:  ldloc.0
+    IL_000c:  ldarg.s    cx
+    IL_000e:  add
+    IL_000f:  ldarg.s    cs
+    IL_0011:  mul
+    IL_0012:  ldloc.1
+    IL_0013:  add
+    IL_0014:  ldarg.s    cy
+    IL_0016:  add
+    IL_0017:  conv.i
+    IL_0018:  ldc.i4.4
+    IL_0019:  mul
+    IL_001a:  add
+    IL_001b:  ldarg.2
+    IL_001c:  ldloc.0
+    IL_001d:  ldarg.3
+    IL_001e:  add
+    IL_001f:  ldarg.s    a_s
+    IL_0021:  mul
+    IL_0022:  ldloc.1
+    IL_0023:  add
+    IL_0024:  ldarg.s    ay
+    IL_0026:  add
+    IL_0027:  conv.i
+    IL_0028:  ldc.i4.4
+    IL_0029:  mul
+    IL_002a:  add
+    IL_002b:  ldind.i4
+    IL_002c:  ldarg.s    B
+    IL_002e:  ldloc.0
+    IL_002f:  ldarg.s    bx
+    IL_0031:  add
+    IL_0032:  ldarg.s    bs
+    IL_0034:  mul
+    IL_0035:  ldloc.1
+    IL_0036:  add
+    IL_0037:  ldarg.s    by
+    IL_0039:  add
+    IL_003a:  conv.i
+    IL_003b:  ldc.i4.4
+    IL_003c:  mul
+    IL_003d:  add
+    IL_003e:  ldind.i4
+    IL_003f:  add
+    IL_0040:  stind.i4
+    IL_0041:  ldloc.1
+    IL_0042:  ldc.i4.1
+    IL_0043:  add
+    IL_0044:  stloc.1
+    IL_0045:  ldloc.1
+    IL_0046:  ldarg.1
+    IL_0047:  clt
+    IL_0049:  stloc.2
+    IL_004a:  ldloc.2
+    IL_004b:  brtrue.s   IL_0009
+
+    IL_004d:  ldloc.0
+    IL_004e:  ldc.i4.1
+    IL_004f:  add
+    IL_0050:  stloc.0
+    IL_0051:  ldloc.0
+    IL_0052:  ldarg.0
+    IL_0053:  clt
+    IL_0055:  stloc.2
+    IL_0056:  ldloc.2
+    IL_0057:  brtrue.s   IL_0005
+
+    IL_0059:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="125" endline="143"><![CDATA[
+  {
+    // Code size       94 (0x5e)
+    .maxstack  5
+    .locals init ([0] int32 i,
+             [1] int32 j,
+             [2] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldc.i4.0
+    IL_0002:  stloc.0
+    IL_0003:  br.s       IL_0055
+
+    IL_0005:  nop
+    IL_0006:  ldc.i4.0
+    IL_0007:  stloc.1
+    IL_0008:  br.s       IL_0048
+
+    IL_000a:  nop
+    IL_000b:  ldarg.s    C
+    IL_000d:  ldloc.0
+    IL_000e:  ldarg.s    cx
+    IL_0010:  add
+    IL_0011:  ldarg.s    cs
+    IL_0013:  mul
+    IL_0014:  ldloc.1
+    IL_0015:  add
+    IL_0016:  ldarg.s    cy
+    IL_0018:  add
+    IL_0019:  conv.i
+    IL_001a:  ldc.i4.4
+    IL_001b:  mul
+    IL_001c:  add
+    IL_001d:  ldarg.2
+    IL_001e:  ldloc.0
+    IL_001f:  ldarg.3
+    IL_0020:  add
+    IL_0021:  ldarg.s    a_s
+    IL_0023:  mul
+    IL_0024:  ldloc.1
+    IL_0025:  add
+    IL_0026:  ldarg.s    ay
+    IL_0028:  add
+    IL_0029:  conv.i
+    IL_002a:  ldc.i4.4
+    IL_002b:  mul
+    IL_002c:  add
+    IL_002d:  ldind.i4
+    IL_002e:  ldarg.s    B
+    IL_0030:  ldloc.0
+    IL_0031:  ldarg.s    bx
+    IL_0033:  add
+    IL_0034:  ldarg.s    bs
+    IL_0036:  mul
+    IL_0037:  ldloc.1
+    IL_0038:  add
+    IL_0039:  ldarg.s    by
+    IL_003b:  add
+    IL_003c:  conv.i
+    IL_003d:  ldc.i4.4
+    IL_003e:  mul
+    IL_003f:  add
+    IL_0040:  ldind.i4
+    IL_0041:  sub
+    IL_0042:  stind.i4
+    IL_0043:  nop
+    IL_0044:  ldloc.1
+    IL_0045:  ldc.i4.1
+    IL_0046:  add
+    IL_0047:  stloc.1
+    IL_0048:  ldloc.1
+    IL_0049:  ldarg.1
+    IL_004a:  clt
+    IL_004c:  stloc.2
+    IL_004d:  ldloc.2
+    IL_004e:  brtrue.s   IL_000a
+
+    IL_0050:  nop
+    IL_0051:  ldloc.0
+    IL_0052:  ldc.i4.1
+    IL_0053:  add
+    IL_0054:  stloc.0
+    IL_0055:  ldloc.0
+    IL_0056:  ldarg.0
+    IL_0057:  clt
+    IL_0059:  stloc.2
+    IL_005a:  ldloc.2
+    IL_005b:  brtrue.s   IL_0005
+
+    IL_005d:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="144" endline="169"><![CDATA[
+  {
+    // Code size       134 (0x86)
+    .maxstack  5
+    .locals init ([0] int32 i,
+             [1] int32 j,
+             [2] int32 temp,
+             [3] int32 k,
+             [4] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldc.i4.0
+    IL_0002:  stloc.0
+    IL_0003:  br.s       IL_007b
+
+    IL_0005:  nop
+    IL_0006:  ldarga.s   cancellationToken
+    IL_0008:  call       instance void [mscorlib]System.Threading.CancellationToken::ThrowIfCancellationRequested()
+    IL_000d:  nop
+    IL_000e:  ldc.i4.0
+    IL_000f:  stloc.1
+    IL_0010:  br.s       IL_006c
+
+    IL_0012:  nop
+    IL_0013:  ldc.i4.0
+    IL_0014:  stloc.2
+    IL_0015:  ldc.i4.0
+    IL_0016:  stloc.3
+    IL_0017:  br.s       IL_0049
+
+    IL_0019:  nop
+    IL_001a:  ldloc.2
+    IL_001b:  ldarg.s    A
+    IL_001d:  ldloc.0
+    IL_001e:  ldarg.s    ax
+    IL_0020:  add
+    IL_0021:  ldarg.s    a_s
+    IL_0023:  mul
+    IL_0024:  ldloc.3
+    IL_0025:  add
+    IL_0026:  ldarg.s    ay
+    IL_0028:  add
+    IL_0029:  conv.i
+    IL_002a:  ldc.i4.4
+    IL_002b:  mul
+    IL_002c:  add
+    IL_002d:  ldind.i4
+    IL_002e:  ldarg.s    B
+    IL_0030:  ldloc.3
+    IL_0031:  ldarg.s    bx
+    IL_0033:  add
+    IL_0034:  ldarg.s    bs
+    IL_0036:  mul
+    IL_0037:  ldloc.1
+    IL_0038:  add
+    IL_0039:  ldarg.s    by
+    IL_003b:  add
+    IL_003c:  conv.i
+    IL_003d:  ldc.i4.4
+    IL_003e:  mul
+    IL_003f:  add
+    IL_0040:  ldind.i4
+    IL_0041:  mul
+    IL_0042:  add
+    IL_0043:  stloc.2
+    IL_0044:  nop
+    IL_0045:  ldloc.3
+    IL_0046:  ldc.i4.1
+    IL_0047:  add
+    IL_0048:  stloc.3
+    IL_0049:  ldloc.3
+    IL_004a:  ldarg.2
+    IL_004b:  clt
+    IL_004d:  stloc.s    CS$4$0000
+    IL_004f:  ldloc.s    CS$4$0000
+    IL_0051:  brtrue.s   IL_0019
+
+    IL_0053:  ldarg.s    C
+    IL_0055:  ldloc.0
+    IL_0056:  ldarg.s    cx
+    IL_0058:  add
+    IL_0059:  ldarg.s    cs
+    IL_005b:  mul
+    IL_005c:  ldloc.1
+    IL_005d:  add
+    IL_005e:  ldarg.s    cy
+    IL_0060:  add
+    IL_0061:  conv.i
+    IL_0062:  ldc.i4.4
+    IL_0063:  mul
+    IL_0064:  add
+    IL_0065:  ldloc.2
+    IL_0066:  stind.i4
+    IL_0067:  nop
+    IL_0068:  ldloc.1
+    IL_0069:  ldc.i4.1
+    IL_006a:  add
+    IL_006b:  stloc.1
+    IL_006c:  ldloc.1
+    IL_006d:  ldarg.3
+    IL_006e:  clt
+    IL_0070:  stloc.s    CS$4$0000
+    IL_0072:  ldloc.s    CS$4$0000
+    IL_0074:  brtrue.s   IL_0012
+
+    IL_0076:  nop
+    IL_0077:  ldloc.0
+    IL_0078:  ldc.i4.1
+    IL_0079:  add
+    IL_007a:  stloc.0
+    IL_007b:  ldloc.0
+    IL_007c:  ldarg.1
+    IL_007d:  clt
+    IL_007f:  stloc.s    CS$4$0000
+    IL_0081:  ldloc.s    CS$4$0000
+    IL_0083:  brtrue.s   IL_0005
+
+    IL_0085:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="170" endline="195"><![CDATA[
+  {
+    // Code size       156 (0x9c)
+    .maxstack  6
+    .locals init ([0] class [mscorlib]System.Threading.Tasks.ParallelOptions options,
+             [1] class [mscorlib]System.Threading.Tasks.ParallelOptions '<>g__initLocal0',
+             [2] class Matrix/'<>c__DisplayClass2' 'CS$<>8__locals3')
+    IL_0000:  newobj     instance void Matrix/'<>c__DisplayClass2'::.ctor()
+    IL_0005:  stloc.2
+    IL_0006:  ldloc.2
+    IL_0007:  ldarg.2
+    IL_0008:  stfld      int32 Matrix/'<>c__DisplayClass2'::m
+    IL_000d:  ldloc.2
+    IL_000e:  ldarg.3
+    IL_000f:  stfld      int32 Matrix/'<>c__DisplayClass2'::n
+    IL_0014:  ldloc.2
+    IL_0015:  ldarg.s    A
+    IL_0017:  stfld      int32* Matrix/'<>c__DisplayClass2'::A
+    IL_001c:  ldloc.2
+    IL_001d:  ldarg.s    ax
+    IL_001f:  stfld      int32 Matrix/'<>c__DisplayClass2'::ax
+    IL_0024:  ldloc.2
+    IL_0025:  ldarg.s    ay
+    IL_0027:  stfld      int32 Matrix/'<>c__DisplayClass2'::ay
+    IL_002c:  ldloc.2
+    IL_002d:  ldarg.s    a_s
+    IL_002f:  stfld      int32 Matrix/'<>c__DisplayClass2'::a_s
+    IL_0034:  ldloc.2
+    IL_0035:  ldarg.s    B
+    IL_0037:  stfld      int32* Matrix/'<>c__DisplayClass2'::B
+    IL_003c:  ldloc.2
+    IL_003d:  ldarg.s    bx
+    IL_003f:  stfld      int32 Matrix/'<>c__DisplayClass2'::bx
+    IL_0044:  ldloc.2
+    IL_0045:  ldarg.s    by
+    IL_0047:  stfld      int32 Matrix/'<>c__DisplayClass2'::by
+    IL_004c:  ldloc.2
+    IL_004d:  ldarg.s    bs
+    IL_004f:  stfld      int32 Matrix/'<>c__DisplayClass2'::bs
+    IL_0054:  ldloc.2
+    IL_0055:  ldarg.s    C
+    IL_0057:  stfld      int32* Matrix/'<>c__DisplayClass2'::C
+    IL_005c:  ldloc.2
+    IL_005d:  ldarg.s    cx
+    IL_005f:  stfld      int32 Matrix/'<>c__DisplayClass2'::cx
+    IL_0064:  ldloc.2
+    IL_0065:  ldarg.s    cy
+    IL_0067:  stfld      int32 Matrix/'<>c__DisplayClass2'::cy
+    IL_006c:  ldloc.2
+    IL_006d:  ldarg.s    cs
+    IL_006f:  stfld      int32 Matrix/'<>c__DisplayClass2'::cs
+    IL_0074:  nop
+    IL_0075:  newobj     instance void [mscorlib]System.Threading.Tasks.ParallelOptions::.ctor()
+    IL_007a:  stloc.1
+    IL_007b:  ldloc.1
+    IL_007c:  ldarg.0
+    IL_007d:  callvirt   instance void [mscorlib]System.Threading.Tasks.ParallelOptions::set_CancellationToken(valuetype [mscorlib]System.Threading.CancellationToken)
+    IL_0082:  nop
+    IL_0083:  ldloc.1
+    IL_0084:  stloc.0
+    IL_0085:  ldc.i4.0
+    IL_0086:  ldarg.1
+    IL_0087:  ldloc.0
+    IL_0088:  ldloc.2
+    IL_0089:  ldftn      instance void Matrix/'<>c__DisplayClass2'::'<matrix_mult_parallel>b__1'(int32)
+    IL_008f:  newobj     instance void class [mscorlib]System.Action`1<int32>::.ctor(object,
+                                                                                     native int)
+    IL_0094:  call       valuetype [mscorlib]System.Threading.Tasks.ParallelLoopResult [mscorlib]System.Threading.Tasks.Parallel::For(int32,
+                                                                                                                                      int32,
+                                                                                                                                      class [mscorlib]System.Threading.Tasks.ParallelOptions,
+                                                                                                                                      class [mscorlib]System.Action`1<int32>)
+    IL_0099:  pop
+    IL_009a:  nop
+    IL_009b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="196" endline="379"><![CDATA[
+  {
+    // Code size       926 (0x39e)
+    .maxstack  16
+    .locals init ([0] int32 n_2,
+             [1] int32[] workArr,
+             [2] int32& pinned work,
+             [3] int32* a_cum,
+             [4] int32* b_cum,
+             [5] int32* p1,
+             [6] int32* p2,
+             [7] int32* p3,
+             [8] int32* p4,
+             [9] int32* p5,
+             [10] int32* p6,
+             [11] int32* p7,
+             [12] bool CS$4$0000,
+             [13] int32[] CS$0$0001)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldarg.s    s
+    IL_0004:  cgt
+    IL_0006:  stloc.s    CS$4$0000
+    IL_0008:  ldloc.s    CS$4$0000
+    IL_000a:  brtrue.s   IL_0033
+
+    IL_000c:  nop
+    IL_000d:  ldarg.0
+    IL_000e:  ldarg.1
+    IL_000f:  ldarg.1
+    IL_0010:  ldarg.1
+    IL_0011:  ldarg.2
+    IL_0012:  ldarg.3
+    IL_0013:  ldarg.s    ay
+    IL_0015:  ldarg.s    a_s
+    IL_0017:  ldarg.s    B
+    IL_0019:  ldarg.s    bx
+    IL_001b:  ldarg.s    by
+    IL_001d:  ldarg.s    bs
+    IL_001f:  ldarg.s    C
+    IL_0021:  ldarg.s    cx
+    IL_0023:  ldarg.s    cy
+    IL_0025:  ldarg.s    cs
+    IL_0027:  call       void Matrix::matrix_mult_serial(valuetype [mscorlib]System.Threading.CancellationToken,
+                                                         int32,
+                                                         int32,
+                                                         int32,
+                                                         int32*,
+                                                         int32,
+                                                         int32,
+                                                         int32,
+                                                         int32*,
+                                                         int32,
+                                                         int32,
+                                                         int32,
+                                                         int32*,
+                                                         int32,
+                                                         int32,
+                                                         int32)
+    IL_002c:  nop
+    IL_002d:  nop
+    IL_002e:  br         IL_039d
+
+    IL_0033:  nop
+    IL_0034:  ldarg.1
+    IL_0035:  ldc.i4.1
+    IL_0036:  shr
+    IL_0037:  stloc.0
+    IL_0038:  ldloc.0
+    IL_0039:  ldloc.0
+    IL_003a:  mul
+    IL_003b:  ldc.i4.s   9
+    IL_003d:  mul
+    IL_003e:  newarr     [mscorlib]System.Int32
+    IL_0043:  stloc.1
+    IL_0044:  ldloc.1
+    IL_0045:  dup
+    IL_0046:  stloc.s    CS$0$0001
+    IL_0048:  brfalse.s  IL_0050
+
+    IL_004a:  ldloc.s    CS$0$0001
+    IL_004c:  ldlen
+    IL_004d:  conv.i4
+    IL_004e:  brtrue.s   IL_0055
+
+    IL_0050:  ldc.i4.0
+    IL_0051:  conv.u
+    IL_0052:  stloc.2
+    IL_0053:  br.s       IL_005e
+
+    IL_0055:  ldloc.s    CS$0$0001
+    IL_0057:  ldc.i4.0
+    IL_0058:  ldelema    [mscorlib]System.Int32
+    IL_005d:  stloc.2
+    IL_005e:  nop
+    IL_005f:  ldloc.2
+    IL_0060:  conv.i
+    IL_0061:  stloc.3
+    IL_0062:  ldloc.3
+    IL_0063:  ldloc.0
+    IL_0064:  ldloc.0
+    IL_0065:  mul
+    IL_0066:  conv.i
+    IL_0067:  ldc.i4.4
+    IL_0068:  mul
+    IL_0069:  add
+    IL_006a:  stloc.s    b_cum
+    IL_006c:  ldloc.s    b_cum
+    IL_006e:  ldloc.0
+    IL_006f:  ldloc.0
+    IL_0070:  mul
+    IL_0071:  conv.i
+    IL_0072:  ldc.i4.4
+    IL_0073:  mul
+    IL_0074:  add
+    IL_0075:  stloc.s    p1
+    IL_0077:  ldloc.s    p1
+    IL_0079:  ldloc.0
+    IL_007a:  ldloc.0
+    IL_007b:  mul
+    IL_007c:  conv.i
+    IL_007d:  ldc.i4.4
+    IL_007e:  mul
+    IL_007f:  add
+    IL_0080:  stloc.s    p2
+    IL_0082:  ldloc.s    p2
+    IL_0084:  ldloc.0
+    IL_0085:  ldloc.0
+    IL_0086:  mul
+    IL_0087:  conv.i
+    IL_0088:  ldc.i4.4
+    IL_0089:  mul
+    IL_008a:  add
+    IL_008b:  stloc.s    p3
+    IL_008d:  ldloc.s    p3
+    IL_008f:  ldloc.0
+    IL_0090:  ldloc.0
+    IL_0091:  mul
+    IL_0092:  conv.i
+    IL_0093:  ldc.i4.4
+    IL_0094:  mul
+    IL_0095:  add
+    IL_0096:  stloc.s    p4
+    IL_0098:  ldloc.s    p4
+    IL_009a:  ldloc.0
+    IL_009b:  ldloc.0
+    IL_009c:  mul
+    IL_009d:  conv.i
+    IL_009e:  ldc.i4.4
+    IL_009f:  mul
+    IL_00a0:  add
+    IL_00a1:  stloc.s    p5
+    IL_00a3:  ldloc.s    p5
+    IL_00a5:  ldloc.0
+    IL_00a6:  ldloc.0
+    IL_00a7:  mul
+    IL_00a8:  conv.i
+    IL_00a9:  ldc.i4.4
+    IL_00aa:  mul
+    IL_00ab:  add
+    IL_00ac:  stloc.s    p6
+    IL_00ae:  ldloc.s    p6
+    IL_00b0:  ldloc.0
+    IL_00b1:  ldloc.0
+    IL_00b2:  mul
+    IL_00b3:  conv.i
+    IL_00b4:  ldc.i4.4
+    IL_00b5:  mul
+    IL_00b6:  add
+    IL_00b7:  stloc.s    p7
+    IL_00b9:  ldloc.0
+    IL_00ba:  ldloc.0
+    IL_00bb:  ldarg.2
+    IL_00bc:  ldarg.3
+    IL_00bd:  ldarg.s    ay
+    IL_00bf:  ldarg.s    a_s
+    IL_00c1:  ldarg.2
+    IL_00c2:  ldarg.3
+    IL_00c3:  ldloc.0
+    IL_00c4:  add
+    IL_00c5:  ldarg.s    ay
+    IL_00c7:  ldloc.0
+    IL_00c8:  add
+    IL_00c9:  ldarg.s    a_s
+    IL_00cb:  ldloc.3
+    IL_00cc:  ldc.i4.0
+    IL_00cd:  ldc.i4.0
+    IL_00ce:  ldloc.0
+    IL_00cf:  call       void Matrix::matrix_add(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_00d4:  nop
+    IL_00d5:  ldloc.0
+    IL_00d6:  ldloc.0
+    IL_00d7:  ldarg.s    B
+    IL_00d9:  ldarg.s    bx
+    IL_00db:  ldarg.s    by
+    IL_00dd:  ldarg.s    bs
+    IL_00df:  ldarg.s    B
+    IL_00e1:  ldarg.s    bx
+    IL_00e3:  ldloc.0
+    IL_00e4:  add
+    IL_00e5:  ldarg.s    by
+    IL_00e7:  ldloc.0
+    IL_00e8:  add
+    IL_00e9:  ldarg.s    bs
+    IL_00eb:  ldloc.s    b_cum
+    IL_00ed:  ldc.i4.0
+    IL_00ee:  ldc.i4.0
+    IL_00ef:  ldloc.0
+    IL_00f0:  call       void Matrix::matrix_add(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_00f5:  nop
+    IL_00f6:  ldarg.0
+    IL_00f7:  ldloc.0
+    IL_00f8:  ldloc.3
+    IL_00f9:  ldc.i4.0
+    IL_00fa:  ldc.i4.0
+    IL_00fb:  ldloc.0
+    IL_00fc:  ldloc.s    b_cum
+    IL_00fe:  ldc.i4.0
+    IL_00ff:  ldc.i4.0
+    IL_0100:  ldloc.0
+    IL_0101:  ldloc.s    p1
+    IL_0103:  ldc.i4.0
+    IL_0104:  ldc.i4.0
+    IL_0105:  ldloc.0
+    IL_0106:  ldarg.s    s
+    IL_0108:  call       void Matrix::strassen_mult_serial(valuetype [mscorlib]System.Threading.CancellationToken,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32)
+    IL_010d:  nop
+    IL_010e:  ldloc.0
+    IL_010f:  ldloc.0
+    IL_0110:  ldarg.2
+    IL_0111:  ldarg.3
+    IL_0112:  ldloc.0
+    IL_0113:  add
+    IL_0114:  ldarg.s    ay
+    IL_0116:  ldarg.s    a_s
+    IL_0118:  ldarg.2
+    IL_0119:  ldarg.3
+    IL_011a:  ldloc.0
+    IL_011b:  add
+    IL_011c:  ldarg.s    ay
+    IL_011e:  ldloc.0
+    IL_011f:  add
+    IL_0120:  ldarg.s    a_s
+    IL_0122:  ldloc.3
+    IL_0123:  ldc.i4.0
+    IL_0124:  ldc.i4.0
+    IL_0125:  ldloc.0
+    IL_0126:  call       void Matrix::matrix_add(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_012b:  nop
+    IL_012c:  ldarg.0
+    IL_012d:  ldloc.0
+    IL_012e:  ldloc.3
+    IL_012f:  ldc.i4.0
+    IL_0130:  ldc.i4.0
+    IL_0131:  ldloc.0
+    IL_0132:  ldarg.s    B
+    IL_0134:  ldarg.s    bx
+    IL_0136:  ldarg.s    by
+    IL_0138:  ldarg.s    bs
+    IL_013a:  ldloc.s    p2
+    IL_013c:  ldc.i4.0
+    IL_013d:  ldc.i4.0
+    IL_013e:  ldloc.0
+    IL_013f:  ldarg.s    s
+    IL_0141:  call       void Matrix::strassen_mult_serial(valuetype [mscorlib]System.Threading.CancellationToken,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32)
+    IL_0146:  nop
+    IL_0147:  ldloc.0
+    IL_0148:  ldloc.0
+    IL_0149:  ldarg.s    B
+    IL_014b:  ldarg.s    bx
+    IL_014d:  ldarg.s    by
+    IL_014f:  ldloc.0
+    IL_0150:  add
+    IL_0151:  ldarg.s    bs
+    IL_0153:  ldarg.s    B
+    IL_0155:  ldarg.s    bx
+    IL_0157:  ldloc.0
+    IL_0158:  add
+    IL_0159:  ldarg.s    by
+    IL_015b:  ldloc.0
+    IL_015c:  add
+    IL_015d:  ldarg.s    bs
+    IL_015f:  ldloc.s    b_cum
+    IL_0161:  ldc.i4.0
+    IL_0162:  ldc.i4.0
+    IL_0163:  ldloc.0
+    IL_0164:  call       void Matrix::matrix_sub(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_0169:  nop
+    IL_016a:  ldarg.0
+    IL_016b:  ldloc.0
+    IL_016c:  ldarg.2
+    IL_016d:  ldarg.3
+    IL_016e:  ldarg.s    ay
+    IL_0170:  ldarg.s    a_s
+    IL_0172:  ldloc.s    b_cum
+    IL_0174:  ldc.i4.0
+    IL_0175:  ldc.i4.0
+    IL_0176:  ldloc.0
+    IL_0177:  ldloc.s    p3
+    IL_0179:  ldc.i4.0
+    IL_017a:  ldc.i4.0
+    IL_017b:  ldloc.0
+    IL_017c:  ldarg.s    s
+    IL_017e:  call       void Matrix::strassen_mult_serial(valuetype [mscorlib]System.Threading.CancellationToken,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32)
+    IL_0183:  nop
+    IL_0184:  ldloc.0
+    IL_0185:  ldloc.0
+    IL_0186:  ldarg.s    B
+    IL_0188:  ldarg.s    bx
+    IL_018a:  ldloc.0
+    IL_018b:  add
+    IL_018c:  ldarg.s    by
+    IL_018e:  ldarg.s    bs
+    IL_0190:  ldarg.s    B
+    IL_0192:  ldarg.s    bx
+    IL_0194:  ldarg.s    by
+    IL_0196:  ldarg.s    bs
+    IL_0198:  ldloc.s    b_cum
+    IL_019a:  ldc.i4.0
+    IL_019b:  ldc.i4.0
+    IL_019c:  ldloc.0
+    IL_019d:  call       void Matrix::matrix_sub(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_01a2:  nop
+    IL_01a3:  ldarg.0
+    IL_01a4:  ldloc.0
+    IL_01a5:  ldarg.2
+    IL_01a6:  ldarg.3
+    IL_01a7:  ldloc.0
+    IL_01a8:  add
+    IL_01a9:  ldarg.s    ay
+    IL_01ab:  ldloc.0
+    IL_01ac:  add
+    IL_01ad:  ldarg.s    a_s
+    IL_01af:  ldloc.s    b_cum
+    IL_01b1:  ldc.i4.0
+    IL_01b2:  ldc.i4.0
+    IL_01b3:  ldloc.0
+    IL_01b4:  ldloc.s    p4
+    IL_01b6:  ldc.i4.0
+    IL_01b7:  ldc.i4.0
+    IL_01b8:  ldloc.0
+    IL_01b9:  ldarg.s    s
+    IL_01bb:  call       void Matrix::strassen_mult_serial(valuetype [mscorlib]System.Threading.CancellationToken,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32)
+    IL_01c0:  nop
+    IL_01c1:  ldloc.0
+    IL_01c2:  ldloc.0
+    IL_01c3:  ldarg.2
+    IL_01c4:  ldarg.3
+    IL_01c5:  ldarg.s    ay
+    IL_01c7:  ldarg.s    a_s
+    IL_01c9:  ldarg.2
+    IL_01ca:  ldarg.3
+    IL_01cb:  ldarg.s    ay
+    IL_01cd:  ldloc.0
+    IL_01ce:  add
+    IL_01cf:  ldarg.s    a_s
+    IL_01d1:  ldloc.3
+    IL_01d2:  ldc.i4.0
+    IL_01d3:  ldc.i4.0
+    IL_01d4:  ldloc.0
+    IL_01d5:  call       void Matrix::matrix_add(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_01da:  nop
+    IL_01db:  ldarg.0
+    IL_01dc:  ldloc.0
+    IL_01dd:  ldloc.3
+    IL_01de:  ldc.i4.0
+    IL_01df:  ldc.i4.0
+    IL_01e0:  ldloc.0
+    IL_01e1:  ldarg.s    B
+    IL_01e3:  ldarg.s    bx
+    IL_01e5:  ldloc.0
+    IL_01e6:  add
+    IL_01e7:  ldarg.s    by
+    IL_01e9:  ldloc.0
+    IL_01ea:  add
+    IL_01eb:  ldarg.s    bs
+    IL_01ed:  ldloc.s    p5
+    IL_01ef:  ldc.i4.0
+    IL_01f0:  ldc.i4.0
+    IL_01f1:  ldloc.0
+    IL_01f2:  ldarg.s    s
+    IL_01f4:  call       void Matrix::strassen_mult_serial(valuetype [mscorlib]System.Threading.CancellationToken,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32)
+    IL_01f9:  nop
+    IL_01fa:  ldloc.0
+    IL_01fb:  ldloc.0
+    IL_01fc:  ldarg.2
+    IL_01fd:  ldarg.3
+    IL_01fe:  ldloc.0
+    IL_01ff:  add
+    IL_0200:  ldarg.s    ay
+    IL_0202:  ldarg.s    a_s
+    IL_0204:  ldarg.2
+    IL_0205:  ldarg.3
+    IL_0206:  ldarg.s    ay
+    IL_0208:  ldarg.s    a_s
+    IL_020a:  ldloc.3
+    IL_020b:  ldc.i4.0
+    IL_020c:  ldc.i4.0
+    IL_020d:  ldloc.0
+    IL_020e:  call       void Matrix::matrix_sub(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_0213:  nop
+    IL_0214:  ldloc.0
+    IL_0215:  ldloc.0
+    IL_0216:  ldarg.s    B
+    IL_0218:  ldarg.s    bx
+    IL_021a:  ldarg.s    by
+    IL_021c:  ldarg.s    bs
+    IL_021e:  ldarg.s    B
+    IL_0220:  ldarg.s    bx
+    IL_0222:  ldarg.s    by
+    IL_0224:  ldloc.0
+    IL_0225:  add
+    IL_0226:  ldarg.s    bs
+    IL_0228:  ldloc.s    b_cum
+    IL_022a:  ldc.i4.0
+    IL_022b:  ldc.i4.0
+    IL_022c:  ldloc.0
+    IL_022d:  call       void Matrix::matrix_add(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_0232:  nop
+    IL_0233:  ldarg.0
+    IL_0234:  ldloc.0
+    IL_0235:  ldloc.3
+    IL_0236:  ldc.i4.0
+    IL_0237:  ldc.i4.0
+    IL_0238:  ldloc.0
+    IL_0239:  ldloc.s    b_cum
+    IL_023b:  ldc.i4.0
+    IL_023c:  ldc.i4.0
+    IL_023d:  ldloc.0
+    IL_023e:  ldloc.s    p6
+    IL_0240:  ldc.i4.0
+    IL_0241:  ldc.i4.0
+    IL_0242:  ldloc.0
+    IL_0243:  ldarg.s    s
+    IL_0245:  call       void Matrix::strassen_mult_serial(valuetype [mscorlib]System.Threading.CancellationToken,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32)
+    IL_024a:  nop
+    IL_024b:  ldloc.0
+    IL_024c:  ldloc.0
+    IL_024d:  ldarg.2
+    IL_024e:  ldarg.3
+    IL_024f:  ldarg.s    ay
+    IL_0251:  ldloc.0
+    IL_0252:  add
+    IL_0253:  ldarg.s    a_s
+    IL_0255:  ldarg.2
+    IL_0256:  ldarg.3
+    IL_0257:  ldloc.0
+    IL_0258:  add
+    IL_0259:  ldarg.s    ay
+    IL_025b:  ldloc.0
+    IL_025c:  add
+    IL_025d:  ldarg.s    a_s
+    IL_025f:  ldloc.3
+    IL_0260:  ldc.i4.0
+    IL_0261:  ldc.i4.0
+    IL_0262:  ldloc.0
+    IL_0263:  call       void Matrix::matrix_sub(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_0268:  nop
+    IL_0269:  ldloc.0
+    IL_026a:  ldloc.0
+    IL_026b:  ldarg.s    B
+    IL_026d:  ldarg.s    bx
+    IL_026f:  ldloc.0
+    IL_0270:  add
+    IL_0271:  ldarg.s    by
+    IL_0273:  ldarg.s    bs
+    IL_0275:  ldarg.s    B
+    IL_0277:  ldarg.s    bx
+    IL_0279:  ldloc.0
+    IL_027a:  add
+    IL_027b:  ldarg.s    by
+    IL_027d:  ldloc.0
+    IL_027e:  add
+    IL_027f:  ldarg.s    bs
+    IL_0281:  ldloc.s    b_cum
+    IL_0283:  ldc.i4.0
+    IL_0284:  ldc.i4.0
+    IL_0285:  ldloc.0
+    IL_0286:  call       void Matrix::matrix_add(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_028b:  nop
+    IL_028c:  ldarg.0
+    IL_028d:  ldloc.0
+    IL_028e:  ldloc.3
+    IL_028f:  ldc.i4.0
+    IL_0290:  ldc.i4.0
+    IL_0291:  ldloc.0
+    IL_0292:  ldloc.s    b_cum
+    IL_0294:  ldc.i4.0
+    IL_0295:  ldc.i4.0
+    IL_0296:  ldloc.0
+    IL_0297:  ldloc.s    p7
+    IL_0299:  ldc.i4.0
+    IL_029a:  ldc.i4.0
+    IL_029b:  ldloc.0
+    IL_029c:  ldarg.s    s
+    IL_029e:  call       void Matrix::strassen_mult_serial(valuetype [mscorlib]System.Threading.CancellationToken,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32*,
+                                                           int32,
+                                                           int32,
+                                                           int32,
+                                                           int32)
+    IL_02a3:  nop
+    IL_02a4:  ldloc.0
+    IL_02a5:  ldloc.0
+    IL_02a6:  ldloc.s    p1
+    IL_02a8:  ldc.i4.0
+    IL_02a9:  ldc.i4.0
+    IL_02aa:  ldloc.0
+    IL_02ab:  ldloc.s    p4
+    IL_02ad:  ldc.i4.0
+    IL_02ae:  ldc.i4.0
+    IL_02af:  ldloc.0
+    IL_02b0:  ldarg.s    C
+    IL_02b2:  ldarg.s    cx
+    IL_02b4:  ldarg.s    cy
+    IL_02b6:  ldarg.s    cs
+    IL_02b8:  call       void Matrix::matrix_add(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_02bd:  nop
+    IL_02be:  ldloc.0
+    IL_02bf:  ldloc.0
+    IL_02c0:  ldarg.s    C
+    IL_02c2:  ldarg.s    cx
+    IL_02c4:  ldarg.s    cy
+    IL_02c6:  ldarg.s    cs
+    IL_02c8:  ldloc.s    p5
+    IL_02ca:  ldc.i4.0
+    IL_02cb:  ldc.i4.0
+    IL_02cc:  ldloc.0
+    IL_02cd:  ldarg.s    C
+    IL_02cf:  ldarg.s    cx
+    IL_02d1:  ldarg.s    cy
+    IL_02d3:  ldarg.s    cs
+    IL_02d5:  call       void Matrix::matrix_sub(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_02da:  nop
+    IL_02db:  ldloc.0
+    IL_02dc:  ldloc.0
+    IL_02dd:  ldarg.s    C
+    IL_02df:  ldarg.s    cx
+    IL_02e1:  ldarg.s    cy
+    IL_02e3:  ldarg.s    cs
+    IL_02e5:  ldloc.s    p7
+    IL_02e7:  ldc.i4.0
+    IL_02e8:  ldc.i4.0
+    IL_02e9:  ldloc.0
+    IL_02ea:  ldarg.s    C
+    IL_02ec:  ldarg.s    cx
+    IL_02ee:  ldarg.s    cy
+    IL_02f0:  ldarg.s    cs
+    IL_02f2:  call       void Matrix::matrix_add(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_02f7:  nop
+    IL_02f8:  ldloc.0
+    IL_02f9:  ldloc.0
+    IL_02fa:  ldloc.s    p3
+    IL_02fc:  ldc.i4.0
+    IL_02fd:  ldc.i4.0
+    IL_02fe:  ldloc.0
+    IL_02ff:  ldloc.s    p5
+    IL_0301:  ldc.i4.0
+    IL_0302:  ldc.i4.0
+    IL_0303:  ldloc.0
+    IL_0304:  ldarg.s    C
+    IL_0306:  ldarg.s    cx
+    IL_0308:  ldarg.s    cy
+    IL_030a:  ldloc.0
+    IL_030b:  add
+    IL_030c:  ldarg.s    cs
+    IL_030e:  call       void Matrix::matrix_add(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_0313:  nop
+    IL_0314:  ldloc.0
+    IL_0315:  ldloc.0
+    IL_0316:  ldloc.s    p2
+    IL_0318:  ldc.i4.0
+    IL_0319:  ldc.i4.0
+    IL_031a:  ldloc.0
+    IL_031b:  ldloc.s    p4
+    IL_031d:  ldc.i4.0
+    IL_031e:  ldc.i4.0
+    IL_031f:  ldloc.0
+    IL_0320:  ldarg.s    C
+    IL_0322:  ldarg.s    cx
+    IL_0324:  ldloc.0
+    IL_0325:  add
+    IL_0326:  ldarg.s    cy
+    IL_0328:  ldarg.s    cs
+    IL_032a:  call       void Matrix::matrix_add(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_032f:  nop
+    IL_0330:  ldloc.0
+    IL_0331:  ldloc.0
+    IL_0332:  ldloc.s    p1
+    IL_0334:  ldc.i4.0
+    IL_0335:  ldc.i4.0
+    IL_0336:  ldloc.0
+    IL_0337:  ldloc.s    p3
+    IL_0339:  ldc.i4.0
+    IL_033a:  ldc.i4.0
+    IL_033b:  ldloc.0
+    IL_033c:  ldarg.s    C
+    IL_033e:  ldarg.s    cx
+    IL_0340:  ldloc.0
+    IL_0341:  add
+    IL_0342:  ldarg.s    cy
+    IL_0344:  ldloc.0
+    IL_0345:  add
+    IL_0346:  ldarg.s    cs
+    IL_0348:  call       void Matrix::matrix_add(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_034d:  nop
+    IL_034e:  ldloc.0
+    IL_034f:  ldloc.0
+    IL_0350:  ldarg.s    C
+    IL_0352:  ldarg.s    cx
+    IL_0354:  ldloc.0
+    IL_0355:  add
+    IL_0356:  ldarg.s    cy
+    IL_0358:  ldloc.0
+    IL_0359:  add
+    IL_035a:  ldarg.s    cs
+    IL_035c:  ldloc.s    p2
+    IL_035e:  ldc.i4.0
+    IL_035f:  ldc.i4.0
+    IL_0360:  ldloc.0
+    IL_0361:  ldarg.s    C
+    IL_0363:  ldarg.s    cx
+    IL_0365:  ldloc.0
+    IL_0366:  add
+    IL_0367:  ldarg.s    cy
+    IL_0369:  ldloc.0
+    IL_036a:  add
+    IL_036b:  ldarg.s    cs
+    IL_036d:  call       void Matrix::matrix_sub(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_0372:  nop
+    IL_0373:  ldloc.0
+    IL_0374:  ldloc.0
+    IL_0375:  ldarg.s    C
+    IL_0377:  ldarg.s    cx
+    IL_0379:  ldloc.0
+    IL_037a:  add
+    IL_037b:  ldarg.s    cy
+    IL_037d:  ldloc.0
+    IL_037e:  add
+    IL_037f:  ldarg.s    cs
+    IL_0381:  ldloc.s    p6
+    IL_0383:  ldc.i4.0
+    IL_0384:  ldc.i4.0
+    IL_0385:  ldloc.0
+    IL_0386:  ldarg.s    C
+    IL_0388:  ldarg.s    cx
+    IL_038a:  ldloc.0
+    IL_038b:  add
+    IL_038c:  ldarg.s    cy
+    IL_038e:  ldloc.0
+    IL_038f:  add
+    IL_0390:  ldarg.s    cs
+    IL_0392:  call       void Matrix::matrix_add(int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32,
+                                                 int32*,
+                                                 int32,
+                                                 int32,
+                                                 int32)
+    IL_0397:  nop
+    IL_0398:  nop
+    IL_0399:  ldc.i4.0
+    IL_039a:  conv.u
+    IL_039b:  stloc.2
+    IL_039c:  nop
+    IL_039d:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="380" endline="614"><![CDATA[
+  {
+    // Code size       1158 (0x486)
+    .maxstack  16
+    .locals init ([0] int32 areaSize,
+             [1] int32[] workArr,
+             [2] int32& pinned work,
+             [3] class [mscorlib]System.Threading.Tasks.Task t_p1,
+             [4] class [mscorlib]System.Threading.Tasks.Task t_p2,
+             [5] class [mscorlib]System.Threading.Tasks.Task t_p3,
+             [6] class [mscorlib]System.Threading.Tasks.Task t_p4,
+             [7] class [mscorlib]System.Threading.Tasks.Task t_p5,
+             [8] class [mscorlib]System.Threading.Tasks.Task t_p6,
+             [9] class [mscorlib]System.Threading.Tasks.Task t_p7,
+             [10] class [mscorlib]System.AggregateException ae,
+             [11] class [mscorlib]System.Threading.Tasks.Task t_c11,
+             [12] class [mscorlib]System.Threading.Tasks.Task t_c12,
+             [13] class [mscorlib]System.Threading.Tasks.Task t_c21,
+             [14] class [mscorlib]System.Threading.Tasks.Task t_c22,
+             [15] class Matrix/'<>c__DisplayClass15' 'CS$<>8__locals16',
+             [16] class Matrix/'<>c__DisplayClass13' 'CS$<>8__locals14',
+             [17] class Matrix/'<>c__DisplayClass11' 'CS$<>8__locals12',
+             [18] bool CS$4$0000,
+             [19] int32[] CS$0$0001,
+             [20] class [mscorlib]System.Threading.Tasks.Task[] CS$0$0002)
+    IL_0000:  newobj     instance void Matrix/'<>c__DisplayClass11'::.ctor()
+    IL_0005:  stloc.s    'CS$<>8__locals12'
+    IL_0007:  ldloc.s    'CS$<>8__locals12'
+    IL_0009:  ldarg.0
+    IL_000a:  stfld      valuetype [mscorlib]System.Threading.CancellationToken Matrix/'<>c__DisplayClass11'::cancellationToken
+    IL_000f:  ldloc.s    'CS$<>8__locals12'
+    IL_0011:  ldarg.2
+    IL_0012:  stfld      int32* Matrix/'<>c__DisplayClass11'::A
+    IL_0017:  ldloc.s    'CS$<>8__locals12'
+    IL_0019:  ldarg.3
+    IL_001a:  stfld      int32 Matrix/'<>c__DisplayClass11'::ax
+    IL_001f:  ldloc.s    'CS$<>8__locals12'
+    IL_0021:  ldarg.s    ay
+    IL_0023:  stfld      int32 Matrix/'<>c__DisplayClass11'::ay
+    IL_0028:  ldloc.s    'CS$<>8__locals12'
+    IL_002a:  ldarg.s    a_s
+    IL_002c:  stfld      int32 Matrix/'<>c__DisplayClass11'::a_s
+    IL_0031:  ldloc.s    'CS$<>8__locals12'
+    IL_0033:  ldarg.s    B
+    IL_0035:  stfld      int32* Matrix/'<>c__DisplayClass11'::B
+    IL_003a:  ldloc.s    'CS$<>8__locals12'
+    IL_003c:  ldarg.s    bx
+    IL_003e:  stfld      int32 Matrix/'<>c__DisplayClass11'::bx
+    IL_0043:  ldloc.s    'CS$<>8__locals12'
+    IL_0045:  ldarg.s    by
+    IL_0047:  stfld      int32 Matrix/'<>c__DisplayClass11'::by
+    IL_004c:  ldloc.s    'CS$<>8__locals12'
+    IL_004e:  ldarg.s    bs
+    IL_0050:  stfld      int32 Matrix/'<>c__DisplayClass11'::bs
+    IL_0055:  ldloc.s    'CS$<>8__locals12'
+    IL_0057:  ldarg.s    C
+    IL_0059:  stfld      int32* Matrix/'<>c__DisplayClass11'::C
+    IL_005e:  ldloc.s    'CS$<>8__locals12'
+    IL_0060:  ldarg.s    cx
+    IL_0062:  stfld      int32 Matrix/'<>c__DisplayClass11'::cx
+    IL_0067:  ldloc.s    'CS$<>8__locals12'
+    IL_0069:  ldarg.s    cy
+    IL_006b:  stfld      int32 Matrix/'<>c__DisplayClass11'::cy
+    IL_0070:  ldloc.s    'CS$<>8__locals12'
+    IL_0072:  ldarg.s    cs
+    IL_0074:  stfld      int32 Matrix/'<>c__DisplayClass11'::cs
+    IL_0079:  ldloc.s    'CS$<>8__locals12'
+    IL_007b:  ldarg.s    s
+    IL_007d:  stfld      int32 Matrix/'<>c__DisplayClass11'::s
+    IL_0082:  nop
+    IL_0083:  ldarg.1
+    IL_0084:  ldloc.s    'CS$<>8__locals12'
+    IL_0086:  ldfld      int32 Matrix/'<>c__DisplayClass11'::s
+    IL_008b:  cgt
+    IL_008d:  stloc.s    CS$4$0000
+    IL_008f:  ldloc.s    CS$4$0000
+    IL_0091:  brtrue.s   IL_00fe
+
+    IL_0093:  nop
+    IL_0094:  ldloc.s    'CS$<>8__locals12'
+    IL_0096:  ldfld      valuetype [mscorlib]System.Threading.CancellationToken Matrix/'<>c__DisplayClass11'::cancellationToken
+    IL_009b:  ldarg.1
+    IL_009c:  ldarg.1
+    IL_009d:  ldarg.1
+    IL_009e:  ldloc.s    'CS$<>8__locals12'
+    IL_00a0:  ldfld      int32* Matrix/'<>c__DisplayClass11'::A
+    IL_00a5:  ldloc.s    'CS$<>8__locals12'
+    IL_00a7:  ldfld      int32 Matrix/'<>c__DisplayClass11'::ax
+    IL_00ac:  ldloc.s    'CS$<>8__locals12'
+    IL_00ae:  ldfld      int32 Matrix/'<>c__DisplayClass11'::ay
+    IL_00b3:  ldloc.s    'CS$<>8__locals12'
+    IL_00b5:  ldfld      int32 Matrix/'<>c__DisplayClass11'::a_s
+    IL_00ba:  ldloc.s    'CS$<>8__locals12'
+    IL_00bc:  ldfld      int32* Matrix/'<>c__DisplayClass11'::B
+    IL_00c1:  ldloc.s    'CS$<>8__locals12'
+    IL_00c3:  ldfld      int32 Matrix/'<>c__DisplayClass11'::bx
+    IL_00c8:  ldloc.s    'CS$<>8__locals12'
+    IL_00ca:  ldfld      int32 Matrix/'<>c__DisplayClass11'::by
+    IL_00cf:  ldloc.s    'CS$<>8__locals12'
+    IL_00d1:  ldfld      int32 Matrix/'<>c__DisplayClass11'::bs
+    IL_00d6:  ldloc.s    'CS$<>8__locals12'
+    IL_00d8:  ldfld      int32* Matrix/'<>c__DisplayClass11'::C
+    IL_00dd:  ldloc.s    'CS$<>8__locals12'
+    IL_00df:  ldfld      int32 Matrix/'<>c__DisplayClass11'::cx
+    IL_00e4:  ldloc.s    'CS$<>8__locals12'
+    IL_00e6:  ldfld      int32 Matrix/'<>c__DisplayClass11'::cy
+    IL_00eb:  ldloc.s    'CS$<>8__locals12'
+    IL_00ed:  ldfld      int32 Matrix/'<>c__DisplayClass11'::cs
+    IL_00f2:  call       void Matrix::matrix_mult_serial(valuetype [mscorlib]System.Threading.CancellationToken,
+                                                         int32,
+                                                         int32,
+                                                         int32,
+                                                         int32*,
+                                                         int32,
+                                                         int32,
+                                                         int32,
+                                                         int32*,
+                                                         int32,
+                                                         int32,
+                                                         int32,
+                                                         int32*,
+                                                         int32,
+                                                         int32,
+                                                         int32)
+    IL_00f7:  nop
+    IL_00f8:  nop
+    IL_00f9:  br         IL_0484
+
+    IL_00fe:  newobj     instance void Matrix/'<>c__DisplayClass13'::.ctor()
+    IL_0103:  stloc.s    'CS$<>8__locals14'
+    IL_0105:  nop
+    IL_0106:  ldloc.s    'CS$<>8__locals14'
+    IL_0108:  ldarg.1
+    IL_0109:  ldc.i4.1
+    IL_010a:  shr
+    IL_010b:  stfld      int32 Matrix/'<>c__DisplayClass13'::n_2
+    IL_0110:  ldloc.s    'CS$<>8__locals14'
+    IL_0112:  ldfld      int32 Matrix/'<>c__DisplayClass13'::n_2
+    IL_0117:  ldloc.s    'CS$<>8__locals14'
+    IL_0119:  ldfld      int32 Matrix/'<>c__DisplayClass13'::n_2
+    IL_011e:  mul
+    IL_011f:  stloc.0
+    IL_0120:  ldloc.0
+    IL_0121:  ldc.i4.s   17
+    IL_0123:  mul
+    IL_0124:  newarr     [mscorlib]System.Int32
+    IL_0129:  stloc.1
+    IL_012a:  ldloc.1
+    IL_012b:  dup
+    IL_012c:  stloc.s    CS$0$0001
+    IL_012e:  brfalse.s  IL_0136
+
+    IL_0130:  ldloc.s    CS$0$0001
+    IL_0132:  ldlen
+    IL_0133:  conv.i4
+    IL_0134:  brtrue.s   IL_013b
+
+    IL_0136:  ldc.i4.0
+    IL_0137:  conv.u
+    IL_0138:  stloc.2
+    IL_0139:  br.s       IL_0144
+
+    IL_013b:  ldloc.s    CS$0$0001
+    IL_013d:  ldc.i4.0
+    IL_013e:  ldelema    [mscorlib]System.Int32
+    IL_0143:  stloc.2
+    IL_0144:  newobj     instance void Matrix/'<>c__DisplayClass15'::.ctor()
+    IL_0149:  stloc.s    'CS$<>8__locals16'
+    IL_014b:  ldloc.s    'CS$<>8__locals16'
+    IL_014d:  ldloc.s    'CS$<>8__locals14'
+    IL_014f:  stfld      class Matrix/'<>c__DisplayClass13' Matrix/'<>c__DisplayClass15'::'CS$<>8__locals14'
+    IL_0154:  ldloc.s    'CS$<>8__locals16'
+    IL_0156:  ldloc.s    'CS$<>8__locals12'
+    IL_0158:  stfld      class Matrix/'<>c__DisplayClass11' Matrix/'<>c__DisplayClass15'::'CS$<>8__locals12'
+    IL_015d:  nop
+    IL_015e:  ldloc.s    'CS$<>8__locals16'
+    IL_0160:  ldloc.2
+    IL_0161:  conv.i
+    IL_0162:  stfld      int32* Matrix/'<>c__DisplayClass15'::a_cum
+    IL_0167:  ldloc.s    'CS$<>8__locals16'
+    IL_0169:  ldloc.s    'CS$<>8__locals16'
+    IL_016b:  ldfld      int32* Matrix/'<>c__DisplayClass15'::a_cum
+    IL_0170:  ldloc.0
+    IL_0171:  conv.i
+    IL_0172:  ldc.i4.4
+    IL_0173:  mul
+    IL_0174:  add
+    IL_0175:  stfld      int32* Matrix/'<>c__DisplayClass15'::b_cum
+    IL_017a:  ldloc.s    'CS$<>8__locals16'
+    IL_017c:  ldloc.s    'CS$<>8__locals16'
+    IL_017e:  ldfld      int32* Matrix/'<>c__DisplayClass15'::b_cum
+    IL_0183:  ldloc.0
+    IL_0184:  conv.i
+    IL_0185:  ldc.i4.4
+    IL_0186:  mul
+    IL_0187:  add
+    IL_0188:  stfld      int32* Matrix/'<>c__DisplayClass15'::c_cum
+    IL_018d:  ldloc.s    'CS$<>8__locals16'
+    IL_018f:  ldloc.s    'CS$<>8__locals16'
+    IL_0191:  ldfld      int32* Matrix/'<>c__DisplayClass15'::c_cum
+    IL_0196:  ldloc.0
+    IL_0197:  conv.i
+    IL_0198:  ldc.i4.4
+    IL_0199:  mul
+    IL_019a:  add
+    IL_019b:  stfld      int32* Matrix/'<>c__DisplayClass15'::d_cum
+    IL_01a0:  ldloc.s    'CS$<>8__locals16'
+    IL_01a2:  ldloc.s    'CS$<>8__locals16'
+    IL_01a4:  ldfld      int32* Matrix/'<>c__DisplayClass15'::d_cum
+    IL_01a9:  ldloc.0
+    IL_01aa:  conv.i
+    IL_01ab:  ldc.i4.4
+    IL_01ac:  mul
+    IL_01ad:  add
+    IL_01ae:  stfld      int32* Matrix/'<>c__DisplayClass15'::e_cum
+    IL_01b3:  ldloc.s    'CS$<>8__locals16'
+    IL_01b5:  ldloc.s    'CS$<>8__locals16'
+    IL_01b7:  ldfld      int32* Matrix/'<>c__DisplayClass15'::e_cum
+    IL_01bc:  ldloc.0
+    IL_01bd:  conv.i
+    IL_01be:  ldc.i4.4
+    IL_01bf:  mul
+    IL_01c0:  add
+    IL_01c1:  stfld      int32* Matrix/'<>c__DisplayClass15'::f_cum
+    IL_01c6:  ldloc.s    'CS$<>8__locals16'
+    IL_01c8:  ldloc.s    'CS$<>8__locals16'
+    IL_01ca:  ldfld      int32* Matrix/'<>c__DisplayClass15'::f_cum
+    IL_01cf:  ldloc.0
+    IL_01d0:  conv.i
+    IL_01d1:  ldc.i4.4
+    IL_01d2:  mul
+    IL_01d3:  add
+    IL_01d4:  stfld      int32* Matrix/'<>c__DisplayClass15'::g_cum
+    IL_01d9:  ldloc.s    'CS$<>8__locals16'
+    IL_01db:  ldloc.s    'CS$<>8__locals16'
+    IL_01dd:  ldfld      int32* Matrix/'<>c__DisplayClass15'::g_cum
+    IL_01e2:  ldloc.0
+    IL_01e3:  conv.i
+    IL_01e4:  ldc.i4.4
+    IL_01e5:  mul
+    IL_01e6:  add
+    IL_01e7:  stfld      int32* Matrix/'<>c__DisplayClass15'::h_cum
+    IL_01ec:  ldloc.s    'CS$<>8__locals16'
+    IL_01ee:  ldloc.s    'CS$<>8__locals16'
+    IL_01f0:  ldfld      int32* Matrix/'<>c__DisplayClass15'::h_cum
+    IL_01f5:  ldloc.0
+    IL_01f6:  conv.i
+    IL_01f7:  ldc.i4.4
+    IL_01f8:  mul
+    IL_01f9:  add
+    IL_01fa:  stfld      int32* Matrix/'<>c__DisplayClass15'::i_cum
+    IL_01ff:  ldloc.s    'CS$<>8__locals16'
+    IL_0201:  ldloc.s    'CS$<>8__locals16'
+    IL_0203:  ldfld      int32* Matrix/'<>c__DisplayClass15'::i_cum
+    IL_0208:  ldloc.0
+    IL_0209:  conv.i
+    IL_020a:  ldc.i4.4
+    IL_020b:  mul
+    IL_020c:  add
+    IL_020d:  stfld      int32* Matrix/'<>c__DisplayClass15'::j_cum
+    IL_0212:  ldloc.s    'CS$<>8__locals16'
+    IL_0214:  ldloc.s    'CS$<>8__locals16'
+    IL_0216:  ldfld      int32* Matrix/'<>c__DisplayClass15'::j_cum
+    IL_021b:  ldloc.0
+    IL_021c:  conv.i
+    IL_021d:  ldc.i4.4
+    IL_021e:  mul
+    IL_021f:  add
+    IL_0220:  stfld      int32* Matrix/'<>c__DisplayClass15'::p1
+    IL_0225:  ldloc.s    'CS$<>8__locals16'
+    IL_0227:  ldloc.s    'CS$<>8__locals16'
+    IL_0229:  ldfld      int32* Matrix/'<>c__DisplayClass15'::p1
+    IL_022e:  ldloc.0
+    IL_022f:  conv.i
+    IL_0230:  ldc.i4.4
+    IL_0231:  mul
+    IL_0232:  add
+    IL_0233:  stfld      int32* Matrix/'<>c__DisplayClass15'::p2
+    IL_0238:  ldloc.s    'CS$<>8__locals16'
+    IL_023a:  ldloc.s    'CS$<>8__locals16'
+    IL_023c:  ldfld      int32* Matrix/'<>c__DisplayClass15'::p2
+    IL_0241:  ldloc.0
+    IL_0242:  conv.i
+    IL_0243:  ldc.i4.4
+    IL_0244:  mul
+    IL_0245:  add
+    IL_0246:  stfld      int32* Matrix/'<>c__DisplayClass15'::p3
+    IL_024b:  ldloc.s    'CS$<>8__locals16'
+    IL_024d:  ldloc.s    'CS$<>8__locals16'
+    IL_024f:  ldfld      int32* Matrix/'<>c__DisplayClass15'::p3
+    IL_0254:  ldloc.0
+    IL_0255:  conv.i
+    IL_0256:  ldc.i4.4
+    IL_0257:  mul
+    IL_0258:  add
+    IL_0259:  stfld      int32* Matrix/'<>c__DisplayClass15'::p4
+    IL_025e:  ldloc.s    'CS$<>8__locals16'
+    IL_0260:  ldloc.s    'CS$<>8__locals16'
+    IL_0262:  ldfld      int32* Matrix/'<>c__DisplayClass15'::p4
+    IL_0267:  ldloc.0
+    IL_0268:  conv.i
+    IL_0269:  ldc.i4.4
+    IL_026a:  mul
+    IL_026b:  add
+    IL_026c:  stfld      int32* Matrix/'<>c__DisplayClass15'::p5
+    IL_0271:  ldloc.s    'CS$<>8__locals16'
+    IL_0273:  ldloc.s    'CS$<>8__locals16'
+    IL_0275:  ldfld      int32* Matrix/'<>c__DisplayClass15'::p5
+    IL_027a:  ldloc.0
+    IL_027b:  conv.i
+    IL_027c:  ldc.i4.4
+    IL_027d:  mul
+    IL_027e:  add
+    IL_027f:  stfld      int32* Matrix/'<>c__DisplayClass15'::p6
+    IL_0284:  ldloc.s    'CS$<>8__locals16'
+    IL_0286:  ldloc.s    'CS$<>8__locals16'
+    IL_0288:  ldfld      int32* Matrix/'<>c__DisplayClass15'::p6
+    IL_028d:  ldloc.0
+    IL_028e:  conv.i
+    IL_028f:  ldc.i4.4
+    IL_0290:  mul
+    IL_0291:  add
+    IL_0292:  stfld      int32* Matrix/'<>c__DisplayClass15'::p7
+    IL_0297:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_029c:  ldloc.s    'CS$<>8__locals16'
+    IL_029e:  ldftn      instance void Matrix/'<>c__DisplayClass15'::'<strassen_mult_parallel>b__4'()
+    IL_02a4:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_02a9:  ldloc.s    'CS$<>8__locals12'
+    IL_02ab:  ldfld      valuetype [mscorlib]System.Threading.CancellationToken Matrix/'<>c__DisplayClass11'::cancellationToken
+    IL_02b0:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.CancellationToken)
+    IL_02b5:  stloc.3
+    IL_02b6:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_02bb:  ldloc.s    'CS$<>8__locals16'
+    IL_02bd:  ldftn      instance void Matrix/'<>c__DisplayClass15'::'<strassen_mult_parallel>b__5'()
+    IL_02c3:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_02c8:  ldloc.s    'CS$<>8__locals12'
+    IL_02ca:  ldfld      valuetype [mscorlib]System.Threading.CancellationToken Matrix/'<>c__DisplayClass11'::cancellationToken
+    IL_02cf:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.CancellationToken)
+    IL_02d4:  stloc.s    t_p2
+    IL_02d6:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_02db:  ldloc.s    'CS$<>8__locals16'
+    IL_02dd:  ldftn      instance void Matrix/'<>c__DisplayClass15'::'<strassen_mult_parallel>b__6'()
+    IL_02e3:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_02e8:  ldloc.s    'CS$<>8__locals12'
+    IL_02ea:  ldfld      valuetype [mscorlib]System.Threading.CancellationToken Matrix/'<>c__DisplayClass11'::cancellationToken
+    IL_02ef:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.CancellationToken)
+    IL_02f4:  stloc.s    t_p3
+    IL_02f6:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_02fb:  ldloc.s    'CS$<>8__locals16'
+    IL_02fd:  ldftn      instance void Matrix/'<>c__DisplayClass15'::'<strassen_mult_parallel>b__7'()
+    IL_0303:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_0308:  ldloc.s    'CS$<>8__locals12'
+    IL_030a:  ldfld      valuetype [mscorlib]System.Threading.CancellationToken Matrix/'<>c__DisplayClass11'::cancellationToken
+    IL_030f:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.CancellationToken)
+    IL_0314:  stloc.s    t_p4
+    IL_0316:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_031b:  ldloc.s    'CS$<>8__locals16'
+    IL_031d:  ldftn      instance void Matrix/'<>c__DisplayClass15'::'<strassen_mult_parallel>b__8'()
+    IL_0323:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_0328:  ldloc.s    'CS$<>8__locals12'
+    IL_032a:  ldfld      valuetype [mscorlib]System.Threading.CancellationToken Matrix/'<>c__DisplayClass11'::cancellationToken
+    IL_032f:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.CancellationToken)
+    IL_0334:  stloc.s    t_p5
+    IL_0336:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_033b:  ldloc.s    'CS$<>8__locals16'
+    IL_033d:  ldftn      instance void Matrix/'<>c__DisplayClass15'::'<strassen_mult_parallel>b__9'()
+    IL_0343:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_0348:  ldloc.s    'CS$<>8__locals12'
+    IL_034a:  ldfld      valuetype [mscorlib]System.Threading.CancellationToken Matrix/'<>c__DisplayClass11'::cancellationToken
+    IL_034f:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.CancellationToken)
+    IL_0354:  stloc.s    t_p6
+    IL_0356:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_035b:  ldloc.s    'CS$<>8__locals16'
+    IL_035d:  ldftn      instance void Matrix/'<>c__DisplayClass15'::'<strassen_mult_parallel>b__a'()
+    IL_0363:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_0368:  ldloc.s    'CS$<>8__locals12'
+    IL_036a:  ldfld      valuetype [mscorlib]System.Threading.CancellationToken Matrix/'<>c__DisplayClass11'::cancellationToken
+    IL_036f:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.CancellationToken)
+    IL_0374:  stloc.s    t_p7
+    .try
+    {
+      IL_0376:  nop
+      IL_0377:  ldc.i4.7
+      IL_0378:  newarr     [mscorlib]System.Threading.Tasks.Task
+      IL_037d:  stloc.s    CS$0$0002
+      IL_037f:  ldloc.s    CS$0$0002
+      IL_0381:  ldc.i4.0
+      IL_0382:  ldloc.3
+      IL_0383:  stelem.ref
+      IL_0384:  ldloc.s    CS$0$0002
+      IL_0386:  ldc.i4.1
+      IL_0387:  ldloc.s    t_p2
+      IL_0389:  stelem.ref
+      IL_038a:  ldloc.s    CS$0$0002
+      IL_038c:  ldc.i4.2
+      IL_038d:  ldloc.s    t_p3
+      IL_038f:  stelem.ref
+      IL_0390:  ldloc.s    CS$0$0002
+      IL_0392:  ldc.i4.3
+      IL_0393:  ldloc.s    t_p4
+      IL_0395:  stelem.ref
+      IL_0396:  ldloc.s    CS$0$0002
+      IL_0398:  ldc.i4.4
+      IL_0399:  ldloc.s    t_p5
+      IL_039b:  stelem.ref
+      IL_039c:  ldloc.s    CS$0$0002
+      IL_039e:  ldc.i4.5
+      IL_039f:  ldloc.s    t_p6
+      IL_03a1:  stelem.ref
+      IL_03a2:  ldloc.s    CS$0$0002
+      IL_03a4:  ldc.i4.6
+      IL_03a5:  ldloc.s    t_p7
+      IL_03a7:  stelem.ref
+      IL_03a8:  ldloc.s    CS$0$0002
+      IL_03aa:  call       void [mscorlib]System.Threading.Tasks.Task::WaitAll(class [mscorlib]System.Threading.Tasks.Task[])
+      IL_03af:  nop
+      IL_03b0:  nop
+      IL_03b1:  leave.s    IL_03f2
+
+    }  // end .try
+    catch [mscorlib]System.AggregateException 
+    {
+      IL_03b3:  stloc.s    ae
+      IL_03b5:  nop
+      IL_03b6:  ldloc.s    ae
+      IL_03b8:  callvirt   instance class [mscorlib]System.AggregateException [mscorlib]System.AggregateException::Flatten()
+      IL_03bd:  ldsfld     class [mscorlib]System.Func`2<class [mscorlib]System.Exception,bool> Matrix::'CS$<>9__CachedAnonymousMethodDelegate10'
+      IL_03c2:  brtrue.s   IL_03d7
+
+      IL_03c4:  ldnull
+      IL_03c5:  ldftn      bool Matrix::'<strassen_mult_parallel>b__b'(class [mscorlib]System.Exception)
+      IL_03cb:  newobj     instance void class [mscorlib]System.Func`2<class [mscorlib]System.Exception,bool>::.ctor(object,
+                                                                                                                     native int)
+      IL_03d0:  stsfld     class [mscorlib]System.Func`2<class [mscorlib]System.Exception,bool> Matrix::'CS$<>9__CachedAnonymousMethodDelegate10'
+      IL_03d5:  br.s       IL_03d7
+
+      IL_03d7:  ldsfld     class [mscorlib]System.Func`2<class [mscorlib]System.Exception,bool> Matrix::'CS$<>9__CachedAnonymousMethodDelegate10'
+      IL_03dc:  callvirt   instance void [mscorlib]System.AggregateException::Handle(class [mscorlib]System.Func`2<class [mscorlib]System.Exception,bool>)
+      IL_03e1:  nop
+      IL_03e2:  ldloc.s    'CS$<>8__locals12'
+      IL_03e4:  ldflda     valuetype [mscorlib]System.Threading.CancellationToken Matrix/'<>c__DisplayClass11'::cancellationToken
+      IL_03e9:  call       instance void [mscorlib]System.Threading.CancellationToken::ThrowIfCancellationRequested()
+      IL_03ee:  nop
+      IL_03ef:  nop
+      IL_03f0:  leave.s    IL_03f2
+
+    }  // end handler
+    IL_03f2:  nop
+    IL_03f3:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_03f8:  ldloc.s    'CS$<>8__locals16'
+    IL_03fa:  ldftn      instance void Matrix/'<>c__DisplayClass15'::'<strassen_mult_parallel>b__c'()
+    IL_0400:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_0405:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action)
+    IL_040a:  stloc.s    t_c11
+    IL_040c:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_0411:  ldloc.s    'CS$<>8__locals16'
+    IL_0413:  ldftn      instance void Matrix/'<>c__DisplayClass15'::'<strassen_mult_parallel>b__d'()
+    IL_0419:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_041e:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action)
+    IL_0423:  stloc.s    t_c12
+    IL_0425:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_042a:  ldloc.s    'CS$<>8__locals16'
+    IL_042c:  ldftn      instance void Matrix/'<>c__DisplayClass15'::'<strassen_mult_parallel>b__e'()
+    IL_0432:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_0437:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action)
+    IL_043c:  stloc.s    t_c21
+    IL_043e:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_0443:  ldloc.s    'CS$<>8__locals16'
+    IL_0445:  ldftn      instance void Matrix/'<>c__DisplayClass15'::'<strassen_mult_parallel>b__f'()
+    IL_044b:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_0450:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action)
+    IL_0455:  stloc.s    t_c22
+    IL_0457:  ldc.i4.4
+    IL_0458:  newarr     [mscorlib]System.Threading.Tasks.Task
+    IL_045d:  stloc.s    CS$0$0002
+    IL_045f:  ldloc.s    CS$0$0002
+    IL_0461:  ldc.i4.0
+    IL_0462:  ldloc.s    t_c11
+    IL_0464:  stelem.ref
+    IL_0465:  ldloc.s    CS$0$0002
+    IL_0467:  ldc.i4.1
+    IL_0468:  ldloc.s    t_c12
+    IL_046a:  stelem.ref
+    IL_046b:  ldloc.s    CS$0$0002
+    IL_046d:  ldc.i4.2
+    IL_046e:  ldloc.s    t_c21
+    IL_0470:  stelem.ref
+    IL_0471:  ldloc.s    CS$0$0002
+    IL_0473:  ldc.i4.3
+    IL_0474:  ldloc.s    t_c22
+    IL_0476:  stelem.ref
+    IL_0477:  ldloc.s    CS$0$0002
+    IL_0479:  call       void [mscorlib]System.Threading.Tasks.Task::WaitAll(class [mscorlib]System.Threading.Tasks.Task[])
+    IL_047e:  nop
+    IL_047f:  nop
+    IL_0480:  ldc.i4.0
+    IL_0481:  conv.u
+    IL_0482:  stloc.2
+    IL_0483:  nop
+    IL_0484:  nop
+    IL_0485:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="555" endline="615"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       14 (0xe)
+    .maxstack  2
+    .locals init ([0] bool CS$1$0000)
+    IL_0000:  ldarg.0
+    IL_0001:  isinst     [mscorlib]System.Threading.Tasks.TaskCanceledException
+    IL_0006:  ldnull
+    IL_0007:  cgt.un
+    IL_0009:  stloc.0
+    IL_000a:  br.s       IL_000c
+
+    IL_000c:  ldloc.0
+    IL_000d:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Strassens\Strassens_CSharp\Matrix.cs" startline="18" endline="615"><![CDATA[
+  {
+    // Code size       24 (0x18)
+    .maxstack  8
+    IL_0000:  ldc.i4.s   13
+    IL_0002:  newarr     [mscorlib]System.Int32
+    IL_0007:  dup
+    IL_0008:  ldtoken    field valuetype '<PrivateImplementationDetails>{39DB849E-4637-4782-9601-905307264E9E}'/'__StaticArrayInitTypeSize=52' '<PrivateImplementationDetails>{39DB849E-4637-4782-9601-905307264E9E}'::'$$method0x600003f-1'
+    IL_000d:  call       void [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::InitializeArray(class [mscorlib]System.Array,
+                                                                                                        valuetype [mscorlib]System.RuntimeFieldHandle)
+    IL_0012:  stsfld     int32[] Matrix::_validSizes
+    IL_0017:  ret
+]]></source>
+</source_elements></project>

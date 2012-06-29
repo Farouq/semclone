@@ -1,0 +1,765 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_CSharp\EditDistance.cs" startline="19" endline="96"><![CDATA[
+         {
+             Random rand = new Random();
+             Stopwatch sw = new Stopwatch();
+             int result;
+             while (true)
+             {
+                 string s1 = GenerateRandomString(rand);
+                 string s2 = GenerateRandomString(rand);
+ 
+                 sw.Restart();
+                 result = SerialEditDistance(s1, s2);
+                 sw.Stop();
+                 Console.WriteLine("Serial  
+ 
+                 sw.Restart();
+                 result = ParallelEditDistance(s1, s2);
+                 sw.Stop();
+                 Console.WriteLine("Parallel
+ 
+                 Console.WriteLine("-------------------------------------------------------");
+                 GC.Collect();
+             }
+         }
+ 
+         private static string GenerateRandomString(Random rand)
+         {
+             const int LEN = 10000;
+             StringBuilder sb = new StringBuilder(LEN);
+             for (int i = 0; i < LEN; i++) sb.Append((char)('a' + rand.Next(0, 26)));
+             return sb.ToString();
+         }
+ 
+         private static int SerialEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+ 
+             for (int i = 1; i <= s1.Length; i++)
+             {
+                 for (int j = 1; j <= s2.Length; j++)
+                 {
+                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                         dist[i - 1, j - 1] 
+                         1 + Math.Min(dist[i - 1, j],
+                             Math.Min(dist[i, j - 1],
+                                      dist[i - 1, j - 1]));
+                 }
+             }
+             return dist[s1.Length, s2.Length];
+         }
+ 
+         private static int ParallelEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+     }
+ }
+             {
+                 string s1 = GenerateRandomString(rand);
+                 string s2 = GenerateRandomString(rand);
+ 
+                 sw.Restart();
+                 result = SerialEditDistance(s1, s2);
+                 sw.Stop();
+                 Console.WriteLine("Serial  
+ 
+                 sw.Restart();
+                 result = ParallelEditDistance(s1, s2);
+                 sw.Stop();
+                 Console.WriteLine("Parallel
+ 
+                 Console.WriteLine("-------------------------------------------------------");
+                 GC.Collect();
+             }
+             while (true)
+             {
+                 string s1 = GenerateRandomString(rand);
+                 string s2 = GenerateRandomString(rand);
+ 
+                 sw.Restart();
+                 result = SerialEditDistance(s1, s2);
+                 sw.Stop();
+                 Console.WriteLine("Serial  
+ 
+                 sw.Restart();
+                 result = ParallelEditDistance(s1, s2);
+                 sw.Stop();
+                 Console.WriteLine("Parallel
+ 
+                 Console.WriteLine("-------------------------------------------------------");
+                 GC.Collect();
+             }
+         }
+ 
+         private static string GenerateRandomString(Random rand)
+         {
+             const int LEN = 10000;
+             StringBuilder sb = new StringBuilder(LEN);
+             for (int i = 0; i < LEN; i++) sb.Append((char)('a' + rand.Next(0, 26)));
+             return sb.ToString();
+         }
+ 
+         private static int SerialEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+ 
+             for (int i = 1; i <= s1.Length; i++)
+             {
+                 for (int j = 1; j <= s2.Length; j++)
+                 {
+                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                         dist[i - 1, j - 1] 
+                         1 + Math.Min(dist[i - 1, j],
+                             Math.Min(dist[i, j - 1],
+                                      dist[i - 1, j - 1]));
+                 }
+             }
+             return dist[s1.Length, s2.Length];
+         }
+ 
+         private static int ParallelEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_CSharp\EditDistance.cs" startline="44" endline="49"><![CDATA[
+         {
+             const int LEN = 10000;
+             StringBuilder sb = new StringBuilder(LEN);
+             for (int i = 0; i < LEN; i++) sb.Append((char)('a' + rand.Next(0, 26)));
+             return sb.ToString();
+         }
+ 
+         private static int SerialEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+ 
+             for (int i = 1; i <= s1.Length; i++)
+             {
+                 for (int j = 1; j <= s2.Length; j++)
+                 {
+                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                         dist[i - 1, j - 1] 
+                         1 + Math.Min(dist[i - 1, j],
+                             Math.Min(dist[i, j - 1],
+                                      dist[i - 1, j - 1]));
+                 }
+             }
+             return dist[s1.Length, s2.Length];
+         }
+ 
+         private static int ParallelEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+     }
+ }
+             for (int i = 0; i < LEN; i++) sb.Append((char)('a' + rand.Next(0, 26)));
+             return sb.ToString();
+         }
+ 
+         private static int SerialEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+ 
+             for (int i = 1; i <= s1.Length; i++)
+             {
+                 for (int j = 1; j <= s2.Length; j++)
+                 {
+                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                         dist[i - 1, j - 1] 
+                         1 + Math.Min(dist[i - 1, j],
+                             Math.Min(dist[i, j - 1],
+                                      dist[i - 1, j - 1]));
+                 }
+             }
+             return dist[s1.Length, s2.Length];
+         }
+ 
+         private static int ParallelEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+     }
+ }
+             return sb.ToString();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_CSharp\EditDistance.cs" startline="50" endline="69"><![CDATA[
+ 
+         private static int SerialEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+ 
+             for (int i = 1; i <= s1.Length; i++)
+             {
+                 for (int j = 1; j <= s2.Length; j++)
+                 {
+                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                         dist[i - 1, j - 1] 
+                         1 + Math.Min(dist[i - 1, j],
+                             Math.Min(dist[i, j - 1],
+                                      dist[i - 1, j - 1]));
+                 }
+             }
+             return dist[s1.Length, s2.Length];
+         }
+ 
+         private static int ParallelEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+     }
+ }
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+ 
+             for (int i = 1; i <= s1.Length; i++)
+             {
+                 for (int j = 1; j <= s2.Length; j++)
+                 {
+                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                         dist[i - 1, j - 1] 
+                         1 + Math.Min(dist[i - 1, j],
+                             Math.Min(dist[i, j - 1],
+                                      dist[i - 1, j - 1]));
+                 }
+             }
+             return dist[s1.Length, s2.Length];
+         }
+ 
+         private static int ParallelEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+     }
+ }
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+ 
+             for (int i = 1; i <= s1.Length; i++)
+             {
+                 for (int j = 1; j <= s2.Length; j++)
+                 {
+                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                         dist[i - 1, j - 1] 
+                         1 + Math.Min(dist[i - 1, j],
+                             Math.Min(dist[i, j - 1],
+                                      dist[i - 1, j - 1]));
+                 }
+             }
+             return dist[s1.Length, s2.Length];
+         }
+ 
+         private static int ParallelEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+     }
+ }
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+ 
+             for (int i = 1; i <= s1.Length; i++)
+             {
+                 for (int j = 1; j <= s2.Length; j++)
+                 {
+                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                         dist[i - 1, j - 1] 
+                         1 + Math.Min(dist[i - 1, j],
+                             Math.Min(dist[i, j - 1],
+                                      dist[i - 1, j - 1]));
+                 }
+             }
+             return dist[s1.Length, s2.Length];
+         }
+ 
+         private static int ParallelEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+     }
+ }
+             for (int i = 1; i <= s1.Length; i++)
+             {
+                 for (int j = 1; j <= s2.Length; j++)
+                 {
+                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                         dist[i - 1, j - 1] 
+                         1 + Math.Min(dist[i - 1, j],
+                             Math.Min(dist[i, j - 1],
+                                      dist[i - 1, j - 1]));
+                 }
+             }
+             return dist[s1.Length, s2.Length];
+         }
+ 
+         private static int ParallelEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+     }
+ }
+             {
+                 for (int j = 1; j <= s2.Length; j++)
+                 {
+                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                         dist[i - 1, j - 1] 
+                         1 + Math.Min(dist[i - 1, j],
+                             Math.Min(dist[i, j - 1],
+                                      dist[i - 1, j - 1]));
+                 }
+             }
+             return dist[s1.Length, s2.Length];
+         }
+ 
+         private static int ParallelEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+     }
+ }
+                 {
+                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                         dist[i - 1, j - 1] 
+                         1 + Math.Min(dist[i - 1, j],
+                             Math.Min(dist[i, j - 1],
+                                      dist[i - 1, j - 1]));
+                 }
+                 for (int j = 1; j <= s2.Length; j++)
+                 {
+                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                         dist[i - 1, j - 1] 
+                         1 + Math.Min(dist[i - 1, j],
+                             Math.Min(dist[i, j - 1],
+                                      dist[i - 1, j - 1]));
+                 }
+             }
+             return dist[s1.Length, s2.Length];
+         }
+ 
+         private static int ParallelEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+     }
+ }
+             }
+             for (int i = 1; i <= s1.Length; i++)
+             {
+                 for (int j = 1; j <= s2.Length; j++)
+                 {
+                     dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                         dist[i - 1, j - 1] 
+                         1 + Math.Min(dist[i - 1, j],
+                             Math.Min(dist[i, j - 1],
+                                      dist[i - 1, j - 1]));
+                 }
+             }
+             return dist[s1.Length, s2.Length];
+         }
+ 
+         private static int ParallelEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+     }
+ }
+             return dist[s1.Length, s2.Length];
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_CSharp\EditDistance.cs" startline="70" endline="94"><![CDATA[
+ 
+         private static int ParallelEditDistance(string s1, string s2)
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+     }
+ }
+         {
+             int[,] dist = new int[s1.Length + 1, s2.Length + 1];
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+     }
+ }
+             for (int i = 0; i <= s1.Length; i++) dist[i, 0] = i;
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+     }
+ }
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+     }
+ }
+             for (int j = 0; j <= s2.Length; j++) dist[0, j] = j;
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+     }
+ }
+             int numBlocks = Environment.ProcessorCount * 4;
+ 
+             ParallelAlgorithms.Wavefront(s1.Length, s2.Length, numBlocks, numBlocks, (start_i, end_i, start_j, end_j) =>
+             {
+                 for (int i = start_i+1; i <= end_i; i++)
+                 {
+                     for (int j = start_j+1; j <= end_j; j++)
+                     {
+                         dist[i, j] = (s1[i - 1] == s2[j - 1]) ?
+                             dist[i - 1, j - 1] 
+                             1 + Math.Min(dist[i - 1, j],
+                                 Math.Min(dist[i, j - 1],
+                                          dist[i - 1, j - 1]));
+                     }
+                 }
+             });
+ 
+             return dist[s1.Length, s2.Length];
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\EditDistance\EditDistance_CSharp\EditDistance.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+</source_elements></project>

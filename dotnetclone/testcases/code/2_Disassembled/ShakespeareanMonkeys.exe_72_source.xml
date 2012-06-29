@@ -1,0 +1,4757 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\Properties\Settings.Designer.cs" startline="21" endline="23"><![CDATA[
+             get {
+                 return defaultInstance;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\Properties\Settings.Designer.cs" startline="18" endline="26"><![CDATA[
+         private static Settings defaultInstance = ((Settings)(global
+         
+         public static Settings Default {
+             get {
+                 return defaultInstance;
+             }
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="18" endline="35"><![CDATA[
+         private static ThreadSafeRandom _random = new ThreadSafeRandom();
+         private static char[] _validChars;
+         private string _targetText;
+         private GeneticAlgorithmSettings _settings;
+         private TextMatchGenome[] _currentPopulation;
+         private bool _runParallel;
+ 
+         static TextMatchGeneticAlgorithm()
+         {
+             // Initialize the valid characters to newlines plus all the alphanumerics and symbols
+             _validChars = new char[2 + (127 - 32)];
+             _validChars[0] = (char)10;
+             _validChars[1] = (char)13;
+             for (int i = 2, pos = 32; i < _validChars.Length; i++, pos++)
+             {
+                 _validChars[i] = (char)pos;
+             }
+         }
+ 
+         public TextMatchGeneticAlgorithm(bool runParallel, string targetText, GeneticAlgorithmSettings settings)
+         {
+             if (settings == null) throw new ArgumentNullException("settings");
+             if (targetText == null) throw new ArgumentNullException("targetText");
+             _runParallel = runParallel;
+             _settings = settings;
+             _targetText = targetText;
+         }
+ 
+         public void MoveNext()
+         {
+             // If this is the first iteration, create a random population
+             if (_currentPopulation == null)
+             {
+                 _currentPopulation = CreateRandomPopulation();
+             }
+             // Otherwise, iterate
+             else _currentPopulation = CreateNextGeneration();
+         }
+ 
+         public TextMatchGenome CurrentBest { get { return _currentPopulation[0]; } }
+ 
+         private TextMatchGenome[] CreateRandomPopulation()
+         {
+             return (from i in Enumerable.Range(0, _settings.PopulationSize)
+                     select CreateRandomGenome(_random)).ToArray();
+         }
+ 
+         private TextMatchGenome CreateRandomGenome(Random rand)
+         {
+             var sb = new StringBuilder(_targetText.Length);
+             for (int i = 0; i < _targetText.Length; i++)
+             {
+                 sb.Append(_validChars[rand.Next(0, _validChars.Length)]);
+             }
+             return new TextMatchGenome { Text = sb.ToString(), TargetText = _targetText };
+         }
+ 
+         private TextMatchGenome[] CreateNextGeneration()
+         {
+             var maxFitness = _currentPopulation.Max(g => g.Fitness) + 1;
+             var sumOfMaxMinusFitness = _currentPopulation.Sum(g => (long)(maxFitness - g.Fitness));
+ 
+             if (_runParallel)
+             {
+                 return (from i in ParallelEnumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+             else
+             {
+                 return (from i in Enumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+         }
+ 
+         private TextMatchGenome[] CreateChildren(
+             TextMatchGenome parent1, TextMatchGenome parent2)
+         {
+             // Crossover parents to create two children
+             TextMatchGenome child1, child2;
+             if (_random.NextDouble() < _settings.CrossoverProbability)
+             {
+                 Crossover(_random, parent1, parent2, out child1, out child2);
+             }
+             else
+             {
+                 child1 = parent1;
+                 child2 = parent2;
+             }
+ 
+             // Potentially mutate one or both children
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+             {
+                 _validChars[i] = (char)pos;
+             }
+             for (int i = 2, pos = 32; i < _validChars.Length; i++, pos++)
+             {
+                 _validChars[i] = (char)pos;
+             }
+         }
+ 
+         public TextMatchGeneticAlgorithm(bool runParallel, string targetText, GeneticAlgorithmSettings settings)
+         {
+             if (settings == null) throw new ArgumentNullException("settings");
+             if (targetText == null) throw new ArgumentNullException("targetText");
+             _runParallel = runParallel;
+             _settings = settings;
+             _targetText = targetText;
+         }
+ 
+         public void MoveNext()
+         {
+             // If this is the first iteration, create a random population
+             if (_currentPopulation == null)
+             {
+                 _currentPopulation = CreateRandomPopulation();
+             }
+             // Otherwise, iterate
+             else _currentPopulation = CreateNextGeneration();
+         }
+ 
+         public TextMatchGenome CurrentBest { get { return _currentPopulation[0]; } }
+ 
+         private TextMatchGenome[] CreateRandomPopulation()
+         {
+             return (from i in Enumerable.Range(0, _settings.PopulationSize)
+                     select CreateRandomGenome(_random)).ToArray();
+         }
+ 
+         private TextMatchGenome CreateRandomGenome(Random rand)
+         {
+             var sb = new StringBuilder(_targetText.Length);
+             for (int i = 0; i < _targetText.Length; i++)
+             {
+                 sb.Append(_validChars[rand.Next(0, _validChars.Length)]);
+             }
+             return new TextMatchGenome { Text = sb.ToString(), TargetText = _targetText };
+         }
+ 
+         private TextMatchGenome[] CreateNextGeneration()
+         {
+             var maxFitness = _currentPopulation.Max(g => g.Fitness) + 1;
+             var sumOfMaxMinusFitness = _currentPopulation.Sum(g => (long)(maxFitness - g.Fitness));
+ 
+             if (_runParallel)
+             {
+                 return (from i in ParallelEnumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+             else
+             {
+                 return (from i in Enumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+         }
+ 
+         private TextMatchGenome[] CreateChildren(
+             TextMatchGenome parent1, TextMatchGenome parent2)
+         {
+             // Crossover parents to create two children
+             TextMatchGenome child1, child2;
+             if (_random.NextDouble() < _settings.CrossoverProbability)
+             {
+                 Crossover(_random, parent1, parent2, out child1, out child2);
+             }
+             else
+             {
+                 child1 = parent1;
+                 child2 = parent2;
+             }
+ 
+             // Potentially mutate one or both children
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="36" endline="44"><![CDATA[
+ 
+         public TextMatchGeneticAlgorithm(bool runParallel, string targetText, GeneticAlgorithmSettings settings)
+         {
+             if (settings == null) throw new ArgumentNullException("settings");
+             if (targetText == null) throw new ArgumentNullException("targetText");
+             _runParallel = runParallel;
+             _settings = settings;
+             _targetText = targetText;
+         }
+ 
+         public void MoveNext()
+         {
+             // If this is the first iteration, create a random population
+             if (_currentPopulation == null)
+             {
+                 _currentPopulation = CreateRandomPopulation();
+             }
+             // Otherwise, iterate
+             else _currentPopulation = CreateNextGeneration();
+         }
+ 
+         public TextMatchGenome CurrentBest { get { return _currentPopulation[0]; } }
+ 
+         private TextMatchGenome[] CreateRandomPopulation()
+         {
+             return (from i in Enumerable.Range(0, _settings.PopulationSize)
+                     select CreateRandomGenome(_random)).ToArray();
+         }
+ 
+         private TextMatchGenome CreateRandomGenome(Random rand)
+         {
+             var sb = new StringBuilder(_targetText.Length);
+             for (int i = 0; i < _targetText.Length; i++)
+             {
+                 sb.Append(_validChars[rand.Next(0, _validChars.Length)]);
+             }
+             return new TextMatchGenome { Text = sb.ToString(), TargetText = _targetText };
+         }
+ 
+         private TextMatchGenome[] CreateNextGeneration()
+         {
+             var maxFitness = _currentPopulation.Max(g => g.Fitness) + 1;
+             var sumOfMaxMinusFitness = _currentPopulation.Sum(g => (long)(maxFitness - g.Fitness));
+ 
+             if (_runParallel)
+             {
+                 return (from i in ParallelEnumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+             else
+             {
+                 return (from i in Enumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+         }
+ 
+         private TextMatchGenome[] CreateChildren(
+             TextMatchGenome parent1, TextMatchGenome parent2)
+         {
+             // Crossover parents to create two children
+             TextMatchGenome child1, child2;
+             if (_random.NextDouble() < _settings.CrossoverProbability)
+             {
+                 Crossover(_random, parent1, parent2, out child1, out child2);
+             }
+             else
+             {
+                 child1 = parent1;
+                 child2 = parent2;
+             }
+ 
+             // Potentially mutate one or both children
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+             if (settings == null) throw new ArgumentNullException("settings");
+             if (targetText == null) throw new ArgumentNullException("targetText");
+             _runParallel = runParallel;
+             _settings = settings;
+             _targetText = targetText;
+         }
+ 
+         public void MoveNext()
+         {
+             // If this is the first iteration, create a random population
+             if (_currentPopulation == null)
+             {
+                 _currentPopulation = CreateRandomPopulation();
+             }
+             // Otherwise, iterate
+             else _currentPopulation = CreateNextGeneration();
+         }
+ 
+         public TextMatchGenome CurrentBest { get { return _currentPopulation[0]; } }
+ 
+         private TextMatchGenome[] CreateRandomPopulation()
+         {
+             return (from i in Enumerable.Range(0, _settings.PopulationSize)
+                     select CreateRandomGenome(_random)).ToArray();
+         }
+ 
+         private TextMatchGenome CreateRandomGenome(Random rand)
+         {
+             var sb = new StringBuilder(_targetText.Length);
+             for (int i = 0; i < _targetText.Length; i++)
+             {
+                 sb.Append(_validChars[rand.Next(0, _validChars.Length)]);
+             }
+             return new TextMatchGenome { Text = sb.ToString(), TargetText = _targetText };
+         }
+ 
+         private TextMatchGenome[] CreateNextGeneration()
+         {
+             var maxFitness = _currentPopulation.Max(g => g.Fitness) + 1;
+             var sumOfMaxMinusFitness = _currentPopulation.Sum(g => (long)(maxFitness - g.Fitness));
+ 
+             if (_runParallel)
+             {
+                 return (from i in ParallelEnumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+             else
+             {
+                 return (from i in Enumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+         }
+ 
+         private TextMatchGenome[] CreateChildren(
+             TextMatchGenome parent1, TextMatchGenome parent2)
+         {
+             // Crossover parents to create two children
+             TextMatchGenome child1, child2;
+             if (_random.NextDouble() < _settings.CrossoverProbability)
+             {
+                 Crossover(_random, parent1, parent2, out child1, out child2);
+             }
+             else
+             {
+                 child1 = parent1;
+                 child2 = parent2;
+             }
+ 
+             // Potentially mutate one or both children
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+             if (targetText == null) throw new ArgumentNullException("targetText");
+             _runParallel = runParallel;
+             _settings = settings;
+             _targetText = targetText;
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="45" endline="55"><![CDATA[
+ 
+         public void MoveNext()
+         {
+             // If this is the first iteration, create a random population
+             if (_currentPopulation == null)
+             {
+                 _currentPopulation = CreateRandomPopulation();
+             }
+             // Otherwise, iterate
+             else _currentPopulation = CreateNextGeneration();
+         }
+ 
+         public TextMatchGenome CurrentBest { get { return _currentPopulation[0]; } }
+ 
+         private TextMatchGenome[] CreateRandomPopulation()
+         {
+             return (from i in Enumerable.Range(0, _settings.PopulationSize)
+                     select CreateRandomGenome(_random)).ToArray();
+         }
+ 
+         private TextMatchGenome CreateRandomGenome(Random rand)
+         {
+             var sb = new StringBuilder(_targetText.Length);
+             for (int i = 0; i < _targetText.Length; i++)
+             {
+                 sb.Append(_validChars[rand.Next(0, _validChars.Length)]);
+             }
+             return new TextMatchGenome { Text = sb.ToString(), TargetText = _targetText };
+         }
+ 
+         private TextMatchGenome[] CreateNextGeneration()
+         {
+             var maxFitness = _currentPopulation.Max(g => g.Fitness) + 1;
+             var sumOfMaxMinusFitness = _currentPopulation.Sum(g => (long)(maxFitness - g.Fitness));
+ 
+             if (_runParallel)
+             {
+                 return (from i in ParallelEnumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+             else
+             {
+                 return (from i in Enumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+         }
+ 
+         private TextMatchGenome[] CreateChildren(
+             TextMatchGenome parent1, TextMatchGenome parent2)
+         {
+             // Crossover parents to create two children
+             TextMatchGenome child1, child2;
+             if (_random.NextDouble() < _settings.CrossoverProbability)
+             {
+                 Crossover(_random, parent1, parent2, out child1, out child2);
+             }
+             else
+             {
+                 child1 = parent1;
+                 child2 = parent2;
+             }
+ 
+             // Potentially mutate one or both children
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+             {
+                 _currentPopulation = CreateRandomPopulation();
+             }
+             // Otherwise, iterate
+             else _currentPopulation = CreateNextGeneration();
+         }
+ 
+         public TextMatchGenome CurrentBest { get { return _currentPopulation[0]; } }
+ 
+         private TextMatchGenome[] CreateRandomPopulation()
+         {
+             return (from i in Enumerable.Range(0, _settings.PopulationSize)
+                     select CreateRandomGenome(_random)).ToArray();
+         }
+ 
+         private TextMatchGenome CreateRandomGenome(Random rand)
+         {
+             var sb = new StringBuilder(_targetText.Length);
+             for (int i = 0; i < _targetText.Length; i++)
+             {
+                 sb.Append(_validChars[rand.Next(0, _validChars.Length)]);
+             }
+             return new TextMatchGenome { Text = sb.ToString(), TargetText = _targetText };
+         }
+ 
+         private TextMatchGenome[] CreateNextGeneration()
+         {
+             var maxFitness = _currentPopulation.Max(g => g.Fitness) + 1;
+             var sumOfMaxMinusFitness = _currentPopulation.Sum(g => (long)(maxFitness - g.Fitness));
+ 
+             if (_runParallel)
+             {
+                 return (from i in ParallelEnumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+             else
+             {
+                 return (from i in Enumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+         }
+ 
+         private TextMatchGenome[] CreateChildren(
+             TextMatchGenome parent1, TextMatchGenome parent2)
+         {
+             // Crossover parents to create two children
+             TextMatchGenome child1, child2;
+             if (_random.NextDouble() < _settings.CrossoverProbability)
+             {
+                 Crossover(_random, parent1, parent2, out child1, out child2);
+             }
+             else
+             {
+                 child1 = parent1;
+                 child2 = parent2;
+             }
+ 
+             // Potentially mutate one or both children
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+             else _currentPopulation = CreateNextGeneration();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="56" endline="57"><![CDATA[
+ 
+         public TextMatchGenome CurrentBest { get { return _currentPopulation[0]; } }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="58" endline="63"><![CDATA[
+ 
+         private TextMatchGenome[] CreateRandomPopulation()
+         {
+             return (from i in Enumerable.Range(0, _settings.PopulationSize)
+                     select CreateRandomGenome(_random)).ToArray();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="64" endline="73"><![CDATA[
+ 
+         private TextMatchGenome CreateRandomGenome(Random rand)
+         {
+             var sb = new StringBuilder(_targetText.Length);
+             for (int i = 0; i < _targetText.Length; i++)
+             {
+                 sb.Append(_validChars[rand.Next(0, _validChars.Length)]);
+             }
+             return new TextMatchGenome { Text = sb.ToString(), TargetText = _targetText };
+         }
+ 
+         private TextMatchGenome[] CreateNextGeneration()
+         {
+             var maxFitness = _currentPopulation.Max(g => g.Fitness) + 1;
+             var sumOfMaxMinusFitness = _currentPopulation.Sum(g => (long)(maxFitness - g.Fitness));
+ 
+             if (_runParallel)
+             {
+                 return (from i in ParallelEnumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+             else
+             {
+                 return (from i in Enumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+         }
+ 
+         private TextMatchGenome[] CreateChildren(
+             TextMatchGenome parent1, TextMatchGenome parent2)
+         {
+             // Crossover parents to create two children
+             TextMatchGenome child1, child2;
+             if (_random.NextDouble() < _settings.CrossoverProbability)
+             {
+                 Crossover(_random, parent1, parent2, out child1, out child2);
+             }
+             else
+             {
+                 child1 = parent1;
+                 child2 = parent2;
+             }
+ 
+             // Potentially mutate one or both children
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+             {
+                 sb.Append(_validChars[rand.Next(0, _validChars.Length)]);
+             }
+             for (int i = 0; i < _targetText.Length; i++)
+             {
+                 sb.Append(_validChars[rand.Next(0, _validChars.Length)]);
+             }
+             return new TextMatchGenome { Text = sb.ToString(), TargetText = _targetText };
+         }
+ 
+         private TextMatchGenome[] CreateNextGeneration()
+         {
+             var maxFitness = _currentPopulation.Max(g => g.Fitness) + 1;
+             var sumOfMaxMinusFitness = _currentPopulation.Sum(g => (long)(maxFitness - g.Fitness));
+ 
+             if (_runParallel)
+             {
+                 return (from i in ParallelEnumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+             else
+             {
+                 return (from i in Enumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+         }
+ 
+         private TextMatchGenome[] CreateChildren(
+             TextMatchGenome parent1, TextMatchGenome parent2)
+         {
+             // Crossover parents to create two children
+             TextMatchGenome child1, child2;
+             if (_random.NextDouble() < _settings.CrossoverProbability)
+             {
+                 Crossover(_random, parent1, parent2, out child1, out child2);
+             }
+             else
+             {
+                 child1 = parent1;
+                 child2 = parent2;
+             }
+ 
+             // Potentially mutate one or both children
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+             return new TextMatchGenome { Text = sb.ToString(), TargetText = _targetText };
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="74" endline="98"><![CDATA[
+ 
+         private TextMatchGenome[] CreateNextGeneration()
+         {
+             var maxFitness = _currentPopulation.Max(g => g.Fitness) + 1;
+             var sumOfMaxMinusFitness = _currentPopulation.Sum(g => (long)(maxFitness - g.Fitness));
+ 
+             if (_runParallel)
+             {
+                 return (from i in ParallelEnumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+             else
+             {
+                 return (from i in Enumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+         }
+ 
+         private TextMatchGenome[] CreateChildren(
+             TextMatchGenome parent1, TextMatchGenome parent2)
+         {
+             // Crossover parents to create two children
+             TextMatchGenome child1, child2;
+             if (_random.NextDouble() < _settings.CrossoverProbability)
+             {
+                 Crossover(_random, parent1, parent2, out child1, out child2);
+             }
+             else
+             {
+                 child1 = parent1;
+                 child2 = parent2;
+             }
+ 
+             // Potentially mutate one or both children
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+         {
+             var maxFitness = _currentPopulation.Max(g => g.Fitness) + 1;
+             var sumOfMaxMinusFitness = _currentPopulation.Sum(g => (long)(maxFitness - g.Fitness));
+ 
+             if (_runParallel)
+             {
+                 return (from i in ParallelEnumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+             else
+             {
+                 return (from i in Enumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+         }
+ 
+         private TextMatchGenome[] CreateChildren(
+             TextMatchGenome parent1, TextMatchGenome parent2)
+         {
+             // Crossover parents to create two children
+             TextMatchGenome child1, child2;
+             if (_random.NextDouble() < _settings.CrossoverProbability)
+             {
+                 Crossover(_random, parent1, parent2, out child1, out child2);
+             }
+             else
+             {
+                 child1 = parent1;
+                 child2 = parent2;
+             }
+ 
+             // Potentially mutate one or both children
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+             {
+                 return (from i in ParallelEnumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+             else
+             {
+                 return (from i in Enumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="99" endline="121"><![CDATA[
+ 
+         private TextMatchGenome[] CreateChildren(
+             TextMatchGenome parent1, TextMatchGenome parent2)
+         {
+             // Crossover parents to create two children
+             TextMatchGenome child1, child2;
+             if (_random.NextDouble() < _settings.CrossoverProbability)
+             {
+                 Crossover(_random, parent1, parent2, out child1, out child2);
+             }
+             else
+             {
+                 child1 = parent1;
+                 child2 = parent2;
+             }
+ 
+             // Potentially mutate one or both children
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+             {
+                 Crossover(_random, parent1, parent2, out child1, out child2);
+             }
+             else
+             {
+                 child1 = parent1;
+                 child2 = parent2;
+             }
+ 
+             // Potentially mutate one or both children
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+             {
+                 child1 = parent1;
+                 child2 = parent2;
+             }
+ 
+             // Potentially mutate one or both children
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="122" endline="133"><![CDATA[
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="134" endline="140"><![CDATA[
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="141" endline="147"><![CDATA[
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="62" endline="229"><![CDATA[
+                     select CreateRandomGenome(_random)).ToArray();
+         }
+ 
+         private TextMatchGenome CreateRandomGenome(Random rand)
+         {
+             var sb = new StringBuilder(_targetText.Length);
+             for (int i = 0; i < _targetText.Length; i++)
+             {
+                 sb.Append(_validChars[rand.Next(0, _validChars.Length)]);
+             }
+             return new TextMatchGenome { Text = sb.ToString(), TargetText = _targetText };
+         }
+ 
+         private TextMatchGenome[] CreateNextGeneration()
+         {
+             var maxFitness = _currentPopulation.Max(g => g.Fitness) + 1;
+             var sumOfMaxMinusFitness = _currentPopulation.Sum(g => (long)(maxFitness - g.Fitness));
+ 
+             if (_runParallel)
+             {
+                 return (from i in ParallelEnumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+             else
+             {
+                 return (from i in Enumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+         }
+ 
+         private TextMatchGenome[] CreateChildren(
+             TextMatchGenome parent1, TextMatchGenome parent2)
+         {
+             // Crossover parents to create two children
+             TextMatchGenome child1, child2;
+             if (_random.NextDouble() < _settings.CrossoverProbability)
+             {
+                 Crossover(_random, parent1, parent2, out child1, out child2);
+             }
+             else
+             {
+                 child1 = parent1;
+                 child2 = parent2;
+             }
+ 
+             // Potentially mutate one or both children
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="77" endline="229"><![CDATA[
+             var maxFitness = _currentPopulation.Max(g => g.Fitness) + 1;
+             var sumOfMaxMinusFitness = _currentPopulation.Sum(g => (long)(maxFitness - g.Fitness));
+ 
+             if (_runParallel)
+             {
+                 return (from i in ParallelEnumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+             else
+             {
+                 return (from i in Enumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+         }
+ 
+         private TextMatchGenome[] CreateChildren(
+             TextMatchGenome parent1, TextMatchGenome parent2)
+         {
+             // Crossover parents to create two children
+             TextMatchGenome child1, child2;
+             if (_random.NextDouble() < _settings.CrossoverProbability)
+             {
+                 Crossover(_random, parent1, parent2, out child1, out child2);
+             }
+             else
+             {
+                 child1 = parent1;
+                 child2 = parent2;
+             }
+ 
+             // Potentially mutate one or both children
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="86" endline="229"><![CDATA[
+                         select child).
+                         ToArray();
+             }
+             else
+             {
+                 return (from i in Enumerable.Range(0, _settings.PopulationSize / 2)
+                         from child in CreateChildren(
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness),
+                             FindRandomHighQualityParent(sumOfMaxMinusFitness, maxFitness))
+                         select child).
+                         ToArray();
+             }
+         }
+ 
+         private TextMatchGenome[] CreateChildren(
+             TextMatchGenome parent1, TextMatchGenome parent2)
+         {
+             // Crossover parents to create two children
+             TextMatchGenome child1, child2;
+             if (_random.NextDouble() < _settings.CrossoverProbability)
+             {
+                 Crossover(_random, parent1, parent2, out child1, out child2);
+             }
+             else
+             {
+                 child1 = parent1;
+                 child2 = parent2;
+             }
+ 
+             // Potentially mutate one or both children
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="95" endline="229"><![CDATA[
+                         select child).
+                         ToArray();
+             }
+         }
+ 
+         private TextMatchGenome[] CreateChildren(
+             TextMatchGenome parent1, TextMatchGenome parent2)
+         {
+             // Crossover parents to create two children
+             TextMatchGenome child1, child2;
+             if (_random.NextDouble() < _settings.CrossoverProbability)
+             {
+                 Crossover(_random, parent1, parent2, out child1, out child2);
+             }
+             else
+             {
+                 child1 = parent1;
+                 child2 = parent2;
+             }
+ 
+             // Potentially mutate one or both children
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child1);
+             if (_random.NextDouble() < _settings.MutationProbability) Mutate(_random, ref child2);
+ 
+             // Return the young'ens
+             return new[] { child1, child2 };
+         }
+ 
+         private TextMatchGenome FindRandomHighQualityParent(long sumOfMaxMinusFitness, int max)
+         {
+             long val = (long)(_random.NextDouble() * sumOfMaxMinusFitness);
+             for (int i = 0; i < _currentPopulation.Length; i++)
+             {
+                 int maxMinusFitness = max - _currentPopulation[i].Fitness;
+                 if (val < maxMinusFitness) return _currentPopulation[i];
+                 val -= maxMinusFitness;
+             }
+             throw new InvalidOperationException("Not to be, apparently.");
+         }
+ 
+         private void Crossover(Random rand, TextMatchGenome p1, TextMatchGenome p2, out TextMatchGenome child1, out TextMatchGenome child2)
+         {
+             int crossoverPoint = rand.Next(1, p1.Text.Length);
+             child1 = new TextMatchGenome { Text = p1.Text.Substring(0, crossoverPoint) + p2.Text.Substring(crossoverPoint), TargetText = _targetText };
+             child2 = new TextMatchGenome { Text = p2.Text.Substring(0, crossoverPoint) + p1.Text.Substring(crossoverPoint), TargetText = _targetText };
+         }
+ 
+         private void Mutate(Random rand, ref TextMatchGenome genome)
+         {
+             var sb = new StringBuilder(genome.Text);
+             sb[rand.Next(0, genome.Text.Length)] = _validChars[rand.Next(0, _validChars.Length)];
+             genome.Text = sb.ToString();
+         }
+     }
+ 
+     public struct TextMatchGenome
+     {
+         private string _targetText;
+         private string _text;
+ 
+         public string Text
+         {
+             get { return _text; }
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="157" endline="157"><![CDATA[
+             get { return _text; }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="158" endline="162"><![CDATA[
+             set
+             {
+                 _text = value;
+                 RecomputeFitness();
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="163" endline="167"><![CDATA[
+         }
+ 
+         public string TargetText
+         {
+             get { return _targetText; }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="168" endline="172"><![CDATA[
+             set
+             {
+                 _targetText = value;
+                 RecomputeFitness();
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="173" endline="187"><![CDATA[
+         }
+ 
+         private void RecomputeFitness()
+         {
+             if (_text != null && _targetText != null)
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+             {
+                 int diffs = 0;
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 for (int i = 0; i < _targetText.Length; i++)
+                 {
+                     if (_targetText[i] != _text[i]) diffs++;
+                 }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+                 Fitness = diffs;
+             }
+             else Fitness = Int32.MaxValue;
+         }
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+             else Fitness = Int32.MaxValue;
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="188" endline="196"><![CDATA[
+ 
+         public int Fitness { get; private set; }
+     }
+ 
+     public class GeneticAlgorithmSettings
+     {
+         public int PopulationSize
+         {
+             get { return _populationSize; }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="197" endline="202"><![CDATA[
+             set
+             {
+                 if (value < 1 ||
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+                     value % 2 != 0) throw new ArgumentOutOfRangeException("PopulationSize");
+                 _populationSize = value;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="203" endline="207"><![CDATA[
+         }
+ 
+         public double MutationProbability
+         {
+             get { return _mutationProbability; }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="208" endline="212"><![CDATA[
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("MutationProbability");
+                 _mutationProbability = value;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="213" endline="217"><![CDATA[
+         }
+ 
+         public double CrossoverProbability
+         {
+             get { return _crossoverProbability; }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="218" endline="222"><![CDATA[
+             set
+             {
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+                 if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("CrossoverProbability");
+                 _crossoverProbability = value;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\TextMatchGeneticAlgorithm.cs" startline="223" endline="229"><![CDATA[
+         }
+ 
+         private int _populationSize = 30;
+         private double _mutationProbability = .01;
+         private double _crossoverProbability = .87;
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\Properties\Resources.Designer.cs" startline="31" endline="33"><![CDATA[
+         [global
+         internal Resources() {
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\Properties\Resources.Designer.cs" startline="34" endline="46"><![CDATA[
+         
+         /// <summary>
+         ///   Returns the cached ResourceManager instance used by this class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 if (object.ReferenceEquals(resourceMan, null)) {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+         }
+         
+         /// <summary>
+         ///   Overrides the current thread's CurrentUICulture property for all
+         ///   resource lookups using this strongly typed resource class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 return resourceCulture;
+             }
+             set {
+                 resourceCulture = value;
+             }
+         }
+         
+         internal static System.Drawing.Bitmap HamletMonkey {
+             get {
+                 object obj = ResourceManager.GetObject("HamletMonkey", resourceCulture);
+                 return ((System.Drawing.Bitmap)(obj));
+             }
+         }
+     }
+ }
+                 if (object.ReferenceEquals(resourceMan, null)) {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\Properties\Resources.Designer.cs" startline="47" endline="57"><![CDATA[
+         }
+         
+         /// <summary>
+         ///   Overrides the current thread's CurrentUICulture property for all
+         ///   resource lookups using this strongly typed resource class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 return resourceCulture;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\Properties\Resources.Designer.cs" startline="58" endline="60"><![CDATA[
+             set {
+                 resourceCulture = value;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\Properties\Resources.Designer.cs" startline="61" endline="67"><![CDATA[
+         }
+         
+         internal static System.Drawing.Bitmap HamletMonkey {
+             get {
+                 object obj = ResourceManager.GetObject("HamletMonkey", resourceCulture);
+                 return ((System.Drawing.Bitmap)(obj));
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\MainForm.Designer.cs" startline="15" endline="21"><![CDATA[
+         {
+             if (disposing && (components != null))
+             {
+                 components.Dispose();
+             }
+             base.Dispose(disposing);
+         }
+ 
+         #region Windows Form Designer generated code
+ 
+         /// <summary>
+         /// Required method for Designer support - do not modify
+         /// the contents of this method with the code editor.
+         /// </summary>
+         private void InitializeComponent()
+         {
+             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+             this.lblGenPerSec = new System.Windows.Forms.Label();
+             this.label5 = new System.Windows.Forms.Label();
+             this.lblElapsedTime = new System.Windows.Forms.Label();
+             this.label4 = new System.Windows.Forms.Label();
+             this.lblGenerations = new System.Windows.Forms.Label();
+             this.label2 = new System.Windows.Forms.Label();
+             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+             this.txtBestMatch = new System.Windows.Forms.TextBox();
+             this.txtTarget = new System.Windows.Forms.TextBox();
+             this.btnRun = new System.Windows.Forms.Button();
+             this.txtMonkeysPerGeneration = new System.Windows.Forms.TextBox();
+             this.label1 = new System.Windows.Forms.Label();
+             this.timerElapsedTime = new System.Windows.Forms.Timer();
+             this.chkParallel = new System.Windows.Forms.CheckBox();
+             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+             this.splitContainer1.Panel1.SuspendLayout();
+             this.splitContainer1.Panel2.SuspendLayout();
+             this.splitContainer1.SuspendLayout();
+             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+             this.splitContainer2.Panel1.SuspendLayout();
+             this.splitContainer2.Panel2.SuspendLayout();
+             this.splitContainer2.SuspendLayout();
+             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+             this.SuspendLayout();
+             // 
+             // splitContainer1
+             // 
+             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+             this.splitContainer1.Name = "splitContainer1";
+             // 
+             // splitContainer1.Panel1
+             // 
+             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
+             // 
+             // splitContainer1.Panel2
+             // 
+             this.splitContainer1.Panel2.Controls.Add(this.chkParallel);
+             this.splitContainer1.Panel2.Controls.Add(this.lblGenPerSec);
+             this.splitContainer1.Panel2.Controls.Add(this.label5);
+             this.splitContainer1.Panel2.Controls.Add(this.lblElapsedTime);
+             this.splitContainer1.Panel2.Controls.Add(this.label4);
+             this.splitContainer1.Panel2.Controls.Add(this.lblGenerations);
+             this.splitContainer1.Panel2.Controls.Add(this.label2);
+             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+             this.splitContainer1.Panel2.Controls.Add(this.btnRun);
+             this.splitContainer1.Panel2.Controls.Add(this.txtMonkeysPerGeneration);
+             this.splitContainer1.Panel2.Controls.Add(this.label1);
+             this.splitContainer1.Size = new System.Drawing.Size(973, 389);
+             this.splitContainer1.SplitterDistance = 301;
+             this.splitContainer1.TabIndex = 1;
+             // 
+             // lblGenPerSec
+             // 
+             this.lblGenPerSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+             this.lblGenPerSec.AutoSize = true;
+             this.lblGenPerSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.lblGenPerSec.Location = new System.Drawing.Point(601, 48);
+             this.lblGenPerSec.Name = "lblGenPerSec";
+             this.lblGenPerSec.Size = new System.Drawing.Size(13, 17);
+             this.lblGenPerSec.TabIndex = 9;
+             this.lblGenPerSec.Text = "-";
+             // 
+             // label5
+             // 
+             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+             this.label5.AutoSize = true;
+             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.label5.Location = new System.Drawing.Point(454, 48);
+             this.label5.Name = "label5";
+             this.label5.Size = new System.Drawing.Size(144, 17);
+             this.label5.TabIndex = 8;
+             this.label5.Text = "Generations / Sec
+             // 
+             // lblElapsedTime
+             // 
+             this.lblElapsedTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+             this.lblElapsedTime.AutoSize = true;
+             this.lblElapsedTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.lblElapsedTime.Location = new System.Drawing.Point(601, 9);
+             this.lblElapsedTime.Name = "lblElapsedTime";
+             this.lblElapsedTime.Size = new System.Drawing.Size(13, 17);
+             this.lblElapsedTime.TabIndex = 7;
+             this.lblElapsedTime.Text = "-";
+             // 
+             // label4
+             // 
+             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+             this.label4.AutoSize = true;
+             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.label4.Location = new System.Drawing.Point(454, 9);
+             this.label4.Name = "label4";
+             this.label4.Size = new System.Drawing.Size(48, 17);
+             this.label4.TabIndex = 6;
+             this.label4.Text = "Time
+             // 
+             // lblGenerations
+             // 
+             this.lblGenerations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+             this.lblGenerations.AutoSize = true;
+             this.lblGenerations.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.lblGenerations.Location = new System.Drawing.Point(601, 29);
+             this.lblGenerations.Name = "lblGenerations";
+             this.lblGenerations.Size = new System.Drawing.Size(13, 17);
+             this.lblGenerations.TabIndex = 5;
+             this.lblGenerations.Text = "-";
+             // 
+             // label2
+             // 
+             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+             this.label2.AutoSize = true;
+             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.label2.Location = new System.Drawing.Point(454, 29);
+             this.label2.Name = "label2";
+             this.label2.Size = new System.Drawing.Size(102, 17);
+             this.label2.TabIndex = 4;
+             this.label2.Text = "Generations
+             // 
+             // splitContainer2
+             // 
+             this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                         | System.Windows.Forms.AnchorStyles.Left)
+                         | System.Windows.Forms.AnchorStyles.Right)));
+             this.splitContainer2.Location = new System.Drawing.Point(2, 68);
+             this.splitContainer2.Name = "splitContainer2";
+             // 
+             // splitContainer2.Panel1
+             // 
+             this.splitContainer2.Panel1.Controls.Add(this.txtBestMatch);
+             // 
+             // splitContainer2.Panel2
+             // 
+             this.splitContainer2.Panel2.Controls.Add(this.txtTarget);
+             this.splitContainer2.Size = new System.Drawing.Size(666, 321);
+             this.splitContainer2.SplitterDistance = 325;
+             this.splitContainer2.TabIndex = 3;
+             // 
+             // txtBestMatch
+             // 
+             this.txtBestMatch.Dock = System.Windows.Forms.DockStyle.Fill;
+             this.txtBestMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.txtBestMatch.Location = new System.Drawing.Point(0, 0);
+             this.txtBestMatch.Multiline = true;
+             this.txtBestMatch.Name = "txtBestMatch";
+             this.txtBestMatch.Size = new System.Drawing.Size(325, 321);
+             this.txtBestMatch.TabIndex = 3;
+             // 
+             // txtTarget
+             // 
+             this.txtTarget.Dock = System.Windows.Forms.DockStyle.Fill;
+             this.txtTarget.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.txtTarget.Location = new System.Drawing.Point(0, 0);
+             this.txtTarget.Multiline = true;
+             this.txtTarget.Name = "txtTarget";
+             this.txtTarget.Size = new System.Drawing.Size(337, 321);
+             this.txtTarget.TabIndex = 0;
+             // 
+             // btnRun
+             // 
+             this.btnRun.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.btnRun.Location = new System.Drawing.Point(17, 39);
+             this.btnRun.Name = "btnRun";
+             this.btnRun.Size = new System.Drawing.Size(83, 26);
+             this.btnRun.TabIndex = 2;
+             this.btnRun.Text = "Start";
+             this.btnRun.UseVisualStyleBackColor = true;
+             this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
+             // 
+             // txtMonkeysPerGeneration
+             // 
+             this.txtMonkeysPerGeneration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.txtMonkeysPerGeneration.Location = new System.Drawing.Point(225, 12);
+             this.txtMonkeysPerGeneration.Name = "txtMonkeysPerGeneration";
+             this.txtMonkeysPerGeneration.Size = new System.Drawing.Size(50, 26);
+             this.txtMonkeysPerGeneration.TabIndex = 1;
+             this.txtMonkeysPerGeneration.Text = "2000";
+             // 
+             // label1
+             // 
+             this.label1.AutoSize = true;
+             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.label1.Location = new System.Drawing.Point(13, 13);
+             this.label1.Name = "label1";
+             this.label1.Size = new System.Drawing.Size(206, 20);
+             this.label1.TabIndex = 0;
+             this.label1.Text = "Monkeys Per Generation";
+             // 
+             // timerElapsedTime
+             // 
+             this.timerElapsedTime.Interval = 1000;
+             this.timerElapsedTime.Tick += new System.EventHandler(this.timerElapsedTime_Tick);
+             // 
+             // chkParallel
+             // 
+             this.chkParallel.AutoSize = true;
+             this.chkParallel.Location = new System.Drawing.Point(106, 45);
+             this.chkParallel.Name = "chkParallel";
+             this.chkParallel.Size = new System.Drawing.Size(60, 17);
+             this.chkParallel.TabIndex = 10;
+             this.chkParallel.Text = "Parallel";
+             this.chkParallel.UseVisualStyleBackColor = true;
+             // 
+             // pictureBox1
+             // 
+             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+             this.pictureBox1.Image = global
+             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+             this.pictureBox1.Name = "pictureBox1";
+             this.pictureBox1.Size = new System.Drawing.Size(301, 389);
+             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+             this.pictureBox1.TabIndex = 0;
+             this.pictureBox1.TabStop = false;
+             // 
+             // MainForm
+             // 
+             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+             this.BackColor = System.Drawing.Color.White;
+             this.ClientSize = new System.Drawing.Size(973, 389);
+             this.Controls.Add(this.splitContainer1);
+             this.Name = "MainForm";
+             this.Text = "Shakespearean Monkeys";
+             this.splitContainer1.Panel1.ResumeLayout(false);
+             this.splitContainer1.Panel2.ResumeLayout(false);
+             this.splitContainer1.Panel2.PerformLayout();
+             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+             this.splitContainer1.ResumeLayout(false);
+             this.splitContainer2.Panel1.ResumeLayout(false);
+             this.splitContainer2.Panel1.PerformLayout();
+             this.splitContainer2.Panel2.ResumeLayout(false);
+             this.splitContainer2.Panel2.PerformLayout();
+             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+             this.splitContainer2.ResumeLayout(false);
+             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+             this.ResumeLayout(false);
+ 
+         }
+ 
+         #endregion
+ 
+         private System.Windows.Forms.PictureBox pictureBox1;
+         private System.Windows.Forms.SplitContainer splitContainer1;
+         private System.Windows.Forms.Label label1;
+         private System.Windows.Forms.TextBox txtMonkeysPerGeneration;
+         private System.Windows.Forms.Button btnRun;
+         private System.Windows.Forms.SplitContainer splitContainer2;
+         private System.Windows.Forms.TextBox txtBestMatch;
+         private System.Windows.Forms.TextBox txtTarget;
+         private System.Windows.Forms.Label lblElapsedTime;
+         private System.Windows.Forms.Label label4;
+         private System.Windows.Forms.Label lblGenerations;
+         private System.Windows.Forms.Label label2;
+         private System.Windows.Forms.Timer timerElapsedTime;
+         private System.Windows.Forms.Label lblGenPerSec;
+         private System.Windows.Forms.Label label5;
+         private System.Windows.Forms.CheckBox chkParallel;
+     }
+ }
+ 
+             {
+                 components.Dispose();
+             }
+             base.Dispose(disposing);
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\MainForm.Designer.cs" startline="22" endline="270"><![CDATA[
+ 
+         #region Windows Form Designer generated code
+ 
+         /// <summary>
+         /// Required method for Designer support - do not modify
+         /// the contents of this method with the code editor.
+         /// </summary>
+         private void InitializeComponent()
+         {
+             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+             this.lblGenPerSec = new System.Windows.Forms.Label();
+             this.label5 = new System.Windows.Forms.Label();
+             this.lblElapsedTime = new System.Windows.Forms.Label();
+             this.label4 = new System.Windows.Forms.Label();
+             this.lblGenerations = new System.Windows.Forms.Label();
+             this.label2 = new System.Windows.Forms.Label();
+             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+             this.txtBestMatch = new System.Windows.Forms.TextBox();
+             this.txtTarget = new System.Windows.Forms.TextBox();
+             this.btnRun = new System.Windows.Forms.Button();
+             this.txtMonkeysPerGeneration = new System.Windows.Forms.TextBox();
+             this.label1 = new System.Windows.Forms.Label();
+             this.timerElapsedTime = new System.Windows.Forms.Timer();
+             this.chkParallel = new System.Windows.Forms.CheckBox();
+             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+             this.splitContainer1.Panel1.SuspendLayout();
+             this.splitContainer1.Panel2.SuspendLayout();
+             this.splitContainer1.SuspendLayout();
+             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+             this.splitContainer2.Panel1.SuspendLayout();
+             this.splitContainer2.Panel2.SuspendLayout();
+             this.splitContainer2.SuspendLayout();
+             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+             this.SuspendLayout();
+             // 
+             // splitContainer1
+             // 
+             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+             this.splitContainer1.Name = "splitContainer1";
+             // 
+             // splitContainer1.Panel1
+             // 
+             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
+             // 
+             // splitContainer1.Panel2
+             // 
+             this.splitContainer1.Panel2.Controls.Add(this.chkParallel);
+             this.splitContainer1.Panel2.Controls.Add(this.lblGenPerSec);
+             this.splitContainer1.Panel2.Controls.Add(this.label5);
+             this.splitContainer1.Panel2.Controls.Add(this.lblElapsedTime);
+             this.splitContainer1.Panel2.Controls.Add(this.label4);
+             this.splitContainer1.Panel2.Controls.Add(this.lblGenerations);
+             this.splitContainer1.Panel2.Controls.Add(this.label2);
+             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+             this.splitContainer1.Panel2.Controls.Add(this.btnRun);
+             this.splitContainer1.Panel2.Controls.Add(this.txtMonkeysPerGeneration);
+             this.splitContainer1.Panel2.Controls.Add(this.label1);
+             this.splitContainer1.Size = new System.Drawing.Size(973, 389);
+             this.splitContainer1.SplitterDistance = 301;
+             this.splitContainer1.TabIndex = 1;
+             // 
+             // lblGenPerSec
+             // 
+             this.lblGenPerSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+             this.lblGenPerSec.AutoSize = true;
+             this.lblGenPerSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.lblGenPerSec.Location = new System.Drawing.Point(601, 48);
+             this.lblGenPerSec.Name = "lblGenPerSec";
+             this.lblGenPerSec.Size = new System.Drawing.Size(13, 17);
+             this.lblGenPerSec.TabIndex = 9;
+             this.lblGenPerSec.Text = "-";
+             // 
+             // label5
+             // 
+             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+             this.label5.AutoSize = true;
+             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.label5.Location = new System.Drawing.Point(454, 48);
+             this.label5.Name = "label5";
+             this.label5.Size = new System.Drawing.Size(144, 17);
+             this.label5.TabIndex = 8;
+             this.label5.Text = "Generations / Sec
+             // 
+             // lblElapsedTime
+             // 
+             this.lblElapsedTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+             this.lblElapsedTime.AutoSize = true;
+             this.lblElapsedTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.lblElapsedTime.Location = new System.Drawing.Point(601, 9);
+             this.lblElapsedTime.Name = "lblElapsedTime";
+             this.lblElapsedTime.Size = new System.Drawing.Size(13, 17);
+             this.lblElapsedTime.TabIndex = 7;
+             this.lblElapsedTime.Text = "-";
+             // 
+             // label4
+             // 
+             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+             this.label4.AutoSize = true;
+             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.label4.Location = new System.Drawing.Point(454, 9);
+             this.label4.Name = "label4";
+             this.label4.Size = new System.Drawing.Size(48, 17);
+             this.label4.TabIndex = 6;
+             this.label4.Text = "Time
+             // 
+             // lblGenerations
+             // 
+             this.lblGenerations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+             this.lblGenerations.AutoSize = true;
+             this.lblGenerations.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.lblGenerations.Location = new System.Drawing.Point(601, 29);
+             this.lblGenerations.Name = "lblGenerations";
+             this.lblGenerations.Size = new System.Drawing.Size(13, 17);
+             this.lblGenerations.TabIndex = 5;
+             this.lblGenerations.Text = "-";
+             // 
+             // label2
+             // 
+             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+             this.label2.AutoSize = true;
+             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.label2.Location = new System.Drawing.Point(454, 29);
+             this.label2.Name = "label2";
+             this.label2.Size = new System.Drawing.Size(102, 17);
+             this.label2.TabIndex = 4;
+             this.label2.Text = "Generations
+             // 
+             // splitContainer2
+             // 
+             this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                         | System.Windows.Forms.AnchorStyles.Left)
+                         | System.Windows.Forms.AnchorStyles.Right)));
+             this.splitContainer2.Location = new System.Drawing.Point(2, 68);
+             this.splitContainer2.Name = "splitContainer2";
+             // 
+             // splitContainer2.Panel1
+             // 
+             this.splitContainer2.Panel1.Controls.Add(this.txtBestMatch);
+             // 
+             // splitContainer2.Panel2
+             // 
+             this.splitContainer2.Panel2.Controls.Add(this.txtTarget);
+             this.splitContainer2.Size = new System.Drawing.Size(666, 321);
+             this.splitContainer2.SplitterDistance = 325;
+             this.splitContainer2.TabIndex = 3;
+             // 
+             // txtBestMatch
+             // 
+             this.txtBestMatch.Dock = System.Windows.Forms.DockStyle.Fill;
+             this.txtBestMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.txtBestMatch.Location = new System.Drawing.Point(0, 0);
+             this.txtBestMatch.Multiline = true;
+             this.txtBestMatch.Name = "txtBestMatch";
+             this.txtBestMatch.Size = new System.Drawing.Size(325, 321);
+             this.txtBestMatch.TabIndex = 3;
+             // 
+             // txtTarget
+             // 
+             this.txtTarget.Dock = System.Windows.Forms.DockStyle.Fill;
+             this.txtTarget.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.txtTarget.Location = new System.Drawing.Point(0, 0);
+             this.txtTarget.Multiline = true;
+             this.txtTarget.Name = "txtTarget";
+             this.txtTarget.Size = new System.Drawing.Size(337, 321);
+             this.txtTarget.TabIndex = 0;
+             // 
+             // btnRun
+             // 
+             this.btnRun.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.btnRun.Location = new System.Drawing.Point(17, 39);
+             this.btnRun.Name = "btnRun";
+             this.btnRun.Size = new System.Drawing.Size(83, 26);
+             this.btnRun.TabIndex = 2;
+             this.btnRun.Text = "Start";
+             this.btnRun.UseVisualStyleBackColor = true;
+             this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
+             // 
+             // txtMonkeysPerGeneration
+             // 
+             this.txtMonkeysPerGeneration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.txtMonkeysPerGeneration.Location = new System.Drawing.Point(225, 12);
+             this.txtMonkeysPerGeneration.Name = "txtMonkeysPerGeneration";
+             this.txtMonkeysPerGeneration.Size = new System.Drawing.Size(50, 26);
+             this.txtMonkeysPerGeneration.TabIndex = 1;
+             this.txtMonkeysPerGeneration.Text = "2000";
+             // 
+             // label1
+             // 
+             this.label1.AutoSize = true;
+             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.label1.Location = new System.Drawing.Point(13, 13);
+             this.label1.Name = "label1";
+             this.label1.Size = new System.Drawing.Size(206, 20);
+             this.label1.TabIndex = 0;
+             this.label1.Text = "Monkeys Per Generation";
+             // 
+             // timerElapsedTime
+             // 
+             this.timerElapsedTime.Interval = 1000;
+             this.timerElapsedTime.Tick += new System.EventHandler(this.timerElapsedTime_Tick);
+             // 
+             // chkParallel
+             // 
+             this.chkParallel.AutoSize = true;
+             this.chkParallel.Location = new System.Drawing.Point(106, 45);
+             this.chkParallel.Name = "chkParallel";
+             this.chkParallel.Size = new System.Drawing.Size(60, 17);
+             this.chkParallel.TabIndex = 10;
+             this.chkParallel.Text = "Parallel";
+             this.chkParallel.UseVisualStyleBackColor = true;
+             // 
+             // pictureBox1
+             // 
+             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+             this.pictureBox1.Image = global
+             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+             this.pictureBox1.Name = "pictureBox1";
+             this.pictureBox1.Size = new System.Drawing.Size(301, 389);
+             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+             this.pictureBox1.TabIndex = 0;
+             this.pictureBox1.TabStop = false;
+             // 
+             // MainForm
+             // 
+             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+             this.BackColor = System.Drawing.Color.White;
+             this.ClientSize = new System.Drawing.Size(973, 389);
+             this.Controls.Add(this.splitContainer1);
+             this.Name = "MainForm";
+             this.Text = "Shakespearean Monkeys";
+             this.splitContainer1.Panel1.ResumeLayout(false);
+             this.splitContainer1.Panel2.ResumeLayout(false);
+             this.splitContainer1.Panel2.PerformLayout();
+             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+             this.splitContainer1.ResumeLayout(false);
+             this.splitContainer2.Panel1.ResumeLayout(false);
+             this.splitContainer2.Panel1.PerformLayout();
+             this.splitContainer2.Panel2.ResumeLayout(false);
+             this.splitContainer2.Panel2.PerformLayout();
+             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+             this.splitContainer2.ResumeLayout(false);
+             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+             this.ResumeLayout(false);
+ 
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\MainForm.cs" startline="8" endline="33"><![CDATA[
+         private System.ComponentModel.IContainer components = null;
+         private DateTimeOffset _startTime = DateTimeOffset.MinValue;
+         private DateTimeOffset _lastTime = DateTimeOffset.MinValue;
+         public MainForm()
+         {
+             InitializeComponent();
+ 
+             txtTarget.Text = _targetText;
+             _uiTasks = new TaskFactory(TaskScheduler.FromCurrentSynchronizationContext());
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\MainForm.cs" startline="34" endline="106"><![CDATA[
+ 
+         private int _currentIteration;
+         private CancellationTokenSource _cancellation;
+ 
+         private void btnRun_Click(object sender, EventArgs e)
+         {
+             if (_cancellation == null)
+             {
+                 _cancellation = new CancellationTokenSource();
+                 GeneticAlgorithmSettings settings = new GeneticAlgorithmSettings { PopulationSize = Int32.Parse(txtMonkeysPerGeneration.Text) };
+ 
+                 txtBestMatch.BackColor = SystemColors.Window;
+                 lblGenerations.BackColor = SystemColors.Control;
+                 lblGenPerSec.Text = lblGenerations.Text = "-";
+                 lblElapsedTime.Text = "0";
+                 btnRun.Text = "Cancel";
+                 chkParallel.Visible = false;
+ 
+                 _startTime = _lastTime = DateTimeOffset.Now;
+                 timerElapsedTime.Start();
+ 
+                 // Run the work in the background
+                 _cancellation = new CancellationTokenSource();
+                 var token = _cancellation.Token;
+                 bool runParallel = chkParallel.Checked;
+                 Task.Factory.StartNew(() =>
+                 {
+                     // Create the new genetic algorithm
+                     var ga = new TextMatchGeneticAlgorithm(runParallel, _targetText, settings);
+                     TextMatchGenome? bestGenome = null;
+ 
+                     // Iterate until a solution is found or until cancellation is requested
+                     for (_currentIteration = 1; ; _currentIteration++)
+                     {
+                         token.ThrowIfCancellationRequested();
+ 
+                         // Move to the next generation
+                         ga.MoveNext();
+ 
+                         // If we've found the best solution thus far, update the UI
+                         if (bestGenome == null ||
+                             ga.CurrentBest.Fitness < bestGenome.Value.Fitness)
+                         {
+                             bestGenome = ga.CurrentBest;
+                             _uiTasks.StartNew(() => txtBestMatch.Text = bestGenome.Value.Text);
+ 
+                             // If we've found the solution, bail.
+                             if (bestGenome.Value.Text == _targetText) break;
+                         }
+                     }
+ 
+                     // When the task completes, update the UI
+                 }, token).ContinueWith(t =>
+                 {
+                     timerElapsedTime.Stop();
+                     chkParallel.Visible = true;
+                     btnRun.Text = "Start";
+                     _cancellation = null;
+ 
+                     switch (t.Status)
+                     {
+                         case TaskStatus.Faulted
+                             MessageBox.Show(this, t.Exception.ToString(), "Error");
+                             break;
+                         case TaskStatus.RanToCompletion
+                             txtBestMatch.BackColor = Color.LightGreen;
+                             lblGenerations.BackColor = Color.LemonChiffon;
+                             break;
+                     }
+                 }, _uiTasks.Scheduler);
+             }
+             else _cancellation.Cancel();
+         }
+ 
+         private DateTimeOffset _startTime = DateTimeOffset.MinValue;
+         private DateTimeOffset _lastTime = DateTimeOffset.MinValue;
+ 
+         private void timerElapsedTime_Tick(object sender, EventArgs e)
+         {
+             var now = DateTimeOffset.Now;
+             var elapsed = (int)(now - _startTime).TotalSeconds;
+             
+             lblElapsedTime.Text = elapsed.ToString();
+             lblGenerations.Text = _currentIteration.ToString();
+ 
+             if (elapsed > 2)
+             {
+                 var diffSeconds = (now - _lastTime).TotalSeconds;
+                 if (diffSeconds > 0)
+                 {
+                     lblGenPerSec.Text = ((int)(_currentIteration / diffSeconds)).ToString();
+                 }
+             }
+         }
+     }
+ }
+         {
+             if (_cancellation == null)
+             {
+                 _cancellation = new CancellationTokenSource();
+                 GeneticAlgorithmSettings settings = new GeneticAlgorithmSettings { PopulationSize = Int32.Parse(txtMonkeysPerGeneration.Text) };
+ 
+                 txtBestMatch.BackColor = SystemColors.Window;
+                 lblGenerations.BackColor = SystemColors.Control;
+                 lblGenPerSec.Text = lblGenerations.Text = "-";
+                 lblElapsedTime.Text = "0";
+                 btnRun.Text = "Cancel";
+                 chkParallel.Visible = false;
+ 
+                 _startTime = _lastTime = DateTimeOffset.Now;
+                 timerElapsedTime.Start();
+ 
+                 // Run the work in the background
+                 _cancellation = new CancellationTokenSource();
+                 var token = _cancellation.Token;
+                 bool runParallel = chkParallel.Checked;
+                 Task.Factory.StartNew(() =>
+                 {
+                     // Create the new genetic algorithm
+                     var ga = new TextMatchGeneticAlgorithm(runParallel, _targetText, settings);
+                     TextMatchGenome? bestGenome = null;
+ 
+                     // Iterate until a solution is found or until cancellation is requested
+                     for (_currentIteration = 1; ; _currentIteration++)
+                     {
+                         token.ThrowIfCancellationRequested();
+ 
+                         // Move to the next generation
+                         ga.MoveNext();
+ 
+                         // If we've found the best solution thus far, update the UI
+                         if (bestGenome == null ||
+                             ga.CurrentBest.Fitness < bestGenome.Value.Fitness)
+                         {
+                             bestGenome = ga.CurrentBest;
+                             _uiTasks.StartNew(() => txtBestMatch.Text = bestGenome.Value.Text);
+ 
+                             // If we've found the solution, bail.
+                             if (bestGenome.Value.Text == _targetText) break;
+                         }
+                     }
+ 
+                     // When the task completes, update the UI
+                 }, token).ContinueWith(t =>
+                 {
+                     timerElapsedTime.Stop();
+                     chkParallel.Visible = true;
+                     btnRun.Text = "Start";
+                     _cancellation = null;
+ 
+                     switch (t.Status)
+                     {
+                         case TaskStatus.Faulted
+                             MessageBox.Show(this, t.Exception.ToString(), "Error");
+                             break;
+                         case TaskStatus.RanToCompletion
+                             txtBestMatch.BackColor = Color.LightGreen;
+                             lblGenerations.BackColor = Color.LemonChiffon;
+                             break;
+                     }
+                 }, _uiTasks.Scheduler);
+             }
+             else _cancellation.Cancel();
+         }
+ 
+         private DateTimeOffset _startTime = DateTimeOffset.MinValue;
+         private DateTimeOffset _lastTime = DateTimeOffset.MinValue;
+ 
+         private void timerElapsedTime_Tick(object sender, EventArgs e)
+         {
+             var now = DateTimeOffset.Now;
+             var elapsed = (int)(now - _startTime).TotalSeconds;
+             
+             lblElapsedTime.Text = elapsed.ToString();
+             lblGenerations.Text = _currentIteration.ToString();
+ 
+             if (elapsed > 2)
+             {
+                 var diffSeconds = (now - _lastTime).TotalSeconds;
+                 if (diffSeconds > 0)
+                 {
+                     lblGenPerSec.Text = ((int)(_currentIteration / diffSeconds)).ToString();
+                 }
+             }
+         }
+     }
+ }
+             {
+                 _cancellation = new CancellationTokenSource();
+                 GeneticAlgorithmSettings settings = new GeneticAlgorithmSettings { PopulationSize = Int32.Parse(txtMonkeysPerGeneration.Text) };
+ 
+                 txtBestMatch.BackColor = SystemColors.Window;
+                 lblGenerations.BackColor = SystemColors.Control;
+                 lblGenPerSec.Text = lblGenerations.Text = "-";
+                 lblElapsedTime.Text = "0";
+                 btnRun.Text = "Cancel";
+                 chkParallel.Visible = false;
+ 
+                 _startTime = _lastTime = DateTimeOffset.Now;
+                 timerElapsedTime.Start();
+ 
+                 // Run the work in the background
+                 _cancellation = new CancellationTokenSource();
+                 var token = _cancellation.Token;
+                 bool runParallel = chkParallel.Checked;
+                 Task.Factory.StartNew(() =>
+                 {
+                     // Create the new genetic algorithm
+                     var ga = new TextMatchGeneticAlgorithm(runParallel, _targetText, settings);
+                     TextMatchGenome? bestGenome = null;
+ 
+                     // Iterate until a solution is found or until cancellation is requested
+                     for (_currentIteration = 1; ; _currentIteration++)
+                     {
+                         token.ThrowIfCancellationRequested();
+ 
+                         // Move to the next generation
+                         ga.MoveNext();
+ 
+                         // If we've found the best solution thus far, update the UI
+                         if (bestGenome == null ||
+                             ga.CurrentBest.Fitness < bestGenome.Value.Fitness)
+                         {
+                             bestGenome = ga.CurrentBest;
+                             _uiTasks.StartNew(() => txtBestMatch.Text = bestGenome.Value.Text);
+ 
+                             // If we've found the solution, bail.
+                             if (bestGenome.Value.Text == _targetText) break;
+                         }
+                     }
+ 
+                     // When the task completes, update the UI
+                 }, token).ContinueWith(t =>
+                 {
+                     timerElapsedTime.Stop();
+                     chkParallel.Visible = true;
+                     btnRun.Text = "Start";
+                     _cancellation = null;
+ 
+                     switch (t.Status)
+                     {
+                         case TaskStatus.Faulted
+                             MessageBox.Show(this, t.Exception.ToString(), "Error");
+                             break;
+                         case TaskStatus.RanToCompletion
+                             txtBestMatch.BackColor = Color.LightGreen;
+                             lblGenerations.BackColor = Color.LemonChiffon;
+                             break;
+                     }
+                 }, _uiTasks.Scheduler);
+             }
+             else _cancellation.Cancel();
+         }
+ 
+         private DateTimeOffset _startTime = DateTimeOffset.MinValue;
+         private DateTimeOffset _lastTime = DateTimeOffset.MinValue;
+ 
+         private void timerElapsedTime_Tick(object sender, EventArgs e)
+         {
+             var now = DateTimeOffset.Now;
+             var elapsed = (int)(now - _startTime).TotalSeconds;
+             
+             lblElapsedTime.Text = elapsed.ToString();
+             lblGenerations.Text = _currentIteration.ToString();
+ 
+             if (elapsed > 2)
+             {
+                 var diffSeconds = (now - _lastTime).TotalSeconds;
+                 if (diffSeconds > 0)
+                 {
+                     lblGenPerSec.Text = ((int)(_currentIteration / diffSeconds)).ToString();
+                 }
+             }
+         }
+     }
+ }
+             else _cancellation.Cancel();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\MainForm.cs" startline="107" endline="127"><![CDATA[
+ 
+         private DateTimeOffset _startTime = DateTimeOffset.MinValue;
+         private DateTimeOffset _lastTime = DateTimeOffset.MinValue;
+ 
+         private void timerElapsedTime_Tick(object sender, EventArgs e)
+         {
+             var now = DateTimeOffset.Now;
+             var elapsed = (int)(now - _startTime).TotalSeconds;
+             
+             lblElapsedTime.Text = elapsed.ToString();
+             lblGenerations.Text = _currentIteration.ToString();
+ 
+             if (elapsed > 2)
+             {
+                 var diffSeconds = (now - _lastTime).TotalSeconds;
+                 if (diffSeconds > 0)
+                 {
+                     lblGenPerSec.Text = ((int)(_currentIteration / diffSeconds)).ToString();
+                 }
+             }
+         }
+     }
+ }
+             {
+                 var diffSeconds = (now - _lastTime).TotalSeconds;
+                 if (diffSeconds > 0)
+                 {
+                     lblGenPerSec.Text = ((int)(_currentIteration / diffSeconds)).ToString();
+                 }
+             }
+         }
+     }
+ }
+                 {
+                     lblGenPerSec.Text = ((int)(_currentIteration / diffSeconds)).ToString();
+                 }
+             }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\MainForm.cs" startline="87" endline="129"><![CDATA[
+                 {
+                     timerElapsedTime.Stop();
+                     chkParallel.Visible = true;
+                     btnRun.Text = "Start";
+                     _cancellation = null;
+ 
+                     switch (t.Status)
+                     {
+                         case TaskStatus.Faulted
+                             MessageBox.Show(this, t.Exception.ToString(), "Error");
+                             break;
+                         case TaskStatus.RanToCompletion
+                             txtBestMatch.BackColor = Color.LightGreen;
+                             lblGenerations.BackColor = Color.LemonChiffon;
+                             break;
+                     }
+                 }, _uiTasks.Scheduler);
+             }
+             else _cancellation.Cancel();
+         }
+ 
+         private DateTimeOffset _startTime = DateTimeOffset.MinValue;
+         private DateTimeOffset _lastTime = DateTimeOffset.MinValue;
+ 
+         private void timerElapsedTime_Tick(object sender, EventArgs e)
+         {
+             var now = DateTimeOffset.Now;
+             var elapsed = (int)(now - _startTime).TotalSeconds;
+             
+             lblElapsedTime.Text = elapsed.ToString();
+             lblGenerations.Text = _currentIteration.ToString();
+ 
+             if (elapsed > 2)
+             {
+                 var diffSeconds = (now - _lastTime).TotalSeconds;
+                 if (diffSeconds > 0)
+                 {
+                     lblGenPerSec.Text = ((int)(_currentIteration / diffSeconds)).ToString();
+                 }
+             }
+         }
+     }
+ }
+                             MessageBox.Show(this, t.Exception.ToString(), "Error");
+                             break;
+                         case TaskStatus.RanToCompletion
+                             txtBestMatch.BackColor = Color.LightGreen;
+                             lblGenerations.BackColor = Color.LemonChiffon;
+                             break;
+                     }
+                 }, _uiTasks.Scheduler);
+             }
+             else _cancellation.Cancel();
+         }
+ 
+         private DateTimeOffset _startTime = DateTimeOffset.MinValue;
+         private DateTimeOffset _lastTime = DateTimeOffset.MinValue;
+ 
+         private void timerElapsedTime_Tick(object sender, EventArgs e)
+         {
+             var now = DateTimeOffset.Now;
+             var elapsed = (int)(now - _startTime).TotalSeconds;
+             
+             lblElapsedTime.Text = elapsed.ToString();
+             lblGenerations.Text = _currentIteration.ToString();
+ 
+             if (elapsed > 2)
+             {
+                 var diffSeconds = (now - _lastTime).TotalSeconds;
+                 if (diffSeconds > 0)
+                 {
+                     lblGenPerSec.Text = ((int)(_currentIteration / diffSeconds)).ToString();
+                 }
+             }
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\MainForm.Designer.cs" startline="19" endline="19"><![CDATA[
+         private static string _targetText =
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ShakespeareanMonkeys\ShakespeareanMonkeys_CSharp\Program.cs" startline="19" endline="23"><![CDATA[
+         {
+             Application.EnableVisualStyles();
+             Application.SetCompatibleTextRenderingDefault(false);
+             Application.Run(new MainForm());
+         }
+]]></source>
+</source_elements></project>

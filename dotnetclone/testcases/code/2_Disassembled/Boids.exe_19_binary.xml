@@ -1,0 +1,2937 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Properties\Settings.Designer.cs" startline="25" endline="27"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class ParallelBoids.Properties.Settings CS$1$0000)
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+    IL_0000:  nop
+    IL_0001:  ldsfld     class ParallelBoids.Properties.Settings ParallelBoids.Properties.Settings::defaultInstance
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [System]System.Configuration.ApplicationSettingsBase::.ctor()
+    IL_0006:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Properties\Settings.Designer.cs" startline="20" endline="30"><![CDATA[
+  {
+    // Code size       21 (0x15)
+    .maxstack  8
+    IL_0000:  newobj     instance void ParallelBoids.Properties.Settings::.ctor()
+    IL_0005:  call       class [System]System.Configuration.SettingsBase [System]System.Configuration.SettingsBase::Synchronized(class [System]System.Configuration.SettingsBase)
+    IL_000a:  castclass  ParallelBoids.Properties.Settings
+    IL_000f:  stsfld     class ParallelBoids.Properties.Settings ParallelBoids.Properties.Settings::defaultInstance
+    IL_0014:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Boid.cs" startline="37" endline="70"><![CDATA[
+  {
+    // Code size       333 (0x14d)
+    .maxstack  5
+    .locals init ([0] class [PresentationCore]System.Windows.Media.Media3D.Transform3DGroup t,
+             [1] class [PresentationCore]System.Windows.Media.Media3D.GeometryModel3D '<>g__initLocal0',
+             [2] class [PresentationCore]System.Windows.Media.Media3D.MeshGeometry3D '<>g__initLocal1',
+             [3] bool CS$4$0000,
+             [4] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D CS$0$0001)
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [PresentationCore]System.Windows.Media.Media3D.ModelVisual3D::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  ldarg.1
+    IL_0009:  ldnull
+    IL_000a:  ceq
+    IL_000c:  ldc.i4.0
+    IL_000d:  ceq
+    IL_000f:  stloc.3
+    IL_0010:  ldloc.3
+    IL_0011:  brtrue.s   IL_001e
+
+    IL_0013:  ldstr      "colors"
+    IL_0018:  newobj     instance void [mscorlib]System.ArgumentNullException::.ctor(string)
+    IL_001d:  throw
+
+    IL_001e:  ldarg.0
+    IL_001f:  ldarg.1
+    IL_0020:  stfld      class [mscorlib]System.Tuple`2<valuetype [PresentationCore]System.Windows.Media.Color,valuetype [PresentationCore]System.Windows.Media.Color> ParallelBoids.Boid::_colors
+    IL_0025:  ldarg.0
+    IL_0026:  ldarg.1
+    IL_0027:  callvirt   instance !0 class [mscorlib]System.Tuple`2<valuetype [PresentationCore]System.Windows.Media.Color,valuetype [PresentationCore]System.Windows.Media.Color>::get_Item1()
+    IL_002c:  newobj     instance void [PresentationCore]System.Windows.Media.SolidColorBrush::.ctor(valuetype [PresentationCore]System.Windows.Media.Color)
+    IL_0031:  stfld      class [PresentationCore]System.Windows.Media.SolidColorBrush ParallelBoids.Boid::_materialBrush
+    IL_0036:  ldarg.0
+    IL_0037:  ldarg.1
+    IL_0038:  callvirt   instance !1 class [mscorlib]System.Tuple`2<valuetype [PresentationCore]System.Windows.Media.Color,valuetype [PresentationCore]System.Windows.Media.Color>::get_Item2()
+    IL_003d:  newobj     instance void [PresentationCore]System.Windows.Media.SolidColorBrush::.ctor(valuetype [PresentationCore]System.Windows.Media.Color)
+    IL_0042:  stfld      class [PresentationCore]System.Windows.Media.SolidColorBrush ParallelBoids.Boid::_backmaterialBrush
+    IL_0047:  ldarg.0
+    IL_0048:  newobj     instance void [PresentationCore]System.Windows.Media.Media3D.GeometryModel3D::.ctor()
+    IL_004d:  stloc.1
+    IL_004e:  ldloc.1
+    IL_004f:  ldarg.0
+    IL_0050:  ldfld      class [PresentationCore]System.Windows.Media.SolidColorBrush ParallelBoids.Boid::_materialBrush
+    IL_0055:  newobj     instance void [PresentationCore]System.Windows.Media.Media3D.DiffuseMaterial::.ctor(class [PresentationCore]System.Windows.Media.Brush)
+    IL_005a:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.GeometryModel3D::set_Material(class [PresentationCore]System.Windows.Media.Media3D.Material)
+    IL_005f:  nop
+    IL_0060:  ldloc.1
+    IL_0061:  ldarg.0
+    IL_0062:  ldfld      class [PresentationCore]System.Windows.Media.SolidColorBrush ParallelBoids.Boid::_backmaterialBrush
+    IL_0067:  newobj     instance void [PresentationCore]System.Windows.Media.Media3D.DiffuseMaterial::.ctor(class [PresentationCore]System.Windows.Media.Brush)
+    IL_006c:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.GeometryModel3D::set_BackMaterial(class [PresentationCore]System.Windows.Media.Media3D.Material)
+    IL_0071:  nop
+    IL_0072:  ldloc.1
+    IL_0073:  newobj     instance void [PresentationCore]System.Windows.Media.Media3D.MeshGeometry3D::.ctor()
+    IL_0078:  stloc.2
+    IL_0079:  ldloc.2
+    IL_007a:  ldstr      "0 1 0  1 -1 0  -1 -1 0  0 1 0  0 -1 1  0 -1 -1"
+    IL_007f:  call       class [PresentationCore]System.Windows.Media.Media3D.Point3DCollection [PresentationCore]System.Windows.Media.Media3D.Point3DCollection::Parse(string)
+    IL_0084:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.MeshGeometry3D::set_Positions(class [PresentationCore]System.Windows.Media.Media3D.Point3DCollection)
+    IL_0089:  nop
+    IL_008a:  ldloc.2
+    IL_008b:  ldstr      "0 0 -1  1 0 0"
+    IL_0090:  call       class [PresentationCore]System.Windows.Media.Media3D.Vector3DCollection [PresentationCore]System.Windows.Media.Media3D.Vector3DCollection::Parse(string)
+    IL_0095:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.MeshGeometry3D::set_Normals(class [PresentationCore]System.Windows.Media.Media3D.Vector3DCollection)
+    IL_009a:  nop
+    IL_009b:  ldloc.2
+    IL_009c:  ldstr      "0 1 2  3 4 5"
+    IL_00a1:  call       class [PresentationCore]System.Windows.Media.Int32Collection [PresentationCore]System.Windows.Media.Int32Collection::Parse(string)
+    IL_00a6:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.MeshGeometry3D::set_TriangleIndices(class [PresentationCore]System.Windows.Media.Int32Collection)
+    IL_00ab:  nop
+    IL_00ac:  ldloc.2
+    IL_00ad:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.GeometryModel3D::set_Geometry(class [PresentationCore]System.Windows.Media.Media3D.Geometry3D)
+    IL_00b2:  nop
+    IL_00b3:  ldloc.1
+    IL_00b4:  call       instance void [PresentationCore]System.Windows.Media.Media3D.ModelVisual3D::set_Content(class [PresentationCore]System.Windows.Media.Media3D.Model3D)
+    IL_00b9:  nop
+    IL_00ba:  ldarg.0
+    IL_00bb:  ldsfld     valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::UNIT_Y
+    IL_00c0:  ldc.r8     0.0
+    IL_00c9:  newobj     instance void [PresentationCore]System.Windows.Media.Media3D.AxisAngleRotation3D::.ctor(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                 float64)
+    IL_00ce:  stfld      class [PresentationCore]System.Windows.Media.Media3D.AxisAngleRotation3D ParallelBoids.Boid::_rotation
+    IL_00d3:  ldarg.0
+    IL_00d4:  ldloca.s   CS$0$0001
+    IL_00d6:  initobj    [PresentationCore]System.Windows.Media.Media3D.Vector3D
+    IL_00dc:  ldloc.s    CS$0$0001
+    IL_00de:  newobj     instance void [PresentationCore]System.Windows.Media.Media3D.TranslateTransform3D::.ctor(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_00e3:  stfld      class [PresentationCore]System.Windows.Media.Media3D.TranslateTransform3D ParallelBoids.Boid::_translation
+    IL_00e8:  newobj     instance void [PresentationCore]System.Windows.Media.Media3D.Transform3DGroup::.ctor()
+    IL_00ed:  stloc.0
+    IL_00ee:  ldloc.0
+    IL_00ef:  callvirt   instance class [PresentationCore]System.Windows.Media.Media3D.Transform3DCollection [PresentationCore]System.Windows.Media.Media3D.Transform3DGroup::get_Children()
+    IL_00f4:  ldc.r8     3.
+    IL_00fd:  ldc.r8     3.
+    IL_0106:  ldc.r8     3.
+    IL_010f:  newobj     instance void [PresentationCore]System.Windows.Media.Media3D.ScaleTransform3D::.ctor(float64,
+                                                                                                              float64,
+                                                                                                              float64)
+    IL_0114:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.Transform3DCollection::Add(class [PresentationCore]System.Windows.Media.Media3D.Transform3D)
+    IL_0119:  nop
+    IL_011a:  ldloc.0
+    IL_011b:  callvirt   instance class [PresentationCore]System.Windows.Media.Media3D.Transform3DCollection [PresentationCore]System.Windows.Media.Media3D.Transform3DGroup::get_Children()
+    IL_0120:  ldarg.0
+    IL_0121:  ldfld      class [PresentationCore]System.Windows.Media.Media3D.AxisAngleRotation3D ParallelBoids.Boid::_rotation
+    IL_0126:  newobj     instance void [PresentationCore]System.Windows.Media.Media3D.RotateTransform3D::.ctor(class [PresentationCore]System.Windows.Media.Media3D.Rotation3D)
+    IL_012b:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.Transform3DCollection::Add(class [PresentationCore]System.Windows.Media.Media3D.Transform3D)
+    IL_0130:  nop
+    IL_0131:  ldloc.0
+    IL_0132:  callvirt   instance class [PresentationCore]System.Windows.Media.Media3D.Transform3DCollection [PresentationCore]System.Windows.Media.Media3D.Transform3DGroup::get_Children()
+    IL_0137:  ldarg.0
+    IL_0138:  ldfld      class [PresentationCore]System.Windows.Media.Media3D.TranslateTransform3D ParallelBoids.Boid::_translation
+    IL_013d:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.Transform3DCollection::Add(class [PresentationCore]System.Windows.Media.Media3D.Transform3D)
+    IL_0142:  nop
+    IL_0143:  ldarg.0
+    IL_0144:  ldloc.0
+    IL_0145:  call       instance void [PresentationCore]System.Windows.Media.Media3D.ModelVisual3D::set_Transform(class [PresentationCore]System.Windows.Media.Media3D.Transform3D)
+    IL_014a:  nop
+    IL_014b:  nop
+    IL_014c:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Boid.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::'<Velocity>k__BackingField'
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Boid.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       8 (0x8)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::'<Velocity>k__BackingField'
+    IL_0007:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Boid.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::'<Position>k__BackingField'
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Boid.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       8 (0x8)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::'<Position>k__BackingField'
+    IL_0007:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Boid.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::'<PreviousVelocity>k__BackingField'
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Boid.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       8 (0x8)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::'<PreviousVelocity>k__BackingField'
+    IL_0007:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Boid.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::'<PreviousPosition>k__BackingField'
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Boid.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       8 (0x8)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::'<PreviousPosition>k__BackingField'
+    IL_0007:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Boid.cs" startline="71" endline="87"><![CDATA[
+  {
+    // Code size       28 (0x1c)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.0
+    IL_0003:  call       instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_Velocity()
+    IL_0008:  call       instance void ParallelBoids.Boid::set_PreviousVelocity(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_000d:  nop
+    IL_000e:  ldarg.0
+    IL_000f:  ldarg.0
+    IL_0010:  call       instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_Position()
+    IL_0015:  call       instance void ParallelBoids.Boid::set_PreviousPosition(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_001a:  nop
+    IL_001b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Boid.cs" startline="88" endline="102"><![CDATA[
+  {
+    // Code size       164 (0xa4)
+    .maxstack  4
+    .locals init ([0] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D direction,
+             [1] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D pos,
+             [2] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D CS$0$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_Velocity()
+    IL_0007:  stloc.0
+    IL_0008:  ldloca.s   direction
+    IL_000a:  call       instance void [PresentationCore]System.Windows.Media.Media3D.Vector3D::Normalize()
+    IL_000f:  nop
+    IL_0010:  ldarg.0
+    IL_0011:  ldfld      class [PresentationCore]System.Windows.Media.Media3D.AxisAngleRotation3D ParallelBoids.Boid::_rotation
+    IL_0016:  ldsfld     valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::UNIT_Y
+    IL_001b:  ldloc.0
+    IL_001c:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::CrossProduct(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                 valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0021:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.AxisAngleRotation3D::set_Axis(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0026:  nop
+    IL_0027:  ldarg.0
+    IL_0028:  ldfld      class [PresentationCore]System.Windows.Media.Media3D.AxisAngleRotation3D ParallelBoids.Boid::_rotation
+    IL_002d:  ldsfld     valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::UNIT_Y
+    IL_0032:  ldloc.0
+    IL_0033:  call       float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::DotProduct(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                     valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0038:  ldsfld     valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::UNIT_Y
+    IL_003d:  stloc.2
+    IL_003e:  ldloca.s   CS$0$0000
+    IL_0040:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Length()
+    IL_0045:  ldloca.s   direction
+    IL_0047:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Length()
+    IL_004c:  mul
+    IL_004d:  div
+    IL_004e:  call       float64 [mscorlib]System.Math::Acos(float64)
+    IL_0053:  ldc.r8     57.295779513082323
+    IL_005c:  mul
+    IL_005d:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.AxisAngleRotation3D::set_Angle(float64)
+    IL_0062:  nop
+    IL_0063:  ldarg.0
+    IL_0064:  call       instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_Position()
+    IL_0069:  stloc.1
+    IL_006a:  ldarg.0
+    IL_006b:  ldfld      class [PresentationCore]System.Windows.Media.Media3D.TranslateTransform3D ParallelBoids.Boid::_translation
+    IL_0070:  ldloca.s   pos
+    IL_0072:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_X()
+    IL_0077:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.TranslateTransform3D::set_OffsetX(float64)
+    IL_007c:  nop
+    IL_007d:  ldarg.0
+    IL_007e:  ldfld      class [PresentationCore]System.Windows.Media.Media3D.TranslateTransform3D ParallelBoids.Boid::_translation
+    IL_0083:  ldloca.s   pos
+    IL_0085:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Y()
+    IL_008a:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.TranslateTransform3D::set_OffsetY(float64)
+    IL_008f:  nop
+    IL_0090:  ldarg.0
+    IL_0091:  ldfld      class [PresentationCore]System.Windows.Media.Media3D.TranslateTransform3D ParallelBoids.Boid::_translation
+    IL_0096:  ldloca.s   pos
+    IL_0098:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Z()
+    IL_009d:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.TranslateTransform3D::set_OffsetZ(float64)
+    IL_00a2:  nop
+    IL_00a3:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Boid.cs" startline="103" endline="116"><![CDATA[
+  {
+    // Code size       220 (0xdc)
+    .maxstack  5
+    .locals init ([0] valuetype [PresentationCore]System.Windows.Media.Color CS$0$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [PresentationCore]System.Windows.Media.SolidColorBrush ParallelBoids.Boid::_materialBrush
+    IL_0007:  ldarg.0
+    IL_0008:  ldfld      class [PresentationCore]System.Windows.Media.SolidColorBrush ParallelBoids.Boid::_materialBrush
+    IL_000d:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.SolidColorBrush::get_Color()
+    IL_0012:  stloc.0
+    IL_0013:  ldloca.s   CS$0$0000
+    IL_0015:  call       instance uint8 [PresentationCore]System.Windows.Media.Color::get_A()
+    IL_001a:  ldc.i4     0xff
+    IL_001f:  blt.s      IL_0025
+
+    IL_0021:  ldc.i4.s   25
+    IL_0023:  br.s       IL_002a
+
+    IL_0025:  ldc.i4     0xff
+    IL_002a:  ldarg.0
+    IL_002b:  ldfld      class [PresentationCore]System.Windows.Media.SolidColorBrush ParallelBoids.Boid::_materialBrush
+    IL_0030:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.SolidColorBrush::get_Color()
+    IL_0035:  stloc.0
+    IL_0036:  ldloca.s   CS$0$0000
+    IL_0038:  call       instance uint8 [PresentationCore]System.Windows.Media.Color::get_R()
+    IL_003d:  ldarg.0
+    IL_003e:  ldfld      class [PresentationCore]System.Windows.Media.SolidColorBrush ParallelBoids.Boid::_materialBrush
+    IL_0043:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.SolidColorBrush::get_Color()
+    IL_0048:  stloc.0
+    IL_0049:  ldloca.s   CS$0$0000
+    IL_004b:  call       instance uint8 [PresentationCore]System.Windows.Media.Color::get_G()
+    IL_0050:  ldarg.0
+    IL_0051:  ldfld      class [PresentationCore]System.Windows.Media.SolidColorBrush ParallelBoids.Boid::_materialBrush
+    IL_0056:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.SolidColorBrush::get_Color()
+    IL_005b:  stloc.0
+    IL_005c:  ldloca.s   CS$0$0000
+    IL_005e:  call       instance uint8 [PresentationCore]System.Windows.Media.Color::get_B()
+    IL_0063:  call       valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.Color::FromArgb(uint8,
+                                                                                                                                       uint8,
+                                                                                                                                       uint8,
+                                                                                                                                       uint8)
+    IL_0068:  callvirt   instance void [PresentationCore]System.Windows.Media.SolidColorBrush::set_Color(valuetype [PresentationCore]System.Windows.Media.Color)
+    IL_006d:  nop
+    IL_006e:  ldarg.0
+    IL_006f:  ldfld      class [PresentationCore]System.Windows.Media.SolidColorBrush ParallelBoids.Boid::_backmaterialBrush
+    IL_0074:  ldarg.0
+    IL_0075:  ldfld      class [PresentationCore]System.Windows.Media.SolidColorBrush ParallelBoids.Boid::_backmaterialBrush
+    IL_007a:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.SolidColorBrush::get_Color()
+    IL_007f:  stloc.0
+    IL_0080:  ldloca.s   CS$0$0000
+    IL_0082:  call       instance uint8 [PresentationCore]System.Windows.Media.Color::get_A()
+    IL_0087:  ldc.i4     0xff
+    IL_008c:  blt.s      IL_0092
+
+    IL_008e:  ldc.i4.s   25
+    IL_0090:  br.s       IL_0097
+
+    IL_0092:  ldc.i4     0xff
+    IL_0097:  ldarg.0
+    IL_0098:  ldfld      class [PresentationCore]System.Windows.Media.SolidColorBrush ParallelBoids.Boid::_backmaterialBrush
+    IL_009d:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.SolidColorBrush::get_Color()
+    IL_00a2:  stloc.0
+    IL_00a3:  ldloca.s   CS$0$0000
+    IL_00a5:  call       instance uint8 [PresentationCore]System.Windows.Media.Color::get_R()
+    IL_00aa:  ldarg.0
+    IL_00ab:  ldfld      class [PresentationCore]System.Windows.Media.SolidColorBrush ParallelBoids.Boid::_backmaterialBrush
+    IL_00b0:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.SolidColorBrush::get_Color()
+    IL_00b5:  stloc.0
+    IL_00b6:  ldloca.s   CS$0$0000
+    IL_00b8:  call       instance uint8 [PresentationCore]System.Windows.Media.Color::get_G()
+    IL_00bd:  ldarg.0
+    IL_00be:  ldfld      class [PresentationCore]System.Windows.Media.SolidColorBrush ParallelBoids.Boid::_backmaterialBrush
+    IL_00c3:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.SolidColorBrush::get_Color()
+    IL_00c8:  stloc.0
+    IL_00c9:  ldloca.s   CS$0$0000
+    IL_00cb:  call       instance uint8 [PresentationCore]System.Windows.Media.Color::get_B()
+    IL_00d0:  call       valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.Color::FromArgb(uint8,
+                                                                                                                                       uint8,
+                                                                                                                                       uint8,
+                                                                                                                                       uint8)
+    IL_00d5:  callvirt   instance void [PresentationCore]System.Windows.Media.SolidColorBrush::set_Color(valuetype [PresentationCore]System.Windows.Media.Color)
+    IL_00da:  nop
+    IL_00db:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Boid.cs" startline="117" endline="128"><![CDATA[
+  {
+    // Code size       112 (0x70)
+    .maxstack  4
+    .locals init ([0] float64 CS$1$0000,
+             [1] bool CS$4$0001,
+             [2] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D CS$0$0002)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldnull
+    IL_0003:  ceq
+    IL_0005:  ldc.i4.0
+    IL_0006:  ceq
+    IL_0008:  stloc.1
+    IL_0009:  ldloc.1
+    IL_000a:  brtrue.s   IL_0017
+
+    IL_000c:  ldstr      "comparisonBoid"
+    IL_0011:  newobj     instance void [mscorlib]System.ArgumentNullException::.ctor(string)
+    IL_0016:  throw
+
+    IL_0017:  ldarg.0
+    IL_0018:  call       instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousVelocity()
+    IL_001d:  ldarg.1
+    IL_001e:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_0023:  ldarg.0
+    IL_0024:  call       instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_0029:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Subtraction(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                   valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_002e:  call       float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::DotProduct(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                     valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0033:  ldarg.0
+    IL_0034:  call       instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousVelocity()
+    IL_0039:  stloc.2
+    IL_003a:  ldloca.s   CS$0$0002
+    IL_003c:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Length()
+    IL_0041:  ldarg.1
+    IL_0042:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_0047:  ldarg.0
+    IL_0048:  call       instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_004d:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Subtraction(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                   valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0052:  stloc.2
+    IL_0053:  ldloca.s   CS$0$0002
+    IL_0055:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Length()
+    IL_005a:  mul
+    IL_005b:  div
+    IL_005c:  call       float64 [mscorlib]System.Math::Acos(float64)
+    IL_0061:  ldc.r8     57.295779513082323
+    IL_006a:  mul
+    IL_006b:  stloc.0
+    IL_006c:  br.s       IL_006e
+
+    IL_006e:  ldloc.0
+    IL_006f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Boid.cs" startline="129" endline="177"><![CDATA[
+  {
+    // Code size       460 (0x1cc)
+    .maxstack  4
+    .locals init ([0] class [PresentationCore]System.Windows.Media.Media3D.MeshGeometry3D mesh,
+             [1] int32 stack,
+             [2] float64 phi,
+             [3] float64 y,
+             [4] float64 scale,
+             [5] int32 slice,
+             [6] float64 theta,
+             [7] float64 x,
+             [8] float64 z,
+             [9] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D normal,
+             [10] int32 n,
+             [11] class [PresentationCore]System.Windows.Media.Media3D.MeshGeometry3D CS$1$0000,
+             [12] bool CS$4$0001)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void [PresentationCore]System.Windows.Media.Media3D.MeshGeometry3D::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldc.i4.0
+    IL_0008:  stloc.1
+    IL_0009:  br         IL_00dc
+
+    IL_000e:  nop
+    IL_000f:  ldc.r8     1.5707963267948966
+    IL_0018:  ldloc.1
+    IL_0019:  conv.r8
+    IL_001a:  ldc.r8     3.1415926535897931
+    IL_0023:  mul
+    IL_0024:  ldarg.s    stacks
+    IL_0026:  conv.r8
+    IL_0027:  div
+    IL_0028:  sub
+    IL_0029:  stloc.2
+    IL_002a:  ldarg.2
+    IL_002b:  ldloc.2
+    IL_002c:  call       float64 [mscorlib]System.Math::Sin(float64)
+    IL_0031:  mul
+    IL_0032:  stloc.3
+    IL_0033:  ldarg.2
+    IL_0034:  neg
+    IL_0035:  ldloc.2
+    IL_0036:  call       float64 [mscorlib]System.Math::Cos(float64)
+    IL_003b:  mul
+    IL_003c:  stloc.s    scale
+    IL_003e:  ldc.i4.0
+    IL_003f:  stloc.s    slice
+    IL_0041:  br         IL_00c6
+
+    IL_0046:  nop
+    IL_0047:  ldloc.s    slice
+    IL_0049:  ldc.i4.2
+    IL_004a:  mul
+    IL_004b:  conv.r8
+    IL_004c:  ldc.r8     3.1415926535897931
+    IL_0055:  mul
+    IL_0056:  ldarg.3
+    IL_0057:  conv.r8
+    IL_0058:  div
+    IL_0059:  stloc.s    theta
+    IL_005b:  ldloc.s    scale
+    IL_005d:  ldloc.s    theta
+    IL_005f:  call       float64 [mscorlib]System.Math::Sin(float64)
+    IL_0064:  mul
+    IL_0065:  stloc.s    x
+    IL_0067:  ldloc.s    scale
+    IL_0069:  ldloc.s    theta
+    IL_006b:  call       float64 [mscorlib]System.Math::Cos(float64)
+    IL_0070:  mul
+    IL_0071:  stloc.s    z
+    IL_0073:  ldloca.s   normal
+    IL_0075:  ldloc.s    x
+    IL_0077:  ldloc.3
+    IL_0078:  ldloc.s    z
+    IL_007a:  call       instance void [PresentationCore]System.Windows.Media.Media3D.Vector3D::.ctor(float64,
+                                                                                                      float64,
+                                                                                                      float64)
+    IL_007f:  nop
+    IL_0080:  ldloc.0
+    IL_0081:  callvirt   instance class [PresentationCore]System.Windows.Media.Media3D.Vector3DCollection [PresentationCore]System.Windows.Media.Media3D.MeshGeometry3D::get_Normals()
+    IL_0086:  ldloc.s    normal
+    IL_0088:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.Vector3DCollection::Add(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_008d:  nop
+    IL_008e:  ldloc.0
+    IL_008f:  callvirt   instance class [PresentationCore]System.Windows.Media.Media3D.Point3DCollection [PresentationCore]System.Windows.Media.Media3D.MeshGeometry3D::get_Positions()
+    IL_0094:  ldloc.s    normal
+    IL_0096:  ldarg.1
+    IL_0097:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Addition(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                               valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D)
+    IL_009c:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.Point3DCollection::Add(valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D)
+    IL_00a1:  nop
+    IL_00a2:  ldloc.0
+    IL_00a3:  callvirt   instance class [PresentationCore]System.Windows.Media.PointCollection [PresentationCore]System.Windows.Media.Media3D.MeshGeometry3D::get_TextureCoordinates()
+    IL_00a8:  ldloc.s    slice
+    IL_00aa:  conv.r8
+    IL_00ab:  ldarg.3
+    IL_00ac:  conv.r8
+    IL_00ad:  div
+    IL_00ae:  ldloc.1
+    IL_00af:  conv.r8
+    IL_00b0:  ldarg.s    stacks
+    IL_00b2:  conv.r8
+    IL_00b3:  div
+    IL_00b4:  newobj     instance void [WindowsBase]System.Windows.Point::.ctor(float64,
+                                                                                float64)
+    IL_00b9:  callvirt   instance void [PresentationCore]System.Windows.Media.PointCollection::Add(valuetype [WindowsBase]System.Windows.Point)
+    IL_00be:  nop
+    IL_00bf:  nop
+    IL_00c0:  ldloc.s    slice
+    IL_00c2:  ldc.i4.1
+    IL_00c3:  add
+    IL_00c4:  stloc.s    slice
+    IL_00c6:  ldloc.s    slice
+    IL_00c8:  ldarg.3
+    IL_00c9:  cgt
+    IL_00cb:  ldc.i4.0
+    IL_00cc:  ceq
+    IL_00ce:  stloc.s    CS$4$0001
+    IL_00d0:  ldloc.s    CS$4$0001
+    IL_00d2:  brtrue     IL_0046
+
+    IL_00d7:  nop
+    IL_00d8:  ldloc.1
+    IL_00d9:  ldc.i4.1
+    IL_00da:  add
+    IL_00db:  stloc.1
+    IL_00dc:  ldloc.1
+    IL_00dd:  ldarg.s    stacks
+    IL_00df:  cgt
+    IL_00e1:  ldc.i4.0
+    IL_00e2:  ceq
+    IL_00e4:  stloc.s    CS$4$0001
+    IL_00e6:  ldloc.s    CS$4$0001
+    IL_00e8:  brtrue     IL_000e
+
+    IL_00ed:  ldc.i4.0
+    IL_00ee:  stloc.1
+    IL_00ef:  br         IL_01b6
+
+    IL_00f4:  nop
+    IL_00f5:  ldc.i4.0
+    IL_00f6:  stloc.s    slice
+    IL_00f8:  br         IL_01a3
+
+    IL_00fd:  nop
+    IL_00fe:  ldarg.3
+    IL_00ff:  ldc.i4.1
+    IL_0100:  add
+    IL_0101:  stloc.s    n
+    IL_0103:  ldloc.1
+    IL_0104:  ldc.i4.0
+    IL_0105:  ceq
+    IL_0107:  stloc.s    CS$4$0001
+    IL_0109:  ldloc.s    CS$4$0001
+    IL_010b:  brtrue.s   IL_014c
+
+    IL_010d:  nop
+    IL_010e:  ldloc.0
+    IL_010f:  callvirt   instance class [PresentationCore]System.Windows.Media.Int32Collection [PresentationCore]System.Windows.Media.Media3D.MeshGeometry3D::get_TriangleIndices()
+    IL_0114:  ldloc.1
+    IL_0115:  ldloc.s    n
+    IL_0117:  mul
+    IL_0118:  ldloc.s    slice
+    IL_011a:  add
+    IL_011b:  callvirt   instance void [PresentationCore]System.Windows.Media.Int32Collection::Add(int32)
+    IL_0120:  nop
+    IL_0121:  ldloc.0
+    IL_0122:  callvirt   instance class [PresentationCore]System.Windows.Media.Int32Collection [PresentationCore]System.Windows.Media.Media3D.MeshGeometry3D::get_TriangleIndices()
+    IL_0127:  ldloc.1
+    IL_0128:  ldc.i4.1
+    IL_0129:  add
+    IL_012a:  ldloc.s    n
+    IL_012c:  mul
+    IL_012d:  ldloc.s    slice
+    IL_012f:  add
+    IL_0130:  callvirt   instance void [PresentationCore]System.Windows.Media.Int32Collection::Add(int32)
+    IL_0135:  nop
+    IL_0136:  ldloc.0
+    IL_0137:  callvirt   instance class [PresentationCore]System.Windows.Media.Int32Collection [PresentationCore]System.Windows.Media.Media3D.MeshGeometry3D::get_TriangleIndices()
+    IL_013c:  ldloc.1
+    IL_013d:  ldloc.s    n
+    IL_013f:  mul
+    IL_0140:  ldloc.s    slice
+    IL_0142:  add
+    IL_0143:  ldc.i4.1
+    IL_0144:  add
+    IL_0145:  callvirt   instance void [PresentationCore]System.Windows.Media.Int32Collection::Add(int32)
+    IL_014a:  nop
+    IL_014b:  nop
+    IL_014c:  ldloc.1
+    IL_014d:  ldarg.s    stacks
+    IL_014f:  ldc.i4.1
+    IL_0150:  sub
+    IL_0151:  ceq
+    IL_0153:  stloc.s    CS$4$0001
+    IL_0155:  ldloc.s    CS$4$0001
+    IL_0157:  brtrue.s   IL_019c
+
+    IL_0159:  nop
+    IL_015a:  ldloc.0
+    IL_015b:  callvirt   instance class [PresentationCore]System.Windows.Media.Int32Collection [PresentationCore]System.Windows.Media.Media3D.MeshGeometry3D::get_TriangleIndices()
+    IL_0160:  ldloc.1
+    IL_0161:  ldloc.s    n
+    IL_0163:  mul
+    IL_0164:  ldloc.s    slice
+    IL_0166:  add
+    IL_0167:  ldc.i4.1
+    IL_0168:  add
+    IL_0169:  callvirt   instance void [PresentationCore]System.Windows.Media.Int32Collection::Add(int32)
+    IL_016e:  nop
+    IL_016f:  ldloc.0
+    IL_0170:  callvirt   instance class [PresentationCore]System.Windows.Media.Int32Collection [PresentationCore]System.Windows.Media.Media3D.MeshGeometry3D::get_TriangleIndices()
+    IL_0175:  ldloc.1
+    IL_0176:  ldc.i4.1
+    IL_0177:  add
+    IL_0178:  ldloc.s    n
+    IL_017a:  mul
+    IL_017b:  ldloc.s    slice
+    IL_017d:  add
+    IL_017e:  callvirt   instance void [PresentationCore]System.Windows.Media.Int32Collection::Add(int32)
+    IL_0183:  nop
+    IL_0184:  ldloc.0
+    IL_0185:  callvirt   instance class [PresentationCore]System.Windows.Media.Int32Collection [PresentationCore]System.Windows.Media.Media3D.MeshGeometry3D::get_TriangleIndices()
+    IL_018a:  ldloc.1
+    IL_018b:  ldc.i4.1
+    IL_018c:  add
+    IL_018d:  ldloc.s    n
+    IL_018f:  mul
+    IL_0190:  ldloc.s    slice
+    IL_0192:  add
+    IL_0193:  ldc.i4.1
+    IL_0194:  add
+    IL_0195:  callvirt   instance void [PresentationCore]System.Windows.Media.Int32Collection::Add(int32)
+    IL_019a:  nop
+    IL_019b:  nop
+    IL_019c:  nop
+    IL_019d:  ldloc.s    slice
+    IL_019f:  ldc.i4.1
+    IL_01a0:  add
+    IL_01a1:  stloc.s    slice
+    IL_01a3:  ldloc.s    slice
+    IL_01a5:  ldarg.3
+    IL_01a6:  clt
+    IL_01a8:  stloc.s    CS$4$0001
+    IL_01aa:  ldloc.s    CS$4$0001
+    IL_01ac:  brtrue     IL_00fd
+
+    IL_01b1:  nop
+    IL_01b2:  ldloc.1
+    IL_01b3:  ldc.i4.1
+    IL_01b4:  add
+    IL_01b5:  stloc.1
+    IL_01b6:  ldloc.1
+    IL_01b7:  ldarg.s    stacks
+    IL_01b9:  clt
+    IL_01bb:  stloc.s    CS$4$0001
+    IL_01bd:  ldloc.s    CS$4$0001
+    IL_01bf:  brtrue     IL_00f4
+
+    IL_01c4:  ldloc.0
+    IL_01c5:  stloc.s    CS$1$0000
+    IL_01c7:  br.s       IL_01c9
+
+    IL_01c9:  ldloc.s    CS$1$0000
+    IL_01cb:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Boid.cs" startline="20" endline="179"><![CDATA[
+  {
+    // Code size       38 (0x26)
+    .maxstack  8
+    IL_0000:  ldc.r8     0.0
+    IL_0009:  ldc.r8     1.
+    IL_0012:  ldc.r8     0.0
+    IL_001b:  newobj     instance void [PresentationCore]System.Windows.Media.Media3D.Vector3D::.ctor(float64,
+                                                                                                      float64,
+                                                                                                      float64)
+    IL_0020:  stsfld     valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::UNIT_Y
+    IL_0025:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Properties\Resources.Designer.cs" startline="32" endline="35"><![CDATA[
+  {
+    // Code size       10 (0xa)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  nop
+    IL_0009:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Properties\Resources.Designer.cs" startline="36" endline="51"><![CDATA[
+  {
+    // Code size       60 (0x3c)
+    .maxstack  3
+    .locals init ([0] class [mscorlib]System.Resources.ResourceManager temp,
+             [1] class [mscorlib]System.Resources.ResourceManager CS$1$0000,
+             [2] bool CS$4$0001)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Resources.ResourceManager ParallelBoids.Properties.Resources::resourceMan
+    IL_0006:  ldnull
+    IL_0007:  ceq
+    IL_0009:  ldc.i4.0
+    IL_000a:  ceq
+    IL_000c:  stloc.2
+    IL_000d:  ldloc.2
+    IL_000e:  brtrue.s   IL_0032
+
+    IL_0010:  nop
+    IL_0011:  ldstr      "ParallelBoids.Properties.Resources"
+    IL_0016:  ldtoken    ParallelBoids.Properties.Resources
+    IL_001b:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_0020:  callvirt   instance class [mscorlib]System.Reflection.Assembly [mscorlib]System.Type::get_Assembly()
+    IL_0025:  newobj     instance void [mscorlib]System.Resources.ResourceManager::.ctor(string,
+                                                                                         class [mscorlib]System.Reflection.Assembly)
+    IL_002a:  stloc.0
+    IL_002b:  ldloc.0
+    IL_002c:  stsfld     class [mscorlib]System.Resources.ResourceManager ParallelBoids.Properties.Resources::resourceMan
+    IL_0031:  nop
+    IL_0032:  ldsfld     class [mscorlib]System.Resources.ResourceManager ParallelBoids.Properties.Resources::resourceMan
+    IL_0037:  stloc.1
+    IL_0038:  br.s       IL_003a
+
+    IL_003a:  ldloc.1
+    IL_003b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Properties\Resources.Designer.cs" startline="52" endline="64"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Globalization.CultureInfo CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Globalization.CultureInfo ParallelBoids.Properties.Resources::resourceCulture
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\Properties\Resources.Designer.cs" startline="65" endline="68"><![CDATA[
+  {
+    // Code size       8 (0x8)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  stsfld     class [mscorlib]System.Globalization.CultureInfo ParallelBoids.Properties.Resources::resourceCulture
+    IL_0007:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\obj\Debug\App.g.cs" startline="47" endline="4"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       20 (0x14)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldstr      "MainWindow.xaml"
+    IL_0007:  ldc.i4.2
+    IL_0008:  newobj     instance void [System]System.Uri::.ctor(string,
+                                                                 valuetype [System]System.UriKind)
+    IL_000d:  call       instance void [PresentationFramework]System.Windows.Application::set_StartupUri(class [System]System.Uri)
+    IL_0012:  nop
+    IL_0013:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\obj\Debug\App.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [mscorlib]System.STAThreadAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       22 (0x16)
+    .maxstack  1
+    .locals init ([0] class ParallelBoids.App app)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void ParallelBoids.App::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  callvirt   instance void ParallelBoids.App::InitializeComponent()
+    IL_000d:  nop
+    IL_000e:  ldloc.0
+    IL_000f:  callvirt   instance int32 [PresentationFramework]System.Windows.Application::Run()
+    IL_0014:  pop
+    IL_0015:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\obj\Debug\App.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [PresentationFramework]System.Windows.Application::.ctor()
+    IL_0006:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="40" endline="94"><![CDATA[
+  {
+    // Code size       184 (0xb8)
+    .maxstack  3
+    .locals init ([0] class [mscorlib]System.Threading.Tasks.ParallelOptions '<>g__initLocal0')
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.r8     10.
+    IL_000a:  stfld      float64 ParallelBoids.MainWindow::m_speedLimit
+    IL_000f:  ldarg.0
+    IL_0010:  ldc.r8     1.
+    IL_0019:  stfld      float64 ParallelBoids.MainWindow::m_rule1Weight
+    IL_001e:  ldarg.0
+    IL_001f:  ldc.r8     1.1000000000000001
+    IL_0028:  stfld      float64 ParallelBoids.MainWindow::m_rule2Weight
+    IL_002d:  ldarg.0
+    IL_002e:  ldc.r8     1.
+    IL_0037:  stfld      float64 ParallelBoids.MainWindow::m_rule3Weight
+    IL_003c:  ldarg.0
+    IL_003d:  ldc.r8     0.90000000000000002
+    IL_0046:  stfld      float64 ParallelBoids.MainWindow::m_rule4Weight
+    IL_004b:  ldarg.0
+    IL_004c:  ldc.r8     0.80000000000000004
+    IL_0055:  stfld      float64 ParallelBoids.MainWindow::m_rule5Weight
+    IL_005a:  ldarg.0
+    IL_005b:  newobj     instance void [mscorlib]System.Threading.Tasks.ParallelOptions::.ctor()
+    IL_0060:  stloc.0
+    IL_0061:  ldloc.0
+    IL_0062:  ldc.i4.1
+    IL_0063:  callvirt   instance void [mscorlib]System.Threading.Tasks.ParallelOptions::set_MaxDegreeOfParallelism(int32)
+    IL_0068:  nop
+    IL_0069:  ldloc.0
+    IL_006a:  stfld      class [mscorlib]System.Threading.Tasks.ParallelOptions ParallelBoids.MainWindow::m_parallelOptions
+    IL_006f:  ldarg.0
+    IL_0070:  ldc.i4.1
+    IL_0071:  stfld      bool ParallelBoids.MainWindow::m_autoPanCamera
+    IL_0076:  ldarg.0
+    IL_0077:  ldc.i4.0
+    IL_0078:  newobj     instance void [mscorlib]System.Threading.AutoResetEvent::.ctor(bool)
+    IL_007d:  stfld      class [mscorlib]System.Threading.AutoResetEvent ParallelBoids.MainWindow::m_renderSignal
+    IL_0082:  ldarg.0
+    IL_0083:  newobj     instance void [System]System.Diagnostics.Stopwatch::.ctor()
+    IL_0088:  stfld      class [System]System.Diagnostics.Stopwatch ParallelBoids.MainWindow::m_frameStopwatch
+    IL_008d:  ldarg.0
+    IL_008e:  ldc.i4.0
+    IL_008f:  stfld      int32 ParallelBoids.MainWindow::m_numRendersSinceLastUserPresentation
+    IL_0094:  ldarg.0
+    IL_0095:  ldc.i4.0
+    IL_0096:  conv.i8
+    IL_0097:  stfld      int64 ParallelBoids.MainWindow::m_totalRenderingMillisecondsSinceLastUserPresentation
+    IL_009c:  ldarg.0
+    IL_009d:  call       valuetype [mscorlib]System.DateTimeOffset [mscorlib]System.DateTimeOffset::get_Now()
+    IL_00a2:  stfld      valuetype [mscorlib]System.DateTimeOffset ParallelBoids.MainWindow::m_nextUserPresentation
+    IL_00a7:  ldarg.0
+    IL_00a8:  call       instance void [PresentationFramework]System.Windows.Window::.ctor()
+    IL_00ad:  nop
+    IL_00ae:  nop
+    IL_00af:  ldarg.0
+    IL_00b0:  call       instance void ParallelBoids.MainWindow::InitializeComponent()
+    IL_00b5:  nop
+    IL_00b6:  nop
+    IL_00b7:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="95" endline="130"><![CDATA[
+  {
+    // Code size       396 (0x18c)
+    .maxstack  8
+    .locals init ([0] class ParallelBoids.Boid boidModel,
+             [1] int32 renderTimerPeriod,
+             [2] class ParallelBoids.MainWindow/'<>c__DisplayClass3' 'CS$<>8__locals4',
+             [3] class [mscorlib]System.Tuple`2<valuetype [PresentationCore]System.Windows.Media.Color,valuetype [PresentationCore]System.Windows.Media.Color>[] CS$0$0000,
+             [4] class ParallelBoids.Boid[] CS$6$0001,
+             [5] int32 CS$7$0002,
+             [6] bool CS$4$0003)
+    IL_0000:  newobj     instance void ParallelBoids.MainWindow/'<>c__DisplayClass3'::.ctor()
+    IL_0005:  stloc.2
+    IL_0006:  ldloc.2
+    IL_0007:  ldarg.0
+    IL_0008:  stfld      class ParallelBoids.MainWindow ParallelBoids.MainWindow/'<>c__DisplayClass3'::'<>4__this'
+    IL_000d:  nop
+    IL_000e:  ldarg.0
+    IL_000f:  call       class [PresentationCore]System.Windows.Input.Cursor [PresentationCore]System.Windows.Input.Cursors::get_Hand()
+    IL_0014:  call       instance void [PresentationFramework]System.Windows.FrameworkElement::set_Cursor(class [PresentationCore]System.Windows.Input.Cursor)
+    IL_0019:  nop
+    IL_001a:  ldarg.0
+    IL_001b:  ldc.r8     -300.
+    IL_0024:  ldc.r8     0.0
+    IL_002d:  ldc.r8     -400.
+    IL_0036:  ldc.r8     600.
+    IL_003f:  ldc.r8     180.
+    IL_0048:  ldc.r8     800.
+    IL_0051:  newobj     instance void [PresentationCore]System.Windows.Media.Media3D.Rect3D::.ctor(float64,
+                                                                                                    float64,
+                                                                                                    float64,
+                                                                                                    float64,
+                                                                                                    float64,
+                                                                                                    float64)
+    IL_0056:  stfld      valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_005b:  ldarg.0
+    IL_005c:  ldc.r8     0.0
+    IL_0065:  ldc.r8     15.
+    IL_006e:  ldc.r8     0.0
+    IL_0077:  newobj     instance void [PresentationCore]System.Windows.Media.Media3D.Vector3D::.ctor(float64,
+                                                                                                      float64,
+                                                                                                      float64)
+    IL_007c:  stfld      valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.MainWindow::m_home
+    IL_0081:  ldloc.2
+    IL_0082:  ldc.i4.3
+    IL_0083:  newarr     class [mscorlib]System.Tuple`2<valuetype [PresentationCore]System.Windows.Media.Color,valuetype [PresentationCore]System.Windows.Media.Color>
+    IL_0088:  stloc.3
+    IL_0089:  ldloc.3
+    IL_008a:  ldc.i4.0
+    IL_008b:  call       valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.Colors::get_SeaGreen()
+    IL_0090:  call       valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.Colors::get_Silver()
+    IL_0095:  call       class [mscorlib]System.Tuple`2<!!0,!!1> [mscorlib]System.Tuple::Create<valuetype [PresentationCore]System.Windows.Media.Color,valuetype [PresentationCore]System.Windows.Media.Color>(!!0,
+                                                                                                                                                                                                               !!1)
+    IL_009a:  stelem.ref
+    IL_009b:  ldloc.3
+    IL_009c:  ldc.i4.1
+    IL_009d:  call       valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.Colors::get_Pink()
+    IL_00a2:  call       valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.Colors::get_Purple()
+    IL_00a7:  call       class [mscorlib]System.Tuple`2<!!0,!!1> [mscorlib]System.Tuple::Create<valuetype [PresentationCore]System.Windows.Media.Color,valuetype [PresentationCore]System.Windows.Media.Color>(!!0,
+                                                                                                                                                                                                               !!1)
+    IL_00ac:  stelem.ref
+    IL_00ad:  ldloc.3
+    IL_00ae:  ldc.i4.2
+    IL_00af:  call       valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.Colors::get_Yellow()
+    IL_00b4:  call       valuetype [PresentationCore]System.Windows.Media.Color [PresentationCore]System.Windows.Media.Colors::get_Gold()
+    IL_00b9:  call       class [mscorlib]System.Tuple`2<!!0,!!1> [mscorlib]System.Tuple::Create<valuetype [PresentationCore]System.Windows.Media.Color,valuetype [PresentationCore]System.Windows.Media.Color>(!!0,
+                                                                                                                                                                                                               !!1)
+    IL_00be:  stelem.ref
+    IL_00bf:  ldloc.3
+    IL_00c0:  stfld      class [mscorlib]System.Tuple`2<valuetype [PresentationCore]System.Windows.Media.Color,valuetype [PresentationCore]System.Windows.Media.Color>[] ParallelBoids.MainWindow/'<>c__DisplayClass3'::colorCombinations
+    IL_00c5:  ldloc.2
+    IL_00c6:  newobj     instance void [mscorlib]System.Random::.ctor()
+    IL_00cb:  stfld      class [mscorlib]System.Random ParallelBoids.MainWindow/'<>c__DisplayClass3'::rand
+    IL_00d0:  ldarg.0
+    IL_00d1:  ldc.i4.0
+    IL_00d2:  ldc.i4     0x384
+    IL_00d7:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> [System.Core]System.Linq.Enumerable::Range(int32,
+                                                                                                                                    int32)
+    IL_00dc:  ldloc.2
+    IL_00dd:  ldftn      instance class ParallelBoids.Boid ParallelBoids.MainWindow/'<>c__DisplayClass3'::'<Window_Loaded>b__1'(int32)
+    IL_00e3:  newobj     instance void class [mscorlib]System.Func`2<int32,class ParallelBoids.Boid>::.ctor(object,
+                                                                                                            native int)
+    IL_00e8:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<int32,class ParallelBoids.Boid>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                   class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_00ed:  call       !!0[] [System.Core]System.Linq.Enumerable::ToArray<class ParallelBoids.Boid>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_00f2:  stfld      class ParallelBoids.Boid[] ParallelBoids.MainWindow::m_boidModels
+    IL_00f7:  ldarg.0
+    IL_00f8:  ldloc.2
+    IL_00f9:  ldfld      class [mscorlib]System.Random ParallelBoids.MainWindow/'<>c__DisplayClass3'::rand
+    IL_00fe:  call       instance void ParallelBoids.MainWindow::RandomizeBoidPositionsAndVelocities(class [mscorlib]System.Random)
+    IL_0103:  nop
+    IL_0104:  nop
+    IL_0105:  ldarg.0
+    IL_0106:  ldfld      class ParallelBoids.Boid[] ParallelBoids.MainWindow::m_boidModels
+    IL_010b:  stloc.s    CS$6$0001
+    IL_010d:  ldc.i4.0
+    IL_010e:  stloc.s    CS$7$0002
+    IL_0110:  br.s       IL_0130
+
+    IL_0112:  ldloc.s    CS$6$0001
+    IL_0114:  ldloc.s    CS$7$0002
+    IL_0116:  ldelem.ref
+    IL_0117:  stloc.0
+    IL_0118:  ldarg.0
+    IL_0119:  ldfld      class [PresentationFramework]System.Windows.Controls.Viewport3D ParallelBoids.MainWindow::viewport3D
+    IL_011e:  callvirt   instance class [PresentationCore]System.Windows.Media.Media3D.Visual3DCollection [PresentationFramework]System.Windows.Controls.Viewport3D::get_Children()
+    IL_0123:  ldloc.0
+    IL_0124:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.Visual3DCollection::Add(class [PresentationCore]System.Windows.Media.Media3D.Visual3D)
+    IL_0129:  nop
+    IL_012a:  ldloc.s    CS$7$0002
+    IL_012c:  ldc.i4.1
+    IL_012d:  add
+    IL_012e:  stloc.s    CS$7$0002
+    IL_0130:  ldloc.s    CS$7$0002
+    IL_0132:  ldloc.s    CS$6$0001
+    IL_0134:  ldlen
+    IL_0135:  conv.i4
+    IL_0136:  clt
+    IL_0138:  stloc.s    CS$4$0003
+    IL_013a:  ldloc.s    CS$4$0003
+    IL_013c:  brtrue.s   IL_0112
+
+    IL_013e:  ldc.i4.s   41
+    IL_0140:  stloc.1
+    IL_0141:  ldarg.0
+    IL_0142:  ldloc.1
+    IL_0143:  conv.r8
+    IL_0144:  newobj     instance void [System]System.Timers.Timer::.ctor(float64)
+    IL_0149:  stfld      class [System]System.Timers.Timer ParallelBoids.MainWindow::m_renderTimer
+    IL_014e:  ldarg.0
+    IL_014f:  ldfld      class [System]System.Timers.Timer ParallelBoids.MainWindow::m_renderTimer
+    IL_0154:  ldarg.0
+    IL_0155:  ldftn      instance void ParallelBoids.MainWindow::'<Window_Loaded>b__2'(object,
+                                                                                       class [System]System.Timers.ElapsedEventArgs)
+    IL_015b:  newobj     instance void [System]System.Timers.ElapsedEventHandler::.ctor(object,
+                                                                                        native int)
+    IL_0160:  callvirt   instance void [System]System.Timers.Timer::add_Elapsed(class [System]System.Timers.ElapsedEventHandler)
+    IL_0165:  nop
+    IL_0166:  ldarg.0
+    IL_0167:  ldfld      class [System]System.Timers.Timer ParallelBoids.MainWindow::m_renderTimer
+    IL_016c:  ldc.i4.1
+    IL_016d:  callvirt   instance void [System]System.Timers.Timer::set_Enabled(bool)
+    IL_0172:  nop
+    IL_0173:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_0178:  ldarg.0
+    IL_0179:  ldftn      instance void ParallelBoids.MainWindow::RenderUpdateLoop()
+    IL_017f:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_0184:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action)
+    IL_0189:  pop
+    IL_018a:  nop
+    IL_018b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="131" endline="148"><![CDATA[
+  {
+    .param [1] = nullref
+    // Code size       289 (0x121)
+    .maxstack  7
+    .locals init ([0] class ParallelBoids.Boid boid,
+             [1] bool CS$4$0000,
+             [2] class ParallelBoids.Boid[] CS$6$0001,
+             [3] int32 CS$7$0002)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldnull
+    IL_0003:  ceq
+    IL_0005:  ldc.i4.0
+    IL_0006:  ceq
+    IL_0008:  stloc.1
+    IL_0009:  ldloc.1
+    IL_000a:  brtrue.s   IL_0013
+
+    IL_000c:  newobj     instance void [mscorlib]System.Random::.ctor()
+    IL_0011:  starg.s    rand
+    IL_0013:  nop
+    IL_0014:  ldarg.0
+    IL_0015:  ldfld      class ParallelBoids.Boid[] ParallelBoids.MainWindow::m_boidModels
+    IL_001a:  stloc.2
+    IL_001b:  ldc.i4.0
+    IL_001c:  stloc.3
+    IL_001d:  br         IL_0113
+
+    IL_0022:  ldloc.2
+    IL_0023:  ldloc.3
+    IL_0024:  ldelem.ref
+    IL_0025:  stloc.0
+    IL_0026:  nop
+    IL_0027:  ldloc.0
+    IL_0028:  ldarg.1
+    IL_0029:  ldarg.0
+    IL_002a:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_002f:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_X()
+    IL_0034:  conv.i4
+    IL_0035:  ldarg.0
+    IL_0036:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_003b:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_X()
+    IL_0040:  ldarg.0
+    IL_0041:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_0046:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_SizeX()
+    IL_004b:  add
+    IL_004c:  conv.i4
+    IL_004d:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_0052:  conv.r8
+    IL_0053:  ldarg.1
+    IL_0054:  ldarg.0
+    IL_0055:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_005a:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_Y()
+    IL_005f:  conv.i4
+    IL_0060:  ldarg.0
+    IL_0061:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_0066:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_Y()
+    IL_006b:  ldarg.0
+    IL_006c:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_0071:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_SizeY()
+    IL_0076:  add
+    IL_0077:  conv.i4
+    IL_0078:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_007d:  conv.r8
+    IL_007e:  ldarg.1
+    IL_007f:  ldarg.0
+    IL_0080:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_0085:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_Z()
+    IL_008a:  conv.i4
+    IL_008b:  ldarg.0
+    IL_008c:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_0091:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_Z()
+    IL_0096:  ldarg.0
+    IL_0097:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_009c:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_SizeZ()
+    IL_00a1:  add
+    IL_00a2:  conv.i4
+    IL_00a3:  callvirt   instance int32 [mscorlib]System.Random::Next(int32,
+                                                                      int32)
+    IL_00a8:  conv.r8
+    IL_00a9:  newobj     instance void [PresentationCore]System.Windows.Media.Media3D.Vector3D::.ctor(float64,
+                                                                                                      float64,
+                                                                                                      float64)
+    IL_00ae:  callvirt   instance void ParallelBoids.Boid::set_Position(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_00b3:  nop
+    IL_00b4:  ldloc.0
+    IL_00b5:  ldarg.1
+    IL_00b6:  callvirt   instance float64 [mscorlib]System.Random::NextDouble()
+    IL_00bb:  ldc.r8     2.
+    IL_00c4:  mul
+    IL_00c5:  ldc.r8     1.
+    IL_00ce:  sub
+    IL_00cf:  ldarg.1
+    IL_00d0:  callvirt   instance float64 [mscorlib]System.Random::NextDouble()
+    IL_00d5:  ldc.r8     2.
+    IL_00de:  mul
+    IL_00df:  ldc.r8     1.
+    IL_00e8:  sub
+    IL_00e9:  ldarg.1
+    IL_00ea:  callvirt   instance float64 [mscorlib]System.Random::NextDouble()
+    IL_00ef:  ldc.r8     2.
+    IL_00f8:  mul
+    IL_00f9:  ldc.r8     1.
+    IL_0102:  sub
+    IL_0103:  newobj     instance void [PresentationCore]System.Windows.Media.Media3D.Vector3D::.ctor(float64,
+                                                                                                      float64,
+                                                                                                      float64)
+    IL_0108:  callvirt   instance void ParallelBoids.Boid::set_Velocity(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_010d:  nop
+    IL_010e:  nop
+    IL_010f:  ldloc.3
+    IL_0110:  ldc.i4.1
+    IL_0111:  add
+    IL_0112:  stloc.3
+    IL_0113:  ldloc.3
+    IL_0114:  ldloc.2
+    IL_0115:  ldlen
+    IL_0116:  conv.i4
+    IL_0117:  clt
+    IL_0119:  stloc.1
+    IL_011a:  ldloc.1
+    IL_011b:  brtrue     IL_0022
+
+    IL_0120:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="149" endline="224"><![CDATA[
+  {
+    // Code size       699 (0x2bb)
+    .maxstack  5
+    .locals init ([0] int32 procCount,
+             [1] int32 i,
+             [2] string instructions,
+             [3] bool CS$4$0000,
+             [4] string[] CS$0$0001)
+    IL_0000:  nop
+    IL_0001:  ldarg.2
+    IL_0002:  callvirt   instance valuetype [WindowsBase]System.Windows.Input.Key [PresentationCore]System.Windows.Input.KeyEventArgs::get_Key()
+    IL_0007:  ldc.i4.s   13
+    IL_0009:  ceq
+    IL_000b:  ldc.i4.0
+    IL_000c:  ceq
+    IL_000e:  stloc.3
+    IL_000f:  ldloc.3
+    IL_0010:  brtrue.s   IL_0031
+
+    IL_0012:  nop
+    IL_0013:  ldarg.0
+    IL_0014:  ldc.i4.0
+    IL_0015:  call       instance void [PresentationFramework]System.Windows.Window::set_Topmost(bool)
+    IL_001a:  nop
+    IL_001b:  ldarg.0
+    IL_001c:  ldc.i4.2
+    IL_001d:  call       instance void [PresentationFramework]System.Windows.Window::set_WindowStyle(valuetype [PresentationFramework]System.Windows.WindowStyle)
+    IL_0022:  nop
+    IL_0023:  ldarg.0
+    IL_0024:  ldc.i4.0
+    IL_0025:  call       instance void [PresentationFramework]System.Windows.Window::set_WindowState(valuetype [PresentationFramework]System.Windows.WindowState)
+    IL_002a:  nop
+    IL_002b:  nop
+    IL_002c:  br         IL_02ba
+
+    IL_0031:  ldarg.2
+    IL_0032:  callvirt   instance valuetype [WindowsBase]System.Windows.Input.Key [PresentationCore]System.Windows.Input.KeyEventArgs::get_Key()
+    IL_0037:  ldc.i4.s   59
+    IL_0039:  ceq
+    IL_003b:  ldc.i4.0
+    IL_003c:  ceq
+    IL_003e:  stloc.3
+    IL_003f:  ldloc.3
+    IL_0040:  brtrue.s   IL_006d
+
+    IL_0042:  nop
+    IL_0043:  call       int32 [mscorlib]System.Environment::get_ProcessorCount()
+    IL_0048:  stloc.0
+    IL_0049:  ldarg.0
+    IL_004a:  ldfld      class [mscorlib]System.Threading.Tasks.ParallelOptions ParallelBoids.MainWindow::m_parallelOptions
+    IL_004f:  ldarg.0
+    IL_0050:  ldfld      class [mscorlib]System.Threading.Tasks.ParallelOptions ParallelBoids.MainWindow::m_parallelOptions
+    IL_0055:  callvirt   instance int32 [mscorlib]System.Threading.Tasks.ParallelOptions::get_MaxDegreeOfParallelism()
+    IL_005a:  ldc.i4.1
+    IL_005b:  beq.s      IL_0060
+
+    IL_005d:  ldc.i4.1
+    IL_005e:  br.s       IL_0061
+
+    IL_0060:  ldloc.0
+    IL_0061:  callvirt   instance void [mscorlib]System.Threading.Tasks.ParallelOptions::set_MaxDegreeOfParallelism(int32)
+    IL_0066:  nop
+    IL_0067:  nop
+    IL_0068:  br         IL_02ba
+
+    IL_006d:  ldarg.2
+    IL_006e:  callvirt   instance valuetype [WindowsBase]System.Windows.Input.Key [PresentationCore]System.Windows.Input.KeyEventArgs::get_Key()
+    IL_0073:  ldc.i4.s   45
+    IL_0075:  ceq
+    IL_0077:  ldc.i4.0
+    IL_0078:  ceq
+    IL_007a:  stloc.3
+    IL_007b:  ldloc.3
+    IL_007c:  brtrue.s   IL_009f
+
+    IL_007e:  nop
+    IL_007f:  ldarg.0
+    IL_0080:  ldfld      class [System]System.Timers.Timer ParallelBoids.MainWindow::m_renderTimer
+    IL_0085:  ldarg.0
+    IL_0086:  ldfld      class [System]System.Timers.Timer ParallelBoids.MainWindow::m_renderTimer
+    IL_008b:  callvirt   instance bool [System]System.Timers.Timer::get_Enabled()
+    IL_0090:  ldc.i4.0
+    IL_0091:  ceq
+    IL_0093:  callvirt   instance void [System]System.Timers.Timer::set_Enabled(bool)
+    IL_0098:  nop
+    IL_0099:  nop
+    IL_009a:  br         IL_02ba
+
+    IL_009f:  ldarg.2
+    IL_00a0:  callvirt   instance valuetype [WindowsBase]System.Windows.Input.Key [PresentationCore]System.Windows.Input.KeyEventArgs::get_Key()
+    IL_00a5:  ldc.i4.s   63
+    IL_00a7:  ceq
+    IL_00a9:  ldc.i4.0
+    IL_00aa:  ceq
+    IL_00ac:  stloc.3
+    IL_00ad:  ldloc.3
+    IL_00ae:  brtrue.s   IL_00dc
+
+    IL_00b0:  nop
+    IL_00b1:  ldc.i4.1
+    IL_00b2:  stloc.1
+    IL_00b3:  br.s       IL_00c7
+
+    IL_00b5:  ldarg.0
+    IL_00b6:  ldfld      class ParallelBoids.Boid[] ParallelBoids.MainWindow::m_boidModels
+    IL_00bb:  ldloc.1
+    IL_00bc:  ldelem.ref
+    IL_00bd:  callvirt   instance void ParallelBoids.Boid::ToggleTranslucency()
+    IL_00c2:  nop
+    IL_00c3:  ldloc.1
+    IL_00c4:  ldc.i4.1
+    IL_00c5:  add
+    IL_00c6:  stloc.1
+    IL_00c7:  ldloc.1
+    IL_00c8:  ldarg.0
+    IL_00c9:  ldfld      class ParallelBoids.Boid[] ParallelBoids.MainWindow::m_boidModels
+    IL_00ce:  ldlen
+    IL_00cf:  conv.i4
+    IL_00d0:  clt
+    IL_00d2:  stloc.3
+    IL_00d3:  ldloc.3
+    IL_00d4:  brtrue.s   IL_00b5
+
+    IL_00d6:  nop
+    IL_00d7:  br         IL_02ba
+
+    IL_00dc:  ldarg.2
+    IL_00dd:  callvirt   instance valuetype [WindowsBase]System.Windows.Input.Key [PresentationCore]System.Windows.Input.KeyEventArgs::get_Key()
+    IL_00e2:  ldc.i4.s   44
+    IL_00e4:  ceq
+    IL_00e6:  ldc.i4.0
+    IL_00e7:  ceq
+    IL_00e9:  stloc.3
+    IL_00ea:  ldloc.3
+    IL_00eb:  brtrue.s   IL_0103
+
+    IL_00ed:  nop
+    IL_00ee:  ldarg.0
+    IL_00ef:  ldarg.0
+    IL_00f0:  ldfld      bool ParallelBoids.MainWindow::m_autoPanCamera
+    IL_00f5:  ldc.i4.0
+    IL_00f6:  ceq
+    IL_00f8:  stfld      bool ParallelBoids.MainWindow::m_autoPanCamera
+    IL_00fd:  nop
+    IL_00fe:  br         IL_02ba
+
+    IL_0103:  ldarg.2
+    IL_0104:  callvirt   instance valuetype [WindowsBase]System.Windows.Input.Key [PresentationCore]System.Windows.Input.KeyEventArgs::get_Key()
+    IL_0109:  ldc.i4.s   24
+    IL_010b:  beq.s      IL_0117
+
+    IL_010d:  ldarg.2
+    IL_010e:  callvirt   instance valuetype [WindowsBase]System.Windows.Input.Key [PresentationCore]System.Windows.Input.KeyEventArgs::get_Key()
+    IL_0113:  ldc.i4.s   26
+    IL_0115:  bne.un.s   IL_011f
+
+    IL_0117:  ldarg.0
+    IL_0118:  ldfld      bool ParallelBoids.MainWindow::m_autoPanCamera
+    IL_011d:  br.s       IL_0120
+
+    IL_011f:  ldc.i4.1
+    IL_0120:  stloc.3
+    IL_0121:  ldloc.3
+    IL_0122:  brtrue.s   IL_0140
+
+    IL_0124:  nop
+    IL_0125:  ldarg.0
+    IL_0126:  ldarg.2
+    IL_0127:  callvirt   instance valuetype [WindowsBase]System.Windows.Input.Key [PresentationCore]System.Windows.Input.KeyEventArgs::get_Key()
+    IL_012c:  ldc.i4.s   24
+    IL_012e:  beq.s      IL_0133
+
+    IL_0130:  ldc.i4.m1
+    IL_0131:  br.s       IL_0134
+
+    IL_0133:  ldc.i4.1
+    IL_0134:  call       instance void ParallelBoids.MainWindow::Zoom(int32)
+    IL_0139:  nop
+    IL_013a:  nop
+    IL_013b:  br         IL_02ba
+
+    IL_0140:  ldarg.2
+    IL_0141:  callvirt   instance valuetype [WindowsBase]System.Windows.Input.Key [PresentationCore]System.Windows.Input.KeyEventArgs::get_Key()
+    IL_0146:  ldc.i4.s   61
+    IL_0148:  ceq
+    IL_014a:  ldc.i4.0
+    IL_014b:  ceq
+    IL_014d:  stloc.3
+    IL_014e:  ldloc.3
+    IL_014f:  brtrue.s   IL_0160
+
+    IL_0151:  nop
+    IL_0152:  ldarg.0
+    IL_0153:  ldnull
+    IL_0154:  call       instance void ParallelBoids.MainWindow::RandomizeBoidPositionsAndVelocities(class [mscorlib]System.Random)
+    IL_0159:  nop
+    IL_015a:  nop
+    IL_015b:  br         IL_02ba
+
+    IL_0160:  ldarg.2
+    IL_0161:  callvirt   instance valuetype [WindowsBase]System.Windows.Input.Key [PresentationCore]System.Windows.Input.KeyEventArgs::get_Key()
+    IL_0166:  ldc.i4.s   51
+    IL_0168:  ceq
+    IL_016a:  ldc.i4.0
+    IL_016b:  ceq
+    IL_016d:  stloc.3
+    IL_016e:  ldloc.3
+    IL_016f:  brtrue     IL_02ba
+
+    IL_0174:  nop
+    IL_0175:  ldc.i4.s   30
+    IL_0177:  newarr     [mscorlib]System.String
+    IL_017c:  stloc.s    CS$0$0001
+    IL_017e:  ldloc.s    CS$0$0001
+    IL_0180:  ldc.i4.0
+    IL_0181:  ldstr      "** Window Controls **"
+    IL_0186:  stelem.ref
+    IL_0187:  ldloc.s    CS$0$0001
+    IL_0189:  ldc.i4.1
+    IL_018a:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_018f:  stelem.ref
+    IL_0190:  ldloc.s    CS$0$0001
+    IL_0192:  ldc.i4.2
+    IL_0193:  ldstr      "Auto-Camera Positioning: 'a'"
+    IL_0198:  stelem.ref
+    IL_0199:  ldloc.s    CS$0$0001
+    IL_019b:  ldc.i4.3
+    IL_019c:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_01a1:  stelem.ref
+    IL_01a2:  ldloc.s    CS$0$0001
+    IL_01a4:  ldc.i4.4
+    IL_01a5:  ldstr      "Pan: Click Left And Drag"
+    IL_01aa:  stelem.ref
+    IL_01ab:  ldloc.s    CS$0$0001
+    IL_01ad:  ldc.i4.5
+    IL_01ae:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_01b3:  stelem.ref
+    IL_01b4:  ldloc.s    CS$0$0001
+    IL_01b6:  ldc.i4.6
+    IL_01b7:  ldstr      "Zoom In / Out: Mousewheel (or) Up/Down Keys (or) C"
+    + "trl+Middle Mouse Move"
+    IL_01bc:  stelem.ref
+    IL_01bd:  ldloc.s    CS$0$0001
+    IL_01bf:  ldc.i4.7
+    IL_01c0:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_01c5:  stelem.ref
+    IL_01c6:  ldloc.s    CS$0$0001
+    IL_01c8:  ldc.i4.8
+    IL_01c9:  ldstr      "Full Screen: Right Double-Click"
+    IL_01ce:  stelem.ref
+    IL_01cf:  ldloc.s    CS$0$0001
+    IL_01d1:  ldc.i4.s   9
+    IL_01d3:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_01d8:  stelem.ref
+    IL_01d9:  ldloc.s    CS$0$0001
+    IL_01db:  ldc.i4.s   10
+    IL_01dd:  ldstr      "Restore to Normal Window Size: Right Double-Click "
+    + "(or) Escape Key"
+    IL_01e2:  stelem.ref
+    IL_01e3:  ldloc.s    CS$0$0001
+    IL_01e5:  ldc.i4.s   11
+    IL_01e7:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_01ec:  stelem.ref
+    IL_01ed:  ldloc.s    CS$0$0001
+    IL_01ef:  ldc.i4.s   12
+    IL_01f1:  ldstr      "Pause: 'b'"
+    IL_01f6:  stelem.ref
+    IL_01f7:  ldloc.s    CS$0$0001
+    IL_01f9:  ldc.i4.s   13
+    IL_01fb:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_0200:  stelem.ref
+    IL_0201:  ldloc.s    CS$0$0001
+    IL_0203:  ldc.i4.s   14
+    IL_0205:  ldstr      "Translucency: 't'"
+    IL_020a:  stelem.ref
+    IL_020b:  ldloc.s    CS$0$0001
+    IL_020d:  ldc.i4.s   15
+    IL_020f:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_0214:  stelem.ref
+    IL_0215:  ldloc.s    CS$0$0001
+    IL_0217:  ldc.i4.s   16
+    IL_0219:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_021e:  stelem.ref
+    IL_021f:  ldloc.s    CS$0$0001
+    IL_0221:  ldc.i4.s   17
+    IL_0223:  ldstr      "** Boid Controls **"
+    IL_0228:  stelem.ref
+    IL_0229:  ldloc.s    CS$0$0001
+    IL_022b:  ldc.i4.s   18
+    IL_022d:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_0232:  stelem.ref
+    IL_0233:  ldloc.s    CS$0$0001
+    IL_0235:  ldc.i4.s   19
+    IL_0237:  ldstr      "Scatter: Left Double-Click"
+    IL_023c:  stelem.ref
+    IL_023d:  ldloc.s    CS$0$0001
+    IL_023f:  ldc.i4.s   20
+    IL_0241:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_0246:  stelem.ref
+    IL_0247:  ldloc.s    CS$0$0001
+    IL_0249:  ldc.i4.s   21
+    IL_024b:  ldstr      "Change Max Speed: Ctrl + Mousewheel"
+    IL_0250:  stelem.ref
+    IL_0251:  ldloc.s    CS$0$0001
+    IL_0253:  ldc.i4.s   22
+    IL_0255:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_025a:  stelem.ref
+    IL_025b:  ldloc.s    CS$0$0001
+    IL_025d:  ldc.i4.s   23
+    IL_025f:  ldstr      "Randomize: 'r'"
+    IL_0264:  stelem.ref
+    IL_0265:  ldloc.s    CS$0$0001
+    IL_0267:  ldc.i4.s   24
+    IL_0269:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_026e:  stelem.ref
+    IL_026f:  ldloc.s    CS$0$0001
+    IL_0271:  ldc.i4.s   25
+    IL_0273:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_0278:  stelem.ref
+    IL_0279:  ldloc.s    CS$0$0001
+    IL_027b:  ldc.i4.s   26
+    IL_027d:  ldstr      "** Parallelism Controls **"
+    IL_0282:  stelem.ref
+    IL_0283:  ldloc.s    CS$0$0001
+    IL_0285:  ldc.i4.s   27
+    IL_0287:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_028c:  stelem.ref
+    IL_028d:  ldloc.s    CS$0$0001
+    IL_028f:  ldc.i4.s   28
+    IL_0291:  ldstr      "Go Parallel: 'p'"
+    IL_0296:  stelem.ref
+    IL_0297:  ldloc.s    CS$0$0001
+    IL_0299:  ldc.i4.s   29
+    IL_029b:  call       string [mscorlib]System.Environment::get_NewLine()
+    IL_02a0:  stelem.ref
+    IL_02a1:  ldloc.s    CS$0$0001
+    IL_02a3:  call       string [mscorlib]System.String::Concat(string[])
+    IL_02a8:  stloc.2
+    IL_02a9:  ldarg.0
+    IL_02aa:  ldloc.2
+    IL_02ab:  ldstr      "Instructions"
+    IL_02b0:  ldc.i4.0
+    IL_02b1:  ldc.i4.s   64
+    IL_02b3:  call       valuetype [PresentationFramework]System.Windows.MessageBoxResult [PresentationFramework]System.Windows.MessageBox::Show(class [PresentationFramework]System.Windows.Window,
+                                                                                                                                                 string,
+                                                                                                                                                 string,
+                                                                                                                                                 valuetype [PresentationFramework]System.Windows.MessageBoxButton,
+                                                                                                                                                 valuetype [PresentationFramework]System.Windows.MessageBoxImage)
+    IL_02b8:  pop
+    IL_02b9:  nop
+    IL_02ba:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="225" endline="233"><![CDATA[
+  {
+    // Code size       15 (0xf)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.2
+    IL_0003:  ldarg.0
+    IL_0004:  callvirt   instance valuetype [WindowsBase]System.Windows.Point [PresentationCore]System.Windows.Input.MouseEventArgs::GetPosition(class [PresentationCore]System.Windows.IInputElement)
+    IL_0009:  stfld      valuetype [WindowsBase]System.Windows.Point ParallelBoids.MainWindow::_lastMousePosition
+    IL_000e:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="234" endline="250"><![CDATA[
+  {
+    // Code size       164 (0xa4)
+    .maxstack  3
+    .locals init ([0] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  call       valuetype [WindowsBase]System.Windows.Input.ModifierKeys [PresentationCore]System.Windows.Input.Keyboard::get_Modifiers()
+    IL_0006:  ldc.i4.2
+    IL_0007:  and
+    IL_0008:  ldc.i4.0
+    IL_0009:  ceq
+    IL_000b:  stloc.0
+    IL_000c:  ldloc.0
+    IL_000d:  brtrue.s   IL_0089
+
+    IL_000f:  nop
+    IL_0010:  ldarg.2
+    IL_0011:  callvirt   instance int32 [PresentationCore]System.Windows.Input.MouseWheelEventArgs::get_Delta()
+    IL_0016:  ldc.i4.0
+    IL_0017:  ble.s      IL_002f
+
+    IL_0019:  ldarg.0
+    IL_001a:  ldfld      float64 ParallelBoids.MainWindow::m_speedLimit
+    IL_001f:  ldc.r8     10.
+    IL_0028:  clt
+    IL_002a:  ldc.i4.0
+    IL_002b:  ceq
+    IL_002d:  br.s       IL_0030
+
+    IL_002f:  ldc.i4.1
+    IL_0030:  stloc.0
+    IL_0031:  ldloc.0
+    IL_0032:  brtrue.s   IL_004c
+
+    IL_0034:  ldarg.0
+    IL_0035:  dup
+    IL_0036:  ldfld      float64 ParallelBoids.MainWindow::m_speedLimit
+    IL_003b:  ldc.r8     1.
+    IL_0044:  add
+    IL_0045:  stfld      float64 ParallelBoids.MainWindow::m_speedLimit
+    IL_004a:  br.s       IL_0086
+
+    IL_004c:  ldarg.2
+    IL_004d:  callvirt   instance int32 [PresentationCore]System.Windows.Input.MouseWheelEventArgs::get_Delta()
+    IL_0052:  ldc.i4.0
+    IL_0053:  bge.s      IL_006b
+
+    IL_0055:  ldarg.0
+    IL_0056:  ldfld      float64 ParallelBoids.MainWindow::m_speedLimit
+    IL_005b:  ldc.r8     2.
+    IL_0064:  cgt
+    IL_0066:  ldc.i4.0
+    IL_0067:  ceq
+    IL_0069:  br.s       IL_006c
+
+    IL_006b:  ldc.i4.1
+    IL_006c:  stloc.0
+    IL_006d:  ldloc.0
+    IL_006e:  brtrue.s   IL_0086
+
+    IL_0070:  ldarg.0
+    IL_0071:  dup
+    IL_0072:  ldfld      float64 ParallelBoids.MainWindow::m_speedLimit
+    IL_0077:  ldc.r8     1.
+    IL_0080:  sub
+    IL_0081:  stfld      float64 ParallelBoids.MainWindow::m_speedLimit
+    IL_0086:  nop
+    IL_0087:  br.s       IL_00a3
+
+    IL_0089:  ldarg.0
+    IL_008a:  ldfld      bool ParallelBoids.MainWindow::m_autoPanCamera
+    IL_008f:  stloc.0
+    IL_0090:  ldloc.0
+    IL_0091:  brtrue.s   IL_00a3
+
+    IL_0093:  ldarg.0
+    IL_0094:  ldarg.2
+    IL_0095:  callvirt   instance int32 [PresentationCore]System.Windows.Input.MouseWheelEventArgs::get_Delta()
+    IL_009a:  ldc.i4.s   120
+    IL_009c:  div
+    IL_009d:  call       instance void ParallelBoids.MainWindow::Zoom(int32)
+    IL_00a2:  nop
+    IL_00a3:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="251" endline="278"><![CDATA[
+  {
+    // Code size       117 (0x75)
+    .maxstack  2
+    .locals init ([0] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.2
+    IL_0002:  callvirt   instance valuetype [PresentationCore]System.Windows.Input.MouseButton [PresentationCore]System.Windows.Input.MouseButtonEventArgs::get_ChangedButton()
+    IL_0007:  ldc.i4.2
+    IL_0008:  ceq
+    IL_000a:  ldc.i4.0
+    IL_000b:  ceq
+    IL_000d:  stloc.0
+    IL_000e:  ldloc.0
+    IL_000f:  brtrue.s   IL_005b
+
+    IL_0011:  nop
+    IL_0012:  ldarg.0
+    IL_0013:  call       instance valuetype [PresentationFramework]System.Windows.WindowState [PresentationFramework]System.Windows.Window::get_WindowState()
+    IL_0018:  ldc.i4.2
+    IL_0019:  ceq
+    IL_001b:  ldc.i4.0
+    IL_001c:  ceq
+    IL_001e:  stloc.0
+    IL_001f:  ldloc.0
+    IL_0020:  brtrue.s   IL_003e
+
+    IL_0022:  nop
+    IL_0023:  ldarg.0
+    IL_0024:  ldc.i4.0
+    IL_0025:  call       instance void [PresentationFramework]System.Windows.Window::set_Topmost(bool)
+    IL_002a:  nop
+    IL_002b:  ldarg.0
+    IL_002c:  ldc.i4.2
+    IL_002d:  call       instance void [PresentationFramework]System.Windows.Window::set_WindowStyle(valuetype [PresentationFramework]System.Windows.WindowStyle)
+    IL_0032:  nop
+    IL_0033:  ldarg.0
+    IL_0034:  ldc.i4.0
+    IL_0035:  call       instance void [PresentationFramework]System.Windows.Window::set_WindowState(valuetype [PresentationFramework]System.Windows.WindowState)
+    IL_003a:  nop
+    IL_003b:  nop
+    IL_003c:  br.s       IL_0058
+
+    IL_003e:  nop
+    IL_003f:  ldarg.0
+    IL_0040:  ldc.i4.1
+    IL_0041:  call       instance void [PresentationFramework]System.Windows.Window::set_Topmost(bool)
+    IL_0046:  nop
+    IL_0047:  ldarg.0
+    IL_0048:  ldc.i4.0
+    IL_0049:  call       instance void [PresentationFramework]System.Windows.Window::set_WindowStyle(valuetype [PresentationFramework]System.Windows.WindowStyle)
+    IL_004e:  nop
+    IL_004f:  ldarg.0
+    IL_0050:  ldc.i4.2
+    IL_0051:  call       instance void [PresentationFramework]System.Windows.Window::set_WindowState(valuetype [PresentationFramework]System.Windows.WindowState)
+    IL_0056:  nop
+    IL_0057:  nop
+    IL_0058:  nop
+    IL_0059:  br.s       IL_0074
+
+    IL_005b:  ldarg.2
+    IL_005c:  callvirt   instance valuetype [PresentationCore]System.Windows.Input.MouseButton [PresentationCore]System.Windows.Input.MouseButtonEventArgs::get_ChangedButton()
+    IL_0061:  ldc.i4.0
+    IL_0062:  ceq
+    IL_0064:  ldc.i4.0
+    IL_0065:  ceq
+    IL_0067:  stloc.0
+    IL_0068:  ldloc.0
+    IL_0069:  brtrue.s   IL_0074
+
+    IL_006b:  nop
+    IL_006c:  ldarg.0
+    IL_006d:  call       instance void ParallelBoids.MainWindow::Scatter()
+    IL_0072:  nop
+    IL_0073:  nop
+    IL_0074:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="279" endline="318"><![CDATA[
+  {
+    // Code size       258 (0x102)
+    .maxstack  6
+    .locals init ([0] class ParallelBoids.MainWindow/'<>c__DisplayClass6' 'CS$<>8__locals7',
+             [1] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [mscorlib]System.Threading.Timer ParallelBoids.MainWindow::m_scatterTimer
+    IL_0007:  ldnull
+    IL_0008:  ceq
+    IL_000a:  ldc.i4.0
+    IL_000b:  ceq
+    IL_000d:  stloc.1
+    IL_000e:  ldloc.1
+    IL_000f:  brtrue     IL_0101
+
+    IL_0014:  newobj     instance void ParallelBoids.MainWindow/'<>c__DisplayClass6'::.ctor()
+    IL_0019:  stloc.0
+    IL_001a:  ldloc.0
+    IL_001b:  ldarg.0
+    IL_001c:  stfld      class ParallelBoids.MainWindow ParallelBoids.MainWindow/'<>c__DisplayClass6'::'<>4__this'
+    IL_0021:  nop
+    IL_0022:  call       class [System]System.Media.SystemSound [System]System.Media.SystemSounds::get_Hand()
+    IL_0027:  callvirt   instance void [System]System.Media.SystemSound::Play()
+    IL_002c:  nop
+    IL_002d:  ldloc.0
+    IL_002e:  ldarg.0
+    IL_002f:  ldfld      valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.MainWindow::m_home
+    IL_0034:  stfld      valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.MainWindow/'<>c__DisplayClass6'::origHome
+    IL_0039:  ldloc.0
+    IL_003a:  ldarg.0
+    IL_003b:  ldfld      float64 ParallelBoids.MainWindow::m_rule1Weight
+    IL_0040:  stfld      float64 ParallelBoids.MainWindow/'<>c__DisplayClass6'::origRule1Weight
+    IL_0045:  ldloc.0
+    IL_0046:  ldarg.0
+    IL_0047:  ldfld      float64 ParallelBoids.MainWindow::m_rule2Weight
+    IL_004c:  stfld      float64 ParallelBoids.MainWindow/'<>c__DisplayClass6'::origRule2Weight
+    IL_0051:  ldloc.0
+    IL_0052:  ldarg.0
+    IL_0053:  ldfld      float64 ParallelBoids.MainWindow::m_rule4Weight
+    IL_0058:  stfld      float64 ParallelBoids.MainWindow/'<>c__DisplayClass6'::origRule4Weight
+    IL_005d:  ldloc.0
+    IL_005e:  ldarg.0
+    IL_005f:  ldfld      float64 ParallelBoids.MainWindow::m_rule5Weight
+    IL_0064:  stfld      float64 ParallelBoids.MainWindow/'<>c__DisplayClass6'::origRule5Weight
+    IL_0069:  ldarg.0
+    IL_006a:  ldc.r8     0.0
+    IL_0073:  ldc.r8     0.0
+    IL_007c:  ldc.r8     0.0
+    IL_0085:  newobj     instance void [PresentationCore]System.Windows.Media.Media3D.Vector3D::.ctor(float64,
+                                                                                                      float64,
+                                                                                                      float64)
+    IL_008a:  stfld      valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.MainWindow::m_home
+    IL_008f:  ldarg.0
+    IL_0090:  ldloc.0
+    IL_0091:  ldfld      float64 ParallelBoids.MainWindow/'<>c__DisplayClass6'::origRule1Weight
+    IL_0096:  ldc.r8     -5.
+    IL_009f:  mul
+    IL_00a0:  stfld      float64 ParallelBoids.MainWindow::m_rule1Weight
+    IL_00a5:  ldarg.0
+    IL_00a6:  ldloc.0
+    IL_00a7:  ldfld      float64 ParallelBoids.MainWindow/'<>c__DisplayClass6'::origRule2Weight
+    IL_00ac:  ldc.r8     2.
+    IL_00b5:  mul
+    IL_00b6:  stfld      float64 ParallelBoids.MainWindow::m_rule2Weight
+    IL_00bb:  ldarg.0
+    IL_00bc:  ldc.r8     0.0
+    IL_00c5:  stfld      float64 ParallelBoids.MainWindow::m_rule4Weight
+    IL_00ca:  ldarg.0
+    IL_00cb:  ldloc.0
+    IL_00cc:  ldfld      float64 ParallelBoids.MainWindow/'<>c__DisplayClass6'::origRule5Weight
+    IL_00d1:  ldc.r8     -5.
+    IL_00da:  mul
+    IL_00db:  stfld      float64 ParallelBoids.MainWindow::m_rule5Weight
+    IL_00e0:  ldarg.0
+    IL_00e1:  ldloc.0
+    IL_00e2:  ldftn      instance void ParallelBoids.MainWindow/'<>c__DisplayClass6'::'<Scatter>b__5'(object)
+    IL_00e8:  newobj     instance void [mscorlib]System.Threading.TimerCallback::.ctor(object,
+                                                                                       native int)
+    IL_00ed:  ldnull
+    IL_00ee:  ldc.i4     0xfa0
+    IL_00f3:  conv.i8
+    IL_00f4:  ldc.i4.m1
+    IL_00f5:  conv.i8
+    IL_00f6:  newobj     instance void [mscorlib]System.Threading.Timer::.ctor(class [mscorlib]System.Threading.TimerCallback,
+                                                                               object,
+                                                                               int64,
+                                                                               int64)
+    IL_00fb:  stfld      class [mscorlib]System.Threading.Timer ParallelBoids.MainWindow::m_scatterTimer
+    IL_0100:  nop
+    IL_0101:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="319" endline="346"><![CDATA[
+  {
+    // Code size       208 (0xd0)
+    .maxstack  5
+    .locals init ([0] valuetype [WindowsBase]System.Windows.Point newPosition,
+             [1] valuetype [WindowsBase]System.Windows.Vector diff,
+             [2] bool CS$4$0000,
+             [3] valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D CS$0$0001)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      bool ParallelBoids.MainWindow::m_autoPanCamera
+    IL_0007:  stloc.2
+    IL_0008:  ldloc.2
+    IL_0009:  brtrue     IL_00cf
+
+    IL_000e:  nop
+    IL_000f:  ldarg.2
+    IL_0010:  ldarg.0
+    IL_0011:  callvirt   instance valuetype [WindowsBase]System.Windows.Point [PresentationCore]System.Windows.Input.MouseEventArgs::GetPosition(class [PresentationCore]System.Windows.IInputElement)
+    IL_0016:  stloc.0
+    IL_0017:  ldarg.0
+    IL_0018:  ldfld      valuetype [WindowsBase]System.Windows.Point ParallelBoids.MainWindow::_lastMousePosition
+    IL_001d:  ldloc.0
+    IL_001e:  call       valuetype [WindowsBase]System.Windows.Vector [WindowsBase]System.Windows.Point::op_Subtraction(valuetype [WindowsBase]System.Windows.Point,
+                                                                                                                        valuetype [WindowsBase]System.Windows.Point)
+    IL_0023:  stloc.1
+    IL_0024:  ldarg.2
+    IL_0025:  callvirt   instance valuetype [PresentationCore]System.Windows.Input.MouseButtonState [PresentationCore]System.Windows.Input.MouseEventArgs::get_LeftButton()
+    IL_002a:  ldc.i4.1
+    IL_002b:  ceq
+    IL_002d:  ldc.i4.0
+    IL_002e:  ceq
+    IL_0030:  stloc.2
+    IL_0031:  ldloc.2
+    IL_0032:  brtrue.s   IL_00a6
+
+    IL_0034:  nop
+    IL_0035:  ldarg.0
+    IL_0036:  ldfld      class [PresentationCore]System.Windows.Media.Media3D.PerspectiveCamera ParallelBoids.MainWindow::camMain
+    IL_003b:  ldarg.0
+    IL_003c:  ldfld      class [PresentationCore]System.Windows.Media.Media3D.PerspectiveCamera ParallelBoids.MainWindow::camMain
+    IL_0041:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D [PresentationCore]System.Windows.Media.Media3D.ProjectionCamera::get_Position()
+    IL_0046:  stloc.3
+    IL_0047:  ldloca.s   CS$0$0001
+    IL_0049:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Point3D::get_X()
+    IL_004e:  ldloca.s   diff
+    IL_0050:  call       instance float64 [WindowsBase]System.Windows.Vector::get_X()
+    IL_0055:  ldc.r8     0.40000000000000002
+    IL_005e:  mul
+    IL_005f:  add
+    IL_0060:  ldarg.0
+    IL_0061:  ldfld      class [PresentationCore]System.Windows.Media.Media3D.PerspectiveCamera ParallelBoids.MainWindow::camMain
+    IL_0066:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D [PresentationCore]System.Windows.Media.Media3D.ProjectionCamera::get_Position()
+    IL_006b:  stloc.3
+    IL_006c:  ldloca.s   CS$0$0001
+    IL_006e:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Point3D::get_Y()
+    IL_0073:  ldloca.s   diff
+    IL_0075:  call       instance float64 [WindowsBase]System.Windows.Vector::get_Y()
+    IL_007a:  ldc.r8     0.40000000000000002
+    IL_0083:  mul
+    IL_0084:  sub
+    IL_0085:  ldarg.0
+    IL_0086:  ldfld      class [PresentationCore]System.Windows.Media.Media3D.PerspectiveCamera ParallelBoids.MainWindow::camMain
+    IL_008b:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D [PresentationCore]System.Windows.Media.Media3D.ProjectionCamera::get_Position()
+    IL_0090:  stloc.3
+    IL_0091:  ldloca.s   CS$0$0001
+    IL_0093:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Point3D::get_Z()
+    IL_0098:  newobj     instance void [PresentationCore]System.Windows.Media.Media3D.Point3D::.ctor(float64,
+                                                                                                     float64,
+                                                                                                     float64)
+    IL_009d:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.ProjectionCamera::set_Position(valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D)
+    IL_00a2:  nop
+    IL_00a3:  nop
+    IL_00a4:  br.s       IL_00c7
+
+    IL_00a6:  ldarg.2
+    IL_00a7:  callvirt   instance valuetype [PresentationCore]System.Windows.Input.MouseButtonState [PresentationCore]System.Windows.Input.MouseEventArgs::get_MiddleButton()
+    IL_00ac:  ldc.i4.1
+    IL_00ad:  ceq
+    IL_00af:  ldc.i4.0
+    IL_00b0:  ceq
+    IL_00b2:  stloc.2
+    IL_00b3:  ldloc.2
+    IL_00b4:  brtrue.s   IL_00c7
+
+    IL_00b6:  nop
+    IL_00b7:  ldarg.0
+    IL_00b8:  ldloca.s   diff
+    IL_00ba:  call       instance float64 [WindowsBase]System.Windows.Vector::get_Y()
+    IL_00bf:  conv.i4
+    IL_00c0:  call       instance void ParallelBoids.MainWindow::Zoom(int32)
+    IL_00c5:  nop
+    IL_00c6:  nop
+    IL_00c7:  ldarg.0
+    IL_00c8:  ldloc.0
+    IL_00c9:  stfld      valuetype [WindowsBase]System.Windows.Point ParallelBoids.MainWindow::_lastMousePosition
+    IL_00ce:  nop
+    IL_00cf:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="347" endline="354"><![CDATA[
+  {
+    // Code size       62 (0x3e)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [PresentationCore]System.Windows.Media.Media3D.PerspectiveCamera ParallelBoids.MainWindow::camMain
+    IL_0007:  ldarg.0
+    IL_0008:  ldfld      class [PresentationCore]System.Windows.Media.Media3D.PerspectiveCamera ParallelBoids.MainWindow::camMain
+    IL_000d:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D [PresentationCore]System.Windows.Media.Media3D.ProjectionCamera::get_Position()
+    IL_0012:  ldarg.0
+    IL_0013:  ldfld      class [PresentationCore]System.Windows.Media.Media3D.PerspectiveCamera ParallelBoids.MainWindow::camMain
+    IL_0018:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.ProjectionCamera::get_LookDirection()
+    IL_001d:  ldarg.1
+    IL_001e:  conv.r8
+    IL_001f:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Multiply(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                float64)
+    IL_0024:  ldc.r8     3.
+    IL_002d:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Multiply(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                float64)
+    IL_0032:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D [PresentationCore]System.Windows.Media.Media3D.Point3D::Add(valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D,
+                                                                                                                                                      valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0037:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.ProjectionCamera::set_Position(valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D)
+    IL_003c:  nop
+    IL_003d:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="355" endline="541"><![CDATA[
+  {
+    // Code size       105 (0x69)
+    .maxstack  4
+    .locals init ([0] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  br.s       IL_0065
+
+    IL_0003:  nop
+    IL_0004:  ldarg.0
+    IL_0005:  ldfld      class [mscorlib]System.Threading.AutoResetEvent ParallelBoids.MainWindow::m_renderSignal
+    IL_000a:  callvirt   instance bool [mscorlib]System.Threading.WaitHandle::WaitOne()
+    IL_000f:  pop
+    IL_0010:  ldarg.0
+    IL_0011:  ldfld      class [System]System.Diagnostics.Stopwatch ParallelBoids.MainWindow::m_frameStopwatch
+    IL_0016:  callvirt   instance void [System]System.Diagnostics.Stopwatch::Restart()
+    IL_001b:  nop
+    IL_001c:  ldarg.0
+    IL_001d:  call       instance void ParallelBoids.MainWindow::StepBoids()
+    IL_0022:  nop
+    IL_0023:  ldarg.0
+    IL_0024:  dup
+    IL_0025:  ldfld      int64 ParallelBoids.MainWindow::m_totalRenderingMillisecondsSinceLastUserPresentation
+    IL_002a:  ldarg.0
+    IL_002b:  ldfld      class [System]System.Diagnostics.Stopwatch ParallelBoids.MainWindow::m_frameStopwatch
+    IL_0030:  callvirt   instance int64 [System]System.Diagnostics.Stopwatch::get_ElapsedMilliseconds()
+    IL_0035:  add
+    IL_0036:  stfld      int64 ParallelBoids.MainWindow::m_totalRenderingMillisecondsSinceLastUserPresentation
+    IL_003b:  ldarg.0
+    IL_003c:  dup
+    IL_003d:  ldfld      int32 ParallelBoids.MainWindow::m_numRendersSinceLastUserPresentation
+    IL_0042:  ldc.i4.1
+    IL_0043:  add
+    IL_0044:  stfld      int32 ParallelBoids.MainWindow::m_numRendersSinceLastUserPresentation
+    IL_0049:  ldarg.0
+    IL_004a:  call       instance class [WindowsBase]System.Windows.Threading.Dispatcher [WindowsBase]System.Windows.Threading.DispatcherObject::get_Dispatcher()
+    IL_004f:  ldarg.0
+    IL_0050:  ldftn      instance void ParallelBoids.MainWindow::RenderBoids()
+    IL_0056:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_005b:  ldc.i4.s   10
+    IL_005d:  ldnull
+    IL_005e:  callvirt   instance object [WindowsBase]System.Windows.Threading.Dispatcher::Invoke(class [mscorlib]System.Delegate,
+                                                                                                  valuetype [WindowsBase]System.Windows.Threading.DispatcherPriority,
+                                                                                                  object[])
+    IL_0063:  pop
+    IL_0064:  nop
+    IL_0065:  ldc.i4.1
+    IL_0066:  stloc.0
+    IL_0067:  br.s       IL_0003
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="384" endline="402"><![CDATA[
+  {
+    // Code size       69 (0x45)
+    .maxstack  5
+    .locals init ([0] class ParallelBoids.Boid boid,
+             [1] class ParallelBoids.Boid[] CS$6$0000,
+             [2] int32 CS$7$0001,
+             [3] bool CS$4$0002)
+    IL_0000:  nop
+    IL_0001:  nop
+    IL_0002:  ldarg.0
+    IL_0003:  ldfld      class ParallelBoids.Boid[] ParallelBoids.MainWindow::m_boidModels
+    IL_0008:  stloc.1
+    IL_0009:  ldc.i4.0
+    IL_000a:  stloc.2
+    IL_000b:  br.s       IL_001c
+
+    IL_000d:  ldloc.1
+    IL_000e:  ldloc.2
+    IL_000f:  ldelem.ref
+    IL_0010:  stloc.0
+    IL_0011:  ldloc.0
+    IL_0012:  callvirt   instance void ParallelBoids.Boid::StorePositionAndVelocityIntoPrevious()
+    IL_0017:  nop
+    IL_0018:  ldloc.2
+    IL_0019:  ldc.i4.1
+    IL_001a:  add
+    IL_001b:  stloc.2
+    IL_001c:  ldloc.2
+    IL_001d:  ldloc.1
+    IL_001e:  ldlen
+    IL_001f:  conv.i4
+    IL_0020:  clt
+    IL_0022:  stloc.3
+    IL_0023:  ldloc.3
+    IL_0024:  brtrue.s   IL_000d
+
+    IL_0026:  ldarg.0
+    IL_0027:  ldfld      class ParallelBoids.Boid[] ParallelBoids.MainWindow::m_boidModels
+    IL_002c:  ldarg.0
+    IL_002d:  ldfld      class [mscorlib]System.Threading.Tasks.ParallelOptions ParallelBoids.MainWindow::m_parallelOptions
+    IL_0032:  ldarg.0
+    IL_0033:  ldftn      instance void ParallelBoids.MainWindow::'<StepBoids>b__8'(class ParallelBoids.Boid)
+    IL_0039:  newobj     instance void class [mscorlib]System.Action`1<class ParallelBoids.Boid>::.ctor(object,
+                                                                                                        native int)
+    IL_003e:  call       valuetype [mscorlib]System.Threading.Tasks.ParallelLoopResult [mscorlib]System.Threading.Tasks.Parallel::ForEach<class ParallelBoids.Boid>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                    class [mscorlib]System.Threading.Tasks.ParallelOptions,
+                                                                                                                                                                    class [mscorlib]System.Action`1<!!0>)
+    IL_0043:  pop
+    IL_0044:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="403" endline="443"><![CDATA[
+  {
+    // Code size       438 (0x1b6)
+    .maxstack  6
+    .locals init ([0] class ParallelBoids.Boid boid,
+             [1] valuetype [mscorlib]System.DateTimeOffset now,
+             [2] float64 maxZ,
+             [3] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D totalPos,
+             [4] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D newCameraPos,
+             [5] valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D newPos,
+             [6] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D cameraVelocity,
+             [7] class ParallelBoids.Boid[] CS$6$0000,
+             [8] int32 CS$7$0001,
+             [9] bool CS$4$0002,
+             [10] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D CS$0$0003)
+    IL_0000:  nop
+    IL_0001:  nop
+    IL_0002:  ldarg.0
+    IL_0003:  ldfld      class ParallelBoids.Boid[] ParallelBoids.MainWindow::m_boidModels
+    IL_0008:  stloc.s    CS$6$0000
+    IL_000a:  ldc.i4.0
+    IL_000b:  stloc.s    CS$7$0001
+    IL_000d:  br.s       IL_0022
+
+    IL_000f:  ldloc.s    CS$6$0000
+    IL_0011:  ldloc.s    CS$7$0001
+    IL_0013:  ldelem.ref
+    IL_0014:  stloc.0
+    IL_0015:  ldloc.0
+    IL_0016:  callvirt   instance void ParallelBoids.Boid::TransformByPositionAndVelocity()
+    IL_001b:  nop
+    IL_001c:  ldloc.s    CS$7$0001
+    IL_001e:  ldc.i4.1
+    IL_001f:  add
+    IL_0020:  stloc.s    CS$7$0001
+    IL_0022:  ldloc.s    CS$7$0001
+    IL_0024:  ldloc.s    CS$6$0000
+    IL_0026:  ldlen
+    IL_0027:  conv.i4
+    IL_0028:  clt
+    IL_002a:  stloc.s    CS$4$0002
+    IL_002c:  ldloc.s    CS$4$0002
+    IL_002e:  brtrue.s   IL_000f
+
+    IL_0030:  call       valuetype [mscorlib]System.DateTimeOffset [mscorlib]System.DateTimeOffset::get_Now()
+    IL_0035:  stloc.1
+    IL_0036:  ldloc.1
+    IL_0037:  ldarg.0
+    IL_0038:  ldfld      valuetype [mscorlib]System.DateTimeOffset ParallelBoids.MainWindow::m_nextUserPresentation
+    IL_003d:  call       bool [mscorlib]System.DateTimeOffset::op_GreaterThanOrEqual(valuetype [mscorlib]System.DateTimeOffset,
+                                                                                     valuetype [mscorlib]System.DateTimeOffset)
+    IL_0042:  ldc.i4.0
+    IL_0043:  ceq
+    IL_0045:  stloc.s    CS$4$0002
+    IL_0047:  ldloc.s    CS$4$0002
+    IL_0049:  brtrue.s   IL_00bb
+
+    IL_004b:  nop
+    IL_004c:  ldarg.0
+    IL_004d:  ldstr      "Procs: {0}, Time: {1:F2}"
+    IL_0052:  ldarg.0
+    IL_0053:  ldfld      class [mscorlib]System.Threading.Tasks.ParallelOptions ParallelBoids.MainWindow::m_parallelOptions
+    IL_0058:  callvirt   instance int32 [mscorlib]System.Threading.Tasks.ParallelOptions::get_MaxDegreeOfParallelism()
+    IL_005d:  box        [mscorlib]System.Int32
+    IL_0062:  ldarg.0
+    IL_0063:  ldfld      int32 ParallelBoids.MainWindow::m_numRendersSinceLastUserPresentation
+    IL_0068:  ldc.i4.0
+    IL_0069:  bgt.s      IL_0076
+
+    IL_006b:  ldc.r8     0.0
+    IL_0074:  br.s       IL_0085
+
+    IL_0076:  ldarg.0
+    IL_0077:  ldfld      int64 ParallelBoids.MainWindow::m_totalRenderingMillisecondsSinceLastUserPresentation
+    IL_007c:  conv.r8
+    IL_007d:  ldarg.0
+    IL_007e:  ldfld      int32 ParallelBoids.MainWindow::m_numRendersSinceLastUserPresentation
+    IL_0083:  conv.r8
+    IL_0084:  div
+    IL_0085:  box        [mscorlib]System.Double
+    IL_008a:  call       string [mscorlib]System.String::Format(string,
+                                                                object,
+                                                                object)
+    IL_008f:  call       instance void [PresentationFramework]System.Windows.Window::set_Title(string)
+    IL_0094:  nop
+    IL_0095:  ldarg.0
+    IL_0096:  ldloca.s   now
+    IL_0098:  ldc.r8     1.
+    IL_00a1:  call       instance valuetype [mscorlib]System.DateTimeOffset [mscorlib]System.DateTimeOffset::AddSeconds(float64)
+    IL_00a6:  stfld      valuetype [mscorlib]System.DateTimeOffset ParallelBoids.MainWindow::m_nextUserPresentation
+    IL_00ab:  ldarg.0
+    IL_00ac:  ldc.i4.0
+    IL_00ad:  stfld      int32 ParallelBoids.MainWindow::m_numRendersSinceLastUserPresentation
+    IL_00b2:  ldarg.0
+    IL_00b3:  ldc.i4.0
+    IL_00b4:  conv.i8
+    IL_00b5:  stfld      int64 ParallelBoids.MainWindow::m_totalRenderingMillisecondsSinceLastUserPresentation
+    IL_00ba:  nop
+    IL_00bb:  ldarg.0
+    IL_00bc:  ldfld      bool ParallelBoids.MainWindow::m_autoPanCamera
+    IL_00c1:  ldc.i4.0
+    IL_00c2:  ceq
+    IL_00c4:  stloc.s    CS$4$0002
+    IL_00c6:  ldloc.s    CS$4$0002
+    IL_00c8:  brtrue     IL_01b5
+
+    IL_00cd:  nop
+    IL_00ce:  ldc.r8     -1.7976931348623157e+308
+    IL_00d7:  stloc.2
+    IL_00d8:  ldloca.s   totalPos
+    IL_00da:  initobj    [PresentationCore]System.Windows.Media.Media3D.Vector3D
+    IL_00e0:  nop
+    IL_00e1:  ldarg.0
+    IL_00e2:  ldfld      class ParallelBoids.Boid[] ParallelBoids.MainWindow::m_boidModels
+    IL_00e7:  stloc.s    CS$6$0000
+    IL_00e9:  ldc.i4.0
+    IL_00ea:  stloc.s    CS$7$0001
+    IL_00ec:  br.s       IL_0134
+
+    IL_00ee:  ldloc.s    CS$6$0000
+    IL_00f0:  ldloc.s    CS$7$0001
+    IL_00f2:  ldelem.ref
+    IL_00f3:  stloc.0
+    IL_00f4:  nop
+    IL_00f5:  ldloc.0
+    IL_00f6:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_Position()
+    IL_00fb:  stloc.s    CS$0$0003
+    IL_00fd:  ldloca.s   CS$0$0003
+    IL_00ff:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Z()
+    IL_0104:  ldloc.2
+    IL_0105:  cgt
+    IL_0107:  ldc.i4.0
+    IL_0108:  ceq
+    IL_010a:  stloc.s    CS$4$0002
+    IL_010c:  ldloc.s    CS$4$0002
+    IL_010e:  brtrue.s   IL_0120
+
+    IL_0110:  ldloc.0
+    IL_0111:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_Position()
+    IL_0116:  stloc.s    CS$0$0003
+    IL_0118:  ldloca.s   CS$0$0003
+    IL_011a:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Z()
+    IL_011f:  stloc.2
+    IL_0120:  ldloc.3
+    IL_0121:  ldloc.0
+    IL_0122:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_Position()
+    IL_0127:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Addition(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_012c:  stloc.3
+    IL_012d:  nop
+    IL_012e:  ldloc.s    CS$7$0001
+    IL_0130:  ldc.i4.1
+    IL_0131:  add
+    IL_0132:  stloc.s    CS$7$0001
+    IL_0134:  ldloc.s    CS$7$0001
+    IL_0136:  ldloc.s    CS$6$0000
+    IL_0138:  ldlen
+    IL_0139:  conv.i4
+    IL_013a:  clt
+    IL_013c:  stloc.s    CS$4$0002
+    IL_013e:  ldloc.s    CS$4$0002
+    IL_0140:  brtrue.s   IL_00ee
+
+    IL_0142:  ldloc.3
+    IL_0143:  ldarg.0
+    IL_0144:  ldfld      class ParallelBoids.Boid[] ParallelBoids.MainWindow::m_boidModels
+    IL_0149:  ldlen
+    IL_014a:  conv.i4
+    IL_014b:  conv.r8
+    IL_014c:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Division(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                float64)
+    IL_0151:  stloc.s    newCameraPos
+    IL_0153:  ldloca.s   newPos
+    IL_0155:  ldloca.s   newCameraPos
+    IL_0157:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_X()
+    IL_015c:  ldloca.s   newCameraPos
+    IL_015e:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Y()
+    IL_0163:  ldloc.2
+    IL_0164:  ldc.r8     100.
+    IL_016d:  add
+    IL_016e:  call       instance void [PresentationCore]System.Windows.Media.Media3D.Point3D::.ctor(float64,
+                                                                                                     float64,
+                                                                                                     float64)
+    IL_0173:  nop
+    IL_0174:  ldloc.s    newPos
+    IL_0176:  ldarg.0
+    IL_0177:  ldfld      class [PresentationCore]System.Windows.Media.Media3D.PerspectiveCamera ParallelBoids.MainWindow::camMain
+    IL_017c:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D [PresentationCore]System.Windows.Media.Media3D.ProjectionCamera::get_Position()
+    IL_0181:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Point3D::op_Subtraction(valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D,
+                                                                                                                                                                  valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D)
+    IL_0186:  stloc.s    cameraVelocity
+    IL_0188:  ldarg.0
+    IL_0189:  ldfld      class [PresentationCore]System.Windows.Media.Media3D.PerspectiveCamera ParallelBoids.MainWindow::camMain
+    IL_018e:  ldarg.0
+    IL_018f:  ldfld      class [PresentationCore]System.Windows.Media.Media3D.PerspectiveCamera ParallelBoids.MainWindow::camMain
+    IL_0194:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D [PresentationCore]System.Windows.Media.Media3D.ProjectionCamera::get_Position()
+    IL_0199:  ldloc.s    cameraVelocity
+    IL_019b:  ldc.r8     1.e-002
+    IL_01a4:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Multiply(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                float64)
+    IL_01a9:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D [PresentationCore]System.Windows.Media.Media3D.Point3D::op_Addition(valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D,
+                                                                                                                                                              valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_01ae:  callvirt   instance void [PresentationCore]System.Windows.Media.Media3D.ProjectionCamera::set_Position(valuetype [PresentationCore]System.Windows.Media.Media3D.Point3D)
+    IL_01b3:  nop
+    IL_01b4:  nop
+    IL_01b5:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="444" endline="492"><![CDATA[
+  {
+    // Code size       416 (0x1a0)
+    .maxstack  3
+    .locals init ([0] int32 numNearby,
+             [1] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D summedPosition,
+             [2] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D summedVelocity,
+             [3] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D summedSeparation,
+             [4] class ParallelBoids.Boid other,
+             [5] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D rule1_flyTowardsCenter,
+             [6] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D rule2_separateFromNearby,
+             [7] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D rule3_matchVelocities,
+             [8] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D CS$1$0000,
+             [9] class ParallelBoids.Boid[] CS$6$0001,
+             [10] int32 CS$7$0002,
+             [11] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D CS$0$0003,
+             [12] bool CS$4$0004)
+    IL_0000:  nop
+    IL_0001:  ldc.i4.0
+    IL_0002:  stloc.0
+    IL_0003:  ldloca.s   summedPosition
+    IL_0005:  initobj    [PresentationCore]System.Windows.Media.Media3D.Vector3D
+    IL_000b:  ldloca.s   summedVelocity
+    IL_000d:  initobj    [PresentationCore]System.Windows.Media.Media3D.Vector3D
+    IL_0013:  ldloca.s   summedSeparation
+    IL_0015:  initobj    [PresentationCore]System.Windows.Media.Media3D.Vector3D
+    IL_001b:  nop
+    IL_001c:  ldarg.0
+    IL_001d:  ldfld      class ParallelBoids.Boid[] ParallelBoids.MainWindow::m_boidModels
+    IL_0022:  stloc.s    CS$6$0001
+    IL_0024:  ldc.i4.0
+    IL_0025:  stloc.s    CS$7$0002
+    IL_0027:  br         IL_00ee
+
+    IL_002c:  ldloc.s    CS$6$0001
+    IL_002e:  ldloc.s    CS$7$0002
+    IL_0030:  ldelem.ref
+    IL_0031:  stloc.s    other
+    IL_0033:  nop
+    IL_0034:  ldloc.s    other
+    IL_0036:  ldarg.1
+    IL_0037:  beq.s      IL_0074
+
+    IL_0039:  ldloc.s    other
+    IL_003b:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_0040:  ldarg.1
+    IL_0041:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_0046:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Subtraction(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                   valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_004b:  stloc.s    CS$0$0003
+    IL_004d:  ldloca.s   CS$0$0003
+    IL_004f:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Length()
+    IL_0054:  ldc.r8     100.
+    IL_005d:  bgt.un.s   IL_0074
+
+    IL_005f:  ldarg.1
+    IL_0060:  ldloc.s    other
+    IL_0062:  callvirt   instance float64 ParallelBoids.Boid::ComputeAngle(class ParallelBoids.Boid)
+    IL_0067:  ldc.r8     135.
+    IL_0070:  cgt.un
+    IL_0072:  br.s       IL_0075
+
+    IL_0074:  ldc.i4.1
+    IL_0075:  stloc.s    CS$4$0004
+    IL_0077:  ldloc.s    CS$4$0004
+    IL_0079:  brtrue.s   IL_00e7
+
+    IL_007b:  nop
+    IL_007c:  ldloc.1
+    IL_007d:  ldloc.s    other
+    IL_007f:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_0084:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Addition(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0089:  stloc.1
+    IL_008a:  ldloc.2
+    IL_008b:  ldloc.s    other
+    IL_008d:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousVelocity()
+    IL_0092:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Addition(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0097:  stloc.2
+    IL_0098:  ldloc.0
+    IL_0099:  ldc.i4.1
+    IL_009a:  add
+    IL_009b:  stloc.0
+    IL_009c:  ldloc.s    other
+    IL_009e:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_00a3:  ldarg.1
+    IL_00a4:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_00a9:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Subtraction(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                   valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_00ae:  stloc.s    CS$0$0003
+    IL_00b0:  ldloca.s   CS$0$0003
+    IL_00b2:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Length()
+    IL_00b7:  ldc.r8     20.
+    IL_00c0:  clt
+    IL_00c2:  ldc.i4.0
+    IL_00c3:  ceq
+    IL_00c5:  stloc.s    CS$4$0004
+    IL_00c7:  ldloc.s    CS$4$0004
+    IL_00c9:  brtrue.s   IL_00e6
+
+    IL_00cb:  nop
+    IL_00cc:  ldloc.3
+    IL_00cd:  ldloc.s    other
+    IL_00cf:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_00d4:  ldarg.1
+    IL_00d5:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_00da:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Subtraction(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                   valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_00df:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Subtraction(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                   valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_00e4:  stloc.3
+    IL_00e5:  nop
+    IL_00e6:  nop
+    IL_00e7:  nop
+    IL_00e8:  ldloc.s    CS$7$0002
+    IL_00ea:  ldc.i4.1
+    IL_00eb:  add
+    IL_00ec:  stloc.s    CS$7$0002
+    IL_00ee:  ldloc.s    CS$7$0002
+    IL_00f0:  ldloc.s    CS$6$0001
+    IL_00f2:  ldlen
+    IL_00f3:  conv.i4
+    IL_00f4:  clt
+    IL_00f6:  stloc.s    CS$4$0004
+    IL_00f8:  ldloc.s    CS$4$0004
+    IL_00fa:  brtrue     IL_002c
+
+    IL_00ff:  ldloc.0
+    IL_0100:  ldc.i4.0
+    IL_0101:  bgt.s      IL_010f
+
+    IL_0103:  ldloca.s   CS$0$0003
+    IL_0105:  initobj    [PresentationCore]System.Windows.Media.Media3D.Vector3D
+    IL_010b:  ldloc.s    CS$0$0003
+    IL_010d:  br.s       IL_0122
+
+    IL_010f:  ldloc.1
+    IL_0110:  ldarg.1
+    IL_0111:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_0116:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Subtraction(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                   valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_011b:  ldloc.0
+    IL_011c:  conv.r8
+    IL_011d:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Division(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                float64)
+    IL_0122:  ldc.r8     1.e-002
+    IL_012b:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Multiply(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                float64)
+    IL_0130:  stloc.s    rule1_flyTowardsCenter
+    IL_0132:  ldloc.3
+    IL_0133:  stloc.s    rule2_separateFromNearby
+    IL_0135:  ldloc.0
+    IL_0136:  ldc.i4.0
+    IL_0137:  bgt.s      IL_0145
+
+    IL_0139:  ldloca.s   CS$0$0003
+    IL_013b:  initobj    [PresentationCore]System.Windows.Media.Media3D.Vector3D
+    IL_0141:  ldloc.s    CS$0$0003
+    IL_0143:  br.s       IL_0158
+
+    IL_0145:  ldloc.2
+    IL_0146:  ldarg.1
+    IL_0147:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousVelocity()
+    IL_014c:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Subtraction(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                   valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0151:  ldloc.0
+    IL_0152:  conv.r8
+    IL_0153:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Division(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                float64)
+    IL_0158:  ldc.r8     1.e-002
+    IL_0161:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Multiply(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                float64)
+    IL_0166:  stloc.s    rule3_matchVelocities
+    IL_0168:  ldarg.0
+    IL_0169:  ldfld      float64 ParallelBoids.MainWindow::m_rule1Weight
+    IL_016e:  ldloc.s    rule1_flyTowardsCenter
+    IL_0170:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Multiply(float64,
+                                                                                                                                                                valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0175:  ldarg.0
+    IL_0176:  ldfld      float64 ParallelBoids.MainWindow::m_rule2Weight
+    IL_017b:  ldloc.s    rule2_separateFromNearby
+    IL_017d:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Multiply(float64,
+                                                                                                                                                                valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0182:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Addition(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0187:  ldarg.0
+    IL_0188:  ldfld      float64 ParallelBoids.MainWindow::m_rule3Weight
+    IL_018d:  ldloc.s    rule3_matchVelocities
+    IL_018f:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Multiply(float64,
+                                                                                                                                                                valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0194:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Addition(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0199:  stloc.s    CS$1$0000
+    IL_019b:  br.s       IL_019d
+
+    IL_019d:  ldloc.s    CS$1$0000
+    IL_019f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="493" endline="520"><![CDATA[
+  {
+    // Code size       495 (0x1ef)
+    .maxstack  3
+    .locals init ([0] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D v,
+             [1] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D CS$1$0000,
+             [2] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D CS$0$0001,
+             [3] bool CS$4$0002)
+    IL_0000:  nop
+    IL_0001:  ldloca.s   v
+    IL_0003:  initobj    [PresentationCore]System.Windows.Media.Media3D.Vector3D
+    IL_0009:  ldarg.1
+    IL_000a:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_000f:  stloc.2
+    IL_0010:  ldloca.s   CS$0$0001
+    IL_0012:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_X()
+    IL_0017:  ldarg.0
+    IL_0018:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_001d:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_X()
+    IL_0022:  clt
+    IL_0024:  ldc.i4.0
+    IL_0025:  ceq
+    IL_0027:  stloc.3
+    IL_0028:  ldloc.3
+    IL_0029:  brtrue.s   IL_004f
+
+    IL_002b:  ldloca.s   v
+    IL_002d:  ldarg.0
+    IL_002e:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_0033:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_X()
+    IL_0038:  ldarg.1
+    IL_0039:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_003e:  stloc.2
+    IL_003f:  ldloca.s   CS$0$0001
+    IL_0041:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_X()
+    IL_0046:  sub
+    IL_0047:  call       instance void [PresentationCore]System.Windows.Media.Media3D.Vector3D::set_X(float64)
+    IL_004c:  nop
+    IL_004d:  br.s       IL_00ab
+
+    IL_004f:  ldarg.1
+    IL_0050:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_0055:  stloc.2
+    IL_0056:  ldloca.s   CS$0$0001
+    IL_0058:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_X()
+    IL_005d:  ldarg.0
+    IL_005e:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_0063:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_X()
+    IL_0068:  ldarg.0
+    IL_0069:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_006e:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_SizeX()
+    IL_0073:  add
+    IL_0074:  cgt
+    IL_0076:  ldc.i4.0
+    IL_0077:  ceq
+    IL_0079:  stloc.3
+    IL_007a:  ldloc.3
+    IL_007b:  brtrue.s   IL_00ab
+
+    IL_007d:  ldloca.s   v
+    IL_007f:  ldarg.0
+    IL_0080:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_0085:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_X()
+    IL_008a:  ldarg.0
+    IL_008b:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_0090:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_SizeX()
+    IL_0095:  add
+    IL_0096:  ldarg.1
+    IL_0097:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_009c:  stloc.2
+    IL_009d:  ldloca.s   CS$0$0001
+    IL_009f:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_X()
+    IL_00a4:  sub
+    IL_00a5:  call       instance void [PresentationCore]System.Windows.Media.Media3D.Vector3D::set_X(float64)
+    IL_00aa:  nop
+    IL_00ab:  ldarg.1
+    IL_00ac:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_00b1:  stloc.2
+    IL_00b2:  ldloca.s   CS$0$0001
+    IL_00b4:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Y()
+    IL_00b9:  ldarg.0
+    IL_00ba:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_00bf:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_Y()
+    IL_00c4:  clt
+    IL_00c6:  ldc.i4.0
+    IL_00c7:  ceq
+    IL_00c9:  stloc.3
+    IL_00ca:  ldloc.3
+    IL_00cb:  brtrue.s   IL_00dd
+
+    IL_00cd:  ldloca.s   v
+    IL_00cf:  ldarg.0
+    IL_00d0:  ldfld      float64 ParallelBoids.MainWindow::m_speedLimit
+    IL_00d5:  call       instance void [PresentationCore]System.Windows.Media.Media3D.Vector3D::set_Y(float64)
+    IL_00da:  nop
+    IL_00db:  br.s       IL_0139
+
+    IL_00dd:  ldarg.1
+    IL_00de:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_00e3:  stloc.2
+    IL_00e4:  ldloca.s   CS$0$0001
+    IL_00e6:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Y()
+    IL_00eb:  ldarg.0
+    IL_00ec:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_00f1:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_Y()
+    IL_00f6:  ldarg.0
+    IL_00f7:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_00fc:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_SizeY()
+    IL_0101:  add
+    IL_0102:  cgt
+    IL_0104:  ldc.i4.0
+    IL_0105:  ceq
+    IL_0107:  stloc.3
+    IL_0108:  ldloc.3
+    IL_0109:  brtrue.s   IL_0139
+
+    IL_010b:  ldloca.s   v
+    IL_010d:  ldarg.0
+    IL_010e:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_0113:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_Y()
+    IL_0118:  ldarg.0
+    IL_0119:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_011e:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_SizeY()
+    IL_0123:  add
+    IL_0124:  ldarg.1
+    IL_0125:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_012a:  stloc.2
+    IL_012b:  ldloca.s   CS$0$0001
+    IL_012d:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Y()
+    IL_0132:  sub
+    IL_0133:  call       instance void [PresentationCore]System.Windows.Media.Media3D.Vector3D::set_Y(float64)
+    IL_0138:  nop
+    IL_0139:  ldarg.1
+    IL_013a:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_013f:  stloc.2
+    IL_0140:  ldloca.s   CS$0$0001
+    IL_0142:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Z()
+    IL_0147:  ldarg.0
+    IL_0148:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_014d:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_Z()
+    IL_0152:  clt
+    IL_0154:  ldc.i4.0
+    IL_0155:  ceq
+    IL_0157:  stloc.3
+    IL_0158:  ldloc.3
+    IL_0159:  brtrue.s   IL_017f
+
+    IL_015b:  ldloca.s   v
+    IL_015d:  ldarg.0
+    IL_015e:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_0163:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_Z()
+    IL_0168:  ldarg.1
+    IL_0169:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_016e:  stloc.2
+    IL_016f:  ldloca.s   CS$0$0001
+    IL_0171:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Z()
+    IL_0176:  sub
+    IL_0177:  call       instance void [PresentationCore]System.Windows.Media.Media3D.Vector3D::set_Z(float64)
+    IL_017c:  nop
+    IL_017d:  br.s       IL_01db
+
+    IL_017f:  ldarg.1
+    IL_0180:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_0185:  stloc.2
+    IL_0186:  ldloca.s   CS$0$0001
+    IL_0188:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Z()
+    IL_018d:  ldarg.0
+    IL_018e:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_0193:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_Z()
+    IL_0198:  ldarg.0
+    IL_0199:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_019e:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_SizeZ()
+    IL_01a3:  add
+    IL_01a4:  cgt
+    IL_01a6:  ldc.i4.0
+    IL_01a7:  ceq
+    IL_01a9:  stloc.3
+    IL_01aa:  ldloc.3
+    IL_01ab:  brtrue.s   IL_01db
+
+    IL_01ad:  ldloca.s   v
+    IL_01af:  ldarg.0
+    IL_01b0:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_01b5:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_Z()
+    IL_01ba:  ldarg.0
+    IL_01bb:  ldflda     valuetype [PresentationCore]System.Windows.Media.Media3D.Rect3D ParallelBoids.MainWindow::m_aviary
+    IL_01c0:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Rect3D::get_SizeZ()
+    IL_01c5:  add
+    IL_01c6:  ldarg.1
+    IL_01c7:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_01cc:  stloc.2
+    IL_01cd:  ldloca.s   CS$0$0001
+    IL_01cf:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Z()
+    IL_01d4:  sub
+    IL_01d5:  call       instance void [PresentationCore]System.Windows.Media.Media3D.Vector3D::set_Z(float64)
+    IL_01da:  nop
+    IL_01db:  ldloc.0
+    IL_01dc:  ldc.r8     0.20000000000000001
+    IL_01e5:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Multiply(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                float64)
+    IL_01ea:  stloc.1
+    IL_01eb:  br.s       IL_01ed
+
+    IL_01ed:  ldloc.1
+    IL_01ee:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="521" endline="528"><![CDATA[
+  {
+    // Code size       37 (0x25)
+    .maxstack  2
+    .locals init ([0] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.MainWindow::m_home
+    IL_0007:  ldarg.1
+    IL_0008:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_000d:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Subtraction(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                   valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0012:  ldc.r8     1.e-002
+    IL_001b:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Multiply(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                float64)
+    IL_0020:  stloc.0
+    IL_0021:  br.s       IL_0023
+
+    IL_0023:  ldloc.0
+    IL_0024:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="529" endline="538"><![CDATA[
+  {
+    // Code size       38 (0x26)
+    .maxstack  3
+    .locals init ([0] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  ldarga.s   velocity
+    IL_0003:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Length()
+    IL_0008:  ldarg.1
+    IL_0009:  bgt.s      IL_000e
+
+    IL_000b:  ldarg.0
+    IL_000c:  br.s       IL_0021
+
+    IL_000e:  ldarg.0
+    IL_000f:  ldarga.s   velocity
+    IL_0011:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Length()
+    IL_0016:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Division(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                float64)
+    IL_001b:  ldarg.1
+    IL_001c:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Multiply(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                float64)
+    IL_0021:  stloc.0
+    IL_0022:  br.s       IL_0024
+
+    IL_0024:  ldloc.0
+    IL_0025:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\obj\Debug\MainWindow.g.cs" startline="1" endline="1"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       45 (0x2d)
+    .maxstack  3
+    .locals init ([0] class [System]System.Uri resourceLocater,
+             [1] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      bool ParallelBoids.MainWindow::_contentLoaded
+    IL_0007:  ldc.i4.0
+    IL_0008:  ceq
+    IL_000a:  stloc.1
+    IL_000b:  ldloc.1
+    IL_000c:  brtrue.s   IL_0011
+
+    IL_000e:  nop
+    IL_000f:  br.s       IL_002c
+
+    IL_0011:  ldarg.0
+    IL_0012:  ldc.i4.1
+    IL_0013:  stfld      bool ParallelBoids.MainWindow::_contentLoaded
+    IL_0018:  ldstr      "/Boids;component/mainwindow.xaml"
+    IL_001d:  ldc.i4.2
+    IL_001e:  newobj     instance void [System]System.Uri::.ctor(string,
+                                                                 valuetype [System]System.UriKind)
+    IL_0023:  stloc.0
+    IL_0024:  ldarg.0
+    IL_0025:  ldloc.0
+    IL_0026:  call       void [PresentationFramework]System.Windows.Application::LoadComponent(object,
+                                                                                               class [System]System.Uri)
+    IL_002b:  nop
+    IL_002c:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\obj\Debug\MainWindow.g.cs" startline="9" endline="9"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .override [System.Xaml]System.Windows.Markup.IComponentConnector::Connect
+    // Code size       228 (0xe4)
+    .maxstack  4
+    .locals init ([0] int32 CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  stloc.0
+    IL_0003:  ldloc.0
+    IL_0004:  ldc.i4.1
+    IL_0005:  sub
+    IL_0006:  switch     ( 
+                          IL_0020,
+                          IL_00b2,
+                          IL_00c0,
+                          IL_00ce)
+    IL_001b:  br         IL_00dc
+
+    IL_0020:  ldarg.2
+    IL_0021:  castclass  ParallelBoids.MainWindow
+    IL_0026:  ldarg.0
+    IL_0027:  ldftn      instance void ParallelBoids.MainWindow::Window_MouseWheel(object,
+                                                                                   class [PresentationCore]System.Windows.Input.MouseWheelEventArgs)
+    IL_002d:  newobj     instance void [PresentationCore]System.Windows.Input.MouseWheelEventHandler::.ctor(object,
+                                                                                                            native int)
+    IL_0032:  callvirt   instance void [PresentationCore]System.Windows.UIElement::add_MouseWheel(class [PresentationCore]System.Windows.Input.MouseWheelEventHandler)
+    IL_0037:  nop
+    IL_0038:  ldarg.2
+    IL_0039:  castclass  ParallelBoids.MainWindow
+    IL_003e:  ldarg.0
+    IL_003f:  ldftn      instance void ParallelBoids.MainWindow::Window_MouseDoubleClick(object,
+                                                                                         class [PresentationCore]System.Windows.Input.MouseButtonEventArgs)
+    IL_0045:  newobj     instance void [PresentationCore]System.Windows.Input.MouseButtonEventHandler::.ctor(object,
+                                                                                                             native int)
+    IL_004a:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Control::add_MouseDoubleClick(class [PresentationCore]System.Windows.Input.MouseButtonEventHandler)
+    IL_004f:  nop
+    IL_0050:  ldarg.2
+    IL_0051:  castclass  ParallelBoids.MainWindow
+    IL_0056:  ldarg.0
+    IL_0057:  ldftn      instance void ParallelBoids.MainWindow::Window_KeyDown(object,
+                                                                                class [PresentationCore]System.Windows.Input.KeyEventArgs)
+    IL_005d:  newobj     instance void [PresentationCore]System.Windows.Input.KeyEventHandler::.ctor(object,
+                                                                                                     native int)
+    IL_0062:  callvirt   instance void [PresentationCore]System.Windows.UIElement::add_KeyDown(class [PresentationCore]System.Windows.Input.KeyEventHandler)
+    IL_0067:  nop
+    IL_0068:  ldarg.2
+    IL_0069:  castclass  ParallelBoids.MainWindow
+    IL_006e:  ldarg.0
+    IL_006f:  ldftn      instance void ParallelBoids.MainWindow::Window_MouseDown(object,
+                                                                                  class [PresentationCore]System.Windows.Input.MouseButtonEventArgs)
+    IL_0075:  newobj     instance void [PresentationCore]System.Windows.Input.MouseButtonEventHandler::.ctor(object,
+                                                                                                             native int)
+    IL_007a:  callvirt   instance void [PresentationCore]System.Windows.UIElement::add_MouseDown(class [PresentationCore]System.Windows.Input.MouseButtonEventHandler)
+    IL_007f:  nop
+    IL_0080:  ldarg.2
+    IL_0081:  castclass  ParallelBoids.MainWindow
+    IL_0086:  ldarg.0
+    IL_0087:  ldftn      instance void ParallelBoids.MainWindow::Window_MouseMove(object,
+                                                                                  class [PresentationCore]System.Windows.Input.MouseEventArgs)
+    IL_008d:  newobj     instance void [PresentationCore]System.Windows.Input.MouseEventHandler::.ctor(object,
+                                                                                                       native int)
+    IL_0092:  callvirt   instance void [PresentationCore]System.Windows.UIElement::add_MouseMove(class [PresentationCore]System.Windows.Input.MouseEventHandler)
+    IL_0097:  nop
+    IL_0098:  ldarg.2
+    IL_0099:  castclass  ParallelBoids.MainWindow
+    IL_009e:  ldarg.0
+    IL_009f:  ldftn      instance void ParallelBoids.MainWindow::Window_Loaded(object,
+                                                                               class [PresentationCore]System.Windows.RoutedEventArgs)
+    IL_00a5:  newobj     instance void [PresentationCore]System.Windows.RoutedEventHandler::.ctor(object,
+                                                                                                  native int)
+    IL_00aa:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::add_Loaded(class [PresentationCore]System.Windows.RoutedEventHandler)
+    IL_00af:  nop
+    IL_00b0:  br.s       IL_00e3
+
+    IL_00b2:  ldarg.0
+    IL_00b3:  ldarg.2
+    IL_00b4:  castclass  [PresentationFramework]System.Windows.Controls.Viewport3D
+    IL_00b9:  stfld      class [PresentationFramework]System.Windows.Controls.Viewport3D ParallelBoids.MainWindow::viewport3D
+    IL_00be:  br.s       IL_00e3
+
+    IL_00c0:  ldarg.0
+    IL_00c1:  ldarg.2
+    IL_00c2:  castclass  [PresentationCore]System.Windows.Media.Media3D.PerspectiveCamera
+    IL_00c7:  stfld      class [PresentationCore]System.Windows.Media.Media3D.PerspectiveCamera ParallelBoids.MainWindow::camMain
+    IL_00cc:  br.s       IL_00e3
+
+    IL_00ce:  ldarg.0
+    IL_00cf:  ldarg.2
+    IL_00d0:  castclass  [PresentationCore]System.Windows.Media.Media3D.AxisAngleRotation3D
+    IL_00d5:  stfld      class [PresentationCore]System.Windows.Media.Media3D.AxisAngleRotation3D ParallelBoids.MainWindow::myAngleRotation
+    IL_00da:  br.s       IL_00e3
+
+    IL_00dc:  ldarg.0
+    IL_00dd:  ldc.i4.1
+    IL_00de:  stfld      bool ParallelBoids.MainWindow::_contentLoaded
+    IL_00e3:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="125" endline="541"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       13 (0xd)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [mscorlib]System.Threading.AutoResetEvent ParallelBoids.MainWindow::m_renderSignal
+    IL_0006:  callvirt   instance bool [mscorlib]System.Threading.EventWaitHandle::Set()
+    IL_000b:  pop
+    IL_000c:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Boids\Boids_CSharp\MainWindow.xaml.cs" startline="391" endline="541"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       156 (0x9c)
+    .maxstack  3
+    .locals init ([0] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D v1_2_3,
+             [1] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D v4,
+             [2] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D v5,
+             [3] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D tmpPosition,
+             [4] valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D CS$0$0000,
+             [5] bool CS$4$0001)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  call       instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.MainWindow::PrimaryRules_1_2_3(class ParallelBoids.Boid)
+    IL_0008:  stloc.0
+    IL_0009:  ldarg.0
+    IL_000a:  ldfld      float64 ParallelBoids.MainWindow::m_rule4Weight
+    IL_000f:  ldarg.0
+    IL_0010:  ldarg.1
+    IL_0011:  call       instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.MainWindow::Rule4_EncourageStayingWithinAviary(class ParallelBoids.Boid)
+    IL_0016:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Multiply(float64,
+                                                                                                                                                                valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_001b:  stloc.1
+    IL_001c:  ldarg.0
+    IL_001d:  ldfld      float64 ParallelBoids.MainWindow::m_rule5Weight
+    IL_0022:  ldarg.0
+    IL_0023:  ldarg.1
+    IL_0024:  call       instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.MainWindow::Rule5_TendendcyTowardsHome(class ParallelBoids.Boid)
+    IL_0029:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Multiply(float64,
+                                                                                                                                                                valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_002e:  stloc.2
+    IL_002f:  ldarg.1
+    IL_0030:  ldarg.1
+    IL_0031:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousVelocity()
+    IL_0036:  ldloc.0
+    IL_0037:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Addition(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_003c:  ldloc.1
+    IL_003d:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Addition(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0042:  ldloc.2
+    IL_0043:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Addition(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0048:  ldarg.0
+    IL_0049:  ldfld      float64 ParallelBoids.MainWindow::m_speedLimit
+    IL_004e:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.MainWindow::BoundVelocity(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                   float64)
+    IL_0053:  callvirt   instance void ParallelBoids.Boid::set_Velocity(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_0058:  nop
+    IL_0059:  ldarg.1
+    IL_005a:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_Velocity()
+    IL_005f:  stloc.s    CS$0$0000
+    IL_0061:  ldloca.s   CS$0$0000
+    IL_0063:  call       instance void [PresentationCore]System.Windows.Media.Media3D.Vector3D::Normalize()
+    IL_0068:  nop
+    IL_0069:  ldarg.1
+    IL_006a:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_PreviousPosition()
+    IL_006f:  ldarg.1
+    IL_0070:  callvirt   instance valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D ParallelBoids.Boid::get_Velocity()
+    IL_0075:  call       valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D [PresentationCore]System.Windows.Media.Media3D.Vector3D::op_Addition(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D,
+                                                                                                                                                                valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_007a:  stloc.3
+    IL_007b:  ldloca.s   tmpPosition
+    IL_007d:  call       instance float64 [PresentationCore]System.Windows.Media.Media3D.Vector3D::get_Y()
+    IL_0082:  ldc.r8     0.0
+    IL_008b:  clt.un
+    IL_008d:  stloc.s    CS$4$0001
+    IL_008f:  ldloc.s    CS$4$0001
+    IL_0091:  brtrue.s   IL_009b
+
+    IL_0093:  ldarg.1
+    IL_0094:  ldloc.3
+    IL_0095:  callvirt   instance void ParallelBoids.Boid::set_Position(valuetype [PresentationCore]System.Windows.Media.Media3D.Vector3D)
+    IL_009a:  nop
+    IL_009b:  ret
+]]></source>
+</source_elements></project>

@@ -1,0 +1,1241 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Application.Designer.vb" startline="25" endline="31"><![CDATA[
+         Public Sub New()
+             MyBase.New(Global.Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.Windows)
+             Me.IsSingleInstance = false
+             Me.EnableVisualStyles = true
+             Me.SaveMySettingsOnExit = true
+             Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
+         End Sub
+         
+         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
+         Protected Overrides Sub OnCreateMainForm()
+             Me.MainForm = Global.NQueens_VisualBasic.MainForm
+         End Sub
+     End Class
+ End Namespace
+             Me.IsSingleInstance = false
+             Me.EnableVisualStyles = true
+             Me.SaveMySettingsOnExit = true
+             Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
+         End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Application.Designer.vb" startline="32" endline="36"><![CDATA[
+         
+         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
+         Protected Overrides Sub OnCreateMainForm()
+             Me.MainForm = Global.NQueens_VisualBasic.MainForm
+         End Sub
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="18" endline="18"><![CDATA[
+     Private _max As Double = 0
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="7" endline="15"><![CDATA[
+     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+         Try
+             If disposing AndAlso components IsNot Nothing Then
+                 components.Dispose()
+             End If
+         Finally
+             MyBase.Dispose(disposing)
+         End Try
+     End Sub
+ 
+     'Required by the Windows Form Designer
+     Private components As System.ComponentModel.IContainer
+ 
+     'NOTE
+     'It can be modified using the Windows Form Designer.  
+     'Do not modify it using the code editor.
+     <System.Diagnostics.DebuggerStepThrough()> _
+     Private Sub InitializeComponent()
+         Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+         Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+         Me.cbNumQueens = New System.Windows.Forms.ComboBox()
+         Me.progressBar1 = New System.Windows.Forms.ProgressBar()
+         Me.btnSolve = New System.Windows.Forms.Button()
+         Me.chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+         CType(Me.chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+         Me.SuspendLayout()
+         '
+         'cbNumQueens
+         '
+         Me.cbNumQueens.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+         Me.cbNumQueens.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+         Me.cbNumQueens.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+         Me.cbNumQueens.FormattingEnabled = True
+         Me.cbNumQueens.Items.AddRange(New Object() {"8", "9", "10", "11", "12", "13", "14", "15"})
+         Me.cbNumQueens.Location = New System.Drawing.Point(13, 14)
+         Me.cbNumQueens.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+         Me.cbNumQueens.Name = "cbNumQueens"
+         Me.cbNumQueens.Size = New System.Drawing.Size(56, 32)
+         Me.cbNumQueens.TabIndex = 10
+         Me.cbNumQueens.Text = "12"
+         '
+         'progressBar1
+         '
+         Me.progressBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+         Me.progressBar1.Location = New System.Drawing.Point(198, 14)
+         Me.progressBar1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+         Me.progressBar1.Name = "progressBar1"
+         Me.progressBar1.Size = New System.Drawing.Size(529, 35)
+         Me.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
+         Me.progressBar1.TabIndex = 9
+         Me.progressBar1.Visible = False
+         '
+         'btnSolve
+         '
+         Me.btnSolve.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+         Me.btnSolve.Location = New System.Drawing.Point(78, 14)
+         Me.btnSolve.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+         Me.btnSolve.Name = "btnSolve"
+         Me.btnSolve.Size = New System.Drawing.Size(112, 35)
+         Me.btnSolve.TabIndex = 8
+         Me.btnSolve.Text = "Solve"
+         Me.btnSolve.UseVisualStyleBackColor = True
+         '
+         'chart1
+         '
+         Me.chart1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                     Or System.Windows.Forms.AnchorStyles.Left) _
+                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+         Me.chart1.BackColor = System.Drawing.Color.WhiteSmoke
+         Me.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter
+         ChartArea3.AxisX.IsLabelAutoFit = False
+         ChartArea3.AxisX.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+         ChartArea3.AxisY.IsLabelAutoFit = False
+         ChartArea3.AxisY.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+         ChartArea3.AxisY.LabelStyle.Format = "F2"
+         ChartArea3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+         ChartArea3.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft
+         ChartArea3.BackSecondaryColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+         ChartArea3.Name = "ChartArea1"
+         Me.chart1.ChartAreas.Add(ChartArea3)
+         Me.chart1.Location = New System.Drawing.Point(13, 56)
+         Me.chart1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+         Me.chart1.Name = "chart1"
+         Me.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
+         Series3.BackSecondaryColor = System.Drawing.Color.MintCream
+         Series3.ChartArea = "ChartArea1"
+         Series3.CustomProperties = "DrawingStyle=Cylinder, LabelStyle=Top"
+         Series3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+         Series3.Name = "chartSeries1"
+         Series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[String]
+         Series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[Double]
+         Me.chart1.Series.Add(Series3)
+         Me.chart1.Size = New System.Drawing.Size(714, 420)
+         Me.chart1.TabIndex = 7
+         Me.chart1.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault
+         '
+         'MainForm
+         '
+         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+         Me.ClientSize = New System.Drawing.Size(740, 490)
+         Me.Controls.Add(Me.cbNumQueens)
+         Me.Controls.Add(Me.progressBar1)
+         Me.Controls.Add(Me.btnSolve)
+         Me.Controls.Add(Me.chart1)
+         Me.Name = "MainForm"
+         Me.Text = "NQueens"
+         CType(Me.chart1, System.ComponentModel.ISupportInitialize).EndInit()
+         Me.ResumeLayout(False)
+ 
+     End Sub
+     Private WithEvents cbNumQueens As System.Windows.Forms.ComboBox
+     Private WithEvents progressBar1 As System.Windows.Forms.ProgressBar
+     Private WithEvents btnSolve As System.Windows.Forms.Button
+     Private WithEvents chart1 As System.Windows.Forms.DataVisualization.Charting.Chart
+ 
+ End Class
+                 components.Dispose()
+             End If
+         Finally
+             MyBase.Dispose(disposing)
+         End Try
+     End Sub
+ 
+     'Required by the Windows Form Designer
+     Private components As System.ComponentModel.IContainer
+ 
+     'NOTE
+     'It can be modified using the Windows Form Designer.  
+     'Do not modify it using the code editor.
+     <System.Diagnostics.DebuggerStepThrough()> _
+     Private Sub InitializeComponent()
+         Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+         Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+         Me.cbNumQueens = New System.Windows.Forms.ComboBox()
+         Me.progressBar1 = New System.Windows.Forms.ProgressBar()
+         Me.btnSolve = New System.Windows.Forms.Button()
+         Me.chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+         CType(Me.chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+         Me.SuspendLayout()
+         '
+         'cbNumQueens
+         '
+         Me.cbNumQueens.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+         Me.cbNumQueens.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+         Me.cbNumQueens.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+         Me.cbNumQueens.FormattingEnabled = True
+         Me.cbNumQueens.Items.AddRange(New Object() {"8", "9", "10", "11", "12", "13", "14", "15"})
+         Me.cbNumQueens.Location = New System.Drawing.Point(13, 14)
+         Me.cbNumQueens.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+         Me.cbNumQueens.Name = "cbNumQueens"
+         Me.cbNumQueens.Size = New System.Drawing.Size(56, 32)
+         Me.cbNumQueens.TabIndex = 10
+         Me.cbNumQueens.Text = "12"
+         '
+         'progressBar1
+         '
+         Me.progressBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+         Me.progressBar1.Location = New System.Drawing.Point(198, 14)
+         Me.progressBar1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+         Me.progressBar1.Name = "progressBar1"
+         Me.progressBar1.Size = New System.Drawing.Size(529, 35)
+         Me.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
+         Me.progressBar1.TabIndex = 9
+         Me.progressBar1.Visible = False
+         '
+         'btnSolve
+         '
+         Me.btnSolve.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+         Me.btnSolve.Location = New System.Drawing.Point(78, 14)
+         Me.btnSolve.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+         Me.btnSolve.Name = "btnSolve"
+         Me.btnSolve.Size = New System.Drawing.Size(112, 35)
+         Me.btnSolve.TabIndex = 8
+         Me.btnSolve.Text = "Solve"
+         Me.btnSolve.UseVisualStyleBackColor = True
+         '
+         'chart1
+         '
+         Me.chart1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                     Or System.Windows.Forms.AnchorStyles.Left) _
+                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+         Me.chart1.BackColor = System.Drawing.Color.WhiteSmoke
+         Me.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter
+         ChartArea3.AxisX.IsLabelAutoFit = False
+         ChartArea3.AxisX.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+         ChartArea3.AxisY.IsLabelAutoFit = False
+         ChartArea3.AxisY.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+         ChartArea3.AxisY.LabelStyle.Format = "F2"
+         ChartArea3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+         ChartArea3.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft
+         ChartArea3.BackSecondaryColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+         ChartArea3.Name = "ChartArea1"
+         Me.chart1.ChartAreas.Add(ChartArea3)
+         Me.chart1.Location = New System.Drawing.Point(13, 56)
+         Me.chart1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+         Me.chart1.Name = "chart1"
+         Me.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
+         Series3.BackSecondaryColor = System.Drawing.Color.MintCream
+         Series3.ChartArea = "ChartArea1"
+         Series3.CustomProperties = "DrawingStyle=Cylinder, LabelStyle=Top"
+         Series3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+         Series3.Name = "chartSeries1"
+         Series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[String]
+         Series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[Double]
+         Me.chart1.Series.Add(Series3)
+         Me.chart1.Size = New System.Drawing.Size(714, 420)
+         Me.chart1.TabIndex = 7
+         Me.chart1.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault
+         '
+         'MainForm
+         '
+         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+         Me.ClientSize = New System.Drawing.Size(740, 490)
+         Me.Controls.Add(Me.cbNumQueens)
+         Me.Controls.Add(Me.progressBar1)
+         Me.Controls.Add(Me.btnSolve)
+         Me.Controls.Add(Me.chart1)
+         Me.Name = "MainForm"
+         Me.Text = "NQueens"
+         CType(Me.chart1, System.ComponentModel.ISupportInitialize).EndInit()
+         Me.ResumeLayout(False)
+ 
+     End Sub
+     Private WithEvents cbNumQueens As System.Windows.Forms.ComboBox
+     Private WithEvents progressBar1 As System.Windows.Forms.ProgressBar
+     Private WithEvents btnSolve As System.Windows.Forms.Button
+     Private WithEvents chart1 As System.Windows.Forms.DataVisualization.Charting.Chart
+ 
+ End Class
+         Finally
+             MyBase.Dispose(disposing)
+         End Try
+     End Sub
+ 
+     'Required by the Windows Form Designer
+     Private components As System.ComponentModel.IContainer
+ 
+     'NOTE
+     'It can be modified using the Windows Form Designer.  
+     'Do not modify it using the code editor.
+     <System.Diagnostics.DebuggerStepThrough()> _
+     Private Sub InitializeComponent()
+         Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+         Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+         Me.cbNumQueens = New System.Windows.Forms.ComboBox()
+         Me.progressBar1 = New System.Windows.Forms.ProgressBar()
+         Me.btnSolve = New System.Windows.Forms.Button()
+         Me.chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+         CType(Me.chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+         Me.SuspendLayout()
+         '
+         'cbNumQueens
+         '
+         Me.cbNumQueens.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+         Me.cbNumQueens.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+         Me.cbNumQueens.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+         Me.cbNumQueens.FormattingEnabled = True
+         Me.cbNumQueens.Items.AddRange(New Object() {"8", "9", "10", "11", "12", "13", "14", "15"})
+         Me.cbNumQueens.Location = New System.Drawing.Point(13, 14)
+         Me.cbNumQueens.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+         Me.cbNumQueens.Name = "cbNumQueens"
+         Me.cbNumQueens.Size = New System.Drawing.Size(56, 32)
+         Me.cbNumQueens.TabIndex = 10
+         Me.cbNumQueens.Text = "12"
+         '
+         'progressBar1
+         '
+         Me.progressBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+         Me.progressBar1.Location = New System.Drawing.Point(198, 14)
+         Me.progressBar1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+         Me.progressBar1.Name = "progressBar1"
+         Me.progressBar1.Size = New System.Drawing.Size(529, 35)
+         Me.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
+         Me.progressBar1.TabIndex = 9
+         Me.progressBar1.Visible = False
+         '
+         'btnSolve
+         '
+         Me.btnSolve.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+         Me.btnSolve.Location = New System.Drawing.Point(78, 14)
+         Me.btnSolve.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+         Me.btnSolve.Name = "btnSolve"
+         Me.btnSolve.Size = New System.Drawing.Size(112, 35)
+         Me.btnSolve.TabIndex = 8
+         Me.btnSolve.Text = "Solve"
+         Me.btnSolve.UseVisualStyleBackColor = True
+         '
+         'chart1
+         '
+         Me.chart1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                     Or System.Windows.Forms.AnchorStyles.Left) _
+                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+         Me.chart1.BackColor = System.Drawing.Color.WhiteSmoke
+         Me.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter
+         ChartArea3.AxisX.IsLabelAutoFit = False
+         ChartArea3.AxisX.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+         ChartArea3.AxisY.IsLabelAutoFit = False
+         ChartArea3.AxisY.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+         ChartArea3.AxisY.LabelStyle.Format = "F2"
+         ChartArea3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+         ChartArea3.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft
+         ChartArea3.BackSecondaryColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+         ChartArea3.Name = "ChartArea1"
+         Me.chart1.ChartAreas.Add(ChartArea3)
+         Me.chart1.Location = New System.Drawing.Point(13, 56)
+         Me.chart1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+         Me.chart1.Name = "chart1"
+         Me.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
+         Series3.BackSecondaryColor = System.Drawing.Color.MintCream
+         Series3.ChartArea = "ChartArea1"
+         Series3.CustomProperties = "DrawingStyle=Cylinder, LabelStyle=Top"
+         Series3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+         Series3.Name = "chartSeries1"
+         Series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[String]
+         Series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[Double]
+         Me.chart1.Series.Add(Series3)
+         Me.chart1.Size = New System.Drawing.Size(714, 420)
+         Me.chart1.TabIndex = 7
+         Me.chart1.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault
+         '
+         'MainForm
+         '
+         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+         Me.ClientSize = New System.Drawing.Size(740, 490)
+         Me.Controls.Add(Me.cbNumQueens)
+         Me.Controls.Add(Me.progressBar1)
+         Me.Controls.Add(Me.btnSolve)
+         Me.Controls.Add(Me.chart1)
+         Me.Name = "MainForm"
+         Me.Text = "NQueens"
+         CType(Me.chart1, System.ComponentModel.ISupportInitialize).EndInit()
+         Me.ResumeLayout(False)
+ 
+     End Sub
+     Private WithEvents cbNumQueens As System.Windows.Forms.ComboBox
+     Private WithEvents progressBar1 As System.Windows.Forms.ProgressBar
+     Private WithEvents btnSolve As System.Windows.Forms.Button
+     Private WithEvents chart1 As System.Windows.Forms.DataVisualization.Charting.Chart
+ 
+ End Class
+         End Try
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="16" endline="118"><![CDATA[
+ 
+     'Required by the Windows Form Designer
+     Private components As System.ComponentModel.IContainer
+ 
+     'NOTE
+     'It can be modified using the Windows Form Designer.  
+     'Do not modify it using the code editor.
+     <System.Diagnostics.DebuggerStepThrough()> _
+     Private Sub InitializeComponent()
+         Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+         Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+         Me.cbNumQueens = New System.Windows.Forms.ComboBox()
+         Me.progressBar1 = New System.Windows.Forms.ProgressBar()
+         Me.btnSolve = New System.Windows.Forms.Button()
+         Me.chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+         CType(Me.chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+         Me.SuspendLayout()
+         '
+         'cbNumQueens
+         '
+         Me.cbNumQueens.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+         Me.cbNumQueens.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+         Me.cbNumQueens.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+         Me.cbNumQueens.FormattingEnabled = True
+         Me.cbNumQueens.Items.AddRange(New Object() {"8", "9", "10", "11", "12", "13", "14", "15"})
+         Me.cbNumQueens.Location = New System.Drawing.Point(13, 14)
+         Me.cbNumQueens.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+         Me.cbNumQueens.Name = "cbNumQueens"
+         Me.cbNumQueens.Size = New System.Drawing.Size(56, 32)
+         Me.cbNumQueens.TabIndex = 10
+         Me.cbNumQueens.Text = "12"
+         '
+         'progressBar1
+         '
+         Me.progressBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+         Me.progressBar1.Location = New System.Drawing.Point(198, 14)
+         Me.progressBar1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+         Me.progressBar1.Name = "progressBar1"
+         Me.progressBar1.Size = New System.Drawing.Size(529, 35)
+         Me.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
+         Me.progressBar1.TabIndex = 9
+         Me.progressBar1.Visible = False
+         '
+         'btnSolve
+         '
+         Me.btnSolve.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+         Me.btnSolve.Location = New System.Drawing.Point(78, 14)
+         Me.btnSolve.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+         Me.btnSolve.Name = "btnSolve"
+         Me.btnSolve.Size = New System.Drawing.Size(112, 35)
+         Me.btnSolve.TabIndex = 8
+         Me.btnSolve.Text = "Solve"
+         Me.btnSolve.UseVisualStyleBackColor = True
+         '
+         'chart1
+         '
+         Me.chart1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                     Or System.Windows.Forms.AnchorStyles.Left) _
+                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+         Me.chart1.BackColor = System.Drawing.Color.WhiteSmoke
+         Me.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter
+         ChartArea3.AxisX.IsLabelAutoFit = False
+         ChartArea3.AxisX.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+         ChartArea3.AxisY.IsLabelAutoFit = False
+         ChartArea3.AxisY.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+         ChartArea3.AxisY.LabelStyle.Format = "F2"
+         ChartArea3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+         ChartArea3.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft
+         ChartArea3.BackSecondaryColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+         ChartArea3.Name = "ChartArea1"
+         Me.chart1.ChartAreas.Add(ChartArea3)
+         Me.chart1.Location = New System.Drawing.Point(13, 56)
+         Me.chart1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+         Me.chart1.Name = "chart1"
+         Me.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
+         Series3.BackSecondaryColor = System.Drawing.Color.MintCream
+         Series3.ChartArea = "ChartArea1"
+         Series3.CustomProperties = "DrawingStyle=Cylinder, LabelStyle=Top"
+         Series3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+         Series3.Name = "chartSeries1"
+         Series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[String]
+         Series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[Double]
+         Me.chart1.Series.Add(Series3)
+         Me.chart1.Size = New System.Drawing.Size(714, 420)
+         Me.chart1.TabIndex = 7
+         Me.chart1.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault
+         '
+         'MainForm
+         '
+         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+         Me.ClientSize = New System.Drawing.Size(740, 490)
+         Me.Controls.Add(Me.cbNumQueens)
+         Me.Controls.Add(Me.progressBar1)
+         Me.Controls.Add(Me.btnSolve)
+         Me.Controls.Add(Me.chart1)
+         Me.Name = "MainForm"
+         Me.Text = "NQueens"
+         CType(Me.chart1, System.ComponentModel.ISupportInitialize).EndInit()
+         Me.ResumeLayout(False)
+ 
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.vb" startline="20" endline="23"><![CDATA[
+     Private Sub MainForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+         _uiScheduler = TaskScheduler.FromCurrentSynchronizationContext()
+         SetupPoints()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.vb" startline="24" endline="32"><![CDATA[
+ 
+     Private Sub SetupPoints()
+         _serial = chart1.Series(0).Points(chart1.Series(0).Points.AddXY("Serial", 0.0))
+         _parallel = chart1.Series(0).Points(chart1.Series(0).Points.AddXY("Parallel", 0.0))
+         chart1.ChartAreas(0).AxisY.Minimum = 0.0
+         chart1.ChartAreas(0).AxisY.Maximum = 10.0
+         ClearPointValues()
+         Invalidate()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.vb" startline="33" endline="45"><![CDATA[
+ 
+     Private Sub ClearPointValues()
+         For Each Point In New DataPoint() {_serial, _parallel}
+             With Point
+                 .SetValueY(0)
+                 .ToolTip = ""
+                 .Label = ""
+                 .Font = New System.Drawing.Font(Point.Font, System.Drawing.FontStyle.Bold)
+             End With
+ 
+         Next
+         chart1.Invalidate()
+     End Sub
+ 
+ 
+     Private Sub btnSolve_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSolve.Click
+         Dim numQueens = 0
+         If Int32.TryParse(cbNumQueens.Text, numQueens) = False Then Return
+ 
+         btnSolve.Enabled = False
+         progressBar1.Visible = True
+ 
+         ClearPointValues()
+         _max = 0
+ 
+         Task.Factory.StartNew(Sub()
+                                   Dim elapsed As TimeSpan
+ 
+                                   elapsed = Time(Sub()
+                                                      NQueensSolver.Sequential(numQueens)
+                                                  End Sub)
+                                   SetPoint(_serial, elapsed.TotalSeconds)
+ 
+                                   elapsed = Time(Sub()
+                                                      NQueensSolver.Parallel(numQueens)
+                                                  End Sub)
+                                   SetPoint(_parallel, elapsed.TotalSeconds)
+                               End Sub
+         ).ContinueWith(Sub(t)
+                            progressBar1.Visible = False
+                            btnSolve.Enabled = True
+                            If t.IsFaulted Then  MessageBox.Show(t.Exception.ToString())
+                        End Sub, _uiScheduler)
+     End Sub
+ 
+ 
+     Private Sub SetPoint(ByVal point As DataPoint, ByVal seconds As Double)
+         Task.Factory.StartNew(Sub()
+                                   If seconds > _max Then
+                                       _max = seconds
+                                       chart1.ChartAreas(0).AxisY.Maximum = _max * 1.1
+                                   End If
+                                   point.SetValueY(seconds)
+                                   point.ToolTip = seconds.ToString("F3")
+                                   point.Label = String.Format("{0
+                                   chart1.Invalidate()
+                               End Sub, CancellationToken.None, TaskCreationOptions.None, _uiScheduler)
+     End Sub
+ 
+     Private Shared Function Time(ByVal action As Action) As TimeSpan
+         Dim sw = Stopwatch.StartNew()
+         action()
+         Return sw.Elapsed
+     End Function
+ End Class
+             With Point
+                 .SetValueY(0)
+                 .ToolTip = ""
+                 .Label = ""
+                 .Font = New System.Drawing.Font(Point.Font, System.Drawing.FontStyle.Bold)
+             End With
+ 
+         Next
+         chart1.Invalidate()
+     End Sub
+ 
+ 
+     Private Sub btnSolve_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSolve.Click
+         Dim numQueens = 0
+         If Int32.TryParse(cbNumQueens.Text, numQueens) = False Then Return
+ 
+         btnSolve.Enabled = False
+         progressBar1.Visible = True
+ 
+         ClearPointValues()
+         _max = 0
+ 
+         Task.Factory.StartNew(Sub()
+                                   Dim elapsed As TimeSpan
+ 
+                                   elapsed = Time(Sub()
+                                                      NQueensSolver.Sequential(numQueens)
+                                                  End Sub)
+                                   SetPoint(_serial, elapsed.TotalSeconds)
+ 
+                                   elapsed = Time(Sub()
+                                                      NQueensSolver.Parallel(numQueens)
+                                                  End Sub)
+                                   SetPoint(_parallel, elapsed.TotalSeconds)
+                               End Sub
+         ).ContinueWith(Sub(t)
+                            progressBar1.Visible = False
+                            btnSolve.Enabled = True
+                            If t.IsFaulted Then  MessageBox.Show(t.Exception.ToString())
+                        End Sub, _uiScheduler)
+     End Sub
+ 
+ 
+     Private Sub SetPoint(ByVal point As DataPoint, ByVal seconds As Double)
+         Task.Factory.StartNew(Sub()
+                                   If seconds > _max Then
+                                       _max = seconds
+                                       chart1.ChartAreas(0).AxisY.Maximum = _max * 1.1
+                                   End If
+                                   point.SetValueY(seconds)
+                                   point.ToolTip = seconds.ToString("F3")
+                                   point.Label = String.Format("{0
+                                   chart1.Invalidate()
+                               End Sub, CancellationToken.None, TaskCreationOptions.None, _uiScheduler)
+     End Sub
+ 
+     Private Shared Function Time(ByVal action As Action) As TimeSpan
+         Dim sw = Stopwatch.StartNew()
+         action()
+         Return sw.Elapsed
+     End Function
+ End Class
+         Next
+         chart1.Invalidate()
+     End Sub
+ 
+ 
+     Private Sub btnSolve_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSolve.Click
+         Dim numQueens = 0
+         If Int32.TryParse(cbNumQueens.Text, numQueens) = False Then Return
+ 
+         btnSolve.Enabled = False
+         progressBar1.Visible = True
+ 
+         ClearPointValues()
+         _max = 0
+ 
+         Task.Factory.StartNew(Sub()
+                                   Dim elapsed As TimeSpan
+ 
+                                   elapsed = Time(Sub()
+                                                      NQueensSolver.Sequential(numQueens)
+                                                  End Sub)
+                                   SetPoint(_serial, elapsed.TotalSeconds)
+ 
+                                   elapsed = Time(Sub()
+                                                      NQueensSolver.Parallel(numQueens)
+                                                  End Sub)
+                                   SetPoint(_parallel, elapsed.TotalSeconds)
+                               End Sub
+         ).ContinueWith(Sub(t)
+                            progressBar1.Visible = False
+                            btnSolve.Enabled = True
+                            If t.IsFaulted Then  MessageBox.Show(t.Exception.ToString())
+                        End Sub, _uiScheduler)
+     End Sub
+ 
+ 
+     Private Sub SetPoint(ByVal point As DataPoint, ByVal seconds As Double)
+         Task.Factory.StartNew(Sub()
+                                   If seconds > _max Then
+                                       _max = seconds
+                                       chart1.ChartAreas(0).AxisY.Maximum = _max * 1.1
+                                   End If
+                                   point.SetValueY(seconds)
+                                   point.ToolTip = seconds.ToString("F3")
+                                   point.Label = String.Format("{0
+                                   chart1.Invalidate()
+                               End Sub, CancellationToken.None, TaskCreationOptions.None, _uiScheduler)
+     End Sub
+ 
+     Private Shared Function Time(ByVal action As Action) As TimeSpan
+         Dim sw = Stopwatch.StartNew()
+         action()
+         Return sw.Elapsed
+     End Function
+ End Class
+         chart1.Invalidate()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.vb" startline="46" endline="76"><![CDATA[
+ 
+ 
+     Private Sub btnSolve_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSolve.Click
+         Dim numQueens = 0
+         If Int32.TryParse(cbNumQueens.Text, numQueens) = False Then Return
+ 
+         btnSolve.Enabled = False
+         progressBar1.Visible = True
+ 
+         ClearPointValues()
+         _max = 0
+ 
+         Task.Factory.StartNew(Sub()
+                                   Dim elapsed As TimeSpan
+ 
+                                   elapsed = Time(Sub()
+                                                      NQueensSolver.Sequential(numQueens)
+                                                  End Sub)
+                                   SetPoint(_serial, elapsed.TotalSeconds)
+ 
+                                   elapsed = Time(Sub()
+                                                      NQueensSolver.Parallel(numQueens)
+                                                  End Sub)
+                                   SetPoint(_parallel, elapsed.TotalSeconds)
+                               End Sub
+         ).ContinueWith(Sub(t)
+                            progressBar1.Visible = False
+                            btnSolve.Enabled = True
+                            If t.IsFaulted Then  MessageBox.Show(t.Exception.ToString())
+                        End Sub, _uiScheduler)
+     End Sub
+ 
+ 
+     Private Sub SetPoint(ByVal point As DataPoint, ByVal seconds As Double)
+         Task.Factory.StartNew(Sub()
+                                   If seconds > _max Then
+                                       _max = seconds
+                                       chart1.ChartAreas(0).AxisY.Maximum = _max * 1.1
+                                   End If
+                                   point.SetValueY(seconds)
+                                   point.ToolTip = seconds.ToString("F3")
+                                   point.Label = String.Format("{0
+                                   chart1.Invalidate()
+                               End Sub, CancellationToken.None, TaskCreationOptions.None, _uiScheduler)
+     End Sub
+ 
+     Private Shared Function Time(ByVal action As Action) As TimeSpan
+         Dim sw = Stopwatch.StartNew()
+         action()
+         Return sw.Elapsed
+     End Function
+ End Class
+         Dim numQueens = 0
+         If Int32.TryParse(cbNumQueens.Text, numQueens) = False Then Return
+ 
+         btnSolve.Enabled = False
+         progressBar1.Visible = True
+ 
+         ClearPointValues()
+         _max = 0
+ 
+         Task.Factory.StartNew(Sub()
+                                   Dim elapsed As TimeSpan
+ 
+                                   elapsed = Time(Sub()
+                                                      NQueensSolver.Sequential(numQueens)
+                                                  End Sub)
+                                   SetPoint(_serial, elapsed.TotalSeconds)
+ 
+                                   elapsed = Time(Sub()
+                                                      NQueensSolver.Parallel(numQueens)
+                                                  End Sub)
+                                   SetPoint(_parallel, elapsed.TotalSeconds)
+                               End Sub
+         ).ContinueWith(Sub(t)
+                            progressBar1.Visible = False
+                            btnSolve.Enabled = True
+                            If t.IsFaulted Then  MessageBox.Show(t.Exception.ToString())
+                        End Sub, _uiScheduler)
+     End Sub
+ 
+ 
+     Private Sub SetPoint(ByVal point As DataPoint, ByVal seconds As Double)
+         Task.Factory.StartNew(Sub()
+                                   If seconds > _max Then
+                                       _max = seconds
+                                       chart1.ChartAreas(0).AxisY.Maximum = _max * 1.1
+                                   End If
+                                   point.SetValueY(seconds)
+                                   point.ToolTip = seconds.ToString("F3")
+                                   point.Label = String.Format("{0
+                                   chart1.Invalidate()
+                               End Sub, CancellationToken.None, TaskCreationOptions.None, _uiScheduler)
+     End Sub
+ 
+     Private Shared Function Time(ByVal action As Action) As TimeSpan
+         Dim sw = Stopwatch.StartNew()
+         action()
+         Return sw.Elapsed
+     End Function
+ End Class
+         If Int32.TryParse(cbNumQueens.Text, numQueens) = False Then Return
+ 
+         btnSolve.Enabled = False
+         progressBar1.Visible = True
+ 
+         ClearPointValues()
+         _max = 0
+ 
+         Task.Factory.StartNew(Sub()
+                                   Dim elapsed As TimeSpan
+ 
+                                   elapsed = Time(Sub()
+                                                      NQueensSolver.Sequential(numQueens)
+                                                  End Sub)
+                                   SetPoint(_serial, elapsed.TotalSeconds)
+ 
+                                   elapsed = Time(Sub()
+                                                      NQueensSolver.Parallel(numQueens)
+                                                  End Sub)
+                                   SetPoint(_parallel, elapsed.TotalSeconds)
+                               End Sub
+         ).ContinueWith(Sub(t)
+                            progressBar1.Visible = False
+                            btnSolve.Enabled = True
+                            If t.IsFaulted Then  MessageBox.Show(t.Exception.ToString())
+                        End Sub, _uiScheduler)
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.vb" startline="77" endline="90"><![CDATA[
+ 
+ 
+     Private Sub SetPoint(ByVal point As DataPoint, ByVal seconds As Double)
+         Task.Factory.StartNew(Sub()
+                                   If seconds > _max Then
+                                       _max = seconds
+                                       chart1.ChartAreas(0).AxisY.Maximum = _max * 1.1
+                                   End If
+                                   point.SetValueY(seconds)
+                                   point.ToolTip = seconds.ToString("F3")
+                                   point.Label = String.Format("{0
+                                   chart1.Invalidate()
+                               End Sub, CancellationToken.None, TaskCreationOptions.None, _uiScheduler)
+     End Sub
+ 
+     Private Shared Function Time(ByVal action As Action) As TimeSpan
+         Dim sw = Stopwatch.StartNew()
+         action()
+         Return sw.Elapsed
+     End Function
+ End Class
+         Task.Factory.StartNew(Sub()
+                                   If seconds > _max Then
+                                       _max = seconds
+                                       chart1.ChartAreas(0).AxisY.Maximum = _max * 1.1
+                                   End If
+                                   point.SetValueY(seconds)
+                                   point.ToolTip = seconds.ToString("F3")
+                                   point.Label = String.Format("{0
+                                   chart1.Invalidate()
+                               End Sub, CancellationToken.None, TaskCreationOptions.None, _uiScheduler)
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.vb" startline="91" endline="96"><![CDATA[
+ 
+     Private Shared Function Time(ByVal action As Action) As TimeSpan
+         Dim sw = Stopwatch.StartNew()
+         action()
+         Return sw.Elapsed
+     End Function
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.vb" startline="71" endline="75"><![CDATA[
+         ).ContinueWith(Sub(t)
+                            progressBar1.Visible = False
+                            btnSolve.Enabled = True
+                            If t.IsFaulted Then  MessageBox.Show(t.Exception.ToString())
+                        End Sub, _uiScheduler)
+     End Sub
+ 
+ 
+     Private Sub SetPoint(ByVal point As DataPoint, ByVal seconds As Double)
+         Task.Factory.StartNew(Sub()
+                                   If seconds > _max Then
+                                       _max = seconds
+                                       chart1.ChartAreas(0).AxisY.Maximum = _max * 1.1
+                                   End If
+                                   point.SetValueY(seconds)
+                                   point.ToolTip = seconds.ToString("F3")
+                                   point.Label = String.Format("{0
+                                   chart1.Invalidate()
+                               End Sub, CancellationToken.None, TaskCreationOptions.None, _uiScheduler)
+     End Sub
+ 
+     Private Shared Function Time(ByVal action As Action) As TimeSpan
+         Dim sw = Stopwatch.StartNew()
+         action()
+         Return sw.Elapsed
+     End Function
+ End Class
+                            If t.IsFaulted Then  MessageBox.Show(t.Exception.ToString())
+                        End Sub, _uiScheduler)
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Resources.Designer.vb" startline="39" endline="45"><![CDATA[
+             Get
+                 If Object.ReferenceEquals(resourceMan, Nothing) Then
+                     Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("NQueens_VisualBasic.Resources", GetType(Resources).Assembly)
+                     resourceMan = temp
+                 End If
+                 Return resourceMan
+             End Get
+         End Property
+ 
+         '''<summary>
+         '''  Overrides the current thread's CurrentUICulture property for all
+         '''  resource lookups using this strongly typed resource class.
+         '''</summary>
+         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+         Friend Property Culture() As Global.System.Globalization.CultureInfo
+             Get
+                 Return resourceCulture
+             End Get
+             Set(ByVal value As Global.System.Globalization.CultureInfo)
+                 resourceCulture = value
+             End Set
+         End Property
+     End Module
+ End Namespace
+                     Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("NQueens_VisualBasic.Resources", GetType(Resources).Assembly)
+                     resourceMan = temp
+                 End If
+                 Return resourceMan
+             End Get
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Resources.Designer.vb" startline="46" endline="56"><![CDATA[
+         End Property
+ 
+         '''<summary>
+         '''  Overrides the current thread's CurrentUICulture property for all
+         '''  resource lookups using this strongly typed resource class.
+         '''</summary>
+         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+         Friend Property Culture() As Global.System.Globalization.CultureInfo
+             Get
+                 Return resourceCulture
+             End Get
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Resources.Designer.vb" startline="57" endline="59"><![CDATA[
+             Set(ByVal value As Global.System.Globalization.CultureInfo)
+                 resourceCulture = value
+             End Set
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Settings.Designer.vb" startline="23" endline="29"><![CDATA[
+         Private Shared defaultInstance As MySettings = CType(Global.System.Configuration.ApplicationSettingsBase.Synchronized(New MySettings), MySettings)
+ 
+ #Region "My.Settings Auto-Save Functionality"
+ #If _MyType = "WindowsForms" Then
+         Private Shared addedHandler As Boolean
+ 
+         Private Shared addedHandlerLockObject As New Object
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Settings.Designer.vb" startline="30" endline="36"><![CDATA[
+ 
+         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+         Private Shared Sub AutoSaveSettings(ByVal sender As Global.System.Object, ByVal e As Global.System.EventArgs)
+             If My.Application.SaveMySettingsOnExit Then
+                 My.Settings.Save()
+             End If
+         End Sub
+ #End If
+ #End Region
+ 
+         Public Shared ReadOnly Property [Default]() As MySettings
+             Get
+ 
+ #If _MyType = "WindowsForms" Then
+                    If Not addedHandler Then
+                         SyncLock addedHandlerLockObject
+                             If Not addedHandler Then
+                                 AddHandler My.Application.Shutdown, AddressOf AutoSaveSettings
+                                 addedHandler = True
+                             End If
+                         End SyncLock
+                     End If
+ #End If
+                 Return defaultInstance
+             End Get
+         End Property
+     End Class
+ End Namespace
+ 
+ Namespace My
+     
+     <Global.Microsoft.VisualBasic.HideModuleNameAttribute(),  _
+      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
+     Friend Module MySettingsProperty
+         
+         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
+         Friend ReadOnly Property Settings() As Global.NQueens_VisualBasic.My.MySettings
+             Get
+                 Return Global.NQueens_VisualBasic.My.MySettings.Default
+             End Get
+         End Property
+     End Module
+ End Namespace
+                 My.Settings.Save()
+             End If
+         End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Settings.Designer.vb" startline="37" endline="54"><![CDATA[
+ #End If
+ #End Region
+ 
+         Public Shared ReadOnly Property [Default]() As MySettings
+             Get
+ 
+ #If _MyType = "WindowsForms" Then
+                    If Not addedHandler Then
+                         SyncLock addedHandlerLockObject
+                             If Not addedHandler Then
+                                 AddHandler My.Application.Shutdown, AddressOf AutoSaveSettings
+                                 addedHandler = True
+                             End If
+                         End SyncLock
+                     End If
+ #End If
+                 Return defaultInstance
+             End Get
+         End Property
+     End Class
+ End Namespace
+ 
+ Namespace My
+     
+     <Global.Microsoft.VisualBasic.HideModuleNameAttribute(),  _
+      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
+     Friend Module MySettingsProperty
+         
+         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
+         Friend ReadOnly Property Settings() As Global.NQueens_VisualBasic.My.MySettings
+             Get
+                 Return Global.NQueens_VisualBasic.My.MySettings.Default
+             End Get
+         End Property
+     End Module
+ End Namespace
+                         SyncLock addedHandlerLockObject
+                             If Not addedHandler Then
+                                 AddHandler My.Application.Shutdown, AddressOf AutoSaveSettings
+                                 addedHandler = True
+                             End If
+                         End SyncLock
+                     End If
+ #End If
+                 Return defaultInstance
+             End Get
+         End Property
+     End Class
+ End Namespace
+ 
+ Namespace My
+     
+     <Global.Microsoft.VisualBasic.HideModuleNameAttribute(),  _
+      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
+     Friend Module MySettingsProperty
+         
+         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
+         Friend ReadOnly Property Settings() As Global.NQueens_VisualBasic.My.MySettings
+             Get
+                 Return Global.NQueens_VisualBasic.My.MySettings.Default
+             End Get
+         End Property
+     End Module
+ End Namespace
+                                 AddHandler My.Application.Shutdown, AddressOf AutoSaveSettings
+                                 addedHandler = True
+                             End If
+                         End SyncLock
+                     End If
+ #End If
+                 Return defaultInstance
+             End Get
+         End Property
+     End Class
+ End Namespace
+ 
+ Namespace My
+     
+     <Global.Microsoft.VisualBasic.HideModuleNameAttribute(),  _
+      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
+     Friend Module MySettingsProperty
+         
+         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
+         Friend ReadOnly Property Settings() As Global.NQueens_VisualBasic.My.MySettings
+             Get
+                 Return Global.NQueens_VisualBasic.My.MySettings.Default
+             End Get
+         End Property
+     End Module
+ End Namespace
+                     End If
+ #End If
+                 Return defaultInstance
+             End Get
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Settings.Designer.vb" startline="55" endline="70"><![CDATA[
+         End Property
+     End Class
+ End Namespace
+ 
+ Namespace My
+     
+     <Global.Microsoft.VisualBasic.HideModuleNameAttribute(),  _
+      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
+     Friend Module MySettingsProperty
+         
+         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
+         Friend ReadOnly Property Settings() As Global.NQueens_VisualBasic.My.MySettings
+             Get
+                 Return Global.NQueens_VisualBasic.My.MySettings.Default
+             End Get
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\NQueens.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\NQueens.vb" startline="18" endline="20"><![CDATA[
+     Public Shared Function Sequential(ByVal n As Integer) As Integer
+         Return New NQueensState(n).CountSolutions()
+     End Function
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\NQueens.vb" startline="21" endline="31"><![CDATA[
+ 
+     Public Shared Function Parallel(ByVal n As Integer) As Integer
+         Dim statesAfterOneMove(n - 1) As NQueensState
+         For row = 0 To n - 1
+             statesAfterOneMove(row) = New NQueensState(n)
+             statesAfterOneMove(row).PlaceQueen(row)
+         Next
+ 
+         Return (From q In statesAfterOneMove.AsParallel()
+                 Select q.CountSolutions()).Sum()
+     End Function
+ 
+     Class NQueensState
+         Private m_rows() As Boolean        ' m_rows[i] = does row i contain a queen?
+         Private m_fwDiagonals() As Boolean ' m_fwDiagonals[i] = does forward diagonal i contain a queen?
+         Private m_bwDiagonals() As Boolean ' m_bwDiagonals[i] = does backward diagonal i contain a queen?
+         Private m_size As Integer ' Size of the chessboard
+         Private m_col As Integer   ' Column with the smallest index that does not contain a queen, 0 <= m_col < m_size
+ 
+         Public Sub New(ByVal size As Integer)
+             m_size = size
+             ReDim m_rows(size - 1)
+             ReDim m_fwDiagonals(2 * size - 2)
+             ReDim m_bwDiagonals(2 * size - 2)
+             m_col = 0
+         End Sub
+ 
+         Public Function CountSolutions() As Integer
+             If m_col = m_size Then Return 1
+             Dim answer = 0
+             For row = 0 To m_size - 1
+                 If PlaceQueen(row) Then
+                     answer = answer + CountSolutions()
+                     RemoveQueen(row)
+                 End If
+             Next
+             Return answer
+         End Function
+ 
+         Public Function PlaceQueen(ByVal row As Integer) As Boolean
+             If Not m_rows(row) AndAlso Not m_fwDiagonals(row + m_col) AndAlso Not m_bwDiagonals(row - m_col + m_size - 1) Then
+                 m_rows(row) = True
+                 m_fwDiagonals(row + m_col) = True
+                 m_bwDiagonals(row - m_col + m_size - 1) = True
+                 m_col = m_col + 1
+                 Return True
+             End If
+             Return False
+         End Function
+ 
+         Private Sub RemoveQueen(ByVal row As Integer)
+             m_col = m_col - 1
+             m_rows(row) = False
+             m_fwDiagonals(row + m_col) = False
+             m_bwDiagonals(row - m_col + m_size - 1) = False
+         End Sub
+     End Class
+ End Class
+         Return (From q In statesAfterOneMove.AsParallel()
+                 Select q.CountSolutions()).Sum()
+     End Function
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\NQueens.vb" startline="30" endline="30"><![CDATA[
+                 Select q.CountSolutions()).Sum()
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\NQueens.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\NQueens.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\NQueens.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\NQueens.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+</source_elements></project>

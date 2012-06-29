@@ -1,0 +1,1564 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\mandelbrotposition.h" startline="18" endline="24"><![CDATA[
+  {
+    // Code size       76 (0x4c)
+    .maxstack  2
+    .locals ([0] valuetype MandelbrotPosition V_0,
+             [1] valuetype MandelbrotPosition pos)
+    IL_0000:  ldloca.s   pos
+    IL_0002:  initobj    MandelbrotPosition
+    IL_0008:  ldloca.s   pos
+    IL_000a:  ldc.r8     2.8999999999999999
+    IL_0013:  stfld      float64 MandelbrotPosition::Width
+    IL_0018:  ldloca.s   pos
+    IL_001a:  ldc.r8     2.27
+    IL_0023:  stfld      float64 MandelbrotPosition::Height
+    IL_0028:  ldloca.s   pos
+    IL_002a:  ldc.r8     -0.75
+    IL_0033:  stfld      float64 MandelbrotPosition::CenterX
+    IL_0038:  ldloca.s   pos
+    IL_003a:  ldc.r8     6.0000000000000001e-003
+    IL_0043:  stfld      float64 MandelbrotPosition::CenterY
+    IL_0048:  ldloc.1
+    IL_0049:  stloc.0
+    IL_004a:  ldloc.0
+    IL_004b:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\mandelbrotgenerator.h" startline="21" endline="47"><![CDATA[
+  {
+    // Code size       224 (0xe0)
+    .maxstack  5
+    .locals ([0] class MandelbrotGenerator/RenderImageData rrd,
+             [1] int32 row,
+             [2] class [System.Drawing]System.Drawing.Bitmap tempBitmap,
+             [3] class [System.Drawing]System.Drawing.Bitmap bitmap,
+             [4] class [mscorlib]System.Threading.Tasks.ParallelOptions options,
+             [5] class [System.Drawing]System.Drawing.Bitmap V_5,
+             [6] class [System.Drawing]System.Drawing.Bitmap V_6,
+             [7] valuetype [System.Drawing]System.Drawing.Rectangle V_7,
+             [8] class [System.Drawing]System.Drawing.Bitmap modopt([mscorlib]System.Runtime.CompilerServices.IsConst) V_8,
+             [9] native int V_9,
+             [10] uint8& pinned modopt([mscorlib]System.Runtime.CompilerServices.IsExplicitlyDereferenced) scan0,
+             [11] valuetype [mscorlib]System.Threading.Tasks.ParallelLoopResult V_11)
+    IL_0000:  ldnull
+    IL_0001:  stloc.0
+    IL_0002:  ldnull
+    IL_0003:  stloc.s    options
+    IL_0005:  ldnull
+    IL_0006:  stloc.2
+    IL_0007:  ldnull
+    IL_0008:  stloc.3
+    IL_0009:  ldarg.0
+    IL_000a:  ldarg.1
+    IL_000b:  ldarg.2
+    IL_000c:  newobj     instance void MandelbrotGenerator/RenderImageData::.ctor(valuetype MandelbrotPosition,
+                                                                                  int32,
+                                                                                  int32)
+    IL_0011:  stloc.0
+    IL_0012:  ldarg.s    parallel
+    IL_0014:  brfalse.s  IL_0043
+
+    IL_0016:  newobj     instance void [mscorlib]System.Threading.Tasks.ParallelOptions::.ctor()
+    IL_001b:  stloc.s    options
+    IL_001d:  ldloc.s    options
+    IL_001f:  ldarg.3
+    IL_0020:  call       instance void [mscorlib]System.Threading.Tasks.ParallelOptions::set_CancellationToken(valuetype [mscorlib]System.Threading.CancellationToken)
+    IL_0025:  ldc.i4.0
+    IL_0026:  ldloc.0
+    IL_0027:  ldfld      int32 MandelbrotGenerator/RenderImageData::ImageHeight
+    IL_002c:  ldloc.s    options
+    IL_002e:  ldloc.0
+    IL_002f:  ldftn      instance void MandelbrotGenerator/RenderImageData::RenderRow(int32)
+    IL_0035:  newobj     instance void class [mscorlib]System.Action`1<int32>::.ctor(object,
+                                                                                     native int)
+    IL_003a:  call       valuetype [mscorlib]System.Threading.Tasks.ParallelLoopResult [mscorlib]System.Threading.Tasks.Parallel::For(int32,
+                                                                                                                                      int32,
+                                                                                                                                      class [mscorlib]System.Threading.Tasks.ParallelOptions,
+                                                                                                                                      class [mscorlib]System.Action`1<int32>)
+    IL_003f:  stloc.s    V_11
+    IL_0041:  br.s       IL_0064
+
+    IL_0043:  ldc.i4.0
+    IL_0044:  stloc.1
+    IL_0045:  br.s       IL_004b
+
+    IL_0047:  ldloc.1
+    IL_0048:  ldc.i4.1
+    IL_0049:  add
+    IL_004a:  stloc.1
+    IL_004b:  ldloc.1
+    IL_004c:  ldloc.0
+    IL_004d:  ldfld      int32 MandelbrotGenerator/RenderImageData::ImageHeight
+    IL_0052:  bge.s      IL_0064
+
+    IL_0054:  ldarga.s   cancellationToken
+    IL_0056:  call       instance void [mscorlib]System.Threading.CancellationToken::ThrowIfCancellationRequested()
+    IL_005b:  ldloc.0
+    IL_005c:  ldloc.1
+    IL_005d:  call       instance void MandelbrotGenerator/RenderImageData::RenderRow(int32)
+    IL_0062:  br.s       IL_0047
+
+    IL_0064:  ldloc.0
+    IL_0065:  ldfld      uint8[] MandelbrotGenerator/RenderImageData::Data
+    IL_006a:  ldc.i4.0
+    IL_006b:  ldelema    [mscorlib]System.Byte
+    IL_0070:  stloc.s    scan0
+    IL_0072:  ldloc.s    scan0
+    IL_0074:  call       native int [mscorlib]System.IntPtr::op_Explicit(void*)
+    IL_0079:  stloc.s    V_9
+    IL_007b:  ldloc.0
+    IL_007c:  ldfld      int32 MandelbrotGenerator/RenderImageData::ImageWidth
+    IL_0081:  ldloc.0
+    IL_0082:  ldfld      int32 MandelbrotGenerator/RenderImageData::ImageHeight
+    IL_0087:  ldloc.0
+    IL_0088:  ldfld      int32 MandelbrotGenerator/RenderImageData::ImageWidth
+    IL_008d:  ldc.i4     0x30803
+    IL_0092:  ldloc.s    V_9
+    IL_0094:  newobj     instance void [System.Drawing]System.Drawing.Bitmap::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    valuetype [System.Drawing]System.Drawing.Imaging.PixelFormat,
+                                                                                    native int)
+    IL_0099:  stloc.s    V_8
+    .try
+    {
+      IL_009b:  ldloc.s    V_8
+      IL_009d:  stloc.2
+      IL_009e:  ldloca.s   V_7
+      IL_00a0:  ldc.i4.0
+      IL_00a1:  ldc.i4.0
+      IL_00a2:  ldloc.0
+      IL_00a3:  ldfld      int32 MandelbrotGenerator/RenderImageData::ImageWidth
+      IL_00a8:  ldloc.0
+      IL_00a9:  ldfld      int32 MandelbrotGenerator/RenderImageData::ImageHeight
+      IL_00ae:  call       instance void [System.Drawing]System.Drawing.Rectangle::.ctor(int32,
+                                                                                         int32,
+                                                                                         int32,
+                                                                                         int32)
+      IL_00b3:  ldloc.2
+      IL_00b4:  ldloc.s    V_7
+      IL_00b6:  ldc.i4     0x30803
+      IL_00bb:  call       instance class [System.Drawing]System.Drawing.Bitmap [System.Drawing]System.Drawing.Bitmap::Clone(valuetype [System.Drawing]System.Drawing.Rectangle,
+                                                                                                                             valuetype [System.Drawing]System.Drawing.Imaging.PixelFormat)
+      IL_00c0:  stloc.3
+      IL_00c1:  ldloc.3
+      IL_00c2:  call       void MandelbrotGenerator::UpdatePalette(class [System.Drawing]System.Drawing.Bitmap)
+      IL_00c7:  ldloc.3
+      IL_00c8:  stloc.s    V_6
+      IL_00ca:  leave.s    IL_00d3
+
+    }  // end .try
+    fault
+    {
+      IL_00cc:  ldloc.2
+      IL_00cd:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_00d2:  endfinally
+    }  // end handler
+    IL_00d3:  ldloc.2
+    IL_00d4:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+    IL_00d9:  ldloc.s    V_6
+    IL_00db:  stloc.s    V_5
+    IL_00dd:  ldloc.s    V_5
+    IL_00df:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\mandelbrotgenerator.h" startline="48" endline="58"><![CDATA[
+  {
+    // Code size       95 (0x5f)
+    .maxstack  4
+    .locals ([0] int32 i,
+             [1] valuetype [System.Drawing]System.Drawing.Color[] paletteColors,
+             [2] valuetype [System.Drawing]System.Drawing.Color[] V_2,
+             [3] valuetype [System.Drawing]System.Drawing.Color V_3,
+             [4] valuetype [System.Drawing]System.Drawing.Color V_4)
+    IL_0000:  ldnull
+    IL_0001:  stloc.1
+    IL_0002:  ldc.i4     0x100
+    IL_0007:  newarr     [System.Drawing]System.Drawing.Color
+    IL_000c:  stloc.1
+    IL_000d:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_Black()
+    IL_0012:  stloc.s    V_4
+    IL_0014:  ldloc.1
+    IL_0015:  ldc.i4.0
+    IL_0016:  ldelema    [System.Drawing]System.Drawing.Color
+    IL_001b:  ldloca.s   V_4
+    IL_001d:  cpobj      [System.Drawing]System.Drawing.Color
+    IL_0022:  ldc.i4.1
+    IL_0023:  stloc.0
+    IL_0024:  br.s       IL_002a
+
+    IL_0026:  ldloc.0
+    IL_0027:  ldc.i4.1
+    IL_0028:  add
+    IL_0029:  stloc.0
+    IL_002a:  ldloc.0
+    IL_002b:  ldc.i4     0x100
+    IL_0030:  bge.s      IL_005b
+
+    IL_0032:  ldc.i4.0
+    IL_0033:  ldloc.0
+    IL_0034:  ldc.i4.5
+    IL_0035:  mul
+    IL_0036:  ldc.i4     0x100
+    IL_003b:  rem
+    IL_003c:  ldloc.0
+    IL_003d:  ldc.i4.5
+    IL_003e:  mul
+    IL_003f:  ldc.i4     0x100
+    IL_0044:  rem
+    IL_0045:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::FromArgb(int32,
+                                                                                                                       int32,
+                                                                                                                       int32)
+    IL_004a:  stloc.3
+    IL_004b:  ldloc.1
+    IL_004c:  ldloc.0
+    IL_004d:  ldelema    [System.Drawing]System.Drawing.Color
+    IL_0052:  ldloca.s   V_3
+    IL_0054:  cpobj      [System.Drawing]System.Drawing.Color
+    IL_0059:  br.s       IL_0026
+
+    IL_005b:  ldloc.1
+    IL_005c:  stloc.2
+    IL_005d:  ldloc.2
+    IL_005e:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\mandelbrotgenerator.h" startline="59" endline="65"><![CDATA[
+  {
+    // Code size       39 (0x27)
+    .maxstack  3
+    .locals ([0] class [System.Drawing]System.Drawing.Imaging.ColorPalette p)
+    IL_0000:  ldnull
+    IL_0001:  stloc.0
+    IL_0002:  ldarg.0
+    IL_0003:  call       instance class [System.Drawing]System.Drawing.Imaging.ColorPalette [System.Drawing]System.Drawing.Image::get_Palette()
+    IL_0008:  stloc.0
+    IL_0009:  ldsfld     valuetype [System.Drawing]System.Drawing.Color[] MandelbrotGenerator::_paletteColors
+    IL_000e:  ldloc.0
+    IL_000f:  call       instance valuetype [System.Drawing]System.Drawing.Color[] [System.Drawing]System.Drawing.Imaging.ColorPalette::get_Entries()
+    IL_0014:  ldsfld     valuetype [System.Drawing]System.Drawing.Color[] MandelbrotGenerator::_paletteColors
+    IL_0019:  ldlen
+    IL_001a:  call       void [mscorlib]System.Array::Copy(class [mscorlib]System.Array,
+                                                           class [mscorlib]System.Array,
+                                                           int32)
+    IL_001f:  ldarg.0
+    IL_0020:  ldloc.0
+    IL_0021:  call       instance void [System.Drawing]System.Drawing.Image::set_Palette(class [System.Drawing]System.Drawing.Imaging.ColorPalette)
+    IL_0026:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\mandelbrotgenerator.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       7 (0x7)
+    .maxstack  1
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\mandelbrotgenerator.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    IL_0000:  call       valuetype [System.Drawing]System.Drawing.Color[] MandelbrotGenerator::CreatePaletteColors()
+    IL_0005:  stsfld     valuetype [System.Drawing]System.Drawing.Color[] MandelbrotGenerator::_paletteColors
+    IL_000a:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="41" endline="52"><![CDATA[
+  {
+    // Code size       111 (0x6f)
+    .maxstack  2
+    .locals ([0] valuetype MandelbrotPosition V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::.ctor()
+    .try
+    {
+      IL_0006:  ldarg.0
+      IL_0007:  call       instance void MandelbrotFractals.Form1::InitializeComponent()
+      IL_000c:  call       valuetype MandelbrotPosition MandelbrotPosition::get_Default()
+      IL_0011:  stloc.0
+      IL_0012:  ldarg.0
+      IL_0013:  ldloc.0
+      IL_0014:  stfld      valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+      IL_0019:  ldarg.0
+      IL_001a:  ldsfld     valuetype [System.Drawing]System.Drawing.Size [System.Drawing]System.Drawing.Size::Empty
+      IL_001f:  stfld      valuetype [System.Drawing]System.Drawing.Size MandelbrotFractals.Form1::_lastWindowSize
+      IL_0024:  ldarg.0
+      IL_0025:  ldsfld     valuetype [mscorlib]System.DateTime [mscorlib]System.DateTime::MinValue
+      IL_002a:  stfld      valuetype [mscorlib]System.DateTime MandelbrotFractals.Form1::_lastUpdateTime
+      IL_002f:  ldarg.0
+      IL_0030:  ldflda     valuetype [mscorlib]System.DateTime MandelbrotFractals.Form1::_lastUpdateTime
+      IL_0035:  ldarg.0
+      IL_0036:  ldflda     valuetype [mscorlib]System.DateTime MandelbrotFractals.Form1::_lastUpdateTime
+      IL_003b:  cpobj      [mscorlib]System.DateTime
+      IL_0040:  ldarg.0
+      IL_0041:  ldc.i4.0
+      IL_0042:  stfld      bool MandelbrotFractals.Form1::_leftMouseDown
+      IL_0047:  ldarg.0
+      IL_0048:  ldstr      "Mandelbrot Fractal ({0}x) - Time: {1}"
+      IL_004d:  stfld      string MandelbrotFractals.Form1::_formTitle
+      IL_0052:  ldarg.0
+      IL_0053:  ldc.i4.0
+      IL_0054:  stfld      bool MandelbrotFractals.Form1::_parallelRendering
+      IL_0059:  ldarg.0
+      IL_005a:  call       class [mscorlib]System.Threading.Tasks.TaskScheduler [mscorlib]System.Threading.Tasks.TaskScheduler::FromCurrentSynchronizationContext()
+      IL_005f:  stfld      class [mscorlib]System.Threading.Tasks.TaskScheduler MandelbrotFractals.Form1::_uiScheduler
+      IL_0064:  leave.s    IL_006e
+
+    }  // end .try
+    fault
+    {
+      IL_0066:  ldarg.0
+      IL_0067:  ldc.i4.1
+      IL_0068:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::Dispose(bool)
+      IL_006d:  endfinally
+    }  // end handler
+    IL_006e:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="53" endline="58"><![CDATA[
+  {
+    // Code size       31 (0x1f)
+    .maxstack  1
+    .locals ([0] class [mscorlib]System.IDisposable V_0,
+             [1] int32 V_1)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [System]System.ComponentModel.Container MandelbrotFractals.Form1::components
+    IL_0006:  brfalse.s  IL_001e
+
+    IL_0008:  ldarg.0
+    IL_0009:  ldfld      class [System]System.ComponentModel.Container MandelbrotFractals.Form1::components
+    IL_000e:  stloc.0
+    IL_000f:  ldloc.0
+    IL_0010:  brfalse.s  IL_001c
+
+    IL_0012:  ldloc.0
+    IL_0013:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+    IL_0018:  ldc.i4.0
+    IL_0019:  stloc.1
+    IL_001a:  br.s       IL_001e
+
+    IL_001c:  ldc.i4.0
+    IL_001d:  stloc.1
+    IL_001e:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="59" endline="132"><![CDATA[
+  {
+    // Code size       709 (0x2c5)
+    .maxstack  3
+    .locals ([0] class [System.Windows.Forms]System.Windows.Forms.ToolStripItem[] $S4,
+             [1] valuetype [System.Drawing]System.Drawing.Size V_1,
+             [2] valuetype [System.Drawing]System.Drawing.SizeF V_2,
+             [3] valuetype [System.Drawing]System.Drawing.Size V_3,
+             [4] valuetype [System.Drawing]System.Drawing.Size V_4,
+             [5] valuetype [System.Drawing]System.Drawing.Point V_5,
+             [6] valuetype [System.Drawing]System.Drawing.Size V_6,
+             [7] valuetype [System.Drawing]System.Drawing.Point V_7,
+             [8] valuetype [System.Drawing]System.Drawing.Color V_8)
+    IL_0000:  ldnull
+    IL_0001:  stloc.0
+    IL_0002:  ldarg.0
+    IL_0003:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::.ctor()
+    IL_0008:  stfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_000d:  ldarg.0
+    IL_000e:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.StatusStrip::.ctor()
+    IL_0013:  stfld      class [System.Windows.Forms]System.Windows.Forms.StatusStrip MandelbrotFractals.Form1::statusStrip1
+    IL_0018:  ldarg.0
+    IL_0019:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.ToolStripStatusLabel::.ctor()
+    IL_001e:  stfld      class [System.Windows.Forms]System.Windows.Forms.ToolStripStatusLabel MandelbrotFractals.Form1::toolStripStatusLabel1
+    IL_0023:  ldarg.0
+    IL_0024:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_0029:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::BeginInit()
+    IL_002e:  ldarg.0
+    IL_002f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.StatusStrip MandelbrotFractals.Form1::statusStrip1
+    IL_0034:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::SuspendLayout()
+    IL_0039:  ldarg.0
+    IL_003a:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::SuspendLayout()
+    IL_003f:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_Black()
+    IL_0044:  stloc.s    V_8
+    IL_0046:  ldarg.0
+    IL_0047:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_004c:  ldloc.s    V_8
+    IL_004e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_BackColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_0053:  ldarg.0
+    IL_0054:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_0059:  ldc.i4.5
+    IL_005a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Dock(valuetype [System.Windows.Forms]System.Windows.Forms.DockStyle)
+    IL_005f:  ldloca.s   V_7
+    IL_0061:  ldc.i4.0
+    IL_0062:  ldc.i4.0
+    IL_0063:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0068:  ldarg.0
+    IL_0069:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_006e:  ldloc.s    V_7
+    IL_0070:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0075:  ldarg.0
+    IL_0076:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_007b:  ldstr      "mandelbrotPb"
+    IL_0080:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0085:  ldloca.s   V_6
+    IL_0087:  ldc.i4     0x190
+    IL_008c:  ldc.i4     0x180
+    IL_0091:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0096:  ldarg.0
+    IL_0097:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_009c:  ldloc.s    V_6
+    IL_009e:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_00a3:  ldarg.0
+    IL_00a4:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_00a9:  ldc.i4.3
+    IL_00aa:  call       instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_SizeMode(valuetype [System.Windows.Forms]System.Windows.Forms.PictureBoxSizeMode)
+    IL_00af:  ldarg.0
+    IL_00b0:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_00b5:  ldc.i4.0
+    IL_00b6:  call       instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_TabIndex(int32)
+    IL_00bb:  ldarg.0
+    IL_00bc:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_00c1:  ldc.i4.0
+    IL_00c2:  call       instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_TabStop(bool)
+    IL_00c7:  ldarg.0
+    IL_00c8:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_00cd:  ldarg.0
+    IL_00ce:  ldftn      instance void MandelbrotFractals.Form1::mandelbrotPb_VisibleChanged(object,
+                                                                                             class [mscorlib]System.EventArgs)
+    IL_00d4:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_00d9:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::add_VisibleChanged(class [mscorlib]System.EventHandler)
+    IL_00de:  ldarg.0
+    IL_00df:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_00e4:  ldarg.0
+    IL_00e5:  ldftn      instance void MandelbrotFractals.Form1::mandelbrotPb_MouseMove(object,
+                                                                                        class [System.Windows.Forms]System.Windows.Forms.MouseEventArgs)
+    IL_00eb:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.MouseEventHandler::.ctor(object,
+                                                                                                           native int)
+    IL_00f0:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::add_MouseMove(class [System.Windows.Forms]System.Windows.Forms.MouseEventHandler)
+    IL_00f5:  ldarg.0
+    IL_00f6:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_00fb:  ldarg.0
+    IL_00fc:  ldftn      instance void MandelbrotFractals.Form1::mandelbrotPb_MouseDoubleClick(object,
+                                                                                               class [System.Windows.Forms]System.Windows.Forms.MouseEventArgs)
+    IL_0102:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.MouseEventHandler::.ctor(object,
+                                                                                                           native int)
+    IL_0107:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::add_MouseDoubleClick(class [System.Windows.Forms]System.Windows.Forms.MouseEventHandler)
+    IL_010c:  ldarg.0
+    IL_010d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_0112:  ldarg.0
+    IL_0113:  ldftn      instance void MandelbrotFractals.Form1::mandelbrotPb_Resize(object,
+                                                                                     class [mscorlib]System.EventArgs)
+    IL_0119:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_011e:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::add_Resize(class [mscorlib]System.EventHandler)
+    IL_0123:  ldarg.0
+    IL_0124:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_0129:  ldarg.0
+    IL_012a:  ldftn      instance void MandelbrotFractals.Form1::mandelbrotPb_MouseDown(object,
+                                                                                        class [System.Windows.Forms]System.Windows.Forms.MouseEventArgs)
+    IL_0130:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.MouseEventHandler::.ctor(object,
+                                                                                                           native int)
+    IL_0135:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::add_MouseDown(class [System.Windows.Forms]System.Windows.Forms.MouseEventHandler)
+    IL_013a:  ldarg.0
+    IL_013b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_0140:  ldarg.0
+    IL_0141:  ldftn      instance void MandelbrotFractals.Form1::mandelbrotPb_MouseUp(object,
+                                                                                      class [System.Windows.Forms]System.Windows.Forms.MouseEventArgs)
+    IL_0147:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.MouseEventHandler::.ctor(object,
+                                                                                                           native int)
+    IL_014c:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::add_MouseUp(class [System.Windows.Forms]System.Windows.Forms.MouseEventHandler)
+    IL_0151:  ldc.i4.1
+    IL_0152:  newarr     [System.Windows.Forms]System.Windows.Forms.ToolStripItem
+    IL_0157:  stloc.0
+    IL_0158:  ldloc.0
+    IL_0159:  ldc.i4.0
+    IL_015a:  ldarg.0
+    IL_015b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ToolStripStatusLabel MandelbrotFractals.Form1::toolStripStatusLabel1
+    IL_0160:  stelem.ref
+    IL_0161:  ldarg.0
+    IL_0162:  ldfld      class [System.Windows.Forms]System.Windows.Forms.StatusStrip MandelbrotFractals.Form1::statusStrip1
+    IL_0167:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ToolStripItemCollection [System.Windows.Forms]System.Windows.Forms.ToolStrip::get_Items()
+    IL_016c:  ldloc.0
+    IL_016d:  call       instance void [System.Windows.Forms]System.Windows.Forms.ToolStripItemCollection::AddRange(class [System.Windows.Forms]System.Windows.Forms.ToolStripItem[])
+    IL_0172:  ldloca.s   V_5
+    IL_0174:  ldc.i4.0
+    IL_0175:  ldc.i4     0x16a
+    IL_017a:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_017f:  ldarg.0
+    IL_0180:  ldfld      class [System.Windows.Forms]System.Windows.Forms.StatusStrip MandelbrotFractals.Form1::statusStrip1
+    IL_0185:  ldloc.s    V_5
+    IL_0187:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_018c:  ldarg.0
+    IL_018d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.StatusStrip MandelbrotFractals.Form1::statusStrip1
+    IL_0192:  ldstr      "statusStrip1"
+    IL_0197:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_019c:  ldloca.s   V_4
+    IL_019e:  ldc.i4     0x190
+    IL_01a3:  ldc.i4.s   22
+    IL_01a5:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_01aa:  ldarg.0
+    IL_01ab:  ldfld      class [System.Windows.Forms]System.Windows.Forms.StatusStrip MandelbrotFractals.Form1::statusStrip1
+    IL_01b0:  ldloc.s    V_4
+    IL_01b2:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_01b7:  ldarg.0
+    IL_01b8:  ldfld      class [System.Windows.Forms]System.Windows.Forms.StatusStrip MandelbrotFractals.Form1::statusStrip1
+    IL_01bd:  ldc.i4.1
+    IL_01be:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_01c3:  ldarg.0
+    IL_01c4:  ldfld      class [System.Windows.Forms]System.Windows.Forms.StatusStrip MandelbrotFractals.Form1::statusStrip1
+    IL_01c9:  ldstr      "statusStrip1"
+    IL_01ce:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_01d3:  ldarg.0
+    IL_01d4:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ToolStripStatusLabel MandelbrotFractals.Form1::toolStripStatusLabel1
+    IL_01d9:  ldstr      "toolStripStatusLabel1"
+    IL_01de:  call       instance void [System.Windows.Forms]System.Windows.Forms.ToolStripItem::set_Name(string)
+    IL_01e3:  ldloca.s   V_3
+    IL_01e5:  ldc.i4     0x133
+    IL_01ea:  ldc.i4.s   17
+    IL_01ec:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_01f1:  ldarg.0
+    IL_01f2:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ToolStripStatusLabel MandelbrotFractals.Form1::toolStripStatusLabel1
+    IL_01f7:  ldloc.3
+    IL_01f8:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ToolStripItem::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_01fd:  ldarg.0
+    IL_01fe:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ToolStripStatusLabel MandelbrotFractals.Form1::toolStripStatusLabel1
+    IL_0203:  ldstr      "P: parallel mode, S: sequential mode, Double-click"
+    + ": zoom"
+    IL_0208:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ToolStripItem::set_Text(string)
+    IL_020d:  ldloca.s   V_2
+    IL_020f:  ldc.r4     6.
+    IL_0214:  ldc.r4     13.
+    IL_0219:  call       instance void [System.Drawing]System.Drawing.SizeF::.ctor(float32,
+                                                                                   float32)
+    IL_021e:  ldarg.0
+    IL_021f:  ldloc.2
+    IL_0220:  call       instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::set_AutoScaleDimensions(valuetype [System.Drawing]System.Drawing.SizeF)
+    IL_0225:  ldarg.0
+    IL_0226:  ldc.i4.1
+    IL_0227:  call       instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::set_AutoScaleMode(valuetype [System.Windows.Forms]System.Windows.Forms.AutoScaleMode)
+    IL_022c:  ldloca.s   V_1
+    IL_022e:  ldc.i4     0x190
+    IL_0233:  ldc.i4     0x180
+    IL_0238:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_023d:  ldarg.0
+    IL_023e:  ldloc.1
+    IL_023f:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::set_ClientSize(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0244:  ldarg.0
+    IL_0245:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_024a:  ldarg.0
+    IL_024b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.StatusStrip MandelbrotFractals.Form1::statusStrip1
+    IL_0250:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0255:  ldarg.0
+    IL_0256:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_025b:  ldarg.0
+    IL_025c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_0261:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0266:  ldarg.0
+    IL_0267:  ldc.i4.1
+    IL_0268:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::set_KeyPreview(bool)
+    IL_026d:  ldarg.0
+    IL_026e:  ldstr      "Form1"
+    IL_0273:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0278:  ldarg.0
+    IL_0279:  ldstr      "Mandelbrot Fractals"
+    IL_027e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Form::set_Text(string)
+    IL_0283:  ldarg.0
+    IL_0284:  dup
+    IL_0285:  ldftn      instance void MandelbrotFractals.Form1::Form1_KeyDown(object,
+                                                                               class [System.Windows.Forms]System.Windows.Forms.KeyEventArgs)
+    IL_028b:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.KeyEventHandler::.ctor(object,
+                                                                                                         native int)
+    IL_0290:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::add_KeyDown(class [System.Windows.Forms]System.Windows.Forms.KeyEventHandler)
+    IL_0295:  ldarg.0
+    IL_0296:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_029b:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::EndInit()
+    IL_02a0:  ldarg.0
+    IL_02a1:  ldfld      class [System.Windows.Forms]System.Windows.Forms.StatusStrip MandelbrotFractals.Form1::statusStrip1
+    IL_02a6:  ldc.i4.0
+    IL_02a7:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::ResumeLayout(bool)
+    IL_02ac:  ldarg.0
+    IL_02ad:  ldfld      class [System.Windows.Forms]System.Windows.Forms.StatusStrip MandelbrotFractals.Form1::statusStrip1
+    IL_02b2:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::PerformLayout()
+    IL_02b7:  ldarg.0
+    IL_02b8:  ldc.i4.0
+    IL_02b9:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::ResumeLayout(bool)
+    IL_02be:  ldarg.0
+    IL_02bf:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::PerformLayout()
+    IL_02c4:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="133" endline="150"><![CDATA[
+  {
+    // Code size       49 (0x31)
+    .maxstack  2
+    IL_0000:  ldarg.2
+    IL_0001:  call       instance valuetype [System.Windows.Forms]System.Windows.Forms.Keys [System.Windows.Forms]System.Windows.Forms.KeyEventArgs::get_KeyCode()
+    IL_0006:  ldc.i4.s   83
+    IL_0008:  bne.un.s   IL_0019
+
+    IL_000a:  ldarg.0
+    IL_000b:  ldc.i4.0
+    IL_000c:  stfld      bool MandelbrotFractals.Form1::_parallelRendering
+    IL_0011:  ldarg.0
+    IL_0012:  call       instance void MandelbrotFractals.Form1::UpdateImageAsync()
+    IL_0017:  br.s       IL_0030
+
+    IL_0019:  ldarg.2
+    IL_001a:  call       instance valuetype [System.Windows.Forms]System.Windows.Forms.Keys [System.Windows.Forms]System.Windows.Forms.KeyEventArgs::get_KeyCode()
+    IL_001f:  ldc.i4.s   80
+    IL_0021:  bne.un.s   IL_0030
+
+    IL_0023:  ldarg.0
+    IL_0024:  ldc.i4.1
+    IL_0025:  stfld      bool MandelbrotFractals.Form1::_parallelRendering
+    IL_002a:  ldarg.0
+    IL_002b:  call       instance void MandelbrotFractals.Form1::UpdateImageAsync()
+    IL_0030:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="151" endline="166"><![CDATA[
+  {
+    // Code size       248 (0xf8)
+    .maxstack  5
+    .locals ([0] float64 factor,
+             [1] float64 V_1)
+    IL_0000:  ldarg.0
+    IL_0001:  ldflda     valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_0006:  ldarg.0
+    IL_0007:  ldfld      valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_000c:  ldfld      float64 MandelbrotPosition::CenterX
+    IL_0011:  ldarg.2
+    IL_0012:  call       instance int32 [System.Windows.Forms]System.Windows.Forms.MouseEventArgs::get_X()
+    IL_0017:  conv.r8
+    IL_0018:  ldarg.0
+    IL_0019:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_001e:  call       instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Width()
+    IL_0023:  conv.r8
+    IL_0024:  ldc.r8     2.
+    IL_002d:  div
+    IL_002e:  sub
+    IL_002f:  ldarg.0
+    IL_0030:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_0035:  call       instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Width()
+    IL_003a:  conv.r8
+    IL_003b:  div
+    IL_003c:  ldarg.0
+    IL_003d:  ldfld      valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_0042:  ldfld      float64 MandelbrotPosition::Width
+    IL_0047:  mul
+    IL_0048:  add
+    IL_0049:  stfld      float64 MandelbrotPosition::CenterX
+    IL_004e:  ldarg.0
+    IL_004f:  ldflda     valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_0054:  ldarg.0
+    IL_0055:  ldfld      valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_005a:  ldfld      float64 MandelbrotPosition::CenterY
+    IL_005f:  ldarg.2
+    IL_0060:  call       instance int32 [System.Windows.Forms]System.Windows.Forms.MouseEventArgs::get_Y()
+    IL_0065:  conv.r8
+    IL_0066:  ldarg.0
+    IL_0067:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_006c:  call       instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Height()
+    IL_0071:  conv.r8
+    IL_0072:  ldc.r8     2.
+    IL_007b:  div
+    IL_007c:  sub
+    IL_007d:  ldarg.0
+    IL_007e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_0083:  call       instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Height()
+    IL_0088:  conv.r8
+    IL_0089:  div
+    IL_008a:  ldarg.0
+    IL_008b:  ldfld      valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_0090:  ldfld      float64 MandelbrotPosition::Height
+    IL_0095:  mul
+    IL_0096:  add
+    IL_0097:  stfld      float64 MandelbrotPosition::CenterY
+    IL_009c:  ldarg.2
+    IL_009d:  call       instance valuetype [System.Windows.Forms]System.Windows.Forms.MouseButtons [System.Windows.Forms]System.Windows.Forms.MouseEventArgs::get_Button()
+    IL_00a2:  ldc.i4     0x100000
+    IL_00a7:  bne.un.s   IL_00b5
+
+    IL_00a9:  ldc.r8     0.5
+    IL_00b2:  stloc.1
+    IL_00b3:  br.s       IL_00bf
+
+    IL_00b5:  ldc.r8     2.
+    IL_00be:  stloc.1
+    IL_00bf:  ldloc.1
+    IL_00c0:  stloc.0
+    IL_00c1:  ldarg.0
+    IL_00c2:  ldflda     valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_00c7:  ldarg.0
+    IL_00c8:  ldfld      valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_00cd:  ldfld      float64 MandelbrotPosition::Width
+    IL_00d2:  ldloc.0
+    IL_00d3:  mul
+    IL_00d4:  stfld      float64 MandelbrotPosition::Width
+    IL_00d9:  ldarg.0
+    IL_00da:  ldflda     valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_00df:  ldarg.0
+    IL_00e0:  ldfld      valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_00e5:  ldfld      float64 MandelbrotPosition::Height
+    IL_00ea:  ldloc.0
+    IL_00eb:  mul
+    IL_00ec:  stfld      float64 MandelbrotPosition::Height
+    IL_00f1:  ldarg.0
+    IL_00f2:  call       instance void MandelbrotFractals.Form1::UpdateImageAsync()
+    IL_00f7:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="167" endline="176"><![CDATA[
+  {
+    // Code size       34 (0x22)
+    .maxstack  2
+    .locals ([0] valuetype [System.Drawing]System.Drawing.Size V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_0006:  call       instance bool [System.Windows.Forms]System.Windows.Forms.Control::get_Visible()
+    IL_000b:  brfalse.s  IL_0021
+
+    IL_000d:  ldarg.0
+    IL_000e:  call       instance valuetype [System.Drawing]System.Drawing.Size [System.Windows.Forms]System.Windows.Forms.Form::get_Size()
+    IL_0013:  stloc.0
+    IL_0014:  ldarg.0
+    IL_0015:  ldloc.0
+    IL_0016:  stfld      valuetype [System.Drawing]System.Drawing.Size MandelbrotFractals.Form1::_lastWindowSize
+    IL_001b:  ldarg.0
+    IL_001c:  call       instance void MandelbrotFractals.Form1::UpdateImageAsync()
+    IL_0021:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="177" endline="195"><![CDATA[
+  {
+    // Code size       132 (0x84)
+    .maxstack  3
+    .locals ([0] valuetype [System.Drawing]System.Drawing.Size currentSize,
+             [1] float64 yFactor,
+             [2] float64 xFactor)
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance valuetype [System.Drawing]System.Drawing.Size [System.Windows.Forms]System.Windows.Forms.Form::get_Size()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  ldarg.0
+    IL_0009:  ldflda     valuetype [System.Drawing]System.Drawing.Size MandelbrotFractals.Form1::_lastWindowSize
+    IL_000e:  ldobj      [System.Drawing]System.Drawing.Size
+    IL_0013:  call       bool [System.Drawing]System.Drawing.Size::op_Inequality(valuetype [System.Drawing]System.Drawing.Size,
+                                                                                 valuetype [System.Drawing]System.Drawing.Size)
+    IL_0018:  brfalse.s  IL_0083
+
+    IL_001a:  ldloca.s   currentSize
+    IL_001c:  call       instance int32 [System.Drawing]System.Drawing.Size::get_Width()
+    IL_0021:  conv.r8
+    IL_0022:  ldarg.0
+    IL_0023:  ldflda     valuetype [System.Drawing]System.Drawing.Size MandelbrotFractals.Form1::_lastWindowSize
+    IL_0028:  call       instance int32 [System.Drawing]System.Drawing.Size::get_Width()
+    IL_002d:  conv.r8
+    IL_002e:  div
+    IL_002f:  stloc.2
+    IL_0030:  ldloca.s   currentSize
+    IL_0032:  call       instance int32 [System.Drawing]System.Drawing.Size::get_Height()
+    IL_0037:  conv.r8
+    IL_0038:  ldarg.0
+    IL_0039:  ldflda     valuetype [System.Drawing]System.Drawing.Size MandelbrotFractals.Form1::_lastWindowSize
+    IL_003e:  call       instance int32 [System.Drawing]System.Drawing.Size::get_Height()
+    IL_0043:  conv.r8
+    IL_0044:  div
+    IL_0045:  stloc.1
+    IL_0046:  ldarg.0
+    IL_0047:  ldflda     valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_004c:  ldarg.0
+    IL_004d:  ldfld      valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_0052:  ldfld      float64 MandelbrotPosition::Width
+    IL_0057:  ldloc.2
+    IL_0058:  mul
+    IL_0059:  stfld      float64 MandelbrotPosition::Width
+    IL_005e:  ldarg.0
+    IL_005f:  ldflda     valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_0064:  ldarg.0
+    IL_0065:  ldfld      valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_006a:  ldfld      float64 MandelbrotPosition::Height
+    IL_006f:  ldloc.1
+    IL_0070:  mul
+    IL_0071:  stfld      float64 MandelbrotPosition::Height
+    IL_0076:  ldarg.0
+    IL_0077:  ldloc.0
+    IL_0078:  stfld      valuetype [System.Drawing]System.Drawing.Size MandelbrotFractals.Form1::_lastWindowSize
+    IL_007d:  ldarg.0
+    IL_007e:  call       instance void MandelbrotFractals.Form1::UpdateImageAsync()
+    IL_0083:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="196" endline="220"><![CDATA[
+  {
+    // Code size       207 (0xcf)
+    .maxstack  4
+    .locals ([0] valuetype [System.Drawing]System.Drawing.Point V_0,
+             [1] float64 fractalMoveY,
+             [2] float64 fractalMoveX,
+             [3] valuetype [System.Drawing]System.Drawing.Point delta)
+    IL_0000:  ldloca.s   delta
+    IL_0002:  ldarg.2
+    IL_0003:  call       instance int32 [System.Windows.Forms]System.Windows.Forms.MouseEventArgs::get_X()
+    IL_0008:  ldarg.0
+    IL_0009:  ldflda     valuetype [System.Drawing]System.Drawing.Point MandelbrotFractals.Form1::_lastMousePosition
+    IL_000e:  call       instance int32 [System.Drawing]System.Drawing.Point::get_X()
+    IL_0013:  sub
+    IL_0014:  ldarg.2
+    IL_0015:  call       instance int32 [System.Windows.Forms]System.Windows.Forms.MouseEventArgs::get_Y()
+    IL_001a:  ldarg.0
+    IL_001b:  ldflda     valuetype [System.Drawing]System.Drawing.Point MandelbrotFractals.Form1::_lastMousePosition
+    IL_0020:  call       instance int32 [System.Drawing]System.Drawing.Point::get_Y()
+    IL_0025:  sub
+    IL_0026:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_002b:  ldloc.3
+    IL_002c:  ldsfld     valuetype [System.Drawing]System.Drawing.Point [System.Drawing]System.Drawing.Point::Empty
+    IL_0031:  call       bool [System.Drawing]System.Drawing.Point::op_Inequality(valuetype [System.Drawing]System.Drawing.Point,
+                                                                                  valuetype [System.Drawing]System.Drawing.Point)
+    IL_0036:  brfalse    IL_00ce
+
+    IL_003b:  ldarg.0
+    IL_003c:  ldfld      bool MandelbrotFractals.Form1::_leftMouseDown
+    IL_0041:  brfalse    IL_00c0
+
+    IL_0046:  ldloca.s   delta
+    IL_0048:  call       instance int32 [System.Drawing]System.Drawing.Point::get_X()
+    IL_004d:  conv.r8
+    IL_004e:  ldarg.0
+    IL_004f:  ldfld      valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_0054:  ldfld      float64 MandelbrotPosition::Width
+    IL_0059:  mul
+    IL_005a:  ldarg.0
+    IL_005b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_0060:  call       instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Width()
+    IL_0065:  conv.r8
+    IL_0066:  div
+    IL_0067:  stloc.2
+    IL_0068:  ldloca.s   delta
+    IL_006a:  call       instance int32 [System.Drawing]System.Drawing.Point::get_Y()
+    IL_006f:  conv.r8
+    IL_0070:  ldarg.0
+    IL_0071:  ldfld      valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_0076:  ldfld      float64 MandelbrotPosition::Height
+    IL_007b:  mul
+    IL_007c:  ldarg.0
+    IL_007d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_0082:  call       instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Height()
+    IL_0087:  conv.r8
+    IL_0088:  div
+    IL_0089:  stloc.1
+    IL_008a:  ldarg.0
+    IL_008b:  ldflda     valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_0090:  ldarg.0
+    IL_0091:  ldfld      valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_0096:  ldfld      float64 MandelbrotPosition::CenterX
+    IL_009b:  ldloc.2
+    IL_009c:  sub
+    IL_009d:  stfld      float64 MandelbrotPosition::CenterX
+    IL_00a2:  ldarg.0
+    IL_00a3:  ldflda     valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_00a8:  ldarg.0
+    IL_00a9:  ldfld      valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_00ae:  ldfld      float64 MandelbrotPosition::CenterY
+    IL_00b3:  ldloc.1
+    IL_00b4:  sub
+    IL_00b5:  stfld      float64 MandelbrotPosition::CenterY
+    IL_00ba:  ldarg.0
+    IL_00bb:  call       instance void MandelbrotFractals.Form1::UpdateImageAsync()
+    IL_00c0:  ldarg.2
+    IL_00c1:  call       instance valuetype [System.Drawing]System.Drawing.Point [System.Windows.Forms]System.Windows.Forms.MouseEventArgs::get_Location()
+    IL_00c6:  stloc.0
+    IL_00c7:  ldarg.0
+    IL_00c8:  ldloc.0
+    IL_00c9:  stfld      valuetype [System.Drawing]System.Drawing.Point MandelbrotFractals.Form1::_lastMousePosition
+    IL_00ce:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="221" endline="230"><![CDATA[
+  {
+    // Code size       35 (0x23)
+    .maxstack  2
+    .locals ([0] valuetype [System.Drawing]System.Drawing.Point V_0)
+    IL_0000:  ldarg.2
+    IL_0001:  call       instance valuetype [System.Windows.Forms]System.Windows.Forms.MouseButtons [System.Windows.Forms]System.Windows.Forms.MouseEventArgs::get_Button()
+    IL_0006:  ldc.i4     0x100000
+    IL_000b:  bne.un.s   IL_0022
+
+    IL_000d:  ldarg.2
+    IL_000e:  call       instance valuetype [System.Drawing]System.Drawing.Point [System.Windows.Forms]System.Windows.Forms.MouseEventArgs::get_Location()
+    IL_0013:  stloc.0
+    IL_0014:  ldarg.0
+    IL_0015:  ldloc.0
+    IL_0016:  stfld      valuetype [System.Drawing]System.Drawing.Point MandelbrotFractals.Form1::_lastMousePosition
+    IL_001b:  ldarg.0
+    IL_001c:  ldc.i4.1
+    IL_001d:  stfld      bool MandelbrotFractals.Form1::_leftMouseDown
+    IL_0022:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="231" endline="240"><![CDATA[
+  {
+    // Code size       35 (0x23)
+    .maxstack  2
+    .locals ([0] valuetype [System.Drawing]System.Drawing.Point V_0)
+    IL_0000:  ldarg.2
+    IL_0001:  call       instance valuetype [System.Windows.Forms]System.Windows.Forms.MouseButtons [System.Windows.Forms]System.Windows.Forms.MouseEventArgs::get_Button()
+    IL_0006:  ldc.i4     0x100000
+    IL_000b:  bne.un.s   IL_0022
+
+    IL_000d:  ldarg.2
+    IL_000e:  call       instance valuetype [System.Drawing]System.Drawing.Point [System.Windows.Forms]System.Windows.Forms.MouseEventArgs::get_Location()
+    IL_0013:  stloc.0
+    IL_0014:  ldarg.0
+    IL_0015:  ldloc.0
+    IL_0016:  stfld      valuetype [System.Drawing]System.Drawing.Point MandelbrotFractals.Form1::_lastMousePosition
+    IL_001b:  ldarg.0
+    IL_001c:  ldc.i4.0
+    IL_001d:  stfld      bool MandelbrotFractals.Form1::_leftMouseDown
+    IL_0022:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="241" endline="269"><![CDATA[
+  {
+    // Code size       140 (0x8c)
+    .maxstack  6
+    .locals ([0] class MandelbrotFractals.Form1/UpdateImageData uid,
+             [1] class [System.Drawing]System.Drawing.Bitmap bmp,
+             [2] class [System]System.Diagnostics.Stopwatch sw,
+             [3] valuetype [mscorlib]System.Threading.CancellationToken V_3,
+             [4] valuetype [mscorlib]System.TimeSpan V_4)
+    IL_0000:  ldnull
+    IL_0001:  stloc.0
+    IL_0002:  ldnull
+    IL_0003:  stloc.2
+    IL_0004:  ldnull
+    IL_0005:  stloc.1
+    IL_0006:  ldarg.1
+    IL_0007:  castclass  MandelbrotFractals.Form1/UpdateImageData
+    IL_000c:  stloc.0
+    IL_000d:  call       class [System]System.Diagnostics.Stopwatch [System]System.Diagnostics.Stopwatch::StartNew()
+    IL_0012:  stloc.2
+    IL_0013:  ldloc.0
+    IL_0014:  ldflda     valuetype MandelbrotPosition MandelbrotFractals.Form1/UpdateImageData::MandelbrotWindow
+    IL_0019:  ldobj      MandelbrotPosition
+    IL_001e:  ldloc.0
+    IL_001f:  ldflda     valuetype [System.Drawing]System.Drawing.Size MandelbrotFractals.Form1/UpdateImageData::RenderSize
+    IL_0024:  call       instance int32 [System.Drawing]System.Drawing.Size::get_Width()
+    IL_0029:  ldloc.0
+    IL_002a:  ldflda     valuetype [System.Drawing]System.Drawing.Size MandelbrotFractals.Form1/UpdateImageData::RenderSize
+    IL_002f:  call       instance int32 [System.Drawing]System.Drawing.Size::get_Height()
+    IL_0034:  ldloc.0
+    IL_0035:  ldflda     valuetype [mscorlib]System.Threading.CancellationToken MandelbrotFractals.Form1/UpdateImageData::CancellationToken
+    IL_003a:  ldobj      [mscorlib]System.Threading.CancellationToken
+    IL_003f:  ldloc.0
+    IL_0040:  ldfld      bool MandelbrotFractals.Form1/UpdateImageData::Parallel
+    IL_0045:  call       class [System.Drawing]System.Drawing.Bitmap MandelbrotGenerator::Create(valuetype MandelbrotPosition,
+                                                                                                 int32,
+                                                                                                 int32,
+                                                                                                 valuetype [mscorlib]System.Threading.CancellationToken,
+                                                                                                 bool)
+    IL_004a:  stloc.1
+    IL_004b:  ldloc.1
+    IL_004c:  brfalse.s  IL_008b
+
+    IL_004e:  ldloc.0
+    IL_004f:  ldloc.1
+    IL_0050:  stfld      class [System.Drawing]System.Drawing.Bitmap MandelbrotFractals.Form1/UpdateImageData::Result
+    IL_0055:  ldloc.2
+    IL_0056:  call       instance valuetype [mscorlib]System.TimeSpan [System]System.Diagnostics.Stopwatch::get_Elapsed()
+    IL_005b:  stloc.s    V_4
+    IL_005d:  ldloc.0
+    IL_005e:  ldloc.s    V_4
+    IL_0060:  stfld      valuetype [mscorlib]System.TimeSpan MandelbrotFractals.Form1/UpdateImageData::ElapsedTime
+    IL_0065:  call       valuetype [mscorlib]System.Threading.CancellationToken [mscorlib]System.Threading.CancellationToken::get_None()
+    IL_006a:  stloc.3
+    IL_006b:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_0070:  ldarg.0
+    IL_0071:  ldftn      instance void MandelbrotFractals.Form1::CompleteRenderOnUIThread(object)
+    IL_0077:  newobj     instance void class [mscorlib]System.Action`1<object>::.ctor(object,
+                                                                                      native int)
+    IL_007c:  ldloc.0
+    IL_007d:  ldloc.3
+    IL_007e:  ldc.i4.0
+    IL_007f:  ldarg.0
+    IL_0080:  ldfld      class [mscorlib]System.Threading.Tasks.TaskScheduler MandelbrotFractals.Form1::_uiScheduler
+    IL_0085:  call       instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action`1<object>,
+                                                                                                                                     object,
+                                                                                                                                     valuetype [mscorlib]System.Threading.CancellationToken,
+                                                                                                                                     valuetype [mscorlib]System.Threading.Tasks.TaskCreationOptions,
+                                                                                                                                     class [mscorlib]System.Threading.Tasks.TaskScheduler)
+    IL_008a:  pop
+    IL_008b:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="270" endline="286"><![CDATA[
+  {
+    // Code size       193 (0xc1)
+    .maxstack  4
+    .locals ([0] class MandelbrotFractals.Form1/UpdateImageData uid,
+             [1] class [System.Drawing]System.Drawing.Image old,
+             [2] class [mscorlib]System.IDisposable V_2,
+             [3] int32 V_3,
+             [4] class [mscorlib]System.IDisposable V_4,
+             [5] int32 V_5,
+             [6] int32 V_6)
+    IL_0000:  ldnull
+    IL_0001:  stloc.0
+    IL_0002:  ldnull
+    IL_0003:  stloc.1
+    IL_0004:  ldarg.1
+    IL_0005:  castclass  MandelbrotFractals.Form1/UpdateImageData
+    IL_000a:  stloc.0
+    IL_000b:  ldloc.0
+    IL_000c:  ldflda     valuetype [mscorlib]System.DateTime MandelbrotFractals.Form1/UpdateImageData::TimeOfRequest
+    IL_0011:  ldobj      [mscorlib]System.DateTime
+    IL_0016:  ldarg.0
+    IL_0017:  ldflda     valuetype [mscorlib]System.DateTime MandelbrotFractals.Form1::_lastUpdateTime
+    IL_001c:  ldobj      [mscorlib]System.DateTime
+    IL_0021:  call       bool [mscorlib]System.DateTime::op_GreaterThan(valuetype [mscorlib]System.DateTime,
+                                                                        valuetype [mscorlib]System.DateTime)
+    IL_0026:  brfalse    IL_00a8
+
+    IL_002b:  ldarg.0
+    IL_002c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_0031:  call       instance class [System.Drawing]System.Drawing.Image [System.Windows.Forms]System.Windows.Forms.PictureBox::get_Image()
+    IL_0036:  stloc.1
+    IL_0037:  ldarg.0
+    IL_0038:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_003d:  ldloc.0
+    IL_003e:  ldfld      class [System.Drawing]System.Drawing.Bitmap MandelbrotFractals.Form1/UpdateImageData::Result
+    IL_0043:  call       instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_Image(class [System.Drawing]System.Drawing.Image)
+    IL_0048:  ldloc.1
+    IL_0049:  brfalse.s  IL_0061
+
+    IL_004b:  ldloc.1
+    IL_004c:  stloc.s    V_4
+    IL_004e:  ldloc.s    V_4
+    IL_0050:  brfalse.s  IL_005e
+
+    IL_0052:  ldloc.s    V_4
+    IL_0054:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+    IL_0059:  ldc.i4.0
+    IL_005a:  stloc.s    V_6
+    IL_005c:  br.s       IL_0061
+
+    IL_005e:  ldc.i4.0
+    IL_005f:  stloc.s    V_6
+    IL_0061:  ldarg.0
+    IL_0062:  ldflda     valuetype [mscorlib]System.DateTime MandelbrotFractals.Form1::_lastUpdateTime
+    IL_0067:  ldloc.0
+    IL_0068:  ldflda     valuetype [mscorlib]System.DateTime MandelbrotFractals.Form1/UpdateImageData::TimeOfRequest
+    IL_006d:  cpobj      [mscorlib]System.DateTime
+    IL_0072:  ldloc.0
+    IL_0073:  ldfld      bool MandelbrotFractals.Form1/UpdateImageData::Parallel
+    IL_0078:  brfalse.s  IL_0082
+
+    IL_007a:  call       int32 [mscorlib]System.Environment::get_ProcessorCount()
+    IL_007f:  stloc.3
+    IL_0080:  br.s       IL_0084
+
+    IL_0082:  ldc.i4.1
+    IL_0083:  stloc.3
+    IL_0084:  ldarg.0
+    IL_0085:  dup
+    IL_0086:  ldfld      string MandelbrotFractals.Form1::_formTitle
+    IL_008b:  ldloc.3
+    IL_008c:  box        [mscorlib]System.Int32
+    IL_0091:  ldloc.0
+    IL_0092:  ldflda     valuetype [mscorlib]System.TimeSpan MandelbrotFractals.Form1/UpdateImageData::ElapsedTime
+    IL_0097:  call       instance string [mscorlib]System.TimeSpan::ToString()
+    IL_009c:  call       string [mscorlib]System.String::Format(string,
+                                                                object,
+                                                                object)
+    IL_00a1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Form::set_Text(string)
+    IL_00a6:  br.s       IL_00c0
+
+    IL_00a8:  ldloc.0
+    IL_00a9:  ldfld      class [System.Drawing]System.Drawing.Bitmap MandelbrotFractals.Form1/UpdateImageData::Result
+    IL_00ae:  stloc.2
+    IL_00af:  ldloc.2
+    IL_00b0:  brfalse.s  IL_00bd
+
+    IL_00b2:  ldloc.2
+    IL_00b3:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+    IL_00b8:  ldc.i4.0
+    IL_00b9:  stloc.s    V_5
+    IL_00bb:  br.s       IL_00c0
+
+    IL_00bd:  ldc.i4.0
+    IL_00be:  stloc.s    V_5
+    IL_00c0:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="287" endline="301"><![CDATA[
+  {
+    // Code size       154 (0x9a)
+    .maxstack  4
+    .locals ([0] class MandelbrotFractals.Form1/UpdateImageData uid,
+             [1] valuetype [mscorlib]System.Threading.CancellationToken V_1,
+             [2] valuetype [System.Drawing]System.Drawing.Size V_2,
+             [3] valuetype [mscorlib]System.DateTime V_3)
+    IL_0000:  ldnull
+    IL_0001:  stloc.0
+    IL_0002:  ldarg.0
+    IL_0003:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource MandelbrotFractals.Form1::_lastCancellation
+    IL_0008:  brfalse.s  IL_0015
+
+    IL_000a:  ldarg.0
+    IL_000b:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource MandelbrotFractals.Form1::_lastCancellation
+    IL_0010:  call       instance void [mscorlib]System.Threading.CancellationTokenSource::Cancel()
+    IL_0015:  ldarg.0
+    IL_0016:  newobj     instance void [mscorlib]System.Threading.CancellationTokenSource::.ctor()
+    IL_001b:  stfld      class [mscorlib]System.Threading.CancellationTokenSource MandelbrotFractals.Form1::_lastCancellation
+    IL_0020:  newobj     instance void MandelbrotFractals.Form1/UpdateImageData::.ctor()
+    IL_0025:  stloc.0
+    IL_0026:  ldloc.0
+    IL_0027:  ldarg.0
+    IL_0028:  ldfld      bool MandelbrotFractals.Form1::_parallelRendering
+    IL_002d:  stfld      bool MandelbrotFractals.Form1/UpdateImageData::Parallel
+    IL_0032:  ldloc.0
+    IL_0033:  ldflda     valuetype MandelbrotPosition MandelbrotFractals.Form1/UpdateImageData::MandelbrotWindow
+    IL_0038:  ldarg.0
+    IL_0039:  ldflda     valuetype MandelbrotPosition MandelbrotFractals.Form1::_mandelbrotWindow
+    IL_003e:  cpobj      MandelbrotPosition
+    IL_0043:  call       valuetype [mscorlib]System.DateTime [mscorlib]System.DateTime::get_UtcNow()
+    IL_0048:  stloc.3
+    IL_0049:  ldloc.0
+    IL_004a:  ldloc.3
+    IL_004b:  stfld      valuetype [mscorlib]System.DateTime MandelbrotFractals.Form1/UpdateImageData::TimeOfRequest
+    IL_0050:  ldarg.0
+    IL_0051:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox MandelbrotFractals.Form1::mandelbrotPb
+    IL_0056:  call       instance valuetype [System.Drawing]System.Drawing.Size [System.Windows.Forms]System.Windows.Forms.Control::get_Size()
+    IL_005b:  stloc.2
+    IL_005c:  ldloc.0
+    IL_005d:  ldloc.2
+    IL_005e:  stfld      valuetype [System.Drawing]System.Drawing.Size MandelbrotFractals.Form1/UpdateImageData::RenderSize
+    IL_0063:  ldarg.0
+    IL_0064:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource MandelbrotFractals.Form1::_lastCancellation
+    IL_0069:  call       instance valuetype [mscorlib]System.Threading.CancellationToken [mscorlib]System.Threading.CancellationTokenSource::get_Token()
+    IL_006e:  stloc.1
+    IL_006f:  ldloc.0
+    IL_0070:  ldloc.1
+    IL_0071:  stfld      valuetype [mscorlib]System.Threading.CancellationToken MandelbrotFractals.Form1/UpdateImageData::CancellationToken
+    IL_0076:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_007b:  ldarg.0
+    IL_007c:  ldftn      instance void MandelbrotFractals.Form1::Render(object)
+    IL_0082:  newobj     instance void class [mscorlib]System.Action`1<object>::.ctor(object,
+                                                                                      native int)
+    IL_0087:  ldloc.0
+    IL_0088:  dup
+    IL_0089:  ldflda     valuetype [mscorlib]System.Threading.CancellationToken MandelbrotFractals.Form1/UpdateImageData::CancellationToken
+    IL_008e:  ldobj      [mscorlib]System.Threading.CancellationToken
+    IL_0093:  call       instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action`1<object>,
+                                                                                                                                     object,
+                                                                                                                                     valuetype [mscorlib]System.Threading.CancellationToken)
+    IL_0098:  pop
+    IL_0099:  ret
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       29 (0x1d)
+    .maxstack  2
+    IL_0000:  ldarg.1
+    IL_0001:  brfalse.s  IL_0015
+
+    .try
+    {
+      IL_0003:  ldarg.0
+      IL_0004:  call       instance void MandelbrotFractals.Form1::'~Form1'()
+      IL_0009:  leave.s    IL_0013
+
+    }  // end .try
+    finally
+    {
+      IL_000b:  ldarg.0
+      IL_000c:  ldc.i4.1
+      IL_000d:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::Dispose(bool)
+      IL_0012:  endfinally
+    }  // end handler
+    IL_0013:  br.s       IL_001c
+
+    IL_0015:  ldarg.0
+    IL_0016:  ldc.i4.0
+    IL_0017:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::Dispose(bool)
+    IL_001c:  ret
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       9 (0x9)
+    .maxstack  3
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  ldarg.2
+    IL_0003:  call       instance void [mscorlib]System.Exception::.ctor(class [mscorlib]System.Runtime.Serialization.SerializationInfo,
+                                                                         valuetype [mscorlib]System.Runtime.Serialization.StreamingContext)
+    IL_0008:  ret
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       9 (0x9)
+    .maxstack  3
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  ldarg.2
+    IL_0003:  call       instance void [mscorlib]System.Exception::.ctor(string,
+                                                                         class [mscorlib]System.Exception)
+    IL_0008:  ret
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       8 (0x8)
+    .maxstack  2
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  call       instance void [mscorlib]System.Exception::.ctor(string)
+    IL_0007:  ret
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       9 (0x9)
+    .maxstack  3
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  ldarg.2
+    IL_0003:  call       instance void [mscorlib]System.Exception::.ctor(class [mscorlib]System.Runtime.Serialization.SerializationInfo,
+                                                                         valuetype [mscorlib]System.Runtime.Serialization.StreamingContext)
+    IL_0008:  ret
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       9 (0x9)
+    .maxstack  3
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  ldarg.2
+    IL_0003:  call       instance void [mscorlib]System.Exception::.ctor(string,
+                                                                         class [mscorlib]System.Exception)
+    IL_0008:  ret
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       8 (0x8)
+    .maxstack  2
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  call       instance void [mscorlib]System.Exception::.ctor(string)
+    IL_0007:  ret
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       41 (0x29)
+    .maxstack  4
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  ldarg.2
+    IL_0003:  call       instance void '<CrtImplementationDetails>'.ModuleLoadException::.ctor(class [mscorlib]System.Runtime.Serialization.SerializationInfo,
+                                                                                               valuetype [mscorlib]System.Runtime.Serialization.StreamingContext)
+    IL_0008:  ldarg.0
+    IL_0009:  ldarg.1
+    IL_000a:  ldstr      "NestedException"
+    IL_000f:  ldtoken    [mscorlib]System.Exception
+    IL_0014:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_0019:  call       instance object [mscorlib]System.Runtime.Serialization.SerializationInfo::GetValue(string,
+                                                                                                            class [mscorlib]System.Type)
+    IL_001e:  castclass  [mscorlib]System.Exception
+    IL_0023:  call       instance void '<CrtImplementationDetails>'.ModuleLoadExceptionHandlerException::set_NestedException(class [mscorlib]System.Exception)
+    IL_0028:  ret
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       16 (0x10)
+    .maxstack  3
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  ldarg.2
+    IL_0003:  call       instance void '<CrtImplementationDetails>'.ModuleLoadException::.ctor(string,
+                                                                                               class [mscorlib]System.Exception)
+    IL_0008:  ldarg.0
+    IL_0009:  ldarg.3
+    IL_000a:  call       instance void '<CrtImplementationDetails>'.ModuleLoadExceptionHandlerException::set_NestedException(class [mscorlib]System.Exception)
+    IL_000f:  ret
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       9 (0x9)
+    .maxstack  1
+    .locals ([0] class [mscorlib]System.Exception V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [mscorlib]System.Exception '<CrtImplementationDetails>'.ModuleLoadExceptionHandlerException::'<backing_store>NestedException'
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  ret
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       8 (0x8)
+    .maxstack  2
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      class [mscorlib]System.Exception '<CrtImplementationDetails>'.ModuleLoadExceptionHandlerException::'<backing_store>NestedException'
+    IL_0007:  ret
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       164 (0xa4)
+    .maxstack  3
+    .locals ([0] object[] V_0,
+             [1] string 'nested',
+             [2] string inner,
+             [3] string V_3,
+             [4] string V_4,
+             [5] string V_5,
+             [6] string result,
+             [7] string V_7)
+    IL_0000:  ldnull
+    IL_0001:  stloc.2
+    IL_0002:  ldnull
+    IL_0003:  stloc.1
+    IL_0004:  ldnull
+    IL_0005:  stloc.s    result
+    IL_0007:  ldarg.0
+    IL_0008:  callvirt   instance class [mscorlib]System.Exception [mscorlib]System.Exception::get_InnerException()
+    IL_000d:  brfalse.s  IL_001c
+
+    IL_000f:  ldarg.0
+    IL_0010:  callvirt   instance class [mscorlib]System.Exception [mscorlib]System.Exception::get_InnerException()
+    IL_0015:  callvirt   instance string [mscorlib]System.Exception::ToString()
+    IL_001a:  br.s       IL_0021
+
+    IL_001c:  ldsfld     string [mscorlib]System.String::Empty
+    IL_0021:  stloc.2
+    IL_0022:  ldarg.0
+    IL_0023:  call       instance class [mscorlib]System.Exception '<CrtImplementationDetails>'.ModuleLoadExceptionHandlerException::get_NestedException()
+    IL_0028:  brfalse.s  IL_0037
+
+    IL_002a:  ldarg.0
+    IL_002b:  call       instance class [mscorlib]System.Exception '<CrtImplementationDetails>'.ModuleLoadExceptionHandlerException::get_NestedException()
+    IL_0030:  callvirt   instance string [mscorlib]System.Exception::ToString()
+    IL_0035:  br.s       IL_003c
+
+    IL_0037:  ldsfld     string [mscorlib]System.String::Empty
+    IL_003c:  stloc.1
+    IL_003d:  ldc.i4.4
+    IL_003e:  newarr     [mscorlib]System.Object
+    IL_0043:  stloc.0
+    IL_0044:  ldloc.0
+    IL_0045:  ldc.i4.0
+    IL_0046:  ldarg.0
+    IL_0047:  callvirt   instance class [mscorlib]System.Type [mscorlib]System.Exception::GetType()
+    IL_004c:  stelem.ref
+    IL_004d:  ldarg.0
+    IL_004e:  callvirt   instance string [mscorlib]System.Exception::get_Message()
+    IL_0053:  brfalse.s  IL_005f
+
+    IL_0055:  ldarg.0
+    IL_0056:  callvirt   instance string [mscorlib]System.Exception::get_Message()
+    IL_005b:  stloc.s    V_5
+    IL_005d:  br.s       IL_0066
+
+    IL_005f:  ldsfld     string [mscorlib]System.String::Empty
+    IL_0064:  stloc.s    V_5
+    IL_0066:  ldloc.0
+    IL_0067:  ldc.i4.1
+    IL_0068:  ldloc.s    V_5
+    IL_006a:  stelem.ref
+    IL_006b:  ldloc.2
+    IL_006c:  brfalse.s  IL_0073
+
+    IL_006e:  ldloc.2
+    IL_006f:  stloc.s    V_4
+    IL_0071:  br.s       IL_007a
+
+    IL_0073:  ldsfld     string [mscorlib]System.String::Empty
+    IL_0078:  stloc.s    V_4
+    IL_007a:  ldloc.0
+    IL_007b:  ldc.i4.2
+    IL_007c:  ldloc.s    V_4
+    IL_007e:  stelem.ref
+    IL_007f:  ldloc.1
+    IL_0080:  brfalse.s  IL_0086
+
+    IL_0082:  ldloc.1
+    IL_0083:  stloc.3
+    IL_0084:  br.s       IL_008c
+
+    IL_0086:  ldsfld     string [mscorlib]System.String::Empty
+    IL_008b:  stloc.3
+    IL_008c:  ldloc.0
+    IL_008d:  ldc.i4.3
+    IL_008e:  ldloc.3
+    IL_008f:  stelem.ref
+    IL_0090:  ldstr      "\n{0}: {1}\n--- Start of primary exception ---\n{2}\n-"
+    + "-- End of primary exception ---\n\n--- Start of nested exception ---\n{3}\n"
+    + "--- End of nested exception ---\n"
+    IL_0095:  ldloc.0
+    IL_0096:  call       string [mscorlib]System.String::Format(string,
+                                                                object[])
+    IL_009b:  stloc.s    result
+    IL_009d:  ldloc.s    result
+    IL_009f:  stloc.s    V_7
+    IL_00a1:  ldloc.s    V_7
+    IL_00a3:  ret
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Security.SecurityCriticalAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       36 (0x24)
+    .maxstack  4
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  ldarg.2
+    IL_0003:  call       instance void [mscorlib]System.Exception::GetObjectData(class [mscorlib]System.Runtime.Serialization.SerializationInfo,
+                                                                                 valuetype [mscorlib]System.Runtime.Serialization.StreamingContext)
+    IL_0008:  ldarg.1
+    IL_0009:  ldstr      "NestedException"
+    IL_000e:  ldarg.0
+    IL_000f:  call       instance class [mscorlib]System.Exception '<CrtImplementationDetails>'.ModuleLoadExceptionHandlerException::get_NestedException()
+    IL_0014:  ldtoken    [mscorlib]System.Exception
+    IL_0019:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_001e:  call       instance void [mscorlib]System.Runtime.Serialization.SerializationInfo::AddValue(string,
+                                                                                                          object,
+                                                                                                          class [mscorlib]System.Type)
+    IL_0023:  ret
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Security.SecuritySafeCriticalAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       54 (0x36)
+    .maxstack  4
+    .locals ([0] bool mustReleaseLock)
+    IL_0000:  ldc.i4.0
+    IL_0001:  stloc.0
+    IL_0002:  call       void [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::PrepareConstrainedRegions()
+    .try
+    {
+      IL_0007:  call       void [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::PrepareConstrainedRegions()
+      IL_000c:  ldsfld     object '<CrtImplementationDetails>'.ModuleUninitializer::lock
+      IL_0011:  ldloca.s   mustReleaseLock
+      IL_0013:  call       void [mscorlib]System.Threading.Monitor::Enter(object,
+                                                                          bool&)
+      IL_0018:  ldarg.1
+      IL_0019:  call       void [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::PrepareDelegate(class [mscorlib]System.Delegate)
+      IL_001e:  ldarg.0
+      IL_001f:  ldarg.1
+      IL_0020:  callvirt   instance void [mscorlib]System.Collections.Stack::Push(object)
+      IL_0025:  leave.s    IL_0035
+
+    }  // end .try
+    finally
+    {
+      IL_0027:  ldloc.0
+      IL_0028:  brfalse.s  IL_0034
+
+      IL_002a:  ldsfld     object '<CrtImplementationDetails>'.ModuleUninitializer::lock
+      IL_002f:  call       void [mscorlib]System.Threading.Monitor::Exit(object)
+      IL_0034:  endfinally
+    }  // end handler
+    IL_0035:  ret
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Security.SecurityCriticalAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       21 (0x15)
+    .maxstack  1
+    IL_0000:  newobj     instance void [mscorlib]System.Object::.ctor()
+    IL_0005:  stsfld     object '<CrtImplementationDetails>'.ModuleUninitializer::lock
+    IL_000a:  newobj     instance void '<CrtImplementationDetails>'.ModuleUninitializer::.ctor()
+    IL_000f:  stsfld     class '<CrtImplementationDetails>'.ModuleUninitializer '<CrtImplementationDetails>'.ModuleUninitializer::_ModuleUninitializer
+    IL_0014:  ret
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Security.SecuritySafeCriticalAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       44 (0x2c)
+    .maxstack  2
+    .locals ([0] class [mscorlib]System.EventHandler singletonHandler)
+    IL_0000:  ldnull
+    IL_0001:  stloc.0
+    IL_0002:  ldarg.0
+    IL_0003:  call       instance void [mscorlib]System.Collections.Stack::.ctor()
+    IL_0008:  ldarg.0
+    IL_0009:  ldftn      instance void '<CrtImplementationDetails>'.ModuleUninitializer::SingletonDomainUnload(object,
+                                                                                                               class [mscorlib]System.EventArgs)
+    IL_000f:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_0014:  stloc.0
+    IL_0015:  call       class [mscorlib]System.AppDomain [mscorlib]System.AppDomain::get_CurrentDomain()
+    IL_001a:  ldloc.0
+    IL_001b:  callvirt   instance void [mscorlib]System.AppDomain::add_DomainUnload(class [mscorlib]System.EventHandler)
+    IL_0020:  call       class [mscorlib]System.AppDomain [mscorlib]System.AppDomain::get_CurrentDomain()
+    IL_0025:  ldloc.0
+    IL_0026:  callvirt   instance void [mscorlib]System.AppDomain::add_ProcessExit(class [mscorlib]System.EventHandler)
+    IL_002b:  ret
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Security.SecurityCriticalAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [mscorlib]System.Runtime.ConstrainedExecution.PrePrepareMethodAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       109 (0x6d)
+    .maxstack  4
+    .locals ([0] class [mscorlib]System.Collections.IEnumerator $S1,
+             [1] class [mscorlib]System.IDisposable V_1,
+             [2] class [mscorlib]System.EventHandler 'handler',
+             [3] int32 V_3,
+             [4] bool mustReleaseLock)
+    IL_0000:  ldnull
+    IL_0001:  stloc.0
+    IL_0002:  ldnull
+    IL_0003:  stloc.2
+    IL_0004:  ldc.i4.0
+    IL_0005:  stloc.s    mustReleaseLock
+    IL_0007:  call       void [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::PrepareConstrainedRegions()
+    .try
+    {
+      IL_000c:  call       void [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::PrepareConstrainedRegions()
+      IL_0011:  ldsfld     object '<CrtImplementationDetails>'.ModuleUninitializer::lock
+      IL_0016:  ldloca.s   mustReleaseLock
+      IL_0018:  call       void [mscorlib]System.Threading.Monitor::Enter(object,
+                                                                          bool&)
+      IL_001d:  ldarg.0
+      IL_001e:  callvirt   instance class [mscorlib]System.Collections.IEnumerator [mscorlib]System.Collections.Stack::GetEnumerator()
+      IL_0023:  stloc.0
+      .try
+      {
+        IL_0024:  ldloc.0
+        IL_0025:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+        IL_002a:  brfalse.s  IL_0042
+
+        IL_002c:  ldloc.0
+        IL_002d:  callvirt   instance object [mscorlib]System.Collections.IEnumerator::get_Current()
+        IL_0032:  castclass  [mscorlib]System.EventHandler
+        IL_0037:  stloc.2
+        IL_0038:  ldloc.2
+        IL_0039:  ldarg.1
+        IL_003a:  ldarg.2
+        IL_003b:  callvirt   instance void [mscorlib]System.EventHandler::Invoke(object,
+                                                                                 class [mscorlib]System.EventArgs)
+        IL_0040:  br.s       IL_0024
+
+        IL_0042:  leave.s    IL_005b
+
+      }  // end .try
+      finally
+      {
+        IL_0044:  ldloc.0
+        IL_0045:  isinst     [mscorlib]System.IDisposable
+        IL_004a:  stloc.1
+        IL_004b:  ldloc.1
+        IL_004c:  brfalse.s  IL_0058
+
+        IL_004e:  ldloc.1
+        IL_004f:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+        IL_0054:  ldc.i4.0
+        IL_0055:  stloc.3
+        IL_0056:  br.s       IL_005a
+
+        IL_0058:  ldc.i4.0
+        IL_0059:  stloc.3
+        IL_005a:  endfinally
+      }  // end handler
+      IL_005b:  leave.s    IL_006c
+
+    }  // end .try
+    finally
+    {
+      IL_005d:  ldloc.s    mustReleaseLock
+      IL_005f:  brfalse.s  IL_006b
+
+      IL_0061:  ldsfld     object '<CrtImplementationDetails>'.ModuleUninitializer::lock
+      IL_0066:  call       void [mscorlib]System.Threading.Monitor::Exit(object)
+      IL_006b:  endfinally
+    }  // end handler
+    IL_006c:  ret
+]]></source>
+</source_elements></project>

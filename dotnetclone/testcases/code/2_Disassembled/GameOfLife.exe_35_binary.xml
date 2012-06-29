@@ -1,0 +1,1576 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.ApplicationBase::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  8
+    .language '{3A12D0B8-C26C-11D0-B442-00A0244A1DD2}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.Devices.Computer::.ctor()
+    IL_0007:  nop
+    IL_0008:  nop
+    IL_0009:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       42 (0x2a)
+    .maxstack  8
+    IL_0000:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer>::.ctor()
+    IL_0005:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer> My.MyProject::m_ComputerObjectProvider
+    IL_000a:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication>::.ctor()
+    IL_000f:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication> My.MyProject::m_AppObjectProvider
+    IL_0014:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User>::.ctor()
+    IL_0019:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User> My.MyProject::m_UserObjectProvider
+    IL_001e:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices>::.ctor()
+    IL_0023:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices> My.MyProject::m_MyWebServicesObjectProvider
+    IL_0028:  nop
+    IL_0029:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class My.MyComputer Computer)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer> My.MyProject::m_ComputerObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class My.MyApplication Application)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication> My.MyProject::m_AppObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User User)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User> My.MyProject::m_UserObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class My.MyProject/MyWebServices WebServices)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices> My.MyProject::m_MyWebServicesObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\GameOfLifeLogic.vb" startline="28" endline="58"><![CDATA[
+  {
+    // Code size       300 (0x12c)
+    .maxstack  6
+    .locals init ([0] class [mscorlib]System.Random rand,
+             [1] int32 i,
+             [2] int32 j,
+             [3] valuetype [mscorlib]System.Nullable`1<valuetype [System.Drawing]System.Drawing.Color>[0...,0...][] VB$t_array$S0,
+             [4] int32 VB$t_i4$L0,
+             [5] int32 VB$t_i4$L1,
+             [6] valuetype [mscorlib]System.Nullable`1<valuetype [System.Drawing]System.Drawing.Color> VB$t_struct$N0,
+             [7] bool VB$CG$t_bool$S0,
+             [8] int32 VB$CG$t_i4$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0007:  nop
+    IL_0008:  ldarg.1
+    IL_0009:  ldc.i4.1
+    IL_000a:  clt
+    IL_000c:  stloc.s    VB$CG$t_bool$S0
+    IL_000e:  ldloc.s    VB$CG$t_bool$S0
+    IL_0010:  brfalse.s  IL_001d
+
+    IL_0012:  ldstr      "width"
+    IL_0017:  newobj     instance void [mscorlib]System.ArgumentOutOfRangeException::.ctor(string)
+    IL_001c:  throw
+
+    IL_001d:  nop
+    IL_001e:  ldarg.2
+    IL_001f:  ldc.i4.1
+    IL_0020:  clt
+    IL_0022:  stloc.s    VB$CG$t_bool$S0
+    IL_0024:  ldloc.s    VB$CG$t_bool$S0
+    IL_0026:  brfalse.s  IL_0033
+
+    IL_0028:  ldstr      "height"
+    IL_002d:  newobj     instance void [mscorlib]System.ArgumentOutOfRangeException::.ctor(string)
+    IL_0032:  throw
+
+    IL_0033:  nop
+    IL_0034:  ldarg.s    pool
+    IL_0036:  ldnull
+    IL_0037:  ceq
+    IL_0039:  stloc.s    VB$CG$t_bool$S0
+    IL_003b:  ldloc.s    VB$CG$t_bool$S0
+    IL_003d:  brfalse.s  IL_004a
+
+    IL_003f:  ldstr      "pool"
+    IL_0044:  newobj     instance void [mscorlib]System.ArgumentNullException::.ctor(string)
+    IL_0049:  throw
+
+    IL_004a:  nop
+    IL_004b:  ldarg.3
+    IL_004c:  ldc.r8     0.0
+    IL_0055:  blt.s      IL_0066
+
+    IL_0057:  ldarg.3
+    IL_0058:  ldc.r8     1.
+    IL_0061:  bgt.s      IL_0066
+
+    IL_0063:  ldc.i4.0
+    IL_0064:  br.s       IL_0067
+
+    IL_0066:  ldc.i4.1
+    IL_0067:  stloc.s    VB$CG$t_bool$S0
+    IL_0069:  ldloc.s    VB$CG$t_bool$S0
+    IL_006b:  brfalse.s  IL_0078
+
+    IL_006d:  ldstr      "initialDensity"
+    IL_0072:  newobj     instance void [mscorlib]System.ArgumentOutOfRangeException::.ctor(string)
+    IL_0077:  throw
+
+    IL_0078:  nop
+    IL_0079:  ldarg.0
+    IL_007a:  ldarg.s    pool
+    IL_007c:  stfld      class [ParallelExtensionsExtras]System.Collections.Concurrent.ObjectPool`1<class [System.Drawing]System.Drawing.Bitmap> GameOfLife.GameBoard::_pool
+    IL_0081:  ldarg.0
+    IL_0082:  ldarg.1
+    IL_0083:  callvirt   instance void GameOfLife.GameBoard::set_Width(int32)
+    IL_0088:  nop
+    IL_0089:  ldarg.0
+    IL_008a:  ldarg.2
+    IL_008b:  callvirt   instance void GameOfLife.GameBoard::set_Height(int32)
+    IL_0090:  nop
+    IL_0091:  ldarg.0
+    IL_0092:  ldc.i4.2
+    IL_0093:  newarr     valuetype [mscorlib]System.Nullable`1<valuetype [System.Drawing]System.Drawing.Color>[0...,0...]
+    IL_0098:  stloc.3
+    IL_0099:  ldloc.3
+    IL_009a:  ldc.i4.0
+    IL_009b:  ldarg.1
+    IL_009c:  ldc.i4.1
+    IL_009d:  sub.ovf
+    IL_009e:  ldc.i4.1
+    IL_009f:  add.ovf
+    IL_00a0:  ldarg.2
+    IL_00a1:  ldc.i4.1
+    IL_00a2:  sub.ovf
+    IL_00a3:  ldc.i4.1
+    IL_00a4:  add.ovf
+    IL_00a5:  newobj     instance void valuetype [mscorlib]System.Nullable`1<valuetype [System.Drawing]System.Drawing.Color>[0...,0...]::.ctor(int32,
+                                                                                                                                               int32)
+    IL_00aa:  stelem.ref
+    IL_00ab:  nop
+    IL_00ac:  ldloc.3
+    IL_00ad:  ldc.i4.1
+    IL_00ae:  ldarg.1
+    IL_00af:  ldc.i4.1
+    IL_00b0:  sub.ovf
+    IL_00b1:  ldc.i4.1
+    IL_00b2:  add.ovf
+    IL_00b3:  ldarg.2
+    IL_00b4:  ldc.i4.1
+    IL_00b5:  sub.ovf
+    IL_00b6:  ldc.i4.1
+    IL_00b7:  add.ovf
+    IL_00b8:  newobj     instance void valuetype [mscorlib]System.Nullable`1<valuetype [System.Drawing]System.Drawing.Color>[0...,0...]::.ctor(int32,
+                                                                                                                                               int32)
+    IL_00bd:  stelem.ref
+    IL_00be:  nop
+    IL_00bf:  ldloc.3
+    IL_00c0:  stfld      valuetype [mscorlib]System.Nullable`1<valuetype [System.Drawing]System.Drawing.Color>[0...,0...][] GameOfLife.GameBoard::_scratch
+    IL_00c5:  newobj     instance void [mscorlib]System.Random::.ctor()
+    IL_00ca:  stloc.0
+    IL_00cb:  ldc.i4.0
+    IL_00cc:  ldarg.1
+    IL_00cd:  ldc.i4.1
+    IL_00ce:  sub.ovf
+    IL_00cf:  stloc.s    VB$t_i4$L0
+    IL_00d1:  stloc.1
+    IL_00d2:  br.s       IL_0121
+
+    IL_00d4:  ldc.i4.0
+    IL_00d5:  ldarg.2
+    IL_00d6:  ldc.i4.1
+    IL_00d7:  sub.ovf
+    IL_00d8:  stloc.s    VB$t_i4$L1
+    IL_00da:  stloc.2
+    IL_00db:  br.s       IL_0113
+
+    IL_00dd:  ldarg.0
+    IL_00de:  ldfld      valuetype [mscorlib]System.Nullable`1<valuetype [System.Drawing]System.Drawing.Color>[0...,0...][] GameOfLife.GameBoard::_scratch
+    IL_00e3:  ldarg.0
+    IL_00e4:  ldfld      int32 GameOfLife.GameBoard::_currentIndex
+    IL_00e9:  ldelem.ref
+    IL_00ea:  ldloc.1
+    IL_00eb:  ldloc.2
+    IL_00ec:  ldloc.0
+    IL_00ed:  callvirt   instance float64 [mscorlib]System.Random::NextDouble()
+    IL_00f2:  ldarg.3
+    IL_00f3:  blt.s      IL_00f9
+
+    IL_00f5:  ldloc.s    VB$t_struct$N0
+    IL_00f7:  br.s       IL_0109
+
+    IL_00f9:  ldloc.0
+    IL_00fa:  callvirt   instance int32 [mscorlib]System.Random::Next()
+    IL_00ff:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::FromArgb(int32)
+    IL_0104:  call       valuetype [mscorlib]System.Nullable`1<!0> valuetype [mscorlib]System.Nullable`1<valuetype [System.Drawing]System.Drawing.Color>::op_Implicit(!0)
+    IL_0109:  callvirt   instance void valuetype [mscorlib]System.Nullable`1<valuetype [System.Drawing]System.Drawing.Color>[0...,0...]::Set(int32,
+                                                                                                                                             int32,
+                                                                                                                                             valuetype [mscorlib]System.Nullable`1<valuetype [System.Drawing]System.Drawing.Color>)
+    IL_010e:  nop
+    IL_010f:  ldloc.2
+    IL_0110:  ldc.i4.1
+    IL_0111:  add.ovf
+    IL_0112:  stloc.2
+    IL_0113:  ldloc.2
+    IL_0114:  ldloc.s    VB$t_i4$L1
+    IL_0116:  stloc.s    VB$CG$t_i4$S0
+    IL_0118:  ldloc.s    VB$CG$t_i4$S0
+    IL_011a:  ble.s      IL_00dd
+
+    IL_011c:  nop
+    IL_011d:  ldloc.1
+    IL_011e:  ldc.i4.1
+    IL_011f:  add.ovf
+    IL_0120:  stloc.1
+    IL_0121:  ldloc.1
+    IL_0122:  ldloc.s    VB$t_i4$L0
+    IL_0124:  stloc.s    VB$CG$t_i4$S0
+    IL_0126:  ldloc.s    VB$CG$t_i4$S0
+    IL_0128:  ble.s      IL_00d4
+
+    IL_012a:  nop
+    IL_012b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\GameOfLifeLogic.vb" startline="59" endline="125"><![CDATA[
+  {
+    // Code size       246 (0xf6)
+    .maxstack  3
+    .locals init ([0] class GameOfLife.GameBoard/_Closure$__1 $VB$Closure_ClosureVariable_3E_26,
+             [1] class [System.Drawing]System.Drawing.Bitmap bmp,
+             [2] class [System.Drawing]System.Drawing.Bitmap MoveNext,
+             [3] int32 nextIndex,
+             [4] class [mscorlib]System.Random rand,
+             [5] class GameOfLife.GameBoard/_Closure$__1/_Closure$__2 $VB$Closure_ClosureVariable_47_3,
+             [6] class [mscorlib]System.Action`1<int32> body,
+             [7] int32 i,
+             [8] int32 VB$t_i4$L0,
+             [9] bool VB$CG$t_bool$S0,
+             [10] int32 VB$CG$t_i4$S0)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void GameOfLife.GameBoard/_Closure$__1::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  ldarg.0
+    IL_0009:  stfld      class GameOfLife.GameBoard GameOfLife.GameBoard/_Closure$__1::$VB$Me
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      int32 GameOfLife.GameBoard::_currentIndex
+    IL_0014:  ldc.i4.1
+    IL_0015:  add.ovf
+    IL_0016:  ldc.i4.2
+    IL_0017:  rem
+    IL_0018:  stloc.3
+    IL_0019:  ldloc.0
+    IL_001a:  ldarg.0
+    IL_001b:  ldfld      valuetype [mscorlib]System.Nullable`1<valuetype [System.Drawing]System.Drawing.Color>[0...,0...][] GameOfLife.GameBoard::_scratch
+    IL_0020:  ldarg.0
+    IL_0021:  ldfld      int32 GameOfLife.GameBoard::_currentIndex
+    IL_0026:  ldelem.ref
+    IL_0027:  stfld      valuetype [mscorlib]System.Nullable`1<valuetype [System.Drawing]System.Drawing.Color>[0...,0...] GameOfLife.GameBoard/_Closure$__1::$VB$Local_current
+    IL_002c:  ldloc.0
+    IL_002d:  ldarg.0
+    IL_002e:  ldfld      valuetype [mscorlib]System.Nullable`1<valuetype [System.Drawing]System.Drawing.Color>[0...,0...][] GameOfLife.GameBoard::_scratch
+    IL_0033:  ldloc.3
+    IL_0034:  ldelem.ref
+    IL_0035:  stfld      valuetype [mscorlib]System.Nullable`1<valuetype [System.Drawing]System.Drawing.Color>[0...,0...] GameOfLife.GameBoard/_Closure$__1::$VB$Local_next
+    IL_003a:  newobj     instance void [mscorlib]System.Random::.ctor()
+    IL_003f:  stloc.s    rand
+    IL_0041:  ldarg.0
+    IL_0042:  ldfld      class [ParallelExtensionsExtras]System.Collections.Concurrent.ObjectPool`1<class [System.Drawing]System.Drawing.Bitmap> GameOfLife.GameBoard::_pool
+    IL_0047:  callvirt   instance !0 class [ParallelExtensionsExtras]System.Collections.Concurrent.ObjectPool`1<class [System.Drawing]System.Drawing.Bitmap>::GetObject()
+    IL_004c:  stloc.1
+    IL_004d:  nop
+    IL_004e:  newobj     instance void GameOfLife.GameBoard/_Closure$__1/_Closure$__2::.ctor()
+    IL_0053:  stloc.s    $VB$Closure_ClosureVariable_47_3
+    IL_0055:  ldloc.s    $VB$Closure_ClosureVariable_47_3
+    IL_0057:  ldloc.0
+    IL_0058:  stfld      class GameOfLife.GameBoard/_Closure$__1 GameOfLife.GameBoard/_Closure$__1/_Closure$__2::$VB$NonLocal_$VB$Closure_ClosureVariable_3E_26
+    IL_005d:  ldloc.s    $VB$Closure_ClosureVariable_47_3
+    IL_005f:  ldloc.1
+    IL_0060:  newobj     instance void [ParallelExtensionsExtras]Microsoft.Drawing.FastBitmap::.ctor(class [System.Drawing]System.Drawing.Bitmap)
+    IL_0065:  stfld      class [ParallelExtensionsExtras]Microsoft.Drawing.FastBitmap GameOfLife.GameBoard/_Closure$__1/_Closure$__2::$VB$Local_fastBmp
+    IL_006a:  nop
+    .try
+    {
+      IL_006b:  ldloc.s    $VB$Closure_ClosureVariable_47_3
+      IL_006d:  dup
+      IL_006e:  ldvirtftn  instance void GameOfLife.GameBoard/_Closure$__1/_Closure$__2::_Lambda$__1(int32)
+      IL_0074:  newobj     instance void class [mscorlib]System.Action`1<int32>::.ctor(object,
+                                                                                       native int)
+      IL_0079:  stloc.s    body
+      IL_007b:  ldarg.0
+      IL_007c:  callvirt   instance bool GameOfLife.GameBoard::get_RunParallel()
+      IL_0081:  stloc.s    VB$CG$t_bool$S0
+      IL_0083:  ldloc.s    VB$CG$t_bool$S0
+      IL_0085:  brfalse.s  IL_0098
+
+      IL_0087:  ldc.i4.0
+      IL_0088:  ldarg.0
+      IL_0089:  callvirt   instance int32 GameOfLife.GameBoard::get_Width()
+      IL_008e:  ldloc.s    body
+      IL_0090:  call       valuetype [mscorlib]System.Threading.Tasks.ParallelLoopResult [mscorlib]System.Threading.Tasks.Parallel::For(int32,
+                                                                                                                                        int32,
+                                                                                                                                        class [mscorlib]System.Action`1<int32>)
+      IL_0095:  pop
+      IL_0096:  br.s       IL_00c3
+
+      IL_0098:  nop
+      IL_0099:  ldc.i4.0
+      IL_009a:  ldarg.0
+      IL_009b:  callvirt   instance int32 GameOfLife.GameBoard::get_Width()
+      IL_00a0:  ldc.i4.1
+      IL_00a1:  sub.ovf
+      IL_00a2:  stloc.s    VB$t_i4$L0
+      IL_00a4:  stloc.s    i
+      IL_00a6:  br.s       IL_00b9
+
+      IL_00a8:  ldloc.s    body
+      IL_00aa:  ldloc.s    i
+      IL_00ac:  callvirt   instance void class [mscorlib]System.Action`1<int32>::Invoke(!0)
+      IL_00b1:  nop
+      IL_00b2:  nop
+      IL_00b3:  ldloc.s    i
+      IL_00b5:  ldc.i4.1
+      IL_00b6:  add.ovf
+      IL_00b7:  stloc.s    i
+      IL_00b9:  ldloc.s    i
+      IL_00bb:  ldloc.s    VB$t_i4$L0
+      IL_00bd:  stloc.s    VB$CG$t_i4$S0
+      IL_00bf:  ldloc.s    VB$CG$t_i4$S0
+      IL_00c1:  ble.s      IL_00a8
+
+      IL_00c3:  nop
+      IL_00c4:  nop
+      IL_00c5:  leave.s    IL_00e9
+
+    }  // end .try
+    finally
+    {
+      IL_00c7:  ldloc.s    $VB$Closure_ClosureVariable_47_3
+      IL_00c9:  ldfld      class [ParallelExtensionsExtras]Microsoft.Drawing.FastBitmap GameOfLife.GameBoard/_Closure$__1/_Closure$__2::$VB$Local_fastBmp
+      IL_00ce:  ldnull
+      IL_00cf:  ceq
+      IL_00d1:  ldc.i4.0
+      IL_00d2:  ceq
+      IL_00d4:  stloc.s    VB$CG$t_bool$S0
+      IL_00d6:  ldloc.s    VB$CG$t_bool$S0
+      IL_00d8:  brfalse.s  IL_00e7
+
+      IL_00da:  ldloc.s    $VB$Closure_ClosureVariable_47_3
+      IL_00dc:  ldfld      class [ParallelExtensionsExtras]Microsoft.Drawing.FastBitmap GameOfLife.GameBoard/_Closure$__1/_Closure$__2::$VB$Local_fastBmp
+      IL_00e1:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_00e6:  nop
+      IL_00e7:  nop
+      IL_00e8:  endfinally
+    }  // end handler
+    IL_00e9:  ldarg.0
+    IL_00ea:  ldloc.3
+    IL_00eb:  stfld      int32 GameOfLife.GameBoard::_currentIndex
+    IL_00f0:  ldloc.1
+    IL_00f1:  stloc.2
+    IL_00f2:  br.s       IL_00f4
+
+    IL_00f4:  ldloc.2
+    IL_00f5:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\GameOfLifeLogic.vb" startline="126" endline="132"><![CDATA[
+  {
+    // Code size       12 (0xc)
+    .maxstack  1
+    .locals init ([0] int32 Width)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      int32 GameOfLife.GameBoard::privateWidth
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\GameOfLifeLogic.vb" startline="133" endline="135"><![CDATA[
+  {
+    // Code size       10 (0xa)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  stfld      int32 GameOfLife.GameBoard::privateWidth
+    IL_0008:  nop
+    IL_0009:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\GameOfLifeLogic.vb" startline="136" endline="142"><![CDATA[
+  {
+    // Code size       12 (0xc)
+    .maxstack  1
+    .locals init ([0] int32 Height)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      int32 GameOfLife.GameBoard::privateHeight
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\GameOfLifeLogic.vb" startline="143" endline="145"><![CDATA[
+  {
+    // Code size       10 (0xa)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  stfld      int32 GameOfLife.GameBoard::privateHeight
+    IL_0008:  nop
+    IL_0009:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\GameOfLifeLogic.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (bool V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      bool GameOfLife.GameBoard::_RunParallel
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\GameOfLifeLogic.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      bool GameOfLife.GameBoard::_RunParallel
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       12 (0xc)
+    .maxstack  8
+    IL_0000:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::.ctor()
+    IL_0005:  stsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> GameOfLife.MainForm::__ENCList
+    IL_000a:  nop
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       243 (0xf3)
+    .maxstack  4
+    .locals init (int32 V_0,
+             int32 V_1,
+             class [mscorlib]System.WeakReference V_2,
+             class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> V_3,
+             bool V_4,
+             int32 V_5,
+             bool V_6,
+             bool V_7,
+             int32 V_8)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> GameOfLife.MainForm::__ENCList
+    IL_0006:  stloc.3
+    IL_0007:  ldc.i4.0
+    IL_0008:  stloc.s    V_4
+    IL_000a:  nop
+    .try
+    {
+      IL_000b:  ldloc.3
+      IL_000c:  ldloca.s   V_4
+      IL_000e:  call       void [mscorlib]System.Threading.Monitor::Enter(object,
+                                                                          bool&)
+      IL_0013:  nop
+      IL_0014:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> GameOfLife.MainForm::__ENCList
+      IL_0019:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_001e:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> GameOfLife.MainForm::__ENCList
+      IL_0023:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Capacity()
+      IL_0028:  ceq
+      IL_002a:  stloc.s    V_6
+      IL_002c:  ldloc.s    V_6
+      IL_002e:  brfalse    IL_00c4
+
+      IL_0033:  ldc.i4.0
+      IL_0034:  stloc.0
+      IL_0035:  ldc.i4.0
+      IL_0036:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> GameOfLife.MainForm::__ENCList
+      IL_003b:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_0040:  ldc.i4.1
+      IL_0041:  sub.ovf
+      IL_0042:  stloc.s    V_5
+      IL_0044:  stloc.1
+      IL_0045:  br.s       IL_008e
+
+      IL_0047:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> GameOfLife.MainForm::__ENCList
+      IL_004c:  ldloc.1
+      IL_004d:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Item(int32)
+      IL_0052:  stloc.2
+      IL_0053:  ldloc.2
+      IL_0054:  callvirt   instance bool [mscorlib]System.WeakReference::get_IsAlive()
+      IL_0059:  stloc.s    V_6
+      IL_005b:  ldloc.s    V_6
+      IL_005d:  brfalse.s  IL_0088
+
+      IL_005f:  ldloc.1
+      IL_0060:  ldloc.0
+      IL_0061:  ceq
+      IL_0063:  ldc.i4.0
+      IL_0064:  ceq
+      IL_0066:  stloc.s    V_7
+      IL_0068:  ldloc.s    V_7
+      IL_006a:  brfalse.s  IL_0083
+
+      IL_006c:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> GameOfLife.MainForm::__ENCList
+      IL_0071:  ldloc.0
+      IL_0072:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> GameOfLife.MainForm::__ENCList
+      IL_0077:  ldloc.1
+      IL_0078:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Item(int32)
+      IL_007d:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::set_Item(int32,
+                                                                                                                                           !0)
+      IL_0082:  nop
+      IL_0083:  nop
+      IL_0084:  ldloc.0
+      IL_0085:  ldc.i4.1
+      IL_0086:  add.ovf
+      IL_0087:  stloc.0
+      IL_0088:  nop
+      IL_0089:  nop
+      IL_008a:  ldloc.1
+      IL_008b:  ldc.i4.1
+      IL_008c:  add.ovf
+      IL_008d:  stloc.1
+      IL_008e:  ldloc.1
+      IL_008f:  ldloc.s    V_5
+      IL_0091:  stloc.s    V_8
+      IL_0093:  ldloc.s    V_8
+      IL_0095:  ble.s      IL_0047
+
+      IL_0097:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> GameOfLife.MainForm::__ENCList
+      IL_009c:  ldloc.0
+      IL_009d:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> GameOfLife.MainForm::__ENCList
+      IL_00a2:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_00a7:  ldloc.0
+      IL_00a8:  sub.ovf
+      IL_00a9:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::RemoveRange(int32,
+                                                                                                                                              int32)
+      IL_00ae:  nop
+      IL_00af:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> GameOfLife.MainForm::__ENCList
+      IL_00b4:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> GameOfLife.MainForm::__ENCList
+      IL_00b9:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_00be:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::set_Capacity(int32)
+      IL_00c3:  nop
+      IL_00c4:  nop
+      IL_00c5:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> GameOfLife.MainForm::__ENCList
+      IL_00ca:  ldarg.0
+      IL_00cb:  call       object [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+      IL_00d0:  newobj     instance void [mscorlib]System.WeakReference::.ctor(object)
+      IL_00d5:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::Add(!0)
+      IL_00da:  nop
+      IL_00db:  nop
+      IL_00dc:  leave.s    IL_00f0
+
+    }  // end .try
+    finally
+    {
+      IL_00de:  nop
+      IL_00df:  ldloc.s    V_4
+      IL_00e1:  stloc.s    V_7
+      IL_00e3:  ldloc.s    V_7
+      IL_00e5:  brfalse.s  IL_00ee
+
+      IL_00e7:  ldloc.3
+      IL_00e8:  call       void [mscorlib]System.Threading.Monitor::Exit(object)
+      IL_00ed:  nop
+      IL_00ee:  nop
+      IL_00ef:  endfinally
+    }  // end handler
+    IL_00f0:  nop
+    IL_00f1:  nop
+    IL_00f2:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.Designer.vb" startline="12" endline="17"><![CDATA[
+  {
+    // Code size       43 (0x2b)
+    .maxstack  2
+    .locals init ([0] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  brfalse.s  IL_000c
+
+    IL_0004:  ldarg.0
+    IL_0005:  ldfld      class [System]System.ComponentModel.IContainer GameOfLife.MainForm::components
+    IL_000a:  brtrue.s   IL_000f
+
+    IL_000c:  ldc.i4.0
+    IL_000d:  br.s       IL_0010
+
+    IL_000f:  ldc.i4.1
+    IL_0010:  stloc.0
+    IL_0011:  ldloc.0
+    IL_0012:  brfalse.s  IL_0020
+
+    IL_0014:  ldarg.0
+    IL_0015:  ldfld      class [System]System.ComponentModel.IContainer GameOfLife.MainForm::components
+    IL_001a:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+    IL_001f:  nop
+    IL_0020:  nop
+    IL_0021:  ldarg.0
+    IL_0022:  ldarg.1
+    IL_0023:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::Dispose(bool)
+    IL_0028:  nop
+    IL_0029:  nop
+    IL_002a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.Designer.vb" startline="18" endline="117"><![CDATA[
+  {
+    // Code size       1113 (0x459)
+    .maxstack  4
+    .locals init ([0] valuetype [System.Drawing]System.Drawing.Color VB$t_struct$N0,
+             [1] valuetype [System.Drawing]System.Drawing.Point VB$t_struct$N1,
+             [2] valuetype [System.Drawing]System.Drawing.Point VB$t_struct$S2,
+             [3] valuetype [System.Drawing]System.Drawing.Size VB$t_struct$N3,
+             [4] valuetype [System.Drawing]System.Drawing.Size VB$t_struct$S4,
+             [5] valuetype [System.Drawing]System.Drawing.SizeF VB$t_struct$N5,
+             [6] valuetype [System.Drawing]System.Drawing.SizeF VB$t_struct$S6)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::.ctor()
+    IL_0007:  stfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox GameOfLife.MainForm::pictureBox1
+    IL_000c:  ldarg.0
+    IL_000d:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Button::.ctor()
+    IL_0012:  callvirt   instance void GameOfLife.MainForm::set_btnRun(class [System.Windows.Forms]System.Windows.Forms.Button)
+    IL_0017:  nop
+    IL_0018:  ldarg.0
+    IL_0019:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.CheckBox::.ctor()
+    IL_001e:  callvirt   instance void GameOfLife.MainForm::set_chkParallel(class [System.Windows.Forms]System.Windows.Forms.CheckBox)
+    IL_0023:  nop
+    IL_0024:  ldarg.0
+    IL_0025:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::.ctor()
+    IL_002a:  stfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar GameOfLife.MainForm::tbDensity
+    IL_002f:  ldarg.0
+    IL_0030:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_0035:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblDensity
+    IL_003a:  ldarg.0
+    IL_003b:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_0040:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblFramesPerSecond
+    IL_0045:  ldarg.0
+    IL_0046:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox GameOfLife.MainForm::pictureBox1
+    IL_004b:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::BeginInit()
+    IL_0050:  nop
+    IL_0051:  ldarg.0
+    IL_0052:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar GameOfLife.MainForm::tbDensity
+    IL_0057:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::BeginInit()
+    IL_005c:  nop
+    IL_005d:  ldarg.0
+    IL_005e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::SuspendLayout()
+    IL_0063:  nop
+    IL_0064:  ldarg.0
+    IL_0065:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox GameOfLife.MainForm::pictureBox1
+    IL_006a:  ldc.i4.s   15
+    IL_006c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_0071:  nop
+    IL_0072:  ldarg.0
+    IL_0073:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox GameOfLife.MainForm::pictureBox1
+    IL_0078:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_White()
+    IL_007d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_BackColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_0082:  nop
+    IL_0083:  ldarg.0
+    IL_0084:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox GameOfLife.MainForm::pictureBox1
+    IL_0089:  ldc.i4.2
+    IL_008a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_BorderStyle(valuetype [System.Windows.Forms]System.Windows.Forms.BorderStyle)
+    IL_008f:  nop
+    IL_0090:  ldarg.0
+    IL_0091:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox GameOfLife.MainForm::pictureBox1
+    IL_0096:  ldloca.s   VB$t_struct$S2
+    IL_0098:  ldc.i4.s   12
+    IL_009a:  ldc.i4.s   41
+    IL_009c:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_00a1:  nop
+    IL_00a2:  ldloc.2
+    IL_00a3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_00a8:  nop
+    IL_00a9:  ldarg.0
+    IL_00aa:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox GameOfLife.MainForm::pictureBox1
+    IL_00af:  ldstr      "pictureBox1"
+    IL_00b4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_00b9:  nop
+    IL_00ba:  ldarg.0
+    IL_00bb:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox GameOfLife.MainForm::pictureBox1
+    IL_00c0:  ldloca.s   VB$t_struct$S4
+    IL_00c2:  ldc.i4     0x1d0
+    IL_00c7:  ldc.i4     0x19d
+    IL_00cc:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_00d1:  nop
+    IL_00d2:  ldloc.s    VB$t_struct$S4
+    IL_00d4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_00d9:  nop
+    IL_00da:  ldarg.0
+    IL_00db:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox GameOfLife.MainForm::pictureBox1
+    IL_00e0:  ldc.i4.0
+    IL_00e1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_TabIndex(int32)
+    IL_00e6:  nop
+    IL_00e7:  ldarg.0
+    IL_00e8:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox GameOfLife.MainForm::pictureBox1
+    IL_00ed:  ldc.i4.0
+    IL_00ee:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_TabStop(bool)
+    IL_00f3:  nop
+    IL_00f4:  ldarg.0
+    IL_00f5:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button GameOfLife.MainForm::get_btnRun()
+    IL_00fa:  ldloca.s   VB$t_struct$S2
+    IL_00fc:  ldc.i4.s   12
+    IL_00fe:  ldc.i4.s   12
+    IL_0100:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0105:  nop
+    IL_0106:  ldloc.2
+    IL_0107:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_010c:  nop
+    IL_010d:  ldarg.0
+    IL_010e:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button GameOfLife.MainForm::get_btnRun()
+    IL_0113:  ldstr      "btnRun"
+    IL_0118:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_011d:  nop
+    IL_011e:  ldarg.0
+    IL_011f:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button GameOfLife.MainForm::get_btnRun()
+    IL_0124:  ldloca.s   VB$t_struct$S4
+    IL_0126:  ldc.i4.s   75
+    IL_0128:  ldc.i4.s   23
+    IL_012a:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_012f:  nop
+    IL_0130:  ldloc.s    VB$t_struct$S4
+    IL_0132:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0137:  nop
+    IL_0138:  ldarg.0
+    IL_0139:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button GameOfLife.MainForm::get_btnRun()
+    IL_013e:  ldc.i4.1
+    IL_013f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0144:  nop
+    IL_0145:  ldarg.0
+    IL_0146:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button GameOfLife.MainForm::get_btnRun()
+    IL_014b:  ldstr      "Start"
+    IL_0150:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_Text(string)
+    IL_0155:  nop
+    IL_0156:  ldarg.0
+    IL_0157:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button GameOfLife.MainForm::get_btnRun()
+    IL_015c:  ldc.i4.1
+    IL_015d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_UseVisualStyleBackColor(bool)
+    IL_0162:  nop
+    IL_0163:  ldarg.0
+    IL_0164:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.CheckBox GameOfLife.MainForm::get_chkParallel()
+    IL_0169:  ldc.i4.1
+    IL_016a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_AutoSize(bool)
+    IL_016f:  nop
+    IL_0170:  ldarg.0
+    IL_0171:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.CheckBox GameOfLife.MainForm::get_chkParallel()
+    IL_0176:  ldloca.s   VB$t_struct$S2
+    IL_0178:  ldc.i4.s   93
+    IL_017a:  ldc.i4.s   16
+    IL_017c:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0181:  nop
+    IL_0182:  ldloc.2
+    IL_0183:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0188:  nop
+    IL_0189:  ldarg.0
+    IL_018a:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.CheckBox GameOfLife.MainForm::get_chkParallel()
+    IL_018f:  ldstr      "chkParallel"
+    IL_0194:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0199:  nop
+    IL_019a:  ldarg.0
+    IL_019b:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.CheckBox GameOfLife.MainForm::get_chkParallel()
+    IL_01a0:  ldloca.s   VB$t_struct$S4
+    IL_01a2:  ldc.i4.s   66
+    IL_01a4:  ldc.i4.s   17
+    IL_01a6:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_01ab:  nop
+    IL_01ac:  ldloc.s    VB$t_struct$S4
+    IL_01ae:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_01b3:  nop
+    IL_01b4:  ldarg.0
+    IL_01b5:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.CheckBox GameOfLife.MainForm::get_chkParallel()
+    IL_01ba:  ldc.i4.2
+    IL_01bb:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_01c0:  nop
+    IL_01c1:  ldarg.0
+    IL_01c2:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.CheckBox GameOfLife.MainForm::get_chkParallel()
+    IL_01c7:  ldstr      "Parallel\?"
+    IL_01cc:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_Text(string)
+    IL_01d1:  nop
+    IL_01d2:  ldarg.0
+    IL_01d3:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.CheckBox GameOfLife.MainForm::get_chkParallel()
+    IL_01d8:  ldc.i4.1
+    IL_01d9:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_UseVisualStyleBackColor(bool)
+    IL_01de:  nop
+    IL_01df:  ldarg.0
+    IL_01e0:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar GameOfLife.MainForm::tbDensity
+    IL_01e5:  ldc.i4.s   13
+    IL_01e7:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_01ec:  nop
+    IL_01ed:  ldarg.0
+    IL_01ee:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar GameOfLife.MainForm::tbDensity
+    IL_01f3:  ldloca.s   VB$t_struct$S2
+    IL_01f5:  ldc.i4     0x145
+    IL_01fa:  ldc.i4.s   12
+    IL_01fc:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0201:  nop
+    IL_0202:  ldloc.2
+    IL_0203:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0208:  nop
+    IL_0209:  ldarg.0
+    IL_020a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar GameOfLife.MainForm::tbDensity
+    IL_020f:  ldc.i4     0x3e8
+    IL_0214:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_Maximum(int32)
+    IL_0219:  nop
+    IL_021a:  ldarg.0
+    IL_021b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar GameOfLife.MainForm::tbDensity
+    IL_0220:  ldc.i4.1
+    IL_0221:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_Minimum(int32)
+    IL_0226:  nop
+    IL_0227:  ldarg.0
+    IL_0228:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar GameOfLife.MainForm::tbDensity
+    IL_022d:  ldstr      "tbDensity"
+    IL_0232:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0237:  nop
+    IL_0238:  ldarg.0
+    IL_0239:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar GameOfLife.MainForm::tbDensity
+    IL_023e:  ldloca.s   VB$t_struct$S4
+    IL_0240:  ldc.i4     0x97
+    IL_0245:  ldc.i4.s   45
+    IL_0247:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_024c:  nop
+    IL_024d:  ldloc.s    VB$t_struct$S4
+    IL_024f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0254:  nop
+    IL_0255:  ldarg.0
+    IL_0256:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar GameOfLife.MainForm::tbDensity
+    IL_025b:  ldc.i4.3
+    IL_025c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0261:  nop
+    IL_0262:  ldarg.0
+    IL_0263:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar GameOfLife.MainForm::tbDensity
+    IL_0268:  ldc.i4.0
+    IL_0269:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_TickStyle(valuetype [System.Windows.Forms]System.Windows.Forms.TickStyle)
+    IL_026e:  nop
+    IL_026f:  ldarg.0
+    IL_0270:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar GameOfLife.MainForm::tbDensity
+    IL_0275:  ldc.i4.s   100
+    IL_0277:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_Value(int32)
+    IL_027c:  nop
+    IL_027d:  ldarg.0
+    IL_027e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblDensity
+    IL_0283:  ldc.i4.1
+    IL_0284:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_AutoSize(bool)
+    IL_0289:  nop
+    IL_028a:  ldarg.0
+    IL_028b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblDensity
+    IL_0290:  ldloca.s   VB$t_struct$S2
+    IL_0292:  ldc.i4     0xfa
+    IL_0297:  ldc.i4.s   16
+    IL_0299:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_029e:  nop
+    IL_029f:  ldloc.2
+    IL_02a0:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_02a5:  nop
+    IL_02a6:  ldarg.0
+    IL_02a7:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblDensity
+    IL_02ac:  ldstr      "lblDensity"
+    IL_02b1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_02b6:  nop
+    IL_02b7:  ldarg.0
+    IL_02b8:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblDensity
+    IL_02bd:  ldloca.s   VB$t_struct$S4
+    IL_02bf:  ldc.i4.s   69
+    IL_02c1:  ldc.i4.s   13
+    IL_02c3:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_02c8:  nop
+    IL_02c9:  ldloc.s    VB$t_struct$S4
+    IL_02cb:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_02d0:  nop
+    IL_02d1:  ldarg.0
+    IL_02d2:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblDensity
+    IL_02d7:  ldc.i4.4
+    IL_02d8:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_02dd:  nop
+    IL_02de:  ldarg.0
+    IL_02df:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblDensity
+    IL_02e4:  ldstr      "Initial Density"
+    IL_02e9:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_02ee:  nop
+    IL_02ef:  ldarg.0
+    IL_02f0:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblFramesPerSecond
+    IL_02f5:  ldc.i4.6
+    IL_02f6:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_02fb:  nop
+    IL_02fc:  ldarg.0
+    IL_02fd:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblFramesPerSecond
+    IL_0302:  ldc.i4.1
+    IL_0303:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_AutoSize(bool)
+    IL_0308:  nop
+    IL_0309:  ldarg.0
+    IL_030a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblFramesPerSecond
+    IL_030f:  ldloca.s   VB$t_struct$S2
+    IL_0311:  ldc.i4.s   13
+    IL_0313:  ldc.i4     0x1c9
+    IL_0318:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_031d:  nop
+    IL_031e:  ldloc.2
+    IL_031f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0324:  nop
+    IL_0325:  ldarg.0
+    IL_0326:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblFramesPerSecond
+    IL_032b:  ldstr      "lblFramesPerSecond"
+    IL_0330:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0335:  nop
+    IL_0336:  ldarg.0
+    IL_0337:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblFramesPerSecond
+    IL_033c:  ldloca.s   VB$t_struct$S4
+    IL_033e:  ldc.i4.s   77
+    IL_0340:  ldc.i4.s   13
+    IL_0342:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0347:  nop
+    IL_0348:  ldloc.s    VB$t_struct$S4
+    IL_034a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_034f:  nop
+    IL_0350:  ldarg.0
+    IL_0351:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblFramesPerSecond
+    IL_0356:  ldc.i4.5
+    IL_0357:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_035c:  nop
+    IL_035d:  ldarg.0
+    IL_035e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblFramesPerSecond
+    IL_0363:  ldstr      "Frames / Sec: "
+    IL_0368:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+    IL_036d:  nop
+    IL_036e:  ldarg.0
+    IL_036f:  ldloca.s   VB$t_struct$S6
+    IL_0371:  ldc.r4     6.
+    IL_0376:  ldc.r4     13.
+    IL_037b:  call       instance void [System.Drawing]System.Drawing.SizeF::.ctor(float32,
+                                                                                   float32)
+    IL_0380:  nop
+    IL_0381:  ldloc.s    VB$t_struct$S6
+    IL_0383:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::set_AutoScaleDimensions(valuetype [System.Drawing]System.Drawing.SizeF)
+    IL_0388:  nop
+    IL_0389:  ldarg.0
+    IL_038a:  ldc.i4.1
+    IL_038b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::set_AutoScaleMode(valuetype [System.Windows.Forms]System.Windows.Forms.AutoScaleMode)
+    IL_0390:  nop
+    IL_0391:  ldarg.0
+    IL_0392:  ldloca.s   VB$t_struct$S4
+    IL_0394:  ldc.i4     0x1e8
+    IL_0399:  ldc.i4     0x1e2
+    IL_039e:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_03a3:  nop
+    IL_03a4:  ldloc.s    VB$t_struct$S4
+    IL_03a6:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Form::set_ClientSize(valuetype [System.Drawing]System.Drawing.Size)
+    IL_03ab:  nop
+    IL_03ac:  ldarg.0
+    IL_03ad:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_03b2:  ldarg.0
+    IL_03b3:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblFramesPerSecond
+    IL_03b8:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_03bd:  nop
+    IL_03be:  ldarg.0
+    IL_03bf:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_03c4:  ldarg.0
+    IL_03c5:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblDensity
+    IL_03ca:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_03cf:  nop
+    IL_03d0:  ldarg.0
+    IL_03d1:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_03d6:  ldarg.0
+    IL_03d7:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.CheckBox GameOfLife.MainForm::get_chkParallel()
+    IL_03dc:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_03e1:  nop
+    IL_03e2:  ldarg.0
+    IL_03e3:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_03e8:  ldarg.0
+    IL_03e9:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button GameOfLife.MainForm::get_btnRun()
+    IL_03ee:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_03f3:  nop
+    IL_03f4:  ldarg.0
+    IL_03f5:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_03fa:  ldarg.0
+    IL_03fb:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox GameOfLife.MainForm::pictureBox1
+    IL_0400:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0405:  nop
+    IL_0406:  ldarg.0
+    IL_0407:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_040c:  ldarg.0
+    IL_040d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar GameOfLife.MainForm::tbDensity
+    IL_0412:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0417:  nop
+    IL_0418:  ldarg.0
+    IL_0419:  ldstr      "MainForm"
+    IL_041e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0423:  nop
+    IL_0424:  ldarg.0
+    IL_0425:  ldstr      "Conway's Game Of Life"
+    IL_042a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Form::set_Text(string)
+    IL_042f:  nop
+    IL_0430:  ldarg.0
+    IL_0431:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox GameOfLife.MainForm::pictureBox1
+    IL_0436:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::EndInit()
+    IL_043b:  nop
+    IL_043c:  ldarg.0
+    IL_043d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar GameOfLife.MainForm::tbDensity
+    IL_0442:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::EndInit()
+    IL_0447:  nop
+    IL_0448:  ldarg.0
+    IL_0449:  ldc.i4.0
+    IL_044a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::ResumeLayout(bool)
+    IL_044f:  nop
+    IL_0450:  ldarg.0
+    IL_0451:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::PerformLayout()
+    IL_0456:  nop
+    IL_0457:  nop
+    IL_0458:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [System.Windows.Forms]System.Windows.Forms.Button V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button GameOfLife.MainForm::_btnRun
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       83 (0x53)
+    .maxstack  2
+    .locals init (class [mscorlib]System.EventHandler V_0,
+             bool V_1)
+    IL_0000:  ldarg.0
+    IL_0001:  dup
+    IL_0002:  ldvirtftn  instance void GameOfLife.MainForm::btnRun_Click(object,
+                                                                         class [mscorlib]System.EventArgs)
+    IL_0008:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_000d:  stloc.0
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button GameOfLife.MainForm::_btnRun
+    IL_0014:  ldnull
+    IL_0015:  ceq
+    IL_0017:  ldc.i4.0
+    IL_0018:  ceq
+    IL_001a:  stloc.1
+    IL_001b:  ldloc.1
+    IL_001c:  brfalse.s  IL_002b
+
+    IL_001e:  ldarg.0
+    IL_001f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button GameOfLife.MainForm::_btnRun
+    IL_0024:  ldloc.0
+    IL_0025:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::remove_Click(class [mscorlib]System.EventHandler)
+    IL_002a:  nop
+    IL_002b:  nop
+    IL_002c:  ldarg.0
+    IL_002d:  ldarg.1
+    IL_002e:  stfld      class [System.Windows.Forms]System.Windows.Forms.Button GameOfLife.MainForm::_btnRun
+    IL_0033:  ldarg.0
+    IL_0034:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button GameOfLife.MainForm::_btnRun
+    IL_0039:  ldnull
+    IL_003a:  ceq
+    IL_003c:  ldc.i4.0
+    IL_003d:  ceq
+    IL_003f:  stloc.1
+    IL_0040:  ldloc.1
+    IL_0041:  brfalse.s  IL_0050
+
+    IL_0043:  ldarg.0
+    IL_0044:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button GameOfLife.MainForm::_btnRun
+    IL_0049:  ldloc.0
+    IL_004a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::add_Click(class [mscorlib]System.EventHandler)
+    IL_004f:  nop
+    IL_0050:  nop
+    IL_0051:  nop
+    IL_0052:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [System.Windows.Forms]System.Windows.Forms.CheckBox V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox GameOfLife.MainForm::_chkParallel
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       83 (0x53)
+    .maxstack  2
+    .locals init (class [mscorlib]System.EventHandler V_0,
+             bool V_1)
+    IL_0000:  ldarg.0
+    IL_0001:  dup
+    IL_0002:  ldvirtftn  instance void GameOfLife.MainForm::chkParallel_CheckedChanged(object,
+                                                                                       class [mscorlib]System.EventArgs)
+    IL_0008:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_000d:  stloc.0
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox GameOfLife.MainForm::_chkParallel
+    IL_0014:  ldnull
+    IL_0015:  ceq
+    IL_0017:  ldc.i4.0
+    IL_0018:  ceq
+    IL_001a:  stloc.1
+    IL_001b:  ldloc.1
+    IL_001c:  brfalse.s  IL_002b
+
+    IL_001e:  ldarg.0
+    IL_001f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox GameOfLife.MainForm::_chkParallel
+    IL_0024:  ldloc.0
+    IL_0025:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.CheckBox::remove_CheckedChanged(class [mscorlib]System.EventHandler)
+    IL_002a:  nop
+    IL_002b:  nop
+    IL_002c:  ldarg.0
+    IL_002d:  ldarg.1
+    IL_002e:  stfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox GameOfLife.MainForm::_chkParallel
+    IL_0033:  ldarg.0
+    IL_0034:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox GameOfLife.MainForm::_chkParallel
+    IL_0039:  ldnull
+    IL_003a:  ceq
+    IL_003c:  ldc.i4.0
+    IL_003d:  ceq
+    IL_003f:  stloc.1
+    IL_0040:  ldloc.1
+    IL_0041:  brfalse.s  IL_0050
+
+    IL_0043:  ldarg.0
+    IL_0044:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox GameOfLife.MainForm::_chkParallel
+    IL_0049:  ldloc.0
+    IL_004a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.CheckBox::add_CheckedChanged(class [mscorlib]System.EventHandler)
+    IL_004f:  nop
+    IL_0050:  nop
+    IL_0051:  nop
+    IL_0052:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.vb" startline="16" endline="18"><![CDATA[
+  {
+    // Code size       31 (0x1f)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::.ctor()
+    IL_0007:  nop
+    IL_0008:  ldarg.0
+    IL_0009:  call       void GameOfLife.MainForm::__ENCAddToList(object)
+    IL_000e:  nop
+    IL_000f:  ldarg.0
+    IL_0010:  ldnull
+    IL_0011:  stfld      class [System]System.ComponentModel.IContainer GameOfLife.MainForm::components
+    IL_0016:  ldarg.0
+    IL_0017:  callvirt   instance void GameOfLife.MainForm::InitializeComponent()
+    IL_001c:  nop
+    IL_001d:  nop
+    IL_001e:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.vb" startline="19" endline="29"><![CDATA[
+  {
+    // Code size       43 (0x2b)
+    .maxstack  2
+    .locals init ([0] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class GameOfLife.GameBoard GameOfLife.MainForm::_game
+    IL_0007:  ldnull
+    IL_0008:  ceq
+    IL_000a:  ldc.i4.0
+    IL_000b:  ceq
+    IL_000d:  stloc.0
+    IL_000e:  ldloc.0
+    IL_000f:  brfalse.s  IL_0028
+
+    IL_0011:  ldarg.0
+    IL_0012:  ldfld      class GameOfLife.GameBoard GameOfLife.MainForm::_game
+    IL_0017:  ldarg.0
+    IL_0018:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.CheckBox GameOfLife.MainForm::get_chkParallel()
+    IL_001d:  callvirt   instance bool [System.Windows.Forms]System.Windows.Forms.CheckBox::get_Checked()
+    IL_0022:  callvirt   instance void GameOfLife.GameBoard::set_RunParallel(bool)
+    IL_0027:  nop
+    IL_0028:  nop
+    IL_0029:  nop
+    IL_002a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.vb" startline="30" endline="82"><![CDATA[
+  {
+    // Code size       316 (0x13c)
+    .maxstack  5
+    .locals init ([0] class GameOfLife.MainForm/_Closure$__3 $VB$Closure_ClosureVariable_22_C,
+             [1] float64 initialDensity,
+             [2] class GameOfLife.GameBoard VB$t_ref$S0,
+             [3] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource GameOfLife.MainForm::_cancellation
+    IL_0007:  ldnull
+    IL_0008:  ceq
+    IL_000a:  stloc.3
+    IL_000b:  ldloc.3
+    IL_000c:  brfalse    IL_012c
+
+    IL_0011:  newobj     instance void GameOfLife.MainForm/_Closure$__3::.ctor()
+    IL_0016:  stloc.0
+    IL_0017:  ldloc.0
+    IL_0018:  ldarg.0
+    IL_0019:  stfld      class GameOfLife.MainForm GameOfLife.MainForm/_Closure$__3::$VB$Me
+    IL_001e:  ldarg.0
+    IL_001f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox GameOfLife.MainForm::pictureBox1
+    IL_0024:  ldnull
+    IL_0025:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_Image(class [System.Drawing]System.Drawing.Image)
+    IL_002a:  nop
+    IL_002b:  ldloc.0
+    IL_002c:  ldarg.0
+    IL_002d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox GameOfLife.MainForm::pictureBox1
+    IL_0032:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Width()
+    IL_0037:  stfld      int32 GameOfLife.MainForm/_Closure$__3::$VB$Local_width
+    IL_003c:  ldloc.0
+    IL_003d:  ldarg.0
+    IL_003e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox GameOfLife.MainForm::pictureBox1
+    IL_0043:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Height()
+    IL_0048:  stfld      int32 GameOfLife.MainForm/_Closure$__3::$VB$Local_height
+    IL_004d:  ldarg.0
+    IL_004e:  newobj     instance void [mscorlib]System.Threading.CancellationTokenSource::.ctor()
+    IL_0053:  stfld      class [mscorlib]System.Threading.CancellationTokenSource GameOfLife.MainForm::_cancellation
+    IL_0058:  ldloc.0
+    IL_0059:  ldarg.0
+    IL_005a:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource GameOfLife.MainForm::_cancellation
+    IL_005f:  callvirt   instance valuetype [mscorlib]System.Threading.CancellationToken [mscorlib]System.Threading.CancellationTokenSource::get_Token()
+    IL_0064:  stfld      valuetype [mscorlib]System.Threading.CancellationToken GameOfLife.MainForm/_Closure$__3::$VB$Local_token
+    IL_0069:  ldarg.0
+    IL_006a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblDensity
+    IL_006f:  ldc.i4.0
+    IL_0070:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Visible(bool)
+    IL_0075:  nop
+    IL_0076:  ldarg.0
+    IL_0077:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar GameOfLife.MainForm::tbDensity
+    IL_007c:  ldc.i4.0
+    IL_007d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Visible(bool)
+    IL_0082:  nop
+    IL_0083:  ldarg.0
+    IL_0084:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button GameOfLife.MainForm::get_btnRun()
+    IL_0089:  ldstr      "Stop"
+    IL_008e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_Text(string)
+    IL_0093:  nop
+    IL_0094:  ldarg.0
+    IL_0095:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar GameOfLife.MainForm::tbDensity
+    IL_009a:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.TrackBar::get_Value()
+    IL_009f:  conv.r8
+    IL_00a0:  ldc.r8     1000.
+    IL_00a9:  div
+    IL_00aa:  stloc.1
+    IL_00ab:  ldloc.0
+    IL_00ac:  ldloc.0
+    IL_00ad:  dup
+    IL_00ae:  ldvirtftn  instance class [System.Drawing]System.Drawing.Bitmap GameOfLife.MainForm/_Closure$__3::_Lambda$__2()
+    IL_00b4:  newobj     instance void class [mscorlib]System.Func`1<class [System.Drawing]System.Drawing.Bitmap>::.ctor(object,
+                                                                                                                         native int)
+    IL_00b9:  newobj     instance void class [ParallelExtensionsExtras]System.Collections.Concurrent.ObjectPool`1<class [System.Drawing]System.Drawing.Bitmap>::.ctor(class [mscorlib]System.Func`1<!0>)
+    IL_00be:  stfld      class [ParallelExtensionsExtras]System.Collections.Concurrent.ObjectPool`1<class [System.Drawing]System.Drawing.Bitmap> GameOfLife.MainForm/_Closure$__3::$VB$Local_pool
+    IL_00c3:  ldarg.0
+    IL_00c4:  ldloc.0
+    IL_00c5:  ldfld      int32 GameOfLife.MainForm/_Closure$__3::$VB$Local_width
+    IL_00ca:  ldloc.0
+    IL_00cb:  ldfld      int32 GameOfLife.MainForm/_Closure$__3::$VB$Local_height
+    IL_00d0:  ldloc.1
+    IL_00d1:  ldloc.0
+    IL_00d2:  ldfld      class [ParallelExtensionsExtras]System.Collections.Concurrent.ObjectPool`1<class [System.Drawing]System.Drawing.Bitmap> GameOfLife.MainForm/_Closure$__3::$VB$Local_pool
+    IL_00d7:  newobj     instance void GameOfLife.GameBoard::.ctor(int32,
+                                                                   int32,
+                                                                   float64,
+                                                                   class [ParallelExtensionsExtras]System.Collections.Concurrent.ObjectPool`1<class [System.Drawing]System.Drawing.Bitmap>)
+    IL_00dc:  stloc.2
+    IL_00dd:  ldloc.2
+    IL_00de:  ldarg.0
+    IL_00df:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.CheckBox GameOfLife.MainForm::get_chkParallel()
+    IL_00e4:  callvirt   instance bool [System.Windows.Forms]System.Windows.Forms.CheckBox::get_Checked()
+    IL_00e9:  callvirt   instance void GameOfLife.GameBoard::set_RunParallel(bool)
+    IL_00ee:  nop
+    IL_00ef:  ldloc.2
+    IL_00f0:  stfld      class GameOfLife.GameBoard GameOfLife.MainForm::_game
+    IL_00f5:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_00fa:  ldloc.0
+    IL_00fb:  dup
+    IL_00fc:  ldvirtftn  instance void GameOfLife.MainForm/_Closure$__3::_Lambda$__5()
+    IL_0102:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_0107:  ldloc.0
+    IL_0108:  ldfld      valuetype [mscorlib]System.Threading.CancellationToken GameOfLife.MainForm/_Closure$__3::$VB$Local_token
+    IL_010d:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.CancellationToken)
+    IL_0112:  ldarg.0
+    IL_0113:  dup
+    IL_0114:  ldvirtftn  instance void GameOfLife.MainForm::_Lambda$__3(class [mscorlib]System.Threading.Tasks.Task)
+    IL_011a:  newobj     instance void class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task>::.ctor(object,
+                                                                                                                           native int)
+    IL_011f:  call       class [mscorlib]System.Threading.Tasks.TaskScheduler [mscorlib]System.Threading.Tasks.TaskScheduler::FromCurrentSynchronizationContext()
+    IL_0124:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.Task::ContinueWith(class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task>,
+                                                                                                                                  class [mscorlib]System.Threading.Tasks.TaskScheduler)
+    IL_0129:  pop
+    IL_012a:  br.s       IL_0139
+
+    IL_012c:  nop
+    IL_012d:  ldarg.0
+    IL_012e:  ldfld      class [mscorlib]System.Threading.CancellationTokenSource GameOfLife.MainForm::_cancellation
+    IL_0133:  callvirt   instance void [mscorlib]System.Threading.CancellationTokenSource::Cancel()
+    IL_0138:  nop
+    IL_0139:  nop
+    IL_013a:  nop
+    IL_013b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.vb" startline="71" endline="71"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       24 (0x18)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  dup
+    IL_0002:  ldvirtftn  instance void GameOfLife.MainForm::_Lambda$__4()
+    IL_0008:  newobj     instance void VB$AnonymousDelegate_2::.ctor(object,
+                                                                     native int)
+    IL_000d:  callvirt   instance void VB$AnonymousDelegate_2::Invoke()
+    IL_0012:  nop
+    IL_0013:  nop
+    IL_0014:  br.s       IL_0016
+
+    IL_0016:  nop
+    IL_0017:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.vb" startline="72" endline="76"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       53 (0x35)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldnull
+    IL_0003:  stfld      class [mscorlib]System.Threading.CancellationTokenSource GameOfLife.MainForm::_cancellation
+    IL_0008:  ldarg.0
+    IL_0009:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button GameOfLife.MainForm::get_btnRun()
+    IL_000e:  ldstr      "Start"
+    IL_0013:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_Text(string)
+    IL_0018:  nop
+    IL_0019:  ldarg.0
+    IL_001a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label GameOfLife.MainForm::lblDensity
+    IL_001f:  ldc.i4.1
+    IL_0020:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Visible(bool)
+    IL_0025:  nop
+    IL_0026:  ldarg.0
+    IL_0027:  ldfld      class [System.Windows.Forms]System.Windows.Forms.TrackBar GameOfLife.MainForm::tbDensity
+    IL_002c:  ldc.i4.1
+    IL_002d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Visible(bool)
+    IL_0032:  nop
+    IL_0033:  nop
+    IL_0034:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\Module1.vb" startline="15" endline="19"><![CDATA[
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.STAThreadAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       27 (0x1b)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  call       void [System.Windows.Forms]System.Windows.Forms.Application::EnableVisualStyles()
+    IL_0006:  nop
+    IL_0007:  ldc.i4.0
+    IL_0008:  call       void [System.Windows.Forms]System.Windows.Forms.Application::SetCompatibleTextRenderingDefault(bool)
+    IL_000d:  nop
+    IL_000e:  newobj     instance void GameOfLife.MainForm::.ctor()
+    IL_0013:  call       void [System.Windows.Forms]System.Windows.Forms.Application::Run(class [System.Windows.Forms]System.Windows.Forms.Form)
+    IL_0018:  nop
+    IL_0019:  nop
+    IL_001a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Resources.Designer.vb" startline="40" endline="46"><![CDATA[
+  {
+    // Code size       59 (0x3b)
+    .maxstack  2
+    .locals init ([0] class [mscorlib]System.Resources.ResourceManager ResourceManager,
+             [1] class [mscorlib]System.Resources.ResourceManager temp,
+             [2] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Resources.ResourceManager My.Resources.Resources::resourceMan
+    IL_0006:  ldnull
+    IL_0007:  call       bool [mscorlib]System.Object::ReferenceEquals(object,
+                                                                       object)
+    IL_000c:  stloc.2
+    IL_000d:  ldloc.2
+    IL_000e:  brfalse.s  IL_0030
+
+    IL_0010:  ldstr      "Resources"
+    IL_0015:  ldtoken    My.Resources.Resources
+    IL_001a:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_001f:  callvirt   instance class [mscorlib]System.Reflection.Assembly [mscorlib]System.Type::get_Assembly()
+    IL_0024:  newobj     instance void [mscorlib]System.Resources.ResourceManager::.ctor(string,
+                                                                                         class [mscorlib]System.Reflection.Assembly)
+    IL_0029:  stloc.1
+    IL_002a:  ldloc.1
+    IL_002b:  stsfld     class [mscorlib]System.Resources.ResourceManager My.Resources.Resources::resourceMan
+    IL_0030:  nop
+    IL_0031:  ldsfld     class [mscorlib]System.Resources.ResourceManager My.Resources.Resources::resourceMan
+    IL_0036:  stloc.0
+    IL_0037:  br.s       IL_0039
+
+    IL_0039:  ldloc.0
+    IL_003a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Resources.Designer.vb" startline="47" endline="57"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Globalization.CultureInfo Culture)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Globalization.CultureInfo My.Resources.Resources::resourceCulture
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Resources.Designer.vb" startline="58" endline="60"><![CDATA[
+  {
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  stsfld     class [mscorlib]System.Globalization.CultureInfo My.Resources.Resources::resourceCulture
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Settings.Designer.vb" startline="18" endline="18"><![CDATA[
+  {
+    // Code size       22 (0x16)
+    .maxstack  8
+    IL_0000:  newobj     instance void My.Settings::.ctor()
+    IL_0005:  call       class [System]System.Configuration.SettingsBase [System]System.Configuration.SettingsBase::Synchronized(class [System]System.Configuration.SettingsBase)
+    IL_000a:  castclass  My.Settings
+    IL_000f:  stsfld     class My.Settings My.Settings::defaultInstance
+    IL_0014:  nop
+    IL_0015:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [System]System.Configuration.ApplicationSettingsBase::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Settings.Designer.vb" startline="19" endline="23"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class My.Settings Default)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.Settings My.Settings::defaultInstance
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+]]></source>
+</source_elements></project>

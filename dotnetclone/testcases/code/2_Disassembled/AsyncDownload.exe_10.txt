@@ -1,0 +1,2250 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.0.30319.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern Microsoft.VisualBasic
+{
+  .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
+  .ver 10:0:0:0
+}
+.assembly extern System.Xml.Linq
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern System
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern System.Core
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern ParallelExtensionsExtras
+{
+  .ver 1:2:0:0
+}
+.assembly AsyncDownload
+{
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 39 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ..9Copyright .. 
+                                                                                                  4D 69 63 72 6F 73 6F 66 74 20 43 6F 72 70 6F 72   // Microsoft Corpor
+                                                                                                  61 74 69 6F 6E 2E 20 20 41 6C 6C 20 72 69 67 68   // ation.  All righ
+                                                                                                  74 73 20 72 65 73 65 72 76 65 64 2E 00 00 )       // ts reserved...
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 0D 41 73 79 6E 63 44 6F 77 6E 6C 6F 61 64   // ...AsyncDownload
+                                                                                              00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 0D 41 73 79 6E 63 44 6F 77 6E 6C 6F 61 64   // ...AsyncDownload
+                                                                                                00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 09 4D 69 63 72 6F 73 6F 66 74 00 00 )       // ...Microsoft..
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 29 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ..).NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 2C 50 72   // ,Version=v4.0,Pr
+                                                                                                        6F 66 69 6C 65 3D 43 6C 69 65 6E 74 01 00 54 0E   // ofile=Client..T.
+                                                                                                        14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C 61   // .FrameworkDispla
+                                                                                                        79 4E 61 6D 65 1F 2E 4E 45 54 20 46 72 61 6D 65   // yName..NET Frame
+                                                                                                        77 6F 72 6B 20 34 20 43 6C 69 65 6E 74 20 50 72   // work 4 Client Pr
+                                                                                                        6F 66 69 6C 65 )                                  // ofile
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 65 63 36 38 66 36 61 61 2D 66 35 36 61   // ..$ec68f6aa-f56a
+                                                                                                  2D 34 38 31 38 2D 61 36 66 66 2D 30 62 64 34 65   // -4818-a6ff-0bd4e
+                                                                                                  33 36 65 61 66 38 38 00 00 )                      // 36eaf88..
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.mresource public AsyncDownload.Resources.resources
+{
+  // Offset: 0x00000000 Length: 0x000000B4
+}
+.module AsyncDownload.exe
+// MVID: {9FB76E8B-FAA6-4060-BB9B-3A39B4C8334A}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000003    //  ILONLY 32BITREQUIRED
+// Image base: 0x00310000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi AsyncDownload.My.MyApplication
+       extends [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase
+{
+  .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 0A 4D 79 54 65 6D 70 6C 61 74 65 08 31 30   // ...MyTemplate.10
+                                                                                                  2E 30 2E 30 2E 30 00 00 )                         // .0.0.0..
+  .method public specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  ret
+  } // end of method MyApplication::.ctor
+
+} // end of class AsyncDownload.My.MyApplication
+
+.class private auto ansi AsyncDownload.My.MyComputer
+       extends [Microsoft.VisualBasic]Microsoft.VisualBasic.Devices.Computer
+{
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 0A 4D 79 54 65 6D 70 6C 61 74 65 08 31 30   // ...MyTemplate.10
+                                                                                                  2E 30 2E 30 2E 30 00 00 )                         // .0.0.0..
+  .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+  .method public specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  8
+    .language '{3A12D0B8-C26C-11D0-B442-00A0244A1DD2}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File '17d14f5c-a337-4978-8281-53493378c1071.vb' not found
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.Devices.Computer::.ctor()
+    IL_0007:  nop
+    IL_0008:  nop
+    IL_0009:  ret
+  } // end of method MyComputer::.ctor
+
+} // end of class AsyncDownload.My.MyComputer
+
+.class private auto ansi sealed beforefieldinit AsyncDownload.My.MyProject
+       extends [mscorlib]System.Object
+{
+  .custom instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.StandardModuleAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 0A 4D 79 54 65 6D 70 6C 61 74 65 08 31 30   // ...MyTemplate.10
+                                                                                                  2E 30 2E 30 2E 30 00 00 )                         // .0.0.0..
+  .custom instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.HideModuleNameAttribute::.ctor() = ( 01 00 00 00 ) 
+  .class auto ansi sealed nested assembly MyWebServices
+         extends [mscorlib]System.Object
+  {
+    .custom instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.MyGroupCollectionAttribute::.ctor(string,
+                                                                                                         string,
+                                                                                                         string,
+                                                                                                         string) = ( 01 00 34 53 79 73 74 65 6D 2E 57 65 62 2E 53 65   // ..4System.Web.Se
+                                                                                                                     72 76 69 63 65 73 2E 50 72 6F 74 6F 63 6F 6C 73   // rvices.Protocols
+                                                                                                                     2E 53 6F 61 70 48 74 74 70 43 6C 69 65 6E 74 50   // .SoapHttpClientP
+                                                                                                                     72 6F 74 6F 63 6F 6C 12 43 72 65 61 74 65 5F 5F   // rotocol.Create__
+                                                                                                                     49 6E 73 74 61 6E 63 65 5F 5F 13 44 69 73 70 6F   // Instance__.Dispo
+                                                                                                                     73 65 5F 5F 49 6E 73 74 61 6E 63 65 5F 5F 00 00   // se__Instance__..
+                                                                                                                     00 ) 
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .method public strict virtual instance bool 
+            Equals(object o) cil managed
+    {
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       18 (0x12)
+      .maxstack  2
+      .locals init ([0] bool Equals)
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  ldarg.1
+      IL_0003:  call       object [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+      IL_0008:  call       instance bool [mscorlib]System.Object::Equals(object)
+      IL_000d:  stloc.0
+      IL_000e:  br.s       IL_0010
+
+      IL_0010:  ldloc.0
+      IL_0011:  ret
+    } // end of method MyWebServices::Equals
+
+    .method public strict virtual instance int32 
+            GetHashCode() cil managed
+    {
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      // Code size       12 (0xc)
+      .maxstack  1
+      .locals init ([0] int32 GetHashCode)
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  call       instance int32 [mscorlib]System.Object::GetHashCode()
+      IL_0007:  stloc.0
+      IL_0008:  br.s       IL_000a
+
+      IL_000a:  ldloc.0
+      IL_000b:  ret
+    } // end of method MyWebServices::GetHashCode
+
+    .method assembly hidebysig instance class [mscorlib]System.Type 
+            GetType() cil managed
+    {
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       16 (0x10)
+      .maxstack  1
+      .locals init ([0] class [mscorlib]System.Type GetType)
+      IL_0000:  nop
+      IL_0001:  ldtoken    AsyncDownload.My.MyProject/MyWebServices
+      IL_0006:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+      IL_000b:  stloc.0
+      IL_000c:  br.s       IL_000e
+
+      IL_000e:  ldloc.0
+      IL_000f:  ret
+    } // end of method MyWebServices::GetType
+
+    .method public strict virtual instance string 
+            ToString() cil managed
+    {
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      // Code size       12 (0xc)
+      .maxstack  1
+      .locals init ([0] string ToString)
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  call       instance string [mscorlib]System.Object::ToString()
+      IL_0007:  stloc.0
+      IL_0008:  br.s       IL_000a
+
+      IL_000a:  ldloc.0
+      IL_000b:  ret
+    } // end of method MyWebServices::ToString
+
+    .method private static !!T  Create__Instance__<.ctor T>(!!T 'instance') cil managed
+    {
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       32 (0x20)
+      .maxstack  2
+      .locals init ([0] !!T Create__Instance__,
+               [1] bool VB$CG$t_bool$S0)
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  box        !!T
+      IL_0007:  ldnull
+      IL_0008:  ceq
+      IL_000a:  stloc.1
+      IL_000b:  ldloc.1
+      IL_000c:  brfalse.s  IL_0018
+
+      IL_000e:  call       !!0 [mscorlib]System.Activator::CreateInstance<!!0>()
+      IL_0013:  stloc.0
+      IL_0014:  br.s       IL_001e
+
+      IL_0016:  br.s       IL_001d
+
+      IL_0018:  nop
+      IL_0019:  ldarg.0
+      IL_001a:  stloc.0
+      IL_001b:  br.s       IL_001e
+
+      IL_001d:  nop
+      IL_001e:  ldloc.0
+      IL_001f:  ret
+    } // end of method MyWebServices::Create__Instance__
+
+    .method private instance void  Dispose__Instance__<T>(!!T& 'instance') cil managed
+    {
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       18 (0x12)
+      .maxstack  2
+      .locals init ([0] !!T VB$t_generic$S0)
+      IL_0000:  nop
+      IL_0001:  ldarg.1
+      IL_0002:  ldloca.s   VB$t_generic$S0
+      IL_0004:  initobj    !!T
+      IL_000a:  ldloc.0
+      IL_000b:  stobj      !!T
+      IL_0010:  nop
+      IL_0011:  ret
+    } // end of method MyWebServices::Dispose__Instance__
+
+    .method public specialname rtspecialname 
+            instance void  .ctor() cil managed
+    {
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      // Code size       10 (0xa)
+      .maxstack  8
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0007:  nop
+      IL_0008:  nop
+      IL_0009:  ret
+    } // end of method MyWebServices::.ctor
+
+  } // end of class MyWebServices
+
+  .class auto ansi sealed nested assembly ThreadSafeObjectProvider`1<.ctor T>
+         extends [mscorlib]System.Object
+  {
+    .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .field private static !T m_ThreadStaticValue
+    .custom instance void [mscorlib]System.ThreadStaticAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    .method assembly specialname instance !T 
+            get_GetInstance() cil managed
+    {
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       38 (0x26)
+      .maxstack  2
+      .locals init ([0] !T GetInstance,
+               [1] bool VB$CG$t_bool$S0)
+      IL_0000:  nop
+      IL_0001:  ldsfld     !0 class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<!T>::m_ThreadStaticValue
+      IL_0006:  box        !T
+      IL_000b:  ldnull
+      IL_000c:  ceq
+      IL_000e:  stloc.1
+      IL_000f:  ldloc.1
+      IL_0010:  brfalse.s  IL_001c
+
+      IL_0012:  call       !!0 [mscorlib]System.Activator::CreateInstance<!T>()
+      IL_0017:  stsfld     !0 class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<!T>::m_ThreadStaticValue
+      IL_001c:  ldsfld     !0 class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<!T>::m_ThreadStaticValue
+      IL_0021:  stloc.0
+      IL_0022:  br.s       IL_0024
+
+      IL_0024:  ldloc.0
+      IL_0025:  ret
+    } // end of method ThreadSafeObjectProvider`1::get_GetInstance
+
+    .method public specialname rtspecialname 
+            instance void  .ctor() cil managed
+    {
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       10 (0xa)
+      .maxstack  8
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0007:  nop
+      IL_0008:  nop
+      IL_0009:  ret
+    } // end of method ThreadSafeObjectProvider`1::.ctor
+
+    .property instance !T GetInstance()
+    {
+      .get instance !T AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1::get_GetInstance()
+    } // end of property ThreadSafeObjectProvider`1::GetInstance
+  } // end of class ThreadSafeObjectProvider`1
+
+  .field private static initonly class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class AsyncDownload.My.MyComputer> m_ComputerObjectProvider
+  .field private static initonly class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class AsyncDownload.My.MyApplication> m_AppObjectProvider
+  .field private static initonly class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User> m_UserObjectProvider
+  .field private static initonly class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class AsyncDownload.My.MyProject/MyWebServices> m_MyWebServicesObjectProvider
+  .method private specialname rtspecialname static 
+          void  .cctor() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       42 (0x2a)
+    .maxstack  8
+    IL_0000:  newobj     instance void class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class AsyncDownload.My.MyComputer>::.ctor()
+    IL_0005:  stsfld     class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class AsyncDownload.My.MyComputer> AsyncDownload.My.MyProject::m_ComputerObjectProvider
+    IL_000a:  newobj     instance void class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class AsyncDownload.My.MyApplication>::.ctor()
+    IL_000f:  stsfld     class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class AsyncDownload.My.MyApplication> AsyncDownload.My.MyProject::m_AppObjectProvider
+    IL_0014:  newobj     instance void class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User>::.ctor()
+    IL_0019:  stsfld     class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User> AsyncDownload.My.MyProject::m_UserObjectProvider
+    IL_001e:  newobj     instance void class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class AsyncDownload.My.MyProject/MyWebServices>::.ctor()
+    IL_0023:  stsfld     class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class AsyncDownload.My.MyProject/MyWebServices> AsyncDownload.My.MyProject::m_MyWebServicesObjectProvider
+    IL_0028:  nop
+    IL_0029:  ret
+  } // end of method MyProject::.cctor
+
+  .method assembly specialname static class AsyncDownload.My.MyComputer 
+          get_Computer() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class AsyncDownload.My.MyComputer Computer)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class AsyncDownload.My.MyComputer> AsyncDownload.My.MyProject::m_ComputerObjectProvider
+    IL_0006:  callvirt   instance !0 class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class AsyncDownload.My.MyComputer>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+  } // end of method MyProject::get_Computer
+
+  .method assembly specialname static class AsyncDownload.My.MyApplication 
+          get_Application() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class AsyncDownload.My.MyApplication Application)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class AsyncDownload.My.MyApplication> AsyncDownload.My.MyProject::m_AppObjectProvider
+    IL_0006:  callvirt   instance !0 class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class AsyncDownload.My.MyApplication>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+  } // end of method MyProject::get_Application
+
+  .method assembly specialname static class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User 
+          get_User() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User User)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User> AsyncDownload.My.MyProject::m_UserObjectProvider
+    IL_0006:  callvirt   instance !0 class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+  } // end of method MyProject::get_User
+
+  .method assembly specialname static class AsyncDownload.My.MyProject/MyWebServices 
+          get_WebServices() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class AsyncDownload.My.MyProject/MyWebServices WebServices)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class AsyncDownload.My.MyProject/MyWebServices> AsyncDownload.My.MyProject::m_MyWebServicesObjectProvider
+    IL_0006:  callvirt   instance !0 class AsyncDownload.My.MyProject/ThreadSafeObjectProvider`1<class AsyncDownload.My.MyProject/MyWebServices>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+  } // end of method MyProject::get_WebServices
+
+  .property class AsyncDownload.My.MyComputer
+          Computer()
+  {
+    .custom instance void [System]System.ComponentModel.Design.HelpKeywordAttribute::.ctor(string) = ( 01 00 0B 4D 79 2E 43 6F 6D 70 75 74 65 72 00 00 ) // ...My.Computer..
+    .get class AsyncDownload.My.MyComputer AsyncDownload.My.MyProject::get_Computer()
+  } // end of property MyProject::Computer
+  .property class AsyncDownload.My.MyApplication
+          Application()
+  {
+    .custom instance void [System]System.ComponentModel.Design.HelpKeywordAttribute::.ctor(string) = ( 01 00 0E 4D 79 2E 41 70 70 6C 69 63 61 74 69 6F   // ...My.Applicatio
+                                                                                                       6E 00 00 )                                        // n..
+    .get class AsyncDownload.My.MyApplication AsyncDownload.My.MyProject::get_Application()
+  } // end of property MyProject::Application
+  .property class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User
+          User()
+  {
+    .custom instance void [System]System.ComponentModel.Design.HelpKeywordAttribute::.ctor(string) = ( 01 00 07 4D 79 2E 55 73 65 72 00 00 )             // ...My.User..
+    .get class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User AsyncDownload.My.MyProject::get_User()
+  } // end of property MyProject::User
+  .property class AsyncDownload.My.MyProject/MyWebServices
+          WebServices()
+  {
+    .custom instance void [System]System.ComponentModel.Design.HelpKeywordAttribute::.ctor(string) = ( 01 00 0E 4D 79 2E 57 65 62 53 65 72 76 69 63 65   // ...My.WebService
+                                                                                                       73 00 00 )                                        // s..
+    .get class AsyncDownload.My.MyProject/MyWebServices AsyncDownload.My.MyProject::get_WebServices()
+  } // end of property MyProject::WebServices
+} // end of class AsyncDownload.My.MyProject
+
+.class private auto ansi sealed AsyncDownload.My.InternalXmlHelper
+       extends [mscorlib]System.Object
+{
+  .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .class auto ansi sealed nested private RemoveNamespaceAttributesClosure
+         extends [mscorlib]System.Object
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .field private initonly string[] m_inScopePrefixes
+    .field private initonly class [System.Xml.Linq]System.Xml.Linq.XNamespace[] m_inScopeNs
+    .field private initonly class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute> m_attributes
+    .method assembly specialname rtspecialname 
+            instance void  .ctor(string[] inScopePrefixes,
+                                 class [System.Xml.Linq]System.Xml.Linq.XNamespace[] inScopeNs,
+                                 class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute> attributes) cil managed
+    {
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      // Code size       31 (0x1f)
+      .maxstack  8
+// Source File '17d14f5c-a337-4978-8281-53493378c1072.vb' not found
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0007:  nop
+      IL_0008:  ldarg.0
+      IL_0009:  ldarg.1
+      IL_000a:  stfld      string[] AsyncDownload.My.InternalXmlHelper/RemoveNamespaceAttributesClosure::m_inScopePrefixes
+      IL_000f:  ldarg.0
+      IL_0010:  ldarg.2
+      IL_0011:  stfld      class [System.Xml.Linq]System.Xml.Linq.XNamespace[] AsyncDownload.My.InternalXmlHelper/RemoveNamespaceAttributesClosure::m_inScopeNs
+      IL_0016:  ldarg.0
+      IL_0017:  ldarg.3
+      IL_0018:  stfld      class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute> AsyncDownload.My.InternalXmlHelper/RemoveNamespaceAttributesClosure::m_attributes
+      IL_001d:  nop
+      IL_001e:  ret
+    } // end of method RemoveNamespaceAttributesClosure::.ctor
+
+    .method assembly instance class [System.Xml.Linq]System.Xml.Linq.XElement 
+            ProcessXElement(class [System.Xml.Linq]System.Xml.Linq.XElement elem) cil managed
+    {
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      // Code size       30 (0x1e)
+      .maxstack  4
+      .locals init ([0] class [System.Xml.Linq]System.Xml.Linq.XElement ProcessXElement)
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  ldfld      string[] AsyncDownload.My.InternalXmlHelper/RemoveNamespaceAttributesClosure::m_inScopePrefixes
+      IL_0007:  ldarg.0
+      IL_0008:  ldfld      class [System.Xml.Linq]System.Xml.Linq.XNamespace[] AsyncDownload.My.InternalXmlHelper/RemoveNamespaceAttributesClosure::m_inScopeNs
+      IL_000d:  ldarg.0
+      IL_000e:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute> AsyncDownload.My.InternalXmlHelper/RemoveNamespaceAttributesClosure::m_attributes
+      IL_0013:  ldarg.1
+      IL_0014:  call       class [System.Xml.Linq]System.Xml.Linq.XElement AsyncDownload.My.InternalXmlHelper::RemoveNamespaceAttributes(string[],
+                                                                                                                                         class [System.Xml.Linq]System.Xml.Linq.XNamespace[],
+                                                                                                                                         class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>,
+                                                                                                                                         class [System.Xml.Linq]System.Xml.Linq.XElement)
+      IL_0019:  stloc.0
+      IL_001a:  br.s       IL_001c
+
+      IL_001c:  ldloc.0
+      IL_001d:  ret
+    } // end of method RemoveNamespaceAttributesClosure::ProcessXElement
+
+    .method assembly instance object  ProcessObject(object obj) cil managed
+    {
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      // Code size       56 (0x38)
+      .maxstack  4
+      .locals init ([0] class [System.Xml.Linq]System.Xml.Linq.XElement elem,
+               [1] object ProcessObject,
+               [2] bool VB$CG$t_bool$S0)
+      IL_0000:  nop
+      IL_0001:  ldarg.1
+      IL_0002:  isinst     [System.Xml.Linq]System.Xml.Linq.XElement
+      IL_0007:  stloc.0
+      IL_0008:  ldloc.0
+      IL_0009:  ldnull
+      IL_000a:  ceq
+      IL_000c:  ldc.i4.0
+      IL_000d:  ceq
+      IL_000f:  stloc.2
+      IL_0010:  ldloc.2
+      IL_0011:  brfalse.s  IL_0030
+
+      IL_0013:  ldarg.0
+      IL_0014:  ldfld      string[] AsyncDownload.My.InternalXmlHelper/RemoveNamespaceAttributesClosure::m_inScopePrefixes
+      IL_0019:  ldarg.0
+      IL_001a:  ldfld      class [System.Xml.Linq]System.Xml.Linq.XNamespace[] AsyncDownload.My.InternalXmlHelper/RemoveNamespaceAttributesClosure::m_inScopeNs
+      IL_001f:  ldarg.0
+      IL_0020:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute> AsyncDownload.My.InternalXmlHelper/RemoveNamespaceAttributesClosure::m_attributes
+      IL_0025:  ldloc.0
+      IL_0026:  call       class [System.Xml.Linq]System.Xml.Linq.XElement AsyncDownload.My.InternalXmlHelper::RemoveNamespaceAttributes(string[],
+                                                                                                                                         class [System.Xml.Linq]System.Xml.Linq.XNamespace[],
+                                                                                                                                         class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>,
+                                                                                                                                         class [System.Xml.Linq]System.Xml.Linq.XElement)
+      IL_002b:  stloc.1
+      IL_002c:  br.s       IL_0036
+
+      IL_002e:  br.s       IL_0035
+
+      IL_0030:  nop
+      IL_0031:  ldarg.1
+      IL_0032:  stloc.1
+      IL_0033:  br.s       IL_0036
+
+      IL_0035:  nop
+      IL_0036:  ldloc.1
+      IL_0037:  ret
+    } // end of method RemoveNamespaceAttributesClosure::ProcessObject
+
+  } // end of class RemoveNamespaceAttributesClosure
+
+  .method private specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0007:  nop
+    IL_0008:  nop
+    IL_0009:  ret
+  } // end of method InternalXmlHelper::.ctor
+
+  .method public specialname static string 
+          get_Value(class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement> source) cil managed
+  {
+    // Code size       67 (0x43)
+    .maxstack  2
+    .locals init ([0] string Value,
+             [1] class [System.Xml.Linq]System.Xml.Linq.XElement item,
+             [2] class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement> VB$t_ref$L0,
+             [3] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  nop
+    .try
+    {
+      IL_0002:  ldarg.0
+      IL_0003:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::GetEnumerator()
+      IL_0008:  stloc.2
+      IL_0009:  br.s       IL_001c
+
+      IL_000b:  ldloc.2
+      IL_000c:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::get_Current()
+      IL_0011:  stloc.1
+      IL_0012:  ldloc.1
+      IL_0013:  callvirt   instance string [System.Xml.Linq]System.Xml.Linq.XElement::get_Value()
+      IL_0018:  stloc.0
+      IL_0019:  leave.s    IL_0041
+
+      IL_001b:  nop
+      IL_001c:  ldloc.2
+      IL_001d:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0022:  stloc.3
+      IL_0023:  ldloc.3
+      IL_0024:  brtrue.s   IL_000b
+
+      IL_0026:  nop
+      IL_0027:  leave.s    IL_003d
+
+    }  // end .try
+    finally
+    {
+      IL_0029:  ldloc.2
+      IL_002a:  ldnull
+      IL_002b:  ceq
+      IL_002d:  ldc.i4.0
+      IL_002e:  ceq
+      IL_0030:  stloc.3
+      IL_0031:  ldloc.3
+      IL_0032:  brfalse.s  IL_003b
+
+      IL_0034:  ldloc.2
+      IL_0035:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_003a:  nop
+      IL_003b:  nop
+      IL_003c:  endfinally
+    }  // end handler
+    IL_003d:  ldnull
+    IL_003e:  stloc.0
+    IL_003f:  br.s       IL_0041
+
+    IL_0041:  ldloc.0
+    IL_0042:  ret
+  } // end of method InternalXmlHelper::get_Value
+
+  .method public specialname static void 
+          set_Value(class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement> source,
+                    string 'value') cil managed
+  {
+    // Code size       65 (0x41)
+    .maxstack  2
+    .locals init ([0] class [System.Xml.Linq]System.Xml.Linq.XElement item,
+             [1] class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement> VB$t_ref$L0,
+             [2] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  nop
+    .try
+    {
+      IL_0002:  ldarg.0
+      IL_0003:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::GetEnumerator()
+      IL_0008:  stloc.1
+      IL_0009:  br.s       IL_001e
+
+      IL_000b:  ldloc.1
+      IL_000c:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::get_Current()
+      IL_0011:  stloc.0
+      IL_0012:  ldloc.0
+      IL_0013:  ldarg.1
+      IL_0014:  callvirt   instance void [System.Xml.Linq]System.Xml.Linq.XElement::set_Value(string)
+      IL_0019:  nop
+      IL_001a:  nop
+      IL_001b:  br.s       IL_0028
+
+      IL_001d:  nop
+      IL_001e:  ldloc.1
+      IL_001f:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0024:  stloc.2
+      IL_0025:  ldloc.2
+      IL_0026:  brtrue.s   IL_000b
+
+      IL_0028:  nop
+      IL_0029:  leave.s    IL_003f
+
+    }  // end .try
+    finally
+    {
+      IL_002b:  ldloc.1
+      IL_002c:  ldnull
+      IL_002d:  ceq
+      IL_002f:  ldc.i4.0
+      IL_0030:  ceq
+      IL_0032:  stloc.2
+      IL_0033:  ldloc.2
+      IL_0034:  brfalse.s  IL_003d
+
+      IL_0036:  ldloc.1
+      IL_0037:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_003c:  nop
+      IL_003d:  nop
+      IL_003e:  endfinally
+    }  // end handler
+    IL_003f:  nop
+    IL_0040:  ret
+  } // end of method InternalXmlHelper::set_Value
+
+  .method public specialname static string 
+          get_AttributeValue(class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement> source,
+                             class [System.Xml.Linq]System.Xml.Linq.XName name) cil managed
+  {
+    // Code size       73 (0x49)
+    .maxstack  2
+    .locals init ([0] string AttributeValue,
+             [1] class [System.Xml.Linq]System.Xml.Linq.XElement item,
+             [2] class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement> VB$t_ref$L0,
+             [3] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  nop
+    .try
+    {
+      IL_0002:  ldarg.0
+      IL_0003:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::GetEnumerator()
+      IL_0008:  stloc.2
+      IL_0009:  br.s       IL_0022
+
+      IL_000b:  ldloc.2
+      IL_000c:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::get_Current()
+      IL_0011:  stloc.1
+      IL_0012:  ldloc.1
+      IL_0013:  ldarg.1
+      IL_0014:  callvirt   instance class [System.Xml.Linq]System.Xml.Linq.XAttribute [System.Xml.Linq]System.Xml.Linq.XElement::Attribute(class [System.Xml.Linq]System.Xml.Linq.XName)
+      IL_0019:  call       string [System.Xml.Linq]System.Xml.Linq.XAttribute::op_Explicit(class [System.Xml.Linq]System.Xml.Linq.XAttribute)
+      IL_001e:  stloc.0
+      IL_001f:  leave.s    IL_0047
+
+      IL_0021:  nop
+      IL_0022:  ldloc.2
+      IL_0023:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0028:  stloc.3
+      IL_0029:  ldloc.3
+      IL_002a:  brtrue.s   IL_000b
+
+      IL_002c:  nop
+      IL_002d:  leave.s    IL_0043
+
+    }  // end .try
+    finally
+    {
+      IL_002f:  ldloc.2
+      IL_0030:  ldnull
+      IL_0031:  ceq
+      IL_0033:  ldc.i4.0
+      IL_0034:  ceq
+      IL_0036:  stloc.3
+      IL_0037:  ldloc.3
+      IL_0038:  brfalse.s  IL_0041
+
+      IL_003a:  ldloc.2
+      IL_003b:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_0040:  nop
+      IL_0041:  nop
+      IL_0042:  endfinally
+    }  // end handler
+    IL_0043:  ldnull
+    IL_0044:  stloc.0
+    IL_0045:  br.s       IL_0047
+
+    IL_0047:  ldloc.0
+    IL_0048:  ret
+  } // end of method InternalXmlHelper::get_AttributeValue
+
+  .method public specialname static void 
+          set_AttributeValue(class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement> source,
+                             class [System.Xml.Linq]System.Xml.Linq.XName name,
+                             string 'value') cil managed
+  {
+    // Code size       66 (0x42)
+    .maxstack  3
+    .locals init ([0] class [System.Xml.Linq]System.Xml.Linq.XElement item,
+             [1] class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement> VB$t_ref$L0,
+             [2] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  nop
+    .try
+    {
+      IL_0002:  ldarg.0
+      IL_0003:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::GetEnumerator()
+      IL_0008:  stloc.1
+      IL_0009:  br.s       IL_001f
+
+      IL_000b:  ldloc.1
+      IL_000c:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<class [System.Xml.Linq]System.Xml.Linq.XElement>::get_Current()
+      IL_0011:  stloc.0
+      IL_0012:  ldloc.0
+      IL_0013:  ldarg.1
+      IL_0014:  ldarg.2
+      IL_0015:  callvirt   instance void [System.Xml.Linq]System.Xml.Linq.XElement::SetAttributeValue(class [System.Xml.Linq]System.Xml.Linq.XName,
+                                                                                                      object)
+      IL_001a:  nop
+      IL_001b:  nop
+      IL_001c:  br.s       IL_0029
+
+      IL_001e:  nop
+      IL_001f:  ldloc.1
+      IL_0020:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0025:  stloc.2
+      IL_0026:  ldloc.2
+      IL_0027:  brtrue.s   IL_000b
+
+      IL_0029:  nop
+      IL_002a:  leave.s    IL_0040
+
+    }  // end .try
+    finally
+    {
+      IL_002c:  ldloc.1
+      IL_002d:  ldnull
+      IL_002e:  ceq
+      IL_0030:  ldc.i4.0
+      IL_0031:  ceq
+      IL_0033:  stloc.2
+      IL_0034:  ldloc.2
+      IL_0035:  brfalse.s  IL_003e
+
+      IL_0037:  ldloc.1
+      IL_0038:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_003d:  nop
+      IL_003e:  nop
+      IL_003f:  endfinally
+    }  // end handler
+    IL_0040:  nop
+    IL_0041:  ret
+  } // end of method InternalXmlHelper::set_AttributeValue
+
+  .method public specialname static string 
+          get_AttributeValue(class [System.Xml.Linq]System.Xml.Linq.XElement source,
+                             class [System.Xml.Linq]System.Xml.Linq.XName name) cil managed
+  {
+    // Code size       18 (0x12)
+    .maxstack  2
+    .locals init ([0] string AttributeValue)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  callvirt   instance class [System.Xml.Linq]System.Xml.Linq.XAttribute [System.Xml.Linq]System.Xml.Linq.XElement::Attribute(class [System.Xml.Linq]System.Xml.Linq.XName)
+    IL_0008:  call       string [System.Xml.Linq]System.Xml.Linq.XAttribute::op_Explicit(class [System.Xml.Linq]System.Xml.Linq.XAttribute)
+    IL_000d:  stloc.0
+    IL_000e:  br.s       IL_0010
+
+    IL_0010:  ldloc.0
+    IL_0011:  ret
+  } // end of method InternalXmlHelper::get_AttributeValue
+
+  .method public specialname static void 
+          set_AttributeValue(class [System.Xml.Linq]System.Xml.Linq.XElement source,
+                             class [System.Xml.Linq]System.Xml.Linq.XName name,
+                             string 'value') cil managed
+  {
+    // Code size       12 (0xc)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  ldarg.2
+    IL_0004:  callvirt   instance void [System.Xml.Linq]System.Xml.Linq.XElement::SetAttributeValue(class [System.Xml.Linq]System.Xml.Linq.XName,
+                                                                                                    object)
+    IL_0009:  nop
+    IL_000a:  nop
+    IL_000b:  ret
+  } // end of method InternalXmlHelper::set_AttributeValue
+
+  .method public static class [System.Xml.Linq]System.Xml.Linq.XAttribute 
+          CreateAttribute(class [System.Xml.Linq]System.Xml.Linq.XName name,
+                          object 'value') cil managed
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    // Code size       31 (0x1f)
+    .maxstack  2
+    .locals init ([0] class [System.Xml.Linq]System.Xml.Linq.XAttribute CreateAttribute,
+             [1] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldnull
+    IL_0003:  ceq
+    IL_0005:  stloc.1
+    IL_0006:  ldloc.1
+    IL_0007:  brfalse.s  IL_000d
+
+    IL_0009:  ldnull
+    IL_000a:  stloc.0
+    IL_000b:  br.s       IL_001d
+
+    IL_000d:  nop
+    IL_000e:  ldarg.0
+    IL_000f:  ldarg.1
+    IL_0010:  call       object [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+    IL_0015:  newobj     instance void [System.Xml.Linq]System.Xml.Linq.XAttribute::.ctor(class [System.Xml.Linq]System.Xml.Linq.XName,
+                                                                                          object)
+    IL_001a:  stloc.0
+    IL_001b:  br.s       IL_001d
+
+    IL_001d:  ldloc.0
+    IL_001e:  ret
+  } // end of method InternalXmlHelper::CreateAttribute
+
+  .method public static class [System.Xml.Linq]System.Xml.Linq.XAttribute 
+          CreateNamespaceAttribute(class [System.Xml.Linq]System.Xml.Linq.XName name,
+                                   class [System.Xml.Linq]System.Xml.Linq.XNamespace ns) cil managed
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    // Code size       28 (0x1c)
+    .maxstack  2
+    .locals init ([0] class [System.Xml.Linq]System.Xml.Linq.XAttribute a,
+             [1] class [System.Xml.Linq]System.Xml.Linq.XAttribute CreateNamespaceAttribute)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  callvirt   instance string [System.Xml.Linq]System.Xml.Linq.XNamespace::get_NamespaceName()
+    IL_0008:  newobj     instance void [System.Xml.Linq]System.Xml.Linq.XAttribute::.ctor(class [System.Xml.Linq]System.Xml.Linq.XName,
+                                                                                          object)
+    IL_000d:  stloc.0
+    IL_000e:  ldloc.0
+    IL_000f:  ldarg.1
+    IL_0010:  callvirt   instance void [System.Xml.Linq]System.Xml.Linq.XObject::AddAnnotation(object)
+    IL_0015:  nop
+    IL_0016:  ldloc.0
+    IL_0017:  stloc.1
+    IL_0018:  br.s       IL_001a
+
+    IL_001a:  ldloc.1
+    IL_001b:  ret
+  } // end of method InternalXmlHelper::CreateNamespaceAttribute
+
+  .method public static object  RemoveNamespaceAttributes(string[] inScopePrefixes,
+                                                          class [System.Xml.Linq]System.Xml.Linq.XNamespace[] inScopeNs,
+                                                          class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute> attributes,
+                                                          object obj) cil managed
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    // Code size       84 (0x54)
+    .maxstack  4
+    .locals init ([0] object RemoveNamespaceAttributes,
+             [1] class [System.Xml.Linq]System.Xml.Linq.XElement elem,
+             [2] class [mscorlib]System.Collections.IEnumerable elems,
+             [3] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.3
+    IL_0002:  ldnull
+    IL_0003:  ceq
+    IL_0005:  ldc.i4.0
+    IL_0006:  ceq
+    IL_0008:  stloc.3
+    IL_0009:  ldloc.3
+    IL_000a:  brfalse.s  IL_004d
+
+    IL_000c:  ldarg.3
+    IL_000d:  isinst     [System.Xml.Linq]System.Xml.Linq.XElement
+    IL_0012:  stloc.1
+    IL_0013:  ldloc.1
+    IL_0014:  ldnull
+    IL_0015:  ceq
+    IL_0017:  ldc.i4.0
+    IL_0018:  ceq
+    IL_001a:  stloc.3
+    IL_001b:  ldloc.3
+    IL_001c:  brfalse.s  IL_002c
+
+    IL_001e:  ldarg.0
+    IL_001f:  ldarg.1
+    IL_0020:  ldarg.2
+    IL_0021:  ldloc.1
+    IL_0022:  call       class [System.Xml.Linq]System.Xml.Linq.XElement AsyncDownload.My.InternalXmlHelper::RemoveNamespaceAttributes(string[],
+                                                                                                                                       class [System.Xml.Linq]System.Xml.Linq.XNamespace[],
+                                                                                                                                       class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>,
+                                                                                                                                       class [System.Xml.Linq]System.Xml.Linq.XElement)
+    IL_0027:  stloc.0
+    IL_0028:  br.s       IL_0052
+
+    IL_002a:  br.s       IL_004c
+
+    IL_002c:  nop
+    IL_002d:  ldarg.3
+    IL_002e:  isinst     [mscorlib]System.Collections.IEnumerable
+    IL_0033:  stloc.2
+    IL_0034:  ldloc.2
+    IL_0035:  ldnull
+    IL_0036:  ceq
+    IL_0038:  ldc.i4.0
+    IL_0039:  ceq
+    IL_003b:  stloc.3
+    IL_003c:  ldloc.3
+    IL_003d:  brfalse.s  IL_004b
+
+    IL_003f:  ldarg.0
+    IL_0040:  ldarg.1
+    IL_0041:  ldarg.2
+    IL_0042:  ldloc.2
+    IL_0043:  call       class [mscorlib]System.Collections.IEnumerable AsyncDownload.My.InternalXmlHelper::RemoveNamespaceAttributes(string[],
+                                                                                                                                      class [System.Xml.Linq]System.Xml.Linq.XNamespace[],
+                                                                                                                                      class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>,
+                                                                                                                                      class [mscorlib]System.Collections.IEnumerable)
+    IL_0048:  stloc.0
+    IL_0049:  br.s       IL_0052
+
+    IL_004b:  nop
+    IL_004c:  nop
+    IL_004d:  nop
+    IL_004e:  ldarg.3
+    IL_004f:  stloc.0
+    IL_0050:  br.s       IL_0052
+
+    IL_0052:  ldloc.0
+    IL_0053:  ret
+  } // end of method InternalXmlHelper::RemoveNamespaceAttributes
+
+  .method public static class [mscorlib]System.Collections.IEnumerable 
+          RemoveNamespaceAttributes(string[] inScopePrefixes,
+                                    class [System.Xml.Linq]System.Xml.Linq.XNamespace[] inScopeNs,
+                                    class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute> attributes,
+                                    class [mscorlib]System.Collections.IEnumerable obj) cil managed
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    // Code size       104 (0x68)
+    .maxstack  4
+    .locals init ([0] class [mscorlib]System.Collections.IEnumerable RemoveNamespaceAttributes,
+             [1] class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement> elems,
+             [2] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.3
+    IL_0002:  ldnull
+    IL_0003:  ceq
+    IL_0005:  ldc.i4.0
+    IL_0006:  ceq
+    IL_0008:  stloc.2
+    IL_0009:  ldloc.2
+    IL_000a:  brfalse.s  IL_0061
+
+    IL_000c:  ldarg.3
+    IL_000d:  isinst     class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>
+    IL_0012:  stloc.1
+    IL_0013:  ldloc.1
+    IL_0014:  ldnull
+    IL_0015:  ceq
+    IL_0017:  ldc.i4.0
+    IL_0018:  ceq
+    IL_001a:  stloc.2
+    IL_001b:  ldloc.2
+    IL_001c:  brfalse.s  IL_003d
+
+    IL_001e:  ldloc.1
+    IL_001f:  ldarg.0
+    IL_0020:  ldarg.1
+    IL_0021:  ldarg.2
+    IL_0022:  newobj     instance void AsyncDownload.My.InternalXmlHelper/RemoveNamespaceAttributesClosure::.ctor(string[],
+                                                                                                                  class [System.Xml.Linq]System.Xml.Linq.XNamespace[],
+                                                                                                                  class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>)
+    IL_0027:  dup
+    IL_0028:  ldvirtftn  instance class [System.Xml.Linq]System.Xml.Linq.XElement AsyncDownload.My.InternalXmlHelper/RemoveNamespaceAttributesClosure::ProcessXElement(class [System.Xml.Linq]System.Xml.Linq.XElement)
+    IL_002e:  newobj     instance void class [mscorlib]System.Func`2<class [System.Xml.Linq]System.Xml.Linq.XElement,class [System.Xml.Linq]System.Xml.Linq.XElement>::.ctor(object,
+                                                                                                                                                                             native int)
+    IL_0033:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<class [System.Xml.Linq]System.Xml.Linq.XElement,class [System.Xml.Linq]System.Xml.Linq.XElement>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                                                                    class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_0038:  stloc.0
+    IL_0039:  br.s       IL_0066
+
+    IL_003b:  br.s       IL_0060
+
+    IL_003d:  nop
+    IL_003e:  ldarg.3
+    IL_003f:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0> [System.Core]System.Linq.Enumerable::Cast<object>(class [mscorlib]System.Collections.IEnumerable)
+    IL_0044:  ldarg.0
+    IL_0045:  ldarg.1
+    IL_0046:  ldarg.2
+    IL_0047:  newobj     instance void AsyncDownload.My.InternalXmlHelper/RemoveNamespaceAttributesClosure::.ctor(string[],
+                                                                                                                  class [System.Xml.Linq]System.Xml.Linq.XNamespace[],
+                                                                                                                  class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>)
+    IL_004c:  dup
+    IL_004d:  ldvirtftn  instance object AsyncDownload.My.InternalXmlHelper/RemoveNamespaceAttributesClosure::ProcessObject(object)
+    IL_0053:  newobj     instance void class [mscorlib]System.Func`2<object,object>::.ctor(object,
+                                                                                           native int)
+    IL_0058:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<object,object>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                  class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_005d:  stloc.0
+    IL_005e:  br.s       IL_0066
+
+    IL_0060:  nop
+    IL_0061:  nop
+    IL_0062:  ldarg.3
+    IL_0063:  stloc.0
+    IL_0064:  br.s       IL_0066
+
+    IL_0066:  ldloc.0
+    IL_0067:  ret
+  } // end of method InternalXmlHelper::RemoveNamespaceAttributes
+
+  .method public static class [System.Xml.Linq]System.Xml.Linq.XElement 
+          RemoveNamespaceAttributes(string[] inScopePrefixes,
+                                    class [System.Xml.Linq]System.Xml.Linq.XNamespace[] inScopeNs,
+                                    class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute> attributes,
+                                    class [System.Xml.Linq]System.Xml.Linq.XElement e) cil managed
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    // Code size       407 (0x197)
+    .maxstack  2
+    .locals init ([0] class [System.Xml.Linq]System.Xml.Linq.XElement RemoveNamespaceAttributes,
+             [1] class [System.Xml.Linq]System.Xml.Linq.XAttribute a,
+             [2] class [System.Xml.Linq]System.Xml.Linq.XAttribute nextA,
+             [3] class [System.Xml.Linq]System.Xml.Linq.XNamespace ns,
+             [4] string prefix,
+             [5] int32 lastIndex,
+             [6] class [System.Xml.Linq]System.Xml.Linq.XNamespace currentInScopeNs,
+             [7] string currentInScopePrefix,
+             [8] int32 i,
+             [9] int32 V_9,
+             [10] class [System.Xml.Linq]System.Xml.Linq.XAttribute currentA,
+             [11] class [System.Xml.Linq]System.Xml.Linq.XNamespace V_11,
+             [12] string V_12,
+             [13] int32 V_13,
+             [14] int32 VB$t_i4$L0,
+             [15] int32 VB$t_i4$L1,
+             [16] bool VB$CG$t_bool$S0,
+             [17] bool VB$CG$t_bool$S1,
+             [18] int32 VB$CG$t_i4$S0,
+             [19] bool VB$CG$t_bool$S2)
+    IL_0000:  nop
+    IL_0001:  ldarg.3
+    IL_0002:  ldnull
+    IL_0003:  ceq
+    IL_0005:  ldc.i4.0
+    IL_0006:  ceq
+    IL_0008:  stloc.s    VB$CG$t_bool$S0
+    IL_000a:  ldloc.s    VB$CG$t_bool$S0
+    IL_000c:  brfalse    IL_0190
+
+    IL_0011:  ldarg.3
+    IL_0012:  callvirt   instance class [System.Xml.Linq]System.Xml.Linq.XAttribute [System.Xml.Linq]System.Xml.Linq.XElement::get_FirstAttribute()
+    IL_0017:  stloc.1
+    IL_0018:  br         IL_0180
+
+    IL_001d:  ldloc.1
+    IL_001e:  callvirt   instance class [System.Xml.Linq]System.Xml.Linq.XAttribute [System.Xml.Linq]System.Xml.Linq.XAttribute::get_NextAttribute()
+    IL_0023:  stloc.2
+    IL_0024:  ldloc.1
+    IL_0025:  callvirt   instance bool [System.Xml.Linq]System.Xml.Linq.XAttribute::get_IsNamespaceDeclaration()
+    IL_002a:  stloc.s    VB$CG$t_bool$S0
+    IL_002c:  ldloc.s    VB$CG$t_bool$S0
+    IL_002e:  brfalse    IL_017c
+
+    IL_0033:  ldloc.1
+    IL_0034:  callvirt   instance !!0 [System.Xml.Linq]System.Xml.Linq.XObject::Annotation<class [System.Xml.Linq]System.Xml.Linq.XNamespace>()
+    IL_0039:  stloc.3
+    IL_003a:  ldloc.1
+    IL_003b:  callvirt   instance class [System.Xml.Linq]System.Xml.Linq.XName [System.Xml.Linq]System.Xml.Linq.XAttribute::get_Name()
+    IL_0040:  callvirt   instance string [System.Xml.Linq]System.Xml.Linq.XName::get_LocalName()
+    IL_0045:  stloc.s    prefix
+    IL_0047:  ldloc.3
+    IL_0048:  ldnull
+    IL_0049:  ceq
+    IL_004b:  ldc.i4.0
+    IL_004c:  ceq
+    IL_004e:  stloc.s    VB$CG$t_bool$S0
+    IL_0050:  ldloc.s    VB$CG$t_bool$S0
+    IL_0052:  brfalse    IL_017b
+
+    IL_0057:  ldarg.0
+    IL_0058:  brfalse.s  IL_005d
+
+    IL_005a:  ldarg.1
+    IL_005b:  brtrue.s   IL_0060
+
+    IL_005d:  ldc.i4.0
+    IL_005e:  br.s       IL_0061
+
+    IL_0060:  ldc.i4.1
+    IL_0061:  stloc.s    VB$CG$t_bool$S1
+    IL_0063:  ldloc.s    VB$CG$t_bool$S1
+    IL_0065:  brfalse.s  IL_00bf
+
+    IL_0067:  ldarg.0
+    IL_0068:  ldlen
+    IL_0069:  conv.ovf.i4
+    IL_006a:  ldc.i4.1
+    IL_006b:  sub.ovf
+    IL_006c:  stloc.s    lastIndex
+    IL_006e:  ldc.i4.0
+    IL_006f:  ldloc.s    lastIndex
+    IL_0071:  stloc.s    VB$t_i4$L0
+    IL_0073:  stloc.s    i
+    IL_0075:  br.s       IL_00b5
+
+    IL_0077:  ldarg.0
+    IL_0078:  ldloc.s    i
+    IL_007a:  ldelem.ref
+    IL_007b:  stloc.s    currentInScopePrefix
+    IL_007d:  ldarg.1
+    IL_007e:  ldloc.s    i
+    IL_0080:  ldelem.ref
+    IL_0081:  stloc.s    currentInScopeNs
+    IL_0083:  ldloc.s    prefix
+    IL_0085:  ldloc.s    currentInScopePrefix
+    IL_0087:  callvirt   instance bool [mscorlib]System.String::Equals(string)
+    IL_008c:  stloc.s    VB$CG$t_bool$S1
+    IL_008e:  ldloc.s    VB$CG$t_bool$S1
+    IL_0090:  brfalse.s  IL_00ad
+
+    IL_0092:  ldloc.3
+    IL_0093:  ldloc.s    currentInScopeNs
+    IL_0095:  call       bool [System.Xml.Linq]System.Xml.Linq.XNamespace::op_Equality(class [System.Xml.Linq]System.Xml.Linq.XNamespace,
+                                                                                       class [System.Xml.Linq]System.Xml.Linq.XNamespace)
+    IL_009a:  stloc.s    VB$CG$t_bool$S0
+    IL_009c:  ldloc.s    VB$CG$t_bool$S0
+    IL_009e:  brfalse.s  IL_00a7
+
+    IL_00a0:  ldloc.1
+    IL_00a1:  callvirt   instance void [System.Xml.Linq]System.Xml.Linq.XAttribute::Remove()
+    IL_00a6:  nop
+    IL_00a7:  nop
+    IL_00a8:  ldnull
+    IL_00a9:  stloc.1
+    IL_00aa:  nop
+    IL_00ab:  br.s       IL_00bf
+
+    IL_00ad:  nop
+    IL_00ae:  nop
+    IL_00af:  ldloc.s    i
+    IL_00b1:  ldc.i4.1
+    IL_00b2:  add.ovf
+    IL_00b3:  stloc.s    i
+    IL_00b5:  ldloc.s    i
+    IL_00b7:  ldloc.s    VB$t_i4$L0
+    IL_00b9:  stloc.s    VB$CG$t_i4$S0
+    IL_00bb:  ldloc.s    VB$CG$t_i4$S0
+    IL_00bd:  ble.s      IL_0077
+
+    IL_00bf:  nop
+    IL_00c0:  ldloc.1
+    IL_00c1:  ldnull
+    IL_00c2:  ceq
+    IL_00c4:  ldc.i4.0
+    IL_00c5:  ceq
+    IL_00c7:  stloc.s    VB$CG$t_bool$S1
+    IL_00c9:  ldloc.s    VB$CG$t_bool$S1
+    IL_00cb:  brfalse    IL_017a
+
+    IL_00d0:  ldarg.2
+    IL_00d1:  ldnull
+    IL_00d2:  ceq
+    IL_00d4:  ldc.i4.0
+    IL_00d5:  ceq
+    IL_00d7:  stloc.s    VB$CG$t_bool$S0
+    IL_00d9:  ldloc.s    VB$CG$t_bool$S0
+    IL_00db:  brfalse.s  IL_015c
+
+    IL_00dd:  ldarg.2
+    IL_00de:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>::get_Count()
+    IL_00e3:  ldc.i4.1
+    IL_00e4:  sub.ovf
+    IL_00e5:  stloc.s    V_9
+    IL_00e7:  ldc.i4.0
+    IL_00e8:  ldloc.s    V_9
+    IL_00ea:  stloc.s    VB$t_i4$L1
+    IL_00ec:  stloc.s    V_13
+    IL_00ee:  br.s       IL_0152
+
+    IL_00f0:  ldarg.2
+    IL_00f1:  ldloc.s    V_13
+    IL_00f3:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>::get_Item(int32)
+    IL_00f8:  stloc.s    currentA
+    IL_00fa:  ldloc.s    currentA
+    IL_00fc:  callvirt   instance class [System.Xml.Linq]System.Xml.Linq.XName [System.Xml.Linq]System.Xml.Linq.XAttribute::get_Name()
+    IL_0101:  callvirt   instance string [System.Xml.Linq]System.Xml.Linq.XName::get_LocalName()
+    IL_0106:  stloc.s    V_12
+    IL_0108:  ldloc.s    currentA
+    IL_010a:  callvirt   instance !!0 [System.Xml.Linq]System.Xml.Linq.XObject::Annotation<class [System.Xml.Linq]System.Xml.Linq.XNamespace>()
+    IL_010f:  stloc.s    V_11
+    IL_0111:  ldloc.s    V_11
+    IL_0113:  ldnull
+    IL_0114:  ceq
+    IL_0116:  ldc.i4.0
+    IL_0117:  ceq
+    IL_0119:  stloc.s    VB$CG$t_bool$S1
+    IL_011b:  ldloc.s    VB$CG$t_bool$S1
+    IL_011d:  brfalse.s  IL_014a
+
+    IL_011f:  ldloc.s    prefix
+    IL_0121:  ldloc.s    V_12
+    IL_0123:  callvirt   instance bool [mscorlib]System.String::Equals(string)
+    IL_0128:  stloc.s    VB$CG$t_bool$S0
+    IL_012a:  ldloc.s    VB$CG$t_bool$S0
+    IL_012c:  brfalse.s  IL_0149
+
+    IL_012e:  ldloc.3
+    IL_012f:  ldloc.s    V_11
+    IL_0131:  call       bool [System.Xml.Linq]System.Xml.Linq.XNamespace::op_Equality(class [System.Xml.Linq]System.Xml.Linq.XNamespace,
+                                                                                       class [System.Xml.Linq]System.Xml.Linq.XNamespace)
+    IL_0136:  stloc.s    VB$CG$t_bool$S2
+    IL_0138:  ldloc.s    VB$CG$t_bool$S2
+    IL_013a:  brfalse.s  IL_0143
+
+    IL_013c:  ldloc.1
+    IL_013d:  callvirt   instance void [System.Xml.Linq]System.Xml.Linq.XAttribute::Remove()
+    IL_0142:  nop
+    IL_0143:  nop
+    IL_0144:  ldnull
+    IL_0145:  stloc.1
+    IL_0146:  nop
+    IL_0147:  br.s       IL_015c
+
+    IL_0149:  nop
+    IL_014a:  nop
+    IL_014b:  nop
+    IL_014c:  ldloc.s    V_13
+    IL_014e:  ldc.i4.1
+    IL_014f:  add.ovf
+    IL_0150:  stloc.s    V_13
+    IL_0152:  ldloc.s    V_13
+    IL_0154:  ldloc.s    VB$t_i4$L1
+    IL_0156:  stloc.s    VB$CG$t_i4$S0
+    IL_0158:  ldloc.s    VB$CG$t_i4$S0
+    IL_015a:  ble.s      IL_00f0
+
+    IL_015c:  nop
+    IL_015d:  ldloc.1
+    IL_015e:  ldnull
+    IL_015f:  ceq
+    IL_0161:  ldc.i4.0
+    IL_0162:  ceq
+    IL_0164:  stloc.s    VB$CG$t_bool$S2
+    IL_0166:  ldloc.s    VB$CG$t_bool$S2
+    IL_0168:  brfalse.s  IL_0179
+
+    IL_016a:  ldloc.1
+    IL_016b:  callvirt   instance void [System.Xml.Linq]System.Xml.Linq.XAttribute::Remove()
+    IL_0170:  nop
+    IL_0171:  ldarg.2
+    IL_0172:  ldloc.1
+    IL_0173:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XAttribute>::Add(!0)
+    IL_0178:  nop
+    IL_0179:  nop
+    IL_017a:  nop
+    IL_017b:  nop
+    IL_017c:  nop
+    IL_017d:  ldloc.2
+    IL_017e:  stloc.1
+    IL_017f:  nop
+    IL_0180:  ldloc.1
+    IL_0181:  ldnull
+    IL_0182:  ceq
+    IL_0184:  ldc.i4.0
+    IL_0185:  ceq
+    IL_0187:  stloc.s    VB$CG$t_bool$S2
+    IL_0189:  ldloc.s    VB$CG$t_bool$S2
+    IL_018b:  brtrue     IL_001d
+
+    IL_0190:  nop
+    IL_0191:  ldarg.3
+    IL_0192:  stloc.0
+    IL_0193:  br.s       IL_0195
+
+    IL_0195:  ldloc.0
+    IL_0196:  ret
+  } // end of method InternalXmlHelper::RemoveNamespaceAttributes
+
+  .property string Value(class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>)
+  {
+    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 ) 
+    .get string AsyncDownload.My.InternalXmlHelper::get_Value(class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>)
+    .set void AsyncDownload.My.InternalXmlHelper::set_Value(class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>,
+                                                            string)
+  } // end of property InternalXmlHelper::Value
+  .property string AttributeValue(class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>,
+                                  class [System.Xml.Linq]System.Xml.Linq.XName)
+  {
+    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 ) 
+    .get string AsyncDownload.My.InternalXmlHelper::get_AttributeValue(class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>,
+                                                                       class [System.Xml.Linq]System.Xml.Linq.XName)
+    .set void AsyncDownload.My.InternalXmlHelper::set_AttributeValue(class [mscorlib]System.Collections.Generic.IEnumerable`1<class [System.Xml.Linq]System.Xml.Linq.XElement>,
+                                                                     class [System.Xml.Linq]System.Xml.Linq.XName,
+                                                                     string)
+  } // end of property InternalXmlHelper::AttributeValue
+  .property string AttributeValue(class [System.Xml.Linq]System.Xml.Linq.XElement,
+                                  class [System.Xml.Linq]System.Xml.Linq.XName)
+  {
+    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 ) 
+    .get string AsyncDownload.My.InternalXmlHelper::get_AttributeValue(class [System.Xml.Linq]System.Xml.Linq.XElement,
+                                                                       class [System.Xml.Linq]System.Xml.Linq.XName)
+    .set void AsyncDownload.My.InternalXmlHelper::set_AttributeValue(class [System.Xml.Linq]System.Xml.Linq.XElement,
+                                                                     class [System.Xml.Linq]System.Xml.Linq.XName,
+                                                                     string)
+  } // end of property InternalXmlHelper::AttributeValue
+} // end of class AsyncDownload.My.InternalXmlHelper
+
+.class private auto ansi sealed AsyncDownload.Module1
+       extends [mscorlib]System.Object
+{
+  .custom instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.StandardModuleAttribute::.ctor() = ( 01 00 00 00 ) 
+  .method public static void  Main() cil managed
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.STAThreadAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       338 (0x152)
+    .maxstack  7
+    .locals init ([0] valuetype [mscorlib]System.TimeSpan VB$t_struct$S0,
+             [1] class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task>[] VB$t_array$S0,
+             [2] class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>[] VB$LW$t_array$S1)
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_VisualBasic\Module1.vb' 
+//000015:     Sub Main()
+    IL_0000:  nop
+//000016:         ' NOTE: Synchronous .Wait() calls added only for demo purposes
+//000017: 
+//000018:         ' Single async request
+//000019:         Download("http://www.microsoft.com").ContinueWith(AddressOf CompletedDownloadData).Wait()
+    IL_0001:  ldstr      "http://www.microsoft.com"
+    IL_0006:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> AsyncDownload.Module1::Download(string)
+    IL_000b:  ldnull
+    IL_000c:  ldftn      void AsyncDownload.Module1::CompletedDownloadData(class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>)
+    IL_0012:  newobj     instance void class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>>::.ctor(object,
+                                                                                                                                      native int)
+    IL_0017:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>::ContinueWith(class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<!0>>)
+    IL_001c:  callvirt   instance void [mscorlib]System.Threading.Tasks.Task::Wait()
+    IL_0021:  nop
+//000020: 
+//000021:         ' Single async request with timeout
+//000022:         Download("http://www.microsoft.com").WithTimeout(New TimeSpan(0, 0, 0, 0, 1)).ContinueWith(AddressOf CompletedDownloadData).Wait()
+    IL_0022:  ldstr      "http://www.microsoft.com"
+    IL_0027:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> AsyncDownload.Module1::Download(string)
+    IL_002c:  ldloca.s   VB$t_struct$S0
+    IL_002e:  ldc.i4.0
+    IL_002f:  ldc.i4.0
+    IL_0030:  ldc.i4.0
+    IL_0031:  ldc.i4.0
+    IL_0032:  ldc.i4.1
+    IL_0033:  call       instance void [mscorlib]System.TimeSpan::.ctor(int32,
+                                                                        int32,
+                                                                        int32,
+                                                                        int32,
+                                                                        int32)
+    IL_0038:  nop
+    IL_0039:  ldloc.0
+    IL_003a:  call       class [mscorlib]System.Threading.Tasks.Task`1<!!0> [ParallelExtensionsExtras]System.Threading.Tasks.TaskExtrasExtensions::WithTimeout<uint8[]>(class [mscorlib]System.Threading.Tasks.Task`1<!!0>,
+                                                                                                                                                                        valuetype [mscorlib]System.TimeSpan)
+    IL_003f:  ldnull
+    IL_0040:  ldftn      void AsyncDownload.Module1::CompletedDownloadData(class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>)
+    IL_0046:  newobj     instance void class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>>::.ctor(object,
+                                                                                                                                      native int)
+    IL_004b:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>::ContinueWith(class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<!0>>)
+    IL_0050:  callvirt   instance void [mscorlib]System.Threading.Tasks.Task::Wait()
+    IL_0055:  nop
+//000023: 
+//000024:         ' Concurrent async requests
+//000025:         Task.Factory.ContinueWhenAll(
+    IL_0056:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_005b:  ldc.i4.5
+    IL_005c:  newarr     class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>
+    IL_0061:  stloc.2
+    IL_0062:  ldloc.2
+    IL_0063:  ldc.i4.0
+    IL_0064:  ldstr      "http://blogs.msdn.com/pfxteam"
+    IL_0069:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> AsyncDownload.Module1::Download(string)
+    IL_006e:  stelem.ref
+    IL_006f:  nop
+    IL_0070:  ldloc.2
+    IL_0071:  ldc.i4.1
+    IL_0072:  ldstr      "http://blogs.msdn.com/nativeconcurrency"
+    IL_0077:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> AsyncDownload.Module1::Download(string)
+    IL_007c:  stelem.ref
+    IL_007d:  nop
+    IL_007e:  ldloc.2
+    IL_007f:  ldc.i4.2
+    IL_0080:  ldstr      "http://exampleexampleexample.com"
+    IL_0085:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> AsyncDownload.Module1::Download(string)
+    IL_008a:  stelem.ref
+    IL_008b:  nop
+    IL_008c:  ldloc.2
+    IL_008d:  ldc.i4.3
+    IL_008e:  ldstr      "http://msdn.com/concurrency"
+    IL_0093:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> AsyncDownload.Module1::Download(string)
+    IL_0098:  stelem.ref
+    IL_0099:  nop
+    IL_009a:  ldloc.2
+    IL_009b:  ldc.i4.4
+    IL_009c:  ldstr      "http://bing.com"
+    IL_00a1:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> AsyncDownload.Module1::Download(string)
+    IL_00a6:  stelem.ref
+    IL_00a7:  nop
+    IL_00a8:  ldloc.2
+    IL_00a9:  ldnull
+    IL_00aa:  ldftn      void AsyncDownload.Module1::ConcurrentTasksCompleted(class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>[])
+    IL_00b0:  newobj     instance void class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>[]>::.ctor(object,
+                                                                                                                                        native int)
+    IL_00b5:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::ContinueWhenAll<uint8[]>(class [mscorlib]System.Threading.Tasks.Task`1<!!0>[],
+                                                                                                                                                     class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<!!0>[]>)
+    IL_00ba:  callvirt   instance void [mscorlib]System.Threading.Tasks.Task::Wait()
+    IL_00bf:  nop
+//000026:         {
+//000027:             Download("http://blogs.msdn.com/pfxteam"),
+//000028:             Download("http://blogs.msdn.com/nativeconcurrency"),
+//000029:             Download("http://exampleexampleexample.com"),
+//000030:             Download("http://msdn.com/concurrency"),
+//000031:             Download("http://bing.com")
+//000032:         }, AddressOf ConcurrentTasksCompleted).Wait()
+//000033: 
+//000034:         ' Serial async requests
+//000035:         Task.Factory.TrackedSequence(
+    IL_00c0:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_00c5:  ldc.i4.5
+    IL_00c6:  newarr     class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task>
+    IL_00cb:  stloc.1
+    IL_00cc:  ldloc.1
+    IL_00cd:  ldc.i4.0
+    IL_00ce:  ldnull
+    IL_00cf:  ldftn      class [mscorlib]System.Threading.Tasks.Task AsyncDownload.Module1::_Lambda$__1()
+    IL_00d5:  newobj     instance void class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task>::.ctor(object,
+                                                                                                                         native int)
+    IL_00da:  stelem.ref
+    IL_00db:  nop
+    IL_00dc:  ldloc.1
+    IL_00dd:  ldc.i4.1
+    IL_00de:  ldnull
+    IL_00df:  ldftn      class [mscorlib]System.Threading.Tasks.Task AsyncDownload.Module1::_Lambda$__2()
+    IL_00e5:  newobj     instance void class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task>::.ctor(object,
+                                                                                                                         native int)
+    IL_00ea:  stelem.ref
+    IL_00eb:  nop
+    IL_00ec:  ldloc.1
+    IL_00ed:  ldc.i4.2
+    IL_00ee:  ldnull
+    IL_00ef:  ldftn      class [mscorlib]System.Threading.Tasks.Task AsyncDownload.Module1::_Lambda$__3()
+    IL_00f5:  newobj     instance void class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task>::.ctor(object,
+                                                                                                                         native int)
+    IL_00fa:  stelem.ref
+    IL_00fb:  nop
+    IL_00fc:  ldloc.1
+    IL_00fd:  ldc.i4.3
+    IL_00fe:  ldnull
+    IL_00ff:  ldftn      class [mscorlib]System.Threading.Tasks.Task AsyncDownload.Module1::_Lambda$__4()
+    IL_0105:  newobj     instance void class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task>::.ctor(object,
+                                                                                                                         native int)
+    IL_010a:  stelem.ref
+    IL_010b:  nop
+    IL_010c:  ldloc.1
+    IL_010d:  ldc.i4.4
+    IL_010e:  ldnull
+    IL_010f:  ldftn      class [mscorlib]System.Threading.Tasks.Task AsyncDownload.Module1::_Lambda$__5()
+    IL_0115:  newobj     instance void class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task>::.ctor(object,
+                                                                                                                         native int)
+    IL_011a:  stelem.ref
+    IL_011b:  nop
+    IL_011c:  ldloc.1
+    IL_011d:  call       class [mscorlib]System.Threading.Tasks.Task`1<class [mscorlib]System.Collections.Generic.IList`1<class [mscorlib]System.Threading.Tasks.Task>> [ParallelExtensionsExtras]System.Threading.Tasks.TaskFactoryExtensions::TrackedSequence(class [mscorlib]System.Threading.Tasks.TaskFactory,
+                                                                                                                                                                                                                                                                class [mscorlib]System.Func`1<class [mscorlib]System.Threading.Tasks.Task>[])
+    IL_0122:  ldnull
+    IL_0123:  ldftn      void AsyncDownload.Module1::SerialTasksCompleted(class [mscorlib]System.Threading.Tasks.Task`1<class [mscorlib]System.Collections.Generic.IList`1<class [mscorlib]System.Threading.Tasks.Task>>)
+    IL_0129:  newobj     instance void class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<class [mscorlib]System.Collections.Generic.IList`1<class [mscorlib]System.Threading.Tasks.Task>>>::.ctor(object,
+                                                                                                                                                                                                                              native int)
+    IL_012e:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task class [mscorlib]System.Threading.Tasks.Task`1<class [mscorlib]System.Collections.Generic.IList`1<class [mscorlib]System.Threading.Tasks.Task>>::ContinueWith(class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task`1<!0>>)
+    IL_0133:  callvirt   instance void [mscorlib]System.Threading.Tasks.Task::Wait()
+    IL_0138:  nop
+//000036:             Function() Download("http://blogs.msdn.com/pfxteam"),
+//000037:             Function() Download("http://blogs.msdn.com/nativeconcurrency"),
+//000038:             Function() Download("http://exampleexampleexample.com"),
+//000039:             Function() Download("http://msdn.com/concurrency"),
+//000040:             Function() Download("http://bing.com")
+//000041:         ).ContinueWith(AddressOf SerialTasksCompleted).Wait()
+//000042: 
+//000043:         ' Done
+//000044:         Console.WriteLine()
+    IL_0139:  call       void [mscorlib]System.Console::WriteLine()
+    IL_013e:  nop
+//000045:         Console.WriteLine("Press <enter> to exit.")
+    IL_013f:  ldstr      "Press <enter> to exit."
+    IL_0144:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0149:  nop
+//000046:         Console.ReadLine()
+    IL_014a:  call       string [mscorlib]System.Console::ReadLine()
+    IL_014f:  pop
+//000047:     End Sub
+    IL_0150:  nop
+    IL_0151:  ret
+  } // end of method Module1::Main
+
+  .method public static class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> 
+          Download(string url) cil managed
+  {
+    // Code size       19 (0x13)
+    .maxstack  2
+    .locals init ([0] class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> Download,
+             [1] class [System]System.Net.WebClient wc)
+//000048: 
+//000049:     Function Download(ByVal url As String) As Task(Of Byte())
+    IL_0000:  nop
+//000050:         Dim wc As New WebClient
+    IL_0001:  newobj     instance void [System]System.Net.WebClient::.ctor()
+    IL_0006:  stloc.1
+//000051:         Return wc.DownloadDataTask(url)
+    IL_0007:  ldloc.1
+    IL_0008:  ldarg.0
+    IL_0009:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> [ParallelExtensionsExtras]System.Net.WebClientExtensions::DownloadDataTask(class [System]System.Net.WebClient,
+                                                                                                                                                           string)
+    IL_000e:  stloc.0
+    IL_000f:  br.s       IL_0011
+
+//000052:     End Function
+    IL_0011:  ldloc.0
+    IL_0012:  ret
+  } // end of method Module1::Download
+
+  .method public static void  CompletedDownloadData(class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> task) cil managed
+  {
+    // Code size       104 (0x68)
+    .maxstack  2
+    .locals init ([0] bool VB$CG$t_bool$S0)
+//000053: 
+//000054:     Sub CompletedDownloadData(ByVal task As Task(Of Byte()))
+    IL_0000:  nop
+//000055:         If task.Status = TaskStatus.RanToCompletion Then
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance valuetype [mscorlib]System.Threading.Tasks.TaskStatus [mscorlib]System.Threading.Tasks.Task::get_Status()
+    IL_0007:  ldc.i4.5
+    IL_0008:  ceq
+    IL_000a:  stloc.0
+//000056:             Console.WriteLine("Request succeeded: {0}", task.Result.Length)
+//000057:         ElseIf task.Status = TaskStatus.Faulted Then
+//000058:             Console.WriteLine("Request failed: {0}", task.Exception.InnerException)
+//000059:         ElseIf task.Status = TaskStatus.Canceled Then
+//000060:             Console.WriteLine("Request was canceled")
+//000061:         End If
+//000062:     End Sub
+//000063: 
+//000064:     Sub SerialTasksCompleted(ByVal tasks As Task(Of IList(Of Task)))
+//000065:         Dim failures = tasks.Result.Where(Function(t) t.Exception IsNot Nothing).Count()
+//000066:         Console.WriteLine("Serial result: {0} successes and {1} failures", tasks.Result.Count() - failures, failures)
+//000067:     End Sub
+//000068: 
+//000069:     Sub ConcurrentTasksCompleted(ByVal tasks As Task(Of Byte())())
+//000070:         Dim failures = tasks.Where(Function(t) t.Exception IsNot Nothing).Count()
+//000071:         Console.WriteLine("Concurrent result: {0} successes and {1} failures", tasks.Length - failures, failures)
+//000072:     End Sub
+//000073: End Module
+    IL_000b:  ldloc.0
+    IL_000c:  brfalse.s  IL_0028
+
+//000056:             Console.WriteLine("Request succeeded: {0}", task.Result.Length)
+    IL_000e:  ldstr      "Request succeeded: {0}"
+    IL_0013:  ldarg.0
+    IL_0014:  callvirt   instance !0 class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>::get_Result()
+    IL_0019:  ldlen
+    IL_001a:  conv.ovf.i4
+    IL_001b:  box        [mscorlib]System.Int32
+    IL_0020:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_0025:  nop
+    IL_0026:  br.s       IL_0065
+
+//000057:         ElseIf task.Status = TaskStatus.Faulted Then
+    IL_0028:  ldarg.0
+    IL_0029:  callvirt   instance valuetype [mscorlib]System.Threading.Tasks.TaskStatus [mscorlib]System.Threading.Tasks.Task::get_Status()
+    IL_002e:  ldc.i4.7
+    IL_002f:  ceq
+    IL_0031:  stloc.0
+//000058:             Console.WriteLine("Request failed: {0}", task.Exception.InnerException)
+//000059:         ElseIf task.Status = TaskStatus.Canceled Then
+//000060:             Console.WriteLine("Request was canceled")
+//000061:         End If
+//000062:     End Sub
+//000063: 
+//000064:     Sub SerialTasksCompleted(ByVal tasks As Task(Of IList(Of Task)))
+//000065:         Dim failures = tasks.Result.Where(Function(t) t.Exception IsNot Nothing).Count()
+//000066:         Console.WriteLine("Serial result: {0} successes and {1} failures", tasks.Result.Count() - failures, failures)
+//000067:     End Sub
+//000068: 
+//000069:     Sub ConcurrentTasksCompleted(ByVal tasks As Task(Of Byte())())
+//000070:         Dim failures = tasks.Where(Function(t) t.Exception IsNot Nothing).Count()
+//000071:         Console.WriteLine("Concurrent result: {0} successes and {1} failures", tasks.Length - failures, failures)
+//000072:     End Sub
+//000073: End Module
+    IL_0032:  ldloc.0
+    IL_0033:  brfalse.s  IL_004d
+
+//000058:             Console.WriteLine("Request failed: {0}", task.Exception.InnerException)
+    IL_0035:  ldstr      "Request failed: {0}"
+    IL_003a:  ldarg.0
+    IL_003b:  callvirt   instance class [mscorlib]System.AggregateException [mscorlib]System.Threading.Tasks.Task::get_Exception()
+    IL_0040:  callvirt   instance class [mscorlib]System.Exception [mscorlib]System.Exception::get_InnerException()
+    IL_0045:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_004a:  nop
+    IL_004b:  br.s       IL_0065
+
+//000059:         ElseIf task.Status = TaskStatus.Canceled Then
+    IL_004d:  ldarg.0
+    IL_004e:  callvirt   instance valuetype [mscorlib]System.Threading.Tasks.TaskStatus [mscorlib]System.Threading.Tasks.Task::get_Status()
+    IL_0053:  ldc.i4.6
+    IL_0054:  ceq
+    IL_0056:  stloc.0
+//000060:             Console.WriteLine("Request was canceled")
+//000061:         End If
+//000062:     End Sub
+//000063: 
+//000064:     Sub SerialTasksCompleted(ByVal tasks As Task(Of IList(Of Task)))
+//000065:         Dim failures = tasks.Result.Where(Function(t) t.Exception IsNot Nothing).Count()
+//000066:         Console.WriteLine("Serial result: {0} successes and {1} failures", tasks.Result.Count() - failures, failures)
+//000067:     End Sub
+//000068: 
+//000069:     Sub ConcurrentTasksCompleted(ByVal tasks As Task(Of Byte())())
+//000070:         Dim failures = tasks.Where(Function(t) t.Exception IsNot Nothing).Count()
+//000071:         Console.WriteLine("Concurrent result: {0} successes and {1} failures", tasks.Length - failures, failures)
+//000072:     End Sub
+//000073: End Module
+    IL_0057:  ldloc.0
+    IL_0058:  brfalse.s  IL_0065
+
+//000060:             Console.WriteLine("Request was canceled")
+    IL_005a:  ldstr      "Request was canceled"
+    IL_005f:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0064:  nop
+//000061:         End If
+    IL_0065:  nop
+//000062:     End Sub
+    IL_0066:  nop
+    IL_0067:  ret
+  } // end of method Module1::CompletedDownloadData
+
+  .method public static void  SerialTasksCompleted(class [mscorlib]System.Threading.Tasks.Task`1<class [mscorlib]System.Collections.Generic.IList`1<class [mscorlib]System.Threading.Tasks.Task>> tasks) cil managed
+  {
+    // Code size       67 (0x43)
+    .maxstack  3
+    .locals init ([0] int32 failures)
+//000063: 
+//000064:     Sub SerialTasksCompleted(ByVal tasks As Task(Of IList(Of Task)))
+    IL_0000:  nop
+//000065:         Dim failures = tasks.Result.Where(Function(t) t.Exception IsNot Nothing).Count()
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance !0 class [mscorlib]System.Threading.Tasks.Task`1<class [mscorlib]System.Collections.Generic.IList`1<class [mscorlib]System.Threading.Tasks.Task>>::get_Result()
+    IL_0007:  ldnull
+    IL_0008:  ldftn      bool AsyncDownload.Module1::_Lambda$__6(class [mscorlib]System.Threading.Tasks.Task)
+    IL_000e:  newobj     instance void class [mscorlib]System.Func`2<class [mscorlib]System.Threading.Tasks.Task,bool>::.ctor(object,
+                                                                                                                              native int)
+    IL_0013:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0> [System.Core]System.Linq.Enumerable::Where<class [mscorlib]System.Threading.Tasks.Task>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                               class [mscorlib]System.Func`2<!!0,bool>)
+    IL_0018:  call       int32 [System.Core]System.Linq.Enumerable::Count<class [mscorlib]System.Threading.Tasks.Task>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_001d:  stloc.0
+//000066:         Console.WriteLine("Serial result: {0} successes and {1} failures", tasks.Result.Count() - failures, failures)
+    IL_001e:  ldstr      "Serial result: {0} successes and {1} failures"
+    IL_0023:  ldarg.0
+    IL_0024:  callvirt   instance !0 class [mscorlib]System.Threading.Tasks.Task`1<class [mscorlib]System.Collections.Generic.IList`1<class [mscorlib]System.Threading.Tasks.Task>>::get_Result()
+    IL_0029:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.ICollection`1<class [mscorlib]System.Threading.Tasks.Task>::get_Count()
+    IL_002e:  ldloc.0
+    IL_002f:  sub.ovf
+    IL_0030:  box        [mscorlib]System.Int32
+    IL_0035:  ldloc.0
+    IL_0036:  box        [mscorlib]System.Int32
+    IL_003b:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object,
+                                                                  object)
+    IL_0040:  nop
+//000067:     End Sub
+    IL_0041:  nop
+    IL_0042:  ret
+  } // end of method Module1::SerialTasksCompleted
+
+  .method public static void  ConcurrentTasksCompleted(class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>[] tasks) cil managed
+  {
+    // Code size       54 (0x36)
+    .maxstack  3
+    .locals init ([0] int32 failures)
+//000068: 
+//000069:     Sub ConcurrentTasksCompleted(ByVal tasks As Task(Of Byte())())
+    IL_0000:  nop
+//000070:         Dim failures = tasks.Where(Function(t) t.Exception IsNot Nothing).Count()
+    IL_0001:  ldarg.0
+    IL_0002:  ldnull
+    IL_0003:  ldftn      bool AsyncDownload.Module1::_Lambda$__7(class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>)
+    IL_0009:  newobj     instance void class [mscorlib]System.Func`2<class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>,bool>::.ctor(object,
+                                                                                                                                         native int)
+    IL_000e:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0> [System.Core]System.Linq.Enumerable::Where<class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                          class [mscorlib]System.Func`2<!!0,bool>)
+    IL_0013:  call       int32 [System.Core]System.Linq.Enumerable::Count<class [mscorlib]System.Threading.Tasks.Task`1<uint8[]>>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_0018:  stloc.0
+//000071:         Console.WriteLine("Concurrent result: {0} successes and {1} failures", tasks.Length - failures, failures)
+    IL_0019:  ldstr      "Concurrent result: {0} successes and {1} failures"
+    IL_001e:  ldarg.0
+    IL_001f:  ldlen
+    IL_0020:  conv.ovf.i4
+    IL_0021:  ldloc.0
+    IL_0022:  sub.ovf
+    IL_0023:  box        [mscorlib]System.Int32
+    IL_0028:  ldloc.0
+    IL_0029:  box        [mscorlib]System.Int32
+    IL_002e:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object,
+                                                                  object)
+    IL_0033:  nop
+//000072:     End Sub
+    IL_0034:  nop
+    IL_0035:  ret
+  } // end of method Module1::ConcurrentTasksCompleted
+
+  .method private specialname static class [mscorlib]System.Threading.Tasks.Task 
+          _Lambda$__1() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       15 (0xf)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Threading.Tasks.Task _Lambda$__1)
+//000036:             Function() Download("http://blogs.msdn.com/pfxteam"),
+    IL_0000:  ldstr      "http://blogs.msdn.com/pfxteam"
+    IL_0005:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> AsyncDownload.Module1::Download(string)
+    IL_000a:  stloc.0
+    IL_000b:  br.s       IL_000d
+
+    IL_000d:  ldloc.0
+    IL_000e:  ret
+  } // end of method Module1::_Lambda$__1
+
+  .method private specialname static class [mscorlib]System.Threading.Tasks.Task 
+          _Lambda$__2() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       15 (0xf)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Threading.Tasks.Task _Lambda$__2)
+//000037:             Function() Download("http://blogs.msdn.com/nativeconcurrency"),
+    IL_0000:  ldstr      "http://blogs.msdn.com/nativeconcurrency"
+    IL_0005:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> AsyncDownload.Module1::Download(string)
+    IL_000a:  stloc.0
+    IL_000b:  br.s       IL_000d
+
+    IL_000d:  ldloc.0
+    IL_000e:  ret
+  } // end of method Module1::_Lambda$__2
+
+  .method private specialname static class [mscorlib]System.Threading.Tasks.Task 
+          _Lambda$__3() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       15 (0xf)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Threading.Tasks.Task _Lambda$__3)
+//000038:             Function() Download("http://exampleexampleexample.com"),
+    IL_0000:  ldstr      "http://exampleexampleexample.com"
+    IL_0005:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> AsyncDownload.Module1::Download(string)
+    IL_000a:  stloc.0
+    IL_000b:  br.s       IL_000d
+
+    IL_000d:  ldloc.0
+    IL_000e:  ret
+  } // end of method Module1::_Lambda$__3
+
+  .method private specialname static class [mscorlib]System.Threading.Tasks.Task 
+          _Lambda$__4() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       15 (0xf)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Threading.Tasks.Task _Lambda$__4)
+//000039:             Function() Download("http://msdn.com/concurrency"),
+    IL_0000:  ldstr      "http://msdn.com/concurrency"
+    IL_0005:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> AsyncDownload.Module1::Download(string)
+    IL_000a:  stloc.0
+    IL_000b:  br.s       IL_000d
+
+    IL_000d:  ldloc.0
+    IL_000e:  ret
+  } // end of method Module1::_Lambda$__4
+
+  .method private specialname static class [mscorlib]System.Threading.Tasks.Task 
+          _Lambda$__5() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       15 (0xf)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Threading.Tasks.Task _Lambda$__5)
+//000040:             Function() Download("http://bing.com")
+    IL_0000:  ldstr      "http://bing.com"
+    IL_0005:  call       class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> AsyncDownload.Module1::Download(string)
+    IL_000a:  stloc.0
+    IL_000b:  br.s       IL_000d
+
+    IL_000d:  ldloc.0
+    IL_000e:  ret
+  } // end of method Module1::_Lambda$__5
+
+  .method private specialname static bool 
+          _Lambda$__6(class [mscorlib]System.Threading.Tasks.Task t) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       17 (0x11)
+    .maxstack  2
+    .locals init ([0] bool _Lambda$__6)
+//000041:         ).ContinueWith(AddressOf SerialTasksCompleted).Wait()
+//000042: 
+//000043:         ' Done
+//000044:         Console.WriteLine()
+//000045:         Console.WriteLine("Press <enter> to exit.")
+//000046:         Console.ReadLine()
+//000047:     End Sub
+//000048: 
+//000049:     Function Download(ByVal url As String) As Task(Of Byte())
+//000050:         Dim wc As New WebClient
+//000051:         Return wc.DownloadDataTask(url)
+//000052:     End Function
+//000053: 
+//000054:     Sub CompletedDownloadData(ByVal task As Task(Of Byte()))
+//000055:         If task.Status = TaskStatus.RanToCompletion Then
+//000056:             Console.WriteLine("Request succeeded: {0}", task.Result.Length)
+//000057:         ElseIf task.Status = TaskStatus.Faulted Then
+//000058:             Console.WriteLine("Request failed: {0}", task.Exception.InnerException)
+//000059:         ElseIf task.Status = TaskStatus.Canceled Then
+//000060:             Console.WriteLine("Request was canceled")
+//000061:         End If
+//000062:     End Sub
+//000063: 
+//000064:     Sub SerialTasksCompleted(ByVal tasks As Task(Of IList(Of Task)))
+//000065:         Dim failures = tasks.Result.Where(Function(t) t.Exception IsNot Nothing).Count()
+    IL_0000:  ldarg.0
+    IL_0001:  callvirt   instance class [mscorlib]System.AggregateException [mscorlib]System.Threading.Tasks.Task::get_Exception()
+    IL_0006:  ldnull
+    IL_0007:  ceq
+    IL_0009:  ldc.i4.0
+    IL_000a:  ceq
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+  } // end of method Module1::_Lambda$__6
+
+  .method private specialname static bool 
+          _Lambda$__7(class [mscorlib]System.Threading.Tasks.Task`1<uint8[]> t) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       17 (0x11)
+    .maxstack  2
+    .locals init ([0] bool _Lambda$__7)
+//000066:         Console.WriteLine("Serial result: {0} successes and {1} failures", tasks.Result.Count() - failures, failures)
+//000067:     End Sub
+//000068: 
+//000069:     Sub ConcurrentTasksCompleted(ByVal tasks As Task(Of Byte())())
+//000070:         Dim failures = tasks.Where(Function(t) t.Exception IsNot Nothing).Count()
+    IL_0000:  ldarg.0
+    IL_0001:  callvirt   instance class [mscorlib]System.AggregateException [mscorlib]System.Threading.Tasks.Task::get_Exception()
+    IL_0006:  ldnull
+    IL_0007:  ceq
+    IL_0009:  ldc.i4.0
+    IL_000a:  ceq
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+  } // end of method Module1::_Lambda$__7
+
+} // end of class AsyncDownload.Module1
+
+.class private auto ansi sealed AsyncDownload.My.Resources.Resources
+       extends [mscorlib]System.Object
+{
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.StandardModuleAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 33 53 79 73 74 65 6D 2E 52 65 73 6F 75 72   // ..3System.Resour
+                                                                                                  63 65 73 2E 54 6F 6F 6C 73 2E 53 74 72 6F 6E 67   // ces.Tools.Strong
+                                                                                                  6C 79 54 79 70 65 64 52 65 73 6F 75 72 63 65 42   // lyTypedResourceB
+                                                                                                  75 69 6C 64 65 72 07 34 2E 30 2E 30 2E 30 00 00 ) // uilder.4.0.0.0..
+  .custom instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.HideModuleNameAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Resources.ResourceManager resourceMan
+  .field private static class [mscorlib]System.Globalization.CultureInfo resourceCulture
+  .method assembly specialname static class [mscorlib]System.Resources.ResourceManager 
+          get_ResourceManager() cil managed
+  {
+    // Code size       59 (0x3b)
+    .maxstack  2
+    .locals init ([0] class [mscorlib]System.Resources.ResourceManager ResourceManager,
+             [1] class [mscorlib]System.Resources.ResourceManager temp,
+             [2] bool VB$CG$t_bool$S0)
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_VisualBasic\My Project\Resources.Designer.vb' 
+//000040:             Get
+    IL_0000:  nop
+//000041:                 If Object.ReferenceEquals(resourceMan, Nothing) Then
+    IL_0001:  ldsfld     class [mscorlib]System.Resources.ResourceManager AsyncDownload.My.Resources.Resources::resourceMan
+    IL_0006:  ldnull
+    IL_0007:  call       bool [mscorlib]System.Object::ReferenceEquals(object,
+                                                                       object)
+    IL_000c:  stloc.2
+//000042:                     Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("AsyncDownload.Resources", GetType(Resources).Assembly)
+//000043:                     resourceMan = temp
+//000044:                 End If
+//000045:                 Return resourceMan
+//000046:             End Get
+//000047:         End Property
+//000048:         
+//000049:         '''<summary>
+//000050:         '''  Overrides the current thread's CurrentUICulture property for all
+//000051:         '''  resource lookups using this strongly typed resource class.
+//000052:         '''</summary>
+//000053:         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
+//000054:         Friend Property Culture() As Global.System.Globalization.CultureInfo
+//000055:             Get
+//000056:                 Return resourceCulture
+//000057:             End Get
+//000058:             Set
+//000059:                 resourceCulture = value
+//000060:             End Set
+//000061:         End Property
+//000062:     End Module
+//000063: End Namespace
+    IL_000d:  ldloc.2
+    IL_000e:  brfalse.s  IL_0030
+
+//000042:                     Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("AsyncDownload.Resources", GetType(Resources).Assembly)
+    IL_0010:  ldstr      "AsyncDownload.Resources"
+    IL_0015:  ldtoken    AsyncDownload.My.Resources.Resources
+    IL_001a:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_001f:  callvirt   instance class [mscorlib]System.Reflection.Assembly [mscorlib]System.Type::get_Assembly()
+    IL_0024:  newobj     instance void [mscorlib]System.Resources.ResourceManager::.ctor(string,
+                                                                                         class [mscorlib]System.Reflection.Assembly)
+    IL_0029:  stloc.1
+//000043:                     resourceMan = temp
+    IL_002a:  ldloc.1
+    IL_002b:  stsfld     class [mscorlib]System.Resources.ResourceManager AsyncDownload.My.Resources.Resources::resourceMan
+//000044:                 End If
+    IL_0030:  nop
+//000045:                 Return resourceMan
+    IL_0031:  ldsfld     class [mscorlib]System.Resources.ResourceManager AsyncDownload.My.Resources.Resources::resourceMan
+    IL_0036:  stloc.0
+    IL_0037:  br.s       IL_0039
+
+//000046:             End Get
+    IL_0039:  ldloc.0
+    IL_003a:  ret
+  } // end of method Resources::get_ResourceManager
+
+  .method assembly specialname static class [mscorlib]System.Globalization.CultureInfo 
+          get_Culture() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Globalization.CultureInfo Culture)
+//000047:         End Property
+//000048:         
+//000049:         '''<summary>
+//000050:         '''  Overrides the current thread's CurrentUICulture property for all
+//000051:         '''  resource lookups using this strongly typed resource class.
+//000052:         '''</summary>
+//000053:         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
+//000054:         Friend Property Culture() As Global.System.Globalization.CultureInfo
+//000055:             Get
+    IL_0000:  nop
+//000056:                 Return resourceCulture
+    IL_0001:  ldsfld     class [mscorlib]System.Globalization.CultureInfo AsyncDownload.My.Resources.Resources::resourceCulture
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000057:             End Get
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Resources::get_Culture
+
+  .method assembly specialname static void 
+          set_Culture(class [mscorlib]System.Globalization.CultureInfo Value) cil managed
+  {
+    // Code size       9 (0x9)
+    .maxstack  8
+//000058:             Set
+    IL_0000:  nop
+//000059:                 resourceCulture = value
+    IL_0001:  ldarg.0
+    IL_0002:  stsfld     class [mscorlib]System.Globalization.CultureInfo AsyncDownload.My.Resources.Resources::resourceCulture
+//000060:             End Set
+    IL_0007:  nop
+    IL_0008:  ret
+  } // end of method Resources::set_Culture
+
+  .property class [mscorlib]System.Resources.ResourceManager
+          ResourceManager()
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 02 00 00 00 00 00 ) 
+    .get class [mscorlib]System.Resources.ResourceManager AsyncDownload.My.Resources.Resources::get_ResourceManager()
+  } // end of property Resources::ResourceManager
+  .property class [mscorlib]System.Globalization.CultureInfo
+          Culture()
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 02 00 00 00 00 00 ) 
+    .get class [mscorlib]System.Globalization.CultureInfo AsyncDownload.My.Resources.Resources::get_Culture()
+    .set void AsyncDownload.My.Resources.Resources::set_Culture(class [mscorlib]System.Globalization.CultureInfo)
+  } // end of property Resources::Culture
+} // end of class AsyncDownload.My.Resources.Resources
+
+.class private auto ansi sealed beforefieldinit AsyncDownload.My.MySettings
+       extends [System]System.Configuration.ApplicationSettingsBase
+{
+  .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 02 00 00 00 00 00 ) 
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 4B 4D 69 63 72 6F 73 6F 66 74 2E 56 69 73   // ..KMicrosoft.Vis
+                                                                                                  75 61 6C 53 74 75 64 69 6F 2E 45 64 69 74 6F 72   // ualStudio.Editor
+                                                                                                  73 2E 53 65 74 74 69 6E 67 73 44 65 73 69 67 6E   // s.SettingsDesign
+                                                                                                  65 72 2E 53 65 74 74 69 6E 67 73 53 69 6E 67 6C   // er.SettingsSingl
+                                                                                                  65 46 69 6C 65 47 65 6E 65 72 61 74 6F 72 08 31   // eFileGenerator.1
+                                                                                                  30 2E 30 2E 30 2E 30 00 00 )                      // 0.0.0.0..
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class AsyncDownload.My.MySettings defaultInstance
+  .method private specialname rtspecialname static 
+          void  .cctor() cil managed
+  {
+    // Code size       22 (0x16)
+    .maxstack  8
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_VisualBasic\My Project\Settings.Designer.vb' 
+//000023:         Private Shared defaultInstance As MySettings = CType(Global.System.Configuration.ApplicationSettingsBase.Synchronized(New MySettings()),MySettings)
+    IL_0000:  newobj     instance void AsyncDownload.My.MySettings::.ctor()
+    IL_0005:  call       class [System]System.Configuration.SettingsBase [System]System.Configuration.SettingsBase::Synchronized(class [System]System.Configuration.SettingsBase)
+    IL_000a:  castclass  AsyncDownload.My.MySettings
+    IL_000f:  stsfld     class AsyncDownload.My.MySettings AsyncDownload.My.MySettings::defaultInstance
+    IL_0014:  nop
+    IL_0015:  ret
+  } // end of method MySettings::.cctor
+
+  .method public specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [System]System.Configuration.ApplicationSettingsBase::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  ret
+  } // end of method MySettings::.ctor
+
+  .method public specialname static class AsyncDownload.My.MySettings 
+          get_Default() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class AsyncDownload.My.MySettings Default)
+//000024:         
+//000025: #Region "My.Settings Auto-Save Functionality"
+//000026: #If _MyType = "WindowsForms" Then
+//000027:     Private Shared addedHandler As Boolean
+//000028: 
+//000029:     Private Shared addedHandlerLockObject As New Object
+//000030: 
+//000031:     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+//000032:     Private Shared Sub AutoSaveSettings(ByVal sender As Global.System.Object, ByVal e As Global.System.EventArgs)
+//000033:         If My.Application.SaveMySettingsOnExit Then
+//000034:             My.Settings.Save()
+//000035:         End If
+//000036:     End Sub
+//000037: #End If
+//000038: #End Region
+//000039:         
+//000040:         Public Shared ReadOnly Property [Default]() As MySettings
+//000041:             Get
+    IL_0000:  nop
+//000042:                 
+//000043: #If _MyType = "WindowsForms" Then
+//000044:                If Not addedHandler Then
+//000045:                     SyncLock addedHandlerLockObject
+//000046:                         If Not addedHandler Then
+//000047:                             AddHandler My.Application.Shutdown, AddressOf AutoSaveSettings
+//000048:                             addedHandler = True
+//000049:                         End If
+//000050:                     End SyncLock
+//000051:                 End If
+//000052: #End If
+//000053:                 Return defaultInstance
+    IL_0001:  ldsfld     class AsyncDownload.My.MySettings AsyncDownload.My.MySettings::defaultInstance
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000054:             End Get
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method MySettings::get_Default
+
+  .property class AsyncDownload.My.MySettings
+          Default()
+  {
+    .get class AsyncDownload.My.MySettings AsyncDownload.My.MySettings::get_Default()
+  } // end of property MySettings::Default
+} // end of class AsyncDownload.My.MySettings
+
+.class private auto ansi sealed AsyncDownload.My.MySettingsProperty
+       extends [mscorlib]System.Object
+{
+  .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.HideModuleNameAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.StandardModuleAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .method assembly specialname static class AsyncDownload.My.MySettings 
+          get_Settings() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class AsyncDownload.My.MySettings Settings)
+//000055:         End Property
+//000056:     End Class
+//000057: End Namespace
+//000058: 
+//000059: Namespace My
+//000060:     
+//000061:     <Global.Microsoft.VisualBasic.HideModuleNameAttribute(),  _
+//000062:      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+//000063:      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
+//000064:     Friend Module MySettingsProperty
+//000065:         
+//000066:         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
+//000067:         Friend ReadOnly Property Settings() As Global.AsyncDownload.My.MySettings
+//000068:             Get
+    IL_0000:  nop
+//000069:                 Return Global.AsyncDownload.My.MySettings.Default
+    IL_0001:  call       class AsyncDownload.My.MySettings AsyncDownload.My.MySettings::get_Default()
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000070:             End Get
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method MySettingsProperty::get_Settings
+
+  .property class AsyncDownload.My.MySettings
+          Settings()
+  {
+    .custom instance void [System]System.ComponentModel.Design.HelpKeywordAttribute::.ctor(string) = ( 01 00 0B 4D 79 2E 53 65 74 74 69 6E 67 73 00 00 ) // ...My.Settings..
+    .get class AsyncDownload.My.MySettings AsyncDownload.My.MySettingsProperty::get_Settings()
+  } // end of property MySettingsProperty::Settings
+} // end of class AsyncDownload.My.MySettingsProperty
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

@@ -1,0 +1,6 @@
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\bin\Debug\ComputePi.exe.config
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\bin\Debug\ComputePi.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\bin\Debug\ComputePi.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\obj\Debug\ComputePi.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\obj\Debug\ComputePi.pdb

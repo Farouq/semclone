@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProFSharp.SilverlightDemo.2010", "ProFSharp.SilverlightDemo\ProFSharp.SilverlightDemo.2010.csproj", "{D043ECF1-8DC4-4E5E-8BA2-22E78D8CC6EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProFSharp.SilverlightDemo.2010.Web", "ProFSharp.SilverlightDemo.Web\ProFSharp.SilverlightDemo.2010.Web.csproj", "{1D6DE76A-4081-493E-B75D-1DADC8710C56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReferenceBinaries", "ReferenceBinaries", "{06D1BD8B-B2B3-449B-B272-D0D925AC907F}"
+	ProjectSection(SolutionItems) = preProject
+		ReferenceBinaries\System.Windows.Controls.DataVisualization.Toolkit.dll = ReferenceBinaries\System.Windows.Controls.DataVisualization.Toolkit.dll
+		ReferenceBinaries\System.Windows.Controls.Layout.Toolkit.dll = ReferenceBinaries\System.Windows.Controls.Layout.Toolkit.dll
+		ReferenceBinaries\System.Windows.Controls.Toolkit.dll = ReferenceBinaries\System.Windows.Controls.Toolkit.dll
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ProFSharp.SeriesData.2010", "ProFSharp.SeriesData\ProFSharp.SeriesData.2010.fsproj", "{5A6FDE9F-52EA-4D82-AFE7-2CFC1EAE2F6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D043ECF1-8DC4-4E5E-8BA2-22E78D8CC6EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D043ECF1-8DC4-4E5E-8BA2-22E78D8CC6EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D043ECF1-8DC4-4E5E-8BA2-22E78D8CC6EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D043ECF1-8DC4-4E5E-8BA2-22E78D8CC6EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D6DE76A-4081-493E-B75D-1DADC8710C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D6DE76A-4081-493E-B75D-1DADC8710C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D6DE76A-4081-493E-B75D-1DADC8710C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D6DE76A-4081-493E-B75D-1DADC8710C56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A6FDE9F-52EA-4D82-AFE7-2CFC1EAE2F6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A6FDE9F-52EA-4D82-AFE7-2CFC1EAE2F6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A6FDE9F-52EA-4D82-AFE7-2CFC1EAE2F6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A6FDE9F-52EA-4D82-AFE7-2CFC1EAE2F6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

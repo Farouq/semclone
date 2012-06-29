@@ -1,0 +1,889 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\PizzaSizeCircle.xaml.cs" startline="21" endline="24"><![CDATA[
+         public PizzaSizeCircle()
+         {
+             InitializeComponent();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\PizzaSizeCircle.xaml.cs" startline="25" endline="31"><![CDATA[
+ 
+         public int PizzaSize
+         {
+             get
+             {
+                 return (int)this.GetValue(PizzaSizeProperty);
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\PizzaSizeCircle.xaml.cs" startline="32" endline="36"><![CDATA[
+             set
+             {
+                 this.SetValue(PizzaSizeProperty, value);
+          
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\PizzaSizeCircle.xaml.cs" startline="37" endline="68"><![CDATA[
+         }
+ 
+         static void PizzaSizeChangedCallBack(DependencyObject property, DependencyPropertyChangedEventArgs args)
+         {
+             var control = (PizzaSizeCircle)property;
+             switch ((int)args.NewValue)
+             {
+                 case 11
+                     control.circle.Width = 30;
+                     control.circle.Height = 30;
+                     control.layoutRoot.Width = 30;
+                     control.layoutRoot.Height = 30;
+                     control.label.Text = "11";
+                     break;
+                 case 13
+                     control.circle.Width = 50;
+                     control.circle.Height = 50;
+                     control.layoutRoot.Width = 50;
+                     control.layoutRoot.Height = 50;
+                     control.label.Text = "13";
+                     break;
+                 case 17
+                     control.circle.Width = 75;
+                     control.circle.Height = 75;
+                     control.layoutRoot.Width = 75;
+                     control.layoutRoot.Height = 75;
+                     control.label.Text = "17";
+                     break;
+                 default
+                     throw new ArgumentOutOfRangeException();
+             }
+         }
+ 
+         public static readonly DependencyProperty PizzaSizeProperty =
+             DependencyProperty.Register("PizzaSize", typeof(int), typeof(PizzaSizeCircle),
+             new UIPropertyMetadata(17, new PropertyChangedCallback(PizzaSizeChangedCallBack)));
+         
+     }
+ }
+                     control.circle.Width = 30;
+                     control.circle.Height = 30;
+                     control.layoutRoot.Width = 30;
+                     control.layoutRoot.Height = 30;
+                     control.label.Text = "11";
+                     break;
+                 case 13
+                     control.circle.Width = 50;
+                     control.circle.Height = 50;
+                     control.layoutRoot.Width = 50;
+                     control.layoutRoot.Height = 50;
+                     control.label.Text = "13";
+                     break;
+                 case 17
+                     control.circle.Width = 75;
+                     control.circle.Height = 75;
+                     control.layoutRoot.Width = 75;
+                     control.layoutRoot.Height = 75;
+                     control.label.Text = "17";
+                     break;
+                 default
+                     throw new ArgumentOutOfRangeException();
+             }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\PizzaSizeCircle.g.cs" startline="1" endline="1"><![CDATA[
+ ?    <!--A user control that changes the appearance of a circle (and text label)
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\PizzaSizeCircle.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\PizzaSizeCircle.xaml.cs" startline="70" endline="75"><![CDATA[
+         public static readonly DependencyProperty PizzaSizeProperty =
+             DependencyProperty.Register("PizzaSize", typeof(int), typeof(PizzaSizeCircle),
+             new UIPropertyMetadata(17, new PropertyChangedCallback(PizzaSizeChangedCallBack)));
+         
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Window1.xaml.cs" startline="27" endline="38"><![CDATA[
+         public Window1()
+         {
+             InitializeComponent();
+ 
+             // intialize the bindable collection and set it as the data context
+             var orders = new ObservableConcurrentCollection<PizzaOrder>();
+             // store the observable collection as an explicity producer consumer 
+             // collection that has tryadd and tryremove operations
+             m_orders = orders;
+             // set the AcmePizza as the defaut
+             this.DataContext = orders;
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Window1.xaml.cs" startline="39" endline="47"><![CDATA[
+ 
+         private void Window_Loaded(object sender, EventArgs e)
+         {
+             // launch four threads that mimic various sources
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Fax); }, TaskCreationOptions.AttachedToParent);
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Internet); }, TaskCreationOptions.AttachedToParent);
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Phone); }, TaskCreationOptions.AttachedToParent);
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.WalkIn); }, TaskCreationOptions.AttachedToParent);
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Window1.xaml.cs" startline="48" endline="58"><![CDATA[
+ 
+         private void OrdererThread(OrderSource source)
+         {
+             for ( int i = 0; i < 10; ++i )
+             {
+                 // submit random order
+                 m_orders.TryAdd( GenerateRandomOrder(source));
+                 // sleep for a random period
+                 Thread.Sleep(m_rand.Next(1000, 4001));
+             }
+         }
+ 
+         private static PizzaOrder GenerateRandomOrder(OrderSource source)
+         {
+             // source
+             var order = new PizzaOrder { Source = source };
+             // delivery
+             order.IsDelivery = m_rand.Next(0, 2) == 0 ? true 
+             // phone number
+             var areaCode = m_rand.Next(0, 2) == 0 ? 425 
+             var firstThreeDigits = m_rand.Next(100, 1000);
+             var lastFourDigits = m_rand.Next(0, 10000);
+             order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"));
+             // size
+             switch (m_rand.Next(0, 3))
+             {
+                 case 0
+                 case 1
+                 case 2
+             }
+             // toppings
+             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+             for (int j = 0; j < order.Toppings.Length; ++j)
+             {
+                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+                 order.Toppings[j] = availToppings[toppingIndex];
+                 availToppings.RemoveAt(toppingIndex);
+             }
+             return order;
+         }
+ 
+         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+         {
+             // attempt to get an order from the queue
+             PizzaOrder nextOrder;
+             if ( !m_orders.TryTake( out nextOrder ) )
+             {
+                 MessageBox.Show( "No orders available.  Please try again later.");
+                 return;
+             }
+             // if successful launch an order window
+             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+             currentOrderWindow.Show();
+         }
+     }
+ }
+             {
+                 // submit random order
+                 m_orders.TryAdd( GenerateRandomOrder(source));
+                 // sleep for a random period
+                 Thread.Sleep(m_rand.Next(1000, 4001));
+             }
+             for ( int i = 0; i < 10; ++i )
+             {
+                 // submit random order
+                 m_orders.TryAdd( GenerateRandomOrder(source));
+                 // sleep for a random period
+                 Thread.Sleep(m_rand.Next(1000, 4001));
+             }
+         }
+ 
+         private static PizzaOrder GenerateRandomOrder(OrderSource source)
+         {
+             // source
+             var order = new PizzaOrder { Source = source };
+             // delivery
+             order.IsDelivery = m_rand.Next(0, 2) == 0 ? true 
+             // phone number
+             var areaCode = m_rand.Next(0, 2) == 0 ? 425 
+             var firstThreeDigits = m_rand.Next(100, 1000);
+             var lastFourDigits = m_rand.Next(0, 10000);
+             order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"));
+             // size
+             switch (m_rand.Next(0, 3))
+             {
+                 case 0
+                 case 1
+                 case 2
+             }
+             // toppings
+             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+             for (int j = 0; j < order.Toppings.Length; ++j)
+             {
+                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+                 order.Toppings[j] = availToppings[toppingIndex];
+                 availToppings.RemoveAt(toppingIndex);
+             }
+             return order;
+         }
+ 
+         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+         {
+             // attempt to get an order from the queue
+             PizzaOrder nextOrder;
+             if ( !m_orders.TryTake( out nextOrder ) )
+             {
+                 MessageBox.Show( "No orders available.  Please try again later.");
+                 return;
+             }
+             // if successful launch an order window
+             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+             currentOrderWindow.Show();
+         }
+     }
+ }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Window1.xaml.cs" startline="59" endline="88"><![CDATA[
+ 
+         private static PizzaOrder GenerateRandomOrder(OrderSource source)
+         {
+             // source
+             var order = new PizzaOrder { Source = source };
+             // delivery
+             order.IsDelivery = m_rand.Next(0, 2) == 0 ? true 
+             // phone number
+             var areaCode = m_rand.Next(0, 2) == 0 ? 425 
+             var firstThreeDigits = m_rand.Next(100, 1000);
+             var lastFourDigits = m_rand.Next(0, 10000);
+             order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"));
+             // size
+             switch (m_rand.Next(0, 3))
+             {
+                 case 0
+                 case 1
+                 case 2
+             }
+             // toppings
+             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+             for (int j = 0; j < order.Toppings.Length; ++j)
+             {
+                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+                 order.Toppings[j] = availToppings[toppingIndex];
+                 availToppings.RemoveAt(toppingIndex);
+             }
+             return order;
+         }
+ 
+         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+         {
+             // attempt to get an order from the queue
+             PizzaOrder nextOrder;
+             if ( !m_orders.TryTake( out nextOrder ) )
+             {
+                 MessageBox.Show( "No orders available.  Please try again later.");
+                 return;
+             }
+             // if successful launch an order window
+             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+             currentOrderWindow.Show();
+         }
+     }
+ }
+                 case 0
+                 case 1
+                 case 2
+             }
+             // toppings
+             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+             for (int j = 0; j < order.Toppings.Length; ++j)
+             {
+                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+                 order.Toppings[j] = availToppings[toppingIndex];
+                 availToppings.RemoveAt(toppingIndex);
+             }
+             return order;
+         }
+ 
+         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+         {
+             // attempt to get an order from the queue
+             PizzaOrder nextOrder;
+             if ( !m_orders.TryTake( out nextOrder ) )
+             {
+                 MessageBox.Show( "No orders available.  Please try again later.");
+                 return;
+             }
+             // if successful launch an order window
+             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+             currentOrderWindow.Show();
+         }
+     }
+ }
+             {
+                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+                 order.Toppings[j] = availToppings[toppingIndex];
+                 availToppings.RemoveAt(toppingIndex);
+             }
+             for (int j = 0; j < order.Toppings.Length; ++j)
+             {
+                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+                 order.Toppings[j] = availToppings[toppingIndex];
+                 availToppings.RemoveAt(toppingIndex);
+             }
+             return order;
+         }
+ 
+         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+         {
+             // attempt to get an order from the queue
+             PizzaOrder nextOrder;
+             if ( !m_orders.TryTake( out nextOrder ) )
+             {
+                 MessageBox.Show( "No orders available.  Please try again later.");
+                 return;
+             }
+             // if successful launch an order window
+             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+             currentOrderWindow.Show();
+         }
+     }
+ }
+             return order;
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Window1.xaml.cs" startline="89" endline="102"><![CDATA[
+ 
+         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+         {
+             // attempt to get an order from the queue
+             PizzaOrder nextOrder;
+             if ( !m_orders.TryTake( out nextOrder ) )
+             {
+                 MessageBox.Show( "No orders available.  Please try again later.");
+                 return;
+             }
+             // if successful launch an order window
+             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+             currentOrderWindow.Show();
+         }
+     }
+ }
+             {
+                 MessageBox.Show( "No orders available.  Please try again later.");
+                 return;
+             }
+             // if successful launch an order window
+             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+             currentOrderWindow.Show();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\Window1.g.cs" startline="1" endline="1"><![CDATA[
+ ?<Window x
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\Window1.g.cs" startline="6" endline="37"><![CDATA[
+     Loaded="Window_Loaded" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="CanResize"
+         <Button Name="processNextOrderButton" Click="processNextOrderButton_Click" Margin="0,13,0,12" HorizontalAlignment="Right" Width="164">Process Next Order</Button>
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Window1.xaml.cs" startline="43" endline="104"><![CDATA[
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Fax); }, TaskCreationOptions.AttachedToParent);
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Internet); }, TaskCreationOptions.AttachedToParent);
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Phone); }, TaskCreationOptions.AttachedToParent);
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.WalkIn); }, TaskCreationOptions.AttachedToParent);
+         }
+ 
+         private void OrdererThread(OrderSource source)
+         {
+             for ( int i = 0; i < 10; ++i )
+             {
+                 // submit random order
+                 m_orders.TryAdd( GenerateRandomOrder(source));
+                 // sleep for a random period
+                 Thread.Sleep(m_rand.Next(1000, 4001));
+             }
+         }
+ 
+         private static PizzaOrder GenerateRandomOrder(OrderSource source)
+         {
+             // source
+             var order = new PizzaOrder { Source = source };
+             // delivery
+             order.IsDelivery = m_rand.Next(0, 2) == 0 ? true 
+             // phone number
+             var areaCode = m_rand.Next(0, 2) == 0 ? 425 
+             var firstThreeDigits = m_rand.Next(100, 1000);
+             var lastFourDigits = m_rand.Next(0, 10000);
+             order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"));
+             // size
+             switch (m_rand.Next(0, 3))
+             {
+                 case 0
+                 case 1
+                 case 2
+             }
+             // toppings
+             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+             for (int j = 0; j < order.Toppings.Length; ++j)
+             {
+                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+                 order.Toppings[j] = availToppings[toppingIndex];
+                 availToppings.RemoveAt(toppingIndex);
+             }
+             return order;
+         }
+ 
+         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+         {
+             // attempt to get an order from the queue
+             PizzaOrder nextOrder;
+             if ( !m_orders.TryTake( out nextOrder ) )
+             {
+                 MessageBox.Show( "No orders available.  Please try again later.");
+                 return;
+             }
+             // if successful launch an order window
+             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+             currentOrderWindow.Show();
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Window1.xaml.cs" startline="44" endline="104"><![CDATA[
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Internet); }, TaskCreationOptions.AttachedToParent);
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Phone); }, TaskCreationOptions.AttachedToParent);
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.WalkIn); }, TaskCreationOptions.AttachedToParent);
+         }
+ 
+         private void OrdererThread(OrderSource source)
+         {
+             for ( int i = 0; i < 10; ++i )
+             {
+                 // submit random order
+                 m_orders.TryAdd( GenerateRandomOrder(source));
+                 // sleep for a random period
+                 Thread.Sleep(m_rand.Next(1000, 4001));
+             }
+         }
+ 
+         private static PizzaOrder GenerateRandomOrder(OrderSource source)
+         {
+             // source
+             var order = new PizzaOrder { Source = source };
+             // delivery
+             order.IsDelivery = m_rand.Next(0, 2) == 0 ? true 
+             // phone number
+             var areaCode = m_rand.Next(0, 2) == 0 ? 425 
+             var firstThreeDigits = m_rand.Next(100, 1000);
+             var lastFourDigits = m_rand.Next(0, 10000);
+             order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"));
+             // size
+             switch (m_rand.Next(0, 3))
+             {
+                 case 0
+                 case 1
+                 case 2
+             }
+             // toppings
+             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+             for (int j = 0; j < order.Toppings.Length; ++j)
+             {
+                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+                 order.Toppings[j] = availToppings[toppingIndex];
+                 availToppings.RemoveAt(toppingIndex);
+             }
+             return order;
+         }
+ 
+         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+         {
+             // attempt to get an order from the queue
+             PizzaOrder nextOrder;
+             if ( !m_orders.TryTake( out nextOrder ) )
+             {
+                 MessageBox.Show( "No orders available.  Please try again later.");
+                 return;
+             }
+             // if successful launch an order window
+             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+             currentOrderWindow.Show();
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Window1.xaml.cs" startline="45" endline="104"><![CDATA[
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Phone); }, TaskCreationOptions.AttachedToParent);
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.WalkIn); }, TaskCreationOptions.AttachedToParent);
+         }
+ 
+         private void OrdererThread(OrderSource source)
+         {
+             for ( int i = 0; i < 10; ++i )
+             {
+                 // submit random order
+                 m_orders.TryAdd( GenerateRandomOrder(source));
+                 // sleep for a random period
+                 Thread.Sleep(m_rand.Next(1000, 4001));
+             }
+         }
+ 
+         private static PizzaOrder GenerateRandomOrder(OrderSource source)
+         {
+             // source
+             var order = new PizzaOrder { Source = source };
+             // delivery
+             order.IsDelivery = m_rand.Next(0, 2) == 0 ? true 
+             // phone number
+             var areaCode = m_rand.Next(0, 2) == 0 ? 425 
+             var firstThreeDigits = m_rand.Next(100, 1000);
+             var lastFourDigits = m_rand.Next(0, 10000);
+             order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"));
+             // size
+             switch (m_rand.Next(0, 3))
+             {
+                 case 0
+                 case 1
+                 case 2
+             }
+             // toppings
+             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+             for (int j = 0; j < order.Toppings.Length; ++j)
+             {
+                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+                 order.Toppings[j] = availToppings[toppingIndex];
+                 availToppings.RemoveAt(toppingIndex);
+             }
+             return order;
+         }
+ 
+         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+         {
+             // attempt to get an order from the queue
+             PizzaOrder nextOrder;
+             if ( !m_orders.TryTake( out nextOrder ) )
+             {
+                 MessageBox.Show( "No orders available.  Please try again later.");
+                 return;
+             }
+             // if successful launch an order window
+             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+             currentOrderWindow.Show();
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Window1.xaml.cs" startline="46" endline="104"><![CDATA[
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.WalkIn); }, TaskCreationOptions.AttachedToParent);
+         }
+ 
+         private void OrdererThread(OrderSource source)
+         {
+             for ( int i = 0; i < 10; ++i )
+             {
+                 // submit random order
+                 m_orders.TryAdd( GenerateRandomOrder(source));
+                 // sleep for a random period
+                 Thread.Sleep(m_rand.Next(1000, 4001));
+             }
+         }
+ 
+         private static PizzaOrder GenerateRandomOrder(OrderSource source)
+         {
+             // source
+             var order = new PizzaOrder { Source = source };
+             // delivery
+             order.IsDelivery = m_rand.Next(0, 2) == 0 ? true 
+             // phone number
+             var areaCode = m_rand.Next(0, 2) == 0 ? 425 
+             var firstThreeDigits = m_rand.Next(100, 1000);
+             var lastFourDigits = m_rand.Next(0, 10000);
+             order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"));
+             // size
+             switch (m_rand.Next(0, 3))
+             {
+                 case 0
+                 case 1
+                 case 2
+             }
+             // toppings
+             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+             for (int j = 0; j < order.Toppings.Length; ++j)
+             {
+                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+                 order.Toppings[j] = availToppings[toppingIndex];
+                 availToppings.RemoveAt(toppingIndex);
+             }
+             return order;
+         }
+ 
+         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+         {
+             // attempt to get an order from the queue
+             PizzaOrder nextOrder;
+             if ( !m_orders.TryTake( out nextOrder ) )
+             {
+                 MessageBox.Show( "No orders available.  Please try again later.");
+                 return;
+             }
+             // if successful launch an order window
+             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+             currentOrderWindow.Show();
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Window1.xaml.cs" startline="25" endline="104"><![CDATA[
+         private static Random m_rand = new ThreadSafeRandom();
+ 
+         public Window1()
+         {
+             InitializeComponent();
+ 
+             // intialize the bindable collection and set it as the data context
+             var orders = new ObservableConcurrentCollection<PizzaOrder>();
+             // store the observable collection as an explicity producer consumer 
+             // collection that has tryadd and tryremove operations
+             m_orders = orders;
+             // set the AcmePizza as the defaut
+             this.DataContext = orders;
+         }
+ 
+         private void Window_Loaded(object sender, EventArgs e)
+         {
+             // launch four threads that mimic various sources
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Fax); }, TaskCreationOptions.AttachedToParent);
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Internet); }, TaskCreationOptions.AttachedToParent);
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.Phone); }, TaskCreationOptions.AttachedToParent);
+             Task.Factory.StartNew(() => { OrdererThread(OrderSource.WalkIn); }, TaskCreationOptions.AttachedToParent);
+         }
+ 
+         private void OrdererThread(OrderSource source)
+         {
+             for ( int i = 0; i < 10; ++i )
+             {
+                 // submit random order
+                 m_orders.TryAdd( GenerateRandomOrder(source));
+                 // sleep for a random period
+                 Thread.Sleep(m_rand.Next(1000, 4001));
+             }
+         }
+ 
+         private static PizzaOrder GenerateRandomOrder(OrderSource source)
+         {
+             // source
+             var order = new PizzaOrder { Source = source };
+             // delivery
+             order.IsDelivery = m_rand.Next(0, 2) == 0 ? true 
+             // phone number
+             var areaCode = m_rand.Next(0, 2) == 0 ? 425 
+             var firstThreeDigits = m_rand.Next(100, 1000);
+             var lastFourDigits = m_rand.Next(0, 10000);
+             order.PhoneNumber = String.Format("({0}) {1}-{2}", areaCode, firstThreeDigits, lastFourDigits.ToString("D4"));
+             // size
+             switch (m_rand.Next(0, 3))
+             {
+                 case 0
+                 case 1
+                 case 2
+             }
+             // toppings
+             var availToppings = new List<PizzaToppings>(Enum.GetValues(typeof(PizzaToppings)).Cast<PizzaToppings>());
+             order.Toppings = new PizzaToppings[m_rand.Next(1, 5)];
+             for (int j = 0; j < order.Toppings.Length; ++j)
+             {
+                 var toppingIndex = m_rand.Next(0, availToppings.Count);
+                 order.Toppings[j] = availToppings[toppingIndex];
+                 availToppings.RemoveAt(toppingIndex);
+             }
+             return order;
+         }
+ 
+         private void processNextOrderButton_Click(object sender, RoutedEventArgs e)
+         {
+             // attempt to get an order from the queue
+             PizzaOrder nextOrder;
+             if ( !m_orders.TryTake( out nextOrder ) )
+             {
+                 MessageBox.Show( "No orders available.  Please try again later.");
+                 return;
+             }
+             // if successful launch an order window
+             var currentOrderWindow = new CurrentOrderWindow(nextOrder);
+             currentOrderWindow.Show();
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\CurrentOrderWindow.xaml.cs" startline="22" endline="29"><![CDATA[
+         public CurrentOrderWindow(PizzaOrder order)
+         {
+             InitializeComponent();
+             // show the current order by binding to a collection of one.
+             m_currentOrder = new ObservableCollection<PizzaOrder>();
+             this.DataContext = m_currentOrder;
+             m_currentOrder.Add(order);
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\CurrentOrderWindow.xaml.cs" startline="30" endline="34"><![CDATA[
+ 
+         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+         {
+             this.Close();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\CurrentOrderWindow.g.cs" startline="1" endline="1"><![CDATA[
+ ?<!--A window that displays a pizza order size in full screen mode-->    
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\CurrentOrderWindow.g.cs" startline="29" endline="29"><![CDATA[
+         <Image Source="closeorder.png" Canvas.Right="55" Canvas.Top="20" MouseDown="Image_MouseDown"/>        
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\App.g.cs" startline="50" endline="1"><![CDATA[
+         public void InitializeComponent() {
+             if (_contentLoaded) {
+                 return;
+             }
+             _contentLoaded = true;
+             
+             #line 5 "..\..\App.xaml"
+             this.StartupUri = new System.Uri("Window1.xaml", System.UriKind.Relative);
+             
+             #line default
+             #line hidden
+             System.Uri resourceLocater = new System.Uri("/AcmePizza;component/app.xaml", System.UriKind.Relative);
+             
+             #line 1 "..\..\App.xaml"
+             System.Windows.Application.LoadComponent(this, resourceLocater);
+             
+             #line default
+             #line hidden
+         }
+         
+         /// <summary>
+         /// Application Entry Point.
+         /// </summary>
+         [System.STAThreadAttribute()]
+         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+         public static void Main() {
+             AcmePizza.App app = new AcmePizza.App();
+             app.InitializeComponent();
+             app.Run();
+         }
+     }
+ }
+ 
+             if (_contentLoaded) {
+                 return;
+             }
+             _contentLoaded = true;
+     StartupUri="Window1.xaml">
+ ?<Application x
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\App.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\obj\Debug\App.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Resources.Designer.cs" startline="31" endline="33"><![CDATA[
+         [global
+         internal Resources() {
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Resources.Designer.cs" startline="34" endline="46"><![CDATA[
+         
+         /// <summary>
+         ///   Returns the cached ResourceManager instance used by this class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 if (object.ReferenceEquals(resourceMan, null)) {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+         }
+         
+         /// <summary>
+         ///   Overrides the current thread's CurrentUICulture property for all
+         ///   resource lookups using this strongly typed resource class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 return resourceCulture;
+             }
+             set {
+                 resourceCulture = value;
+             }
+         }
+     }
+ }
+                 if (object.ReferenceEquals(resourceMan, null)) {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Resources.Designer.cs" startline="47" endline="57"><![CDATA[
+         }
+         
+         /// <summary>
+         ///   Overrides the current thread's CurrentUICulture property for all
+         ///   resource lookups using this strongly typed resource class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 return resourceCulture;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Resources.Designer.cs" startline="58" endline="60"><![CDATA[
+             set {
+                 resourceCulture = value;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Settings.Designer.cs" startline="21" endline="23"><![CDATA[
+             get {
+                 return defaultInstance;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Settings.Designer.cs" startline="18" endline="26"><![CDATA[
+         private static Settings defaultInstance = ((Settings)(global
+         
+         public static Settings Default {
+             get {
+                 return defaultInstance;
+             }
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AcmePizza\AcmePizza_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+</source_elements></project>

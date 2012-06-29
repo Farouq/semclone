@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+NQueens_VisualBasic
+</name>
+</assembly>
+<members>
+<member name="P:NQueens_VisualBasic.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:NQueens_VisualBasic.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:NQueens_VisualBasic.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:NQueens_VisualBasic.NQueensSolver">
+	<summary>
+ Counts how many ways there are to place N queens on an N x N chessboard so that no two queens
+ attack each other.
+ </summary>
+</member>
+</members>
+</doc>

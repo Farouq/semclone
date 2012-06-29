@@ -1,0 +1,2922 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.0.30319.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern Microsoft.VisualBasic
+{
+  .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
+  .ver 10:0:0:0
+}
+.assembly extern System
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern System.Core
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly ParallelGrep
+{
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 15 4D 69 63 72 6F 73 6F 66 74 20 43 6F 72   // ...Microsoft Cor
+                                                                                                70 6F 72 61 74 69 6F 6E 00 00 )                   // poration..
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 0C 50 61 72 61 6C 6C 65 6C 47 72 65 70 00   // ...ParallelGrep.
+                                                                                              00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 0C 50 61 72 61 6C 6C 65 6C 47 72 65 70 00   // ...ParallelGrep.
+                                                                                                00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 39 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ..9Copyright .. 
+                                                                                                  4D 69 63 72 6F 73 6F 66 74 20 43 6F 72 70 6F 72   // Microsoft Corpor
+                                                                                                  61 74 69 6F 6E 2E 20 20 41 6C 6C 20 72 69 67 68   // ation.  All righ
+                                                                                                  74 73 20 72 65 73 65 72 76 65 64 2E 00 00 )       // ts reserved...
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 29 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ..).NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 2C 50 72   // ,Version=v4.0,Pr
+                                                                                                        6F 66 69 6C 65 3D 43 6C 69 65 6E 74 01 00 54 0E   // ofile=Client..T.
+                                                                                                        14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C 61   // .FrameworkDispla
+                                                                                                        79 4E 61 6D 65 1F 2E 4E 45 54 20 46 72 61 6D 65   // yName..NET Frame
+                                                                                                        77 6F 72 6B 20 34 20 43 6C 69 65 6E 74 20 50 72   // work 4 Client Pr
+                                                                                                        6F 66 69 6C 65 )                                  // ofile
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 66 61 64 34 38 37 63 38 2D 36 37 31 66   // ..$fad487c8-671f
+                                                                                                  2D 34 64 30 36 2D 38 62 39 62 2D 39 64 36 35 30   // -4d06-8b9b-9d650
+                                                                                                  33 30 34 37 61 38 32 00 00 )                      // 3047a82..
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.module ParallelGrep.exe
+// MVID: {C870A3D4-8C0C-4030-8B52-C799FFA6F3ED}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000001    //  ILONLY
+// Image base: 0x005A0000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi My.MyApplication
+       extends [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.ApplicationBase
+{
+  .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 0A 4D 79 54 65 6D 70 6C 61 74 65 08 31 30   // ...MyTemplate.10
+                                                                                                  2E 30 2E 30 2E 30 00 00 )                         // .0.0.0..
+  .method public specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.ApplicationBase::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  ret
+  } // end of method MyApplication::.ctor
+
+} // end of class My.MyApplication
+
+.class private auto ansi My.MyComputer
+       extends [Microsoft.VisualBasic]Microsoft.VisualBasic.Devices.Computer
+{
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 0A 4D 79 54 65 6D 70 6C 61 74 65 08 31 30   // ...MyTemplate.10
+                                                                                                  2E 30 2E 30 2E 30 00 00 )                         // .0.0.0..
+  .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+  .method public specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  8
+    .language '{3A12D0B8-C26C-11D0-B442-00A0244A1DD2}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File '17d14f5c-a337-4978-8281-53493378c1071.vb' not found
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.Devices.Computer::.ctor()
+    IL_0007:  nop
+    IL_0008:  nop
+    IL_0009:  ret
+  } // end of method MyComputer::.ctor
+
+} // end of class My.MyComputer
+
+.class private auto ansi sealed beforefieldinit My.MyProject
+       extends [mscorlib]System.Object
+{
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 0A 4D 79 54 65 6D 70 6C 61 74 65 08 31 30   // ...MyTemplate.10
+                                                                                                  2E 30 2E 30 2E 30 00 00 )                         // .0.0.0..
+  .custom instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.HideModuleNameAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.StandardModuleAttribute::.ctor() = ( 01 00 00 00 ) 
+  .class auto ansi sealed nested assembly MyWebServices
+         extends [mscorlib]System.Object
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .custom instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.MyGroupCollectionAttribute::.ctor(string,
+                                                                                                         string,
+                                                                                                         string,
+                                                                                                         string) = ( 01 00 34 53 79 73 74 65 6D 2E 57 65 62 2E 53 65   // ..4System.Web.Se
+                                                                                                                     72 76 69 63 65 73 2E 50 72 6F 74 6F 63 6F 6C 73   // rvices.Protocols
+                                                                                                                     2E 53 6F 61 70 48 74 74 70 43 6C 69 65 6E 74 50   // .SoapHttpClientP
+                                                                                                                     72 6F 74 6F 63 6F 6C 12 43 72 65 61 74 65 5F 5F   // rotocol.Create__
+                                                                                                                     49 6E 73 74 61 6E 63 65 5F 5F 13 44 69 73 70 6F   // Instance__.Dispo
+                                                                                                                     73 65 5F 5F 49 6E 73 74 61 6E 63 65 5F 5F 00 00   // se__Instance__..
+                                                                                                                     00 ) 
+    .method public strict virtual instance bool 
+            Equals(object o) cil managed
+    {
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      // Code size       18 (0x12)
+      .maxstack  2
+      .locals init ([0] bool Equals)
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  ldarg.1
+      IL_0003:  call       object [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+      IL_0008:  call       instance bool [mscorlib]System.Object::Equals(object)
+      IL_000d:  stloc.0
+      IL_000e:  br.s       IL_0010
+
+      IL_0010:  ldloc.0
+      IL_0011:  ret
+    } // end of method MyWebServices::Equals
+
+    .method public strict virtual instance int32 
+            GetHashCode() cil managed
+    {
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      // Code size       12 (0xc)
+      .maxstack  1
+      .locals init ([0] int32 GetHashCode)
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  call       instance int32 [mscorlib]System.Object::GetHashCode()
+      IL_0007:  stloc.0
+      IL_0008:  br.s       IL_000a
+
+      IL_000a:  ldloc.0
+      IL_000b:  ret
+    } // end of method MyWebServices::GetHashCode
+
+    .method assembly hidebysig instance class [mscorlib]System.Type 
+            GetType() cil managed
+    {
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      // Code size       16 (0x10)
+      .maxstack  1
+      .locals init ([0] class [mscorlib]System.Type GetType)
+      IL_0000:  nop
+      IL_0001:  ldtoken    My.MyProject/MyWebServices
+      IL_0006:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+      IL_000b:  stloc.0
+      IL_000c:  br.s       IL_000e
+
+      IL_000e:  ldloc.0
+      IL_000f:  ret
+    } // end of method MyWebServices::GetType
+
+    .method public strict virtual instance string 
+            ToString() cil managed
+    {
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       12 (0xc)
+      .maxstack  1
+      .locals init ([0] string ToString)
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  call       instance string [mscorlib]System.Object::ToString()
+      IL_0007:  stloc.0
+      IL_0008:  br.s       IL_000a
+
+      IL_000a:  ldloc.0
+      IL_000b:  ret
+    } // end of method MyWebServices::ToString
+
+    .method private static !!T  Create__Instance__<.ctor T>(!!T 'instance') cil managed
+    {
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       32 (0x20)
+      .maxstack  2
+      .locals init ([0] !!T Create__Instance__,
+               [1] bool VB$CG$t_bool$S0)
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  box        !!T
+      IL_0007:  ldnull
+      IL_0008:  ceq
+      IL_000a:  stloc.1
+      IL_000b:  ldloc.1
+      IL_000c:  brfalse.s  IL_0018
+
+      IL_000e:  call       !!0 [mscorlib]System.Activator::CreateInstance<!!0>()
+      IL_0013:  stloc.0
+      IL_0014:  br.s       IL_001e
+
+      IL_0016:  br.s       IL_001d
+
+      IL_0018:  nop
+      IL_0019:  ldarg.0
+      IL_001a:  stloc.0
+      IL_001b:  br.s       IL_001e
+
+      IL_001d:  nop
+      IL_001e:  ldloc.0
+      IL_001f:  ret
+    } // end of method MyWebServices::Create__Instance__
+
+    .method private instance void  Dispose__Instance__<T>(!!T& 'instance') cil managed
+    {
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       18 (0x12)
+      .maxstack  2
+      .locals init ([0] !!T VB$t_generic$S0)
+      IL_0000:  nop
+      IL_0001:  ldarg.1
+      IL_0002:  ldloca.s   VB$t_generic$S0
+      IL_0004:  initobj    !!T
+      IL_000a:  ldloc.0
+      IL_000b:  stobj      !!T
+      IL_0010:  nop
+      IL_0011:  ret
+    } // end of method MyWebServices::Dispose__Instance__
+
+    .method public specialname rtspecialname 
+            instance void  .ctor() cil managed
+    {
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      // Code size       10 (0xa)
+      .maxstack  8
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0007:  nop
+      IL_0008:  nop
+      IL_0009:  ret
+    } // end of method MyWebServices::.ctor
+
+  } // end of class MyWebServices
+
+  .class auto ansi sealed nested assembly ThreadSafeObjectProvider`1<.ctor T>
+         extends [mscorlib]System.Object
+  {
+    .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .field private static !T m_ThreadStaticValue
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [mscorlib]System.ThreadStaticAttribute::.ctor() = ( 01 00 00 00 ) 
+    .method assembly specialname instance !T 
+            get_GetInstance() cil managed
+    {
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       38 (0x26)
+      .maxstack  2
+      .locals init ([0] !T GetInstance,
+               [1] bool VB$CG$t_bool$S0)
+      IL_0000:  nop
+      IL_0001:  ldsfld     !0 class My.MyProject/ThreadSafeObjectProvider`1<!T>::m_ThreadStaticValue
+      IL_0006:  box        !T
+      IL_000b:  ldnull
+      IL_000c:  ceq
+      IL_000e:  stloc.1
+      IL_000f:  ldloc.1
+      IL_0010:  brfalse.s  IL_001c
+
+      IL_0012:  call       !!0 [mscorlib]System.Activator::CreateInstance<!T>()
+      IL_0017:  stsfld     !0 class My.MyProject/ThreadSafeObjectProvider`1<!T>::m_ThreadStaticValue
+      IL_001c:  ldsfld     !0 class My.MyProject/ThreadSafeObjectProvider`1<!T>::m_ThreadStaticValue
+      IL_0021:  stloc.0
+      IL_0022:  br.s       IL_0024
+
+      IL_0024:  ldloc.0
+      IL_0025:  ret
+    } // end of method ThreadSafeObjectProvider`1::get_GetInstance
+
+    .method public specialname rtspecialname 
+            instance void  .ctor() cil managed
+    {
+      .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       10 (0xa)
+      .maxstack  8
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0007:  nop
+      IL_0008:  nop
+      IL_0009:  ret
+    } // end of method ThreadSafeObjectProvider`1::.ctor
+
+    .property instance !T GetInstance()
+    {
+      .get instance !T My.MyProject/ThreadSafeObjectProvider`1::get_GetInstance()
+    } // end of property ThreadSafeObjectProvider`1::GetInstance
+  } // end of class ThreadSafeObjectProvider`1
+
+  .field private static initonly class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer> m_ComputerObjectProvider
+  .field private static initonly class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication> m_AppObjectProvider
+  .field private static initonly class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User> m_UserObjectProvider
+  .field private static initonly class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices> m_MyWebServicesObjectProvider
+  .method private specialname rtspecialname static 
+          void  .cctor() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       42 (0x2a)
+    .maxstack  8
+    IL_0000:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer>::.ctor()
+    IL_0005:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer> My.MyProject::m_ComputerObjectProvider
+    IL_000a:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication>::.ctor()
+    IL_000f:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication> My.MyProject::m_AppObjectProvider
+    IL_0014:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User>::.ctor()
+    IL_0019:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User> My.MyProject::m_UserObjectProvider
+    IL_001e:  newobj     instance void class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices>::.ctor()
+    IL_0023:  stsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices> My.MyProject::m_MyWebServicesObjectProvider
+    IL_0028:  nop
+    IL_0029:  ret
+  } // end of method MyProject::.cctor
+
+  .method assembly specialname static class My.MyComputer 
+          get_Computer() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class My.MyComputer Computer)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer> My.MyProject::m_ComputerObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class My.MyComputer>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+  } // end of method MyProject::get_Computer
+
+  .method assembly specialname static class My.MyApplication 
+          get_Application() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class My.MyApplication Application)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication> My.MyProject::m_AppObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class My.MyApplication>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+  } // end of method MyProject::get_Application
+
+  .method assembly specialname static class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User 
+          get_User() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User User)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User> My.MyProject::m_UserObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+  } // end of method MyProject::get_User
+
+  .method assembly specialname static class My.MyProject/MyWebServices 
+          get_WebServices() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class My.MyProject/MyWebServices WebServices)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices> My.MyProject::m_MyWebServicesObjectProvider
+    IL_0006:  callvirt   instance !0 class My.MyProject/ThreadSafeObjectProvider`1<class My.MyProject/MyWebServices>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+  } // end of method MyProject::get_WebServices
+
+  .property class My.MyComputer Computer()
+  {
+    .custom instance void [System]System.ComponentModel.Design.HelpKeywordAttribute::.ctor(string) = ( 01 00 0B 4D 79 2E 43 6F 6D 70 75 74 65 72 00 00 ) // ...My.Computer..
+    .get class My.MyComputer My.MyProject::get_Computer()
+  } // end of property MyProject::Computer
+  .property class My.MyApplication Application()
+  {
+    .custom instance void [System]System.ComponentModel.Design.HelpKeywordAttribute::.ctor(string) = ( 01 00 0E 4D 79 2E 41 70 70 6C 69 63 61 74 69 6F   // ...My.Applicatio
+                                                                                                       6E 00 00 )                                        // n..
+    .get class My.MyApplication My.MyProject::get_Application()
+  } // end of property MyProject::Application
+  .property class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User
+          User()
+  {
+    .custom instance void [System]System.ComponentModel.Design.HelpKeywordAttribute::.ctor(string) = ( 01 00 07 4D 79 2E 55 73 65 72 00 00 )             // ...My.User..
+    .get class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User My.MyProject::get_User()
+  } // end of property MyProject::User
+  .property class My.MyProject/MyWebServices
+          WebServices()
+  {
+    .custom instance void [System]System.ComponentModel.Design.HelpKeywordAttribute::.ctor(string) = ( 01 00 0E 4D 79 2E 57 65 62 53 65 72 76 69 63 65   // ...My.WebService
+                                                                                                       73 00 00 )                                        // s..
+    .get class My.MyProject/MyWebServices My.MyProject::get_WebServices()
+  } // end of property MyProject::WebServices
+} // end of class My.MyProject
+
+.class private auto ansi ParallelGrep
+       extends [mscorlib]System.Object
+{
+  .class auto ansi nested assembly _Closure$__1
+         extends [mscorlib]System.Object
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    .class auto ansi nested assembly _Closure$__2
+           extends [mscorlib]System.Object
+    {
+      .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+      .field public string $VB$Local_file
+      .method public specialname rtspecialname 
+              instance void  .ctor() cil managed
+      {
+        .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+        // Code size       9 (0x9)
+        .maxstack  8
+        IL_0000:  ldarg.0
+        IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+        IL_0006:  nop
+        IL_0007:  nop
+        IL_0008:  ret
+      } // end of method _Closure$__2::.ctor
+
+      .method public specialname rtspecialname 
+              instance void  .ctor(class ParallelGrep/_Closure$__1/_Closure$__2 other) cil managed
+      {
+        .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+        // Code size       33 (0x21)
+        .maxstack  2
+        .locals init (bool V_0)
+        IL_0000:  ldarg.0
+        IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+        IL_0006:  nop
+        IL_0007:  ldarg.1
+        IL_0008:  ldnull
+        IL_0009:  ceq
+        IL_000b:  ldc.i4.0
+        IL_000c:  ceq
+        IL_000e:  stloc.0
+        IL_000f:  ldloc.0
+        IL_0010:  brfalse.s  IL_001e
+
+        IL_0012:  ldarg.0
+        IL_0013:  ldarg.1
+        IL_0014:  ldfld      string ParallelGrep/_Closure$__1/_Closure$__2::$VB$Local_file
+        IL_0019:  stfld      string ParallelGrep/_Closure$__1/_Closure$__2::$VB$Local_file
+        IL_001e:  nop
+        IL_001f:  nop
+        IL_0020:  ret
+      } // end of method _Closure$__2::.ctor
+
+      .method public specialname instance class VB$AnonymousType_2`3<int32,string,string> 
+              _Lambda$__9(string s,
+                          int32 i) cil managed
+      {
+        .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+        // Code size       18 (0x12)
+        .maxstack  3
+        .locals init ([0] class VB$AnonymousType_2`3<int32,string,string> _Lambda$__9,
+                 [1] class VB$AnonymousType_2`3<int32,string,string> VB$t_ref$S0)
+// Source File 'C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelGrep\ParallelGrep_VisualBasic\ParallelGrep.vb' 
+//000046:                             Zip(Enumerable.Range(1, Integer.MaxValue), Function(s, i) New With {Key .Num = i, Key .Text = s, Key .File = file})
+        IL_0000:  ldarg.2
+        IL_0001:  ldarg.1
+        IL_0002:  ldarg.0
+        IL_0003:  ldfld      string ParallelGrep/_Closure$__1/_Closure$__2::$VB$Local_file
+        IL_0008:  newobj     instance void class VB$AnonymousType_2`3<int32,string,string>::.ctor(!0,
+                                                                                                  !1,
+                                                                                                  !2)
+        IL_000d:  stloc.0
+        IL_000e:  br.s       IL_0010
+
+        IL_0010:  ldloc.0
+        IL_0011:  ret
+      } // end of method _Closure$__2::_Lambda$__9
+
+    } // end of class _Closure$__2
+
+    .field public bool $VB$Local_ignoreCase
+    .field public bool $VB$Local_recursive
+    .field public class [mscorlib]System.Threading.ThreadLocal`1<class [System]System.Text.RegularExpressions.Regex> $VB$Local_regex
+    .field public string $VB$Local_regexString
+    .method public specialname rtspecialname 
+            instance void  .ctor(class ParallelGrep/_Closure$__1 other) cil managed
+    {
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       69 (0x45)
+      .maxstack  2
+      .locals init (bool V_0)
+      IL_0000:  ldarg.0
+      IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0006:  nop
+      IL_0007:  ldarg.1
+      IL_0008:  ldnull
+      IL_0009:  ceq
+      IL_000b:  ldc.i4.0
+      IL_000c:  ceq
+      IL_000e:  stloc.0
+      IL_000f:  ldloc.0
+      IL_0010:  brfalse.s  IL_0042
+
+      IL_0012:  ldarg.0
+      IL_0013:  ldarg.1
+      IL_0014:  ldfld      string ParallelGrep/_Closure$__1::$VB$Local_regexString
+      IL_0019:  stfld      string ParallelGrep/_Closure$__1::$VB$Local_regexString
+      IL_001e:  ldarg.0
+      IL_001f:  ldarg.1
+      IL_0020:  ldfld      bool ParallelGrep/_Closure$__1::$VB$Local_ignoreCase
+      IL_0025:  stfld      bool ParallelGrep/_Closure$__1::$VB$Local_ignoreCase
+      IL_002a:  ldarg.0
+      IL_002b:  ldarg.1
+      IL_002c:  ldfld      class [mscorlib]System.Threading.ThreadLocal`1<class [System]System.Text.RegularExpressions.Regex> ParallelGrep/_Closure$__1::$VB$Local_regex
+      IL_0031:  stfld      class [mscorlib]System.Threading.ThreadLocal`1<class [System]System.Text.RegularExpressions.Regex> ParallelGrep/_Closure$__1::$VB$Local_regex
+      IL_0036:  ldarg.0
+      IL_0037:  ldarg.1
+      IL_0038:  ldfld      bool ParallelGrep/_Closure$__1::$VB$Local_recursive
+      IL_003d:  stfld      bool ParallelGrep/_Closure$__1::$VB$Local_recursive
+      IL_0042:  nop
+      IL_0043:  nop
+      IL_0044:  ret
+    } // end of method _Closure$__1::.ctor
+
+    .method public specialname rtspecialname 
+            instance void  .ctor() cil managed
+    {
+      .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       9 (0x9)
+      .maxstack  8
+      IL_0000:  ldarg.0
+      IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0006:  nop
+      IL_0007:  nop
+      IL_0008:  ret
+    } // end of method _Closure$__1::.ctor
+
+    .method public specialname instance bool 
+            _Lambda$__11(class VB$AnonymousType_3`2<string,class VB$AnonymousType_2`3<int32,string,string>> $VB$It) cil managed
+    {
+      .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       32 (0x20)
+      .maxstack  2
+      .locals init ([0] bool _Lambda$__11)
+//000047:                           Where regex.Value.IsMatch(line.Text)
+      IL_0000:  ldarg.0
+      IL_0001:  ldfld      class [mscorlib]System.Threading.ThreadLocal`1<class [System]System.Text.RegularExpressions.Regex> ParallelGrep/_Closure$__1::$VB$Local_regex
+      IL_0006:  callvirt   instance !0 class [mscorlib]System.Threading.ThreadLocal`1<class [System]System.Text.RegularExpressions.Regex>::get_Value()
+      IL_000b:  ldarg.1
+      IL_000c:  callvirt   instance !1 class VB$AnonymousType_3`2<string,class VB$AnonymousType_2`3<int32,string,string>>::get_line()
+      IL_0011:  callvirt   instance !1 class VB$AnonymousType_2`3<int32,string,string>::get_Text()
+      IL_0016:  callvirt   instance bool [System]System.Text.RegularExpressions.Regex::IsMatch(string)
+      IL_001b:  stloc.0
+      IL_001c:  br.s       IL_001e
+
+      IL_001e:  ldloc.0
+      IL_001f:  ret
+    } // end of method _Closure$__1::_Lambda$__11
+
+    .method public specialname instance class [System]System.Text.RegularExpressions.Regex 
+            _Lambda$__3() cil managed
+    {
+      .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       30 (0x1e)
+      .maxstack  3
+      .locals init ([0] class [System]System.Text.RegularExpressions.Regex _Lambda$__3)
+//000028:         Dim regex = New ThreadLocal(Of Regex)(Function() New Regex(regexString, RegexOptions.Compiled Or
+      IL_0000:  ldarg.0
+      IL_0001:  ldfld      string ParallelGrep/_Closure$__1::$VB$Local_regexString
+      IL_0006:  ldc.i4.8
+      IL_0007:  ldarg.0
+      IL_0008:  ldfld      bool ParallelGrep/_Closure$__1::$VB$Local_ignoreCase
+      IL_000d:  brtrue.s   IL_0012
+
+      IL_000f:  ldc.i4.0
+      IL_0010:  br.s       IL_0013
+
+      IL_0012:  ldc.i4.1
+      IL_0013:  or
+      IL_0014:  newobj     instance void [System]System.Text.RegularExpressions.Regex::.ctor(string,
+                                                                                             valuetype [System]System.Text.RegularExpressions.RegexOptions)
+      IL_0019:  stloc.0
+      IL_001a:  br.s       IL_001c
+
+      IL_001c:  ldloc.0
+      IL_001d:  ret
+    } // end of method _Closure$__1::_Lambda$__3
+
+    .method public specialname instance class [mscorlib]System.Collections.Generic.IEnumerable`1<string> 
+            _Lambda$__6(class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string> $VB$It) cil managed
+    {
+      .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       84 (0x54)
+      .maxstack  3
+      .locals init ([0] class [mscorlib]System.Collections.Generic.IEnumerable`1<string> _Lambda$__6)
+//000029:                                                          (If(ignoreCase, RegexOptions.IgnoreCase, RegexOptions.None))))
+//000030: 
+//000031: 		' Get the list of files to be examined
+//000032:         Dim files = From wc In wildcards
+//000033:                     Let dirName = Path.GetDirectoryName(wc)
+//000034:                     Let fileName = Path.GetFileName(wc)
+//000035:                     From file In Directory.EnumerateFiles(If(String.IsNullOrWhiteSpace(dirName), ".", dirName),
+      IL_0000:  ldarg.1
+      IL_0001:  callvirt   instance !0 class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string>::get_$VB$It1()
+      IL_0006:  callvirt   instance !1 class VB$AnonymousType_0`2<string,string>::get_dirName()
+      IL_000b:  call       bool [mscorlib]System.String::IsNullOrWhiteSpace(string)
+      IL_0010:  brtrue.s   IL_001f
+
+      IL_0012:  ldarg.1
+      IL_0013:  callvirt   instance !0 class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string>::get_$VB$It1()
+      IL_0018:  callvirt   instance !1 class VB$AnonymousType_0`2<string,string>::get_dirName()
+      IL_001d:  br.s       IL_0024
+
+      IL_001f:  ldstr      "."
+      IL_0024:  ldarg.1
+      IL_0025:  callvirt   instance !1 class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string>::get_fileName()
+      IL_002a:  call       bool [mscorlib]System.String::IsNullOrWhiteSpace(string)
+      IL_002f:  brtrue.s   IL_0039
+
+      IL_0031:  ldarg.1
+      IL_0032:  callvirt   instance !1 class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string>::get_fileName()
+      IL_0037:  br.s       IL_003e
+
+      IL_0039:  ldstr      "*.*"
+      IL_003e:  ldarg.0
+      IL_003f:  ldfld      bool ParallelGrep/_Closure$__1::$VB$Local_recursive
+      IL_0044:  brtrue.s   IL_0049
+
+      IL_0046:  ldc.i4.0
+      IL_0047:  br.s       IL_004a
+
+      IL_0049:  ldc.i4.1
+      IL_004a:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<string> [mscorlib]System.IO.Directory::EnumerateFiles(string,
+                                                                                                                                          string,
+                                                                                                                                          valuetype [mscorlib]System.IO.SearchOption)
+      IL_004f:  stloc.0
+      IL_0050:  br.s       IL_0052
+
+      IL_0052:  ldloc.0
+      IL_0053:  ret
+    } // end of method _Closure$__1::_Lambda$__6
+
+    .method public specialname instance class [mscorlib]System.Collections.Generic.IEnumerable`1<class VB$AnonymousType_2`3<int32,string,string>> 
+            _Lambda$__8(string file) cil managed
+    {
+      .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+      // Code size       58 (0x3a)
+      .maxstack  4
+      .locals init ([0] class ParallelGrep/_Closure$__1/_Closure$__2 $VB$Closure_ClosureVariable_2C_1F,
+               [1] class [mscorlib]System.Collections.Generic.IEnumerable`1<class VB$AnonymousType_2`3<int32,string,string>> _Lambda$__8)
+//000036:                                                           If(String.IsNullOrWhiteSpace(fileName), "*.*", fileName),
+//000037:                                                           If(recursive, SearchOption.AllDirectories, SearchOption.TopDirectoryOnly))
+//000038:                     Select file
+//000039: 
+//000040: 		Try
+//000041: 			' Traverse the specified files in parallel, and run each line through the Regex, collecting line number info
+//000042: 			' for each match (the Zip call counts the lines in each file)
+//000043: 
+//000044:             Dim matches = From file In files.AsParallel().AsOrdered().WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000045:                           From line In System.IO.File.ReadLines(file).
+//000046:                             Zip(Enumerable.Range(1, Integer.MaxValue), Function(s, i) New With {Key .Num = i, Key .Text = s, Key .File = file})
+//000047:                           Where regex.Value.IsMatch(line.Text)
+//000048:                           Select line
+//000049: 			For Each line In matches
+//000050: 				Console.WriteLine("{0}:{1} {2}", line.File, line.Num, line.Text)
+//000051: 			Next line
+//000052: 		Catch ae As AggregateException
+//000053:             ae.Handle(Function(e)
+//000054:                           Console.WriteLine(e.Message)
+//000055:                           Return True
+//000056:                       End Function)
+//000057: 		End Try
+//000058: 	End Sub
+//000059: End Class
+      IL_0000:  newobj     instance void ParallelGrep/_Closure$__1/_Closure$__2::.ctor()
+      IL_0005:  stloc.0
+      IL_0006:  ldloc.0
+      IL_0007:  ldarg.1
+      IL_0008:  stfld      string ParallelGrep/_Closure$__1/_Closure$__2::$VB$Local_file
+//000045:                           From line In System.IO.File.ReadLines(file).
+      IL_000d:  ldloc.0
+      IL_000e:  ldfld      string ParallelGrep/_Closure$__1/_Closure$__2::$VB$Local_file
+      IL_0013:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<string> [mscorlib]System.IO.File::ReadLines(string)
+      IL_0018:  ldc.i4.1
+      IL_0019:  ldc.i4     0x7fffffff
+      IL_001e:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> [System.Core]System.Linq.Enumerable::Range(int32,
+                                                                                                                                      int32)
+      IL_0023:  ldloc.0
+      IL_0024:  dup
+      IL_0025:  ldvirtftn  instance class VB$AnonymousType_2`3<int32,string,string> ParallelGrep/_Closure$__1/_Closure$__2::_Lambda$__9(string,
+                                                                                                                                        int32)
+      IL_002b:  newobj     instance void class [mscorlib]System.Func`3<string,int32,class VB$AnonymousType_2`3<int32,string,string>>::.ctor(object,
+                                                                                                                                            native int)
+      IL_0030:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!2> [System.Core]System.Linq.Enumerable::Zip<string,int32,class VB$AnonymousType_2`3<int32,string,string>>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                                class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1>,
+                                                                                                                                                                                                class [mscorlib]System.Func`3<!!0,!!1,!!2>)
+      IL_0035:  stloc.1
+      IL_0036:  br.s       IL_0038
+
+      IL_0038:  ldloc.1
+      IL_0039:  ret
+    } // end of method _Closure$__1::_Lambda$__8
+
+  } // end of class _Closure$__1
+
+  .method public specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  ret
+  } // end of method ParallelGrep::.ctor
+
+  .method public static void  Main(string[] args) cil managed
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.STAThreadAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       412 (0x19c)
+    .maxstack  4
+    .locals init ([0] class ParallelGrep/_Closure$__1 $VB$Closure_ClosureVariable_E_28,
+             [1] class [mscorlib]System.Collections.Generic.IEnumerable`1<string> files,
+             [2] class [mscorlib]System.Collections.Generic.IEnumerable`1<string> nonSwitches,
+             [3] class [mscorlib]System.Collections.Generic.IEnumerable`1<string> wildcards,
+             [4] class [System.Core]System.Linq.ParallelQuery`1<class VB$AnonymousType_2`3<int32,string,string>> matches,
+             [5] class VB$AnonymousType_2`3<int32,string,string> line,
+             [6] class [mscorlib]System.AggregateException ae,
+             [7] class [mscorlib]System.Collections.Generic.IEnumerator`1<class VB$AnonymousType_2`3<int32,string,string>> VB$t_ref$L0,
+             [8] bool VB$CG$t_bool$S0)
+//000015: 	Shared Sub Main(ByVal args() As String)
+    IL_0000:  nop
+//000016: 		' Parse command-line switches
+//000017:         Dim recursive = args.Contains("/s")
+//000018:         Dim ignoreCase = args.Contains("/i")
+//000019: 
+//000020: 		' Get the regex and file wildcards from the command-line
+//000021:         Dim nonSwitches = From arg In args
+//000022:                           Where arg.FirstOrDefault() <> "/"c
+//000023:                           Select arg
+//000024: 		Dim regexString = nonSwitches.FirstOrDefault()
+//000025: 		Dim wildcards = nonSwitches.Skip(1)
+//000026: 
+//000027: 		' Create thread-local Regex instances, to prevent contention on Regex's internal lock
+//000028:         Dim regex = New ThreadLocal(Of Regex)(Function() New Regex(regexString, RegexOptions.Compiled Or
+//000029:                                                          (If(ignoreCase, RegexOptions.IgnoreCase, RegexOptions.None))))
+//000030: 
+//000031: 		' Get the list of files to be examined
+//000032:         Dim files = From wc In wildcards
+//000033:                     Let dirName = Path.GetDirectoryName(wc)
+//000034:                     Let fileName = Path.GetFileName(wc)
+//000035:                     From file In Directory.EnumerateFiles(If(String.IsNullOrWhiteSpace(dirName), ".", dirName),
+//000036:                                                           If(String.IsNullOrWhiteSpace(fileName), "*.*", fileName),
+//000037:                                                           If(recursive, SearchOption.AllDirectories, SearchOption.TopDirectoryOnly))
+//000038:                     Select file
+//000039: 
+//000040: 		Try
+//000041: 			' Traverse the specified files in parallel, and run each line through the Regex, collecting line number info
+//000042: 			' for each match (the Zip call counts the lines in each file)
+//000043: 
+//000044:             Dim matches = From file In files.AsParallel().AsOrdered().WithMergeOptions(ParallelMergeOptions.NotBuffered)
+//000045:                           From line In System.IO.File.ReadLines(file).
+//000046:                             Zip(Enumerable.Range(1, Integer.MaxValue), Function(s, i) New With {Key .Num = i, Key .Text = s, Key .File = file})
+//000047:                           Where regex.Value.IsMatch(line.Text)
+//000048:                           Select line
+//000049: 			For Each line In matches
+//000050: 				Console.WriteLine("{0}:{1} {2}", line.File, line.Num, line.Text)
+//000051: 			Next line
+//000052: 		Catch ae As AggregateException
+//000053:             ae.Handle(Function(e)
+//000054:                           Console.WriteLine(e.Message)
+//000055:                           Return True
+//000056:                       End Function)
+//000057: 		End Try
+//000058: 	End Sub
+//000059: End Class
+    IL_0001:  newobj     instance void ParallelGrep/_Closure$__1::.ctor()
+    IL_0006:  stloc.0
+//000017:         Dim recursive = args.Contains("/s")
+    IL_0007:  ldloc.0
+    IL_0008:  ldarg.0
+    IL_0009:  ldstr      "/s"
+    IL_000e:  call       bool [System.Core]System.Linq.Enumerable::Contains<string>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                    !!0)
+    IL_0013:  stfld      bool ParallelGrep/_Closure$__1::$VB$Local_recursive
+//000018:         Dim ignoreCase = args.Contains("/i")
+    IL_0018:  ldloc.0
+    IL_0019:  ldarg.0
+    IL_001a:  ldstr      "/i"
+    IL_001f:  call       bool [System.Core]System.Linq.Enumerable::Contains<string>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                    !!0)
+    IL_0024:  stfld      bool ParallelGrep/_Closure$__1::$VB$Local_ignoreCase
+//000019: 
+//000020: 		' Get the regex and file wildcards from the command-line
+//000021:         Dim nonSwitches = From arg In args
+    IL_0029:  ldarg.0
+    IL_002a:  ldnull
+    IL_002b:  ldftn      bool ParallelGrep::_Lambda$__1(string)
+    IL_0031:  newobj     instance void class [mscorlib]System.Func`2<string,bool>::.ctor(object,
+                                                                                         native int)
+    IL_0036:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0> [System.Core]System.Linq.Enumerable::Where<string>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                          class [mscorlib]System.Func`2<!!0,bool>)
+    IL_003b:  ldnull
+    IL_003c:  ldftn      string ParallelGrep::_Lambda$__2(string)
+    IL_0042:  newobj     instance void class [mscorlib]System.Func`2<string,string>::.ctor(object,
+                                                                                           native int)
+    IL_0047:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<string,string>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                  class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_004c:  stloc.2
+//000022:                           Where arg.FirstOrDefault() <> "/"c
+//000023:                           Select arg
+//000024: 		Dim regexString = nonSwitches.FirstOrDefault()
+    IL_004d:  ldloc.0
+    IL_004e:  ldloc.2
+    IL_004f:  call       !!0 [System.Core]System.Linq.Enumerable::FirstOrDefault<string>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_0054:  stfld      string ParallelGrep/_Closure$__1::$VB$Local_regexString
+//000025: 		Dim wildcards = nonSwitches.Skip(1)
+    IL_0059:  ldloc.2
+    IL_005a:  ldc.i4.1
+    IL_005b:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0> [System.Core]System.Linq.Enumerable::Skip<string>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                         int32)
+    IL_0060:  stloc.3
+//000026: 
+//000027: 		' Create thread-local Regex instances, to prevent contention on Regex's internal lock
+//000028:         Dim regex = New ThreadLocal(Of Regex)(Function() New Regex(regexString, RegexOptions.Compiled Or
+    IL_0061:  ldloc.0
+    IL_0062:  ldloc.0
+    IL_0063:  dup
+    IL_0064:  ldvirtftn  instance class [System]System.Text.RegularExpressions.Regex ParallelGrep/_Closure$__1::_Lambda$__3()
+    IL_006a:  newobj     instance void class [mscorlib]System.Func`1<class [System]System.Text.RegularExpressions.Regex>::.ctor(object,
+                                                                                                                                native int)
+    IL_006f:  newobj     instance void class [mscorlib]System.Threading.ThreadLocal`1<class [System]System.Text.RegularExpressions.Regex>::.ctor(class [mscorlib]System.Func`1<!0>)
+    IL_0074:  stfld      class [mscorlib]System.Threading.ThreadLocal`1<class [System]System.Text.RegularExpressions.Regex> ParallelGrep/_Closure$__1::$VB$Local_regex
+//000029:                                                          (If(ignoreCase, RegexOptions.IgnoreCase, RegexOptions.None))))
+//000030: 
+//000031: 		' Get the list of files to be examined
+//000032:         Dim files = From wc In wildcards
+    IL_0079:  ldloc.3
+    IL_007a:  ldnull
+    IL_007b:  ldftn      class VB$AnonymousType_0`2<string,string> ParallelGrep::_Lambda$__4(string)
+    IL_0081:  newobj     instance void class [mscorlib]System.Func`2<string,class VB$AnonymousType_0`2<string,string>>::.ctor(object,
+                                                                                                                              native int)
+    IL_0086:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<string,class VB$AnonymousType_0`2<string,string>>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                     class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_008b:  ldnull
+    IL_008c:  ldftn      class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string> ParallelGrep::_Lambda$__5(class VB$AnonymousType_0`2<string,string>)
+    IL_0092:  newobj     instance void class [mscorlib]System.Func`2<class VB$AnonymousType_0`2<string,string>,class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string>>::.ctor(object,
+                                                                                                                                                                                                    native int)
+    IL_0097:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<class VB$AnonymousType_0`2<string,string>,class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string>>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                                                                                           class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_009c:  ldloc.0
+    IL_009d:  dup
+    IL_009e:  ldvirtftn  instance class [mscorlib]System.Collections.Generic.IEnumerable`1<string> ParallelGrep/_Closure$__1::_Lambda$__6(class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string>)
+    IL_00a4:  newobj     instance void class [mscorlib]System.Func`2<class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string>,class [mscorlib]System.Collections.Generic.IEnumerable`1<string>>::.ctor(object,
+                                                                                                                                                                                                                           native int)
+    IL_00a9:  ldnull
+    IL_00aa:  ldftn      string ParallelGrep::_Lambda$__7(class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string>,
+                                                          string)
+    IL_00b0:  newobj     instance void class [mscorlib]System.Func`3<class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string>,string,string>::.ctor(object,
+                                                                                                                                                                        native int)
+    IL_00b5:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!2> [System.Core]System.Linq.Enumerable::SelectMany<class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string>,string,string>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                                                                   class [mscorlib]System.Func`2<!!0,class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1>>,
+                                                                                                                                                                                                                                   class [mscorlib]System.Func`3<!!0,!!1,!!2>)
+    IL_00ba:  stloc.1
+//000033:                     Let dirName = Path.GetDirectoryName(wc)
+//000034:                     Let fileName = Path.GetFileName(wc)
+//000035:                     From file In Directory.EnumerateFiles(If(String.IsNullOrWhiteSpace(dirName), ".", dirName),
+//000036:                                                           If(String.IsNullOrWhiteSpace(fileName), "*.*", fileName),
+//000037:                                                           If(recursive, SearchOption.AllDirectories, SearchOption.TopDirectoryOnly))
+//000038:                     Select file
+//000039: 
+//000040: 		Try
+    IL_00bb:  nop
+//000041: 			' Traverse the specified files in parallel, and run each line through the Regex, collecting line number info
+//000042: 			' for each match (the Zip call counts the lines in each file)
+//000043: 
+//000044:             Dim matches = From file In files.AsParallel().AsOrdered().WithMergeOptions(ParallelMergeOptions.NotBuffered)
+    .try
+    {
+      IL_00bc:  ldloc.1
+      IL_00bd:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::AsParallel<string>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+      IL_00c2:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::AsOrdered<string>(class [System.Core]System.Linq.ParallelQuery`1<!!0>)
+      IL_00c7:  ldc.i4.1
+      IL_00c8:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::WithMergeOptions<string>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                     valuetype [System.Core]System.Linq.ParallelMergeOptions)
+      IL_00cd:  ldloc.0
+      IL_00ce:  dup
+      IL_00cf:  ldvirtftn  instance class [mscorlib]System.Collections.Generic.IEnumerable`1<class VB$AnonymousType_2`3<int32,string,string>> ParallelGrep/_Closure$__1::_Lambda$__8(string)
+      IL_00d5:  newobj     instance void class [mscorlib]System.Func`2<string,class [mscorlib]System.Collections.Generic.IEnumerable`1<class VB$AnonymousType_2`3<int32,string,string>>>::.ctor(object,
+                                                                                                                                                                                                native int)
+      IL_00da:  ldnull
+      IL_00db:  ldftn      class VB$AnonymousType_3`2<string,class VB$AnonymousType_2`3<int32,string,string>> ParallelGrep::_Lambda$__10(string,
+                                                                                                                                         class VB$AnonymousType_2`3<int32,string,string>)
+      IL_00e1:  newobj     instance void class [mscorlib]System.Func`3<string,class VB$AnonymousType_2`3<int32,string,string>,class VB$AnonymousType_3`2<string,class VB$AnonymousType_2`3<int32,string,string>>>::.ctor(object,
+                                                                                                                                                                                                                         native int)
+      IL_00e6:  call       class [System.Core]System.Linq.ParallelQuery`1<!!2> [System.Core]System.Linq.ParallelEnumerable::SelectMany<string,class VB$AnonymousType_2`3<int32,string,string>,class VB$AnonymousType_3`2<string,class VB$AnonymousType_2`3<int32,string,string>>>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                                                                                                                                                  class [mscorlib]System.Func`2<!!0,class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1>>,
+                                                                                                                                                                                                                                                                                  class [mscorlib]System.Func`3<!!0,!!1,!!2>)
+      IL_00eb:  ldloc.0
+      IL_00ec:  dup
+      IL_00ed:  ldvirtftn  instance bool ParallelGrep/_Closure$__1::_Lambda$__11(class VB$AnonymousType_3`2<string,class VB$AnonymousType_2`3<int32,string,string>>)
+      IL_00f3:  newobj     instance void class [mscorlib]System.Func`2<class VB$AnonymousType_3`2<string,class VB$AnonymousType_2`3<int32,string,string>>,bool>::.ctor(object,
+                                                                                                                                                                       native int)
+      IL_00f8:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::Where<class VB$AnonymousType_3`2<string,class VB$AnonymousType_2`3<int32,string,string>>>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                                                                                      class [mscorlib]System.Func`2<!!0,bool>)
+      IL_00fd:  ldnull
+      IL_00fe:  ldftn      class VB$AnonymousType_2`3<int32,string,string> ParallelGrep::_Lambda$__12(class VB$AnonymousType_3`2<string,class VB$AnonymousType_2`3<int32,string,string>>)
+      IL_0104:  newobj     instance void class [mscorlib]System.Func`2<class VB$AnonymousType_3`2<string,class VB$AnonymousType_2`3<int32,string,string>>,class VB$AnonymousType_2`3<int32,string,string>>::.ctor(object,
+                                                                                                                                                                                                                  native int)
+      IL_0109:  call       class [System.Core]System.Linq.ParallelQuery`1<!!1> [System.Core]System.Linq.ParallelEnumerable::Select<class VB$AnonymousType_3`2<string,class VB$AnonymousType_2`3<int32,string,string>>,class VB$AnonymousType_2`3<int32,string,string>>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                                                                                                                                       class [mscorlib]System.Func`2<!!0,!!1>)
+      IL_010e:  stloc.s    matches
+//000045:                           From line In System.IO.File.ReadLines(file).
+//000046:                             Zip(Enumerable.Range(1, Integer.MaxValue), Function(s, i) New With {Key .Num = i, Key .Text = s, Key .File = file})
+//000047:                           Where regex.Value.IsMatch(line.Text)
+//000048:                           Select line
+//000049: 			For Each line In matches
+//000050: 				Console.WriteLine("{0}:{1} {2}", line.File, line.Num, line.Text)
+//000051: 			Next line
+//000052: 		Catch ae As AggregateException
+//000053:             ae.Handle(Function(e)
+//000054:                           Console.WriteLine(e.Message)
+//000055:                           Return True
+//000056:                       End Function)
+//000057: 		End Try
+//000058: 	End Sub
+//000059: End Class
+      IL_0110:  nop
+//000049: 			For Each line In matches
+      .try
+      {
+        IL_0111:  ldloc.s    matches
+        IL_0113:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [System.Core]System.Linq.ParallelQuery`1<class VB$AnonymousType_2`3<int32,string,string>>::GetEnumerator()
+        IL_0118:  stloc.s    VB$t_ref$L0
+        IL_011a:  br.s       IL_014b
+
+//000050: 				Console.WriteLine("{0}:{1} {2}", line.File, line.Num, line.Text)
+//000051: 			Next line
+//000052: 		Catch ae As AggregateException
+//000053:             ae.Handle(Function(e)
+//000054:                           Console.WriteLine(e.Message)
+//000055:                           Return True
+//000056:                       End Function)
+//000057: 		End Try
+//000058: 	End Sub
+//000059: End Class
+        IL_011c:  ldloc.s    VB$t_ref$L0
+        IL_011e:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<class VB$AnonymousType_2`3<int32,string,string>>::get_Current()
+        IL_0123:  stloc.s    line
+//000050: 				Console.WriteLine("{0}:{1} {2}", line.File, line.Num, line.Text)
+        IL_0125:  ldstr      "{0}:{1} {2}"
+        IL_012a:  ldloc.s    line
+        IL_012c:  callvirt   instance !2 class VB$AnonymousType_2`3<int32,string,string>::get_File()
+        IL_0131:  ldloc.s    line
+        IL_0133:  callvirt   instance !0 class VB$AnonymousType_2`3<int32,string,string>::get_Num()
+        IL_0138:  box        [mscorlib]System.Int32
+        IL_013d:  ldloc.s    line
+        IL_013f:  callvirt   instance !1 class VB$AnonymousType_2`3<int32,string,string>::get_Text()
+        IL_0144:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                      object,
+                                                                      object,
+                                                                      object)
+        IL_0149:  nop
+//000051: 			Next line
+        IL_014a:  nop
+//000052: 		Catch ae As AggregateException
+//000053:             ae.Handle(Function(e)
+//000054:                           Console.WriteLine(e.Message)
+//000055:                           Return True
+//000056:                       End Function)
+//000057: 		End Try
+//000058: 	End Sub
+//000059: End Class
+        IL_014b:  ldloc.s    VB$t_ref$L0
+        IL_014d:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+        IL_0152:  stloc.s    VB$CG$t_bool$S0
+        IL_0154:  ldloc.s    VB$CG$t_bool$S0
+        IL_0156:  brtrue.s   IL_011c
+
+        IL_0158:  nop
+        IL_0159:  leave.s    IL_0173
+
+      }  // end .try
+      finally
+      {
+        IL_015b:  ldloc.s    VB$t_ref$L0
+        IL_015d:  ldnull
+        IL_015e:  ceq
+        IL_0160:  ldc.i4.0
+        IL_0161:  ceq
+        IL_0163:  stloc.s    VB$CG$t_bool$S0
+        IL_0165:  ldloc.s    VB$CG$t_bool$S0
+        IL_0167:  brfalse.s  IL_0171
+
+        IL_0169:  ldloc.s    VB$t_ref$L0
+        IL_016b:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+        IL_0170:  nop
+        IL_0171:  nop
+        IL_0172:  endfinally
+      }  // end handler
+      IL_0173:  leave.s    IL_0199
+
+    }  // end .try
+    catch [mscorlib]System.AggregateException 
+    {
+      IL_0175:  dup
+      IL_0176:  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::SetProjectError(class [mscorlib]System.Exception)
+      IL_017b:  stloc.s    ae
+//000052: 		Catch ae As AggregateException
+      IL_017d:  nop
+//000053:             ae.Handle(Function(e)
+      IL_017e:  ldloc.s    ae
+      IL_0180:  ldnull
+      IL_0181:  ldftn      bool ParallelGrep::_Lambda$__13(class [mscorlib]System.Exception)
+      IL_0187:  newobj     instance void class [mscorlib]System.Func`2<class [mscorlib]System.Exception,bool>::.ctor(object,
+                                                                                                                     native int)
+      IL_018c:  callvirt   instance void [mscorlib]System.AggregateException::Handle(class [mscorlib]System.Func`2<class [mscorlib]System.Exception,bool>)
+      IL_0191:  nop
+      IL_0192:  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::ClearProjectError()
+//000054:                           Console.WriteLine(e.Message)
+//000055:                           Return True
+//000056:                       End Function)
+//000057: 		End Try
+//000058: 	End Sub
+//000059: End Class
+      IL_0197:  leave.s    IL_0199
+
+//000057: 		End Try
+    }  // end handler
+    IL_0199:  nop
+//000058: 	End Sub
+    IL_019a:  nop
+    IL_019b:  ret
+  } // end of method ParallelGrep::Main
+
+  .method private specialname static bool 
+          _Lambda$__1(string arg) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       18 (0x12)
+    .maxstack  2
+    .locals init ([0] bool _Lambda$__1)
+//000022:                           Where arg.FirstOrDefault() <> "/"c
+    IL_0000:  ldarg.0
+    IL_0001:  call       !!0 [System.Core]System.Linq.Enumerable::FirstOrDefault<char>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_0006:  ldc.i4.s   47
+    IL_0008:  ceq
+    IL_000a:  ldc.i4.0
+    IL_000b:  ceq
+    IL_000d:  stloc.0
+    IL_000e:  br.s       IL_0010
+
+    IL_0010:  ldloc.0
+    IL_0011:  ret
+  } // end of method ParallelGrep::_Lambda$__1
+
+  .method private specialname static string 
+          _Lambda$__2(string arg) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       6 (0x6)
+    .maxstack  1
+    .locals init ([0] string _Lambda$__2)
+//000023:                           Select arg
+    IL_0000:  ldarg.0
+    IL_0001:  stloc.0
+    IL_0002:  br.s       IL_0004
+
+    IL_0004:  ldloc.0
+    IL_0005:  ret
+  } // end of method ParallelGrep::_Lambda$__2
+
+  .method private specialname static class VB$AnonymousType_0`2<string,string> 
+          _Lambda$__4(string wc) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       17 (0x11)
+    .maxstack  2
+    .locals init ([0] class VB$AnonymousType_0`2<string,string> _Lambda$__4,
+             [1] class VB$AnonymousType_0`2<string,string> VB$t_ref$S0)
+//000024: 		Dim regexString = nonSwitches.FirstOrDefault()
+//000025: 		Dim wildcards = nonSwitches.Skip(1)
+//000026: 
+//000027: 		' Create thread-local Regex instances, to prevent contention on Regex's internal lock
+//000028:         Dim regex = New ThreadLocal(Of Regex)(Function() New Regex(regexString, RegexOptions.Compiled Or
+//000029:                                                          (If(ignoreCase, RegexOptions.IgnoreCase, RegexOptions.None))))
+//000030: 
+//000031: 		' Get the list of files to be examined
+//000032:         Dim files = From wc In wildcards
+//000033:                     Let dirName = Path.GetDirectoryName(wc)
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.0
+    IL_0002:  call       string [mscorlib]System.IO.Path::GetDirectoryName(string)
+    IL_0007:  newobj     instance void class VB$AnonymousType_0`2<string,string>::.ctor(!0,
+                                                                                        !1)
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+  } // end of method ParallelGrep::_Lambda$__4
+
+  .method private specialname static class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string> 
+          _Lambda$__5(class VB$AnonymousType_0`2<string,string> $VB$It1) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       22 (0x16)
+    .maxstack  2
+    .locals init ([0] class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string> _Lambda$__5,
+             [1] class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string> VB$t_ref$S0)
+//000034:                     Let fileName = Path.GetFileName(wc)
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance !0 class VB$AnonymousType_0`2<string,string>::get_wc()
+    IL_0007:  call       string [mscorlib]System.IO.Path::GetFileName(string)
+    IL_000c:  newobj     instance void class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string>::.ctor(!0,
+                                                                                                                           !1)
+    IL_0011:  stloc.0
+    IL_0012:  br.s       IL_0014
+
+    IL_0014:  ldloc.0
+    IL_0015:  ret
+  } // end of method ParallelGrep::_Lambda$__5
+
+  .method private specialname static string 
+          _Lambda$__7(class VB$AnonymousType_1`2<class VB$AnonymousType_0`2<string,string>,string> $VB$It1,
+                      string file) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       6 (0x6)
+    .maxstack  1
+    .locals init ([0] string _Lambda$__7)
+//000035:                     From file In Directory.EnumerateFiles(If(String.IsNullOrWhiteSpace(dirName), ".", dirName),
+//000036:                                                           If(String.IsNullOrWhiteSpace(fileName), "*.*", fileName),
+//000037:                                                           If(recursive, SearchOption.AllDirectories, SearchOption.TopDirectoryOnly))
+//000038:                     Select file
+    IL_0000:  ldarg.1
+    IL_0001:  stloc.0
+    IL_0002:  br.s       IL_0004
+
+    IL_0004:  ldloc.0
+    IL_0005:  ret
+  } // end of method ParallelGrep::_Lambda$__7
+
+  .method private specialname static class VB$AnonymousType_3`2<string,class VB$AnonymousType_2`3<int32,string,string>> 
+          _Lambda$__10(string file,
+                       class VB$AnonymousType_2`3<int32,string,string> line) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       12 (0xc)
+    .maxstack  2
+    .locals init ([0] class VB$AnonymousType_3`2<string,class VB$AnonymousType_2`3<int32,string,string>> _Lambda$__10,
+             [1] class VB$AnonymousType_3`2<string,class VB$AnonymousType_2`3<int32,string,string>> VB$t_ref$S0)
+//000039: 
+//000040: 		Try
+//000041: 			' Traverse the specified files in parallel, and run each line through the Regex, collecting line number info
+//000042: 			' for each match (the Zip call counts the lines in each file)
+//000043: 
+//000044:             Dim matches = From file In files.AsParallel().AsOrdered().WithMergeOptions(ParallelMergeOptions.NotBuffered)
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  newobj     instance void class VB$AnonymousType_3`2<string,class VB$AnonymousType_2`3<int32,string,string>>::.ctor(!0,
+                                                                                                                                 !1)
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+  } // end of method ParallelGrep::_Lambda$__10
+
+  .method private specialname static class VB$AnonymousType_2`3<int32,string,string> 
+          _Lambda$__12(class VB$AnonymousType_3`2<string,class VB$AnonymousType_2`3<int32,string,string>> $VB$It) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class VB$AnonymousType_2`3<int32,string,string> _Lambda$__12)
+//000045:                           From line In System.IO.File.ReadLines(file).
+//000046:                             Zip(Enumerable.Range(1, Integer.MaxValue), Function(s, i) New With {Key .Num = i, Key .Text = s, Key .File = file})
+//000047:                           Where regex.Value.IsMatch(line.Text)
+//000048:                           Select line
+    IL_0000:  ldarg.0
+    IL_0001:  callvirt   instance !1 class VB$AnonymousType_3`2<string,class VB$AnonymousType_2`3<int32,string,string>>::get_line()
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method ParallelGrep::_Lambda$__12
+
+  .method private specialname static bool 
+          _Lambda$__13(class [mscorlib]System.Exception e) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       19 (0x13)
+    .maxstack  1
+    .locals init ([0] bool _Lambda$__13)
+//000049: 			For Each line In matches
+//000050: 				Console.WriteLine("{0}:{1} {2}", line.File, line.Num, line.Text)
+//000051: 			Next line
+//000052: 		Catch ae As AggregateException
+//000053:             ae.Handle(Function(e)
+    IL_0000:  nop
+//000054:                           Console.WriteLine(e.Message)
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance string [mscorlib]System.Exception::get_Message()
+    IL_0007:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_000c:  nop
+//000055:                           Return True
+    IL_000d:  ldc.i4.1
+    IL_000e:  stloc.0
+    IL_000f:  br.s       IL_0011
+
+//000056:                       End Function)
+    IL_0011:  ldloc.0
+    IL_0012:  ret
+  } // end of method ParallelGrep::_Lambda$__13
+
+} // end of class ParallelGrep
+
+.class private auto ansi sealed VB$AnonymousType_0`2<T0,T1>
+       extends [mscorlib]System.Object
+       implements class [mscorlib]System.IEquatable`1<class VB$AnonymousType_0`2<!T0,!T1>>
+{
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [mscorlib]System.Diagnostics.DebuggerDisplayAttribute::.ctor(string) = ( 01 00 1A 77 63 3D 7B 77 63 7D 2C 20 64 69 72 4E   // ...wc={wc}, dirN
+                                                                                                 61 6D 65 3D 7B 64 69 72 4E 61 6D 65 7D 00 00 )    // ame={dirName}..
+  .field private initonly !T0 $wc
+  .field private initonly !T1 $dirName
+  .method public specialname rtspecialname 
+          instance void  .ctor(!T0 wc,
+                               !T1 dirName) cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       23 (0x17)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+    IL_0007:  ldarg.0
+    IL_0008:  ldarg.1
+    IL_0009:  stfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$wc
+    IL_000e:  ldarg.0
+    IL_000f:  ldarg.2
+    IL_0010:  stfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$dirName
+    IL_0015:  nop
+    IL_0016:  ret
+  } // end of method VB$AnonymousType_0`2::.ctor
+
+  .method public hidebysig strict virtual 
+          instance bool  Equals(object obj) cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       17 (0x11)
+    .maxstack  2
+    .locals init (bool V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  isinst     class VB$AnonymousType_0`2<!T0,!T1>
+    IL_0007:  callvirt   instance bool class VB$AnonymousType_0`2<!T0,!T1>::Equals(class VB$AnonymousType_0`2<!0,!1>)
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+  } // end of method VB$AnonymousType_0`2::Equals
+
+  .method public hidebysig newslot strict virtual final 
+          instance bool  Equals(class VB$AnonymousType_0`2<!T0,!T1> val) cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .override  method instance bool class [mscorlib]System.IEquatable`1<class VB$AnonymousType_0`2<!T0,!T1>>::Equals(!0)
+    // Code size       304 (0x130)
+    .maxstack  2
+    .locals init (bool V_0,
+             class VB$AnonymousType_0`2<!T0,!T1> V_1,
+             bool V_2,
+             bool V_3)
+    IL_0000:  ldc.i4.1
+    IL_0001:  stloc.0
+    IL_0002:  ldarg.1
+    IL_0003:  ldnull
+    IL_0004:  ceq
+    IL_0006:  stloc.2
+    IL_0007:  ldloc.2
+    IL_0008:  brfalse.s  IL_0011
+
+    IL_000a:  ldc.i4.0
+    IL_000b:  stloc.0
+    IL_000c:  br         IL_012e
+
+    IL_0011:  ldarg.1
+    IL_0012:  stloc.1
+    IL_0013:  ldarg.0
+    IL_0014:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$wc
+    IL_0019:  box        !T0
+    IL_001e:  ldnull
+    IL_001f:  ceq
+    IL_0021:  stloc.2
+    IL_0022:  ldloc.2
+    IL_0023:  brfalse.s  IL_0043
+
+    IL_0025:  ldloc.1
+    IL_0026:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$wc
+    IL_002b:  box        !T0
+    IL_0030:  ldnull
+    IL_0031:  ceq
+    IL_0033:  ldc.i4.0
+    IL_0034:  ceq
+    IL_0036:  stloc.3
+    IL_0037:  ldloc.3
+    IL_0038:  brfalse.s  IL_0041
+
+    IL_003a:  ldc.i4.0
+    IL_003b:  stloc.0
+    IL_003c:  br         IL_012e
+
+    IL_0041:  br.s       IL_005d
+
+    IL_0043:  nop
+    IL_0044:  ldloc.1
+    IL_0045:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$wc
+    IL_004a:  box        !T0
+    IL_004f:  ldnull
+    IL_0050:  ceq
+    IL_0052:  stloc.3
+    IL_0053:  ldloc.3
+    IL_0054:  brfalse.s  IL_005d
+
+    IL_0056:  ldc.i4.0
+    IL_0057:  stloc.0
+    IL_0058:  br         IL_012e
+
+    IL_005d:  nop
+    IL_005e:  ldarg.0
+    IL_005f:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$wc
+    IL_0064:  box        !T0
+    IL_0069:  brfalse.s  IL_0095
+
+    IL_006b:  ldloc.1
+    IL_006c:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$wc
+    IL_0071:  box        !T0
+    IL_0076:  brfalse.s  IL_0095
+
+    IL_0078:  ldarg.0
+    IL_0079:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$wc
+    IL_007e:  box        !T0
+    IL_0083:  ldloc.1
+    IL_0084:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$wc
+    IL_0089:  box        !T0
+    IL_008e:  callvirt   instance bool [mscorlib]System.Object::Equals(object)
+    IL_0093:  brfalse.s  IL_0098
+
+    IL_0095:  ldc.i4.0
+    IL_0096:  br.s       IL_0099
+
+    IL_0098:  ldc.i4.1
+    IL_0099:  stloc.3
+    IL_009a:  ldloc.3
+    IL_009b:  brfalse.s  IL_00a4
+
+    IL_009d:  ldc.i4.0
+    IL_009e:  stloc.0
+    IL_009f:  br         IL_012e
+
+    IL_00a4:  ldarg.0
+    IL_00a5:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$dirName
+    IL_00aa:  box        !T1
+    IL_00af:  ldnull
+    IL_00b0:  ceq
+    IL_00b2:  stloc.3
+    IL_00b3:  ldloc.3
+    IL_00b4:  brfalse.s  IL_00d1
+
+    IL_00b6:  ldloc.1
+    IL_00b7:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$dirName
+    IL_00bc:  box        !T1
+    IL_00c1:  ldnull
+    IL_00c2:  ceq
+    IL_00c4:  ldc.i4.0
+    IL_00c5:  ceq
+    IL_00c7:  stloc.2
+    IL_00c8:  ldloc.2
+    IL_00c9:  brfalse.s  IL_00cf
+
+    IL_00cb:  ldc.i4.0
+    IL_00cc:  stloc.0
+    IL_00cd:  br.s       IL_012e
+
+    IL_00cf:  br.s       IL_00e8
+
+    IL_00d1:  nop
+    IL_00d2:  ldloc.1
+    IL_00d3:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$dirName
+    IL_00d8:  box        !T1
+    IL_00dd:  ldnull
+    IL_00de:  ceq
+    IL_00e0:  stloc.3
+    IL_00e1:  ldloc.3
+    IL_00e2:  brfalse.s  IL_00e8
+
+    IL_00e4:  ldc.i4.0
+    IL_00e5:  stloc.0
+    IL_00e6:  br.s       IL_012e
+
+    IL_00e8:  nop
+    IL_00e9:  ldarg.0
+    IL_00ea:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$dirName
+    IL_00ef:  box        !T1
+    IL_00f4:  brfalse.s  IL_0120
+
+    IL_00f6:  ldloc.1
+    IL_00f7:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$dirName
+    IL_00fc:  box        !T1
+    IL_0101:  brfalse.s  IL_0120
+
+    IL_0103:  ldarg.0
+    IL_0104:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$dirName
+    IL_0109:  box        !T1
+    IL_010e:  ldloc.1
+    IL_010f:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$dirName
+    IL_0114:  box        !T1
+    IL_0119:  callvirt   instance bool [mscorlib]System.Object::Equals(object)
+    IL_011e:  brfalse.s  IL_0123
+
+    IL_0120:  ldc.i4.0
+    IL_0121:  br.s       IL_0124
+
+    IL_0123:  ldc.i4.1
+    IL_0124:  stloc.3
+    IL_0125:  ldloc.3
+    IL_0126:  brfalse.s  IL_012c
+
+    IL_0128:  ldc.i4.0
+    IL_0129:  stloc.0
+    IL_012a:  br.s       IL_012e
+
+    IL_012c:  ldnull
+    IL_012d:  stloc.1
+    IL_012e:  ldloc.0
+    IL_012f:  ret
+  } // end of method VB$AnonymousType_0`2::Equals
+
+  .method public strict virtual instance int32 
+          GetHashCode() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       112 (0x70)
+    .maxstack  2
+    .locals init (int32 V_0,
+             !T0 V_1,
+             !T1 V_2,
+             bool V_3)
+    IL_0000:  ldc.i4     0xa5124aaf
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldc.i4     0xa5555529
+    IL_000c:  mul
+    IL_000d:  stloc.0
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$wc
+    IL_0014:  box        !T0
+    IL_0019:  ldnull
+    IL_001a:  ceq
+    IL_001c:  ldc.i4.0
+    IL_001d:  ceq
+    IL_001f:  stloc.3
+    IL_0020:  ldloc.3
+    IL_0021:  brfalse.s  IL_003a
+
+    IL_0023:  ldloc.0
+    IL_0024:  ldarg.0
+    IL_0025:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$wc
+    IL_002a:  stloc.1
+    IL_002b:  ldloca.s   V_1
+    IL_002d:  constrained. !T0
+    IL_0033:  callvirt   instance int32 [mscorlib]System.Object::GetHashCode()
+    IL_0038:  add
+    IL_0039:  stloc.0
+    IL_003a:  ldloc.0
+    IL_003b:  ldc.i4     0xa5555529
+    IL_0040:  mul
+    IL_0041:  stloc.0
+    IL_0042:  ldarg.0
+    IL_0043:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$dirName
+    IL_0048:  box        !T1
+    IL_004d:  ldnull
+    IL_004e:  ceq
+    IL_0050:  ldc.i4.0
+    IL_0051:  ceq
+    IL_0053:  stloc.3
+    IL_0054:  ldloc.3
+    IL_0055:  brfalse.s  IL_006e
+
+    IL_0057:  ldloc.0
+    IL_0058:  ldarg.0
+    IL_0059:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$dirName
+    IL_005e:  stloc.2
+    IL_005f:  ldloca.s   V_2
+    IL_0061:  constrained. !T1
+    IL_0067:  callvirt   instance int32 [mscorlib]System.Object::GetHashCode()
+    IL_006c:  add
+    IL_006d:  stloc.0
+    IL_006e:  ldloc.0
+    IL_006f:  ret
+  } // end of method VB$AnonymousType_0`2::GetHashCode
+
+  .method public strict virtual instance string 
+          ToString() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       97 (0x61)
+    .maxstack  4
+    .locals init (class [mscorlib]System.Text.StringBuilder V_0,
+             string V_1)
+    IL_0000:  newobj     instance void [mscorlib]System.Text.StringBuilder::.ctor()
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldstr      "{ "
+    IL_000c:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(string)
+    IL_0011:  pop
+    IL_0012:  ldloc.0
+    IL_0013:  ldstr      "{0} = {1}, "
+    IL_0018:  ldstr      "wc"
+    IL_001d:  ldarg.0
+    IL_001e:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$wc
+    IL_0023:  box        !T0
+    IL_0028:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::AppendFormat(string,
+                                                                                                                              object,
+                                                                                                                              object)
+    IL_002d:  pop
+    IL_002e:  ldloc.0
+    IL_002f:  ldstr      "{0} = {1} "
+    IL_0034:  ldstr      "dirName"
+    IL_0039:  ldarg.0
+    IL_003a:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$dirName
+    IL_003f:  box        !T1
+    IL_0044:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::AppendFormat(string,
+                                                                                                                              object,
+                                                                                                                              object)
+    IL_0049:  pop
+    IL_004a:  ldloc.0
+    IL_004b:  ldstr      "}"
+    IL_0050:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(string)
+    IL_0055:  pop
+    IL_0056:  ldloc.0
+    IL_0057:  callvirt   instance string [mscorlib]System.Text.StringBuilder::ToString()
+    IL_005c:  stloc.1
+    IL_005d:  br.s       IL_005f
+
+    IL_005f:  ldloc.1
+    IL_0060:  ret
+  } // end of method VB$AnonymousType_0`2::ToString
+
+  .method public specialname instance !T0 
+          get_wc() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (!T0 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      !0 class VB$AnonymousType_0`2<!T0,!T1>::$wc
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method VB$AnonymousType_0`2::get_wc
+
+  .method public specialname instance !T1 
+          get_dirName() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (!T1 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      !1 class VB$AnonymousType_0`2<!T0,!T1>::$dirName
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method VB$AnonymousType_0`2::get_dirName
+
+  .property instance !T0 wc()
+  {
+    .get instance !T0 VB$AnonymousType_0`2::get_wc()
+  } // end of property VB$AnonymousType_0`2::wc
+  .property instance !T1 dirName()
+  {
+    .get instance !T1 VB$AnonymousType_0`2::get_dirName()
+  } // end of property VB$AnonymousType_0`2::dirName
+} // end of class VB$AnonymousType_0`2
+
+.class private auto ansi sealed VB$AnonymousType_1`2<T0,T1>
+       extends [mscorlib]System.Object
+       implements class [mscorlib]System.IEquatable`1<class VB$AnonymousType_1`2<!T0,!T1>>
+{
+  .custom instance void [mscorlib]System.Diagnostics.DebuggerDisplayAttribute::.ctor(string) = ( 01 00 26 24 56 42 24 49 74 31 3D 7B 24 56 42 24   // ..&$VB$It1={$VB$
+                                                                                                 49 74 31 7D 2C 20 66 69 6C 65 4E 61 6D 65 3D 7B   // It1}, fileName={
+                                                                                                 66 69 6C 65 4E 61 6D 65 7D 00 00 )                // fileName}..
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private initonly !T1 $fileName
+  .field private initonly !T0 $$VB$It1
+  .method public specialname rtspecialname 
+          instance void  .ctor(!T0 $VB$It1,
+                               !T1 fileName) cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       23 (0x17)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+    IL_0007:  ldarg.0
+    IL_0008:  ldarg.1
+    IL_0009:  stfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$$VB$It1
+    IL_000e:  ldarg.0
+    IL_000f:  ldarg.2
+    IL_0010:  stfld      !1 class VB$AnonymousType_1`2<!T0,!T1>::$fileName
+    IL_0015:  nop
+    IL_0016:  ret
+  } // end of method VB$AnonymousType_1`2::.ctor
+
+  .method public hidebysig newslot strict virtual final 
+          instance bool  Equals(class VB$AnonymousType_1`2<!T0,!T1> val) cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .override  method instance bool class [mscorlib]System.IEquatable`1<class VB$AnonymousType_1`2<!T0,!T1>>::Equals(!0)
+    // Code size       304 (0x130)
+    .maxstack  2
+    .locals init (bool V_0,
+             class VB$AnonymousType_1`2<!T0,!T1> V_1,
+             bool V_2,
+             bool V_3)
+    IL_0000:  ldc.i4.1
+    IL_0001:  stloc.0
+    IL_0002:  ldarg.1
+    IL_0003:  ldnull
+    IL_0004:  ceq
+    IL_0006:  stloc.2
+    IL_0007:  ldloc.2
+    IL_0008:  brfalse.s  IL_0011
+
+    IL_000a:  ldc.i4.0
+    IL_000b:  stloc.0
+    IL_000c:  br         IL_012e
+
+    IL_0011:  ldarg.1
+    IL_0012:  stloc.1
+    IL_0013:  ldarg.0
+    IL_0014:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$$VB$It1
+    IL_0019:  box        !T0
+    IL_001e:  ldnull
+    IL_001f:  ceq
+    IL_0021:  stloc.2
+    IL_0022:  ldloc.2
+    IL_0023:  brfalse.s  IL_0043
+
+    IL_0025:  ldloc.1
+    IL_0026:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$$VB$It1
+    IL_002b:  box        !T0
+    IL_0030:  ldnull
+    IL_0031:  ceq
+    IL_0033:  ldc.i4.0
+    IL_0034:  ceq
+    IL_0036:  stloc.3
+    IL_0037:  ldloc.3
+    IL_0038:  brfalse.s  IL_0041
+
+    IL_003a:  ldc.i4.0
+    IL_003b:  stloc.0
+    IL_003c:  br         IL_012e
+
+    IL_0041:  br.s       IL_005d
+
+    IL_0043:  nop
+    IL_0044:  ldloc.1
+    IL_0045:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$$VB$It1
+    IL_004a:  box        !T0
+    IL_004f:  ldnull
+    IL_0050:  ceq
+    IL_0052:  stloc.3
+    IL_0053:  ldloc.3
+    IL_0054:  brfalse.s  IL_005d
+
+    IL_0056:  ldc.i4.0
+    IL_0057:  stloc.0
+    IL_0058:  br         IL_012e
+
+    IL_005d:  nop
+    IL_005e:  ldarg.0
+    IL_005f:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$$VB$It1
+    IL_0064:  box        !T0
+    IL_0069:  brfalse.s  IL_0095
+
+    IL_006b:  ldloc.1
+    IL_006c:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$$VB$It1
+    IL_0071:  box        !T0
+    IL_0076:  brfalse.s  IL_0095
+
+    IL_0078:  ldarg.0
+    IL_0079:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$$VB$It1
+    IL_007e:  box        !T0
+    IL_0083:  ldloc.1
+    IL_0084:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$$VB$It1
+    IL_0089:  box        !T0
+    IL_008e:  callvirt   instance bool [mscorlib]System.Object::Equals(object)
+    IL_0093:  brfalse.s  IL_0098
+
+    IL_0095:  ldc.i4.0
+    IL_0096:  br.s       IL_0099
+
+    IL_0098:  ldc.i4.1
+    IL_0099:  stloc.3
+    IL_009a:  ldloc.3
+    IL_009b:  brfalse.s  IL_00a4
+
+    IL_009d:  ldc.i4.0
+    IL_009e:  stloc.0
+    IL_009f:  br         IL_012e
+
+    IL_00a4:  ldarg.0
+    IL_00a5:  ldfld      !1 class VB$AnonymousType_1`2<!T0,!T1>::$fileName
+    IL_00aa:  box        !T1
+    IL_00af:  ldnull
+    IL_00b0:  ceq
+    IL_00b2:  stloc.3
+    IL_00b3:  ldloc.3
+    IL_00b4:  brfalse.s  IL_00d1
+
+    IL_00b6:  ldloc.1
+    IL_00b7:  ldfld      !1 class VB$AnonymousType_1`2<!T0,!T1>::$fileName
+    IL_00bc:  box        !T1
+    IL_00c1:  ldnull
+    IL_00c2:  ceq
+    IL_00c4:  ldc.i4.0
+    IL_00c5:  ceq
+    IL_00c7:  stloc.2
+    IL_00c8:  ldloc.2
+    IL_00c9:  brfalse.s  IL_00cf
+
+    IL_00cb:  ldc.i4.0
+    IL_00cc:  stloc.0
+    IL_00cd:  br.s       IL_012e
+
+    IL_00cf:  br.s       IL_00e8
+
+    IL_00d1:  nop
+    IL_00d2:  ldloc.1
+    IL_00d3:  ldfld      !1 class VB$AnonymousType_1`2<!T0,!T1>::$fileName
+    IL_00d8:  box        !T1
+    IL_00dd:  ldnull
+    IL_00de:  ceq
+    IL_00e0:  stloc.3
+    IL_00e1:  ldloc.3
+    IL_00e2:  brfalse.s  IL_00e8
+
+    IL_00e4:  ldc.i4.0
+    IL_00e5:  stloc.0
+    IL_00e6:  br.s       IL_012e
+
+    IL_00e8:  nop
+    IL_00e9:  ldarg.0
+    IL_00ea:  ldfld      !1 class VB$AnonymousType_1`2<!T0,!T1>::$fileName
+    IL_00ef:  box        !T1
+    IL_00f4:  brfalse.s  IL_0120
+
+    IL_00f6:  ldloc.1
+    IL_00f7:  ldfld      !1 class VB$AnonymousType_1`2<!T0,!T1>::$fileName
+    IL_00fc:  box        !T1
+    IL_0101:  brfalse.s  IL_0120
+
+    IL_0103:  ldarg.0
+    IL_0104:  ldfld      !1 class VB$AnonymousType_1`2<!T0,!T1>::$fileName
+    IL_0109:  box        !T1
+    IL_010e:  ldloc.1
+    IL_010f:  ldfld      !1 class VB$AnonymousType_1`2<!T0,!T1>::$fileName
+    IL_0114:  box        !T1
+    IL_0119:  callvirt   instance bool [mscorlib]System.Object::Equals(object)
+    IL_011e:  brfalse.s  IL_0123
+
+    IL_0120:  ldc.i4.0
+    IL_0121:  br.s       IL_0124
+
+    IL_0123:  ldc.i4.1
+    IL_0124:  stloc.3
+    IL_0125:  ldloc.3
+    IL_0126:  brfalse.s  IL_012c
+
+    IL_0128:  ldc.i4.0
+    IL_0129:  stloc.0
+    IL_012a:  br.s       IL_012e
+
+    IL_012c:  ldnull
+    IL_012d:  stloc.1
+    IL_012e:  ldloc.0
+    IL_012f:  ret
+  } // end of method VB$AnonymousType_1`2::Equals
+
+  .method public hidebysig strict virtual 
+          instance bool  Equals(object obj) cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       17 (0x11)
+    .maxstack  2
+    .locals init (bool V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  isinst     class VB$AnonymousType_1`2<!T0,!T1>
+    IL_0007:  callvirt   instance bool class VB$AnonymousType_1`2<!T0,!T1>::Equals(class VB$AnonymousType_1`2<!0,!1>)
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+  } // end of method VB$AnonymousType_1`2::Equals
+
+  .method public strict virtual instance int32 
+          GetHashCode() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       112 (0x70)
+    .maxstack  2
+    .locals init (int32 V_0,
+             !T0 V_1,
+             !T1 V_2,
+             bool V_3)
+    IL_0000:  ldc.i4     0x17f64759
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldc.i4     0xa5555529
+    IL_000c:  mul
+    IL_000d:  stloc.0
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$$VB$It1
+    IL_0014:  box        !T0
+    IL_0019:  ldnull
+    IL_001a:  ceq
+    IL_001c:  ldc.i4.0
+    IL_001d:  ceq
+    IL_001f:  stloc.3
+    IL_0020:  ldloc.3
+    IL_0021:  brfalse.s  IL_003a
+
+    IL_0023:  ldloc.0
+    IL_0024:  ldarg.0
+    IL_0025:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$$VB$It1
+    IL_002a:  stloc.1
+    IL_002b:  ldloca.s   V_1
+    IL_002d:  constrained. !T0
+    IL_0033:  callvirt   instance int32 [mscorlib]System.Object::GetHashCode()
+    IL_0038:  add
+    IL_0039:  stloc.0
+    IL_003a:  ldloc.0
+    IL_003b:  ldc.i4     0xa5555529
+    IL_0040:  mul
+    IL_0041:  stloc.0
+    IL_0042:  ldarg.0
+    IL_0043:  ldfld      !1 class VB$AnonymousType_1`2<!T0,!T1>::$fileName
+    IL_0048:  box        !T1
+    IL_004d:  ldnull
+    IL_004e:  ceq
+    IL_0050:  ldc.i4.0
+    IL_0051:  ceq
+    IL_0053:  stloc.3
+    IL_0054:  ldloc.3
+    IL_0055:  brfalse.s  IL_006e
+
+    IL_0057:  ldloc.0
+    IL_0058:  ldarg.0
+    IL_0059:  ldfld      !1 class VB$AnonymousType_1`2<!T0,!T1>::$fileName
+    IL_005e:  stloc.2
+    IL_005f:  ldloca.s   V_2
+    IL_0061:  constrained. !T1
+    IL_0067:  callvirt   instance int32 [mscorlib]System.Object::GetHashCode()
+    IL_006c:  add
+    IL_006d:  stloc.0
+    IL_006e:  ldloc.0
+    IL_006f:  ret
+  } // end of method VB$AnonymousType_1`2::GetHashCode
+
+  .method public strict virtual instance string 
+          ToString() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       97 (0x61)
+    .maxstack  4
+    .locals init (class [mscorlib]System.Text.StringBuilder V_0,
+             string V_1)
+    IL_0000:  newobj     instance void [mscorlib]System.Text.StringBuilder::.ctor()
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldstr      "{ "
+    IL_000c:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(string)
+    IL_0011:  pop
+    IL_0012:  ldloc.0
+    IL_0013:  ldstr      "{0} = {1}, "
+    IL_0018:  ldstr      "$VB$It1"
+    IL_001d:  ldarg.0
+    IL_001e:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$$VB$It1
+    IL_0023:  box        !T0
+    IL_0028:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::AppendFormat(string,
+                                                                                                                              object,
+                                                                                                                              object)
+    IL_002d:  pop
+    IL_002e:  ldloc.0
+    IL_002f:  ldstr      "{0} = {1} "
+    IL_0034:  ldstr      "fileName"
+    IL_0039:  ldarg.0
+    IL_003a:  ldfld      !1 class VB$AnonymousType_1`2<!T0,!T1>::$fileName
+    IL_003f:  box        !T1
+    IL_0044:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::AppendFormat(string,
+                                                                                                                              object,
+                                                                                                                              object)
+    IL_0049:  pop
+    IL_004a:  ldloc.0
+    IL_004b:  ldstr      "}"
+    IL_0050:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(string)
+    IL_0055:  pop
+    IL_0056:  ldloc.0
+    IL_0057:  callvirt   instance string [mscorlib]System.Text.StringBuilder::ToString()
+    IL_005c:  stloc.1
+    IL_005d:  br.s       IL_005f
+
+    IL_005f:  ldloc.1
+    IL_0060:  ret
+  } // end of method VB$AnonymousType_1`2::ToString
+
+  .method public specialname instance !T1 
+          get_fileName() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (!T1 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      !1 class VB$AnonymousType_1`2<!T0,!T1>::$fileName
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method VB$AnonymousType_1`2::get_fileName
+
+  .method public specialname instance !T0 
+          get_$VB$It1() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (!T0 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      !0 class VB$AnonymousType_1`2<!T0,!T1>::$$VB$It1
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method VB$AnonymousType_1`2::get_$VB$It1
+
+  .property instance !T1 fileName()
+  {
+    .get instance !T1 VB$AnonymousType_1`2::get_fileName()
+  } // end of property VB$AnonymousType_1`2::fileName
+  .property instance !T0 $VB$It1()
+  {
+    .get instance !T0 VB$AnonymousType_1`2::get_$VB$It1()
+  } // end of property VB$AnonymousType_1`2::$VB$It1
+} // end of class VB$AnonymousType_1`2
+
+.class private auto ansi sealed VB$AnonymousType_2`3<T0,T1,T2>
+       extends [mscorlib]System.Object
+       implements class [mscorlib]System.IEquatable`1<class VB$AnonymousType_2`3<!T0,!T1,!T2>>
+{
+  .custom instance void [mscorlib]System.Diagnostics.DebuggerDisplayAttribute::.ctor(string) = ( 01 00 23 4E 75 6D 3D 7B 4E 75 6D 7D 2C 20 54 65   // ..#Num={Num}, Te
+                                                                                                 78 74 3D 7B 54 65 78 74 7D 2C 20 46 69 6C 65 3D   // xt={Text}, File=
+                                                                                                 7B 46 69 6C 65 7D 00 00 )                         // {File}..
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private initonly !T0 $Num
+  .field private initonly !T1 $Text
+  .field private initonly !T2 $File
+  .method public specialname rtspecialname 
+          instance void  .ctor(!T0 Num,
+                               !T1 Text,
+                               !T2 File) cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       30 (0x1e)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+    IL_0007:  ldarg.0
+    IL_0008:  ldarg.1
+    IL_0009:  stfld      !0 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Num
+    IL_000e:  ldarg.0
+    IL_000f:  ldarg.2
+    IL_0010:  stfld      !1 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Text
+    IL_0015:  ldarg.0
+    IL_0016:  ldarg.3
+    IL_0017:  stfld      !2 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$File
+    IL_001c:  nop
+    IL_001d:  ret
+  } // end of method VB$AnonymousType_2`3::.ctor
+
+  .method public hidebysig newslot strict virtual final 
+          instance bool  Equals(class VB$AnonymousType_2`3<!T0,!T1,!T2> val) cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .override  method instance bool class [mscorlib]System.IEquatable`1<class VB$AnonymousType_2`3<!T0,!T1,!T2>>::Equals(!0)
+    // Code size       449 (0x1c1)
+    .maxstack  2
+    .locals init (bool V_0,
+             class VB$AnonymousType_2`3<!T0,!T1,!T2> V_1,
+             bool V_2,
+             bool V_3)
+    IL_0000:  ldc.i4.1
+    IL_0001:  stloc.0
+    IL_0002:  ldarg.1
+    IL_0003:  ldnull
+    IL_0004:  ceq
+    IL_0006:  stloc.2
+    IL_0007:  ldloc.2
+    IL_0008:  brfalse.s  IL_0011
+
+    IL_000a:  ldc.i4.0
+    IL_000b:  stloc.0
+    IL_000c:  br         IL_01bf
+
+    IL_0011:  ldarg.1
+    IL_0012:  stloc.1
+    IL_0013:  ldarg.0
+    IL_0014:  ldfld      !0 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Num
+    IL_0019:  box        !T0
+    IL_001e:  ldnull
+    IL_001f:  ceq
+    IL_0021:  stloc.2
+    IL_0022:  ldloc.2
+    IL_0023:  brfalse.s  IL_0043
+
+    IL_0025:  ldloc.1
+    IL_0026:  ldfld      !0 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Num
+    IL_002b:  box        !T0
+    IL_0030:  ldnull
+    IL_0031:  ceq
+    IL_0033:  ldc.i4.0
+    IL_0034:  ceq
+    IL_0036:  stloc.3
+    IL_0037:  ldloc.3
+    IL_0038:  brfalse.s  IL_0041
+
+    IL_003a:  ldc.i4.0
+    IL_003b:  stloc.0
+    IL_003c:  br         IL_01bf
+
+    IL_0041:  br.s       IL_005d
+
+    IL_0043:  nop
+    IL_0044:  ldloc.1
+    IL_0045:  ldfld      !0 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Num
+    IL_004a:  box        !T0
+    IL_004f:  ldnull
+    IL_0050:  ceq
+    IL_0052:  stloc.3
+    IL_0053:  ldloc.3
+    IL_0054:  brfalse.s  IL_005d
+
+    IL_0056:  ldc.i4.0
+    IL_0057:  stloc.0
+    IL_0058:  br         IL_01bf
+
+    IL_005d:  nop
+    IL_005e:  ldarg.0
+    IL_005f:  ldfld      !0 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Num
+    IL_0064:  box        !T0
+    IL_0069:  brfalse.s  IL_0095
+
+    IL_006b:  ldloc.1
+    IL_006c:  ldfld      !0 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Num
+    IL_0071:  box        !T0
+    IL_0076:  brfalse.s  IL_0095
+
+    IL_0078:  ldarg.0
+    IL_0079:  ldfld      !0 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Num
+    IL_007e:  box        !T0
+    IL_0083:  ldloc.1
+    IL_0084:  ldfld      !0 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Num
+    IL_0089:  box        !T0
+    IL_008e:  callvirt   instance bool [mscorlib]System.Object::Equals(object)
+    IL_0093:  brfalse.s  IL_0098
+
+    IL_0095:  ldc.i4.0
+    IL_0096:  br.s       IL_0099
+
+    IL_0098:  ldc.i4.1
+    IL_0099:  stloc.3
+    IL_009a:  ldloc.3
+    IL_009b:  brfalse.s  IL_00a4
+
+    IL_009d:  ldc.i4.0
+    IL_009e:  stloc.0
+    IL_009f:  br         IL_01bf
+
+    IL_00a4:  ldarg.0
+    IL_00a5:  ldfld      !1 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Text
+    IL_00aa:  box        !T1
+    IL_00af:  ldnull
+    IL_00b0:  ceq
+    IL_00b2:  stloc.3
+    IL_00b3:  ldloc.3
+    IL_00b4:  brfalse.s  IL_00d4
+
+    IL_00b6:  ldloc.1
+    IL_00b7:  ldfld      !1 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Text
+    IL_00bc:  box        !T1
+    IL_00c1:  ldnull
+    IL_00c2:  ceq
+    IL_00c4:  ldc.i4.0
+    IL_00c5:  ceq
+    IL_00c7:  stloc.2
+    IL_00c8:  ldloc.2
+    IL_00c9:  brfalse.s  IL_00d2
+
+    IL_00cb:  ldc.i4.0
+    IL_00cc:  stloc.0
+    IL_00cd:  br         IL_01bf
+
+    IL_00d2:  br.s       IL_00ee
+
+    IL_00d4:  nop
+    IL_00d5:  ldloc.1
+    IL_00d6:  ldfld      !1 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Text
+    IL_00db:  box        !T1
+    IL_00e0:  ldnull
+    IL_00e1:  ceq
+    IL_00e3:  stloc.3
+    IL_00e4:  ldloc.3
+    IL_00e5:  brfalse.s  IL_00ee
+
+    IL_00e7:  ldc.i4.0
+    IL_00e8:  stloc.0
+    IL_00e9:  br         IL_01bf
+
+    IL_00ee:  nop
+    IL_00ef:  ldarg.0
+    IL_00f0:  ldfld      !1 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Text
+    IL_00f5:  box        !T1
+    IL_00fa:  brfalse.s  IL_0126
+
+    IL_00fc:  ldloc.1
+    IL_00fd:  ldfld      !1 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Text
+    IL_0102:  box        !T1
+    IL_0107:  brfalse.s  IL_0126
+
+    IL_0109:  ldarg.0
+    IL_010a:  ldfld      !1 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Text
+    IL_010f:  box        !T1
+    IL_0114:  ldloc.1
+    IL_0115:  ldfld      !1 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Text
+    IL_011a:  box        !T1
+    IL_011f:  callvirt   instance bool [mscorlib]System.Object::Equals(object)
+    IL_0124:  brfalse.s  IL_0129
+
+    IL_0126:  ldc.i4.0
+    IL_0127:  br.s       IL_012a
+
+    IL_0129:  ldc.i4.1
+    IL_012a:  stloc.3
+    IL_012b:  ldloc.3
+    IL_012c:  brfalse.s  IL_0135
+
+    IL_012e:  ldc.i4.0
+    IL_012f:  stloc.0
+    IL_0130:  br         IL_01bf
+
+    IL_0135:  ldarg.0
+    IL_0136:  ldfld      !2 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$File
+    IL_013b:  box        !T2
+    IL_0140:  ldnull
+    IL_0141:  ceq
+    IL_0143:  stloc.3
+    IL_0144:  ldloc.3
+    IL_0145:  brfalse.s  IL_0162
+
+    IL_0147:  ldloc.1
+    IL_0148:  ldfld      !2 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$File
+    IL_014d:  box        !T2
+    IL_0152:  ldnull
+    IL_0153:  ceq
+    IL_0155:  ldc.i4.0
+    IL_0156:  ceq
+    IL_0158:  stloc.2
+    IL_0159:  ldloc.2
+    IL_015a:  brfalse.s  IL_0160
+
+    IL_015c:  ldc.i4.0
+    IL_015d:  stloc.0
+    IL_015e:  br.s       IL_01bf
+
+    IL_0160:  br.s       IL_0179
+
+    IL_0162:  nop
+    IL_0163:  ldloc.1
+    IL_0164:  ldfld      !2 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$File
+    IL_0169:  box        !T2
+    IL_016e:  ldnull
+    IL_016f:  ceq
+    IL_0171:  stloc.3
+    IL_0172:  ldloc.3
+    IL_0173:  brfalse.s  IL_0179
+
+    IL_0175:  ldc.i4.0
+    IL_0176:  stloc.0
+    IL_0177:  br.s       IL_01bf
+
+    IL_0179:  nop
+    IL_017a:  ldarg.0
+    IL_017b:  ldfld      !2 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$File
+    IL_0180:  box        !T2
+    IL_0185:  brfalse.s  IL_01b1
+
+    IL_0187:  ldloc.1
+    IL_0188:  ldfld      !2 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$File
+    IL_018d:  box        !T2
+    IL_0192:  brfalse.s  IL_01b1
+
+    IL_0194:  ldarg.0
+    IL_0195:  ldfld      !2 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$File
+    IL_019a:  box        !T2
+    IL_019f:  ldloc.1
+    IL_01a0:  ldfld      !2 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$File
+    IL_01a5:  box        !T2
+    IL_01aa:  callvirt   instance bool [mscorlib]System.Object::Equals(object)
+    IL_01af:  brfalse.s  IL_01b4
+
+    IL_01b1:  ldc.i4.0
+    IL_01b2:  br.s       IL_01b5
+
+    IL_01b4:  ldc.i4.1
+    IL_01b5:  stloc.3
+    IL_01b6:  ldloc.3
+    IL_01b7:  brfalse.s  IL_01bd
+
+    IL_01b9:  ldc.i4.0
+    IL_01ba:  stloc.0
+    IL_01bb:  br.s       IL_01bf
+
+    IL_01bd:  ldnull
+    IL_01be:  stloc.1
+    IL_01bf:  ldloc.0
+    IL_01c0:  ret
+  } // end of method VB$AnonymousType_2`3::Equals
+
+  .method public hidebysig strict virtual 
+          instance bool  Equals(object obj) cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       17 (0x11)
+    .maxstack  2
+    .locals init (bool V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  isinst     class VB$AnonymousType_2`3<!T0,!T1,!T2>
+    IL_0007:  callvirt   instance bool class VB$AnonymousType_2`3<!T0,!T1,!T2>::Equals(class VB$AnonymousType_2`3<!0,!1,!2>)
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+  } // end of method VB$AnonymousType_2`3::Equals
+
+  .method public strict virtual instance int32 
+          GetHashCode() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       170 (0xaa)
+    .maxstack  2
+    .locals init (int32 V_0,
+             !T0 V_1,
+             !T1 V_2,
+             !T2 V_3,
+             bool V_4)
+    IL_0000:  ldc.i4     0xa055e3c2
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldc.i4     0xa5555529
+    IL_000c:  mul
+    IL_000d:  stloc.0
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      !0 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Num
+    IL_0014:  box        !T0
+    IL_0019:  ldnull
+    IL_001a:  ceq
+    IL_001c:  ldc.i4.0
+    IL_001d:  ceq
+    IL_001f:  stloc.s    V_4
+    IL_0021:  ldloc.s    V_4
+    IL_0023:  brfalse.s  IL_003c
+
+    IL_0025:  ldloc.0
+    IL_0026:  ldarg.0
+    IL_0027:  ldfld      !0 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Num
+    IL_002c:  stloc.1
+    IL_002d:  ldloca.s   V_1
+    IL_002f:  constrained. !T0
+    IL_0035:  callvirt   instance int32 [mscorlib]System.Object::GetHashCode()
+    IL_003a:  add
+    IL_003b:  stloc.0
+    IL_003c:  ldloc.0
+    IL_003d:  ldc.i4     0xa5555529
+    IL_0042:  mul
+    IL_0043:  stloc.0
+    IL_0044:  ldarg.0
+    IL_0045:  ldfld      !1 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Text
+    IL_004a:  box        !T1
+    IL_004f:  ldnull
+    IL_0050:  ceq
+    IL_0052:  ldc.i4.0
+    IL_0053:  ceq
+    IL_0055:  stloc.s    V_4
+    IL_0057:  ldloc.s    V_4
+    IL_0059:  brfalse.s  IL_0072
+
+    IL_005b:  ldloc.0
+    IL_005c:  ldarg.0
+    IL_005d:  ldfld      !1 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Text
+    IL_0062:  stloc.2
+    IL_0063:  ldloca.s   V_2
+    IL_0065:  constrained. !T1
+    IL_006b:  callvirt   instance int32 [mscorlib]System.Object::GetHashCode()
+    IL_0070:  add
+    IL_0071:  stloc.0
+    IL_0072:  ldloc.0
+    IL_0073:  ldc.i4     0xa5555529
+    IL_0078:  mul
+    IL_0079:  stloc.0
+    IL_007a:  ldarg.0
+    IL_007b:  ldfld      !2 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$File
+    IL_0080:  box        !T2
+    IL_0085:  ldnull
+    IL_0086:  ceq
+    IL_0088:  ldc.i4.0
+    IL_0089:  ceq
+    IL_008b:  stloc.s    V_4
+    IL_008d:  ldloc.s    V_4
+    IL_008f:  brfalse.s  IL_00a8
+
+    IL_0091:  ldloc.0
+    IL_0092:  ldarg.0
+    IL_0093:  ldfld      !2 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$File
+    IL_0098:  stloc.3
+    IL_0099:  ldloca.s   V_3
+    IL_009b:  constrained. !T2
+    IL_00a1:  callvirt   instance int32 [mscorlib]System.Object::GetHashCode()
+    IL_00a6:  add
+    IL_00a7:  stloc.0
+    IL_00a8:  ldloc.0
+    IL_00a9:  ret
+  } // end of method VB$AnonymousType_2`3::GetHashCode
+
+  .method public strict virtual instance string 
+          ToString() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       125 (0x7d)
+    .maxstack  4
+    .locals init (class [mscorlib]System.Text.StringBuilder V_0,
+             string V_1)
+    IL_0000:  newobj     instance void [mscorlib]System.Text.StringBuilder::.ctor()
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldstr      "{ "
+    IL_000c:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(string)
+    IL_0011:  pop
+    IL_0012:  ldloc.0
+    IL_0013:  ldstr      "{0} = {1}, "
+    IL_0018:  ldstr      "Num"
+    IL_001d:  ldarg.0
+    IL_001e:  ldfld      !0 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Num
+    IL_0023:  box        !T0
+    IL_0028:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::AppendFormat(string,
+                                                                                                                              object,
+                                                                                                                              object)
+    IL_002d:  pop
+    IL_002e:  ldloc.0
+    IL_002f:  ldstr      "{0} = {1}, "
+    IL_0034:  ldstr      "Text"
+    IL_0039:  ldarg.0
+    IL_003a:  ldfld      !1 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Text
+    IL_003f:  box        !T1
+    IL_0044:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::AppendFormat(string,
+                                                                                                                              object,
+                                                                                                                              object)
+    IL_0049:  pop
+    IL_004a:  ldloc.0
+    IL_004b:  ldstr      "{0} = {1} "
+    IL_0050:  ldstr      "File"
+    IL_0055:  ldarg.0
+    IL_0056:  ldfld      !2 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$File
+    IL_005b:  box        !T2
+    IL_0060:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::AppendFormat(string,
+                                                                                                                              object,
+                                                                                                                              object)
+    IL_0065:  pop
+    IL_0066:  ldloc.0
+    IL_0067:  ldstr      "}"
+    IL_006c:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(string)
+    IL_0071:  pop
+    IL_0072:  ldloc.0
+    IL_0073:  callvirt   instance string [mscorlib]System.Text.StringBuilder::ToString()
+    IL_0078:  stloc.1
+    IL_0079:  br.s       IL_007b
+
+    IL_007b:  ldloc.1
+    IL_007c:  ret
+  } // end of method VB$AnonymousType_2`3::ToString
+
+  .method public specialname instance !T0 
+          get_Num() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (!T0 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      !0 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Num
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method VB$AnonymousType_2`3::get_Num
+
+  .method public specialname instance !T1 
+          get_Text() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (!T1 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      !1 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$Text
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method VB$AnonymousType_2`3::get_Text
+
+  .method public specialname instance !T2 
+          get_File() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (!T2 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      !2 class VB$AnonymousType_2`3<!T0,!T1,!T2>::$File
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method VB$AnonymousType_2`3::get_File
+
+  .property instance !T0 Num()
+  {
+    .get instance !T0 VB$AnonymousType_2`3::get_Num()
+  } // end of property VB$AnonymousType_2`3::Num
+  .property instance !T1 Text()
+  {
+    .get instance !T1 VB$AnonymousType_2`3::get_Text()
+  } // end of property VB$AnonymousType_2`3::Text
+  .property instance !T2 File()
+  {
+    .get instance !T2 VB$AnonymousType_2`3::get_File()
+  } // end of property VB$AnonymousType_2`3::File
+} // end of class VB$AnonymousType_2`3
+
+.class private auto ansi sealed VB$AnonymousType_3`2<T0,T1>
+       extends [mscorlib]System.Object
+       implements class [mscorlib]System.IEquatable`1<class VB$AnonymousType_3`2<!T0,!T1>>
+{
+  .custom instance void [mscorlib]System.Diagnostics.DebuggerDisplayAttribute::.ctor(string) = ( 01 00 18 66 69 6C 65 3D 7B 66 69 6C 65 7D 2C 20   // ...file={file}, 
+                                                                                                 6C 69 6E 65 3D 7B 6C 69 6E 65 7D 00 00 )          // line={line}..
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private initonly !T0 $file
+  .field private initonly !T1 $line
+  .method public specialname rtspecialname 
+          instance void  .ctor(!T0 file,
+                               !T1 line) cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       23 (0x17)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+    IL_0007:  ldarg.0
+    IL_0008:  ldarg.1
+    IL_0009:  stfld      !0 class VB$AnonymousType_3`2<!T0,!T1>::$file
+    IL_000e:  ldarg.0
+    IL_000f:  ldarg.2
+    IL_0010:  stfld      !1 class VB$AnonymousType_3`2<!T0,!T1>::$line
+    IL_0015:  nop
+    IL_0016:  ret
+  } // end of method VB$AnonymousType_3`2::.ctor
+
+  .method public hidebysig strict virtual 
+          instance bool  Equals(object obj) cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       17 (0x11)
+    .maxstack  2
+    .locals init (bool V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  isinst     class VB$AnonymousType_3`2<!T0,!T1>
+    IL_0007:  callvirt   instance bool class VB$AnonymousType_3`2<!T0,!T1>::Equals(class VB$AnonymousType_3`2<!0,!1>)
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+  } // end of method VB$AnonymousType_3`2::Equals
+
+  .method public hidebysig newslot strict virtual final 
+          instance bool  Equals(class VB$AnonymousType_3`2<!T0,!T1> val) cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .override  method instance bool class [mscorlib]System.IEquatable`1<class VB$AnonymousType_3`2<!T0,!T1>>::Equals(!0)
+    // Code size       304 (0x130)
+    .maxstack  2
+    .locals init (bool V_0,
+             class VB$AnonymousType_3`2<!T0,!T1> V_1,
+             bool V_2,
+             bool V_3)
+    IL_0000:  ldc.i4.1
+    IL_0001:  stloc.0
+    IL_0002:  ldarg.1
+    IL_0003:  ldnull
+    IL_0004:  ceq
+    IL_0006:  stloc.2
+    IL_0007:  ldloc.2
+    IL_0008:  brfalse.s  IL_0011
+
+    IL_000a:  ldc.i4.0
+    IL_000b:  stloc.0
+    IL_000c:  br         IL_012e
+
+    IL_0011:  ldarg.1
+    IL_0012:  stloc.1
+    IL_0013:  ldarg.0
+    IL_0014:  ldfld      !0 class VB$AnonymousType_3`2<!T0,!T1>::$file
+    IL_0019:  box        !T0
+    IL_001e:  ldnull
+    IL_001f:  ceq
+    IL_0021:  stloc.2
+    IL_0022:  ldloc.2
+    IL_0023:  brfalse.s  IL_0043
+
+    IL_0025:  ldloc.1
+    IL_0026:  ldfld      !0 class VB$AnonymousType_3`2<!T0,!T1>::$file
+    IL_002b:  box        !T0
+    IL_0030:  ldnull
+    IL_0031:  ceq
+    IL_0033:  ldc.i4.0
+    IL_0034:  ceq
+    IL_0036:  stloc.3
+    IL_0037:  ldloc.3
+    IL_0038:  brfalse.s  IL_0041
+
+    IL_003a:  ldc.i4.0
+    IL_003b:  stloc.0
+    IL_003c:  br         IL_012e
+
+    IL_0041:  br.s       IL_005d
+
+    IL_0043:  nop
+    IL_0044:  ldloc.1
+    IL_0045:  ldfld      !0 class VB$AnonymousType_3`2<!T0,!T1>::$file
+    IL_004a:  box        !T0
+    IL_004f:  ldnull
+    IL_0050:  ceq
+    IL_0052:  stloc.3
+    IL_0053:  ldloc.3
+    IL_0054:  brfalse.s  IL_005d
+
+    IL_0056:  ldc.i4.0
+    IL_0057:  stloc.0
+    IL_0058:  br         IL_012e
+
+    IL_005d:  nop
+    IL_005e:  ldarg.0
+    IL_005f:  ldfld      !0 class VB$AnonymousType_3`2<!T0,!T1>::$file
+    IL_0064:  box        !T0
+    IL_0069:  brfalse.s  IL_0095
+
+    IL_006b:  ldloc.1
+    IL_006c:  ldfld      !0 class VB$AnonymousType_3`2<!T0,!T1>::$file
+    IL_0071:  box        !T0
+    IL_0076:  brfalse.s  IL_0095
+
+    IL_0078:  ldarg.0
+    IL_0079:  ldfld      !0 class VB$AnonymousType_3`2<!T0,!T1>::$file
+    IL_007e:  box        !T0
+    IL_0083:  ldloc.1
+    IL_0084:  ldfld      !0 class VB$AnonymousType_3`2<!T0,!T1>::$file
+    IL_0089:  box        !T0
+    IL_008e:  callvirt   instance bool [mscorlib]System.Object::Equals(object)
+    IL_0093:  brfalse.s  IL_0098
+
+    IL_0095:  ldc.i4.0
+    IL_0096:  br.s       IL_0099
+
+    IL_0098:  ldc.i4.1
+    IL_0099:  stloc.3
+    IL_009a:  ldloc.3
+    IL_009b:  brfalse.s  IL_00a4
+
+    IL_009d:  ldc.i4.0
+    IL_009e:  stloc.0
+    IL_009f:  br         IL_012e
+
+    IL_00a4:  ldarg.0
+    IL_00a5:  ldfld      !1 class VB$AnonymousType_3`2<!T0,!T1>::$line
+    IL_00aa:  box        !T1
+    IL_00af:  ldnull
+    IL_00b0:  ceq
+    IL_00b2:  stloc.3
+    IL_00b3:  ldloc.3
+    IL_00b4:  brfalse.s  IL_00d1
+
+    IL_00b6:  ldloc.1
+    IL_00b7:  ldfld      !1 class VB$AnonymousType_3`2<!T0,!T1>::$line
+    IL_00bc:  box        !T1
+    IL_00c1:  ldnull
+    IL_00c2:  ceq
+    IL_00c4:  ldc.i4.0
+    IL_00c5:  ceq
+    IL_00c7:  stloc.2
+    IL_00c8:  ldloc.2
+    IL_00c9:  brfalse.s  IL_00cf
+
+    IL_00cb:  ldc.i4.0
+    IL_00cc:  stloc.0
+    IL_00cd:  br.s       IL_012e
+
+    IL_00cf:  br.s       IL_00e8
+
+    IL_00d1:  nop
+    IL_00d2:  ldloc.1
+    IL_00d3:  ldfld      !1 class VB$AnonymousType_3`2<!T0,!T1>::$line
+    IL_00d8:  box        !T1
+    IL_00dd:  ldnull
+    IL_00de:  ceq
+    IL_00e0:  stloc.3
+    IL_00e1:  ldloc.3
+    IL_00e2:  brfalse.s  IL_00e8
+
+    IL_00e4:  ldc.i4.0
+    IL_00e5:  stloc.0
+    IL_00e6:  br.s       IL_012e
+
+    IL_00e8:  nop
+    IL_00e9:  ldarg.0
+    IL_00ea:  ldfld      !1 class VB$AnonymousType_3`2<!T0,!T1>::$line
+    IL_00ef:  box        !T1
+    IL_00f4:  brfalse.s  IL_0120
+
+    IL_00f6:  ldloc.1
+    IL_00f7:  ldfld      !1 class VB$AnonymousType_3`2<!T0,!T1>::$line
+    IL_00fc:  box        !T1
+    IL_0101:  brfalse.s  IL_0120
+
+    IL_0103:  ldarg.0
+    IL_0104:  ldfld      !1 class VB$AnonymousType_3`2<!T0,!T1>::$line
+    IL_0109:  box        !T1
+    IL_010e:  ldloc.1
+    IL_010f:  ldfld      !1 class VB$AnonymousType_3`2<!T0,!T1>::$line
+    IL_0114:  box        !T1
+    IL_0119:  callvirt   instance bool [mscorlib]System.Object::Equals(object)
+    IL_011e:  brfalse.s  IL_0123
+
+    IL_0120:  ldc.i4.0
+    IL_0121:  br.s       IL_0124
+
+    IL_0123:  ldc.i4.1
+    IL_0124:  stloc.3
+    IL_0125:  ldloc.3
+    IL_0126:  brfalse.s  IL_012c
+
+    IL_0128:  ldc.i4.0
+    IL_0129:  stloc.0
+    IL_012a:  br.s       IL_012e
+
+    IL_012c:  ldnull
+    IL_012d:  stloc.1
+    IL_012e:  ldloc.0
+    IL_012f:  ret
+  } // end of method VB$AnonymousType_3`2::Equals
+
+  .method public strict virtual instance int32 
+          GetHashCode() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       112 (0x70)
+    .maxstack  2
+    .locals init (int32 V_0,
+             !T0 V_1,
+             !T1 V_2,
+             bool V_3)
+    IL_0000:  ldc.i4     0x2a453aa9
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldc.i4     0xa5555529
+    IL_000c:  mul
+    IL_000d:  stloc.0
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      !0 class VB$AnonymousType_3`2<!T0,!T1>::$file
+    IL_0014:  box        !T0
+    IL_0019:  ldnull
+    IL_001a:  ceq
+    IL_001c:  ldc.i4.0
+    IL_001d:  ceq
+    IL_001f:  stloc.3
+    IL_0020:  ldloc.3
+    IL_0021:  brfalse.s  IL_003a
+
+    IL_0023:  ldloc.0
+    IL_0024:  ldarg.0
+    IL_0025:  ldfld      !0 class VB$AnonymousType_3`2<!T0,!T1>::$file
+    IL_002a:  stloc.1
+    IL_002b:  ldloca.s   V_1
+    IL_002d:  constrained. !T0
+    IL_0033:  callvirt   instance int32 [mscorlib]System.Object::GetHashCode()
+    IL_0038:  add
+    IL_0039:  stloc.0
+    IL_003a:  ldloc.0
+    IL_003b:  ldc.i4     0xa5555529
+    IL_0040:  mul
+    IL_0041:  stloc.0
+    IL_0042:  ldarg.0
+    IL_0043:  ldfld      !1 class VB$AnonymousType_3`2<!T0,!T1>::$line
+    IL_0048:  box        !T1
+    IL_004d:  ldnull
+    IL_004e:  ceq
+    IL_0050:  ldc.i4.0
+    IL_0051:  ceq
+    IL_0053:  stloc.3
+    IL_0054:  ldloc.3
+    IL_0055:  brfalse.s  IL_006e
+
+    IL_0057:  ldloc.0
+    IL_0058:  ldarg.0
+    IL_0059:  ldfld      !1 class VB$AnonymousType_3`2<!T0,!T1>::$line
+    IL_005e:  stloc.2
+    IL_005f:  ldloca.s   V_2
+    IL_0061:  constrained. !T1
+    IL_0067:  callvirt   instance int32 [mscorlib]System.Object::GetHashCode()
+    IL_006c:  add
+    IL_006d:  stloc.0
+    IL_006e:  ldloc.0
+    IL_006f:  ret
+  } // end of method VB$AnonymousType_3`2::GetHashCode
+
+  .method public strict virtual instance string 
+          ToString() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       97 (0x61)
+    .maxstack  4
+    .locals init (class [mscorlib]System.Text.StringBuilder V_0,
+             string V_1)
+    IL_0000:  newobj     instance void [mscorlib]System.Text.StringBuilder::.ctor()
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldstr      "{ "
+    IL_000c:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(string)
+    IL_0011:  pop
+    IL_0012:  ldloc.0
+    IL_0013:  ldstr      "{0} = {1}, "
+    IL_0018:  ldstr      "file"
+    IL_001d:  ldarg.0
+    IL_001e:  ldfld      !0 class VB$AnonymousType_3`2<!T0,!T1>::$file
+    IL_0023:  box        !T0
+    IL_0028:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::AppendFormat(string,
+                                                                                                                              object,
+                                                                                                                              object)
+    IL_002d:  pop
+    IL_002e:  ldloc.0
+    IL_002f:  ldstr      "{0} = {1} "
+    IL_0034:  ldstr      "line"
+    IL_0039:  ldarg.0
+    IL_003a:  ldfld      !1 class VB$AnonymousType_3`2<!T0,!T1>::$line
+    IL_003f:  box        !T1
+    IL_0044:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::AppendFormat(string,
+                                                                                                                              object,
+                                                                                                                              object)
+    IL_0049:  pop
+    IL_004a:  ldloc.0
+    IL_004b:  ldstr      "}"
+    IL_0050:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(string)
+    IL_0055:  pop
+    IL_0056:  ldloc.0
+    IL_0057:  callvirt   instance string [mscorlib]System.Text.StringBuilder::ToString()
+    IL_005c:  stloc.1
+    IL_005d:  br.s       IL_005f
+
+    IL_005f:  ldloc.1
+    IL_0060:  ret
+  } // end of method VB$AnonymousType_3`2::ToString
+
+  .method public specialname instance !T0 
+          get_file() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (!T0 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      !0 class VB$AnonymousType_3`2<!T0,!T1>::$file
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method VB$AnonymousType_3`2::get_file
+
+  .method public specialname instance !T1 
+          get_line() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (!T1 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      !1 class VB$AnonymousType_3`2<!T0,!T1>::$line
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method VB$AnonymousType_3`2::get_line
+
+  .property instance !T0 file()
+  {
+    .get instance !T0 VB$AnonymousType_3`2::get_file()
+  } // end of property VB$AnonymousType_3`2::file
+  .property instance !T1 line()
+  {
+    .get instance !T1 VB$AnonymousType_3`2::get_line()
+  } // end of property VB$AnonymousType_3`2::line
+} // end of class VB$AnonymousType_3`2
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

@@ -1,0 +1,1830 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_CSharp\MainForm.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\GameOfLifeLogic.vb" startline="28" endline="58"><![CDATA[
+ 		Public Sub New(ByVal width As Integer, ByVal height As Integer, ByVal initialDensity As Double, ByVal pool As ObjectPool(Of Bitmap))
+             ' Validate parameters.
+ 			If width < 1 Then
+ 				Throw New ArgumentOutOfRangeException("width")
+ 			End If
+ 			If height < 1 Then
+ 				Throw New ArgumentOutOfRangeException("height")
+ 			End If
+ 			If pool Is Nothing Then
+ 				Throw New ArgumentNullException("pool")
+ 			End If
+ 			If initialDensity < 0 OrElse initialDensity > 1 Then
+ 				Throw New ArgumentOutOfRangeException("initialDensity")
+ 			End If
+ 
+             ' Store parameters.
+ 			_pool = pool
+ 			Me.Width = width
+ 			Me.Height = height
+ 
+             ' Create the storage arrays.
+ 			_scratch = New Color?(1)(,) { New Color?(width - 1, height - 1){}, New Color?(width - 1, height - 1){} }
+ 
+             ' Populate the board randomly based on the provided initial density.
+ 			Dim rand As New Random()
+             For i = 0 To width - 1
+                 For j = 0 To height - 1
+                     _scratch(_currentIndex)(i, j) = If((rand.NextDouble() < initialDensity), Color.FromArgb(rand.Next()), CType(Nothing, Color?))
+                 Next j
+             Next i
+ 		End Sub
+ 
+ 		''' <summary>Moves to the next stage of the game, returning a Bitmap that represents the state of the board.</summary>
+ 		''' <returns>A bitmap that represents the state of the board.</returns>
+ 		''' <remarks>The returned Bitmap should be added back to the pool supplied to the constructor when usage of it is complete.</remarks>
+ 		Public Function MoveNext() As Bitmap
+             ' Get the current and next stage board arrays.
+             Dim nextIndex = (_currentIndex + 1) Mod 2
+             Dim current?(,) = _scratch(_currentIndex)
+             Dim [next]?(,) = _scratch(nextIndex)
+ 			Dim rand As New Random()
+ 
+             ' Get a Bitmap from the pool to use.
+ 			Dim bmp = _pool.GetObject()
+ 			Using fastBmp As New FastBitmap(bmp)
+                 ' For every row.
+                 Dim body As Action(Of Integer) = Sub(i)
+                                                      ' For every column.
+                                                      For j = 0 To Height - 1
+                                                          Dim count = 0
+                                                          Dim r = 0, g = 0, b = 0
+ 
+                                                          ' Count neighbors.
+                                                          For x = i - 1 To i + 1
+                                                              For y = j - 1 To j + 1
+                                                                  If (x = i AndAlso j = y) OrElse x < 0 OrElse x >= Width OrElse y < 0 OrElse y >= Height Then
+                                                                      Continue For
+                                                                  End If
+                                                                  Dim c? = current(x, y)
+                                                                  If c.HasValue Then
+                                                                      count += 1
+                                                                      r += c.Value.R
+                                                                      g += c.Value.G
+                                                                      b += c.Value.B
+                                                                  End If
+                                                              Next y
+                                                          Next x
+ 
+                                                          ' Heuristic for alive or dead based on neighbor count and current state.
+                                                          If count < 1 OrElse count >= 4 Then
+                                                              [next](i, j) = Nothing
+                                                          ElseIf current(i, j).HasValue AndAlso (count = 2 OrElse count = 3) Then
+                                                              [next](i, j) = current(i, j)
+                                                          ElseIf (Not current(i, j).HasValue) AndAlso count = 3 Then
+                                                              [next](i, j) = Color.FromArgb(r \ count, g \ count, b \ count)
+                                                          Else
+                                                              [next](i, j) = Nothing
+                                                          End If
+ 
+                                                          ' Render the cell.
+                                                          fastBmp.SetColor(i, j, If(current(i, j), Color.White))
+                                                      Next j
+                                                  End Sub
+ 
+                 ' Process the rows serially or in parallel based on the RunParallel property setting.
+ 				If RunParallel Then
+ 					Parallel.For(0, Width, body)
+ 				Else
+                     For i = 0 To Width - 1
+                         body(i)
+                     Next i
+ 				End If
+ 			End Using
+ 
+ 			' Update and return
+ 			_currentIndex = nextIndex
+ 			Return bmp
+ 		End Function
+ 
+ 		''' <summary>Gets the width of the board.</summary>
+ 		Private privateWidth As Integer
+ 		Public Property Width() As Integer
+ 			Get
+ 				Return privateWidth
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateWidth = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets the height of the board.</summary>
+ 		Private privateHeight As Integer
+ 		Public Property Height() As Integer
+ 			Get
+ 				Return privateHeight
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateHeight = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets or sets whether to run in parallel.</summary>
+ 		Public Property RunParallel() As Boolean
+ 	End Class
+ End Namespace
+ 			If width < 1 Then
+ 				Throw New ArgumentOutOfRangeException("width")
+ 			End If
+ 			If height < 1 Then
+ 				Throw New ArgumentOutOfRangeException("height")
+ 			End If
+ 			If pool Is Nothing Then
+ 				Throw New ArgumentNullException("pool")
+ 			End If
+ 			If initialDensity < 0 OrElse initialDensity > 1 Then
+ 				Throw New ArgumentOutOfRangeException("initialDensity")
+ 			End If
+ 
+             ' Store parameters.
+ 			_pool = pool
+ 			Me.Width = width
+ 			Me.Height = height
+ 
+             ' Create the storage arrays.
+ 			_scratch = New Color?(1)(,) { New Color?(width - 1, height - 1){}, New Color?(width - 1, height - 1){} }
+ 
+             ' Populate the board randomly based on the provided initial density.
+ 			Dim rand As New Random()
+             For i = 0 To width - 1
+                 For j = 0 To height - 1
+                     _scratch(_currentIndex)(i, j) = If((rand.NextDouble() < initialDensity), Color.FromArgb(rand.Next()), CType(Nothing, Color?))
+                 Next j
+             Next i
+ 		End Sub
+ 
+ 		''' <summary>Moves to the next stage of the game, returning a Bitmap that represents the state of the board.</summary>
+ 		''' <returns>A bitmap that represents the state of the board.</returns>
+ 		''' <remarks>The returned Bitmap should be added back to the pool supplied to the constructor when usage of it is complete.</remarks>
+ 		Public Function MoveNext() As Bitmap
+             ' Get the current and next stage board arrays.
+             Dim nextIndex = (_currentIndex + 1) Mod 2
+             Dim current?(,) = _scratch(_currentIndex)
+             Dim [next]?(,) = _scratch(nextIndex)
+ 			Dim rand As New Random()
+ 
+             ' Get a Bitmap from the pool to use.
+ 			Dim bmp = _pool.GetObject()
+ 			Using fastBmp As New FastBitmap(bmp)
+                 ' For every row.
+                 Dim body As Action(Of Integer) = Sub(i)
+                                                      ' For every column.
+                                                      For j = 0 To Height - 1
+                                                          Dim count = 0
+                                                          Dim r = 0, g = 0, b = 0
+ 
+                                                          ' Count neighbors.
+                                                          For x = i - 1 To i + 1
+                                                              For y = j - 1 To j + 1
+                                                                  If (x = i AndAlso j = y) OrElse x < 0 OrElse x >= Width OrElse y < 0 OrElse y >= Height Then
+                                                                      Continue For
+                                                                  End If
+                                                                  Dim c? = current(x, y)
+                                                                  If c.HasValue Then
+                                                                      count += 1
+                                                                      r += c.Value.R
+                                                                      g += c.Value.G
+                                                                      b += c.Value.B
+                                                                  End If
+                                                              Next y
+                                                          Next x
+ 
+                                                          ' Heuristic for alive or dead based on neighbor count and current state.
+                                                          If count < 1 OrElse count >= 4 Then
+                                                              [next](i, j) = Nothing
+                                                          ElseIf current(i, j).HasValue AndAlso (count = 2 OrElse count = 3) Then
+                                                              [next](i, j) = current(i, j)
+                                                          ElseIf (Not current(i, j).HasValue) AndAlso count = 3 Then
+                                                              [next](i, j) = Color.FromArgb(r \ count, g \ count, b \ count)
+                                                          Else
+                                                              [next](i, j) = Nothing
+                                                          End If
+ 
+                                                          ' Render the cell.
+                                                          fastBmp.SetColor(i, j, If(current(i, j), Color.White))
+                                                      Next j
+                                                  End Sub
+ 
+                 ' Process the rows serially or in parallel based on the RunParallel property setting.
+ 				If RunParallel Then
+ 					Parallel.For(0, Width, body)
+ 				Else
+                     For i = 0 To Width - 1
+                         body(i)
+                     Next i
+ 				End If
+ 			End Using
+ 
+ 			' Update and return
+ 			_currentIndex = nextIndex
+ 			Return bmp
+ 		End Function
+ 
+ 		''' <summary>Gets the width of the board.</summary>
+ 		Private privateWidth As Integer
+ 		Public Property Width() As Integer
+ 			Get
+ 				Return privateWidth
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateWidth = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets the height of the board.</summary>
+ 		Private privateHeight As Integer
+ 		Public Property Height() As Integer
+ 			Get
+ 				Return privateHeight
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateHeight = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets or sets whether to run in parallel.</summary>
+ 		Public Property RunParallel() As Boolean
+ 	End Class
+ End Namespace
+ 				Throw New ArgumentOutOfRangeException("width")
+ 			End If
+ 			If height < 1 Then
+ 				Throw New ArgumentOutOfRangeException("height")
+ 			End If
+ 			If pool Is Nothing Then
+ 				Throw New ArgumentNullException("pool")
+ 			End If
+ 			If initialDensity < 0 OrElse initialDensity > 1 Then
+ 				Throw New ArgumentOutOfRangeException("initialDensity")
+ 			End If
+ 
+             ' Store parameters.
+ 			_pool = pool
+ 			Me.Width = width
+ 			Me.Height = height
+ 
+             ' Create the storage arrays.
+ 			_scratch = New Color?(1)(,) { New Color?(width - 1, height - 1){}, New Color?(width - 1, height - 1){} }
+ 
+             ' Populate the board randomly based on the provided initial density.
+ 			Dim rand As New Random()
+             For i = 0 To width - 1
+                 For j = 0 To height - 1
+                     _scratch(_currentIndex)(i, j) = If((rand.NextDouble() < initialDensity), Color.FromArgb(rand.Next()), CType(Nothing, Color?))
+                 Next j
+             Next i
+ 		End Sub
+ 
+ 		''' <summary>Moves to the next stage of the game, returning a Bitmap that represents the state of the board.</summary>
+ 		''' <returns>A bitmap that represents the state of the board.</returns>
+ 		''' <remarks>The returned Bitmap should be added back to the pool supplied to the constructor when usage of it is complete.</remarks>
+ 		Public Function MoveNext() As Bitmap
+             ' Get the current and next stage board arrays.
+             Dim nextIndex = (_currentIndex + 1) Mod 2
+             Dim current?(,) = _scratch(_currentIndex)
+             Dim [next]?(,) = _scratch(nextIndex)
+ 			Dim rand As New Random()
+ 
+             ' Get a Bitmap from the pool to use.
+ 			Dim bmp = _pool.GetObject()
+ 			Using fastBmp As New FastBitmap(bmp)
+                 ' For every row.
+                 Dim body As Action(Of Integer) = Sub(i)
+                                                      ' For every column.
+                                                      For j = 0 To Height - 1
+                                                          Dim count = 0
+                                                          Dim r = 0, g = 0, b = 0
+ 
+                                                          ' Count neighbors.
+                                                          For x = i - 1 To i + 1
+                                                              For y = j - 1 To j + 1
+                                                                  If (x = i AndAlso j = y) OrElse x < 0 OrElse x >= Width OrElse y < 0 OrElse y >= Height Then
+                                                                      Continue For
+                                                                  End If
+                                                                  Dim c? = current(x, y)
+                                                                  If c.HasValue Then
+                                                                      count += 1
+                                                                      r += c.Value.R
+                                                                      g += c.Value.G
+                                                                      b += c.Value.B
+                                                                  End If
+                                                              Next y
+                                                          Next x
+ 
+                                                          ' Heuristic for alive or dead based on neighbor count and current state.
+                                                          If count < 1 OrElse count >= 4 Then
+                                                              [next](i, j) = Nothing
+                                                          ElseIf current(i, j).HasValue AndAlso (count = 2 OrElse count = 3) Then
+                                                              [next](i, j) = current(i, j)
+                                                          ElseIf (Not current(i, j).HasValue) AndAlso count = 3 Then
+                                                              [next](i, j) = Color.FromArgb(r \ count, g \ count, b \ count)
+                                                          Else
+                                                              [next](i, j) = Nothing
+                                                          End If
+ 
+                                                          ' Render the cell.
+                                                          fastBmp.SetColor(i, j, If(current(i, j), Color.White))
+                                                      Next j
+                                                  End Sub
+ 
+                 ' Process the rows serially or in parallel based on the RunParallel property setting.
+ 				If RunParallel Then
+ 					Parallel.For(0, Width, body)
+ 				Else
+                     For i = 0 To Width - 1
+                         body(i)
+                     Next i
+ 				End If
+ 			End Using
+ 
+ 			' Update and return
+ 			_currentIndex = nextIndex
+ 			Return bmp
+ 		End Function
+ 
+ 		''' <summary>Gets the width of the board.</summary>
+ 		Private privateWidth As Integer
+ 		Public Property Width() As Integer
+ 			Get
+ 				Return privateWidth
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateWidth = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets the height of the board.</summary>
+ 		Private privateHeight As Integer
+ 		Public Property Height() As Integer
+ 			Get
+ 				Return privateHeight
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateHeight = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets or sets whether to run in parallel.</summary>
+ 		Public Property RunParallel() As Boolean
+ 	End Class
+ End Namespace
+ 				Throw New ArgumentOutOfRangeException("height")
+ 			End If
+ 			If pool Is Nothing Then
+ 				Throw New ArgumentNullException("pool")
+ 			End If
+ 			If initialDensity < 0 OrElse initialDensity > 1 Then
+ 				Throw New ArgumentOutOfRangeException("initialDensity")
+ 			End If
+ 
+             ' Store parameters.
+ 			_pool = pool
+ 			Me.Width = width
+ 			Me.Height = height
+ 
+             ' Create the storage arrays.
+ 			_scratch = New Color?(1)(,) { New Color?(width - 1, height - 1){}, New Color?(width - 1, height - 1){} }
+ 
+             ' Populate the board randomly based on the provided initial density.
+ 			Dim rand As New Random()
+             For i = 0 To width - 1
+                 For j = 0 To height - 1
+                     _scratch(_currentIndex)(i, j) = If((rand.NextDouble() < initialDensity), Color.FromArgb(rand.Next()), CType(Nothing, Color?))
+                 Next j
+             Next i
+ 		End Sub
+ 
+ 		''' <summary>Moves to the next stage of the game, returning a Bitmap that represents the state of the board.</summary>
+ 		''' <returns>A bitmap that represents the state of the board.</returns>
+ 		''' <remarks>The returned Bitmap should be added back to the pool supplied to the constructor when usage of it is complete.</remarks>
+ 		Public Function MoveNext() As Bitmap
+             ' Get the current and next stage board arrays.
+             Dim nextIndex = (_currentIndex + 1) Mod 2
+             Dim current?(,) = _scratch(_currentIndex)
+             Dim [next]?(,) = _scratch(nextIndex)
+ 			Dim rand As New Random()
+ 
+             ' Get a Bitmap from the pool to use.
+ 			Dim bmp = _pool.GetObject()
+ 			Using fastBmp As New FastBitmap(bmp)
+                 ' For every row.
+                 Dim body As Action(Of Integer) = Sub(i)
+                                                      ' For every column.
+                                                      For j = 0 To Height - 1
+                                                          Dim count = 0
+                                                          Dim r = 0, g = 0, b = 0
+ 
+                                                          ' Count neighbors.
+                                                          For x = i - 1 To i + 1
+                                                              For y = j - 1 To j + 1
+                                                                  If (x = i AndAlso j = y) OrElse x < 0 OrElse x >= Width OrElse y < 0 OrElse y >= Height Then
+                                                                      Continue For
+                                                                  End If
+                                                                  Dim c? = current(x, y)
+                                                                  If c.HasValue Then
+                                                                      count += 1
+                                                                      r += c.Value.R
+                                                                      g += c.Value.G
+                                                                      b += c.Value.B
+                                                                  End If
+                                                              Next y
+                                                          Next x
+ 
+                                                          ' Heuristic for alive or dead based on neighbor count and current state.
+                                                          If count < 1 OrElse count >= 4 Then
+                                                              [next](i, j) = Nothing
+                                                          ElseIf current(i, j).HasValue AndAlso (count = 2 OrElse count = 3) Then
+                                                              [next](i, j) = current(i, j)
+                                                          ElseIf (Not current(i, j).HasValue) AndAlso count = 3 Then
+                                                              [next](i, j) = Color.FromArgb(r \ count, g \ count, b \ count)
+                                                          Else
+                                                              [next](i, j) = Nothing
+                                                          End If
+ 
+                                                          ' Render the cell.
+                                                          fastBmp.SetColor(i, j, If(current(i, j), Color.White))
+                                                      Next j
+                                                  End Sub
+ 
+                 ' Process the rows serially or in parallel based on the RunParallel property setting.
+ 				If RunParallel Then
+ 					Parallel.For(0, Width, body)
+ 				Else
+                     For i = 0 To Width - 1
+                         body(i)
+                     Next i
+ 				End If
+ 			End Using
+ 
+ 			' Update and return
+ 			_currentIndex = nextIndex
+ 			Return bmp
+ 		End Function
+ 
+ 		''' <summary>Gets the width of the board.</summary>
+ 		Private privateWidth As Integer
+ 		Public Property Width() As Integer
+ 			Get
+ 				Return privateWidth
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateWidth = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets the height of the board.</summary>
+ 		Private privateHeight As Integer
+ 		Public Property Height() As Integer
+ 			Get
+ 				Return privateHeight
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateHeight = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets or sets whether to run in parallel.</summary>
+ 		Public Property RunParallel() As Boolean
+ 	End Class
+ End Namespace
+ 				Throw New ArgumentNullException("pool")
+ 			End If
+ 			If initialDensity < 0 OrElse initialDensity > 1 Then
+ 				Throw New ArgumentOutOfRangeException("initialDensity")
+ 			End If
+ 
+             ' Store parameters.
+ 			_pool = pool
+ 			Me.Width = width
+ 			Me.Height = height
+ 
+             ' Create the storage arrays.
+ 			_scratch = New Color?(1)(,) { New Color?(width - 1, height - 1){}, New Color?(width - 1, height - 1){} }
+ 
+             ' Populate the board randomly based on the provided initial density.
+ 			Dim rand As New Random()
+             For i = 0 To width - 1
+                 For j = 0 To height - 1
+                     _scratch(_currentIndex)(i, j) = If((rand.NextDouble() < initialDensity), Color.FromArgb(rand.Next()), CType(Nothing, Color?))
+                 Next j
+             Next i
+ 		End Sub
+ 
+ 		''' <summary>Moves to the next stage of the game, returning a Bitmap that represents the state of the board.</summary>
+ 		''' <returns>A bitmap that represents the state of the board.</returns>
+ 		''' <remarks>The returned Bitmap should be added back to the pool supplied to the constructor when usage of it is complete.</remarks>
+ 		Public Function MoveNext() As Bitmap
+             ' Get the current and next stage board arrays.
+             Dim nextIndex = (_currentIndex + 1) Mod 2
+             Dim current?(,) = _scratch(_currentIndex)
+             Dim [next]?(,) = _scratch(nextIndex)
+ 			Dim rand As New Random()
+ 
+             ' Get a Bitmap from the pool to use.
+ 			Dim bmp = _pool.GetObject()
+ 			Using fastBmp As New FastBitmap(bmp)
+                 ' For every row.
+                 Dim body As Action(Of Integer) = Sub(i)
+                                                      ' For every column.
+                                                      For j = 0 To Height - 1
+                                                          Dim count = 0
+                                                          Dim r = 0, g = 0, b = 0
+ 
+                                                          ' Count neighbors.
+                                                          For x = i - 1 To i + 1
+                                                              For y = j - 1 To j + 1
+                                                                  If (x = i AndAlso j = y) OrElse x < 0 OrElse x >= Width OrElse y < 0 OrElse y >= Height Then
+                                                                      Continue For
+                                                                  End If
+                                                                  Dim c? = current(x, y)
+                                                                  If c.HasValue Then
+                                                                      count += 1
+                                                                      r += c.Value.R
+                                                                      g += c.Value.G
+                                                                      b += c.Value.B
+                                                                  End If
+                                                              Next y
+                                                          Next x
+ 
+                                                          ' Heuristic for alive or dead based on neighbor count and current state.
+                                                          If count < 1 OrElse count >= 4 Then
+                                                              [next](i, j) = Nothing
+                                                          ElseIf current(i, j).HasValue AndAlso (count = 2 OrElse count = 3) Then
+                                                              [next](i, j) = current(i, j)
+                                                          ElseIf (Not current(i, j).HasValue) AndAlso count = 3 Then
+                                                              [next](i, j) = Color.FromArgb(r \ count, g \ count, b \ count)
+                                                          Else
+                                                              [next](i, j) = Nothing
+                                                          End If
+ 
+                                                          ' Render the cell.
+                                                          fastBmp.SetColor(i, j, If(current(i, j), Color.White))
+                                                      Next j
+                                                  End Sub
+ 
+                 ' Process the rows serially or in parallel based on the RunParallel property setting.
+ 				If RunParallel Then
+ 					Parallel.For(0, Width, body)
+ 				Else
+                     For i = 0 To Width - 1
+                         body(i)
+                     Next i
+ 				End If
+ 			End Using
+ 
+ 			' Update and return
+ 			_currentIndex = nextIndex
+ 			Return bmp
+ 		End Function
+ 
+ 		''' <summary>Gets the width of the board.</summary>
+ 		Private privateWidth As Integer
+ 		Public Property Width() As Integer
+ 			Get
+ 				Return privateWidth
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateWidth = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets the height of the board.</summary>
+ 		Private privateHeight As Integer
+ 		Public Property Height() As Integer
+ 			Get
+ 				Return privateHeight
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateHeight = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets or sets whether to run in parallel.</summary>
+ 		Public Property RunParallel() As Boolean
+ 	End Class
+ End Namespace
+ 				Throw New ArgumentOutOfRangeException("initialDensity")
+ 			End If
+ 
+             ' Store parameters.
+ 			_pool = pool
+ 			Me.Width = width
+ 			Me.Height = height
+ 
+             ' Create the storage arrays.
+ 			_scratch = New Color?(1)(,) { New Color?(width - 1, height - 1){}, New Color?(width - 1, height - 1){} }
+ 
+             ' Populate the board randomly based on the provided initial density.
+ 			Dim rand As New Random()
+             For i = 0 To width - 1
+                 For j = 0 To height - 1
+                     _scratch(_currentIndex)(i, j) = If((rand.NextDouble() < initialDensity), Color.FromArgb(rand.Next()), CType(Nothing, Color?))
+                 Next j
+             Next i
+ 		End Sub
+ 
+ 		''' <summary>Moves to the next stage of the game, returning a Bitmap that represents the state of the board.</summary>
+ 		''' <returns>A bitmap that represents the state of the board.</returns>
+ 		''' <remarks>The returned Bitmap should be added back to the pool supplied to the constructor when usage of it is complete.</remarks>
+ 		Public Function MoveNext() As Bitmap
+             ' Get the current and next stage board arrays.
+             Dim nextIndex = (_currentIndex + 1) Mod 2
+             Dim current?(,) = _scratch(_currentIndex)
+             Dim [next]?(,) = _scratch(nextIndex)
+ 			Dim rand As New Random()
+ 
+             ' Get a Bitmap from the pool to use.
+ 			Dim bmp = _pool.GetObject()
+ 			Using fastBmp As New FastBitmap(bmp)
+                 ' For every row.
+                 Dim body As Action(Of Integer) = Sub(i)
+                                                      ' For every column.
+                                                      For j = 0 To Height - 1
+                                                          Dim count = 0
+                                                          Dim r = 0, g = 0, b = 0
+ 
+                                                          ' Count neighbors.
+                                                          For x = i - 1 To i + 1
+                                                              For y = j - 1 To j + 1
+                                                                  If (x = i AndAlso j = y) OrElse x < 0 OrElse x >= Width OrElse y < 0 OrElse y >= Height Then
+                                                                      Continue For
+                                                                  End If
+                                                                  Dim c? = current(x, y)
+                                                                  If c.HasValue Then
+                                                                      count += 1
+                                                                      r += c.Value.R
+                                                                      g += c.Value.G
+                                                                      b += c.Value.B
+                                                                  End If
+                                                              Next y
+                                                          Next x
+ 
+                                                          ' Heuristic for alive or dead based on neighbor count and current state.
+                                                          If count < 1 OrElse count >= 4 Then
+                                                              [next](i, j) = Nothing
+                                                          ElseIf current(i, j).HasValue AndAlso (count = 2 OrElse count = 3) Then
+                                                              [next](i, j) = current(i, j)
+                                                          ElseIf (Not current(i, j).HasValue) AndAlso count = 3 Then
+                                                              [next](i, j) = Color.FromArgb(r \ count, g \ count, b \ count)
+                                                          Else
+                                                              [next](i, j) = Nothing
+                                                          End If
+ 
+                                                          ' Render the cell.
+                                                          fastBmp.SetColor(i, j, If(current(i, j), Color.White))
+                                                      Next j
+                                                  End Sub
+ 
+                 ' Process the rows serially or in parallel based on the RunParallel property setting.
+ 				If RunParallel Then
+ 					Parallel.For(0, Width, body)
+ 				Else
+                     For i = 0 To Width - 1
+                         body(i)
+                     Next i
+ 				End If
+ 			End Using
+ 
+ 			' Update and return
+ 			_currentIndex = nextIndex
+ 			Return bmp
+ 		End Function
+ 
+ 		''' <summary>Gets the width of the board.</summary>
+ 		Private privateWidth As Integer
+ 		Public Property Width() As Integer
+ 			Get
+ 				Return privateWidth
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateWidth = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets the height of the board.</summary>
+ 		Private privateHeight As Integer
+ 		Public Property Height() As Integer
+ 			Get
+ 				Return privateHeight
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateHeight = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets or sets whether to run in parallel.</summary>
+ 		Public Property RunParallel() As Boolean
+ 	End Class
+ End Namespace
+             Next i
+ 		End Sub
+ 
+ 		''' <summary>Moves to the next stage of the game, returning a Bitmap that represents the state of the board.</summary>
+ 		''' <returns>A bitmap that represents the state of the board.</returns>
+ 		''' <remarks>The returned Bitmap should be added back to the pool supplied to the constructor when usage of it is complete.</remarks>
+ 		Public Function MoveNext() As Bitmap
+             ' Get the current and next stage board arrays.
+             Dim nextIndex = (_currentIndex + 1) Mod 2
+             Dim current?(,) = _scratch(_currentIndex)
+             Dim [next]?(,) = _scratch(nextIndex)
+ 			Dim rand As New Random()
+ 
+             ' Get a Bitmap from the pool to use.
+ 			Dim bmp = _pool.GetObject()
+ 			Using fastBmp As New FastBitmap(bmp)
+                 ' For every row.
+                 Dim body As Action(Of Integer) = Sub(i)
+                                                      ' For every column.
+                                                      For j = 0 To Height - 1
+                                                          Dim count = 0
+                                                          Dim r = 0, g = 0, b = 0
+ 
+                                                          ' Count neighbors.
+                                                          For x = i - 1 To i + 1
+                                                              For y = j - 1 To j + 1
+                                                                  If (x = i AndAlso j = y) OrElse x < 0 OrElse x >= Width OrElse y < 0 OrElse y >= Height Then
+                                                                      Continue For
+                                                                  End If
+                                                                  Dim c? = current(x, y)
+                                                                  If c.HasValue Then
+                                                                      count += 1
+                                                                      r += c.Value.R
+                                                                      g += c.Value.G
+                                                                      b += c.Value.B
+                                                                  End If
+                                                              Next y
+                                                          Next x
+ 
+                                                          ' Heuristic for alive or dead based on neighbor count and current state.
+                                                          If count < 1 OrElse count >= 4 Then
+                                                              [next](i, j) = Nothing
+                                                          ElseIf current(i, j).HasValue AndAlso (count = 2 OrElse count = 3) Then
+                                                              [next](i, j) = current(i, j)
+                                                          ElseIf (Not current(i, j).HasValue) AndAlso count = 3 Then
+                                                              [next](i, j) = Color.FromArgb(r \ count, g \ count, b \ count)
+                                                          Else
+                                                              [next](i, j) = Nothing
+                                                          End If
+ 
+                                                          ' Render the cell.
+                                                          fastBmp.SetColor(i, j, If(current(i, j), Color.White))
+                                                      Next j
+                                                  End Sub
+ 
+                 ' Process the rows serially or in parallel based on the RunParallel property setting.
+ 				If RunParallel Then
+ 					Parallel.For(0, Width, body)
+ 				Else
+                     For i = 0 To Width - 1
+                         body(i)
+                     Next i
+ 				End If
+ 			End Using
+ 
+ 			' Update and return
+ 			_currentIndex = nextIndex
+ 			Return bmp
+ 		End Function
+ 
+ 		''' <summary>Gets the width of the board.</summary>
+ 		Private privateWidth As Integer
+ 		Public Property Width() As Integer
+ 			Get
+ 				Return privateWidth
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateWidth = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets the height of the board.</summary>
+ 		Private privateHeight As Integer
+ 		Public Property Height() As Integer
+ 			Get
+ 				Return privateHeight
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateHeight = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets or sets whether to run in parallel.</summary>
+ 		Public Property RunParallel() As Boolean
+ 	End Class
+ End Namespace
+ 		End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\GameOfLifeLogic.vb" startline="59" endline="125"><![CDATA[
+ 
+ 		''' <summary>Moves to the next stage of the game, returning a Bitmap that represents the state of the board.</summary>
+ 		''' <returns>A bitmap that represents the state of the board.</returns>
+ 		''' <remarks>The returned Bitmap should be added back to the pool supplied to the constructor when usage of it is complete.</remarks>
+ 		Public Function MoveNext() As Bitmap
+             ' Get the current and next stage board arrays.
+             Dim nextIndex = (_currentIndex + 1) Mod 2
+             Dim current?(,) = _scratch(_currentIndex)
+             Dim [next]?(,) = _scratch(nextIndex)
+ 			Dim rand As New Random()
+ 
+             ' Get a Bitmap from the pool to use.
+ 			Dim bmp = _pool.GetObject()
+ 			Using fastBmp As New FastBitmap(bmp)
+                 ' For every row.
+                 Dim body As Action(Of Integer) = Sub(i)
+                                                      ' For every column.
+                                                      For j = 0 To Height - 1
+                                                          Dim count = 0
+                                                          Dim r = 0, g = 0, b = 0
+ 
+                                                          ' Count neighbors.
+                                                          For x = i - 1 To i + 1
+                                                              For y = j - 1 To j + 1
+                                                                  If (x = i AndAlso j = y) OrElse x < 0 OrElse x >= Width OrElse y < 0 OrElse y >= Height Then
+                                                                      Continue For
+                                                                  End If
+                                                                  Dim c? = current(x, y)
+                                                                  If c.HasValue Then
+                                                                      count += 1
+                                                                      r += c.Value.R
+                                                                      g += c.Value.G
+                                                                      b += c.Value.B
+                                                                  End If
+                                                              Next y
+                                                          Next x
+ 
+                                                          ' Heuristic for alive or dead based on neighbor count and current state.
+                                                          If count < 1 OrElse count >= 4 Then
+                                                              [next](i, j) = Nothing
+                                                          ElseIf current(i, j).HasValue AndAlso (count = 2 OrElse count = 3) Then
+                                                              [next](i, j) = current(i, j)
+                                                          ElseIf (Not current(i, j).HasValue) AndAlso count = 3 Then
+                                                              [next](i, j) = Color.FromArgb(r \ count, g \ count, b \ count)
+                                                          Else
+                                                              [next](i, j) = Nothing
+                                                          End If
+ 
+                                                          ' Render the cell.
+                                                          fastBmp.SetColor(i, j, If(current(i, j), Color.White))
+                                                      Next j
+                                                  End Sub
+ 
+                 ' Process the rows serially or in parallel based on the RunParallel property setting.
+ 				If RunParallel Then
+ 					Parallel.For(0, Width, body)
+ 				Else
+                     For i = 0 To Width - 1
+                         body(i)
+                     Next i
+ 				End If
+ 			End Using
+ 
+ 			' Update and return
+ 			_currentIndex = nextIndex
+ 			Return bmp
+ 		End Function
+ 
+ 		''' <summary>Gets the width of the board.</summary>
+ 		Private privateWidth As Integer
+ 		Public Property Width() As Integer
+ 			Get
+ 				Return privateWidth
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateWidth = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets the height of the board.</summary>
+ 		Private privateHeight As Integer
+ 		Public Property Height() As Integer
+ 			Get
+ 				Return privateHeight
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateHeight = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets or sets whether to run in parallel.</summary>
+ 		Public Property RunParallel() As Boolean
+ 	End Class
+ End Namespace
+             Dim nextIndex = (_currentIndex + 1) Mod 2
+             Dim current?(,) = _scratch(_currentIndex)
+             Dim [next]?(,) = _scratch(nextIndex)
+ 			Dim rand As New Random()
+ 
+             ' Get a Bitmap from the pool to use.
+ 			Dim bmp = _pool.GetObject()
+ 			Using fastBmp As New FastBitmap(bmp)
+                 ' For every row.
+                 Dim body As Action(Of Integer) = Sub(i)
+                                                      ' For every column.
+                                                      For j = 0 To Height - 1
+                                                          Dim count = 0
+                                                          Dim r = 0, g = 0, b = 0
+ 
+                                                          ' Count neighbors.
+                                                          For x = i - 1 To i + 1
+                                                              For y = j - 1 To j + 1
+                                                                  If (x = i AndAlso j = y) OrElse x < 0 OrElse x >= Width OrElse y < 0 OrElse y >= Height Then
+                                                                      Continue For
+                                                                  End If
+                                                                  Dim c? = current(x, y)
+                                                                  If c.HasValue Then
+                                                                      count += 1
+                                                                      r += c.Value.R
+                                                                      g += c.Value.G
+                                                                      b += c.Value.B
+                                                                  End If
+                                                              Next y
+                                                          Next x
+ 
+                                                          ' Heuristic for alive or dead based on neighbor count and current state.
+                                                          If count < 1 OrElse count >= 4 Then
+                                                              [next](i, j) = Nothing
+                                                          ElseIf current(i, j).HasValue AndAlso (count = 2 OrElse count = 3) Then
+                                                              [next](i, j) = current(i, j)
+                                                          ElseIf (Not current(i, j).HasValue) AndAlso count = 3 Then
+                                                              [next](i, j) = Color.FromArgb(r \ count, g \ count, b \ count)
+                                                          Else
+                                                              [next](i, j) = Nothing
+                                                          End If
+ 
+                                                          ' Render the cell.
+                                                          fastBmp.SetColor(i, j, If(current(i, j), Color.White))
+                                                      Next j
+                                                  End Sub
+ 
+                 ' Process the rows serially or in parallel based on the RunParallel property setting.
+ 				If RunParallel Then
+ 					Parallel.For(0, Width, body)
+ 				Else
+                     For i = 0 To Width - 1
+                         body(i)
+                     Next i
+ 				End If
+ 			End Using
+ 
+ 			' Update and return
+ 			_currentIndex = nextIndex
+ 			Return bmp
+ 		End Function
+ 
+ 		''' <summary>Gets the width of the board.</summary>
+ 		Private privateWidth As Integer
+ 		Public Property Width() As Integer
+ 			Get
+ 				Return privateWidth
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateWidth = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets the height of the board.</summary>
+ 		Private privateHeight As Integer
+ 		Public Property Height() As Integer
+ 			Get
+ 				Return privateHeight
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateHeight = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets or sets whether to run in parallel.</summary>
+ 		Public Property RunParallel() As Boolean
+ 	End Class
+ End Namespace
+ 			Using fastBmp As New FastBitmap(bmp)
+                 ' For every row.
+                 Dim body As Action(Of Integer) = Sub(i)
+                                                      ' For every column.
+                                                      For j = 0 To Height - 1
+                                                          Dim count = 0
+                                                          Dim r = 0, g = 0, b = 0
+ 
+                                                          ' Count neighbors.
+                                                          For x = i - 1 To i + 1
+                                                              For y = j - 1 To j + 1
+                                                                  If (x = i AndAlso j = y) OrElse x < 0 OrElse x >= Width OrElse y < 0 OrElse y >= Height Then
+                                                                      Continue For
+                                                                  End If
+                                                                  Dim c? = current(x, y)
+                                                                  If c.HasValue Then
+                                                                      count += 1
+                                                                      r += c.Value.R
+                                                                      g += c.Value.G
+                                                                      b += c.Value.B
+                                                                  End If
+                                                              Next y
+                                                          Next x
+ 
+                                                          ' Heuristic for alive or dead based on neighbor count and current state.
+                                                          If count < 1 OrElse count >= 4 Then
+                                                              [next](i, j) = Nothing
+                                                          ElseIf current(i, j).HasValue AndAlso (count = 2 OrElse count = 3) Then
+                                                              [next](i, j) = current(i, j)
+                                                          ElseIf (Not current(i, j).HasValue) AndAlso count = 3 Then
+                                                              [next](i, j) = Color.FromArgb(r \ count, g \ count, b \ count)
+                                                          Else
+                                                              [next](i, j) = Nothing
+                                                          End If
+ 
+                                                          ' Render the cell.
+                                                          fastBmp.SetColor(i, j, If(current(i, j), Color.White))
+                                                      Next j
+                                                  End Sub
+ 
+                 ' Process the rows serially or in parallel based on the RunParallel property setting.
+ 				If RunParallel Then
+ 					Parallel.For(0, Width, body)
+ 				Else
+                     For i = 0 To Width - 1
+                         body(i)
+                     Next i
+ 				End If
+ 			End Using
+ 
+ 			' Update and return
+ 			_currentIndex = nextIndex
+ 			Return bmp
+ 		End Function
+ 
+ 		''' <summary>Gets the width of the board.</summary>
+ 		Private privateWidth As Integer
+ 		Public Property Width() As Integer
+ 			Get
+ 				Return privateWidth
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateWidth = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets the height of the board.</summary>
+ 		Private privateHeight As Integer
+ 		Public Property Height() As Integer
+ 			Get
+ 				Return privateHeight
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateHeight = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets or sets whether to run in parallel.</summary>
+ 		Public Property RunParallel() As Boolean
+ 	End Class
+ End Namespace
+                 Dim body As Action(Of Integer) = Sub(i)
+                                                      ' For every column.
+                                                      For j = 0 To Height - 1
+                                                          Dim count = 0
+                                                          Dim r = 0, g = 0, b = 0
+ 
+                                                          ' Count neighbors.
+                                                          For x = i - 1 To i + 1
+                                                              For y = j - 1 To j + 1
+                                                                  If (x = i AndAlso j = y) OrElse x < 0 OrElse x >= Width OrElse y < 0 OrElse y >= Height Then
+                                                                      Continue For
+                                                                  End If
+                                                                  Dim c? = current(x, y)
+                                                                  If c.HasValue Then
+                                                                      count += 1
+                                                                      r += c.Value.R
+                                                                      g += c.Value.G
+                                                                      b += c.Value.B
+                                                                  End If
+                                                              Next y
+                                                          Next x
+ 
+                                                          ' Heuristic for alive or dead based on neighbor count and current state.
+                                                          If count < 1 OrElse count >= 4 Then
+                                                              [next](i, j) = Nothing
+                                                          ElseIf current(i, j).HasValue AndAlso (count = 2 OrElse count = 3) Then
+                                                              [next](i, j) = current(i, j)
+                                                          ElseIf (Not current(i, j).HasValue) AndAlso count = 3 Then
+                                                              [next](i, j) = Color.FromArgb(r \ count, g \ count, b \ count)
+                                                          Else
+                                                              [next](i, j) = Nothing
+                                                          End If
+ 
+                                                          ' Render the cell.
+                                                          fastBmp.SetColor(i, j, If(current(i, j), Color.White))
+                                                      Next j
+                                                  End Sub
+ 
+                 ' Process the rows serially or in parallel based on the RunParallel property setting.
+ 				If RunParallel Then
+ 					Parallel.For(0, Width, body)
+ 				Else
+                     For i = 0 To Width - 1
+                         body(i)
+                     Next i
+ 				End If
+ 			End Using
+ 
+ 			' Update and return
+ 			_currentIndex = nextIndex
+ 			Return bmp
+ 		End Function
+ 
+ 		''' <summary>Gets the width of the board.</summary>
+ 		Private privateWidth As Integer
+ 		Public Property Width() As Integer
+ 			Get
+ 				Return privateWidth
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateWidth = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets the height of the board.</summary>
+ 		Private privateHeight As Integer
+ 		Public Property Height() As Integer
+ 			Get
+ 				Return privateHeight
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateHeight = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets or sets whether to run in parallel.</summary>
+ 		Public Property RunParallel() As Boolean
+ 	End Class
+ End Namespace
+ 					Parallel.For(0, Width, body)
+ 				Else
+                     For i = 0 To Width - 1
+                         body(i)
+                     Next i
+ 				End If
+ 			End Using
+ 
+ 			' Update and return
+ 			_currentIndex = nextIndex
+ 			Return bmp
+ 		End Function
+ 
+ 		''' <summary>Gets the width of the board.</summary>
+ 		Private privateWidth As Integer
+ 		Public Property Width() As Integer
+ 			Get
+ 				Return privateWidth
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateWidth = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets the height of the board.</summary>
+ 		Private privateHeight As Integer
+ 		Public Property Height() As Integer
+ 			Get
+ 				Return privateHeight
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateHeight = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets or sets whether to run in parallel.</summary>
+ 		Public Property RunParallel() As Boolean
+ 	End Class
+ End Namespace
+ 				End If
+ 			End Using
+ 
+ 			' Update and return
+ 			_currentIndex = nextIndex
+ 			Return bmp
+ 		End Function
+ 
+ 		''' <summary>Gets the width of the board.</summary>
+ 		Private privateWidth As Integer
+ 		Public Property Width() As Integer
+ 			Get
+ 				Return privateWidth
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateWidth = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets the height of the board.</summary>
+ 		Private privateHeight As Integer
+ 		Public Property Height() As Integer
+ 			Get
+ 				Return privateHeight
+ 			End Get
+ 			Private Set(ByVal value As Integer)
+ 				privateHeight = value
+ 			End Set
+ 		End Property
+ 		''' <summary>Gets or sets whether to run in parallel.</summary>
+ 		Public Property RunParallel() As Boolean
+ 	End Class
+ End Namespace
+ 			_currentIndex = nextIndex
+ 			Return bmp
+ 		End Function
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\GameOfLifeLogic.vb" startline="126" endline="132"><![CDATA[
+ 
+ 		''' <summary>Gets the width of the board.</summary>
+ 		Private privateWidth As Integer
+ 		Public Property Width() As Integer
+ 			Get
+ 				Return privateWidth
+ 			End Get
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\GameOfLifeLogic.vb" startline="133" endline="135"><![CDATA[
+ 			Private Set(ByVal value As Integer)
+ 				privateWidth = value
+ 			End Set
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\GameOfLifeLogic.vb" startline="136" endline="142"><![CDATA[
+ 		End Property
+ 		''' <summary>Gets the height of the board.</summary>
+ 		Private privateHeight As Integer
+ 		Public Property Height() As Integer
+ 			Get
+ 				Return privateHeight
+ 			End Get
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\GameOfLifeLogic.vb" startline="143" endline="145"><![CDATA[
+ 			Private Set(ByVal value As Integer)
+ 				privateHeight = value
+ 			End Set
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\GameOfLifeLogic.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\GameOfLifeLogic.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.Designer.vb" startline="12" endline="17"><![CDATA[
+ 		Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+ 			If disposing AndAlso (components IsNot Nothing) Then
+ 				components.Dispose()
+ 			End If
+ 			MyBase.Dispose(disposing)
+ 		End Sub
+ 
+ 		#Region "Windows Form Designer generated code"
+ 
+ 		''' <summary>
+ 		''' Required method for Designer support - do not modify
+ 		''' the contents of this method with the code editor.
+ 		''' </summary>
+ 		Private Sub InitializeComponent()
+ 			Me.pictureBox1 = New PictureBox()
+ 			Me.btnRun = New Button()
+ 			Me.chkParallel = New CheckBox()
+ 			Me.tbDensity = New TrackBar()
+ 			Me.lblDensity = New Label()
+ 			Me.lblFramesPerSecond = New Label()
+ 			CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+ 			CType(Me.tbDensity, System.ComponentModel.ISupportInitialize).BeginInit()
+ 			Me.SuspendLayout()
+ 			' 
+ 			' pictureBox1
+ 			' 
+ 			Me.pictureBox1.Anchor = (CType((((AnchorStyles.Top Or AnchorStyles.Bottom) Or AnchorStyles.Left) Or AnchorStyles.Right), AnchorStyles))
+ 			Me.pictureBox1.BackColor = Color.White
+ 			Me.pictureBox1.BorderStyle = BorderStyle.Fixed3D
+ 			Me.pictureBox1.Location = New Point(12, 41)
+ 			Me.pictureBox1.Name = "pictureBox1"
+ 			Me.pictureBox1.Size = New Size(464, 413)
+ 			Me.pictureBox1.TabIndex = 0
+ 			Me.pictureBox1.TabStop = False
+ 			' 
+ 			' btnRun
+ 			' 
+ 			Me.btnRun.Location = New Point(12, 12)
+ 			Me.btnRun.Name = "btnRun"
+ 			Me.btnRun.Size = New Size(75, 23)
+ 			Me.btnRun.TabIndex = 1
+ 			Me.btnRun.Text = "Start"
+ 			Me.btnRun.UseVisualStyleBackColor = True
+ '			Me.btnRun.Click += New System.EventHandler(Me.btnRun_Click)
+ 			' 
+ 			' chkParallel
+ 			' 
+ 			Me.chkParallel.AutoSize = True
+ 			Me.chkParallel.Location = New Point(93, 16)
+ 			Me.chkParallel.Name = "chkParallel"
+ 			Me.chkParallel.Size = New Size(66, 17)
+ 			Me.chkParallel.TabIndex = 2
+ 			Me.chkParallel.Text = "Parallel?"
+ 			Me.chkParallel.UseVisualStyleBackColor = True
+ '			Me.chkParallel.CheckedChanged += New System.EventHandler(Me.chkParallel_CheckedChanged)
+ 			' 
+ 			' tbDensity
+ 			' 
+ 			Me.tbDensity.Anchor = (CType(((AnchorStyles.Top Or AnchorStyles.Left) Or AnchorStyles.Right), AnchorStyles))
+ 			Me.tbDensity.Location = New Point(325, 12)
+ 			Me.tbDensity.Maximum = 1000
+ 			Me.tbDensity.Minimum = 1
+ 			Me.tbDensity.Name = "tbDensity"
+ 			Me.tbDensity.Size = New Size(151, 45)
+ 			Me.tbDensity.TabIndex = 3
+ 			Me.tbDensity.TickStyle = TickStyle.None
+ 			Me.tbDensity.Value = 100
+ 			' 
+ 			' lblDensity
+ 			' 
+ 			Me.lblDensity.AutoSize = True
+ 			Me.lblDensity.Location = New Point(250, 16)
+ 			Me.lblDensity.Name = "lblDensity"
+ 			Me.lblDensity.Size = New Size(69, 13)
+ 			Me.lblDensity.TabIndex = 4
+ 			Me.lblDensity.Text = "Initial Density"
+ 			' 
+ 			' lblFramesPerSecond
+ 			' 
+ 			Me.lblFramesPerSecond.Anchor = (CType((AnchorStyles.Bottom Or AnchorStyles.Left), AnchorStyles))
+ 			Me.lblFramesPerSecond.AutoSize = True
+ 			Me.lblFramesPerSecond.Location = New Point(13, 457)
+ 			Me.lblFramesPerSecond.Name = "lblFramesPerSecond"
+ 			Me.lblFramesPerSecond.Size = New Size(77, 13)
+ 			Me.lblFramesPerSecond.TabIndex = 5
+ 			Me.lblFramesPerSecond.Text = "Frames / Sec
+ 			' 
+ 			' MainForm
+ 			' 
+ 			Me.AutoScaleDimensions = New SizeF(6F, 13F)
+ 			Me.AutoScaleMode = AutoScaleMode.Font
+ 			Me.ClientSize = New Size(488, 482)
+ 			Me.Controls.Add(Me.lblFramesPerSecond)
+ 			Me.Controls.Add(Me.lblDensity)
+ 			Me.Controls.Add(Me.chkParallel)
+ 			Me.Controls.Add(Me.btnRun)
+ 			Me.Controls.Add(Me.pictureBox1)
+ 			Me.Controls.Add(Me.tbDensity)
+ 			Me.Name = "MainForm"
+ 			Me.Text = "Conway's Game Of Life"
+ 			CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+ 			CType(Me.tbDensity, System.ComponentModel.ISupportInitialize).EndInit()
+ 			Me.ResumeLayout(False)
+ 			Me.PerformLayout()
+ 
+ 		End Sub
+ 
+ 		#End Region
+ 
+ 		Private pictureBox1 As PictureBox
+ 		Private WithEvents btnRun As Button
+ 		Private WithEvents chkParallel As CheckBox
+ 		Private tbDensity As TrackBar
+ 		Private lblDensity As Label
+ 		Private lblFramesPerSecond As Label
+ 	End Class
+ End Namespace
+ 
+ 				components.Dispose()
+ 			End If
+ 			MyBase.Dispose(disposing)
+ 		End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.Designer.vb" startline="18" endline="117"><![CDATA[
+ 
+ 		#Region "Windows Form Designer generated code"
+ 
+ 		''' <summary>
+ 		''' Required method for Designer support - do not modify
+ 		''' the contents of this method with the code editor.
+ 		''' </summary>
+ 		Private Sub InitializeComponent()
+ 			Me.pictureBox1 = New PictureBox()
+ 			Me.btnRun = New Button()
+ 			Me.chkParallel = New CheckBox()
+ 			Me.tbDensity = New TrackBar()
+ 			Me.lblDensity = New Label()
+ 			Me.lblFramesPerSecond = New Label()
+ 			CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+ 			CType(Me.tbDensity, System.ComponentModel.ISupportInitialize).BeginInit()
+ 			Me.SuspendLayout()
+ 			' 
+ 			' pictureBox1
+ 			' 
+ 			Me.pictureBox1.Anchor = (CType((((AnchorStyles.Top Or AnchorStyles.Bottom) Or AnchorStyles.Left) Or AnchorStyles.Right), AnchorStyles))
+ 			Me.pictureBox1.BackColor = Color.White
+ 			Me.pictureBox1.BorderStyle = BorderStyle.Fixed3D
+ 			Me.pictureBox1.Location = New Point(12, 41)
+ 			Me.pictureBox1.Name = "pictureBox1"
+ 			Me.pictureBox1.Size = New Size(464, 413)
+ 			Me.pictureBox1.TabIndex = 0
+ 			Me.pictureBox1.TabStop = False
+ 			' 
+ 			' btnRun
+ 			' 
+ 			Me.btnRun.Location = New Point(12, 12)
+ 			Me.btnRun.Name = "btnRun"
+ 			Me.btnRun.Size = New Size(75, 23)
+ 			Me.btnRun.TabIndex = 1
+ 			Me.btnRun.Text = "Start"
+ 			Me.btnRun.UseVisualStyleBackColor = True
+ '			Me.btnRun.Click += New System.EventHandler(Me.btnRun_Click)
+ 			' 
+ 			' chkParallel
+ 			' 
+ 			Me.chkParallel.AutoSize = True
+ 			Me.chkParallel.Location = New Point(93, 16)
+ 			Me.chkParallel.Name = "chkParallel"
+ 			Me.chkParallel.Size = New Size(66, 17)
+ 			Me.chkParallel.TabIndex = 2
+ 			Me.chkParallel.Text = "Parallel?"
+ 			Me.chkParallel.UseVisualStyleBackColor = True
+ '			Me.chkParallel.CheckedChanged += New System.EventHandler(Me.chkParallel_CheckedChanged)
+ 			' 
+ 			' tbDensity
+ 			' 
+ 			Me.tbDensity.Anchor = (CType(((AnchorStyles.Top Or AnchorStyles.Left) Or AnchorStyles.Right), AnchorStyles))
+ 			Me.tbDensity.Location = New Point(325, 12)
+ 			Me.tbDensity.Maximum = 1000
+ 			Me.tbDensity.Minimum = 1
+ 			Me.tbDensity.Name = "tbDensity"
+ 			Me.tbDensity.Size = New Size(151, 45)
+ 			Me.tbDensity.TabIndex = 3
+ 			Me.tbDensity.TickStyle = TickStyle.None
+ 			Me.tbDensity.Value = 100
+ 			' 
+ 			' lblDensity
+ 			' 
+ 			Me.lblDensity.AutoSize = True
+ 			Me.lblDensity.Location = New Point(250, 16)
+ 			Me.lblDensity.Name = "lblDensity"
+ 			Me.lblDensity.Size = New Size(69, 13)
+ 			Me.lblDensity.TabIndex = 4
+ 			Me.lblDensity.Text = "Initial Density"
+ 			' 
+ 			' lblFramesPerSecond
+ 			' 
+ 			Me.lblFramesPerSecond.Anchor = (CType((AnchorStyles.Bottom Or AnchorStyles.Left), AnchorStyles))
+ 			Me.lblFramesPerSecond.AutoSize = True
+ 			Me.lblFramesPerSecond.Location = New Point(13, 457)
+ 			Me.lblFramesPerSecond.Name = "lblFramesPerSecond"
+ 			Me.lblFramesPerSecond.Size = New Size(77, 13)
+ 			Me.lblFramesPerSecond.TabIndex = 5
+ 			Me.lblFramesPerSecond.Text = "Frames / Sec
+ 			' 
+ 			' MainForm
+ 			' 
+ 			Me.AutoScaleDimensions = New SizeF(6F, 13F)
+ 			Me.AutoScaleMode = AutoScaleMode.Font
+ 			Me.ClientSize = New Size(488, 482)
+ 			Me.Controls.Add(Me.lblFramesPerSecond)
+ 			Me.Controls.Add(Me.lblDensity)
+ 			Me.Controls.Add(Me.chkParallel)
+ 			Me.Controls.Add(Me.btnRun)
+ 			Me.Controls.Add(Me.pictureBox1)
+ 			Me.Controls.Add(Me.tbDensity)
+ 			Me.Name = "MainForm"
+ 			Me.Text = "Conway's Game Of Life"
+ 			CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+ 			CType(Me.tbDensity, System.ComponentModel.ISupportInitialize).EndInit()
+ 			Me.ResumeLayout(False)
+ 			Me.PerformLayout()
+ 
+ 		End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.vb" startline="16" endline="18"><![CDATA[
+ 		Public Sub New()
+ 			InitializeComponent()
+ 		End Sub
+ 
+ 		''' <summary>Used to cancel the current game.</summary>
+ 		Private _cancellation As CancellationTokenSource
+ 		''' <summary>The current game.</summary>
+ 		Private _game As GameBoard
+ 
+ 		Private Sub chkParallel_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles chkParallel.CheckedChanged
+ 			If _game IsNot Nothing Then
+ 				_game.RunParallel = chkParallel.Checked
+ 			End If
+ 		End Sub
+ 
+ 
+         ''' <summary>Run a game.</summary>
+         Private Sub btnRun_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnRun.Click
+             ' If no game is currently running, run one.
+             If _cancellation Is Nothing Then
+                 ' Clear the current image, get the size of the board to use, initialize cancellation,
+                 ' And prepare the form for game running.
+                 pictureBox1.Image = Nothing
+                 Dim width = pictureBox1.Width, height = pictureBox1.Height
+                 _cancellation = New CancellationTokenSource()
+                 Dim token = _cancellation.Token
+                 lblDensity.Visible = False
+                 tbDensity.Visible = False
+                 btnRun.Text = "Stop"
+                 Dim initialDensity = tbDensity.Value / 1000.0
+ 
+                 ' Initialize the object pool and the game board.
+                 Dim pool = New ObjectPool(Of Bitmap)(Function() New Bitmap(width, height))
+                 _game = New GameBoard(width, height, initialDensity, pool) With {.RunParallel = chkParallel.Checked}
+ 
+                 ' Run the game on a background thread.
+                 ' Run until cancellation is requested.
+                 ' Move to the next board, timing how long it takes.
+                 ' Update the UI with the new board image.
+                 ' When the game is done, reset the board.
+                 Task.Factory.StartNew(Sub()
+                                           Dim sw = New Stopwatch()
+                                           Do While Not token.IsCancellationRequested
+                                               sw.Restart()
+                                               Dim bmp = _game.MoveNext()
+                                               Dim framesPerSecond = 1 / sw.Elapsed.TotalSeconds
+                                               BeginInvoke((Sub()
+                                                                lblFramesPerSecond.Text = String.Format("Frames / Sec
+                                                                Dim old = CType(pictureBox1.Image, Bitmap)
+                                                                pictureBox1.Image = bmp
+                                                                If old IsNot Nothing Then
+                                                                    pool.PutObject(old)
+                                                                End If
+                                                            End Sub))
+                                           Loop
+                                       End Sub, token).ContinueWith(Sub()
+                                                                        _cancellation = Nothing
+                                                                        btnRun.Text = "Start"
+                                                                        lblDensity.Visible = True
+                                                                        tbDensity.Visible = True
+                                                                    End Sub, TaskScheduler.FromCurrentSynchronizationContext())
+ 
+                 ' If a game is currently running, cancel it.
+             Else
+                 _cancellation.Cancel()
+             End If
+         End Sub
+     End Class
+ End Namespace
+ 		Private components As System.ComponentModel.IContainer = Nothing
+ 			InitializeComponent()
+ 		End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.vb" startline="19" endline="29"><![CDATA[
+ 
+ 		''' <summary>Used to cancel the current game.</summary>
+ 		Private _cancellation As CancellationTokenSource
+ 		''' <summary>The current game.</summary>
+ 		Private _game As GameBoard
+ 
+ 		Private Sub chkParallel_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles chkParallel.CheckedChanged
+ 			If _game IsNot Nothing Then
+ 				_game.RunParallel = chkParallel.Checked
+ 			End If
+ 		End Sub
+ 
+ 
+         ''' <summary>Run a game.</summary>
+         Private Sub btnRun_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnRun.Click
+             ' If no game is currently running, run one.
+             If _cancellation Is Nothing Then
+                 ' Clear the current image, get the size of the board to use, initialize cancellation,
+                 ' And prepare the form for game running.
+                 pictureBox1.Image = Nothing
+                 Dim width = pictureBox1.Width, height = pictureBox1.Height
+                 _cancellation = New CancellationTokenSource()
+                 Dim token = _cancellation.Token
+                 lblDensity.Visible = False
+                 tbDensity.Visible = False
+                 btnRun.Text = "Stop"
+                 Dim initialDensity = tbDensity.Value / 1000.0
+ 
+                 ' Initialize the object pool and the game board.
+                 Dim pool = New ObjectPool(Of Bitmap)(Function() New Bitmap(width, height))
+                 _game = New GameBoard(width, height, initialDensity, pool) With {.RunParallel = chkParallel.Checked}
+ 
+                 ' Run the game on a background thread.
+                 ' Run until cancellation is requested.
+                 ' Move to the next board, timing how long it takes.
+                 ' Update the UI with the new board image.
+                 ' When the game is done, reset the board.
+                 Task.Factory.StartNew(Sub()
+                                           Dim sw = New Stopwatch()
+                                           Do While Not token.IsCancellationRequested
+                                               sw.Restart()
+                                               Dim bmp = _game.MoveNext()
+                                               Dim framesPerSecond = 1 / sw.Elapsed.TotalSeconds
+                                               BeginInvoke((Sub()
+                                                                lblFramesPerSecond.Text = String.Format("Frames / Sec
+                                                                Dim old = CType(pictureBox1.Image, Bitmap)
+                                                                pictureBox1.Image = bmp
+                                                                If old IsNot Nothing Then
+                                                                    pool.PutObject(old)
+                                                                End If
+                                                            End Sub))
+                                           Loop
+                                       End Sub, token).ContinueWith(Sub()
+                                                                        _cancellation = Nothing
+                                                                        btnRun.Text = "Start"
+                                                                        lblDensity.Visible = True
+                                                                        tbDensity.Visible = True
+                                                                    End Sub, TaskScheduler.FromCurrentSynchronizationContext())
+ 
+                 ' If a game is currently running, cancel it.
+             Else
+                 _cancellation.Cancel()
+             End If
+         End Sub
+     End Class
+ End Namespace
+ 				_game.RunParallel = chkParallel.Checked
+ 			End If
+ 		End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.vb" startline="30" endline="82"><![CDATA[
+ 
+ 
+         ''' <summary>Run a game.</summary>
+         Private Sub btnRun_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnRun.Click
+             ' If no game is currently running, run one.
+             If _cancellation Is Nothing Then
+                 ' Clear the current image, get the size of the board to use, initialize cancellation,
+                 ' And prepare the form for game running.
+                 pictureBox1.Image = Nothing
+                 Dim width = pictureBox1.Width, height = pictureBox1.Height
+                 _cancellation = New CancellationTokenSource()
+                 Dim token = _cancellation.Token
+                 lblDensity.Visible = False
+                 tbDensity.Visible = False
+                 btnRun.Text = "Stop"
+                 Dim initialDensity = tbDensity.Value / 1000.0
+ 
+                 ' Initialize the object pool and the game board.
+                 Dim pool = New ObjectPool(Of Bitmap)(Function() New Bitmap(width, height))
+                 _game = New GameBoard(width, height, initialDensity, pool) With {.RunParallel = chkParallel.Checked}
+ 
+                 ' Run the game on a background thread.
+                 ' Run until cancellation is requested.
+                 ' Move to the next board, timing how long it takes.
+                 ' Update the UI with the new board image.
+                 ' When the game is done, reset the board.
+                 Task.Factory.StartNew(Sub()
+                                           Dim sw = New Stopwatch()
+                                           Do While Not token.IsCancellationRequested
+                                               sw.Restart()
+                                               Dim bmp = _game.MoveNext()
+                                               Dim framesPerSecond = 1 / sw.Elapsed.TotalSeconds
+                                               BeginInvoke((Sub()
+                                                                lblFramesPerSecond.Text = String.Format("Frames / Sec
+                                                                Dim old = CType(pictureBox1.Image, Bitmap)
+                                                                pictureBox1.Image = bmp
+                                                                If old IsNot Nothing Then
+                                                                    pool.PutObject(old)
+                                                                End If
+                                                            End Sub))
+                                           Loop
+                                       End Sub, token).ContinueWith(Sub()
+                                                                        _cancellation = Nothing
+                                                                        btnRun.Text = "Start"
+                                                                        lblDensity.Visible = True
+                                                                        tbDensity.Visible = True
+                                                                    End Sub, TaskScheduler.FromCurrentSynchronizationContext())
+ 
+                 ' If a game is currently running, cancel it.
+             Else
+                 _cancellation.Cancel()
+             End If
+         End Sub
+     End Class
+ End Namespace
+                 pictureBox1.Image = Nothing
+                 Dim width = pictureBox1.Width, height = pictureBox1.Height
+                 _cancellation = New CancellationTokenSource()
+                 Dim token = _cancellation.Token
+                 lblDensity.Visible = False
+                 tbDensity.Visible = False
+                 btnRun.Text = "Stop"
+                 Dim initialDensity = tbDensity.Value / 1000.0
+ 
+                 ' Initialize the object pool and the game board.
+                 Dim pool = New ObjectPool(Of Bitmap)(Function() New Bitmap(width, height))
+                 _game = New GameBoard(width, height, initialDensity, pool) With {.RunParallel = chkParallel.Checked}
+ 
+                 ' Run the game on a background thread.
+                 ' Run until cancellation is requested.
+                 ' Move to the next board, timing how long it takes.
+                 ' Update the UI with the new board image.
+                 ' When the game is done, reset the board.
+                 Task.Factory.StartNew(Sub()
+                                           Dim sw = New Stopwatch()
+                                           Do While Not token.IsCancellationRequested
+                                               sw.Restart()
+                                               Dim bmp = _game.MoveNext()
+                                               Dim framesPerSecond = 1 / sw.Elapsed.TotalSeconds
+                                               BeginInvoke((Sub()
+                                                                lblFramesPerSecond.Text = String.Format("Frames / Sec
+                                                                Dim old = CType(pictureBox1.Image, Bitmap)
+                                                                pictureBox1.Image = bmp
+                                                                If old IsNot Nothing Then
+                                                                    pool.PutObject(old)
+                                                                End If
+                                                            End Sub))
+                                           Loop
+                                       End Sub, token).ContinueWith(Sub()
+                                                                        _cancellation = Nothing
+                                                                        btnRun.Text = "Start"
+                                                                        lblDensity.Visible = True
+                                                                        tbDensity.Visible = True
+                                                                    End Sub, TaskScheduler.FromCurrentSynchronizationContext())
+ 
+                 ' If a game is currently running, cancel it.
+             Else
+                 _cancellation.Cancel()
+             End If
+         End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.vb" startline="71" endline="71"><![CDATA[
+                                       End Sub, token).ContinueWith(Sub()
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\MainForm.vb" startline="72" endline="76"><![CDATA[
+                                                                        _cancellation = Nothing
+                                                                        btnRun.Text = "Start"
+                                                                        lblDensity.Visible = True
+                                                                        tbDensity.Visible = True
+                                                                    End Sub, TaskScheduler.FromCurrentSynchronizationContext())
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\Module1.vb" startline="15" endline="19"><![CDATA[
+         Sub Main()
+             Application.EnableVisualStyles()
+             Application.SetCompatibleTextRenderingDefault(False)
+             Application.Run(New MainForm())
+         End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Resources.Designer.vb" startline="40" endline="46"><![CDATA[
+ 			Get
+ 				If Object.ReferenceEquals(resourceMan, Nothing) Then
+ 					Dim temp As New Global.System.Resources.ResourceManager("Resources", GetType(Resources).Assembly)
+ 					resourceMan = temp
+ 				End If
+ 				Return resourceMan
+ 			End Get
+ 		End Property
+ 
+ 		''' <summary>
+ 		'''   Overrides the current thread's CurrentUICulture property for all
+ 		'''   resource lookups using this strongly typed resource class.
+ 		''' </summary>
+ 		<Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>
+ 		Friend Property Culture() As Global.System.Globalization.CultureInfo
+ 			Get
+ 				Return resourceCulture
+ 			End Get
+ 			Set(ByVal value As System.Globalization.CultureInfo)
+ 				resourceCulture = value
+ 			End Set
+ 		End Property
+ 	End Module
+ End Namespace
+ 					Dim temp As New Global.System.Resources.ResourceManager("Resources", GetType(Resources).Assembly)
+ 					resourceMan = temp
+ 				End If
+ 				Return resourceMan
+ 			End Get
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Resources.Designer.vb" startline="47" endline="57"><![CDATA[
+ 		End Property
+ 
+ 		''' <summary>
+ 		'''   Overrides the current thread's CurrentUICulture property for all
+ 		'''   resource lookups using this strongly typed resource class.
+ 		''' </summary>
+ 		<Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>
+ 		Friend Property Culture() As Global.System.Globalization.CultureInfo
+ 			Get
+ 				Return resourceCulture
+ 			End Get
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Resources.Designer.vb" startline="58" endline="60"><![CDATA[
+ 			Set(ByVal value As System.Globalization.CultureInfo)
+ 				resourceCulture = value
+ 			End Set
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Settings.Designer.vb" startline="18" endline="18"><![CDATA[
+ 		Private Shared defaultInstance As Settings = (CType(Global.System.Configuration.ApplicationSettingsBase.Synchronized(New Settings()), Settings))
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Settings.Designer.vb" startline="19" endline="23"><![CDATA[
+ 
+ 		Public Shared ReadOnly Property [Default]() As Settings
+ 			Get
+ 				Return defaultInstance
+ 			End Get
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\GameOfLife\GameOfLife_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+</source_elements></project>

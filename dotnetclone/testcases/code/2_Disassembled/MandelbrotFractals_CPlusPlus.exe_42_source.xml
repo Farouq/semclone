@@ -1,0 +1,387 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\mandelbrotposition.h" startline="18" endline="24"><![CDATA[
+ 			MandelbrotPosition pos;
+ 			pos.Width = 2.9;
+ 			pos.Height = 2.27;
+ 			pos.CenterX = -.75;
+ 			pos.CenterY = .006;
+ 			return pos;
+ 		}
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\mandelbrotgenerator.h" startline="21" endline="47"><![CDATA[
+ 	{
+         // Capture all data necessary to render an image
+ 		RenderImageData^ rrd = gcnew RenderImageData(position, width, height);
+ 
+ 		// Render in parallel or sequentially
+ 		if (parallel)
+ 		{
+ 			ParallelOptions ^options = gcnew ParallelOptions();
+ 			options->CancellationToken = cancellationToken;
+ 			Parallel
+ 		}
+ 		else
+ 		{
+ 			for (int row = 0; row < rrd->ImageHeight; row++) 
+ 			{
+ 				cancellationToken.ThrowIfCancellationRequested();
+ 				rrd->RenderRow(row);
+ 			}
+ 		}
+ 
+         // Produce a Bitmap from the byte array of color indices and return it
+ 		pin_ptr<Byte> scan0 = &(rrd->Data[0]);
+ 		Bitmap tempBitmap(rrd->ImageWidth, rrd->ImageHeight, rrd->ImageWidth, PixelFormat
+ 		Bitmap^ bitmap = tempBitmap.Clone(Rectangle(0, 0, rrd->ImageWidth, rrd->ImageHeight), PixelFormat
+         UpdatePalette(bitmap);
+         return bitmap;
+ 	}
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\mandelbrotgenerator.h" startline="48" endline="58"><![CDATA[
+ 
+ private
+ 	static array<Color>^ _paletteColors = CreatePaletteColors();
+ 
+ 	static array<Color>^ CreatePaletteColors()
+ 	{
+ 		array<Color>^ paletteColors = gcnew array<Color>(256);
+ 		paletteColors[0] = Color
+ 		for (int i = 1; i < 256; i++) paletteColors[i] = Color
+ 		return paletteColors;
+ 	}
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\mandelbrotgenerator.h" startline="59" endline="65"><![CDATA[
+ 
+ 	static void UpdatePalette(Bitmap^ bmp)
+ 	{
+ 		ColorPalette^ p = bmp->Palette;
+ 		Array
+ 		bmp->Palette = p; // The Bitmap will only update when the Palette property's setter is used
+ 	}
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\mandelbrotgenerator.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\mandelbrotgenerator.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="41" endline="52"><![CDATA[
+ 		Form1(void)
+ 		{
+ 			InitializeComponent();
+ 
+ 			_mandelbrotWindow = MandelbrotPosition
+ 			_lastWindowSize = System
+ 			_lastUpdateTime = _lastUpdateTime = DateTime
+ 			_leftMouseDown = false;
+ 			_formTitle = "Mandelbrot Fractal ({0}x) - Time
+ 			_parallelRendering = false;
+ 			_uiScheduler = TaskScheduler
+ 		}
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="53" endline="58"><![CDATA[
+ 
+ 	protected
+ 		~Form1()
+ 		{
+ 			if (components) delete components;
+ 		}
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="59" endline="132"><![CDATA[
+ 
+ 	private
+ 		System
+ 
+ 	private
+ 		/// <summary>
+ 		/// Required designer variable.
+ 		/// </summary>
+ 		System
+ 
+ #pragma region Windows Form Designer generated code
+ 		/// <summary>
+ 		/// Required method for Designer support - do not modify
+ 		/// the contents of this method with the code editor.
+ 		/// </summary>
+ 		void InitializeComponent(void)
+ 		{
+ 			this->mandelbrotPb = (gcnew System
+ 			this->statusStrip1 = (gcnew System
+ 			this->toolStripStatusLabel1 = (gcnew System
+ 			(cli
+ 			this->statusStrip1->SuspendLayout();
+ 			this->SuspendLayout();
+ 			// 
+ 			// mandelbrotPb
+ 			// 
+ 			this->mandelbrotPb->BackColor = System
+ 			this->mandelbrotPb->Dock = System
+ 			this->mandelbrotPb->Location = System
+ 			this->mandelbrotPb->Name = L"mandelbrotPb";
+ 			this->mandelbrotPb->Size = System
+ 			this->mandelbrotPb->SizeMode = System
+ 			this->mandelbrotPb->TabIndex = 0;
+ 			this->mandelbrotPb->TabStop = false;
+ 			this->mandelbrotPb->VisibleChanged += gcnew System
+ 			this->mandelbrotPb->MouseMove += gcnew System
+ 			this->mandelbrotPb->MouseDoubleClick += gcnew System
+ 			this->mandelbrotPb->Resize += gcnew System
+ 			this->mandelbrotPb->MouseDown += gcnew System
+ 			this->mandelbrotPb->MouseUp += gcnew System
+ 			// 
+ 			// statusStrip1
+ 			// 
+ 			this->statusStrip1->Items->AddRange(gcnew cli
+ 			this->statusStrip1->Location = System
+ 			this->statusStrip1->Name = L"statusStrip1";
+ 			this->statusStrip1->Size = System
+ 			this->statusStrip1->TabIndex = 1;
+ 			this->statusStrip1->Text = L"statusStrip1";
+ 			// 
+ 			// toolStripStatusLabel1
+ 			// 
+ 			this->toolStripStatusLabel1->Name = L"toolStripStatusLabel1";
+ 			this->toolStripStatusLabel1->Size = System
+ 			this->toolStripStatusLabel1->Text = L"P
+ 			// 
+ 			// Form1
+ 			// 
+ 			this->AutoScaleDimensions = System
+ 			this->AutoScaleMode = System
+ 			this->ClientSize = System
+ 			this->Controls->Add(this->statusStrip1);
+ 			this->Controls->Add(this->mandelbrotPb);
+ 			this->KeyPreview = true;
+ 			this->Name = L"Form1";
+ 			this->Text = L"Mandelbrot Fractals";
+ 			this->KeyDown += gcnew System
+ 			(cli
+ 			this->statusStrip1->ResumeLayout(false);
+ 			this->statusStrip1->PerformLayout();
+ 			this->ResumeLayout(false);
+ 			this->PerformLayout();
+ 
+ 		}
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="133" endline="150"><![CDATA[
+ #pragma endregion
+ 
+ 	private
+ 
+ 		System
+ 		{
+ 			// Switch to sequential or parallel based on the key pressed
+ 			if (e->KeyCode == Keys
+             {
+                 _parallelRendering = false;
+                 UpdateImageAsync();
+             }
+ 			else if (e->KeyCode == Keys
+             {
+                 _parallelRendering = true;
+                 UpdateImageAsync();
+             }
+ 		}
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="151" endline="166"><![CDATA[
+ 
+ 		System
+ 		{
+ 			// Center the image on the selected location
+ 			_mandelbrotWindow.CenterX += ((e->X - (mandelbrotPb->Width / 2.0)) / mandelbrotPb->Width) * _mandelbrotWindow.Width;
+ 			_mandelbrotWindow.CenterY += ((e->Y - (mandelbrotPb->Height / 2.0)) / mandelbrotPb->Height) * _mandelbrotWindow.Height;
+ 
+ 			// If the left mouse button was used, zoom in by a factor of 2; if the right mouse button, zoom
+ 			// out by a factor of 2
+ 			double factor = e->Button == System
+ 			_mandelbrotWindow.Width *= factor;
+ 			_mandelbrotWindow.Height *= factor;
+ 
+ 			// Update the image
+ 			UpdateImageAsync();
+ 		}
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="167" endline="176"><![CDATA[
+ 
+ 		System
+ 		{
+ 			// When the picture box becomes visible, render it
+ 			if (mandelbrotPb->Visible)
+ 			{
+ 				_lastWindowSize = Size;
+ 				UpdateImageAsync();
+ 			}
+ 		}
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="177" endline="195"><![CDATA[
+ 
+ 		System
+ 		{
+ 			// If the window has been resized
+ 			System
+ 			if (currentSize != _lastWindowSize)
+ 			{
+ 				// Scale the mandelbrot image by the same factor so that its visual size doesn't change
+ 				double xFactor = currentSize.Width / (double)_lastWindowSize.Width, yFactor = currentSize.Height / (double)_lastWindowSize.Height;
+ 				_mandelbrotWindow.Width *= xFactor;
+ 				_mandelbrotWindow.Height *= yFactor;
+ 
+ 				// Record the new window size
+ 				_lastWindowSize = currentSize;
+ 
+ 				// Update the image
+ 				UpdateImageAsync();
+ 			}
+ 		}
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="196" endline="220"><![CDATA[
+ 
+ 		System
+ 		{
+ 			// Determine how far the mouse has moved.  If it moved at all...
+ 			Point delta(e->X - _lastMousePosition.X, e->Y - _lastMousePosition.Y);
+ 			if (delta != Point
+ 			{
+ 				// And if the left mouse button is down...
+ 				if (_leftMouseDown)
+ 				{
+ 					// Determine how much the mouse moved in fractal coordinates
+ 					double fractalMoveX = delta.X * _mandelbrotWindow.Width / mandelbrotPb->Width;
+ 					double fractalMoveY = delta.Y * _mandelbrotWindow.Height / mandelbrotPb->Height;
+ 
+ 					// Shift the fractal window accordingly
+ 					_mandelbrotWindow.CenterX -= fractalMoveX;
+ 					_mandelbrotWindow.CenterY -= fractalMoveY;
+ 
+ 					// And update the image
+ 					UpdateImageAsync();
+ 				}
+ 				// Record the new mouse position
+ 				_lastMousePosition = e->Location;
+ 			}
+ 		}
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="221" endline="230"><![CDATA[
+ 
+ 		System
+ 		{
+ 			// Record that mouse button is being pressed
+ 			if (e->Button == System
+ 			{
+ 				_lastMousePosition = e->Location;
+ 				_leftMouseDown = true;
+ 			}
+ 		}
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="231" endline="240"><![CDATA[
+ 
+ 		System
+ 		{
+ 			// Record that the mouse button is being released
+ 			if (e->Button == System
+ 			{
+ 				_lastMousePosition = e->Location;
+ 				_leftMouseDown = false;
+ 			}
+ 		}
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="241" endline="269"><![CDATA[
+ 
+ 		ref class UpdateImageData
+ 		{
+ 		public
+ 			System
+ 			DateTime TimeOfRequest;
+ 			MandelbrotPosition MandelbrotWindow;
+ 			bool Parallel;
+ 			Bitmap^ Result;
+ 			TimeSpan ElapsedTime;
+ 			CancellationToken CancellationToken;
+ 		};
+ 
+ 		void Render(Object^ state)
+ 		{
+ 			UpdateImageData^ uid = (UpdateImageData^)state;
+ 			Stopwatch^ sw = Stopwatch
+ 			Bitmap^ bmp = MandelbrotGenerator
+ 				uid->MandelbrotWindow, uid->RenderSize.Width, uid->RenderSize.Height, uid->CancellationToken, uid->Parallel);
+ 			if (bmp != nullptr)
+ 			{
+ 				uid->Result = bmp;
+ 				uid->ElapsedTime = sw->Elapsed;
+ 				Task
+ 					gcnew Action<Object^>(this, &Form1
+ 					CancellationToken
+ 					TaskCreationOptions
+ 			}
+ 		}
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="270" endline="286"><![CDATA[
+ 
+ 		void CompleteRenderOnUIThread(Object^ state)
+ 		{
+ 			UpdateImageData^ uid = (UpdateImageData^)state;
+ 			if (uid->TimeOfRequest > _lastUpdateTime)
+ 			{
+ 				Image^ old = mandelbrotPb->Image;
+ 				mandelbrotPb->Image = uid->Result;
+ 				if (old != nullptr) delete old;
+ 
+ 				_lastUpdateTime = uid->TimeOfRequest;
+ 				this->Text = String
+ 					(Object^)(uid->Parallel ? Environment
+ 					(Object^)(uid->ElapsedTime.ToString()));
+ 			}
+ 			else delete uid->Result;
+ 		}
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="287" endline="301"><![CDATA[
+ 
+ 		void UpdateImageAsync()
+ 		{
+ 			if (_lastCancellation != nullptr) _lastCancellation->Cancel();
+ 			_lastCancellation = gcnew CancellationTokenSource();
+ 
+ 			UpdateImageData^ uid = gcnew UpdateImageData();
+ 			uid->Parallel = _parallelRendering;
+ 			uid->MandelbrotWindow = _mandelbrotWindow;
+ 			uid->TimeOfRequest = DateTime
+ 			uid->RenderSize = mandelbrotPb->Size;
+ 			uid->CancellationToken = _lastCancellation->Token;
+ 
+ 			Task
+ 		}
+]]></source>
+<source file="c:\users\faa634\desktop\book codes\couples\c#,c++,f#,vb\mandelbrotfractals\mandelbrotfractals_cppcli\form1.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="f:\dd\vctools\crt_bld\self_x86\crt\src\minternal.h" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+</source_elements></project>

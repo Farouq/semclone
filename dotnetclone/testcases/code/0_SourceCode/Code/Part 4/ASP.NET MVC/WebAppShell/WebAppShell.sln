@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppShell", "WebAppShell\WebAppShell.csproj", "{048D570E-1ED6-4DB2-95E7-FEB31B7356FE}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpControllersAndModels", "FSharpControllersAndModels\FSharpControllersAndModels.fsproj", "{20C65C7E-0AFA-4CC6-BA1E-F2B9666E37E9}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ForecastRViewHelpers", "ForecastRViewHelpers\ForecastRViewHelpers.fsproj", "{ED17BED5-6BDB-4E6C-88FB-E3AB80C8F559}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{048D570E-1ED6-4DB2-95E7-FEB31B7356FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{048D570E-1ED6-4DB2-95E7-FEB31B7356FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{048D570E-1ED6-4DB2-95E7-FEB31B7356FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{048D570E-1ED6-4DB2-95E7-FEB31B7356FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20C65C7E-0AFA-4CC6-BA1E-F2B9666E37E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20C65C7E-0AFA-4CC6-BA1E-F2B9666E37E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20C65C7E-0AFA-4CC6-BA1E-F2B9666E37E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20C65C7E-0AFA-4CC6-BA1E-F2B9666E37E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED17BED5-6BDB-4E6C-88FB-E3AB80C8F559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED17BED5-6BDB-4E6C-88FB-E3AB80C8F559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED17BED5-6BDB-4E6C-88FB-E3AB80C8F559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED17BED5-6BDB-4E6C-88FB-E3AB80C8F559}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,401 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\Program.cs" startline="18" endline="50"><![CDATA[
+     {
+         // NOTE
+ 
+         // Single async request
+         Download("http
+ 
+         // Single async request with timeout
+         Download("http
+ 
+         // Serial async requests
+         Task.Factory.TrackedSequence(
+             () => Download("http
+             () => Download("http
+             () => Download("http
+             () => Download("http
+             () => Download("http
+         ).ContinueWith(SerialTasksCompleted).Wait();
+ 
+         // Concurrent async requests
+         Task.Factory.ContinueWhenAll(new []
+         {
+             Download("http
+             Download("http
+             Download("http
+             Download("http
+             Download("http
+         }, ConcurrentTasksCompleted).Wait();
+ 
+         // Done
+         Console.WriteLine();
+         Console.WriteLine("Press <enter> to exit.");
+         Console.ReadLine();
+     }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\Program.cs" startline="51" endline="55"><![CDATA[
+ 
+     static Task<byte[]> Download(string url)
+     {
+         return new WebClient().DownloadDataTask(url);
+     }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\Program.cs" startline="56" endline="71"><![CDATA[
+ 
+     static void CompletedDownloadData(Task<byte[]> task)
+     {
+         switch (task.Status)
+         {
+             case TaskStatus.RanToCompletion
+                 Console.WriteLine("Request succeeded
+                 break;
+             case TaskStatus.Faulted
+                 Console.WriteLine("Request failed
+                 break;
+             case TaskStatus.Canceled
+                 Console.WriteLine("Request was canceled");
+                 break;
+         }
+     }
+ 
+     static void SerialTasksCompleted(Task<IList<Task>> tasks)
+     {
+         int failures = tasks.Result.Where(t => t.Exception != null).Count();
+         Console.WriteLine("Serial result
+     }
+ 
+     static void ConcurrentTasksCompleted(Task<byte[]>[] tasks)
+     {
+         int failures = tasks.Where(t => t.Exception != null).Count();
+         Console.WriteLine("Concurrent result
+     }
+ }
+                 Console.WriteLine("Request succeeded
+                 break;
+             case TaskStatus.Faulted
+                 Console.WriteLine("Request failed
+                 break;
+             case TaskStatus.Canceled
+                 Console.WriteLine("Request was canceled");
+                 break;
+         }
+     }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\Program.cs" startline="72" endline="77"><![CDATA[
+ 
+     static void SerialTasksCompleted(Task<IList<Task>> tasks)
+     {
+         int failures = tasks.Result.Where(t => t.Exception != null).Count();
+         Console.WriteLine("Serial result
+     }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\Program.cs" startline="78" endline="83"><![CDATA[
+ 
+     static void ConcurrentTasksCompleted(Task<byte[]>[] tasks)
+     {
+         int failures = tasks.Where(t => t.Exception != null).Count();
+         Console.WriteLine("Concurrent result
+     }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\Program.cs" startline="29" endline="84"><![CDATA[
+             () => Download("http
+             () => Download("http
+             () => Download("http
+             () => Download("http
+             () => Download("http
+         ).ContinueWith(SerialTasksCompleted).Wait();
+ 
+         // Concurrent async requests
+         Task.Factory.ContinueWhenAll(new []
+         {
+             Download("http
+             Download("http
+             Download("http
+             Download("http
+             Download("http
+         }, ConcurrentTasksCompleted).Wait();
+ 
+         // Done
+         Console.WriteLine();
+         Console.WriteLine("Press <enter> to exit.");
+         Console.ReadLine();
+     }
+ 
+     static Task<byte[]> Download(string url)
+     {
+         return new WebClient().DownloadDataTask(url);
+     }
+ 
+     static void CompletedDownloadData(Task<byte[]> task)
+     {
+         switch (task.Status)
+         {
+             case TaskStatus.RanToCompletion
+                 Console.WriteLine("Request succeeded
+                 break;
+             case TaskStatus.Faulted
+                 Console.WriteLine("Request failed
+                 break;
+             case TaskStatus.Canceled
+                 Console.WriteLine("Request was canceled");
+                 break;
+         }
+     }
+ 
+     static void SerialTasksCompleted(Task<IList<Task>> tasks)
+     {
+         int failures = tasks.Result.Where(t => t.Exception != null).Count();
+         Console.WriteLine("Serial result
+     }
+ 
+     static void ConcurrentTasksCompleted(Task<byte[]>[] tasks)
+     {
+         int failures = tasks.Where(t => t.Exception != null).Count();
+         Console.WriteLine("Concurrent result
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\Program.cs" startline="30" endline="84"><![CDATA[
+             () => Download("http
+             () => Download("http
+             () => Download("http
+             () => Download("http
+         ).ContinueWith(SerialTasksCompleted).Wait();
+ 
+         // Concurrent async requests
+         Task.Factory.ContinueWhenAll(new []
+         {
+             Download("http
+             Download("http
+             Download("http
+             Download("http
+             Download("http
+         }, ConcurrentTasksCompleted).Wait();
+ 
+         // Done
+         Console.WriteLine();
+         Console.WriteLine("Press <enter> to exit.");
+         Console.ReadLine();
+     }
+ 
+     static Task<byte[]> Download(string url)
+     {
+         return new WebClient().DownloadDataTask(url);
+     }
+ 
+     static void CompletedDownloadData(Task<byte[]> task)
+     {
+         switch (task.Status)
+         {
+             case TaskStatus.RanToCompletion
+                 Console.WriteLine("Request succeeded
+                 break;
+             case TaskStatus.Faulted
+                 Console.WriteLine("Request failed
+                 break;
+             case TaskStatus.Canceled
+                 Console.WriteLine("Request was canceled");
+                 break;
+         }
+     }
+ 
+     static void SerialTasksCompleted(Task<IList<Task>> tasks)
+     {
+         int failures = tasks.Result.Where(t => t.Exception != null).Count();
+         Console.WriteLine("Serial result
+     }
+ 
+     static void ConcurrentTasksCompleted(Task<byte[]>[] tasks)
+     {
+         int failures = tasks.Where(t => t.Exception != null).Count();
+         Console.WriteLine("Concurrent result
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\Program.cs" startline="31" endline="84"><![CDATA[
+             () => Download("http
+             () => Download("http
+             () => Download("http
+         ).ContinueWith(SerialTasksCompleted).Wait();
+ 
+         // Concurrent async requests
+         Task.Factory.ContinueWhenAll(new []
+         {
+             Download("http
+             Download("http
+             Download("http
+             Download("http
+             Download("http
+         }, ConcurrentTasksCompleted).Wait();
+ 
+         // Done
+         Console.WriteLine();
+         Console.WriteLine("Press <enter> to exit.");
+         Console.ReadLine();
+     }
+ 
+     static Task<byte[]> Download(string url)
+     {
+         return new WebClient().DownloadDataTask(url);
+     }
+ 
+     static void CompletedDownloadData(Task<byte[]> task)
+     {
+         switch (task.Status)
+         {
+             case TaskStatus.RanToCompletion
+                 Console.WriteLine("Request succeeded
+                 break;
+             case TaskStatus.Faulted
+                 Console.WriteLine("Request failed
+                 break;
+             case TaskStatus.Canceled
+                 Console.WriteLine("Request was canceled");
+                 break;
+         }
+     }
+ 
+     static void SerialTasksCompleted(Task<IList<Task>> tasks)
+     {
+         int failures = tasks.Result.Where(t => t.Exception != null).Count();
+         Console.WriteLine("Serial result
+     }
+ 
+     static void ConcurrentTasksCompleted(Task<byte[]>[] tasks)
+     {
+         int failures = tasks.Where(t => t.Exception != null).Count();
+         Console.WriteLine("Concurrent result
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\Program.cs" startline="32" endline="84"><![CDATA[
+             () => Download("http
+             () => Download("http
+         ).ContinueWith(SerialTasksCompleted).Wait();
+ 
+         // Concurrent async requests
+         Task.Factory.ContinueWhenAll(new []
+         {
+             Download("http
+             Download("http
+             Download("http
+             Download("http
+             Download("http
+         }, ConcurrentTasksCompleted).Wait();
+ 
+         // Done
+         Console.WriteLine();
+         Console.WriteLine("Press <enter> to exit.");
+         Console.ReadLine();
+     }
+ 
+     static Task<byte[]> Download(string url)
+     {
+         return new WebClient().DownloadDataTask(url);
+     }
+ 
+     static void CompletedDownloadData(Task<byte[]> task)
+     {
+         switch (task.Status)
+         {
+             case TaskStatus.RanToCompletion
+                 Console.WriteLine("Request succeeded
+                 break;
+             case TaskStatus.Faulted
+                 Console.WriteLine("Request failed
+                 break;
+             case TaskStatus.Canceled
+                 Console.WriteLine("Request was canceled");
+                 break;
+         }
+     }
+ 
+     static void SerialTasksCompleted(Task<IList<Task>> tasks)
+     {
+         int failures = tasks.Result.Where(t => t.Exception != null).Count();
+         Console.WriteLine("Serial result
+     }
+ 
+     static void ConcurrentTasksCompleted(Task<byte[]>[] tasks)
+     {
+         int failures = tasks.Where(t => t.Exception != null).Count();
+         Console.WriteLine("Concurrent result
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\Program.cs" startline="33" endline="84"><![CDATA[
+             () => Download("http
+         ).ContinueWith(SerialTasksCompleted).Wait();
+ 
+         // Concurrent async requests
+         Task.Factory.ContinueWhenAll(new []
+         {
+             Download("http
+             Download("http
+             Download("http
+             Download("http
+             Download("http
+         }, ConcurrentTasksCompleted).Wait();
+ 
+         // Done
+         Console.WriteLine();
+         Console.WriteLine("Press <enter> to exit.");
+         Console.ReadLine();
+     }
+ 
+     static Task<byte[]> Download(string url)
+     {
+         return new WebClient().DownloadDataTask(url);
+     }
+ 
+     static void CompletedDownloadData(Task<byte[]> task)
+     {
+         switch (task.Status)
+         {
+             case TaskStatus.RanToCompletion
+                 Console.WriteLine("Request succeeded
+                 break;
+             case TaskStatus.Faulted
+                 Console.WriteLine("Request failed
+                 break;
+             case TaskStatus.Canceled
+                 Console.WriteLine("Request was canceled");
+                 break;
+         }
+     }
+ 
+     static void SerialTasksCompleted(Task<IList<Task>> tasks)
+     {
+         int failures = tasks.Result.Where(t => t.Exception != null).Count();
+         Console.WriteLine("Serial result
+     }
+ 
+     static void ConcurrentTasksCompleted(Task<byte[]>[] tasks)
+     {
+         int failures = tasks.Where(t => t.Exception != null).Count();
+         Console.WriteLine("Concurrent result
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\Program.cs" startline="75" endline="84"><![CDATA[
+         int failures = tasks.Result.Where(t => t.Exception != null).Count();
+         Console.WriteLine("Serial result
+     }
+ 
+     static void ConcurrentTasksCompleted(Task<byte[]>[] tasks)
+     {
+         int failures = tasks.Where(t => t.Exception != null).Count();
+         Console.WriteLine("Concurrent result
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\AsyncDownload\AsyncDownload_CSharp\Program.cs" startline="81" endline="84"><![CDATA[
+         int failures = tasks.Where(t => t.Exception != null).Count();
+         Console.WriteLine("Concurrent result
+     }
+ }
+]]></source>
+</source_elements></project>

@@ -1,0 +1,5 @@
+C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\Reflection\bin\Debug\Reflection.exe
+C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\Reflection\bin\Debug\Reflection.pdb
+C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\Reflection\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\Reflection\obj\Debug\Reflection.exe
+C:\Users\faa634\Desktop\book codes\F#\Code\Ecosystem\Reflection\obj\Debug\Reflection.pdb

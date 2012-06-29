@@ -1,0 +1,5 @@
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelExtensionsExtras\bin\Debug\ParallelExtensionsExtras.dll
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelExtensionsExtras\bin\Debug\ParallelExtensionsExtras.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelExtensionsExtras\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelExtensionsExtras\obj\Debug\ParallelExtensionsExtras.dll
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ParallelExtensionsExtras\obj\Debug\ParallelExtensionsExtras.pdb

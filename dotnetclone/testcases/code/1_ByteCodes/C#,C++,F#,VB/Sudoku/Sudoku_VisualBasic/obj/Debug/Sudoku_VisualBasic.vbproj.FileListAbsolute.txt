@@ -1,0 +1,17 @@
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Sudoku\Sudoku_VisualBasic\bin\Debug\Sudoku.exe.config
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Sudoku\Sudoku_VisualBasic\bin\Debug\Sudoku.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Sudoku\Sudoku_VisualBasic\bin\Debug\Sudoku.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Sudoku\Sudoku_VisualBasic\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Sudoku\Sudoku_VisualBasic\obj\Debug\Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Sudoku.Controls.ImagePanel.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Sudoku\Sudoku_VisualBasic\obj\Debug\Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Sudoku.Controls.NoFlickerPanel.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Sudoku\Sudoku_VisualBasic\obj\Debug\Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Sudoku.Controls.PuzzleGrid.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Sudoku\Sudoku_VisualBasic\obj\Debug\Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Sudoku.Controls.ScalingPanel.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Sudoku\Sudoku_VisualBasic\obj\Debug\Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Sudoku.Controls.TextStatefulButton.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Sudoku\Sudoku_VisualBasic\obj\Debug\Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Sudoku.Controls.WinningAnimation.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Sudoku\Sudoku_VisualBasic\obj\Debug\Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Sudoku.MainForm.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Sudoku\Sudoku_VisualBasic\obj\Debug\Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Sudoku.OptionsDialog.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Sudoku\Sudoku_VisualBasic\obj\Debug\Strings.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Sudoku\Sudoku_VisualBasic\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Sudoku\Sudoku_VisualBasic\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Sudoku\Sudoku_VisualBasic\obj\Debug\Sudoku.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\Sudoku\Sudoku_VisualBasic\obj\Debug\Sudoku.pdb

@@ -1,0 +1,2932 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Driver.fs" startline="11" endline="41"><![CDATA[
+  {
+    .entrypoint
+    .custom instance void [FSharp.Core]Microsoft.FSharp.Core.EntryPointAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       151 (0x97)
+    .maxstack  5
+    .locals init ([0] class [FSharp.Core]Microsoft.FSharp.Core.FSharpTypeFunc writeInColor,
+             [1] valuetype [mscorlib]System.Reflection.BindingFlags SIPNP,
+             [2] class [mscorlib]System.Type[] V_2,
+             [3] class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [mscorlib]System.Type,class [FSharp.Core]Microsoft.FSharp.Core.Unit> V_3,
+             [4] class [mscorlib]System.Type[] V_4,
+             [5] int32 V_5,
+             [6] int32 V_6,
+             [7] int32 V_7,
+             [8] string V_8,
+             [9] valuetype [mscorlib]System.ConsoleColor V_9)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void ObjectsDriver/writeInColor@11::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  ldc.i4.s   10
+    IL_000a:  ldstr      "::::::::::: Executing Pro F# Basics samples ::::::"
+    + ":::::"
+    IL_000f:  stloc.s    V_8
+    IL_0011:  stloc.s    V_9
+    IL_0013:  callvirt   instance object [FSharp.Core]Microsoft.FSharp.Core.FSharpTypeFunc::Specialize<string>()
+    IL_0018:  unbox.any  class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<valuetype [mscorlib]System.ConsoleColor,class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<string,class [FSharp.Core]Microsoft.FSharp.Core.Unit>>
+    IL_001d:  ldloc.s    V_9
+    IL_001f:  ldloc.s    V_8
+    IL_0021:  call       !!0 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<valuetype [mscorlib]System.ConsoleColor,string>::InvokeFast<class [FSharp.Core]Microsoft.FSharp.Core.Unit>(class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<!0,class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<!1,!!0>>,
+                                                                                                                                                                                              !0,
+                                                                                                                                                                                              !1)
+    IL_0026:  pop
+    IL_0027:  ldc.i4.s   28
+    IL_0029:  ldc.i4.s   32
+    IL_002b:  or
+    IL_002c:  stloc.1
+    IL_002d:  call       class [mscorlib]System.Reflection.Assembly [mscorlib]System.Reflection.Assembly::GetExecutingAssembly()
+    IL_0032:  callvirt   instance class [mscorlib]System.Type[] [mscorlib]System.Reflection.Assembly::GetTypes()
+    IL_0037:  stloc.2
+    IL_0038:  ldloc.0
+    IL_0039:  ldloc.1
+    IL_003a:  newobj     instance void ObjectsDriver/Main@22::.ctor(class [FSharp.Core]Microsoft.FSharp.Core.FSharpTypeFunc,
+                                                                    valuetype [mscorlib]System.Reflection.BindingFlags)
+    IL_003f:  stloc.3
+    IL_0040:  ldloc.2
+    IL_0041:  stloc.s    V_4
+    IL_0043:  ldloc.s    V_4
+    IL_0045:  box        class [mscorlib]System.Type[]
+    IL_004a:  brfalse.s  IL_004e
+
+    IL_004c:  br.s       IL_0061
+
+    IL_004e:  ldstr      "array"
+    IL_0053:  newobj     instance void [mscorlib]System.ArgumentNullException::.ctor(string)
+    IL_0058:  call       !!0 [FSharp.Core]Microsoft.FSharp.Core.Operators::Raise<class [FSharp.Core]Microsoft.FSharp.Core.Unit>(class [mscorlib]System.Exception)
+    IL_005d:  pop
+    IL_005e:  nop
+    IL_005f:  br.s       IL_0062
+
+    IL_0061:  nop
+    IL_0062:  ldloc.s    V_4
+    IL_0064:  ldlen
+    IL_0065:  conv.i4
+    IL_0066:  stloc.s    V_5
+    IL_0068:  ldc.i4.0
+    IL_0069:  stloc.s    V_7
+    IL_006b:  ldloc.s    V_5
+    IL_006d:  ldc.i4.1
+    IL_006e:  sub
+    IL_006f:  stloc.s    V_6
+    IL_0071:  ldloc.s    V_6
+    IL_0073:  ldloc.s    V_7
+    IL_0075:  blt.s      IL_0095
+
+    IL_0077:  ldloc.3
+    IL_0078:  ldloc.s    V_4
+    IL_007a:  ldloc.s    V_7
+    IL_007c:  ldelem     [mscorlib]System.Type
+    IL_0081:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [mscorlib]System.Type,class [FSharp.Core]Microsoft.FSharp.Core.Unit>::Invoke(!0)
+    IL_0086:  pop
+    IL_0087:  ldloc.s    V_7
+    IL_0089:  ldc.i4.1
+    IL_008a:  add
+    IL_008b:  stloc.s    V_7
+    IL_008d:  ldloc.s    V_7
+    IL_008f:  ldloc.s    V_6
+    IL_0091:  ldc.i4.1
+    IL_0092:  add
+    IL_0093:  bne.un.s   IL_0077
+
+    IL_0095:  ldc.i4.0
+    IL_0096:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\CustomAttributes.fs" startline="32" endline="33"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 0E 4F 62 73 6F 6C 65 74 65 20 75 73 61 67   // ...Obsolete usag
+                                                                        65 00 00 )                                        // e..
+    // Code size       15 (0xf)
+    .maxstack  3
+    .locals init ([0] class CustomAttributes/ObsoleteExperiment e)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void CustomAttributes/ObsoleteExperiment::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  call       instance void CustomAttributes/ObsoleteExperiment::TestMethod()
+    IL_000d:  nop
+    IL_000e:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\CustomAttributes.fs" startline="34" endline="49"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 11 43 6F 6E 64 69 74 69 6F 6E 61 6C 20 75   // ...Conditional u
+                                                                        73 61 67 65 00 00 )                               // sage..
+    // Code size       32 (0x20)
+    .maxstack  4
+    .locals init ([0] class CustomAttributes/ConditionalDemo cd)
+    IL_0000:  nop
+    IL_0001:  ldstr      "password"
+    IL_0006:  ldc.i4.5
+    IL_0007:  newobj     instance void CustomAttributes/ConditionalDemo::.ctor(string,
+                                                                               int32)
+    IL_000c:  stloc.0
+    IL_000d:  ldloc.0
+    IL_000e:  callvirt   instance string [mscorlib]System.Object::ToString()
+    IL_0013:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0018:  ldloc.0
+    IL_0019:  call       instance void CustomAttributes/ConditionalDemo::DumpInternals()
+    IL_001e:  nop
+    IL_001f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\CustomAttributes.fs" startline="50" endline="60"><![CDATA[
+  {
+    .param [1]
+    .custom instance void [mscorlib]System.ParamArrayAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       37 (0x25)
+    .maxstack  4
+    .locals init ([0] object[] V_0,
+             [1] int32 V_1,
+             [2] object o)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  stloc.0
+    IL_0003:  ldc.i4.0
+    IL_0004:  stloc.1
+    IL_0005:  br.s       IL_001e
+
+    IL_0007:  ldloc.0
+    IL_0008:  ldloc.1
+    IL_0009:  ldelem     [mscorlib]System.Object
+    IL_000e:  stloc.2
+    IL_000f:  ldloc.2
+    IL_0010:  callvirt   instance string [mscorlib]System.Object::ToString()
+    IL_0015:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_001a:  ldloc.1
+    IL_001b:  ldc.i4.1
+    IL_001c:  add
+    IL_001d:  stloc.1
+    IL_001e:  ldloc.1
+    IL_001f:  ldloc.0
+    IL_0020:  ldlen
+    IL_0021:  conv.i4
+    IL_0022:  blt.s      IL_0007
+
+    IL_0024:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\CustomAttributes.fs" startline="61" endline="74"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 10 50 61 72 61 6D 41 72 72 61 79 20 75 73   // ...ParamArray us
+                                                                        61 67 65 00 00 )                                  // age..
+    // Code size       105 (0x69)
+    .maxstack  7
+    .locals init ([0] class CustomAttributes/ParamArrayExperiment e)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void CustomAttributes/ParamArrayExperiment::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  ldc.i4.3
+    IL_0009:  newarr     [mscorlib]System.Object
+    IL_000e:  dup
+    IL_000f:  ldc.i4.0
+    IL_0010:  ldstr      "one"
+    IL_0015:  stelem     [mscorlib]System.Object
+    IL_001a:  dup
+    IL_001b:  ldc.i4.1
+    IL_001c:  ldc.i4.2
+    IL_001d:  box        [mscorlib]System.Int32
+    IL_0022:  stelem     [mscorlib]System.Object
+    IL_0027:  dup
+    IL_0028:  ldc.i4.2
+    IL_0029:  ldc.r8     3.
+    IL_0032:  box        [mscorlib]System.Double
+    IL_0037:  stelem     [mscorlib]System.Object
+    IL_003c:  call       instance void CustomAttributes/ParamArrayExperiment::TestMethod(object[])
+    IL_0041:  nop
+    IL_0042:  ldloc.0
+    IL_0043:  ldc.i4.1
+    IL_0044:  newarr     [mscorlib]System.Object
+    IL_0049:  dup
+    IL_004a:  ldc.i4.0
+    IL_004b:  ldstr      "This is just one argument"
+    IL_0050:  stelem     [mscorlib]System.Object
+    IL_0055:  call       instance void CustomAttributes/ParamArrayExperiment::TestMethod(object[])
+    IL_005a:  nop
+    IL_005b:  ldloc.0
+    IL_005c:  ldc.i4.0
+    IL_005d:  newarr     [mscorlib]System.Object
+    IL_0062:  call       instance void CustomAttributes/ParamArrayExperiment::TestMethod(object[])
+    IL_0067:  nop
+    IL_0068:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\CustomAttributes.fs" startline="75" endline="107"><![CDATA[
+  {
+    .custom instance void CustomAttributes/BlameAttribute::.ctor(string) = ( 01 00 0E 41 61 72 6F 6E 20 45 72 69 63 6B 73 6F   // ...Aaron Erickso
+                                                                             6E 01 00 54 0E 06 52 65 61 73 6F 6E 1B 49 20 74   // n..T..Reason.I t
+                                                                             6F 6C 64 20 79 6F 75 20 6E 6F 74 20 74 6F 20 75   // old you not to u
+                                                                             73 65 20 74 68 69 73 21 )                         // se this!
+    // Code size       17 (0x11)
+    .maxstack  3
+    .locals init ([0] object V_0)
+    IL_0000:  nop
+    IL_0001:  ldnull
+    IL_0002:  stloc.0
+    IL_0003:  ldloca.s   V_0
+    IL_0005:  constrained. [mscorlib]System.Object
+    IL_000b:  callvirt   instance string [mscorlib]System.Object::ToString()
+    IL_0010:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\CustomAttributes.fs" startline="108" endline="123"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 31 43 75 73 74 6F 6D 20 61 74 74 72 69 62   // ..1Custom attrib
+                                                                        75 74 65 20 63 72 65 61 74 69 6F 6E 20 61 6E 64   // ute creation and
+                                                                        20 63 6F 6E 73 75 6D 70 74 69 6F 6E 20 65 78 61   //  consumption exa
+                                                                        6D 70 6C 65 00 00 )                               // mple..
+    // Code size       112 (0x70)
+    .maxstack  5
+    .locals init ([0] class [FSharp.Core]Microsoft.FSharp.Core.Unit V_0,
+             [1] string V_1,
+             [2] string V_2,
+             [3] class [mscorlib]System.Exception ex,
+             [4] class [mscorlib]System.Reflection.MethodBase target,
+             [5] object[] custAttrs,
+             [6] class CustomAttributes/BlameAttribute blame)
+    IL_0000:  nop
+    .try
+    {
+      IL_0001:  nop
+      IL_0002:  call       string CustomAttributes::faultyMethod()
+      IL_0007:  stloc.1
+      IL_0008:  ldloc.1
+      IL_0009:  stloc.2
+      IL_000a:  ldnull
+      IL_000b:  stloc.0
+      IL_000c:  leave.s    IL_006d
+
+    }  // end .try
+    catch [mscorlib]System.Object 
+    {
+      IL_000e:  castclass  [mscorlib]System.Exception
+      IL_0013:  stloc.3
+      IL_0014:  ldloc.3
+      IL_0015:  callvirt   instance class [mscorlib]System.Reflection.MethodBase [mscorlib]System.Exception::get_TargetSite()
+      IL_001a:  stloc.s    target
+      IL_001c:  ldloc.s    target
+      IL_001e:  ldtoken    CustomAttributes/BlameAttribute
+      IL_0023:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+      IL_0028:  ldc.i4.1
+      IL_0029:  callvirt   instance object[] [mscorlib]System.Reflection.MemberInfo::GetCustomAttributes(class [mscorlib]System.Type,
+                                                                                                         bool)
+      IL_002e:  stloc.s    custAttrs
+      IL_0030:  ldloc.s    custAttrs
+      IL_0032:  ldlen
+      IL_0033:  conv.i4
+      IL_0034:  ldc.i4.0
+      IL_0035:  ble.s      IL_0039
+
+      IL_0037:  br.s       IL_003b
+
+      IL_0039:  br.s       IL_005f
+
+      IL_003b:  ldloc.s    custAttrs
+      IL_003d:  ldc.i4.0
+      IL_003e:  ldelem     [mscorlib]System.Object
+      IL_0043:  call       !!0 [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives/IntrinsicFunctions::UnboxGeneric<class CustomAttributes/BlameAttribute>(object)
+      IL_0048:  stloc.s    blame
+      IL_004a:  ldstr      "Aha! {0} did it!"
+      IL_004f:  ldloc.s    blame
+      IL_0051:  call       instance string CustomAttributes/BlameAttribute::get_Owner()
+      IL_0056:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                    object)
+      IL_005b:  ldnull
+      IL_005c:  stloc.0
+      IL_005d:  leave.s    IL_006d
+
+      IL_005f:  ldstr      "Nobody to blame, sorry!"
+      IL_0064:  call       void [mscorlib]System.Console::WriteLine(string)
+      IL_0069:  ldnull
+      IL_006a:  stloc.0
+      IL_006b:  leave.s    IL_006d
+
+    }  // end handler
+    IL_006d:  ldloc.0
+    IL_006e:  pop
+    IL_006f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Packaging.fs" startline="9" endline="11"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 0D 4F 70 65 6E 20 65 78 61 6D 70 6C 65 73   // ...Open examples
+                                                                        00 00 ) 
+    // Code size       12 (0xc)
+    .maxstack  3
+    IL_0000:  nop
+    IL_0001:  ldstr      "Much shorter, thank you"
+    IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Packaging.fs" startline="12" endline="33"><![CDATA[
+  {
+    // Code size       8 (0x8)
+    .maxstack  3
+    .locals init ([0] int32 aValue)
+    IL_0000:  nop
+    IL_0001:  call       int32 Packaging/FunctionalExample::get_aValue()
+    IL_0006:  stloc.0
+    IL_0007:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Generics.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       6 (0x6)
+    .maxstack  4
+    IL_0000:  ldsfld     class Generics/Stack`1<string> '<StartupCode$Objects>'.$Generics::s1@18
+    IL_0005:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Generics.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       6 (0x6)
+    .maxstack  4
+    IL_0000:  ldsfld     class [mscorlib]System.Reflection.MemberInfo[] '<StartupCode$Objects>'.$Generics::stringMembers@36
+    IL_0005:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Generics.fs" startline="18" endline="36"><![CDATA[
+  {
+    // Code size       26 (0x1a)
+    .maxstack  4
+    .locals init ([0] class Generics/Stack`1<string> s1,
+             [1] class [mscorlib]System.Reflection.MemberInfo[] stringMembers)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void class Generics/Stack`1<string>::.ctor()
+    IL_0006:  dup
+    IL_0007:  stsfld     class Generics/Stack`1<string> '<StartupCode$Objects>'.$Generics::s1@18
+    IL_000c:  stloc.0
+    IL_000d:  call       class [mscorlib]System.Reflection.MemberInfo[] Generics/Reflector2::GetMembers<string>()
+    IL_0012:  dup
+    IL_0013:  stsfld     class [mscorlib]System.Reflection.MemberInfo[] '<StartupCode$Objects>'.$Generics::stringMembers@36
+    IL_0018:  stloc.1
+    IL_0019:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Inheritance.fs" startline="117" endline="123"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 12 49 6E 68 65 72 69 74 61 6E 63 65 20 62   // ...Inheritance b
+                                                                        61 73 69 63 73 00 00 )                            // asics..
+    // Code size       90 (0x5a)
+    .maxstack  7
+    .locals init ([0] class Inheritance/Student s,
+             [1] class Inheritance/Student p)
+    IL_0000:  nop
+    IL_0001:  ldstr      "Ted"
+    IL_0006:  ldstr      "Pattison"
+    IL_000b:  ldc.i4.s   50
+    IL_000d:  ldstr      "Beer"
+    IL_0012:  ldstr      "DevelopMentor"
+    IL_0017:  newobj     instance void Inheritance/Student::.ctor(string,
+                                                                  string,
+                                                                  int32,
+                                                                  string,
+                                                                  string)
+    IL_001c:  stloc.0
+    IL_001d:  ldstr      "{0} {1} attends {2} and is studying {3}"
+    IL_0022:  ldloc.0
+    IL_0023:  call       instance string Inheritance/Person::get_FirstName()
+    IL_0028:  ldloc.0
+    IL_0029:  call       instance string Inheritance/Person::get_LastName()
+    IL_002e:  ldloc.0
+    IL_002f:  call       instance string Inheritance/Student::get_School()
+    IL_0034:  ldloc.0
+    IL_0035:  call       instance string Inheritance/Student::get_Subject()
+    IL_003a:  call       vararg void [mscorlib]System.Console::WriteLine(string,
+                                                                         object,
+                                                                         object,
+                                                                         object,
+                                                                         object)
+    IL_003f:  ldstr      "Ted"
+    IL_0044:  ldstr      "Neward"
+    IL_0049:  ldc.i4.s   38
+    IL_004b:  newobj     instance void Inheritance/Student::.ctor(string,
+                                                                  string,
+                                                                  int32)
+    IL_0050:  stloc.1
+    IL_0051:  ldloc.1
+    IL_0052:  ldloc.0
+    IL_0053:  call       instance void Inheritance/Person::Greet(class Inheritance/Person)
+    IL_0058:  nop
+    IL_0059:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Inheritance.fs" startline="124" endline="137"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 13 4F 76 65 72 72 69 64 69 6E 67 20 65 78   // ...Overriding ex
+                                                                        61 6D 70 6C 65 73 00 00 )                         // amples..
+    // Code size       33 (0x21)
+    .maxstack  5
+    .locals init ([0] class Inheritance/Student p,
+             [1] string p_str)
+    IL_0000:  nop
+    IL_0001:  ldstr      "Ken"
+    IL_0006:  ldstr      "Sipe"
+    IL_000b:  ldc.i4.s   40
+    IL_000d:  newobj     instance void Inheritance/Student::.ctor(string,
+                                                                  string,
+                                                                  int32)
+    IL_0012:  stloc.0
+    IL_0013:  ldloc.0
+    IL_0014:  callvirt   instance string [mscorlib]System.Object::ToString()
+    IL_0019:  stloc.1
+    IL_001a:  ldloc.1
+    IL_001b:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0020:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Inheritance.fs" startline="138" endline="160"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 10 43 61 73 74 69 6E 67 20 65 78 61 6D 70   // ...Casting examp
+                                                                        6C 65 73 00 00 )                                  // les..
+    // Code size       150 (0x96)
+    .maxstack  5
+    .locals init ([0] class Inheritance/Person p,
+             [1] class Inheritance/Student s,
+             [2] bool pToStudent,
+             [3] object V_3,
+             [4] class Inheritance/Printer printer,
+             [5] class Inheritance/Person p2,
+             [6] class Inheritance/Student s2,
+             [7] object oi,
+             [8] int32 i)
+    IL_0000:  nop
+    IL_0001:  ldstr      "Ken"
+    IL_0006:  ldstr      "Sipe"
+    IL_000b:  ldc.i4.s   40
+    IL_000d:  newobj     instance void Inheritance/Student::.ctor(string,
+                                                                  string,
+                                                                  int32)
+    IL_0012:  stloc.0
+    IL_0013:  ldloc.0
+    IL_0014:  call       !!0 [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives/IntrinsicFunctions::UnboxGeneric<class Inheritance/Student>(object)
+    IL_0019:  stloc.1
+    IL_001a:  ldloc.0
+    IL_001b:  stloc.3
+    IL_001c:  ldloc.3
+    IL_001d:  isinst     Inheritance/Student
+    IL_0022:  ldnull
+    IL_0023:  cgt.un
+    IL_0025:  stloc.2
+    IL_0026:  newobj     instance void Inheritance/Printer::.ctor()
+    IL_002b:  stloc.s    printer
+    IL_002d:  ldloc.s    printer
+    IL_002f:  ldloc.0
+    IL_0030:  call       instance void Inheritance/Printer::PrintName<class Inheritance/Person>(!!0)
+    IL_0035:  nop
+    IL_0036:  ldloc.s    printer
+    IL_0038:  ldloc.1
+    IL_0039:  call       instance void Inheritance/Printer::PrintName<class Inheritance/Student>(!!0)
+    IL_003e:  nop
+    IL_003f:  ldstr      "Ken"
+    IL_0044:  ldstr      "Sipe"
+    IL_0049:  ldc.i4.s   40
+    IL_004b:  newobj     instance void Inheritance/Student::.ctor(string,
+                                                                  string,
+                                                                  int32)
+    IL_0050:  stloc.s    p2
+    IL_0052:  ldloc.s    p2
+    IL_0054:  call       !!0 [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives/IntrinsicFunctions::UnboxGeneric<class Inheritance/Student>(object)
+    IL_0059:  stloc.s    s2
+    IL_005b:  ldc.i4.s   42
+    IL_005d:  box        [mscorlib]System.Int32
+    IL_0062:  stloc.s    oi
+    IL_0064:  ldstr      "oi's type is {0}"
+    IL_0069:  ldloc.s    oi
+    IL_006b:  call       instance class [mscorlib]System.Type [mscorlib]System.Object::GetType()
+    IL_0070:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_0075:  ldloc.s    oi
+    IL_0077:  unbox.any  [mscorlib]System.Int32
+    IL_007c:  stloc.s    i
+    IL_007e:  ldstr      "i's type is {0}"
+    IL_0083:  ldloca.s   i
+    IL_0085:  constrained. [mscorlib]System.Int32
+    IL_008b:  callvirt   instance class [mscorlib]System.Type [mscorlib]System.Object::GetType()
+    IL_0090:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_0095:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Inheritance.fs" startline="161" endline="170"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 20 45 71 75 61 6C 69 74 79 20 61 6E 64 20   // .. Equality and 
+                                                                        63 6F 6D 70 61 72 69 73 6F 6E 20 65 78 61 6D 70   // comparison examp
+                                                                        6C 65 73 00 00 )                                  // les..
+    // Code size       177 (0xb1)
+    .maxstack  5
+    .locals init ([0] class [FSharp.Core]System.Tuple`2<int32,int32> t1,
+             [1] class [FSharp.Core]System.Tuple`2<int32,int32> t2,
+             [2] class [FSharp.Core]System.Tuple`2<int32,int32> t3,
+             [3] class [FSharp.Core]System.Tuple`2<int32,int32> V_3,
+             [4] class [FSharp.Core]System.Tuple`2<int32,int32> V_4,
+             [5] class [mscorlib]System.Collections.IEqualityComparer V_5,
+             [6] class [FSharp.Core]System.Tuple`2<int32,int32> V_6,
+             [7] class [FSharp.Core]System.Tuple`2<int32,int32> V_7,
+             [8] int32 V_8,
+             [9] int32 V_9,
+             [10] int32 V_10,
+             [11] int32 V_11,
+             [12] class [FSharp.Core]System.Tuple`2<int32,int32> V_12,
+             [13] class [FSharp.Core]System.Tuple`2<int32,int32> V_13,
+             [14] class [FSharp.Core]System.Tuple`2<int32,int32> V_14,
+             [15] class [FSharp.Core]System.Tuple`2<int32,int32> V_15)
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  ldc.i4.1
+    IL_0003:  newobj     instance void class [FSharp.Core]System.Tuple`2<int32,int32>::.ctor(!0,
+                                                                                             !1)
+    IL_0008:  stloc.0
+    IL_0009:  ldc.i4.1
+    IL_000a:  ldc.i4.1
+    IL_000b:  newobj     instance void class [FSharp.Core]System.Tuple`2<int32,int32>::.ctor(!0,
+                                                                                             !1)
+    IL_0010:  stloc.1
+    IL_0011:  ldc.i4.1
+    IL_0012:  ldc.i4.2
+    IL_0013:  newobj     instance void class [FSharp.Core]System.Tuple`2<int32,int32>::.ctor(!0,
+                                                                                             !1)
+    IL_0018:  stloc.2
+    IL_0019:  ldstr      "{0}"
+    IL_001e:  ldloc.0
+    IL_001f:  stloc.3
+    IL_0020:  ldloc.1
+    IL_0021:  stloc.s    V_4
+    IL_0023:  call       class [mscorlib]System.Collections.IEqualityComparer [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives::get_GenericEqualityComparer()
+    IL_0028:  stloc.s    V_5
+    IL_002a:  ldloc.3
+    IL_002b:  stloc.s    V_6
+    IL_002d:  ldloc.s    V_4
+    IL_002f:  stloc.s    V_7
+    IL_0031:  ldloc.s    V_6
+    IL_0033:  call       instance !0 class [FSharp.Core]System.Tuple`2<int32,int32>::get_Item1()
+    IL_0038:  stloc.s    V_8
+    IL_003a:  ldloc.s    V_6
+    IL_003c:  call       instance !1 class [FSharp.Core]System.Tuple`2<int32,int32>::get_Item2()
+    IL_0041:  stloc.s    V_9
+    IL_0043:  ldloc.s    V_7
+    IL_0045:  call       instance !0 class [FSharp.Core]System.Tuple`2<int32,int32>::get_Item1()
+    IL_004a:  stloc.s    V_10
+    IL_004c:  ldloc.s    V_7
+    IL_004e:  call       instance !1 class [FSharp.Core]System.Tuple`2<int32,int32>::get_Item2()
+    IL_0053:  stloc.s    V_11
+    IL_0055:  ldloc.s    V_8
+    IL_0057:  ldloc.s    V_10
+    IL_0059:  bne.un.s   IL_005d
+
+    IL_005b:  br.s       IL_005f
+
+    IL_005d:  br.s       IL_0068
+
+    IL_005f:  ldloc.s    V_9
+    IL_0061:  ldloc.s    V_11
+    IL_0063:  ceq
+    IL_0065:  nop
+    IL_0066:  br.s       IL_006a
+
+    IL_0068:  ldc.i4.0
+    IL_0069:  nop
+    IL_006a:  box        [mscorlib]System.Boolean
+    IL_006f:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_0074:  ldstr      "{0}"
+    IL_0079:  ldloc.0
+    IL_007a:  stloc.s    V_12
+    IL_007c:  ldloc.2
+    IL_007d:  stloc.s    V_13
+    IL_007f:  ldloc.s    V_12
+    IL_0081:  ldloc.s    V_13
+    IL_0083:  call       bool [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives/HashCompare::GenericLessThanIntrinsic<class [FSharp.Core]System.Tuple`2<int32,int32>>(!!0,
+                                                                                                                                                                          !!0)
+    IL_0088:  box        [mscorlib]System.Boolean
+    IL_008d:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_0092:  ldstr      "{0}"
+    IL_0097:  ldloc.2
+    IL_0098:  stloc.s    V_14
+    IL_009a:  ldloc.0
+    IL_009b:  stloc.s    V_15
+    IL_009d:  ldloc.s    V_14
+    IL_009f:  ldloc.s    V_15
+    IL_00a1:  call       bool [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives/HashCompare::GenericLessThanIntrinsic<class [FSharp.Core]System.Tuple`2<int32,int32>>(!!0,
+                                                                                                                                                                          !!0)
+    IL_00a6:  box        [mscorlib]System.Boolean
+    IL_00ab:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_00b0:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Inheritance.fs" startline="171" endline="177"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 12 49 6E 74 65 72 66 61 63 65 20 65 78 61   // ...Interface exa
+                                                                        6D 70 6C 65 73 00 00 )                            // mples..
+    // Code size       42 (0x2a)
+    .maxstack  7
+    .locals init ([0] class Inheritance/Student p,
+             [1] object pclone)
+    IL_0000:  nop
+    IL_0001:  ldstr      "Rachel"
+    IL_0006:  ldstr      "Reese"
+    IL_000b:  ldc.i4.s   28
+    IL_000d:  ldstr      "Silverlight"
+    IL_0012:  ldstr      "Agilitrain"
+    IL_0017:  newobj     instance void Inheritance/Student::.ctor(string,
+                                                                  string,
+                                                                  int32,
+                                                                  string,
+                                                                  string)
+    IL_001c:  stloc.0
+    IL_001d:  ldloc.0
+    IL_001e:  unbox.any  [mscorlib]System.ICloneable
+    IL_0023:  callvirt   instance object [mscorlib]System.ICloneable::Clone()
+    IL_0028:  stloc.1
+    IL_0029:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Inheritance.fs" startline="178" endline="194"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 1A 4F 62 6A 65 63 74 20 65 78 70 72 65 73   // ...Object expres
+                                                                        73 69 6F 6E 20 65 78 61 6D 70 6C 65 73 00 00 )    // sion examples..
+    // Code size       28 (0x1c)
+    .maxstack  3
+    .locals init ([0] class Inheritance/IDrinker p,
+             [1] class Inheritance/Person p2)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void Inheritance/p@181::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  callvirt   instance void Inheritance/IDrinker::Drink()
+    IL_000d:  nop
+    IL_000e:  newobj     instance void Inheritance/p2@188::.ctor()
+    IL_0013:  stloc.1
+    IL_0014:  ldloc.1
+    IL_0015:  callvirt   instance void Inheritance/Person::Work()
+    IL_001a:  nop
+    IL_001b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Class.fs" startline="225" endline="283"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 11 42 61 73 69 63 20 63 6C 61 73 73 20 75   // ...Basic class u
+                                                                        73 61 67 65 00 00 )                               // sage..
+    // Code size       726 (0x2d6)
+    .maxstack  7
+    .locals init ([0] class Class/Person p1,
+             [1] class Class/Person p2,
+             [2] class Class/Person p3,
+             [3] class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class Class/Person> V_3,
+             [4] class [mscorlib]System.Collections.Generic.IEnumerator`1<class Class/Person> V_4,
+             [5] class [FSharp.Core]Microsoft.FSharp.Core.Unit V_5,
+             [6] class Class/Person p,
+             [7] class [mscorlib]System.IDisposable V_7,
+             [8] class Class/Person p4,
+             [9] class Class/Person V_9,
+             [10] class Class/FlexiPerson p5,
+             [11] class Class/FlexiPerson p6,
+             [12] class Class/FlexiPerson V_12,
+             [13] class Class/FlexiPerson p7,
+             [14] class Class/FlexiPerson V_14,
+             [15] class Class/OptiPerson op5,
+             [16] class Class/OptiPerson op6,
+             [17] class Class/OptiPerson op7,
+             [18] string greeting,
+             [19] string wwwww,
+             [20] string alibi1,
+             [21] string alibi2,
+             [22] string alibi3,
+             [23] class Class/Person T800,
+             [24] class Class/Munchkin ted,
+             [25] class Class/Item coolArmor,
+             [26] class Class/Munchkin V_26,
+             [27] class Class/Munchkin V_27,
+             [28] class Class/Item V_28,
+             [29] int32 compare,
+             [30] class Class/Person V_30,
+             [31] class Class/Person V_31)
+    IL_0000:  nop
+    IL_0001:  ldstr      "Ted"
+    IL_0006:  ldstr      "Neward"
+    IL_000b:  ldc.i4.s   38
+    IL_000d:  newobj     instance void Class/Person::.ctor(string,
+                                                           string,
+                                                           int32)
+    IL_0012:  stloc.0
+    IL_0013:  ldstr      "Aaron"
+    IL_0018:  ldstr      "Erickson"
+    IL_001d:  newobj     instance void Class/Person::.ctor(string,
+                                                           string)
+    IL_0022:  stloc.1
+    IL_0023:  newobj     instance void Class/Person::.ctor()
+    IL_0028:  stloc.2
+    IL_0029:  ldloc.0
+    IL_002a:  ldloc.1
+    IL_002b:  ldloc.2
+    IL_002c:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class Class/Person>::get_Empty()
+    IL_0031:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class Class/Person>::Cons(!0,
+                                                                                                                                                                                 class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_0036:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class Class/Person>::Cons(!0,
+                                                                                                                                                                                 class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_003b:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class Class/Person>::Cons(!0,
+                                                                                                                                                                                 class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_0040:  stloc.3
+    IL_0041:  ldloc.3
+    IL_0042:  unbox.any  class [mscorlib]System.Collections.Generic.IEnumerable`1<class Class/Person>
+    IL_0047:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<class Class/Person>::GetEnumerator()
+    IL_004c:  stloc.s    V_4
+    .try
+    {
+      IL_004e:  ldloc.s    V_4
+      IL_0050:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0055:  brfalse.s  IL_0080
+
+      IL_0057:  ldloc.s    V_4
+      IL_0059:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<class Class/Person>::get_Current()
+      IL_005e:  stloc.s    p
+      IL_0060:  ldstr      "{0} is {1} years old"
+      IL_0065:  ldloc.s    p
+      IL_0067:  call       instance string Class/Person::get_FullName()
+      IL_006c:  ldloc.s    p
+      IL_006e:  call       instance int32 Class/Person::get_Age()
+      IL_0073:  box        [mscorlib]System.Int32
+      IL_0078:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                    object,
+                                                                    object)
+      IL_007d:  nop
+      IL_007e:  br.s       IL_004e
+
+      IL_0080:  ldnull
+      IL_0081:  stloc.s    V_5
+      IL_0083:  leave.s    IL_00a3
+
+    }  // end .try
+    finally
+    {
+      IL_0085:  ldloc.s    V_4
+      IL_0087:  isinst     [mscorlib]System.IDisposable
+      IL_008c:  stloc.s    V_7
+      IL_008e:  ldloc.s    V_7
+      IL_0090:  brfalse.s  IL_0094
+
+      IL_0092:  br.s       IL_0096
+
+      IL_0094:  br.s       IL_00a0
+
+      IL_0096:  ldloc.s    V_7
+      IL_0098:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_009d:  ldnull
+      IL_009e:  pop
+      IL_009f:  endfinally
+      IL_00a0:  ldnull
+      IL_00a1:  pop
+      IL_00a2:  endfinally
+    }  // end handler
+    IL_00a3:  ldloc.s    V_5
+    IL_00a5:  pop
+    IL_00a6:  ldloc.0
+    IL_00a7:  ldloc.0
+    IL_00a8:  call       instance int32 Class/Person::get_Age()
+    IL_00ad:  ldc.i4.1
+    IL_00ae:  add
+    IL_00af:  call       instance void Class/Person::set_Age(int32)
+    IL_00b4:  nop
+    IL_00b5:  ldstr      "Ted"
+    IL_00ba:  ldstr      "Neward"
+    IL_00bf:  newobj     instance void Class/Person::.ctor(string,
+                                                           string)
+    IL_00c4:  stloc.s    V_9
+    IL_00c6:  ldloc.s    V_9
+    IL_00c8:  ldc.i4.s   38
+    IL_00ca:  call       instance void Class/Person::set_Age(int32)
+    IL_00cf:  nop
+    IL_00d0:  ldloc.s    V_9
+    IL_00d2:  stloc.s    p4
+    IL_00d4:  newobj     instance void Class/FlexiPerson::.ctor()
+    IL_00d9:  stloc.s    p5
+    IL_00db:  newobj     instance void Class/FlexiPerson::.ctor()
+    IL_00e0:  stloc.s    V_12
+    IL_00e2:  ldloc.s    V_12
+    IL_00e4:  ldstr      "Ted"
+    IL_00e9:  call       instance void Class/FlexiPerson::set_FirstName(string)
+    IL_00ee:  nop
+    IL_00ef:  ldloc.s    V_12
+    IL_00f1:  stloc.s    p6
+    IL_00f3:  newobj     instance void Class/FlexiPerson::.ctor()
+    IL_00f8:  stloc.s    V_14
+    IL_00fa:  ldloc.s    V_14
+    IL_00fc:  ldstr      "Neward"
+    IL_0101:  call       instance void Class/FlexiPerson::set_LastName(string)
+    IL_0106:  nop
+    IL_0107:  ldloc.s    V_14
+    IL_0109:  ldc.i4.s   38
+    IL_010b:  call       instance void Class/FlexiPerson::set_Age(int32)
+    IL_0110:  nop
+    IL_0111:  ldloc.s    V_14
+    IL_0113:  stloc.s    p7
+    IL_0115:  ldnull
+    IL_0116:  ldnull
+    IL_0117:  ldnull
+    IL_0118:  newobj     instance void Class/OptiPerson::.ctor(class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>,
+                                                               class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<object>,
+                                                               class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<int32>)
+    IL_011d:  stloc.s    op5
+    IL_011f:  ldstr      "Ted"
+    IL_0124:  call       class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<!0> class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>::Some(!0)
+    IL_0129:  ldnull
+    IL_012a:  ldnull
+    IL_012b:  newobj     instance void Class/OptiPerson::.ctor(class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>,
+                                                               class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<object>,
+                                                               class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<int32>)
+    IL_0130:  stloc.s    op6
+    IL_0132:  ldstr      "Neward"
+    IL_0137:  call       class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<!0> class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>::Some(!0)
+    IL_013c:  ldnull
+    IL_013d:  ldc.i4.s   38
+    IL_013f:  call       class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<!0> class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<int32>::Some(!0)
+    IL_0144:  newobj     instance void Class/OptiPerson::.ctor(class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>,
+                                                               class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<object>,
+                                                               class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<int32>)
+    IL_0149:  stloc.s    op7
+    IL_014b:  ldstr      "{0}'s heart says {1}"
+    IL_0150:  ldloc.0
+    IL_0151:  call       instance string Class/Person::get_FullName()
+    IL_0156:  ldloc.0
+    IL_0157:  ldstr      "Heart"
+    IL_015c:  call       instance string Class/Person::get_Item(string)
+    IL_0161:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object,
+                                                                  object)
+    IL_0166:  ldstr      "{0}'s heart says {1}"
+    IL_016b:  ldloc.0
+    IL_016c:  call       instance string Class/Person::get_FullName()
+    IL_0171:  ldloc.0
+    IL_0172:  ldstr      "Heart"
+    IL_0177:  call       instance string Class/Person::get_Organ(string)
+    IL_017c:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object,
+                                                                  object)
+    IL_0181:  ldloc.0
+    IL_0182:  ldloc.1
+    IL_0183:  ldstr      "Howdy!"
+    IL_0188:  call       instance void Class/Person::Greet<string>(class Class/Person,
+                                                                   !!0)
+    IL_018d:  nop
+    IL_018e:  ldloc.0
+    IL_018f:  ldloc.1
+    IL_0190:  ldstr      "Howdy!"
+    IL_0195:  call       instance string Class/Person::CreateGreeting<string>(class Class/Person,
+                                                                              !!0)
+    IL_019a:  stloc.s    greeting
+    IL_019c:  ldloc.s    greeting
+    IL_019e:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_01a3:  ldloc.0
+    IL_01a4:  ldloc.1
+    IL_01a5:  call       instance void Class/Person::Greet(class Class/Person)
+    IL_01aa:  nop
+    IL_01ab:  ldloc.0
+    IL_01ac:  ldstr      "relaxing"
+    IL_01b1:  ldstr      "in the sitting room"
+    IL_01b6:  call       valuetype [mscorlib]System.DateTime [mscorlib]System.DateTime::get_Now()
+    IL_01bb:  ldstr      "because I'm tired"
+    IL_01c0:  call       instance string Class/Person::WhoWhatWhereWhenWhy<string,string,string>(!!0,
+                                                                                                 !!1,
+                                                                                                 valuetype [mscorlib]System.DateTime,
+                                                                                                 !!2)
+    IL_01c5:  stloc.s    wwwww
+    IL_01c7:  ldloc.s    wwwww
+    IL_01c9:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_01ce:  ldstr      "This is a message"
+    IL_01d3:  ldc.i4.0
+    IL_01d4:  newarr     [mscorlib]System.Object
+    IL_01d9:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object[])
+    IL_01de:  ldloc.0
+    IL_01df:  ldstr      "relaxing"
+    IL_01e4:  call       class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<!0> class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>::Some(!0)
+    IL_01e9:  ldstr      "in the sitting room"
+    IL_01ee:  call       class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<!0> class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>::Some(!0)
+    IL_01f3:  call       valuetype [mscorlib]System.DateTime [mscorlib]System.DateTime::get_Now()
+    IL_01f8:  call       class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<!0> class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<valuetype [mscorlib]System.DateTime>::Some(!0)
+    IL_01fd:  ldstr      "because I'm tired"
+    IL_0202:  call       class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<!0> class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>::Some(!0)
+    IL_0207:  call       instance string Class/Person::Alibi(class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>,
+                                                             class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>,
+                                                             class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<valuetype [mscorlib]System.DateTime>,
+                                                             class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>)
+    IL_020c:  stloc.s    alibi1
+    IL_020e:  ldloc.0
+    IL_020f:  ldstr      "relaxing"
+    IL_0214:  call       class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<!0> class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>::Some(!0)
+    IL_0219:  ldstr      "in the sitting room"
+    IL_021e:  call       class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<!0> class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>::Some(!0)
+    IL_0223:  call       valuetype [mscorlib]System.DateTime [mscorlib]System.DateTime::get_Now()
+    IL_0228:  call       class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<!0> class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<valuetype [mscorlib]System.DateTime>::Some(!0)
+    IL_022d:  ldstr      "because I'm tired"
+    IL_0232:  call       class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<!0> class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>::Some(!0)
+    IL_0237:  call       instance string Class/Person::Alibi(class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>,
+                                                             class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>,
+                                                             class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<valuetype [mscorlib]System.DateTime>,
+                                                             class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>)
+    IL_023c:  stloc.s    alibi2
+    IL_023e:  ldloc.0
+    IL_023f:  ldstr      "relaxing"
+    IL_0244:  call       class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<!0> class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>::Some(!0)
+    IL_0249:  ldstr      "in the sitting room"
+    IL_024e:  call       class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<!0> class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>::Some(!0)
+    IL_0253:  call       valuetype [mscorlib]System.DateTime [mscorlib]System.DateTime::get_Now()
+    IL_0258:  call       class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<!0> class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<valuetype [mscorlib]System.DateTime>::Some(!0)
+    IL_025d:  ldstr      "because I'm tired"
+    IL_0262:  call       class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<!0> class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>::Some(!0)
+    IL_0267:  call       instance string Class/Person::Alibi(class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>,
+                                                             class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>,
+                                                             class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<valuetype [mscorlib]System.DateTime>,
+                                                             class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<string>)
+    IL_026c:  stloc.s    alibi3
+    IL_026e:  nop
+    IL_026f:  call       bool Class/Skynet::get_AfterJudgmentDay()
+    IL_0274:  brfalse.s  IL_0278
+
+    IL_0276:  br.s       IL_027a
+
+    IL_0278:  br.s       IL_0282
+
+    IL_027a:  call       class Class/Person Class/Skynet::CreateTerminator()
+    IL_027f:  nop
+    IL_0280:  br.s       IL_0294
+
+    IL_0282:  ldstr      "Arnold"
+    IL_0287:  ldstr      "Schwarzenegger"
+    IL_028c:  ldc.i4.s   50
+    IL_028e:  newobj     instance void Class/Person::.ctor(string,
+                                                           string,
+                                                           int32)
+    IL_0293:  nop
+    IL_0294:  stloc.s    T800
+    IL_0296:  ldc.i4.1
+    IL_0297:  newobj     instance void Class/Munchkin::.ctor(int32)
+    IL_029c:  stloc.s    ted
+    IL_029e:  ldstr      "Functional Plate"
+    IL_02a3:  call       class Class/Location Class/Location::get_Armor()
+    IL_02a8:  ldc.i4.5
+    IL_02a9:  ldc.i4.0
+    IL_02aa:  newobj     instance void Class/Item::.ctor(string,
+                                                         class Class/Location,
+                                                         int32,
+                                                         int32)
+    IL_02af:  stloc.s    coolArmor
+    IL_02b1:  ldloc.s    ted
+    IL_02b3:  stloc.s    V_27
+    IL_02b5:  ldloc.s    coolArmor
+    IL_02b7:  stloc.s    V_28
+    IL_02b9:  ldloc.s    V_27
+    IL_02bb:  ldloc.s    V_28
+    IL_02bd:  call       class Class/Munchkin Class/Munchkin::op_LessLessEqualsEquals(class Class/Munchkin,
+                                                                                      class Class/Item)
+    IL_02c2:  stloc.s    V_26
+    IL_02c4:  ldloc.0
+    IL_02c5:  stloc.s    V_30
+    IL_02c7:  ldloc.1
+    IL_02c8:  stloc.s    V_31
+    IL_02ca:  ldloc.s    V_30
+    IL_02cc:  ldloc.s    V_31
+    IL_02ce:  call       int32 Class/Person::op_LessEqualsEqualsGreater(class Class/Person,
+                                                                        class Class/Person)
+    IL_02d3:  stloc.s    compare
+    IL_02d5:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Class.fs" startline="284" endline="299"><![CDATA[
+  {
+    .custom instance void [FSharp.Core]Microsoft.FSharp.Core.CompilationArgumentCountsAttribute::.ctor(int32[]) = ( 01 00 02 00 00 00 01 00 00 00 00 00 00 00 00 00 ) 
+    // Code size       14 (0xe)
+    .maxstack  4
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance string [mscorlib]System.String::ToUpper()
+    IL_0007:  ldarg.0
+    IL_0008:  call       bool [mscorlib]System.String::Equals(string,
+                                                              string)
+    IL_000d:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Class.fs" startline="300" endline="307"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 14 54 79 70 65 20 65 78 74 65 6E 73 69 6F   // ...Type extensio
+                                                                        6E 20 75 73 61 67 65 00 00 )                      // n usage..
+    // Code size       18 (0x12)
+    .maxstack  4
+    .locals init ([0] class Class/Student ted)
+    IL_0000:  nop
+    IL_0001:  ldstr      "Ted"
+    IL_0006:  ldstr      "International Relations"
+    IL_000b:  newobj     instance void Class/Student::.ctor(string,
+                                                            string)
+    IL_0010:  stloc.0
+    IL_0011:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Class.fs" startline="308" endline="421"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+    // Code size       252 (0xfc)
+    .maxstack  7
+    .locals init ([0] class [mscorlib]System.AppDomain ad,
+             [1] class [mscorlib]System.AppDomain V_1,
+             [2] class Class/Child c,
+             [3] class Class/Notify np,
+             [4] string response,
+             [5] class Class/DelegateTarget dt,
+             [6] class Class/CurriedDelegate cd1,
+             [7] class Class/TupledDelegate td1,
+             [8] class Class/RockBand rb,
+             [9] class Class/RockBand V_9,
+             [10] class Class/Fan f1,
+             [11] class Class/Fan f2,
+             [12] class Class/Fan f3)
+    IL_0000:  nop
+    IL_0001:  call       class [mscorlib]System.AppDomain [mscorlib]System.AppDomain::get_CurrentDomain()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  stloc.1
+    IL_0009:  ldloc.1
+    IL_000a:  newobj     instance void Class/events_examples@390::.ctor(class [mscorlib]System.AppDomain)
+    IL_000f:  ldloc.1
+    IL_0010:  newobj     instance void Class/'events_examples@390-1'::.ctor(class [mscorlib]System.AppDomain)
+    IL_0015:  newobj     instance void Class/'events_examples@390-2'::.ctor()
+    IL_001a:  call       class [FSharp.Core]Microsoft.FSharp.Control.IEvent`2<!!0,!!1> [FSharp.Core]Microsoft.FSharp.Core.CompilerServices.RuntimeHelpers::CreateEvent<class [mscorlib]System.EventHandler,class [mscorlib]System.EventArgs>(class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<!!0,class [FSharp.Core]Microsoft.FSharp.Core.Unit>,
+                                                                                                                                                                                                                                             class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<!!0,class [FSharp.Core]Microsoft.FSharp.Core.Unit>,
+                                                                                                                                                                                                                                             class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<object,class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<!!1,class [FSharp.Core]Microsoft.FSharp.Core.Unit>>,!!0>)
+    IL_001f:  newobj     instance void Class/'events_examples@390-4'::.ctor()
+    IL_0024:  call       void [FSharp.Core]Microsoft.FSharp.Control.CommonExtensions::AddToObservable<class [mscorlib]System.EventArgs>(class [FSharp.Core]System.IObservable`1<!!0>,
+                                                                                                                                        class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<!!0,class [FSharp.Core]Microsoft.FSharp.Core.Unit>)
+    IL_0029:  nop
+    IL_002a:  newobj     instance void Class/Child::.ctor()
+    IL_002f:  stloc.2
+    IL_0030:  ldloc.2
+    IL_0031:  newobj     instance void Class/np@393::.ctor(class Class/Child)
+    IL_0036:  ldftn      instance string Class/np@393::Invoke(string)
+    IL_003c:  newobj     instance void Class/Notify::.ctor(object,
+                                                           native int)
+    IL_0041:  stloc.3
+    IL_0042:  ldloc.3
+    IL_0043:  ldstr      "Clean your room!"
+    IL_0048:  callvirt   instance string Class/Notify::Invoke(string)
+    IL_004d:  stloc.s    response
+    IL_004f:  ldloc.s    response
+    IL_0051:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0056:  newobj     instance void Class/DelegateTarget::.ctor()
+    IL_005b:  stloc.s    dt
+    IL_005d:  ldloc.s    dt
+    IL_005f:  newobj     instance void Class/cd1@398::.ctor(class Class/DelegateTarget)
+    IL_0064:  ldftn      instance int32 Class/cd1@398::Invoke(int32,
+                                                              int32)
+    IL_006a:  newobj     instance void Class/CurriedDelegate::.ctor(object,
+                                                                    native int)
+    IL_006f:  stloc.s    cd1
+    IL_0071:  ldloc.s    dt
+    IL_0073:  newobj     instance void Class/td1@400::.ctor(class Class/DelegateTarget)
+    IL_0078:  ldftn      instance int32 Class/td1@400::Invoke(class [FSharp.Core]System.Tuple`2<int32,int32>)
+    IL_007e:  newobj     instance void Class/TupledDelegate::.ctor(object,
+                                                                   native int)
+    IL_0083:  stloc.s    td1
+    IL_0085:  ldstr      "The Functional Ya-Yas"
+    IL_008a:  newobj     instance void Class/RockBand::.ctor(string)
+    IL_008f:  stloc.s    rb
+    IL_0091:  ldloc.s    rb
+    IL_0093:  newobj     instance void Class/'events_examples@412-5'::.ctor(class Class/RockBand)
+    IL_0098:  newobj     instance void Class/'events_examples@406-6'::.ctor()
+    IL_009d:  ldloc.s    rb
+    IL_009f:  stloc.s    V_9
+    IL_00a1:  ldloc.s    V_9
+    IL_00a3:  newobj     instance void Class/'events_examples@404-7'::.ctor(class Class/RockBand)
+    IL_00a8:  ldloc.s    V_9
+    IL_00aa:  newobj     instance void Class/'events_examples@404-8'::.ctor(class Class/RockBand)
+    IL_00af:  newobj     instance void Class/'events_examples@404-9'::.ctor()
+    IL_00b4:  call       class [FSharp.Core]Microsoft.FSharp.Control.IEvent`2<!!0,!!1> [FSharp.Core]Microsoft.FSharp.Core.CompilerServices.RuntimeHelpers::CreateEvent<class [mscorlib]System.EventHandler,class [mscorlib]System.EventArgs>(class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<!!0,class [FSharp.Core]Microsoft.FSharp.Core.Unit>,
+                                                                                                                                                                                                                                             class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<!!0,class [FSharp.Core]Microsoft.FSharp.Core.Unit>,
+                                                                                                                                                                                                                                             class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<object,class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<!!1,class [FSharp.Core]Microsoft.FSharp.Core.Unit>>,!!0>)
+    IL_00b9:  call       class [FSharp.Core]Microsoft.FSharp.Control.IEvent`2<class [FSharp.Core]Microsoft.FSharp.Control.FSharpHandler`1<!!0>,!!0> [FSharp.Core]Microsoft.FSharp.Control.EventModule::Filter<class [mscorlib]System.EventArgs,class [mscorlib]System.EventHandler>(class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<!!0,bool>,
+                                                                                                                                                                                                                                                                                    class [FSharp.Core]Microsoft.FSharp.Control.IEvent`2<!!1,!!0>)
+    IL_00be:  call       void [FSharp.Core]Microsoft.FSharp.Control.EventModule::Add<class [mscorlib]System.EventArgs,class [FSharp.Core]Microsoft.FSharp.Control.FSharpHandler`1<class [mscorlib]System.EventArgs>>(class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<!!0,class [FSharp.Core]Microsoft.FSharp.Core.Unit>,
+                                                                                                                                                                                                                     class [FSharp.Core]Microsoft.FSharp.Control.IEvent`2<!!1,!!0>)
+    IL_00c3:  nop
+    IL_00c4:  ldstr      "Detroit"
+    IL_00c9:  ldloc.s    rb
+    IL_00cb:  newobj     instance void Class/Fan::.ctor(string,
+                                                        class Class/RockBand)
+    IL_00d0:  stloc.s    f1
+    IL_00d2:  ldstr      "Cleveland"
+    IL_00d7:  ldloc.s    rb
+    IL_00d9:  newobj     instance void Class/Fan::.ctor(string,
+                                                        class Class/RockBand)
+    IL_00de:  stloc.s    f2
+    IL_00e0:  ldstr      "Detroit"
+    IL_00e5:  ldloc.s    rb
+    IL_00e7:  newobj     instance void Class/Fan::.ctor(string,
+                                                        class Class/RockBand)
+    IL_00ec:  stloc.s    f3
+    IL_00ee:  ldloc.s    rb
+    IL_00f0:  ldstr      "Detroit"
+    IL_00f5:  call       instance void Class/RockBand::HoldConcert(string)
+    IL_00fa:  nop
+    IL_00fb:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Class.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       6 (0x6)
+    .maxstack  4
+    IL_0000:  ldsfld     class Class/Experiment '<StartupCode$Objects>'.$Class::e@434
+    IL_0005:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Class.fs" startline="422" endline="440"><![CDATA[
+  {
+    .param [1]
+    .custom instance void [mscorlib]System.ParamArrayAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       37 (0x25)
+    .maxstack  4
+    .locals init ([0] object[] V_0,
+             [1] int32 V_1,
+             [2] object o)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  stloc.0
+    IL_0003:  ldc.i4.0
+    IL_0004:  stloc.1
+    IL_0005:  br.s       IL_001e
+
+    IL_0007:  ldloc.0
+    IL_0008:  ldloc.1
+    IL_0009:  ldelem     [mscorlib]System.Object
+    IL_000e:  stloc.2
+    IL_000f:  ldloc.2
+    IL_0010:  callvirt   instance string [mscorlib]System.Object::ToString()
+    IL_0015:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_001a:  ldloc.1
+    IL_001b:  ldc.i4.1
+    IL_001c:  add
+    IL_001d:  stloc.1
+    IL_001e:  ldloc.1
+    IL_001f:  ldloc.0
+    IL_0020:  ldlen
+    IL_0021:  conv.i4
+    IL_0022:  blt.s      IL_0007
+
+    IL_0024:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Class.fs" startline="441" endline="444"><![CDATA[
+  {
+    // Code size       18 (0x12)
+    .maxstack  3
+    IL_0000:  nop
+    IL_0001:  ldstr      "You can't call me!"
+    IL_0006:  newobj     instance void class [FSharp.Core]Microsoft.FSharp.Core.PrintfFormat`5<class [FSharp.Core]Microsoft.FSharp.Core.Unit,class [mscorlib]System.IO.TextWriter,class [FSharp.Core]Microsoft.FSharp.Core.Unit,class [FSharp.Core]Microsoft.FSharp.Core.Unit,class [FSharp.Core]Microsoft.FSharp.Core.Unit>::.ctor(string)
+    IL_000b:  call       !!0 [FSharp.Core]Microsoft.FSharp.Core.ExtraTopLevelOperators::PrintFormatLine<class [FSharp.Core]Microsoft.FSharp.Core.Unit>(class [FSharp.Core]Microsoft.FSharp.Core.PrintfFormat`4<!!0,class [mscorlib]System.IO.TextWriter,class [FSharp.Core]Microsoft.FSharp.Core.Unit,class [FSharp.Core]Microsoft.FSharp.Core.Unit>)
+    IL_0010:  pop
+    IL_0011:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Class.fs" startline="445" endline="450"><![CDATA[
+  {
+    // Code size       5 (0x5)
+    .maxstack  4
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.0
+    IL_0003:  add
+    IL_0004:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Class.fs" startline="451" endline="452"><![CDATA[
+  {
+    // Code size       13 (0xd)
+    .maxstack  4
+    .locals init ([0] !!a V_0,
+             [1] !!a V_1)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  stloc.0
+    IL_0003:  ldarg.0
+    IL_0004:  stloc.1
+    IL_0005:  ldloc.0
+    IL_0006:  ldloc.1
+    IL_0007:  call       !!2 [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives::AdditionDynamic<!!0,!!0,!!1>(!!0,
+                                                                                                                 !!1)
+    IL_000c:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Class.fs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       6 (0x6)
+    .maxstack  4
+    IL_0000:  ldsfld     string '<StartupCode$Objects>'.$Class::r@454
+    IL_0005:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\Class.fs" startline="149" endline="454"><![CDATA[
+  {
+    // Code size       154 (0x9a)
+    .maxstack  7
+    .locals init ([0] class Class/Experiment e,
+             [1] string r,
+             [2] int64 humansKilled,
+             [3] string V_3)
+    IL_0000:  nop
+    IL_0001:  ldc.i8     0xb2d05e00
+    IL_000a:  stloc.2
+    IL_000b:  nop
+    IL_000c:  newobj     instance void Class/Experiment::.ctor()
+    IL_0011:  dup
+    IL_0012:  stsfld     class Class/Experiment '<StartupCode$Objects>'.$Class::e@434
+    IL_0017:  stloc.0
+    IL_0018:  call       class Class/Experiment Class::get_e()
+    IL_001d:  ldc.i4.3
+    IL_001e:  newarr     [mscorlib]System.Object
+    IL_0023:  dup
+    IL_0024:  ldc.i4.0
+    IL_0025:  ldstr      "one"
+    IL_002a:  stelem     [mscorlib]System.Object
+    IL_002f:  dup
+    IL_0030:  ldc.i4.1
+    IL_0031:  ldc.i4.2
+    IL_0032:  box        [mscorlib]System.Int32
+    IL_0037:  stelem     [mscorlib]System.Object
+    IL_003c:  dup
+    IL_003d:  ldc.i4.2
+    IL_003e:  ldc.r8     3.
+    IL_0047:  box        [mscorlib]System.Double
+    IL_004c:  stelem     [mscorlib]System.Object
+    IL_0051:  call       instance void Class/Experiment::TestMethod(object[])
+    IL_0056:  nop
+    IL_0057:  call       class Class/Experiment Class::get_e()
+    IL_005c:  ldc.i4.1
+    IL_005d:  newarr     [mscorlib]System.Object
+    IL_0062:  dup
+    IL_0063:  ldc.i4.0
+    IL_0064:  ldstr      "This is just one argument"
+    IL_0069:  stelem     [mscorlib]System.Object
+    IL_006e:  call       instance void Class/Experiment::TestMethod(object[])
+    IL_0073:  nop
+    IL_0074:  call       class Class/Experiment Class::get_e()
+    IL_0079:  ldc.i4.0
+    IL_007a:  newarr     [mscorlib]System.Object
+    IL_007f:  call       instance void Class/Experiment::TestMethod(object[])
+    IL_0084:  nop
+    IL_0085:  ldstr      "Hello"
+    IL_008a:  stloc.3
+    IL_008b:  ldloc.3
+    IL_008c:  ldloc.3
+    IL_008d:  call       string [mscorlib]System.String::Concat(string,
+                                                                string)
+    IL_0092:  dup
+    IL_0093:  stsfld     string '<StartupCode$Objects>'.$Class::r@454
+    IL_0098:  stloc.1
+    IL_0099:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\ComplexCompositeTypes.fs" startline="21" endline="427"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 1B 54 79 70 65 20 61 62 62 72 65 76 69 61   // ...Type abbrevia
+                                                                        74 69 6F 6E 73 20 65 78 61 6D 70 6C 65 73 00 00 ) // tions examples..
+    // Code size       180 (0xb4)
+    .maxstack  6
+    .locals init ([0] class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class [FSharp.Core]System.Tuple`3<string,string,float64>> diner,
+             [1] class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class [FSharp.Core]System.Tuple`3<string,string,float64>> V_1,
+             [2] class [mscorlib]System.Collections.Generic.IEnumerator`1<class [FSharp.Core]System.Tuple`3<string,string,float64>> V_2,
+             [3] class [FSharp.Core]Microsoft.FSharp.Core.Unit V_3,
+             [4] class [FSharp.Core]System.Tuple`3<string,string,float64> V_4,
+             [5] float64 price,
+             [6] string name,
+             [7] string desc,
+             [8] class [mscorlib]System.IDisposable V_8)
+    IL_0000:  nop
+    IL_0001:  ldstr      "Grand Slam"
+    IL_0006:  ldstr      "Two eggs, two bacon, three pancakes"
+    IL_000b:  ldc.r8     2.9900000000000002
+    IL_0014:  newobj     instance void class [FSharp.Core]System.Tuple`3<string,string,float64>::.ctor(!0,
+                                                                                                       !1,
+                                                                                                       !2)
+    IL_0019:  ldstr      "Chicken strips"
+    IL_001e:  ldstr      "Five strips and sauce"
+    IL_0023:  ldc.r8     3.9900000000000002
+    IL_002c:  newobj     instance void class [FSharp.Core]System.Tuple`3<string,string,float64>::.ctor(!0,
+                                                                                                       !1,
+                                                                                                       !2)
+    IL_0031:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class [FSharp.Core]System.Tuple`3<string,string,float64>>::get_Empty()
+    IL_0036:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class [FSharp.Core]System.Tuple`3<string,string,float64>>::Cons(!0,
+                                                                                                                                                                                                                       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_003b:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class [FSharp.Core]System.Tuple`3<string,string,float64>>::Cons(!0,
+                                                                                                                                                                                                                       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_0040:  stloc.0
+    IL_0041:  ldloc.0
+    IL_0042:  stloc.1
+    IL_0043:  ldloc.1
+    IL_0044:  unbox.any  class [mscorlib]System.Collections.Generic.IEnumerable`1<class [FSharp.Core]System.Tuple`3<string,string,float64>>
+    IL_0049:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<class [FSharp.Core]System.Tuple`3<string,string,float64>>::GetEnumerator()
+    IL_004e:  stloc.2
+    .try
+    {
+      IL_004f:  ldloc.2
+      IL_0050:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0055:  brfalse.s  IL_0090
+
+      IL_0057:  ldloc.2
+      IL_0058:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<class [FSharp.Core]System.Tuple`3<string,string,float64>>::get_Current()
+      IL_005d:  stloc.s    V_4
+      IL_005f:  ldloc.s    V_4
+      IL_0061:  call       instance !2 class [FSharp.Core]System.Tuple`3<string,string,float64>::get_Item3()
+      IL_0066:  stloc.s    price
+      IL_0068:  ldloc.s    V_4
+      IL_006a:  call       instance !0 class [FSharp.Core]System.Tuple`3<string,string,float64>::get_Item1()
+      IL_006f:  stloc.s    name
+      IL_0071:  ldloc.s    V_4
+      IL_0073:  call       instance !1 class [FSharp.Core]System.Tuple`3<string,string,float64>::get_Item2()
+      IL_0078:  stloc.s    desc
+      IL_007a:  ldstr      "{0} costs {1}"
+      IL_007f:  ldloc.s    name
+      IL_0081:  ldloc.s    price
+      IL_0083:  box        [mscorlib]System.Double
+      IL_0088:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                    object,
+                                                                    object)
+      IL_008d:  nop
+      IL_008e:  br.s       IL_004f
+
+      IL_0090:  ldnull
+      IL_0091:  stloc.3
+      IL_0092:  leave.s    IL_00b1
+
+    }  // end .try
+    finally
+    {
+      IL_0094:  ldloc.2
+      IL_0095:  isinst     [mscorlib]System.IDisposable
+      IL_009a:  stloc.s    V_8
+      IL_009c:  ldloc.s    V_8
+      IL_009e:  brfalse.s  IL_00a2
+
+      IL_00a0:  br.s       IL_00a4
+
+      IL_00a2:  br.s       IL_00ae
+
+      IL_00a4:  ldloc.s    V_8
+      IL_00a6:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_00ab:  ldnull
+      IL_00ac:  pop
+      IL_00ad:  endfinally
+      IL_00ae:  ldnull
+      IL_00af:  pop
+      IL_00b0:  endfinally
+    }  // end handler
+    IL_00b1:  ldloc.3
+    IL_00b2:  pop
+    IL_00b3:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\ComplexCompositeTypes.fs" startline="45" endline="94"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 12 45 6E 75 6D 20 75 73 61 67 65 20 65 78   // ...Enum usage ex
+                                                                        61 6D 70 6C 65 00 00 )                            // ample..
+    // Code size       276 (0x114)
+    .maxstack  5
+    .locals init ([0] valuetype ComplexCompositeTypes/Soda drink,
+             [1] string message,
+             [2] valuetype ComplexCompositeTypes/Soda V_2,
+             [3] valuetype ComplexCompositeTypes/Soda Coke,
+             [4] string V_4,
+             [5] int32 rawValue,
+             [6] valuetype ComplexCompositeTypes/Soda V_6,
+             [7] valuetype ComplexCompositeTypes/Soda V_7,
+             [8] int32 rawInt,
+             [9] valuetype ComplexCompositeTypes/Soda unknownDrink,
+             [10] string V_10,
+             [11] valuetype ComplexCompositeTypes/SuicideSoda perfectDrink,
+             [12] string[] enumNames,
+             [13] class [mscorlib]System.Array enumValues)
+    IL_0000:  nop
+    IL_0001:  ldc.i4.2
+    IL_0002:  stloc.0
+    IL_0003:  nop
+    IL_0004:  ldloc.0
+    IL_0005:  stloc.2
+    IL_0006:  ldloc.2
+    IL_0007:  stloc.3
+    IL_0008:  ldstr      "Ah, so refreshing!"
+    IL_000d:  stloc.1
+    IL_000e:  ldloc.1
+    IL_000f:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0014:  nop
+    IL_0015:  ldloc.0
+    IL_0016:  ldc.i4.1
+    IL_0017:  sub
+    IL_0018:  switch     ( 
+                          IL_0027,
+                          IL_0029)
+    IL_0025:  br.s       IL_003b
+
+    IL_0027:  br.s       IL_002b
+
+    IL_0029:  br.s       IL_0033
+
+    IL_002b:  ldstr      "Ah, so refreshing!"
+    IL_0030:  nop
+    IL_0031:  br.s       IL_0041
+
+    IL_0033:  ldstr      "Just one calorie!"
+    IL_0038:  nop
+    IL_0039:  br.s       IL_0041
+
+    IL_003b:  ldstr      "Bleah"
+    IL_0040:  nop
+    IL_0041:  stloc.s    V_4
+    IL_0043:  ldloc.s    V_4
+    IL_0045:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_004a:  ldc.i4.2
+    IL_004b:  stloc.s    V_6
+    IL_004d:  ldloc.s    V_6
+    IL_004f:  stloc.s    V_7
+    IL_0051:  ldloc.s    V_6
+    IL_0053:  stloc.s    rawValue
+    IL_0055:  ldc.i4.s   20
+    IL_0057:  stloc.s    rawInt
+    IL_0059:  ldloc.s    rawInt
+    IL_005b:  stloc.s    unknownDrink
+    IL_005d:  nop
+    IL_005e:  ldloc.0
+    IL_005f:  ldc.i4.1
+    IL_0060:  sub
+    IL_0061:  switch     ( 
+                          IL_0074,
+                          IL_0076,
+                          IL_0078)
+    IL_0072:  br.s       IL_0092
+
+    IL_0074:  br.s       IL_007a
+
+    IL_0076:  br.s       IL_0082
+
+    IL_0078:  br.s       IL_008a
+
+    IL_007a:  ldstr      "Ah, so refreshing!"
+    IL_007f:  nop
+    IL_0080:  br.s       IL_009d
+
+    IL_0082:  ldstr      "Just one calorie!"
+    IL_0087:  nop
+    IL_0088:  br.s       IL_009d
+
+    IL_008a:  ldstr      "Clear soda!"
+    IL_008f:  nop
+    IL_0090:  br.s       IL_009d
+
+    IL_0092:  ldstr      "This should never happen!"
+    IL_0097:  call       !!0 [FSharp.Core]Microsoft.FSharp.Core.Operators::FailWith<string>(string)
+    IL_009c:  nop
+    IL_009d:  stloc.s    V_10
+    IL_009f:  ldloc.s    V_10
+    IL_00a1:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_00a6:  ldc.i4.1
+    IL_00a7:  ldc.i4.8
+    IL_00a8:  and
+    IL_00a9:  stloc.s    perfectDrink
+    IL_00ab:  ldstr      "It contains Coke\? {0}"
+    IL_00b0:  ldloc.s    perfectDrink
+    IL_00b2:  ldc.i4.1
+    IL_00b3:  and
+    IL_00b4:  ldc.i4.1
+    IL_00b5:  bne.un.s   IL_00b9
+
+    IL_00b7:  br.s       IL_00bb
+
+    IL_00b9:  br.s       IL_00c3
+
+    IL_00bb:  ldstr      "true"
+    IL_00c0:  nop
+    IL_00c1:  br.s       IL_00c9
+
+    IL_00c3:  ldstr      "false"
+    IL_00c8:  nop
+    IL_00c9:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_00ce:  ldstr      "It contains DietCoke\? {0}"
+    IL_00d3:  ldloc.s    perfectDrink
+    IL_00d5:  ldc.i4.2
+    IL_00d6:  and
+    IL_00d7:  ldc.i4.1
+    IL_00d8:  bne.un.s   IL_00dc
+
+    IL_00da:  br.s       IL_00de
+
+    IL_00dc:  br.s       IL_00e6
+
+    IL_00de:  ldstr      "true"
+    IL_00e3:  nop
+    IL_00e4:  br.s       IL_00ec
+
+    IL_00e6:  ldstr      "false"
+    IL_00eb:  nop
+    IL_00ec:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_00f1:  ldtoken    ComplexCompositeTypes/Soda
+    IL_00f6:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_00fb:  call       string[] [mscorlib]System.Enum::GetNames(class [mscorlib]System.Type)
+    IL_0100:  stloc.s    enumNames
+    IL_0102:  ldtoken    ComplexCompositeTypes/Soda
+    IL_0107:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_010c:  call       class [mscorlib]System.Array [mscorlib]System.Enum::GetValues(class [mscorlib]System.Type)
+    IL_0111:  stloc.s    enumValues
+    IL_0113:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\ComplexCompositeTypes.fs" startline="95" endline="148"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 1C 44 69 73 63 72 69 6D 69 6E 61 74 65 64   // ...Discriminated
+                                                                        20 75 6E 69 6F 6E 20 65 78 61 6D 70 6C 65 73 00   //  union examples.
+                                                                        00 ) 
+    // Code size       1082 (0x43a)
+    .maxstack  7
+    .locals init ([0] class ComplexCompositeTypes/Color c,
+             [1] string message,
+             [2] class ComplexCompositeTypes/Color black,
+             [3] string colorStr,
+             [4] class ComplexCompositeTypes/Color V_4,
+             [5] class ComplexCompositeTypes/Color/RGB V_5,
+             [6] int32 r,
+             [7] int32 g,
+             [8] int32 b,
+             [9] class ComplexCompositeTypes/Color/CMYK V_9,
+             [10] int32 y,
+             [11] int32 m,
+             [12] int32 k,
+             [13] int32 V_13)
+    IL_0000:  nop
+    IL_0001:  call       class ComplexCompositeTypes/Color ComplexCompositeTypes/Color::get_Black()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  call       void [mscorlib]System.Console::WriteLine(object)
+    IL_000d:  nop
+    IL_000e:  ldloc.0
+    IL_000f:  call       instance int32 ComplexCompositeTypes/Color::get_Tag()
+    IL_0014:  ldc.i4.2
+    IL_0015:  bne.un.s   IL_0019
+
+    IL_0017:  br.s       IL_001b
+
+    IL_0019:  br.s       IL_0023
+
+    IL_001b:  ldstr      "Black"
+    IL_0020:  nop
+    IL_0021:  br.s       IL_0029
+
+    IL_0023:  ldstr      "Not black"
+    IL_0028:  nop
+    IL_0029:  stloc.1
+    IL_002a:  ldloc.1
+    IL_002b:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0030:  ldc.i4.0
+    IL_0031:  ldc.i4.0
+    IL_0032:  ldc.i4.0
+    IL_0033:  call       class ComplexCompositeTypes/Color ComplexCompositeTypes/Color::NewRGB(int32,
+                                                                                               int32,
+                                                                                               int32)
+    IL_0038:  stloc.2
+    IL_0039:  ldloc.0
+    IL_003a:  call       void [mscorlib]System.Console::WriteLine(object)
+    IL_003f:  nop
+    IL_0040:  ldloc.0
+    IL_0041:  stloc.s    V_4
+    IL_0043:  ldloc.s    V_4
+    IL_0045:  call       instance int32 ComplexCompositeTypes/Color::get_Tag()
+    IL_004a:  switch     ( 
+                          IL_0078,
+                          IL_032d,
+                          IL_0073,
+                          IL_035c,
+                          IL_037d,
+                          IL_0351,
+                          IL_0346,
+                          IL_0367,
+                          IL_0372)
+    IL_0073:  br         IL_033b
+
+    IL_0078:  ldloc.s    V_4
+    IL_007a:  castclass  ComplexCompositeTypes/Color/RGB
+    IL_007f:  stloc.s    V_5
+    IL_0081:  ldloc.s    V_5
+    IL_0083:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item1
+    IL_0088:  switch     ( 
+                          IL_026d)
+    IL_0091:  ldloc.s    V_5
+    IL_0093:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item1
+    IL_0098:  ldc.i4.s   64
+    IL_009a:  sub
+    IL_009b:  switch     ( 
+                          IL_01fc)
+    IL_00a4:  ldloc.s    V_5
+    IL_00a6:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item1
+    IL_00ab:  ldc.i4     0xc0
+    IL_00b0:  sub
+    IL_00b1:  switch     ( 
+                          IL_018b)
+    IL_00ba:  ldloc.s    V_5
+    IL_00bc:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item1
+    IL_00c1:  ldc.i4     0xff
+    IL_00c6:  sub
+    IL_00c7:  switch     ( 
+                          IL_00d5)
+    IL_00d0:  br         IL_0388
+
+    IL_00d5:  ldloc.s    V_5
+    IL_00d7:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item2
+    IL_00dc:  switch     ( 
+                          IL_0156)
+    IL_00e5:  ldloc.s    V_5
+    IL_00e7:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item2
+    IL_00ec:  ldc.i4     0xff
+    IL_00f1:  sub
+    IL_00f2:  switch     ( 
+                          IL_011b)
+    IL_00fb:  ldloc.s    V_5
+    IL_00fd:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item1
+    IL_0102:  ldloc.s    V_5
+    IL_0104:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item2
+    IL_0109:  ldloc.s    V_5
+    IL_010b:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_0110:  stloc.s    b
+    IL_0112:  stloc.s    g
+    IL_0114:  stloc.s    r
+    IL_0116:  br         IL_03a3
+
+    IL_011b:  ldloc.s    V_5
+    IL_011d:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_0122:  ldc.i4     0xff
+    IL_0127:  sub
+    IL_0128:  switch     ( 
+                          IL_0151)
+    IL_0131:  ldloc.s    V_5
+    IL_0133:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item1
+    IL_0138:  ldloc.s    V_5
+    IL_013a:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item2
+    IL_013f:  ldloc.s    V_5
+    IL_0141:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_0146:  stloc.s    b
+    IL_0148:  stloc.s    g
+    IL_014a:  stloc.s    r
+    IL_014c:  br         IL_03a3
+
+    IL_0151:  br         IL_0346
+
+    IL_0156:  ldloc.s    V_5
+    IL_0158:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_015d:  switch     ( 
+                          IL_0186)
+    IL_0166:  ldloc.s    V_5
+    IL_0168:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item1
+    IL_016d:  ldloc.s    V_5
+    IL_016f:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item2
+    IL_0174:  ldloc.s    V_5
+    IL_0176:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_017b:  stloc.s    b
+    IL_017d:  stloc.s    g
+    IL_017f:  stloc.s    r
+    IL_0181:  br         IL_03a3
+
+    IL_0186:  br         IL_0351
+
+    IL_018b:  ldloc.s    V_5
+    IL_018d:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item2
+    IL_0192:  ldc.i4     0xc0
+    IL_0197:  sub
+    IL_0198:  switch     ( 
+                          IL_01c1)
+    IL_01a1:  ldloc.s    V_5
+    IL_01a3:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item1
+    IL_01a8:  ldloc.s    V_5
+    IL_01aa:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item2
+    IL_01af:  ldloc.s    V_5
+    IL_01b1:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_01b6:  stloc.s    b
+    IL_01b8:  stloc.s    g
+    IL_01ba:  stloc.s    r
+    IL_01bc:  br         IL_03a3
+
+    IL_01c1:  ldloc.s    V_5
+    IL_01c3:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_01c8:  ldc.i4     0xc0
+    IL_01cd:  sub
+    IL_01ce:  switch     ( 
+                          IL_01f7)
+    IL_01d7:  ldloc.s    V_5
+    IL_01d9:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item1
+    IL_01de:  ldloc.s    V_5
+    IL_01e0:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item2
+    IL_01e5:  ldloc.s    V_5
+    IL_01e7:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_01ec:  stloc.s    b
+    IL_01ee:  stloc.s    g
+    IL_01f0:  stloc.s    r
+    IL_01f2:  br         IL_03a3
+
+    IL_01f7:  br         IL_0372
+
+    IL_01fc:  ldloc.s    V_5
+    IL_01fe:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item2
+    IL_0203:  ldc.i4     0x80
+    IL_0208:  sub
+    IL_0209:  switch     ( 
+                          IL_0232)
+    IL_0212:  ldloc.s    V_5
+    IL_0214:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item1
+    IL_0219:  ldloc.s    V_5
+    IL_021b:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item2
+    IL_0220:  ldloc.s    V_5
+    IL_0222:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_0227:  stloc.s    b
+    IL_0229:  stloc.s    g
+    IL_022b:  stloc.s    r
+    IL_022d:  br         IL_03a3
+
+    IL_0232:  ldloc.s    V_5
+    IL_0234:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_0239:  ldc.i4     0x80
+    IL_023e:  sub
+    IL_023f:  switch     ( 
+                          IL_0268)
+    IL_0248:  ldloc.s    V_5
+    IL_024a:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item1
+    IL_024f:  ldloc.s    V_5
+    IL_0251:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item2
+    IL_0256:  ldloc.s    V_5
+    IL_0258:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_025d:  stloc.s    b
+    IL_025f:  stloc.s    g
+    IL_0261:  stloc.s    r
+    IL_0263:  br         IL_03a3
+
+    IL_0268:  br         IL_0367
+
+    IL_026d:  ldloc.s    V_5
+    IL_026f:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item2
+    IL_0274:  switch     ( 
+                          IL_02e8)
+    IL_027d:  ldloc.s    V_5
+    IL_027f:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item2
+    IL_0284:  ldc.i4     0xff
+    IL_0289:  sub
+    IL_028a:  switch     ( 
+                          IL_02b3)
+    IL_0293:  ldloc.s    V_5
+    IL_0295:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item1
+    IL_029a:  ldloc.s    V_5
+    IL_029c:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item2
+    IL_02a1:  ldloc.s    V_5
+    IL_02a3:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_02a8:  stloc.s    b
+    IL_02aa:  stloc.s    g
+    IL_02ac:  stloc.s    r
+    IL_02ae:  br         IL_03a3
+
+    IL_02b3:  ldloc.s    V_5
+    IL_02b5:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_02ba:  switch     ( 
+                          IL_02e3)
+    IL_02c3:  ldloc.s    V_5
+    IL_02c5:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item1
+    IL_02ca:  ldloc.s    V_5
+    IL_02cc:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item2
+    IL_02d1:  ldloc.s    V_5
+    IL_02d3:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_02d8:  stloc.s    b
+    IL_02da:  stloc.s    g
+    IL_02dc:  stloc.s    r
+    IL_02de:  br         IL_03a3
+
+    IL_02e3:  br         IL_037d
+
+    IL_02e8:  ldloc.s    V_5
+    IL_02ea:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_02ef:  switch     ( 
+                          IL_033b)
+    IL_02f8:  ldloc.s    V_5
+    IL_02fa:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_02ff:  ldc.i4     0xff
+    IL_0304:  sub
+    IL_0305:  switch     ( 
+                          IL_032b)
+    IL_030e:  ldloc.s    V_5
+    IL_0310:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item1
+    IL_0315:  ldloc.s    V_5
+    IL_0317:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item2
+    IL_031c:  ldloc.s    V_5
+    IL_031e:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_0323:  stloc.s    b
+    IL_0325:  stloc.s    g
+    IL_0327:  stloc.s    r
+    IL_0329:  br.s       IL_03a3
+
+    IL_032b:  br.s       IL_035c
+
+    IL_032d:  ldloc.s    V_4
+    IL_032f:  castclass  ComplexCompositeTypes/Color/CMYK
+    IL_0334:  stloc.s    V_9
+    IL_0336:  br         IL_03c5
+
+    IL_033b:  ldstr      "Black"
+    IL_0340:  nop
+    IL_0341:  br         IL_0432
+
+    IL_0346:  ldstr      "White"
+    IL_034b:  nop
+    IL_034c:  br         IL_0432
+
+    IL_0351:  ldstr      "Red"
+    IL_0356:  nop
+    IL_0357:  br         IL_0432
+
+    IL_035c:  ldstr      "Blue"
+    IL_0361:  nop
+    IL_0362:  br         IL_0432
+
+    IL_0367:  ldstr      "Cyan"
+    IL_036c:  nop
+    IL_036d:  br         IL_0432
+
+    IL_0372:  ldstr      "Gray"
+    IL_0377:  nop
+    IL_0378:  br         IL_0432
+
+    IL_037d:  ldstr      "Green"
+    IL_0382:  nop
+    IL_0383:  br         IL_0432
+
+    IL_0388:  ldloc.s    V_5
+    IL_038a:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item1
+    IL_038f:  stloc.s    r
+    IL_0391:  ldloc.s    V_5
+    IL_0393:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item2
+    IL_0398:  stloc.s    g
+    IL_039a:  ldloc.s    V_5
+    IL_039c:  ldfld      int32 ComplexCompositeTypes/Color/RGB::item3
+    IL_03a1:  stloc.s    b
+    IL_03a3:  ldstr      "({0},{1},{2})"
+    IL_03a8:  ldloc.s    r
+    IL_03aa:  box        [mscorlib]System.Int32
+    IL_03af:  ldloc.s    g
+    IL_03b1:  box        [mscorlib]System.Int32
+    IL_03b6:  ldloc.s    b
+    IL_03b8:  box        [mscorlib]System.Int32
+    IL_03bd:  call       string [mscorlib]System.String::Format(string,
+                                                                object,
+                                                                object,
+                                                                object)
+    IL_03c2:  nop
+    IL_03c3:  br.s       IL_0432
+
+    IL_03c5:  ldloc.s    V_9
+    IL_03c7:  ldfld      int32 ComplexCompositeTypes/Color/CMYK::item3
+    IL_03cc:  stloc.s    y
+    IL_03ce:  ldloc.s    V_9
+    IL_03d0:  ldfld      int32 ComplexCompositeTypes/Color/CMYK::item2
+    IL_03d5:  stloc.s    m
+    IL_03d7:  ldloc.s    V_9
+    IL_03d9:  ldfld      int32 ComplexCompositeTypes/Color/CMYK::item4
+    IL_03de:  stloc.s    k
+    IL_03e0:  ldloc.s    V_9
+    IL_03e2:  ldfld      int32 ComplexCompositeTypes/Color/CMYK::item1
+    IL_03e7:  stloc.s    V_13
+    IL_03e9:  ldstr      "[{0},{1},{2},{3}]"
+    IL_03ee:  ldc.i4.4
+    IL_03ef:  newarr     [mscorlib]System.Object
+    IL_03f4:  dup
+    IL_03f5:  ldc.i4.0
+    IL_03f6:  ldloc.s    V_13
+    IL_03f8:  box        [mscorlib]System.Int32
+    IL_03fd:  stelem     [mscorlib]System.Object
+    IL_0402:  dup
+    IL_0403:  ldc.i4.1
+    IL_0404:  ldloc.s    m
+    IL_0406:  box        [mscorlib]System.Int32
+    IL_040b:  stelem     [mscorlib]System.Object
+    IL_0410:  dup
+    IL_0411:  ldc.i4.2
+    IL_0412:  ldloc.s    y
+    IL_0414:  box        [mscorlib]System.Int32
+    IL_0419:  stelem     [mscorlib]System.Object
+    IL_041e:  dup
+    IL_041f:  ldc.i4.3
+    IL_0420:  ldloc.s    k
+    IL_0422:  box        [mscorlib]System.Int32
+    IL_0427:  stelem     [mscorlib]System.Object
+    IL_042c:  call       string [mscorlib]System.String::Format(string,
+                                                                object[])
+    IL_0431:  nop
+    IL_0432:  stloc.3
+    IL_0433:  ldloc.3
+    IL_0434:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0439:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\ComplexCompositeTypes.fs" startline="149" endline="179"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 28 4D 6F 72 65 20 64 69 73 63 72 69 6D 69   // ..(More discrimi
+                                                                        6E 61 74 65 64 20 75 6E 69 6F 6E 20 28 74 72 65   // nated union (tre
+                                                                        65 29 20 65 78 61 6D 70 6C 65 73 00 00 )          // e) examples..
+    // Code size       96 (0x60)
+    .maxstack  8
+    .locals init ([0] class ComplexCompositeTypes/BinaryTree tree)
+    IL_0000:  nop
+    IL_0001:  ldstr      "Ted"
+    IL_0006:  ldstr      "Aaron"
+    IL_000b:  call       class ComplexCompositeTypes/BinaryTree ComplexCompositeTypes/BinaryTree::get_Empty()
+    IL_0010:  call       class ComplexCompositeTypes/BinaryTree ComplexCompositeTypes/BinaryTree::get_Empty()
+    IL_0015:  call       class ComplexCompositeTypes/BinaryTree ComplexCompositeTypes/BinaryTree::NewNode(object,
+                                                                                                          class ComplexCompositeTypes/BinaryTree,
+                                                                                                          class ComplexCompositeTypes/BinaryTree)
+    IL_001a:  ldstr      "Talbott"
+    IL_001f:  ldstr      "Rick"
+    IL_0024:  call       class ComplexCompositeTypes/BinaryTree ComplexCompositeTypes/BinaryTree::get_Empty()
+    IL_0029:  call       class ComplexCompositeTypes/BinaryTree ComplexCompositeTypes/BinaryTree::get_Empty()
+    IL_002e:  call       class ComplexCompositeTypes/BinaryTree ComplexCompositeTypes/BinaryTree::NewNode(object,
+                                                                                                          class ComplexCompositeTypes/BinaryTree,
+                                                                                                          class ComplexCompositeTypes/BinaryTree)
+    IL_0033:  call       class ComplexCompositeTypes/BinaryTree ComplexCompositeTypes/BinaryTree::get_Empty()
+    IL_0038:  call       class ComplexCompositeTypes/BinaryTree ComplexCompositeTypes/BinaryTree::NewNode(object,
+                                                                                                          class ComplexCompositeTypes/BinaryTree,
+                                                                                                          class ComplexCompositeTypes/BinaryTree)
+    IL_003d:  call       class ComplexCompositeTypes/BinaryTree ComplexCompositeTypes/BinaryTree::NewNode(object,
+                                                                                                          class ComplexCompositeTypes/BinaryTree,
+                                                                                                          class ComplexCompositeTypes/BinaryTree)
+    IL_0042:  stloc.0
+    IL_0043:  ldstr      "Contents = {0}"
+    IL_0048:  ldloc.0
+    IL_0049:  call       instance string ComplexCompositeTypes/BinaryTree::get_Contents()
+    IL_004e:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_0053:  ldloc.0
+    IL_0054:  newobj     instance void ComplexCompositeTypes/tree_examples@179::.ctor()
+    IL_0059:  call       instance void ComplexCompositeTypes/BinaryTree::iter(class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<object,class [FSharp.Core]Microsoft.FSharp.Core.Unit>)
+    IL_005e:  nop
+    IL_005f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\ComplexCompositeTypes.fs" startline="180" endline="205"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 21 4D 6F 72 65 20 64 69 73 63 72 69 6D 69   // ..!More discrimi
+                                                                        6E 61 74 65 64 20 75 6E 69 6F 6E 20 65 78 61 6D   // nated union exam
+                                                                        70 6C 65 73 00 00 )                               // ples..
+    // Code size       79 (0x4f)
+    .maxstack  5
+    .locals init ([0] class ComplexCompositeTypes/Employee aaron,
+             [1] class ComplexCompositeTypes/Employee CEO,
+             [2] class ComplexCompositeTypes/Employee CFO,
+             [3] class ComplexCompositeTypes/Employee VP_RD)
+    IL_0000:  nop
+    IL_0001:  ldstr      "Coder"
+    IL_0006:  call       class ComplexCompositeTypes/Employee ComplexCompositeTypes/Employee::NewGrunt(string)
+    IL_000b:  stloc.0
+    IL_000c:  ldstr      "CEO"
+    IL_0011:  ldloc.0
+    IL_0012:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Employee>::get_Empty()
+    IL_0017:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Employee>::Cons(!0,
+                                                                                                                                                                                                   class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_001c:  call       class ComplexCompositeTypes/Employee ComplexCompositeTypes/Employee::NewManager(string,
+                                                                                                         class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Employee>)
+    IL_0021:  stloc.1
+    IL_0022:  ldstr      "CFO"
+    IL_0027:  ldloc.0
+    IL_0028:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Employee>::get_Empty()
+    IL_002d:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Employee>::Cons(!0,
+                                                                                                                                                                                                   class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_0032:  call       class ComplexCompositeTypes/Employee ComplexCompositeTypes/Employee::NewManager(string,
+                                                                                                         class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Employee>)
+    IL_0037:  stloc.2
+    IL_0038:  ldstr      "VP, R&D"
+    IL_003d:  ldloc.0
+    IL_003e:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Employee>::get_Empty()
+    IL_0043:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Employee>::Cons(!0,
+                                                                                                                                                                                                   class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_0048:  call       class ComplexCompositeTypes/Employee ComplexCompositeTypes/Employee::NewManager(string,
+                                                                                                         class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Employee>)
+    IL_004d:  stloc.3
+    IL_004e:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\ComplexCompositeTypes.fs" startline="206" endline="314"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 0F 53 74 72 75 63 74 20 65 78 61 6D 70 6C   // ...Struct exampl
+                                                                        65 73 00 00 )                                     // es..
+    // Code size       1089 (0x441)
+    .maxstack  6
+    .locals init ([0] valuetype ComplexCompositeTypes/Point origin,
+             [1] valuetype ComplexCompositeTypes/Point V_1,
+             [2] valuetype ComplexCompositeTypes/Point notOrigin,
+             [3] valuetype ComplexCompositeTypes/Point newPoint,
+             [4] valuetype ComplexCompositeTypes/MutPoint mutPt,
+             [5] valuetype ComplexCompositeTypes/MutPoint V_5,
+             [6] valuetype ComplexCompositeTypes/Point a,
+             [7] valuetype ComplexCompositeTypes/Point b,
+             [8] valuetype ComplexCompositeTypes/Point V_8,
+             [9] valuetype ComplexCompositeTypes/Point V_9,
+             [10] valuetype ComplexCompositeTypes/Point V_10,
+             [11] valuetype ComplexCompositeTypes/Point V_11,
+             [12] valuetype ComplexCompositeTypes/Point c,
+             [13] valuetype ComplexCompositeTypes/Point d,
+             [14] valuetype ComplexCompositeTypes/Point e,
+             [15] valuetype ComplexCompositeTypes/Point f,
+             [16] string message,
+             [17] class [FSharp.Core]System.Tuple`2<int32,int32> V_17,
+             [18] class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [FSharp.Core]System.Tuple`2<int32,int32>,class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<valuetype ComplexCompositeTypes/Point,bool>> '|Point|',
+             [19] string V_19,
+             [20] valuetype ComplexCompositeTypes/Point V_20,
+             [21] bool V_21,
+             [22] bool V_22)
+    IL_0000:  nop
+    IL_0001:  ldloca.s   V_1
+    IL_0003:  initobj    ComplexCompositeTypes/Point
+    IL_0009:  ldloc.1
+    IL_000a:  stloc.0
+    IL_000b:  ldstr      "Point = {0},{1}"
+    IL_0010:  ldloca.s   origin
+    IL_0012:  call       instance int32 ComplexCompositeTypes/Point::get_X()
+    IL_0017:  box        [mscorlib]System.Int32
+    IL_001c:  ldloca.s   origin
+    IL_001e:  call       instance int32 ComplexCompositeTypes/Point::get_Y()
+    IL_0023:  box        [mscorlib]System.Int32
+    IL_0028:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object,
+                                                                  object)
+    IL_002d:  ldc.i4.s   12
+    IL_002f:  ldc.i4.s   12
+    IL_0031:  newobj     instance void ComplexCompositeTypes/Point::.ctor(int32,
+                                                                          int32)
+    IL_0036:  stloc.2
+    IL_0037:  ldstr      "Point = {0},{1}"
+    IL_003c:  ldloca.s   notOrigin
+    IL_003e:  call       instance int32 ComplexCompositeTypes/Point::get_X()
+    IL_0043:  box        [mscorlib]System.Int32
+    IL_0048:  ldloca.s   notOrigin
+    IL_004a:  call       instance int32 ComplexCompositeTypes/Point::get_Y()
+    IL_004f:  box        [mscorlib]System.Int32
+    IL_0054:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object,
+                                                                  object)
+    IL_0059:  ldloca.s   notOrigin
+    IL_005b:  call       instance int32 ComplexCompositeTypes/Point::get_X()
+    IL_0060:  ldc.i4.6
+    IL_0061:  sub
+    IL_0062:  ldloca.s   notOrigin
+    IL_0064:  call       instance int32 ComplexCompositeTypes/Point::get_Y()
+    IL_0069:  ldc.i4.6
+    IL_006a:  sub
+    IL_006b:  newobj     instance void ComplexCompositeTypes/Point::.ctor(int32,
+                                                                          int32)
+    IL_0070:  stloc.3
+    IL_0071:  ldstr      "Point = {0},{1}"
+    IL_0076:  ldloca.s   newPoint
+    IL_0078:  call       instance int32 ComplexCompositeTypes/Point::get_X()
+    IL_007d:  box        [mscorlib]System.Int32
+    IL_0082:  ldloca.s   newPoint
+    IL_0084:  call       instance int32 ComplexCompositeTypes/Point::get_Y()
+    IL_0089:  box        [mscorlib]System.Int32
+    IL_008e:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object,
+                                                                  object)
+    IL_0093:  ldloca.s   V_5
+    IL_0095:  initobj    ComplexCompositeTypes/MutPoint
+    IL_009b:  ldloc.s    V_5
+    IL_009d:  stloc.s    mutPt
+    IL_009f:  ldloca.s   mutPt
+    IL_00a1:  ldc.i4.s   10
+    IL_00a3:  stfld      int32 ComplexCompositeTypes/MutPoint::X
+    IL_00a8:  ldloca.s   mutPt
+    IL_00aa:  ldc.i4.s   10
+    IL_00ac:  stfld      int32 ComplexCompositeTypes/MutPoint::Y
+    IL_00b1:  ldstr      "Point = {0},{1}"
+    IL_00b6:  ldloca.s   mutPt
+    IL_00b8:  ldfld      int32 ComplexCompositeTypes/MutPoint::X
+    IL_00bd:  box        [mscorlib]System.Int32
+    IL_00c2:  ldloca.s   mutPt
+    IL_00c4:  ldfld      int32 ComplexCompositeTypes/MutPoint::Y
+    IL_00c9:  box        [mscorlib]System.Int32
+    IL_00ce:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object,
+                                                                  object)
+    IL_00d3:  ldc.i4.s   12
+    IL_00d5:  ldc.i4.s   12
+    IL_00d7:  newobj     instance void ComplexCompositeTypes/Point::.ctor(int32,
+                                                                          int32)
+    IL_00dc:  stloc.s    a
+    IL_00de:  ldc.i4.s   12
+    IL_00e0:  ldc.i4.s   12
+    IL_00e2:  newobj     instance void ComplexCompositeTypes/Point::.ctor(int32,
+                                                                          int32)
+    IL_00e7:  stloc.s    b
+    IL_00e9:  ldstr      "a = b\? {0}"
+    IL_00ee:  ldloc.s    a
+    IL_00f0:  stloc.s    V_8
+    IL_00f2:  ldloc.s    b
+    IL_00f4:  stloc.s    V_9
+    IL_00f6:  ldloca.s   V_8
+    IL_00f8:  ldloc.s    V_9
+    IL_00fa:  box        ComplexCompositeTypes/Point
+    IL_00ff:  call       class [mscorlib]System.Collections.IEqualityComparer [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives::get_GenericEqualityComparer()
+    IL_0104:  call       instance bool ComplexCompositeTypes/Point::Equals(object,
+                                                                           class [mscorlib]System.Collections.IEqualityComparer)
+    IL_0109:  brfalse.s  IL_010d
+
+    IL_010b:  br.s       IL_010f
+
+    IL_010d:  br.s       IL_0117
+
+    IL_010f:  ldstr      "yes"
+    IL_0114:  nop
+    IL_0115:  br.s       IL_011d
+
+    IL_0117:  ldstr      "no"
+    IL_011c:  nop
+    IL_011d:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_0122:  ldstr      "a.Equals(b)\? {0}"
+    IL_0127:  ldloca.s   a
+    IL_0129:  ldloc.s    b
+    IL_012b:  box        ComplexCompositeTypes/Point
+    IL_0130:  constrained. ComplexCompositeTypes/Point
+    IL_0136:  callvirt   instance bool [mscorlib]System.Object::Equals(object)
+    IL_013b:  brfalse.s  IL_013f
+
+    IL_013d:  br.s       IL_0141
+
+    IL_013f:  br.s       IL_0149
+
+    IL_0141:  ldstr      "yes"
+    IL_0146:  nop
+    IL_0147:  br.s       IL_014f
+
+    IL_0149:  ldstr      "no"
+    IL_014e:  nop
+    IL_014f:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_0154:  ldstr      "a <> b\? {0}"
+    IL_0159:  ldloc.s    a
+    IL_015b:  stloc.s    V_10
+    IL_015d:  ldloc.s    b
+    IL_015f:  stloc.s    V_11
+    IL_0161:  ldloca.s   V_10
+    IL_0163:  ldloc.s    V_11
+    IL_0165:  box        ComplexCompositeTypes/Point
+    IL_016a:  call       class [mscorlib]System.Collections.IEqualityComparer [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives::get_GenericEqualityComparer()
+    IL_016f:  call       instance bool ComplexCompositeTypes/Point::Equals(object,
+                                                                           class [mscorlib]System.Collections.IEqualityComparer)
+    IL_0174:  ldc.i4.0
+    IL_0175:  ceq
+    IL_0177:  brfalse.s  IL_017b
+
+    IL_0179:  br.s       IL_017d
+
+    IL_017b:  br.s       IL_0185
+
+    IL_017d:  ldstr      "yes"
+    IL_0182:  nop
+    IL_0183:  br.s       IL_018b
+
+    IL_0185:  ldstr      "no"
+    IL_018a:  nop
+    IL_018b:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_0190:  ldc.i4.6
+    IL_0191:  ldc.i4.s   12
+    IL_0193:  newobj     instance void ComplexCompositeTypes/Point::.ctor(int32,
+                                                                          int32)
+    IL_0198:  stloc.s    c
+    IL_019a:  ldc.i4.s   18
+    IL_019c:  ldc.i4.s   12
+    IL_019e:  newobj     instance void ComplexCompositeTypes/Point::.ctor(int32,
+                                                                          int32)
+    IL_01a3:  stloc.s    d
+    IL_01a5:  ldc.i4.s   12
+    IL_01a7:  ldc.i4.6
+    IL_01a8:  newobj     instance void ComplexCompositeTypes/Point::.ctor(int32,
+                                                                          int32)
+    IL_01ad:  stloc.s    e
+    IL_01af:  ldc.i4.s   12
+    IL_01b1:  ldc.i4.s   18
+    IL_01b3:  newobj     instance void ComplexCompositeTypes/Point::.ctor(int32,
+                                                                          int32)
+    IL_01b8:  stloc.s    f
+    IL_01ba:  ldstr      "a > c\? {0}"
+    IL_01bf:  ldloc.s    a
+    IL_01c1:  ldloc.s    c
+    IL_01c3:  call       bool [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives/HashCompare::GenericGreaterThanIntrinsic<valuetype ComplexCompositeTypes/Point>(!!0,
+                                                                                                                                                                    !!0)
+    IL_01c8:  brfalse.s  IL_01cc
+
+    IL_01ca:  br.s       IL_01ce
+
+    IL_01cc:  br.s       IL_01d6
+
+    IL_01ce:  ldstr      "yes"
+    IL_01d3:  nop
+    IL_01d4:  br.s       IL_01dc
+
+    IL_01d6:  ldstr      "no"
+    IL_01db:  nop
+    IL_01dc:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_01e1:  ldstr      "a > d\? {0}"
+    IL_01e6:  ldloc.s    a
+    IL_01e8:  ldloc.s    d
+    IL_01ea:  call       bool [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives/HashCompare::GenericGreaterThanIntrinsic<valuetype ComplexCompositeTypes/Point>(!!0,
+                                                                                                                                                                    !!0)
+    IL_01ef:  brfalse.s  IL_01f3
+
+    IL_01f1:  br.s       IL_01f5
+
+    IL_01f3:  br.s       IL_01fd
+
+    IL_01f5:  ldstr      "yes"
+    IL_01fa:  nop
+    IL_01fb:  br.s       IL_0203
+
+    IL_01fd:  ldstr      "no"
+    IL_0202:  nop
+    IL_0203:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_0208:  ldstr      "a > e\? {0}"
+    IL_020d:  ldloc.s    a
+    IL_020f:  ldloc.s    e
+    IL_0211:  call       bool [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives/HashCompare::GenericGreaterThanIntrinsic<valuetype ComplexCompositeTypes/Point>(!!0,
+                                                                                                                                                                    !!0)
+    IL_0216:  brfalse.s  IL_021a
+
+    IL_0218:  br.s       IL_021c
+
+    IL_021a:  br.s       IL_0224
+
+    IL_021c:  ldstr      "yes"
+    IL_0221:  nop
+    IL_0222:  br.s       IL_022a
+
+    IL_0224:  ldstr      "no"
+    IL_0229:  nop
+    IL_022a:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_022f:  ldstr      "a > f\? {0}"
+    IL_0234:  ldloc.s    a
+    IL_0236:  ldloc.s    f
+    IL_0238:  call       bool [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives/HashCompare::GenericGreaterThanIntrinsic<valuetype ComplexCompositeTypes/Point>(!!0,
+                                                                                                                                                                    !!0)
+    IL_023d:  brfalse.s  IL_0241
+
+    IL_023f:  br.s       IL_0243
+
+    IL_0241:  br.s       IL_024b
+
+    IL_0243:  ldstr      "yes"
+    IL_0248:  nop
+    IL_0249:  br.s       IL_0251
+
+    IL_024b:  ldstr      "no"
+    IL_0250:  nop
+    IL_0251:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_0256:  ldstr      "a < c\? {0}"
+    IL_025b:  ldloc.s    a
+    IL_025d:  ldloc.s    c
+    IL_025f:  call       bool [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives/HashCompare::GenericLessThanIntrinsic<valuetype ComplexCompositeTypes/Point>(!!0,
+                                                                                                                                                                 !!0)
+    IL_0264:  brfalse.s  IL_0268
+
+    IL_0266:  br.s       IL_026a
+
+    IL_0268:  br.s       IL_0272
+
+    IL_026a:  ldstr      "yes"
+    IL_026f:  nop
+    IL_0270:  br.s       IL_0278
+
+    IL_0272:  ldstr      "no"
+    IL_0277:  nop
+    IL_0278:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_027d:  ldstr      "a < d\? {0}"
+    IL_0282:  ldloc.s    a
+    IL_0284:  ldloc.s    d
+    IL_0286:  call       bool [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives/HashCompare::GenericLessThanIntrinsic<valuetype ComplexCompositeTypes/Point>(!!0,
+                                                                                                                                                                 !!0)
+    IL_028b:  brfalse.s  IL_028f
+
+    IL_028d:  br.s       IL_0291
+
+    IL_028f:  br.s       IL_0299
+
+    IL_0291:  ldstr      "yes"
+    IL_0296:  nop
+    IL_0297:  br.s       IL_029f
+
+    IL_0299:  ldstr      "no"
+    IL_029e:  nop
+    IL_029f:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_02a4:  ldstr      "a < e\? {0}"
+    IL_02a9:  ldloc.s    a
+    IL_02ab:  ldloc.s    e
+    IL_02ad:  call       bool [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives/HashCompare::GenericLessThanIntrinsic<valuetype ComplexCompositeTypes/Point>(!!0,
+                                                                                                                                                                 !!0)
+    IL_02b2:  brfalse.s  IL_02b6
+
+    IL_02b4:  br.s       IL_02b8
+
+    IL_02b6:  br.s       IL_02c0
+
+    IL_02b8:  ldstr      "yes"
+    IL_02bd:  nop
+    IL_02be:  br.s       IL_02c6
+
+    IL_02c0:  ldstr      "no"
+    IL_02c5:  nop
+    IL_02c6:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_02cb:  ldstr      "a < f\? {0}"
+    IL_02d0:  ldloc.s    a
+    IL_02d2:  ldloc.s    f
+    IL_02d4:  call       bool [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives/HashCompare::GenericLessThanIntrinsic<valuetype ComplexCompositeTypes/Point>(!!0,
+                                                                                                                                                                 !!0)
+    IL_02d9:  brfalse.s  IL_02dd
+
+    IL_02db:  br.s       IL_02df
+
+    IL_02dd:  br.s       IL_02e7
+
+    IL_02df:  ldstr      "yes"
+    IL_02e4:  nop
+    IL_02e5:  br.s       IL_02ed
+
+    IL_02e7:  ldstr      "no"
+    IL_02ec:  nop
+    IL_02ed:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_02f2:  ldstr      "a.GetHashCode() = {0}"
+    IL_02f7:  ldloca.s   a
+    IL_02f9:  constrained. ComplexCompositeTypes/Point
+    IL_02ff:  callvirt   instance int32 [mscorlib]System.Object::GetHashCode()
+    IL_0304:  box        [mscorlib]System.Int32
+    IL_0309:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_030e:  ldstr      "b.GetHashCode() = {0}"
+    IL_0313:  ldloca.s   b
+    IL_0315:  constrained. ComplexCompositeTypes/Point
+    IL_031b:  callvirt   instance int32 [mscorlib]System.Object::GetHashCode()
+    IL_0320:  box        [mscorlib]System.Int32
+    IL_0325:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_032a:  ldstr      "a hash = b hash\? {0}"
+    IL_032f:  ldloca.s   a
+    IL_0331:  constrained. ComplexCompositeTypes/Point
+    IL_0337:  callvirt   instance int32 [mscorlib]System.Object::GetHashCode()
+    IL_033c:  ldloca.s   b
+    IL_033e:  constrained. ComplexCompositeTypes/Point
+    IL_0344:  callvirt   instance int32 [mscorlib]System.Object::GetHashCode()
+    IL_0349:  ceq
+    IL_034b:  box        [mscorlib]System.Boolean
+    IL_0350:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_0355:  nop
+    IL_0356:  ldloca.s   a
+    IL_0358:  call       instance int32 ComplexCompositeTypes/Point::get_X()
+    IL_035d:  ldloca.s   a
+    IL_035f:  call       instance int32 ComplexCompositeTypes/Point::get_Y()
+    IL_0364:  newobj     instance void class [FSharp.Core]System.Tuple`2<int32,int32>::.ctor(!0,
+                                                                                             !1)
+    IL_0369:  stloc.s    V_17
+    IL_036b:  ldloc.s    V_17
+    IL_036d:  call       instance !0 class [FSharp.Core]System.Tuple`2<int32,int32>::get_Item1()
+    IL_0372:  switch     ( 
+                          IL_03a7)
+    IL_037b:  ldloc.s    V_17
+    IL_037d:  call       instance !0 class [FSharp.Core]System.Tuple`2<int32,int32>::get_Item1()
+    IL_0382:  ldc.i4.s   12
+    IL_0384:  sub
+    IL_0385:  switch     ( 
+                          IL_0390)
+    IL_038e:  br.s       IL_03c9
+
+    IL_0390:  ldloc.s    V_17
+    IL_0392:  call       instance !1 class [FSharp.Core]System.Tuple`2<int32,int32>::get_Item2()
+    IL_0397:  ldc.i4.s   12
+    IL_0399:  sub
+    IL_039a:  switch     ( 
+                          IL_03a5)
+    IL_03a3:  br.s       IL_03c9
+
+    IL_03a5:  br.s       IL_03c1
+
+    IL_03a7:  ldloc.s    V_17
+    IL_03a9:  call       instance !1 class [FSharp.Core]System.Tuple`2<int32,int32>::get_Item2()
+    IL_03ae:  switch     ( 
+                          IL_03b9)
+    IL_03b7:  br.s       IL_03c9
+
+    IL_03b9:  ldstr      "You're at the origin!"
+    IL_03be:  nop
+    IL_03bf:  br.s       IL_03cf
+
+    IL_03c1:  ldstr      "You're at 12, 12!"
+    IL_03c6:  nop
+    IL_03c7:  br.s       IL_03cf
+
+    IL_03c9:  ldstr      "Who knows where you are\?"
+    IL_03ce:  nop
+    IL_03cf:  stloc.s    message
+    IL_03d1:  ldloc.s    message
+    IL_03d3:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_03d8:  newobj     instance void ComplexCompositeTypes/'|Point|@308'::.ctor()
+    IL_03dd:  stloc.s    '|Point|'
+    IL_03df:  nop
+    IL_03e0:  ldloc.3
+    IL_03e1:  stloc.s    V_20
+    IL_03e3:  ldloc.s    '|Point|'
+    IL_03e5:  ldc.i4.0
+    IL_03e6:  ldc.i4.0
+    IL_03e7:  newobj     instance void class [FSharp.Core]System.Tuple`2<int32,int32>::.ctor(!0,
+                                                                                             !1)
+    IL_03ec:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [FSharp.Core]System.Tuple`2<int32,int32>,class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<valuetype ComplexCompositeTypes/Point,bool>>::Invoke(!0)
+    IL_03f1:  ldloc.s    V_20
+    IL_03f3:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<valuetype ComplexCompositeTypes/Point,bool>::Invoke(!0)
+    IL_03f8:  stloc.s    V_21
+    IL_03fa:  ldloc.s    V_21
+    IL_03fc:  brfalse.s  IL_0400
+
+    IL_03fe:  br.s       IL_0421
+
+    IL_0400:  ldloc.s    '|Point|'
+    IL_0402:  ldc.i4.s   12
+    IL_0404:  ldc.i4.s   12
+    IL_0406:  newobj     instance void class [FSharp.Core]System.Tuple`2<int32,int32>::.ctor(!0,
+                                                                                             !1)
+    IL_040b:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [FSharp.Core]System.Tuple`2<int32,int32>,class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<valuetype ComplexCompositeTypes/Point,bool>>::Invoke(!0)
+    IL_0410:  ldloc.s    V_20
+    IL_0412:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<valuetype ComplexCompositeTypes/Point,bool>::Invoke(!0)
+    IL_0417:  stloc.s    V_22
+    IL_0419:  ldloc.s    V_22
+    IL_041b:  brfalse.s  IL_041f
+
+    IL_041d:  br.s       IL_0429
+
+    IL_041f:  br.s       IL_0431
+
+    IL_0421:  ldstr      "You're at the origin!"
+    IL_0426:  nop
+    IL_0427:  br.s       IL_0437
+
+    IL_0429:  ldstr      "You're at 12,12!"
+    IL_042e:  nop
+    IL_042f:  br.s       IL_0437
+
+    IL_0431:  ldstr      "Who knows where you are\?"
+    IL_0436:  nop
+    IL_0437:  stloc.s    V_19
+    IL_0439:  ldloc.s    V_19
+    IL_043b:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0440:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\F#\Code\Objects\ComplexCompositeTypes.fs" startline="315" endline="427"><![CDATA[
+  {
+    .custom instance void ProFSharp/ExampleAttribute::.ctor(string) = ( 01 00 14 52 65 63 6F 72 64 20 74 79 70 65 20 65   // ...Record type e
+                                                                        78 61 6D 70 6C 65 73 00 00 )                      // xamples..
+    // Code size       1038 (0x40e)
+    .maxstack  10
+    .locals init ([0] class [FSharp.Core]System.Tuple`3<string,string,int32> ted,
+             [1] class [FSharp.Core]System.Tuple`2<string,string> aaron,
+             [2] class [FSharp.Core]System.Tuple`3<string,string,string> rick,
+             [3] class ComplexCompositeTypes/Author V_3,
+             [4] class ComplexCompositeTypes/Author V_4,
+             [5] class ComplexCompositeTypes/Author V_5,
+             [6] class ComplexCompositeTypes/Author talbott,
+             [7] class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Author> authors,
+             [8] class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Author> V_8,
+             [9] class [mscorlib]System.Collections.Generic.IEnumerator`1<class ComplexCompositeTypes/Author> V_9,
+             [10] class [FSharp.Core]Microsoft.FSharp.Core.Unit V_10,
+             [11] class ComplexCompositeTypes/Author a,
+             [12] class ComplexCompositeTypes/Author V_12,
+             [13] string last,
+             [14] string first,
+             [15] int32 age,
+             [16] class [mscorlib]System.IDisposable V_16,
+             [17] class ComplexCompositeTypes/AuthorRecord V_17,
+             [18] class ComplexCompositeTypes/AuthorRecord V_18,
+             [19] class ComplexCompositeTypes/SpokenLanguage english,
+             [20] class ComplexCompositeTypes/SpokenLanguage fsharp,
+             [21] class ComplexCompositeTypes/SpokenLanguage V_21,
+             [22] class ComplexCompositeTypes/ProgrammingLanguage V_22,
+             [23] class ComplexCompositeTypes/Person V_23,
+             [24] class ComplexCompositeTypes/Person michael,
+             [25] class ComplexCompositeTypes/Person V_25,
+             [26] class ComplexCompositeTypes/Person matthew,
+             [27] class ComplexCompositeTypes/Person V_27,
+             [28] class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Person> people,
+             [29] class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Person> V_29,
+             [30] class [mscorlib]System.Collections.Generic.IEnumerator`1<class ComplexCompositeTypes/Person> V_30,
+             [31] class [FSharp.Core]Microsoft.FSharp.Core.Unit V_31,
+             [32] class ComplexCompositeTypes/Person n,
+             [33] class ComplexCompositeTypes/Person V_33,
+             [34] class [mscorlib]System.IDisposable V_34,
+             [35] class ComplexCompositeTypes/AuthorRecord V_35,
+             [36] class ComplexCompositeTypes/AuthorRecord b,
+             [37] class ComplexCompositeTypes/AuthorRecord V_37,
+             [38] class ComplexCompositeTypes/AuthorRecord V_38,
+             [39] class ComplexCompositeTypes/AuthorRecord V_39,
+             [40] class ComplexCompositeTypes/AuthorRecord V_40)
+    IL_0000:  nop
+    IL_0001:  ldstr      "Ted"
+    IL_0006:  ldstr      "Neward"
+    IL_000b:  ldc.i4.s   38
+    IL_000d:  newobj     instance void class [FSharp.Core]System.Tuple`3<string,string,int32>::.ctor(!0,
+                                                                                                     !1,
+                                                                                                     !2)
+    IL_0012:  stloc.0
+    IL_0013:  ldstr      "Aaron"
+    IL_0018:  ldstr      "Erickson"
+    IL_001d:  newobj     instance void class [FSharp.Core]System.Tuple`2<string,string>::.ctor(!0,
+                                                                                               !1)
+    IL_0022:  stloc.1
+    IL_0023:  ldstr      "Rick"
+    IL_0028:  ldstr      "Minerich"
+    IL_002d:  ldstr      "I'd rather not say"
+    IL_0032:  newobj     instance void class [FSharp.Core]System.Tuple`3<string,string,string>::.ctor(!0,
+                                                                                                      !1,
+                                                                                                      !2)
+    IL_0037:  stloc.2
+    IL_0038:  ldstr      "Ted"
+    IL_003d:  ldstr      "Neward"
+    IL_0042:  ldc.i4.s   38
+    IL_0044:  call       class ComplexCompositeTypes/Author ComplexCompositeTypes/Author::NewAuthor(string,
+                                                                                                    string,
+                                                                                                    int32)
+    IL_0049:  stloc.3
+    IL_004a:  ldstr      "Aaron"
+    IL_004f:  ldstr      "Erickson"
+    IL_0054:  ldc.i4.s   35
+    IL_0056:  call       class ComplexCompositeTypes/Author ComplexCompositeTypes/Author::NewAuthor(string,
+                                                                                                    string,
+                                                                                                    int32)
+    IL_005b:  stloc.s    V_4
+    IL_005d:  ldstr      "Rick"
+    IL_0062:  ldstr      "Minerich"
+    IL_0067:  ldc.i4.0
+    IL_0068:  call       class ComplexCompositeTypes/Author ComplexCompositeTypes/Author::NewAuthor(string,
+                                                                                                    string,
+                                                                                                    int32)
+    IL_006d:  stloc.s    V_5
+    IL_006f:  ldstr      "Crowell"
+    IL_0074:  ldstr      "Talbott"
+    IL_0079:  ldc.i4.s   35
+    IL_007b:  call       class ComplexCompositeTypes/Author ComplexCompositeTypes/Author::NewAuthor(string,
+                                                                                                    string,
+                                                                                                    int32)
+    IL_0080:  stloc.s    talbott
+    IL_0082:  ldstr      "Ted"
+    IL_0087:  ldstr      "Neward"
+    IL_008c:  ldc.i4.s   38
+    IL_008e:  call       class ComplexCompositeTypes/Author ComplexCompositeTypes/Author::NewAuthor(string,
+                                                                                                    string,
+                                                                                                    int32)
+    IL_0093:  ldstr      "Aaron"
+    IL_0098:  ldstr      "Erickson"
+    IL_009d:  ldc.i4.s   35
+    IL_009f:  call       class ComplexCompositeTypes/Author ComplexCompositeTypes/Author::NewAuthor(string,
+                                                                                                    string,
+                                                                                                    int32)
+    IL_00a4:  ldstr      "Rick"
+    IL_00a9:  ldstr      "Minerich"
+    IL_00ae:  ldc.i4.0
+    IL_00af:  call       class ComplexCompositeTypes/Author ComplexCompositeTypes/Author::NewAuthor(string,
+                                                                                                    string,
+                                                                                                    int32)
+    IL_00b4:  ldstr      "Crowell"
+    IL_00b9:  ldstr      "Talbott"
+    IL_00be:  ldc.i4.s   35
+    IL_00c0:  call       class ComplexCompositeTypes/Author ComplexCompositeTypes/Author::NewAuthor(string,
+                                                                                                    string,
+                                                                                                    int32)
+    IL_00c5:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Author>::get_Empty()
+    IL_00ca:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Author>::Cons(!0,
+                                                                                                                                                                                                 class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_00cf:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Author>::Cons(!0,
+                                                                                                                                                                                                 class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_00d4:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Author>::Cons(!0,
+                                                                                                                                                                                                 class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_00d9:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Author>::Cons(!0,
+                                                                                                                                                                                                 class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_00de:  stloc.s    authors
+    IL_00e0:  ldloc.s    authors
+    IL_00e2:  stloc.s    V_8
+    IL_00e4:  ldloc.s    V_8
+    IL_00e6:  unbox.any  class [mscorlib]System.Collections.Generic.IEnumerable`1<class ComplexCompositeTypes/Author>
+    IL_00eb:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<class ComplexCompositeTypes/Author>::GetEnumerator()
+    IL_00f0:  stloc.s    V_9
+    .try
+    {
+      IL_00f2:  ldloc.s    V_9
+      IL_00f4:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_00f9:  brfalse.s  IL_0132
+
+      IL_00fb:  ldloc.s    V_9
+      IL_00fd:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<class ComplexCompositeTypes/Author>::get_Current()
+      IL_0102:  stloc.s    a
+      IL_0104:  ldloc.s    a
+      IL_0106:  stloc.s    V_12
+      IL_0108:  ldloc.s    V_12
+      IL_010a:  ldfld      string ComplexCompositeTypes/Author::item2
+      IL_010f:  stloc.s    last
+      IL_0111:  ldloc.s    V_12
+      IL_0113:  ldfld      string ComplexCompositeTypes/Author::item1
+      IL_0118:  stloc.s    first
+      IL_011a:  ldloc.s    V_12
+      IL_011c:  ldfld      int32 ComplexCompositeTypes/Author::item3
+      IL_0121:  stloc.s    age
+      IL_0123:  ldstr      "Hello, {0}"
+      IL_0128:  ldloc.s    first
+      IL_012a:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                    object)
+      IL_012f:  nop
+      IL_0130:  br.s       IL_00f2
+
+      IL_0132:  ldnull
+      IL_0133:  stloc.s    V_10
+      IL_0135:  leave.s    IL_0155
+
+    }  // end .try
+    finally
+    {
+      IL_0137:  ldloc.s    V_9
+      IL_0139:  isinst     [mscorlib]System.IDisposable
+      IL_013e:  stloc.s    V_16
+      IL_0140:  ldloc.s    V_16
+      IL_0142:  brfalse.s  IL_0146
+
+      IL_0144:  br.s       IL_0148
+
+      IL_0146:  br.s       IL_0152
+
+      IL_0148:  ldloc.s    V_16
+      IL_014a:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_014f:  ldnull
+      IL_0150:  pop
+      IL_0151:  endfinally
+      IL_0152:  ldnull
+      IL_0153:  pop
+      IL_0154:  endfinally
+    }  // end handler
+    IL_0155:  ldloc.s    V_10
+    IL_0157:  pop
+    IL_0158:  ldstr      "Ted"
+    IL_015d:  ldstr      "Neward"
+    IL_0162:  ldc.i4.s   38
+    IL_0164:  newobj     instance void ComplexCompositeTypes/AuthorRecord::.ctor(string,
+                                                                                 string,
+                                                                                 int32)
+    IL_0169:  stloc.s    V_17
+    IL_016b:  ldstr      "Hello, {0}"
+    IL_0170:  ldloc.s    V_17
+    IL_0172:  ldfld      string ComplexCompositeTypes/AuthorRecord::FirstName@
+    IL_0177:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_017c:  ldstr      "Talbott"
+    IL_0181:  ldstr      "Crowell"
+    IL_0186:  ldc.i4.s   35
+    IL_0188:  newobj     instance void ComplexCompositeTypes/AuthorRecord::.ctor(string,
+                                                                                 string,
+                                                                                 int32)
+    IL_018d:  stloc.s    V_18
+    IL_018f:  ldstr      "English"
+    IL_0194:  ldc.i4     0x3e8
+    IL_0199:  newobj     instance void ComplexCompositeTypes/SpokenLanguage::.ctor(string,
+                                                                                   int32)
+    IL_019e:  stloc.s    english
+    IL_01a0:  ldstr      "english IS-A {0}"
+    IL_01a5:  ldloc.s    english
+    IL_01a7:  call       instance class [mscorlib]System.Type [mscorlib]System.Object::GetType()
+    IL_01ac:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_01b1:  ldstr      "F#"
+    IL_01b6:  ldc.i4.5
+    IL_01b7:  newobj     instance void ComplexCompositeTypes/SpokenLanguage::.ctor(string,
+                                                                                   int32)
+    IL_01bc:  stloc.s    fsharp
+    IL_01be:  ldstr      "fsharp IS-A {0}"
+    IL_01c3:  ldloc.s    fsharp
+    IL_01c5:  call       instance class [mscorlib]System.Type [mscorlib]System.Object::GetType()
+    IL_01ca:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_01cf:  ldstr      "English"
+    IL_01d4:  ldc.i4     0x3e8
+    IL_01d9:  newobj     instance void ComplexCompositeTypes/SpokenLanguage::.ctor(string,
+                                                                                   int32)
+    IL_01de:  stloc.s    V_21
+    IL_01e0:  ldstr      "english IS-A {0}"
+    IL_01e5:  ldloc.s    V_21
+    IL_01e7:  call       instance class [mscorlib]System.Type [mscorlib]System.Object::GetType()
+    IL_01ec:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_01f1:  ldstr      "F#"
+    IL_01f6:  ldc.i4.5
+    IL_01f7:  newobj     instance void ComplexCompositeTypes/ProgrammingLanguage::.ctor(string,
+                                                                                        int32)
+    IL_01fc:  stloc.s    V_22
+    IL_01fe:  ldstr      "fsharp IS-A {0}"
+    IL_0203:  ldloc.s    V_22
+    IL_0205:  call       instance class [mscorlib]System.Type [mscorlib]System.Object::GetType()
+    IL_020a:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_020f:  ldstr      "Ted"
+    IL_0214:  ldstr      "Neward"
+    IL_0219:  ldstr      "Black"
+    IL_021e:  newobj     instance void ComplexCompositeTypes/Person::.ctor(string,
+                                                                           string,
+                                                                           string)
+    IL_0223:  stloc.s    V_23
+    IL_0225:  ldloc.s    V_23
+    IL_0227:  stloc.s    V_25
+    IL_0229:  ldstr      "Michael"
+    IL_022e:  ldloc.s    V_25
+    IL_0230:  ldfld      string ComplexCompositeTypes/Person::LastName@
+    IL_0235:  ldloc.s    V_25
+    IL_0237:  ldfld      string ComplexCompositeTypes/Person::FavoriteColor@
+    IL_023c:  newobj     instance void ComplexCompositeTypes/Person::.ctor(string,
+                                                                           string,
+                                                                           string)
+    IL_0241:  stloc.s    michael
+    IL_0243:  ldloc.s    V_23
+    IL_0245:  stloc.s    V_27
+    IL_0247:  ldstr      "Matthew"
+    IL_024c:  ldloc.s    V_27
+    IL_024e:  ldfld      string ComplexCompositeTypes/Person::LastName@
+    IL_0253:  ldloc.s    V_27
+    IL_0255:  ldfld      string ComplexCompositeTypes/Person::FavoriteColor@
+    IL_025a:  newobj     instance void ComplexCompositeTypes/Person::.ctor(string,
+                                                                           string,
+                                                                           string)
+    IL_025f:  stloc.s    matthew
+    IL_0261:  ldloc.s    V_23
+    IL_0263:  ldloc.s    michael
+    IL_0265:  ldloc.s    matthew
+    IL_0267:  ldstr      "Aaron"
+    IL_026c:  ldstr      "Erickson"
+    IL_0271:  ldstr      "White"
+    IL_0276:  newobj     instance void ComplexCompositeTypes/Person::.ctor(string,
+                                                                           string,
+                                                                           string)
+    IL_027b:  ldstr      "Rick"
+    IL_0280:  ldstr      "Minerich"
+    IL_0285:  ldstr      "Blue"
+    IL_028a:  newobj     instance void ComplexCompositeTypes/Person::.ctor(string,
+                                                                           string,
+                                                                           string)
+    IL_028f:  ldstr      "Talbott"
+    IL_0294:  ldstr      "Crowell"
+    IL_0299:  ldstr      "Red"
+    IL_029e:  newobj     instance void ComplexCompositeTypes/Person::.ctor(string,
+                                                                           string,
+                                                                           string)
+    IL_02a3:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Person>::get_Empty()
+    IL_02a8:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Person>::Cons(!0,
+                                                                                                                                                                                                 class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_02ad:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Person>::Cons(!0,
+                                                                                                                                                                                                 class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_02b2:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Person>::Cons(!0,
+                                                                                                                                                                                                 class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_02b7:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Person>::Cons(!0,
+                                                                                                                                                                                                 class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_02bc:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Person>::Cons(!0,
+                                                                                                                                                                                                 class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_02c1:  call       class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0> class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<class ComplexCompositeTypes/Person>::Cons(!0,
+                                                                                                                                                                                                 class [FSharp.Core]Microsoft.FSharp.Collections.FSharpList`1<!0>)
+    IL_02c6:  stloc.s    people
+    IL_02c8:  ldloc.s    people
+    IL_02ca:  stloc.s    V_29
+    IL_02cc:  ldloc.s    V_29
+    IL_02ce:  unbox.any  class [mscorlib]System.Collections.Generic.IEnumerable`1<class ComplexCompositeTypes/Person>
+    IL_02d3:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<class ComplexCompositeTypes/Person>::GetEnumerator()
+    IL_02d8:  stloc.s    V_30
+    .try
+    {
+      IL_02da:  ldloc.s    V_30
+      IL_02dc:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_02e1:  brfalse.s  IL_032f
+
+      IL_02e3:  ldloc.s    V_30
+      IL_02e5:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<class ComplexCompositeTypes/Person>::get_Current()
+      IL_02ea:  stloc.s    n
+      IL_02ec:  ldloc.s    n
+      IL_02ee:  stloc.s    V_33
+      IL_02f0:  ldloc.s    V_33
+      IL_02f2:  ldfld      string ComplexCompositeTypes/Person::LastName@
+      IL_02f7:  ldstr      "Neward"
+      IL_02fc:  call       bool [mscorlib]System.String::Equals(string,
+                                                                string)
+      IL_0301:  brfalse.s  IL_0305
+
+      IL_0303:  br.s       IL_0307
+
+      IL_0305:  br.s       IL_031b
+
+      IL_0307:  ldstr      "Hi, {0}!"
+      IL_030c:  ldloc.s    n
+      IL_030e:  ldfld      string ComplexCompositeTypes/Person::FirstName@
+      IL_0313:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                    object)
+      IL_0318:  nop
+      IL_0319:  br.s       IL_02da
+
+      IL_031b:  ldstr      "Who are you, {0}\?"
+      IL_0320:  ldloc.s    n
+      IL_0322:  call       instance string ComplexCompositeTypes/Person::get_FullName()
+      IL_0327:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                    object)
+      IL_032c:  nop
+      IL_032d:  br.s       IL_02da
+
+      IL_032f:  ldnull
+      IL_0330:  stloc.s    V_31
+      IL_0332:  leave.s    IL_0352
+
+    }  // end .try
+    finally
+    {
+      IL_0334:  ldloc.s    V_30
+      IL_0336:  isinst     [mscorlib]System.IDisposable
+      IL_033b:  stloc.s    V_34
+      IL_033d:  ldloc.s    V_34
+      IL_033f:  brfalse.s  IL_0343
+
+      IL_0341:  br.s       IL_0345
+
+      IL_0343:  br.s       IL_034f
+
+      IL_0345:  ldloc.s    V_34
+      IL_0347:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_034c:  ldnull
+      IL_034d:  pop
+      IL_034e:  endfinally
+      IL_034f:  ldnull
+      IL_0350:  pop
+      IL_0351:  endfinally
+    }  // end handler
+    IL_0352:  ldloc.s    V_31
+    IL_0354:  pop
+    IL_0355:  ldstr      "Ted"
+    IL_035a:  ldstr      "Neward"
+    IL_035f:  ldc.i4.s   38
+    IL_0361:  newobj     instance void ComplexCompositeTypes/AuthorRecord::.ctor(string,
+                                                                                 string,
+                                                                                 int32)
+    IL_0366:  stloc.s    V_35
+    IL_0368:  ldstr      "Ted"
+    IL_036d:  ldstr      "Neward"
+    IL_0372:  ldc.i4.s   38
+    IL_0374:  newobj     instance void ComplexCompositeTypes/AuthorRecord::.ctor(string,
+                                                                                 string,
+                                                                                 int32)
+    IL_0379:  stloc.s    b
+    IL_037b:  ldstr      "a = b\? {0}"
+    IL_0380:  ldloc.s    V_35
+    IL_0382:  stloc.s    V_37
+    IL_0384:  ldloc.s    b
+    IL_0386:  stloc.s    V_38
+    IL_0388:  ldloc.s    V_37
+    IL_038a:  ldloc.s    V_38
+    IL_038c:  call       class [mscorlib]System.Collections.IEqualityComparer [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives::get_GenericEqualityComparer()
+    IL_0391:  call       instance bool ComplexCompositeTypes/AuthorRecord::Equals(object,
+                                                                                  class [mscorlib]System.Collections.IEqualityComparer)
+    IL_0396:  brfalse.s  IL_039a
+
+    IL_0398:  br.s       IL_039c
+
+    IL_039a:  br.s       IL_03a4
+
+    IL_039c:  ldstr      "yes"
+    IL_03a1:  nop
+    IL_03a2:  br.s       IL_03aa
+
+    IL_03a4:  ldstr      "no"
+    IL_03a9:  nop
+    IL_03aa:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_03af:  ldstr      "a.Equals(b)\? {0}"
+    IL_03b4:  ldloc.s    V_35
+    IL_03b6:  ldloc.s    b
+    IL_03b8:  callvirt   instance bool [mscorlib]System.Object::Equals(object)
+    IL_03bd:  brfalse.s  IL_03c1
+
+    IL_03bf:  br.s       IL_03c3
+
+    IL_03c1:  br.s       IL_03cb
+
+    IL_03c3:  ldstr      "yes"
+    IL_03c8:  nop
+    IL_03c9:  br.s       IL_03d1
+
+    IL_03cb:  ldstr      "no"
+    IL_03d0:  nop
+    IL_03d1:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_03d6:  ldstr      "a <> b\? {0}"
+    IL_03db:  ldloc.s    V_35
+    IL_03dd:  stloc.s    V_39
+    IL_03df:  ldloc.s    b
+    IL_03e1:  stloc.s    V_40
+    IL_03e3:  ldloc.s    V_39
+    IL_03e5:  ldloc.s    V_40
+    IL_03e7:  call       class [mscorlib]System.Collections.IEqualityComparer [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives::get_GenericEqualityComparer()
+    IL_03ec:  call       instance bool ComplexCompositeTypes/AuthorRecord::Equals(object,
+                                                                                  class [mscorlib]System.Collections.IEqualityComparer)
+    IL_03f1:  ldc.i4.0
+    IL_03f2:  ceq
+    IL_03f4:  brfalse.s  IL_03f8
+
+    IL_03f6:  br.s       IL_03fa
+
+    IL_03f8:  br.s       IL_0402
+
+    IL_03fa:  ldstr      "yes"
+    IL_03ff:  nop
+    IL_0400:  br.s       IL_0408
+
+    IL_0402:  ldstr      "no"
+    IL_0407:  nop
+    IL_0408:  call       void [mscorlib]System.Console::WriteLine(string,
+                                                                  object)
+    IL_040d:  ret
+]]></source>
+</source_elements></project>

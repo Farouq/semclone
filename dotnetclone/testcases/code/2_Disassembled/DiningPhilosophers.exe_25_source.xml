@@ -1,0 +1,2862 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\Properties\Settings.Designer.cs" startline="25" endline="27"><![CDATA[
+             {
+                 return defaultInstance;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\Properties\Settings.Designer.cs" startline="20" endline="30"><![CDATA[
+         private static Settings defaultInstance = ((Settings)(global
+ 
+         public static Settings Default
+         {
+             get
+             {
+                 return defaultInstance;
+             }
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="53" endline="49"><![CDATA[
+         private Brush _think = Brushes.Yellow;
+         /// <summary>A brush for rendering eating philosophers.</summary>
+         private Brush _eat = Brushes.Green;
+         /// <summary>A brush for rendering waiting philosophers.</summary>
+         private Brush _wait = Brushes.Red;
+         public MainWindow()
+         {
+             // Initialize the component's layout
+             InitializeComponent();
+ 
+             // Grab a TaskFactory for creating Tasks that run on the UI.
+             _ui = new TaskFactory(TaskScheduler.FromCurrentSynchronizationContext());
+ 
+             // Initialize the philosophers, and then run them.
+             ConfigurePhilosophers();
+ 
+             // Uncomment one of the following three lines
+             RunWithSemaphoresSyncWithOrderedForks();  // 1. use synchronous semaphores, with ordered forks
+             //RunWithSemaphoresSyncWithWaitAll();  // 2. use synchronous semaphores, with WaitAll
+             //RunWithSemaphoresAsync(); // 3. use asynchronous semaphores
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="50" endline="67"><![CDATA[
+ 
+         #region Colors
+         /// <summary>A brush for rendering thinking philosophers.</summary>
+         private Brush _think = Brushes.Yellow;
+         /// <summary>A brush for rendering eating philosophers.</summary>
+         private Brush _eat = Brushes.Green;
+         /// <summary>A brush for rendering waiting philosophers.</summary>
+         private Brush _wait = Brushes.Red;
+         #endregion
+ 
+         #region Helpers
+         /// <summary>Initialize the philosophers.</summary>
+         /// <param name="numPhilosophers">The number of philosophers to initialize.</param>
+         private void ConfigurePhilosophers()
+         {
+             _philosophers = (from i in Enumerable.Range(0, NUM_PHILOSOPHERS) select new Ellipse { Height = 75, Width = 75, Fill = Brushes.Red, Stroke = Brushes.Black }).ToArray();
+             foreach (var philosopher in _philosophers) circularPanel1.Children.Add(philosopher);
+         }
+ 
+         /// <summary>Gets the fork IDs of the forks for a particular philosopher.</summary>
+         /// <param name="philosopherIndex">The index of the philosopher whose IDs are being retrieved.</param>
+         /// <param name="numForks">The number of forks that exist.</param>
+         /// <param name="left">The ID of the philosopher's left fork.</param>
+         /// <param name="right">The ID of the philosopher's right fork.</param>
+         /// <param name="sort">Whether to sort the forks, so that the left fork is always smaller than the right.</param>
+         private void GetForkIds(int philosopherIndex, int numForks, out int left, out int right, bool sort)
+         {
+             // The forks for a philosopher are the ones at philosopherIndex and philosopherIndex+1, though
+             // the latter can wrap around.  We need to ensure they're always acquired in the right order, to
+             // prevent deadlock, so order them.
+             left = philosopherIndex;
+             right = (philosopherIndex + 1) % numForks;
+             if (sort && left > right)
+             {
+                 int tmp = left;
+                 left = right;
+                 right = tmp;
+             }
+         }
+         #endregion
+ 
+         #region Synchronous, Ordered
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithOrderedForks()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new SemaphoreSlim(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithOrderedForks(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithOrderedForks(SemaphoreSlim[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             SemaphoreSlim fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 fork1.Wait();
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 fork2.Wait();
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Synchronous, WaitAll
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithWaitAll()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new Semaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithWaitAll(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithWaitAll(Semaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, false);
+             Semaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+             foreach (var philosopher in _philosophers) circularPanel1.Children.Add(philosopher);
+         }
+ 
+         /// <summary>Gets the fork IDs of the forks for a particular philosopher.</summary>
+         /// <param name="philosopherIndex">The index of the philosopher whose IDs are being retrieved.</param>
+         /// <param name="numForks">The number of forks that exist.</param>
+         /// <param name="left">The ID of the philosopher's left fork.</param>
+         /// <param name="right">The ID of the philosopher's right fork.</param>
+         /// <param name="sort">Whether to sort the forks, so that the left fork is always smaller than the right.</param>
+         private void GetForkIds(int philosopherIndex, int numForks, out int left, out int right, bool sort)
+         {
+             // The forks for a philosopher are the ones at philosopherIndex and philosopherIndex+1, though
+             // the latter can wrap around.  We need to ensure they're always acquired in the right order, to
+             // prevent deadlock, so order them.
+             left = philosopherIndex;
+             right = (philosopherIndex + 1) % numForks;
+             if (sort && left > right)
+             {
+                 int tmp = left;
+                 left = right;
+                 right = tmp;
+             }
+         }
+         #endregion
+ 
+         #region Synchronous, Ordered
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithOrderedForks()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new SemaphoreSlim(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithOrderedForks(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithOrderedForks(SemaphoreSlim[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             SemaphoreSlim fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 fork1.Wait();
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 fork2.Wait();
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Synchronous, WaitAll
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithWaitAll()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new Semaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithWaitAll(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithWaitAll(Semaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, false);
+             Semaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+             foreach (var philosopher in _philosophers) circularPanel1.Children.Add(philosopher);
+         }
+ 
+         /// <summary>Gets the fork IDs of the forks for a particular philosopher.</summary>
+         /// <param name="philosopherIndex">The index of the philosopher whose IDs are being retrieved.</param>
+         /// <param name="numForks">The number of forks that exist.</param>
+         /// <param name="left">The ID of the philosopher's left fork.</param>
+         /// <param name="right">The ID of the philosopher's right fork.</param>
+         /// <param name="sort">Whether to sort the forks, so that the left fork is always smaller than the right.</param>
+         private void GetForkIds(int philosopherIndex, int numForks, out int left, out int right, bool sort)
+         {
+             // The forks for a philosopher are the ones at philosopherIndex and philosopherIndex+1, though
+             // the latter can wrap around.  We need to ensure they're always acquired in the right order, to
+             // prevent deadlock, so order them.
+             left = philosopherIndex;
+             right = (philosopherIndex + 1) % numForks;
+             if (sort && left > right)
+             {
+                 int tmp = left;
+                 left = right;
+                 right = tmp;
+             }
+         }
+         #endregion
+ 
+         #region Synchronous, Ordered
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithOrderedForks()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new SemaphoreSlim(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithOrderedForks(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithOrderedForks(SemaphoreSlim[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             SemaphoreSlim fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 fork1.Wait();
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 fork2.Wait();
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Synchronous, WaitAll
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithWaitAll()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new Semaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithWaitAll(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithWaitAll(Semaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, false);
+             Semaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="68" endline="88"><![CDATA[
+ 
+         /// <summary>Gets the fork IDs of the forks for a particular philosopher.</summary>
+         /// <param name="philosopherIndex">The index of the philosopher whose IDs are being retrieved.</param>
+         /// <param name="numForks">The number of forks that exist.</param>
+         /// <param name="left">The ID of the philosopher's left fork.</param>
+         /// <param name="right">The ID of the philosopher's right fork.</param>
+         /// <param name="sort">Whether to sort the forks, so that the left fork is always smaller than the right.</param>
+         private void GetForkIds(int philosopherIndex, int numForks, out int left, out int right, bool sort)
+         {
+             // The forks for a philosopher are the ones at philosopherIndex and philosopherIndex+1, though
+             // the latter can wrap around.  We need to ensure they're always acquired in the right order, to
+             // prevent deadlock, so order them.
+             left = philosopherIndex;
+             right = (philosopherIndex + 1) % numForks;
+             if (sort && left > right)
+             {
+                 int tmp = left;
+                 left = right;
+                 right = tmp;
+             }
+         }
+         #endregion
+ 
+         #region Synchronous, Ordered
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithOrderedForks()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new SemaphoreSlim(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithOrderedForks(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithOrderedForks(SemaphoreSlim[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             SemaphoreSlim fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 fork1.Wait();
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 fork2.Wait();
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Synchronous, WaitAll
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithWaitAll()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new Semaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithWaitAll(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithWaitAll(Semaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, false);
+             Semaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+             {
+                 int tmp = left;
+                 left = right;
+                 right = tmp;
+             }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="89" endline="101"><![CDATA[
+         #endregion
+ 
+         #region Synchronous, Ordered
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithOrderedForks()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new SemaphoreSlim(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithOrderedForks(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithOrderedForks(SemaphoreSlim[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             SemaphoreSlim fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 fork1.Wait();
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 fork2.Wait();
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Synchronous, WaitAll
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithWaitAll()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new Semaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithWaitAll(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithWaitAll(Semaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, false);
+             Semaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new SemaphoreSlim(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithOrderedForks(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithOrderedForks(SemaphoreSlim[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             SemaphoreSlim fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 fork1.Wait();
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 fork2.Wait();
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Synchronous, WaitAll
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithWaitAll()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new Semaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithWaitAll(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithWaitAll(Semaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, false);
+             Semaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithOrderedForks(forks, index), TaskCreationOptions.LongRunning);
+             }
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithOrderedForks(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithOrderedForks(SemaphoreSlim[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             SemaphoreSlim fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 fork1.Wait();
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 fork2.Wait();
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Synchronous, WaitAll
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithWaitAll()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new Semaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithWaitAll(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithWaitAll(Semaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, false);
+             Semaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="102" endline="228"><![CDATA[
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithOrderedForks(SemaphoreSlim[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             SemaphoreSlim fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 fork1.Wait();
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 fork2.Wait();
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Synchronous, WaitAll
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithWaitAll()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new Semaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithWaitAll(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithWaitAll(Semaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, false);
+             Semaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             SemaphoreSlim fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 fork1.Wait();
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 fork2.Wait();
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Synchronous, WaitAll
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithWaitAll()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new Semaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithWaitAll(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithWaitAll(Semaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, false);
+             Semaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 fork1.Wait();
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 fork2.Wait();
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 fork1.Wait();
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 fork2.Wait();
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Synchronous, WaitAll
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithWaitAll()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new Semaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithWaitAll(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithWaitAll(Semaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, false);
+             Semaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="140" endline="147"><![CDATA[
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new Semaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithWaitAll(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithWaitAll(Semaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, false);
+             Semaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithWaitAll(forks, index), TaskCreationOptions.LongRunning);
+             }
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithWaitAll(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithWaitAll(Semaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, false);
+             Semaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="148" endline="228"><![CDATA[
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithWaitAll(Semaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, false);
+             Semaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, false);
+             Semaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="185" endline="191"><![CDATA[
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\obj\Debug\MainWindow.g.cs" startline="1" endline="1"><![CDATA[
+ ?<Window xmlns
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\obj\Debug\MainWindow.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\obj\Debug\MainWindow.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="65" endline="228"><![CDATA[
+             _philosophers = (from i in Enumerable.Range(0, NUM_PHILOSOPHERS) select new Ellipse { Height = 75, Width = 75, Fill = Brushes.Red, Stroke = Brushes.Black }).ToArray();
+             foreach (var philosopher in _philosophers) circularPanel1.Children.Add(philosopher);
+         }
+ 
+         /// <summary>Gets the fork IDs of the forks for a particular philosopher.</summary>
+         /// <param name="philosopherIndex">The index of the philosopher whose IDs are being retrieved.</param>
+         /// <param name="numForks">The number of forks that exist.</param>
+         /// <param name="left">The ID of the philosopher's left fork.</param>
+         /// <param name="right">The ID of the philosopher's right fork.</param>
+         /// <param name="sort">Whether to sort the forks, so that the left fork is always smaller than the right.</param>
+         private void GetForkIds(int philosopherIndex, int numForks, out int left, out int right, bool sort)
+         {
+             // The forks for a philosopher are the ones at philosopherIndex and philosopherIndex+1, though
+             // the latter can wrap around.  We need to ensure they're always acquired in the right order, to
+             // prevent deadlock, so order them.
+             left = philosopherIndex;
+             right = (philosopherIndex + 1) % numForks;
+             if (sort && left > right)
+             {
+                 int tmp = left;
+                 left = right;
+                 right = tmp;
+             }
+         }
+         #endregion
+ 
+         #region Synchronous, Ordered
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithOrderedForks()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new SemaphoreSlim(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithOrderedForks(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithOrderedForks(SemaphoreSlim[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             SemaphoreSlim fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 fork1.Wait();
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 fork2.Wait();
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Synchronous, WaitAll
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithWaitAll()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new Semaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithWaitAll(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithWaitAll(Semaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, false);
+             Semaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="95" endline="228"><![CDATA[
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new SemaphoreSlim(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithOrderedForks(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithOrderedForks(SemaphoreSlim[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             SemaphoreSlim fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 fork1.Wait();
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 fork2.Wait();
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Synchronous, WaitAll
+         /// <summary>Runs the philosophers utilizing one thread per philosopher.</summary>
+         private void RunWithSemaphoresSyncWithWaitAll()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new Semaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithWaitAll(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithWaitAll(Semaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, false);
+             Semaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="141" endline="228"><![CDATA[
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new Semaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 int index = i;
+                 Task.Factory.StartNew(() => RunPhilosopherSyncWithWaitAll(forks, index), TaskCreationOptions.LongRunning);
+             }
+         }
+ 
+         /// <summary>Runs a philosopher synchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         private void RunPhilosopherSyncWithWaitAll(Semaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, false);
+             Semaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 _ui.StartNew(() => _philosophers[index].Fill = _think).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Wait for forks (Red)
+                 _ui.StartNew(() => _philosophers[index].Fill = _wait).Wait();
+                 WaitHandle.WaitAll(new[] { fork1, fork2 });
+ 
+                 // Eat (Green)
+                 _ui.StartNew(() => _philosophers[index].Fill = _eat).Wait();
+                 Thread.Sleep(rand.Next(10) * TIMESCALE);
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+ 
+         #region Asynchronous
+         /// <summary>Runs the philosophers using asynchronous processing techniques to avoid one thread per philosopher.</summary>
+         private void RunWithSemaphoresAsync()
+         {
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="186" endline="228"><![CDATA[
+             var forks = (from i in Enumerable.Range(0, _philosophers.Length) select new AsyncSemaphore(1, 1)).ToArray();
+             for (int i = 0; i < _philosophers.Length; i++)
+             {
+                 Task.Factory.Iterate(RunPhilosopherAsync(forks, i));
+             }
+         }
+ 
+         /// <summary>Runs a philosopher asynchronously.</summary>
+         /// <param name="forks">The forks, represented as semaphores.</param>
+         /// <param name="index">The philosopher's index number.</param>
+         /// <returns>An enumerable of tasks representing a philosopher's execution.</returns>
+         private IEnumerable<Task> RunPhilosopherAsync(AsyncSemaphore[] forks, int index)
+         {
+             // Assign forks
+             int fork1Id, fork2Id;
+             GetForkIds(index, forks.Length, out fork1Id, out fork2Id, true);
+             AsyncSemaphore fork1 = forks[fork1Id], fork2 = forks[fork2Id];
+ 
+             // Think and Eat, repeatedly
+             var rand = new Random(index);
+             while (true)
+             {
+                 // Think (Yellow)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _think);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="210" endline="228"><![CDATA[
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Wait for forks (Red)
+                 yield return fork1.WaitAsync();
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _wait);
+                 yield return fork2.WaitAsync();
+ 
+                 // Eat (Green)
+                 yield return _ui.StartNew(() => _philosophers[index].Fill = _eat);
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\MainWindow.xaml.cs" startline="219" endline="228"><![CDATA[
+                 yield return Task.Factory.StartNewDelayed(rand.Next(10) * TIMESCALE, () => { });
+ 
+                 // Done with forks
+                 fork1.Release();
+                 fork2.Release();
+             }
+         }
+         #endregion
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\CircularPanel.cs" startline="19" endline="28"><![CDATA[
+         {
+             var maxChildSize = new Size();
+             foreach (UIElement child in InternalChildren)
+             {
+                 child.Measure(availableSize);
+                 if (maxChildSize.Width < child.DesiredSize.Width) maxChildSize.Width = child.DesiredSize.Width;
+                 if (maxChildSize.Height < child.DesiredSize.Height) maxChildSize.Height = child.DesiredSize.Height;
+             }
+             return maxChildSize;
+         }
+ 
+         protected override Size ArrangeOverride(Size finalSize)
+         {
+             var children = InternalChildren.OfType<UIElement>().ToArray();
+             if (children.Length > 0)
+             {
+                 var midPanel = new Point(finalSize.Width / 2, finalSize.Height / 2);
+                 var maxChild = new Size(children.Max(u => u.DesiredSize.Width), children.Max(u => u.DesiredSize.Height));
+                 var radius = new Size((finalSize.Width - maxChild.Width) / 2, (finalSize.Height - maxChild.Height) / 2);
+                 double arcRadiansPerChild = Math.PI * 2 / children.Length;
+ 
+                 int curPos = 0;
+                 foreach (var child in children)
+                 {
+                     var childAngleInRadians = curPos * arcRadiansPerChild;
+                     var childPosition = new Point(
+                         (Math.Sin(childAngleInRadians) * radius.Width) + (midPanel.X - (child.DesiredSize.Width / 2)),
+                         (Math.Cos(childAngleInRadians) * radius.Height) + (midPanel.Y - (child.DesiredSize.Height / 2)));
+                     child.Arrange(new Rect(childPosition, child.DesiredSize));
+                     curPos++;
+                 }
+             }
+             return finalSize;
+         }
+     }
+ }
+             foreach (UIElement child in InternalChildren)
+             {
+                 child.Measure(availableSize);
+                 if (maxChildSize.Width < child.DesiredSize.Width) maxChildSize.Width = child.DesiredSize.Width;
+                 if (maxChildSize.Height < child.DesiredSize.Height) maxChildSize.Height = child.DesiredSize.Height;
+             }
+             return maxChildSize;
+         }
+ 
+         protected override Size ArrangeOverride(Size finalSize)
+         {
+             var children = InternalChildren.OfType<UIElement>().ToArray();
+             if (children.Length > 0)
+             {
+                 var midPanel = new Point(finalSize.Width / 2, finalSize.Height / 2);
+                 var maxChild = new Size(children.Max(u => u.DesiredSize.Width), children.Max(u => u.DesiredSize.Height));
+                 var radius = new Size((finalSize.Width - maxChild.Width) / 2, (finalSize.Height - maxChild.Height) / 2);
+                 double arcRadiansPerChild = Math.PI * 2 / children.Length;
+ 
+                 int curPos = 0;
+                 foreach (var child in children)
+                 {
+                     var childAngleInRadians = curPos * arcRadiansPerChild;
+                     var childPosition = new Point(
+                         (Math.Sin(childAngleInRadians) * radius.Width) + (midPanel.X - (child.DesiredSize.Width / 2)),
+                         (Math.Cos(childAngleInRadians) * radius.Height) + (midPanel.Y - (child.DesiredSize.Height / 2)));
+                     child.Arrange(new Rect(childPosition, child.DesiredSize));
+                     curPos++;
+                 }
+             }
+             return finalSize;
+         }
+     }
+ }
+                 if (maxChildSize.Width < child.DesiredSize.Width) maxChildSize.Width = child.DesiredSize.Width;
+                 if (maxChildSize.Height < child.DesiredSize.Height) maxChildSize.Height = child.DesiredSize.Height;
+             }
+             return maxChildSize;
+         }
+ 
+         protected override Size ArrangeOverride(Size finalSize)
+         {
+             var children = InternalChildren.OfType<UIElement>().ToArray();
+             if (children.Length > 0)
+             {
+                 var midPanel = new Point(finalSize.Width / 2, finalSize.Height / 2);
+                 var maxChild = new Size(children.Max(u => u.DesiredSize.Width), children.Max(u => u.DesiredSize.Height));
+                 var radius = new Size((finalSize.Width - maxChild.Width) / 2, (finalSize.Height - maxChild.Height) / 2);
+                 double arcRadiansPerChild = Math.PI * 2 / children.Length;
+ 
+                 int curPos = 0;
+                 foreach (var child in children)
+                 {
+                     var childAngleInRadians = curPos * arcRadiansPerChild;
+                     var childPosition = new Point(
+                         (Math.Sin(childAngleInRadians) * radius.Width) + (midPanel.X - (child.DesiredSize.Width / 2)),
+                         (Math.Cos(childAngleInRadians) * radius.Height) + (midPanel.Y - (child.DesiredSize.Height / 2)));
+                     child.Arrange(new Rect(childPosition, child.DesiredSize));
+                     curPos++;
+                 }
+             }
+             return finalSize;
+         }
+     }
+ }
+                 if (maxChildSize.Height < child.DesiredSize.Height) maxChildSize.Height = child.DesiredSize.Height;
+             }
+             foreach (UIElement child in InternalChildren)
+             {
+                 child.Measure(availableSize);
+                 if (maxChildSize.Width < child.DesiredSize.Width) maxChildSize.Width = child.DesiredSize.Width;
+                 if (maxChildSize.Height < child.DesiredSize.Height) maxChildSize.Height = child.DesiredSize.Height;
+             }
+             return maxChildSize;
+         }
+ 
+         protected override Size ArrangeOverride(Size finalSize)
+         {
+             var children = InternalChildren.OfType<UIElement>().ToArray();
+             if (children.Length > 0)
+             {
+                 var midPanel = new Point(finalSize.Width / 2, finalSize.Height / 2);
+                 var maxChild = new Size(children.Max(u => u.DesiredSize.Width), children.Max(u => u.DesiredSize.Height));
+                 var radius = new Size((finalSize.Width - maxChild.Width) / 2, (finalSize.Height - maxChild.Height) / 2);
+                 double arcRadiansPerChild = Math.PI * 2 / children.Length;
+ 
+                 int curPos = 0;
+                 foreach (var child in children)
+                 {
+                     var childAngleInRadians = curPos * arcRadiansPerChild;
+                     var childPosition = new Point(
+                         (Math.Sin(childAngleInRadians) * radius.Width) + (midPanel.X - (child.DesiredSize.Width / 2)),
+                         (Math.Cos(childAngleInRadians) * radius.Height) + (midPanel.Y - (child.DesiredSize.Height / 2)));
+                     child.Arrange(new Rect(childPosition, child.DesiredSize));
+                     curPos++;
+                 }
+             }
+             return finalSize;
+         }
+     }
+ }
+             return maxChildSize;
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\CircularPanel.cs" startline="29" endline="52"><![CDATA[
+ 
+         protected override Size ArrangeOverride(Size finalSize)
+         {
+             var children = InternalChildren.OfType<UIElement>().ToArray();
+             if (children.Length > 0)
+             {
+                 var midPanel = new Point(finalSize.Width / 2, finalSize.Height / 2);
+                 var maxChild = new Size(children.Max(u => u.DesiredSize.Width), children.Max(u => u.DesiredSize.Height));
+                 var radius = new Size((finalSize.Width - maxChild.Width) / 2, (finalSize.Height - maxChild.Height) / 2);
+                 double arcRadiansPerChild = Math.PI * 2 / children.Length;
+ 
+                 int curPos = 0;
+                 foreach (var child in children)
+                 {
+                     var childAngleInRadians = curPos * arcRadiansPerChild;
+                     var childPosition = new Point(
+                         (Math.Sin(childAngleInRadians) * radius.Width) + (midPanel.X - (child.DesiredSize.Width / 2)),
+                         (Math.Cos(childAngleInRadians) * radius.Height) + (midPanel.Y - (child.DesiredSize.Height / 2)));
+                     child.Arrange(new Rect(childPosition, child.DesiredSize));
+                     curPos++;
+                 }
+             }
+             return finalSize;
+         }
+     }
+ }
+             {
+                 var midPanel = new Point(finalSize.Width / 2, finalSize.Height / 2);
+                 var maxChild = new Size(children.Max(u => u.DesiredSize.Width), children.Max(u => u.DesiredSize.Height));
+                 var radius = new Size((finalSize.Width - maxChild.Width) / 2, (finalSize.Height - maxChild.Height) / 2);
+                 double arcRadiansPerChild = Math.PI * 2 / children.Length;
+ 
+                 int curPos = 0;
+                 foreach (var child in children)
+                 {
+                     var childAngleInRadians = curPos * arcRadiansPerChild;
+                     var childPosition = new Point(
+                         (Math.Sin(childAngleInRadians) * radius.Width) + (midPanel.X - (child.DesiredSize.Width / 2)),
+                         (Math.Cos(childAngleInRadians) * radius.Height) + (midPanel.Y - (child.DesiredSize.Height / 2)));
+                     child.Arrange(new Rect(childPosition, child.DesiredSize));
+                     curPos++;
+                 }
+             }
+             return finalSize;
+         }
+     }
+ }
+                 foreach (var child in children)
+                 {
+                     var childAngleInRadians = curPos * arcRadiansPerChild;
+                     var childPosition = new Point(
+                         (Math.Sin(childAngleInRadians) * radius.Width) + (midPanel.X - (child.DesiredSize.Width / 2)),
+                         (Math.Cos(childAngleInRadians) * radius.Height) + (midPanel.Y - (child.DesiredSize.Height / 2)));
+                     child.Arrange(new Rect(childPosition, child.DesiredSize));
+                     curPos++;
+                 }
+             }
+             return finalSize;
+         }
+     }
+ }
+                 foreach (var child in children)
+                 {
+                     var childAngleInRadians = curPos * arcRadiansPerChild;
+                     var childPosition = new Point(
+                         (Math.Sin(childAngleInRadians) * radius.Width) + (midPanel.X - (child.DesiredSize.Width / 2)),
+                         (Math.Cos(childAngleInRadians) * radius.Height) + (midPanel.Y - (child.DesiredSize.Height / 2)));
+                     child.Arrange(new Rect(childPosition, child.DesiredSize));
+                     curPos++;
+                 }
+             }
+             return finalSize;
+         }
+     }
+ }
+             }
+             return finalSize;
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\CircularPanel.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\CircularPanel.cs" startline="36" endline="54"><![CDATA[
+                 var maxChild = new Size(children.Max(u => u.DesiredSize.Width), children.Max(u => u.DesiredSize.Height));
+                 var radius = new Size((finalSize.Width - maxChild.Width) / 2, (finalSize.Height - maxChild.Height) / 2);
+                 double arcRadiansPerChild = Math.PI * 2 / children.Length;
+ 
+                 int curPos = 0;
+                 foreach (var child in children)
+                 {
+                     var childAngleInRadians = curPos * arcRadiansPerChild;
+                     var childPosition = new Point(
+                         (Math.Sin(childAngleInRadians) * radius.Width) + (midPanel.X - (child.DesiredSize.Width / 2)),
+                         (Math.Cos(childAngleInRadians) * radius.Height) + (midPanel.Y - (child.DesiredSize.Height / 2)));
+                     child.Arrange(new Rect(childPosition, child.DesiredSize));
+                     curPos++;
+                 }
+             }
+             return finalSize;
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\CircularPanel.cs" startline="36" endline="54"><![CDATA[
+                 var maxChild = new Size(children.Max(u => u.DesiredSize.Width), children.Max(u => u.DesiredSize.Height));
+                 var radius = new Size((finalSize.Width - maxChild.Width) / 2, (finalSize.Height - maxChild.Height) / 2);
+                 double arcRadiansPerChild = Math.PI * 2 / children.Length;
+ 
+                 int curPos = 0;
+                 foreach (var child in children)
+                 {
+                     var childAngleInRadians = curPos * arcRadiansPerChild;
+                     var childPosition = new Point(
+                         (Math.Sin(childAngleInRadians) * radius.Width) + (midPanel.X - (child.DesiredSize.Width / 2)),
+                         (Math.Cos(childAngleInRadians) * radius.Height) + (midPanel.Y - (child.DesiredSize.Height / 2)));
+                     child.Arrange(new Rect(childPosition, child.DesiredSize));
+                     curPos++;
+                 }
+             }
+             return finalSize;
+         }
+     }
+ }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\obj\Debug\App.g.cs" startline="47" endline="4"><![CDATA[
+         public void InitializeComponent() {
+              StartupUri="MainWindow.xaml">
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\obj\Debug\App.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\obj\Debug\App.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\Properties\Resources.Designer.cs" startline="32" endline="35"><![CDATA[
+         [global
+         internal Resources()
+         {
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\Properties\Resources.Designer.cs" startline="36" endline="51"><![CDATA[
+ 
+         /// <summary>
+         ///   Returns the cached ResourceManager instance used by this class.
+         /// </summary>
+         [global
+         internal static global
+         {
+             get
+             {
+                 if ((resourceMan == null))
+                 {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+         }
+ 
+         /// <summary>
+         ///   Overrides the current thread's CurrentUICulture property for all
+         ///   resource lookups using this strongly typed resource class.
+         /// </summary>
+         [global
+         internal static global
+         {
+             get
+             {
+                 return resourceCulture;
+             }
+             set
+             {
+                 resourceCulture = value;
+             }
+         }
+     }
+ }
+                 {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\Properties\Resources.Designer.cs" startline="52" endline="64"><![CDATA[
+         }
+ 
+         /// <summary>
+         ///   Overrides the current thread's CurrentUICulture property for all
+         ///   resource lookups using this strongly typed resource class.
+         /// </summary>
+         [global
+         internal static global
+         {
+             get
+             {
+                 return resourceCulture;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\DiningPhilosophers\DiningPhilosophers_CSharp\Properties\Resources.Designer.cs" startline="65" endline="68"><![CDATA[
+             set
+             {
+                 resourceCulture = value;
+             }
+]]></source>
+</source_elements></project>

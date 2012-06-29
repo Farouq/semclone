@@ -1,0 +1,8566 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\EVO.xaml.cs" startline="27" endline="33"><![CDATA[
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+call       valuetype [mscorlib]System
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldarg
+ldftn      instance void ASXGui
+class [mscorlib]System
+newobj     instance void [mscorlib]System
+native int)
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+callvirt   instance void [WindowsBase]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\EVO.xaml.cs" startline="34" endline="41"><![CDATA[
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldsfld     float64 ASXGui
+conv
+conv
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldsflda    float64 ASXGui
+call       instance string [mscorlib]System
+call       instance void [PresentationFramework]System
+nop
+ldsfld     float64 ASXGui
+ldc
+ceq
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       instance void [PresentationFramework]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="26" endline="47"><![CDATA[
+ldarg
+ldsfld     bool ASXGui
+stfld      bool ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     bool ASXGui
+stfld      bool ASXGui
+ldarg
+ldsfld     bool ASXGui
+stfld      bool ASXGui
+ldarg
+ldsfld     bool ASXGui
+stfld      bool ASXGui
+ldarg
+ldsfld     bool ASXGui
+stfld      bool ASXGui
+ldarg
+ldsfld     bool ASXGui
+stfld      bool ASXGui
+ldarg
+ldsfld     bool ASXGui
+stfld      bool ASXGui
+ldarg
+ldsfld     bool ASXGui
+stfld      bool ASXGui
+ldarg
+ldsfld     bool ASXGui
+stfld      bool ASXGui
+ldarg
+ldsfld     bool ASXGui
+stfld      bool ASXGui
+ldarg
+ldsfld     bool ASXGui
+stfld      bool ASXGui
+ldarg
+ldsfld     bool ASXGui
+stfld      bool ASXGui
+ldarg
+ldsfld     bool ASXGui
+stfld      bool ASXGui
+ldarg
+ldsfld     class [mscorlib]System
+stfld      class [mscorlib]System
+ldarg
+newobj     instance void [System
+stfld      class [System
+ldarg
+call       instance void [PresentationFramework]System
+nop
+nop
+ldarg
+call       instance void ASXGui
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="48" endline="84"><![CDATA[
+nop
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       void ASXGui
+nop
+br
+
+ldarg
+call       class [PresentationCore]System
+call       instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      string ASXGui
+call       string [mscorlib]System
+ldstr      "ASXGui"
+call       string [mscorlib]System
+string)
+call       bool [mscorlib]System
+string)
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      string ASXGui
+ldarg
+ldfld      string ASXGui
+ldstr      "\\Logs"
+call       string [mscorlib]System
+string)
+call       bool [mscorlib]System
+string)
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      bool ASXGui
+brfalse
+
+ldarg
+ldfld      bool ASXGui
+br
+
+ldc
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      bool ASXGui
+brtrue
+
+ldarg
+ldfld      bool ASXGui
+br
+
+ldc
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [mscorlib]System
+callvirt   instance void class [mscorlib]System
+nop
+nop
+ldarg
+ldfld      class [mscorlib]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+.try
+br
+
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance class [PresentationFramework]System
+ldloc
+callvirt   instance int32 [PresentationFramework]System
+pop
+ldloca
+call       instance bool valuetype [mscorlib]System
+stloc
+ldloc
+brtrue
+
+leave
+
+}  // end 
+finally
+ldloca
+constrained
+callvirt   instance void [mscorlib]System
+nop
+endfinally
+}  // end handler
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="91" endline="103"><![CDATA[
+nop
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldloc
+stloc
+ldloc
+brtrue
+
+ldarg
+ldarg
+call       instance valuetype [PresentationFramework]System
+brfalse
+
+ldc
+br
+
+ldc
+call       instance void [PresentationFramework]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="109" endline="115"><![CDATA[
+nop
+ldarg
+ldarg
+call       instance void [PresentationFramework]System
+nop
+ldarg
+newobj     instance void [PresentationFramework]System
+call       instance native int [PresentationFramework]System
+stloc
+ldloc
+call       class [PresentationCore]System
+ldarg
+ldftn      instance native int ASXGui
+int32,
+native int,
+native int,
+bool&)
+newobj     instance void [PresentationCore]System
+native int)
+callvirt   instance void [PresentationCore]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="116" endline="129"><![CDATA[
+nop
+ldarg
+ldc
+ceq
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldc
+stloc
+ldloca
+call       int32 ASXGui
+pop
+ldarg
+ldloc
+ldc
+cgt
+stfld      bool ASXGui
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       class [PresentationCore]System
+call       instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+call       class [PresentationCore]System
+call       instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       void ASXGui
+nop
+ldarg
+ldc
+stind
+nop
+ldsfld     native int [mscorlib]System
+stloc
+br
+
+ldloc
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="136" endline="145"><![CDATA[
+nop
+ldarg
+call       instance bool [PresentationFramework]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+callvirt   instance void [PresentationCore]System
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="146" endline="155"><![CDATA[
+nop
+ldarg
+call       instance bool [PresentationFramework]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+callvirt   instance void [PresentationCore]System
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="156" endline="165"><![CDATA[
+nop
+ldarg
+call       instance bool [PresentationFramework]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+callvirt   instance void [PresentationCore]System
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="166" endline="178"><![CDATA[
+nop
+ldarg
+call       instance bool [PresentationFramework]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+ldloc
+and
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+ldc
+ceq
+ldloc
+and
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      bool ASXGui
+brtrue
+
+ldloc
+ldc
+ceq
+br
+
+ldc
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      bool ASXGui
+brtrue
+
+ldloc
+br
+
+ldc
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="179" endline="189"><![CDATA[
+nop
+ldarg
+call       instance bool [PresentationFramework]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+callvirt   instance void [PresentationCore]System
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="190" endline="198"><![CDATA[
+nop
+ldarg
+call       instance bool [PresentationFramework]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+callvirt   instance void [PresentationCore]System
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="209" endline="251"><![CDATA[
+nop
+ldarg
+ldc
+newobj     instance void valuetype [mscorlib]System
+call       instance void [PresentationFramework]System
+nop
+ldarg
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stfld      string ASXGui
+ldarg
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stfld      string ASXGui
+ldarg
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stfld      string ASXGui
+ldarg
+ldfld      string ASXGui
+ldsfld     string ASXGui
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldstr      "Clear files in current temporary folder\?\n\nWARNING!"
++ " This will remove all items from the job queue!"
+ldstr      "Clear Temp\?"
+ldc
+call       valuetype [PresentationFramework]System
+string,
+valuetype [PresentationFramework]System
+ldc
+ceq
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       instance void ASXGui
+nop
+ldarg
+ldfld      string ASXGui
+stsfld     string ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stsfld     string ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stsfld     string ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stsfld     bool ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stsfld     string ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stsfld     string ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stsfld     string ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stsfld     string ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stsfld     bool ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stsfld     bool ASXGui
+ldarg
+ldfld      string ASXGui
+stsfld     string ASXGui
+ldarg
+ldfld      string ASXGui
+stsfld     string ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stsfld     string ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stsfld     bool ASXGui
+ldarg
+ldfld      bool ASXGui
+stsfld     bool ASXGui
+ldarg
+ldfld      bool ASXGui
+stsfld     bool ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stsfld     string ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stsfld     bool ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stsfld     bool ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stsfld     bool ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stsfld     bool ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stsfld     bool ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stsfld     bool ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stsfld     string ASXGui
+ldarg
+ldfld      string ASXGui
+stsfld     string ASXGui
+ldarg
+ldfld      string ASXGui
+call       bool [mscorlib]System
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      string ASXGui
+call       class [mscorlib]System
+pop
+ldarg
+ldfld      string ASXGui
+call       bool [mscorlib]System
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      string ASXGui
+call       class [mscorlib]System
+pop
+ldarg
+ldfld      string ASXGui
+call       bool [mscorlib]System
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      string ASXGui
+call       class [mscorlib]System
+pop
+ldarg
+call       instance void [PresentationFramework]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="257" endline="266"><![CDATA[
+nop
+ldarg
+ldfld      class [System
+ldarg
+ldfld      string ASXGui
+callvirt   instance void [System
+nop
+ldarg
+ldfld      class [System
+callvirt   instance valuetype [System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldarg
+ldfld      class [System
+callvirt   instance string [System
+stfld      string ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="267" endline="278"><![CDATA[
+nop
+newobj     instance void [System]System
+stloc
+ldloc
+callvirt   instance class [System]System
+ldsfld     string ASXGui
+callvirt   instance void [System]System
+nop
+ldloc
+callvirt   instance class [System]System
+ldc
+callvirt   instance void [System]System
+nop
+ldloc
+callvirt   instance class [System]System
+ldc
+callvirt   instance void [System]System
+nop
+ldloc
+callvirt   instance class [System]System
+ldstr      "cmd
+callvirt   instance void [System]System
+nop
+ldloc
+callvirt   instance class [System]System
+ldstr      "/c ECHO y | del *
+callvirt   instance void [System]System
+nop
+ldloc
+callvirt   instance bool [System]System
+pop
+ldsfld     class [mscorlib]System
+callvirt   instance void class [mscorlib]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="279" endline="285"><![CDATA[
+nop
+ldarg
+ldfld      class [System
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+callvirt   instance void [System
+nop
+ldarg
+ldfld      class [System
+callvirt   instance valuetype [System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      class [System
+callvirt   instance string [System
+callvirt   instance void [PresentationFramework]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="286" endline="295"><![CDATA[
+nop
+ldarg
+ldfld      class [System
+ldarg
+ldfld      string ASXGui
+callvirt   instance void [System
+nop
+ldarg
+ldfld      class [System
+callvirt   instance valuetype [System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldarg
+ldfld      class [System
+callvirt   instance string [System
+stfld      string ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="296" endline="305"><![CDATA[
+nop
+ldarg
+call       instance bool [PresentationFramework]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance int32 [PresentationFramework]System
+ldc
+ceq
+ldc
+ceq
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+callvirt   instance void [PresentationCore]System
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Updating.xaml.cs" startline="25" endline="33"><![CDATA[
+ldarg
+ldsfld     class [mscorlib]System
+stfld      class [mscorlib]System
+ldarg
+newobj     instance void [WindowsBase]System
+stfld      class [WindowsBase]System
+ldarg
+newobj     instance void [WindowsBase]System
+stfld      class [WindowsBase]System
+ldarg
+ldsfld     bool ASXGui
+stfld      bool ASXGui
+ldarg
+ldc
+stfld      bool ASXGui
+ldarg
+call       instance void [PresentationFramework]System
+nop
+nop
+ldarg
+call       instance void ASXGui
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Updating.xaml.cs" startline="34" endline="42"><![CDATA[
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldftn      instance void ASXGui
+newobj     instance void [mscorlib]System
+native int)
+newobj     instance void [mscorlib]System
+stloc
+ldloc
+ldc
+callvirt   instance void [mscorlib]System
+nop
+ldloc
+callvirt   instance void [mscorlib]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+callvirt   instance void [WindowsBase]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Updating.xaml.cs" startline="43" endline="52"><![CDATA[
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+call       valuetype [mscorlib]System
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldarg
+ldftn      instance void ASXGui
+class [mscorlib]System
+newobj     instance void [mscorlib]System
+native int)
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+call       valuetype [mscorlib]System
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldarg
+ldftn      instance void ASXGui
+class [mscorlib]System
+newobj     instance void [mscorlib]System
+native int)
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       void ASXGui
+nop
+br
+
+ldarg
+call       class [PresentationCore]System
+call       instance void [PresentationFramework]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Updating.xaml.cs" startline="64" endline="74"><![CDATA[
+nop
+nop
+ldarg
+ldfld      class [mscorlib]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+.try
+br
+
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stloc
+nop
+ldarg
+ldflda     valuetype ASXGui
+initobj    ASXGui
+ldarg
+ldloc
+ldarg
+ldfld      valuetype ASXGui
+call       valuetype ASXGui
+valuetype ASXGui
+stfld      valuetype ASXGui
+ldarg
+ldfld      valuetype ASXGui
+ldloc
+call       void ASXGui
+string)
+nop
+nop
+ldloca
+call       instance bool valuetype [mscorlib]System
+stloc
+ldloc
+brtrue
+
+leave
+
+}  // end 
+finally
+ldloca
+constrained
+callvirt   instance void [mscorlib]System
+nop
+endfinally
+}  // end handler
+nop
+ldarg
+ldc
+stfld      bool ASXGui
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Updating.xaml.cs" startline="75" endline="81"><![CDATA[
+nop
+ldarg
+ldarg
+call       instance void [PresentationFramework]System
+nop
+ldarg
+newobj     instance void [PresentationFramework]System
+call       instance native int [PresentationFramework]System
+stloc
+ldloc
+call       class [PresentationCore]System
+ldarg
+ldftn      instance native int ASXGui
+int32,
+native int,
+native int,
+bool&)
+newobj     instance void [PresentationCore]System
+native int)
+callvirt   instance void [PresentationCore]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Updating.xaml.cs" startline="82" endline="95"><![CDATA[
+nop
+ldarg
+ldc
+ceq
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldc
+stloc
+ldloca
+call       int32 ASXGui
+pop
+ldarg
+ldloc
+ldc
+cgt
+stfld      bool ASXGui
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       class [PresentationCore]System
+call       instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+call       class [PresentationCore]System
+call       instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       void ASXGui
+nop
+ldarg
+ldc
+stind
+nop
+ldsfld     native int [mscorlib]System
+stloc
+br
+
+ldloc
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Properties\Resources.Designer.cs" startline="34" endline="46"><![CDATA[
+nop
+ldsfld     class [mscorlib]System
+ldnull
+call       bool [mscorlib]System
+object)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldstr      "ASXGui
+ldtoken    ASXGui
+call       class [mscorlib]System
+callvirt   instance class [mscorlib]System
+newobj     instance void [mscorlib]System
+class [mscorlib]System
+stloc
+ldloc
+stsfld     class [mscorlib]System
+nop
+ldsfld     class [mscorlib]System
+stloc
+br
+
+ldloc
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ImportProfile.xaml.cs" startline="49" endline="110"><![CDATA[
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stloc
+ldarg
+ldfld      string ASXGui
+ldstr      "\\profiles
+call       string [mscorlib]System
+string)
+stloc
+ldstr      ""
+stloc
+ldarg
+ldfld      string ASXGui
+ldstr      "\\profiles
+call       string [mscorlib]System
+string)
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldloc
+call       bool [mscorlib]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldloc
+call       class [mscorlib]System
+stloc
+ldloc
+call       bool [mscorlib]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldloc
+call       class [mscorlib]System
+stloc
+br
+
+ldloc
+call       class [mscorlib]System
+stloc
+br
+
+nop
+ldloc
+callvirt   instance string [mscorlib]System
+stloc
+ldloc
+callvirt   instance int32 [mscorlib]System
+ldc
+cgt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldloc
+ldc
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+ldstr      "Profile="
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldloc
+ldstr      ""
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldloc
+ldc
+ldloc
+callvirt   instance int32 [mscorlib]System
+ldc
+sub
+callvirt   instance string [mscorlib]System
+int32)
+stloc
+br
+
+ldloc
+ldstr      "\n"
+ldloc
+ldc
+ldloc
+callvirt   instance int32 [mscorlib]System
+ldc
+sub
+callvirt   instance string [mscorlib]System
+int32)
+call       string [mscorlib]System
+string,
+string)
+stloc
+ldloc
+ldloc
+callvirt   instance void [mscorlib]System
+nop
+nop
+ldloc
+callvirt   instance int32 [mscorlib]System
+ldc
+cgt
+stloc
+ldloc
+brtrue
+
+ldloc
+callvirt   instance void [mscorlib]System
+nop
+ldloc
+callvirt   instance void [mscorlib]System
+nop
+ldstr      "The following profiles were imported successfully:\n\n"
+ldloc
+call       string [mscorlib]System
+string)
+call       valuetype [PresentationFramework]System
+pop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+br
+
+ldstr      "File not found!"
+call       valuetype [PresentationFramework]System
+pop
+nop
+br
+
+nop
+ldloc
+call       bool [mscorlib]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldloc
+call       class [mscorlib]System
+stloc
+br
+
+ldloc
+call       class [mscorlib]System
+stloc
+ldloc
+call       class [mscorlib]System
+stloc
+ldloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+callvirt   instance void [mscorlib]System
+nop
+ldloc
+callvirt   instance void [mscorlib]System
+nop
+ldloc
+call       class [mscorlib]System
+stloc
+br
+
+nop
+ldloc
+callvirt   instance string [mscorlib]System
+stloc
+ldloc
+callvirt   instance int32 [mscorlib]System
+ldc
+cgt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldloc
+ldc
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+ldstr      "Profile="
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldloc
+ldstr      ""
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldloc
+ldc
+ldloc
+callvirt   instance int32 [mscorlib]System
+ldc
+sub
+callvirt   instance string [mscorlib]System
+int32)
+stloc
+br
+
+ldloc
+ldstr      "\n"
+ldloc
+ldc
+ldloc
+callvirt   instance int32 [mscorlib]System
+ldc
+sub
+callvirt   instance string [mscorlib]System
+int32)
+call       string [mscorlib]System
+string,
+string)
+stloc
+ldloc
+ldloc
+callvirt   instance void [mscorlib]System
+nop
+nop
+ldloc
+callvirt   instance int32 [mscorlib]System
+ldc
+cgt
+stloc
+ldloc
+brtrue
+
+ldloc
+callvirt   instance void [mscorlib]System
+nop
+ldloc
+callvirt   instance void [mscorlib]System
+nop
+ldstr      "The following profiles were imported successfully:\n\n"
+ldloc
+call       string [mscorlib]System
+string)
+call       valuetype [PresentationFramework]System
+pop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+ldloc
+call       void [mscorlib]System
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ImportProfile.xaml.cs" startline="111" endline="119"><![CDATA[
+nop
+newobj     instance void [PresentationFramework]Microsoft
+stloc
+ldloc
+ldstr      "ASXGui Profile|*
+callvirt   instance void [PresentationFramework]Microsoft
+nop
+ldloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+callvirt   instance void [PresentationFramework]Microsoft
+nop
+ldloc
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+callvirt   instance string [PresentationFramework]Microsoft
+callvirt   instance void [PresentationFramework]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ImportProfile.xaml.cs" startline="120" endline="133"><![CDATA[
+nop
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldloc
+stloc
+ldloc
+brtrue
+
+ldarg
+ldarg
+call       instance valuetype [PresentationFramework]System
+brfalse
+
+ldc
+br
+
+ldc
+call       instance void [PresentationFramework]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ImportProfile.xaml.cs" startline="134" endline="140"><![CDATA[
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ImportProfile.xaml.cs" startline="141" endline="150"><![CDATA[
+nop
+ldarg
+call       instance bool [PresentationFramework]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ImportProfile.xaml.cs" startline="156" endline="162"><![CDATA[
+nop
+ldarg
+ldarg
+call       instance void [PresentationFramework]System
+nop
+ldarg
+newobj     instance void [PresentationFramework]System
+call       instance native int [PresentationFramework]System
+stloc
+ldloc
+call       class [PresentationCore]System
+ldarg
+ldftn      instance native int ASXGui
+int32,
+native int,
+native int,
+bool&)
+newobj     instance void [PresentationCore]System
+native int)
+callvirt   instance void [PresentationCore]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ImportProfile.xaml.cs" startline="163" endline="176"><![CDATA[
+nop
+ldarg
+ldc
+ceq
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldc
+stloc
+ldloca
+call       int32 ASXGui
+pop
+ldarg
+ldloc
+ldc
+cgt
+stfld      bool ASXGui
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       class [PresentationCore]System
+call       instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+call       class [PresentationCore]System
+call       instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       void ASXGui
+nop
+ldarg
+ldc
+stind
+nop
+ldsfld     native int [mscorlib]System
+stloc
+br
+
+ldloc
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\FirstLoad.xaml.cs" startline="27" endline="52"><![CDATA[
+nop
+ldarg
+ldfld      int32 ASXGui
+ldc
+ceq
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iPhone-check-highlight
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iPhone-check
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iPhone-highlight
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iPhone
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\FirstLoad.xaml.cs" startline="53" endline="63"><![CDATA[
+nop
+ldarg
+ldc
+stfld      int32 ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iPhone-check-highlight
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iphone4
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/psp
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/vita
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/blu
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\FirstLoad.xaml.cs" startline="64" endline="89"><![CDATA[
+nop
+ldarg
+ldfld      int32 ASXGui
+ldc
+ceq
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iphone4-check-highlight
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iphone4-check
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iphone4-highlight
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iphone4
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\FirstLoad.xaml.cs" startline="90" endline="100"><![CDATA[
+nop
+ldarg
+ldc
+stfld      int32 ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iPhone
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iphone4-check-highlight
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/psp
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/vita
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/blu
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\FirstLoad.xaml.cs" startline="101" endline="126"><![CDATA[
+nop
+ldarg
+ldfld      int32 ASXGui
+ldc
+ceq
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/psp-check-highlight
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/psp-check
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/psp-highlight
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/psp
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\FirstLoad.xaml.cs" startline="127" endline="137"><![CDATA[
+nop
+ldarg
+ldc
+stfld      int32 ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iPhone
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iphone4
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/psp-check-highlight
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/vita
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/blu
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\FirstLoad.xaml.cs" startline="138" endline="163"><![CDATA[
+nop
+ldarg
+ldfld      int32 ASXGui
+ldc
+ceq
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/blu-check-highlight
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/blu-check
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/blu-highlight
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/blu
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\FirstLoad.xaml.cs" startline="164" endline="174"><![CDATA[
+nop
+ldarg
+ldc
+stfld      int32 ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iPhone
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iphone4
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/psp
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/vita
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/blu-check-highlight
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\FirstLoad.xaml.cs" startline="175" endline="185"><![CDATA[
+nop
+ldarg
+ldc
+stfld      int32 ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iPhone
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iphone4
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/psp
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/vita
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/blu
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\FirstLoad.xaml.cs" startline="186" endline="211"><![CDATA[
+nop
+ldarg
+ldfld      int32 ASXGui
+ldc
+ceq
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/vita-highlight-check
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/vita-check
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/vita-highlight
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/vita
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\FirstLoad.xaml.cs" startline="212" endline="222"><![CDATA[
+nop
+ldarg
+ldc
+stfld      int32 ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iPhone
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/iphone4
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/psp
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/vita-highlight-check
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/blu
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ExportProfile.xaml.cs" startline="24" endline="31"><![CDATA[
+ldarg
+ldsfld     bool ASXGui
+stfld      bool ASXGui
+ldarg
+ldsfld     class [mscorlib]System
+stfld      class [mscorlib]System
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+call       instance void [PresentationFramework]System
+nop
+nop
+ldarg
+call       instance void ASXGui
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ExportProfile.xaml.cs" startline="32" endline="44"><![CDATA[
+nop
+ldsfld     bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       void ASXGui
+nop
+br
+
+ldarg
+call       class [PresentationCore]System
+call       instance void [PresentationFramework]System
+nop
+newobj     instance void [PresentationFramework]System
+stloc
+nop
+ldarg
+ldfld      class [mscorlib]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+.try
+br
+
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stloc
+nop
+newobj     instance void [PresentationFramework]System
+stloc
+ldloc
+ldloc
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance class [PresentationFramework]System
+ldloc
+callvirt   instance int32 [PresentationFramework]System
+pop
+nop
+ldloca
+call       instance bool valuetype [mscorlib]System
+stloc
+ldloc
+brtrue
+
+leave
+
+}  // end 
+finally
+ldloca
+constrained
+callvirt   instance void [mscorlib]System
+nop
+endfinally
+}  // end handler
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ExportProfile.xaml.cs" startline="45" endline="51"><![CDATA[
+nop
+ldarg
+ldarg
+call       instance void [PresentationFramework]System
+nop
+ldarg
+newobj     instance void [PresentationFramework]System
+call       instance native int [PresentationFramework]System
+stloc
+ldloc
+call       class [PresentationCore]System
+ldarg
+ldftn      instance native int ASXGui
+int32,
+native int,
+native int,
+bool&)
+newobj     instance void [PresentationCore]System
+native int)
+callvirt   instance void [PresentationCore]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ExportProfile.xaml.cs" startline="52" endline="68"><![CDATA[
+nop
+ldarg
+ldc
+ceq
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldc
+stloc
+ldloca
+call       int32 ASXGui
+pop
+ldarg
+ldloc
+ldc
+cgt
+stfld      bool ASXGui
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       class [PresentationCore]System
+call       instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+call       class [PresentationCore]System
+call       instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       void ASXGui
+nop
+nop
+ldarg
+ldc
+stind
+nop
+ldsfld     native int [mscorlib]System
+stloc
+br
+
+ldloc
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ExportProfile.xaml.cs" startline="74" endline="88"><![CDATA[
+nop
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldloc
+stloc
+ldloc
+brtrue
+
+ldarg
+ldarg
+call       instance valuetype [PresentationFramework]System
+brfalse
+
+ldc
+br
+
+ldc
+call       instance void [PresentationFramework]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ExportProfile.xaml.cs" startline="94" endline="102"><![CDATA[
+nop
+newobj     instance void [PresentationFramework]Microsoft
+stloc
+ldloc
+ldstr      "ASXGui Profile|*
+callvirt   instance void [PresentationFramework]Microsoft
+nop
+ldloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+callvirt   instance void [PresentationFramework]Microsoft
+nop
+ldloc
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+callvirt   instance string [PresentationFramework]Microsoft
+callvirt   instance void [PresentationFramework]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ExportProfile.xaml.cs" startline="103" endline="109"><![CDATA[
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ExportProfile.xaml.cs" startline="110" endline="119"><![CDATA[
+nop
+ldarg
+call       instance bool [PresentationFramework]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ExportProfile.xaml.cs" startline="125" endline="171"><![CDATA[
+nop
+ldarg
+ldfld      string ASXGui
+ldstr      "\\profiles
+call       string [mscorlib]System
+string)
+stloc
+ldstr      ""
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stloc
+ldstr      ""
+stloc
+ldc
+stloc
+ldloc
+call       bool [mscorlib]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldloc
+call       class [mscorlib]System
+stloc
+br
+
+nop
+ldloc
+callvirt   instance string [mscorlib]System
+stloc
+ldloc
+callvirt   instance int32 [mscorlib]System
+ldc
+cgt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldloc
+ldc
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+ldstr      "Profile="
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldloc
+ldc
+ldloc
+callvirt   instance int32 [mscorlib]System
+ldc
+sub
+callvirt   instance string [mscorlib]System
+int32)
+stloc
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance class [PresentationFramework]System
+callvirt   instance class [mscorlib]System
+stloc
+.try
+br
+
+ldloc
+callvirt   instance object [mscorlib]System
+castclass  [PresentationFramework]System
+stloc
+ldloc
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+brfalse
+
+ldloc
+callvirt   instance object [PresentationFramework]System
+castclass  [mscorlib]System
+ldloc
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+nop
+ldc
+stloc
+ldloc
+ldstr      "\n"
+ldloc
+call       string [mscorlib]System
+string,
+string)
+stloc
+nop
+ldloc
+callvirt   instance bool [mscorlib]System
+stloc
+ldloc
+brtrue
+
+leave
+
+}  // end 
+finally
+ldloc
+isinst     [mscorlib]System
+stloc
+ldloc
+ldnull
+ceq
+stloc
+ldloc
+brtrue
+
+ldloc
+callvirt   instance void [mscorlib]System
+nop
+endfinally
+}  // end handler
+nop
+nop
+ldloc
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldloc
+ldloc
+ldstr      "\r\n"
+call       string [mscorlib]System
+string,
+string)
+stloc
+ldloc
+ldstr      "END"
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldloc
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldloc
+ldstr      "\r\n"
+call       string [mscorlib]System
+string)
+stloc
+ldc
+stloc
+nop
+nop
+ldloc
+callvirt   instance int32 [mscorlib]System
+ldc
+cgt
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldloc
+call       class [mscorlib]System
+stloc
+ldloc
+ldloc
+callvirt   instance void [mscorlib]System
+nop
+ldloc
+callvirt   instance void [mscorlib]System
+nop
+nop
+br
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+callvirt   instance void [PresentationFramework]System
+nop
+ldstr      "Profiles exported successfully:\n"
+ldloc
+ldstr      "\n\n"
+ldloc
+call       string [mscorlib]System
+string,
+string,
+string)
+call       valuetype [PresentationFramework]System
+pop
+ldloc
+callvirt   instance void [mscorlib]System
+nop
+nop
+br
+
+nop
+ldstr      "Error: Profiles
+call       valuetype [PresentationFramework]System
+pop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\MainForm.xaml.cs" startline="34" endline="87"><![CDATA[
+ldc
+stsfld     bool ASXGui
+ldc
+stsfld     bool ASXGui
+ldc
+stsfld     bool ASXGui
+ldc
+stsfld     bool ASXGui
+ldc
+stsfld     bool ASXGui
+ldc
+stsfld     bool ASXGui
+ldc
+stsfld     bool ASXGui
+ldc
+stsfld     bool ASXGui
+ldc
+stsfld     bool ASXGui
+ldc
+stsfld     bool ASXGui
+call       string [mscorlib]System
+ldstr      "ASXGui"
+call       string [mscorlib]System
+string)
+stsfld     string ASXGui
+call       class [System]System
+callvirt   instance class [System]System
+callvirt   instance string [System]System
+call       string [mscorlib]System
+stsfld     string ASXGui
+ldsfld     string ASXGui
+ldstr      "\\tools"
+call       string [mscorlib]System
+string)
+stsfld     string ASXGui
+ldstr      "Lanczos4"
+stsfld     string ASXGui
+ldstr      "Do Nothing"
+stsfld     string ASXGui
+ldstr      "Always Ask"
+stsfld     string ASXGui
+ldstr      "Mod16"
+stsfld     string ASXGui
+ldstr      "Always Ask"
+stsfld     string ASXGui
+ldsfld     string ASXGui
+ldstr      "\\Logs"
+call       string [mscorlib]System
+string)
+stsfld     string ASXGui
+ldstr      "Always Ask"
+stsfld     string ASXGui
+ldstr      "Always Ask"
+stsfld     string ASXGui
+ldc
+call       string [mscorlib]System
+stsfld     string ASXGui
+ldstr      "Always Ask"
+stsfld     string ASXGui
+ldstr      "Default"
+stsfld     string ASXGui
+ldstr      "Based on Input FPS"
+stsfld     string ASXGui
+ldstr      "Always Ask"
+stsfld     string ASXGui
+ldsfld     string ASXGui
+ldstr      "\\encode
+call       string [mscorlib]System
+string)
+call       class [mscorlib]System
+stsfld     class [mscorlib]System
+newobj     instance void [TaskbarLib]TaskbarLib
+stsfld     class [TaskbarLib]TaskbarLib
+newobj     instance void [System]System
+stsfld     class [System]System
+newobj     instance void class [mscorlib]System
+stsfld     class [mscorlib]System
+ldsflda    valuetype ASXGui
+initobj    ASXGui
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="26" endline="48"><![CDATA[
+ldarg
+ldsfld     valuetype ASXGui
+stfld      valuetype ASXGui
+ldarg
+ldc
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+initobj    ASXGui
+ldarg
+ldflda     valuetype ASXGui
+initobj    ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldsfld     string ASXGui
+stfld      string ASXGui
+ldarg
+ldc
+stfld      bool ASXGui
+ldarg
+ldc
+stfld      bool ASXGui
+ldarg
+ldc
+stfld      bool ASXGui
+ldarg
+ldc
+stfld      bool ASXGui
+ldarg
+newobj     instance void class [mscorlib]System
+stfld      class [mscorlib]System
+ldarg
+ldsfld     class [mscorlib]System
+stfld      class [mscorlib]System
+ldarg
+ldsfld     class [mscorlib]System
+stfld      class [mscorlib]System
+ldarg
+ldsfld     class [System]System
+stfld      class [System]System
+ldarg
+newobj     instance void [WindowsBase]System
+stfld      class [WindowsBase]System
+ldarg
+newobj     instance void [WindowsBase]System
+stfld      class [WindowsBase]System
+ldarg
+newobj     instance void [WindowsBase]System
+stfld      class [WindowsBase]System
+ldarg
+newobj     instance void [WindowsBase]System
+stfld      class [WindowsBase]System
+ldarg
+ldsfld     bool ASXGui
+stfld      bool ASXGui
+ldarg
+call       instance void [PresentationFramework]System
+nop
+nop
+ldarg
+call       instance void ASXGui
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="56" endline="73"><![CDATA[
+nop
+ldarg
+ldsfld     valuetype ASXGui
+stfld      valuetype ASXGui
+ldsfld     bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       void ASXGui
+nop
+br
+
+ldarg
+call       class [PresentationCore]System
+call       instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+call       valuetype [mscorlib]System
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldarg
+ldftn      instance void ASXGui
+class [mscorlib]System
+newobj     instance void [mscorlib]System
+native int)
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+call       valuetype [mscorlib]System
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldarg
+ldftn      instance void ASXGui
+class [mscorlib]System
+newobj     instance void [mscorlib]System
+native int)
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+call       valuetype [mscorlib]System
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldarg
+ldftn      instance void ASXGui
+class [mscorlib]System
+newobj     instance void [mscorlib]System
+native int)
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+call       valuetype [mscorlib]System
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldarg
+ldftn      instance void ASXGui
+class [mscorlib]System
+newobj     instance void [mscorlib]System
+native int)
+callvirt   instance void [WindowsBase]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="74" endline="82"><![CDATA[
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+callvirt   instance void [WindowsBase]System
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="83" endline="327"><![CDATA[
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+call       bool [mscorlib]System
+string)
+brfalse
+
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+call       bool [mscorlib]System
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stfld      string ASXGui
+ldarg
+ldarg
+ldfld      valuetype ASXGui
+call       valuetype ASXGui
+stfld      valuetype ASXGui
+ldarg
+call       instance void ASXGui
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+callvirt   instance void [WindowsBase]System
+nop
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldarg
+ldflda     valuetype ASXGui
+ldfld      class [mscorlib]System
+stfld      class [mscorlib]System
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance !0 class [mscorlib]System
+stloc
+ldloca
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stfld      string ASXGui
+ldloca
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldloca
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldloca
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldloca
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+int32&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      int32 ASXGui
+ldloca
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldloca
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+float64&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      float64 ASXGui
+ldloca
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldloca
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance int32 [PresentationFramework]System
+stfld      int32 ASXGui
+ldloca
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldloca
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+int32&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      int32 ASXGui
+ldc
+stloc
+ldloca
+ldfld      string ASXGui
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance !0 class [mscorlib]System
+ldfld      string ASXGui
+call       bool [mscorlib]System
+string)
+brfalse
+
+ldloca
+ldfld      string ASXGui
+call       bool [mscorlib]System
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+nop
+ldc
+stloc
+ldloca
+ldc
+stfld      float64 ASXGui
+ldc
+stloc
+br
+
+nop
+ldloca
+ldfld      string ASXGui
+ldloc
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+stloc
+ldloc
+ldstr      "DELAY "
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldloca
+ldloc
+ldloca
+call       bool [mscorlib]System
+float64&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      float64 ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+ldloca
+ldfld      float64 ASXGui
+ldc
+mul
+stloc
+ldloca
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+nop
+ldloc
+ldc
+add
+stloc
+ldloc
+ldloca
+ldfld      string ASXGui
+callvirt   instance int32 [mscorlib]System
+clt
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+ldloc
+callvirt   instance void class [mscorlib]System
+!0)
+nop
+ldloc
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldarg
+ldfld      int32 ASXGui
+ldarg
+ldfld      valuetype ASXGui
+call       valuetype ASXGui
+valuetype ASXGui
+stfld      valuetype ASXGui
+ldarg
+ldarg
+ldfld      int32 ASXGui
+call       instance void ASXGui
+nop
+nop
+nop
+br
+
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+int32&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+float64&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      float64 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance int32 [PresentationFramework]System
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+int32&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+call       bool ASXGui
+brfalse
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+call       bool [mscorlib]System
+brtrue
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+call       bool ASXGui
+brfalse
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+call       bool [mscorlib]System
+ldc
+ceq
+br
+
+ldc
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [PresentationCore]System
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldstr      "Default"
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [PresentationCore]System
+ldc
+ceq
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+stfld      string ASXGui
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stfld      string ASXGui
+ldc
+stloc
+ldloc
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+call       bool [mscorlib]System
+string)
+brfalse
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+call       bool [mscorlib]System
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+nop
+ldc
+stloc
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      float64 ASXGui
+ldc
+stloc
+br
+
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+ldloc
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+stloc
+ldloc
+ldstr      "DELAY "
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldloc
+ldloca
+call       bool [mscorlib]System
+float64&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      float64 ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+mul
+stloc
+ldloca
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+nop
+ldloc
+ldc
+add
+stloc
+ldloc
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+callvirt   instance int32 [mscorlib]System
+clt
+stloc
+ldloc
+brtrue
+
+nop
+ldloc
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldc
+ldarg
+ldfld      valuetype ASXGui
+call       valuetype ASXGui
+valuetype ASXGui
+stfld      valuetype ASXGui
+ldarg
+ldc
+call       instance void ASXGui
+nop
+nop
+nop
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+ldc
+ceq
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stfld      string ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stfld      string ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+int32&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+int32&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stloc
+ldloc
+brfalse
+
+ldloc
+ldstr      "4:3"
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldloc
+ldstr      "16:9"
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldloc
+ldstr      "1
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldloc
+ldstr      "2
+call       bool [mscorlib]System
+string)
+brtrue
+
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      float64 ASXGui
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      float64 ASXGui
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      float64 ASXGui
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      float64 ASXGui
+br
+
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stloc
+ldloc
+ldloc
+callvirt   instance int32 [mscorlib]System
+ldc
+sub
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+ldstr      ":1"
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldloc
+br
+
+ldloc
+ldc
+ldloc
+callvirt   instance int32 [mscorlib]System
+ldc
+sub
+callvirt   instance string [mscorlib]System
+int32)
+stloc
+ldarg
+ldflda     valuetype ASXGui
+ldloc
+ldloca
+call       bool [mscorlib]System
+float64&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      float64 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      float64 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      float64 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      float64 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      float64 ASXGui
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stloc
+ldloc
+brfalse
+
+ldloc
+ldstr      "4:3"
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldloc
+ldstr      "16:9"
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldloc
+ldstr      "1
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldloc
+ldstr      "2
+call       bool [mscorlib]System
+string)
+brtrue
+
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      float64 ASXGui
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      float64 ASXGui
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      float64 ASXGui
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      float64 ASXGui
+br
+
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stloc
+ldloc
+ldloc
+callvirt   instance int32 [mscorlib]System
+ldc
+sub
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+ldstr      ":1"
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldloc
+br
+
+ldloc
+ldc
+ldloc
+callvirt   instance int32 [mscorlib]System
+ldc
+sub
+callvirt   instance string [mscorlib]System
+int32)
+stloc
+ldarg
+ldflda     valuetype ASXGui
+ldloc
+ldloca
+call       bool [mscorlib]System
+float64&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      float64 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      float64 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      float64 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      float64 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      float64 ASXGui
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+int32&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+int32&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+int32&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+int32&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+int32&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+int32&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stfld      string ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+float64&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      float64 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+int32&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance int32 [PresentationFramework]System
+ldc
+add
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+int32&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stfld      string ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+float64&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      float64 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+int32&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldloca
+call       bool [mscorlib]System
+float64&)
+brtrue
+
+ldc
+br
+
+ldloc
+stfld      float64 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stfld      string ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stfld      bool ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+stfld      string ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+brfalse
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+callvirt   instance void [WindowsBase]System
+nop
+nop
+ldarg
+ldarg
+ldfld      valuetype ASXGui
+ldarg
+ldfld      int32 ASXGui
+call       valuetype ASXGui
+int32)
+stfld      valuetype ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+stloc
+ldloc
+brtrue
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+brfalse
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+brfalse
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+brtrue
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+ldc
+ceq
+br
+
+ldc
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+brtrue
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+br
+
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance !0 class [mscorlib]System
+ldfld      int32 ASXGui
+stloc
+ldloc
+switch     (
+IL_1163,
+IL_1176,
+IL_1189,
+IL_119c)
+br
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "AAC"
+callvirt   instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "AAC LC"
+callvirt   instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "AAC HE"
+callvirt   instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "AAC HEv2"
+callvirt   instance void [PresentationFramework]System
+nop
+br
+
+br
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "AC-3"
+callvirt   instance void [PresentationFramework]System
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "BDAV / AVC"
+callvirt   instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Matroska / AVC"
+callvirt   instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "MPEG-4 / AVC"
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance !0 class [mscorlib]System
+ldfld      int32 ASXGui
+box        [mscorlib]System
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance !0 class [mscorlib]System
+ldfld      int32 ASXGui
+ldc
+bgt
+
+ldstr      " Channel"
+br
+
+ldstr      " Channels"
+call       string [mscorlib]System
+object)
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance !0 class [mscorlib]System
+ldfld      int32 ASXGui
+box        [mscorlib]System
+ldstr      " Kbps"
+ldarg
+ldfld      class [mscorlib]System
+callvirt   instance int32 class [mscorlib]System
+ldc
+bgt
+
+ldstr      ""
+br
+
+ldstr      " ("
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+box        [mscorlib]System
+ldstr      " Kbps total)"
+call       string [mscorlib]System
+object,
+object)
+call       string [mscorlib]System
+object,
+object)
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+brfalse
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance object [PresentationFramework]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+box        [mscorlib]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+ldc
+bgt
+
+ldstr      " Channel"
+br
+
+ldstr      " Channels"
+call       string [mscorlib]System
+object)
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+box        [mscorlib]System
+ldstr      " Kbps"
+call       string [mscorlib]System
+object)
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+brfalse
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance object [PresentationFramework]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="333" endline="380"><![CDATA[
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [mscorlib]System
+callvirt   instance void class [mscorlib]System
+nop
+nop
+ldarg
+ldfld      class [mscorlib]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+.try
+br
+
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance class [PresentationFramework]System
+ldloc
+callvirt   instance int32 [PresentationFramework]System
+pop
+ldloca
+call       instance bool valuetype [mscorlib]System
+stloc
+ldloc
+brtrue
+
+leave
+
+}  // end 
+finally
+ldloca
+constrained
+callvirt   instance void [mscorlib]System
+nop
+endfinally
+}  // end handler
+nop
+ldarg
+ldarg
+ldflda     valuetype ASXGui
+ldfld      class [mscorlib]System
+stfld      class [mscorlib]System
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance class [PresentationFramework]System
+ldstr      ""
+callvirt   instance int32 [PresentationFramework]System
+pop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+call       bool [mscorlib]System
+stloc
+ldloc
+brtrue
+
+ldarg
+ldarg
+ldfld      valuetype ASXGui
+call       valuetype ASXGui
+stfld      valuetype ASXGui
+ldarg
+call       instance void ASXGui
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+ldc
+ceq
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      string ASXGui
+stloc
+ldloc
+brfalse
+
+ldloc
+ldstr      "Always Ask"
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldloc
+ldstr      "Always Read Audio"
+call       bool [mscorlib]System
+string)
+brtrue
+
+br
+
+ldstr      "Would you like to try to load the audio from the a"
++ "visynth script\?"
+ldstr      "Load AVS Audio\?"
+ldc
+call       valuetype [PresentationFramework]System
+string,
+valuetype [PresentationFramework]System
+ldc
+ceq
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldarg
+ldfld      valuetype ASXGui
+ldarg
+ldfld      int32 ASXGui
+call       valuetype ASXGui
+int32)
+stfld      valuetype ASXGui
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      int32 ASXGui
+br
+
+ldarg
+ldarg
+ldfld      valuetype ASXGui
+ldarg
+ldfld      int32 ASXGui
+call       valuetype ASXGui
+int32)
+stfld      valuetype ASXGui
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldc
+stfld      int32 ASXGui
+br
+
+nop
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldc
+ldarg
+ldfld      valuetype ASXGui
+call       valuetype ASXGui
+valuetype ASXGui
+stfld      valuetype ASXGui
+ldarg
+ldc
+call       instance void ASXGui
+nop
+nop
+ldarg
+call       instance void ASXGui
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+callvirt   instance void [WindowsBase]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="381" endline="461"><![CDATA[
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Loading
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldarg
+ldfld      valuetype ASXGui
+call       valuetype ASXGui
+stfld      valuetype ASXGui
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+box        [mscorlib]System
+ldstr      " x "
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+box        [mscorlib]System
+call       string [mscorlib]System
+object,
+object)
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+ldc
+bgt
+
+ldstr      ""
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+box        [mscorlib]System
+ldstr      " channel"
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+ldc
+bgt
+
+ldstr      ""
+br
+
+ldstr      "s"
+call       string [mscorlib]System
+object,
+object)
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+box        [mscorlib]System
+ldstr      " fps"
+call       string [mscorlib]System
+object)
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+call       instance string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+call       instance string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+ldc
+cgt
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+callvirt   instance int32 [mscorlib]System
+stloc
+ldloc
+ldc
+bgt
+
+ldstr      ""
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+ldloc
+ldc
+sub
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+callvirt   instance string [mscorlib]System
+stloc
+ldloc
+call       bool ASXGui
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+ldloc
+brtrue
+
+ldc
+br
+
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+call       instance bool ASXGui
+brtrue
+
+ldc
+br
+
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+stloc
+ldloc
+call       bool ASXGui
+stloc
+ldloc
+call       bool ASXGui
+stloc
+ldloc
+brtrue
+
+ldloc
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance class [PresentationFramework]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance class [PresentationFramework]System
+ldstr      "Default"
+callvirt   instance int32 [PresentationFramework]System
+pop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationFramework]System
+nop
+ldc
+stloc
+br
+
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance class [PresentationFramework]System
+ldstr      "Track "
+ldloc
+ldc
+add
+box        [mscorlib]System
+call       string [mscorlib]System
+object)
+callvirt   instance int32 [PresentationFramework]System
+pop
+ldloc
+ldc
+add
+stloc
+ldloc
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+clt
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance class [PresentationFramework]System
+callvirt   instance int32 [PresentationFramework]System
+ldc
+cgt
+call       instance valuetype [PresentationCore]System
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [PresentationCore]System
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+mul
+call       string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+stfld      int32 ASXGui
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+stfld      int32 ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+stfld      int32 ASXGui
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+newobj     instance void [System]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+mul
+call       valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldc
+stfld      bool ASXGui
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="472" endline="487"><![CDATA[
+nop
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldloc
+stloc
+ldloc
+brtrue
+
+ldarg
+ldarg
+call       instance valuetype [PresentationFramework]System
+brfalse
+
+ldc
+br
+
+ldc
+call       instance void [PresentationFramework]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="488" endline="494"><![CDATA[
+nop
+ldarg
+ldarg
+call       instance void [PresentationFramework]System
+nop
+ldarg
+newobj     instance void [PresentationFramework]System
+call       instance native int [PresentationFramework]System
+stloc
+ldloc
+call       class [PresentationCore]System
+ldarg
+ldftn      instance native int ASXGui
+int32,
+native int,
+native int,
+bool&)
+newobj     instance void [PresentationCore]System
+native int)
+callvirt   instance void [PresentationCore]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="495" endline="511"><![CDATA[
+nop
+ldarg
+ldc
+ceq
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldc
+stloc
+ldloca
+call       int32 ASXGui
+pop
+ldarg
+ldloc
+ldc
+cgt
+stfld      bool ASXGui
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       class [PresentationCore]System
+call       instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+call       class [PresentationCore]System
+call       instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       void ASXGui
+nop
+nop
+ldarg
+ldc
+stind
+nop
+ldsfld     native int [mscorlib]System
+stloc
+br
+
+ldloc
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="512" endline="522"><![CDATA[
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance int32 [PresentationFramework]System
+stloc
+ldloc
+switch     (
+IL_0025,
+IL_0037,
+IL_0049,
+IL_005b)
+br
+
+ldarg
+ldc
+call       instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+ldc
+call       instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+ldc
+call       instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+ldc
+call       instance void [PresentationFramework]System
+nop
+br
+
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="523" endline="539"><![CDATA[
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldarg
+ldfld      valuetype ASXGui
+ldarg
+call       valuetype ASXGui
+int32)
+stfld      valuetype ASXGui
+ldarg
+ldarg
+ldflda     valuetype ASXGui
+ldfld      class [mscorlib]System
+stfld      class [mscorlib]System
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldc
+bgt
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+br
+
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+callvirt   instance !0 class [mscorlib]System
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldc
+bgt
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+br
+
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+callvirt   instance !0 class [mscorlib]System
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldc
+bgt
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+box        [mscorlib]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+ldc
+bgt
+
+ldstr      " Channel"
+br
+
+ldstr      " Channels"
+call       string [mscorlib]System
+object)
+br
+
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+callvirt   instance !0 class [mscorlib]System
+ldfld      int32 ASXGui
+box        [mscorlib]System
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+callvirt   instance !0 class [mscorlib]System
+ldfld      int32 ASXGui
+ldc
+bgt
+
+ldstr      " Channel"
+br
+
+ldstr      " Channels"
+call       string [mscorlib]System
+object)
+callvirt   instance void [PresentationFramework]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="540" endline="664"><![CDATA[
+nop
+ldarg
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+call       instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance class [PresentationFramework]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldarg
+ldflda     valuetype ASXGui
+ldfld      class [mscorlib]System
+stfld      class [mscorlib]System
+nop
+ldarg
+ldfld      class [mscorlib]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+.try
+br
+
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance class [PresentationFramework]System
+ldloca
+ldfld      string ASXGui
+callvirt   instance int32 [PresentationFramework]System
+pop
+ldloca
+call       instance bool valuetype [mscorlib]System
+stloc
+ldloc
+brtrue
+
+leave
+
+}  // end 
+finally
+ldloca
+constrained
+callvirt   instance void [mscorlib]System
+nop
+endfinally
+}  // end handler
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      int32 ASXGui
+ldc
+add
+box        [mscorlib]System
+ldstr      " / "
+ldarg
+ldfld      class [mscorlib]System
+callvirt   instance int32 class [mscorlib]System
+box        [mscorlib]System
+call       string [mscorlib]System
+object,
+object)
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance !0 class [mscorlib]System
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance !0 class [mscorlib]System
+ldfld      int32 ASXGui
+stloc
+ldloca
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance !0 class [mscorlib]System
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance !0 class [mscorlib]System
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance !0 class [mscorlib]System
+ldfld      float64 ASXGui
+ldc
+mul
+stloc
+ldloca
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance !0 class [mscorlib]System
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance !0 class [mscorlib]System
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance !0 class [mscorlib]System
+ldfld      int32 ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance !0 class [mscorlib]System
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance !0 class [mscorlib]System
+ldfld      int32 ASXGui
+stloc
+ldloca
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      ""
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldflda     int32 ASXGui
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+mul
+stloc
+ldloca
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldflda     int32 ASXGui
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldflda     int32 ASXGui
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldflda     int32 ASXGui
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+call       float64 [mscorlib]System
+int32)
+box        [mscorlib]System
+ldstr      ":1"
+call       string [mscorlib]System
+object)
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "4:3"
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "1
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "16:9"
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "2
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+call       float64 [mscorlib]System
+int32)
+box        [mscorlib]System
+ldstr      ":1"
+call       string [mscorlib]System
+object)
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "4:3"
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "1
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "16:9"
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "2
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldflda     int32 ASXGui
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldflda     int32 ASXGui
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldflda     int32 ASXGui
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldflda     int32 ASXGui
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldflda     int32 ASXGui
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldflda     int32 ASXGui
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldflda     float64 ASXGui
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldflda     int32 ASXGui
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+ldc
+sub
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      int32 ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldflda     float64 ASXGui
+ldstr      "N1"
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldflda     int32 ASXGui
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldflda     float64 ASXGui
+call       instance string [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+newobj     instance void valuetype [mscorlib]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="665" endline="675"><![CDATA[
+nop
+ldarg
+ldc
+div
+conv
+stloc
+ldarg
+ldloc
+ldc
+mul
+conv
+sub
+starg
+ldarg
+ldc
+div
+conv
+stloc
+ldarg
+ldloc
+ldc
+mul
+conv
+sub
+starg
+ldarg
+conv
+stloc
+ldloc
+ldc
+bgt
+
+ldloc
+ldc
+bgt
+
+ldstr      ""
+br
+
+ldloc
+box        [mscorlib]System
+ldstr      "mn "
+call       string [mscorlib]System
+object)
+ldloc
+ldc
+bgt
+
+ldloc
+ldc
+bgt
+
+ldloc
+ldc
+bgt
+
+ldloc
+box        [mscorlib]System
+ldstr      "s"
+call       string [mscorlib]System
+object)
+br
+
+ldstr      ""
+br
+
+ldloc
+box        [mscorlib]System
+ldstr      "s"
+call       string [mscorlib]System
+object)
+call       string [mscorlib]System
+string)
+br
+
+ldloc
+box        [mscorlib]System
+ldstr      "h "
+call       string [mscorlib]System
+object)
+stloc
+br
+
+ldloc
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="676" endline="689"><![CDATA[
+nop
+ldarg
+ldc
+ldc
+call       float64 [mscorlib]System
+int32,
+valuetype [mscorlib]System
+stloc
+ldloca
+call       instance string [mscorlib]System
+stloc
+ldarg
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldstr      "2
+stloc
+ldarg
+ldc
+blt
+
+ldarg
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+blt
+
+ldarg
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+ldstr      "1
+stloc
+ldarg
+ldc
+bgt
+
+ldarg
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+blt
+
+ldarg
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+ldstr      "16:9"
+stloc
+ldarg
+ldc
+sub
+call       float64 [mscorlib]System
+ldc
+clt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldstr      "4:3"
+stloc
+ldloc
+stloc
+br
+
+ldloc
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="690" endline="758"><![CDATA[
+nop
+ldc
+stloc
+ldc
+stloc
+ldarg
+callvirt   instance int32 [mscorlib]System
+stloc
+ldloc
+ldc
+cgt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldc
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+stloc
+ldloc
+ldstr      "AVI"
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldloc
+ldstr      "AVC"
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldloc
+ldstr      "OGG"
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldloc
+ldc
+sub
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+ldstr      "AVC"
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldloc
+ldc
+cgt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldc
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+stloc
+ldloc
+ldstr      "H264"
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+brtrue
+
+ldloc
+ldstr      "H263"
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+br
+
+ldc
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldloc
+ldc
+sub
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+stloc
+ldloc
+ldstr      "H263"
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldloc
+ldstr      "H264"
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldloc
+ldc
+cgt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldc
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+ldstr      "H263+"
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldloc
+ldc
+sub
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+ldstr      "H263+"
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldloc
+ldc
+cgt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldc
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+ldstr      "MPEG-4"
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldloc
+ldc
+cgt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldc
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+stloc
+ldloc
+ldstr      "MPEG-PS"
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+brtrue
+
+ldloc
+ldstr      "MPEG-TS"
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+br
+
+ldc
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldloc
+ldc
+cgt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+brfalse
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      bool ASXGui
+brtrue
+
+ldarg
+ldc
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+ldstr      "Matroska"
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldloc
+ldc
+cgt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldc
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+ldstr      "Quicktime"
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldloc
+ldc
+sub
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+ldstr      "DVD-Video"
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldloc
+ldc
+cgt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldc
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+ldstr      "MPEG Video"
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldloc
+ldc
+sub
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+ldstr      "MPEG Video"
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldloc
+ldc
+cgt
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldc
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+ldstr      "MPEG-4 Visual"
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+ldarg
+ldloc
+ldc
+sub
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+ldstr      "MPEG-4 Visual"
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+ldloc
+brfalse
+
+ldloc
+br
+
+ldc
+stloc
+br
+
+ldloc
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="764" endline="800"><![CDATA[
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+callvirt   instance int32 [mscorlib]System
+stloc
+ldloc
+ldc
+bgt
+
+ldstr      ""
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+ldloc
+ldc
+sub
+ldc
+callvirt   instance string [mscorlib]System
+int32)
+callvirt   instance string [mscorlib]System
+stloc
+ldloc
+call       bool ASXGui
+stloc
+ldarg
+ldflda     valuetype ASXGui
+ldfld      string ASXGui
+stloc
+ldloc
+call       bool ASXGui
+stloc
+ldloc
+call       bool ASXGui
+stloc
+ldarg
+ldarg
+ldfld      valuetype ASXGui
+ldloc
+ldloc
+ldloc
+call       valuetype ASXGui
+bool,
+bool,
+bool)
+stfld      valuetype ASXGui
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+stloc
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="801" endline="807"><![CDATA[
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldflda     valuetype ASXGui
+ldfld      class [mscorlib]System
+ldarg
+ldfld      int32 ASXGui
+callvirt   instance !0 class [mscorlib]System
+ldfld      string ASXGui
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldfld      int32 ASXGui
+ldc
+add
+box        [mscorlib]System
+ldstr      " / "
+ldarg
+ldfld      class [mscorlib]System
+callvirt   instance int32 class [mscorlib]System
+box        [mscorlib]System
+call       string [mscorlib]System
+object,
+object)
+callvirt   instance void [PresentationFramework]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="818" endline="843"><![CDATA[
+nop
+ldarg
+call       instance bool [PresentationFramework]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+beq
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+beq
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+ceq
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+br
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+beq
+
+ldarg
+ldflda     valuetype ASXGui
+ldfld      float64 ASXGui
+ldc
+ceq
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+br
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldstr      "23
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldstr      "29
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldstr      "59
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+br
+
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldstr      "25"
+call       bool [mscorlib]System
+string)
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance string [PresentationFramework]System
+ldstr      "50"
+call       bool [mscorlib]System
+string)
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+ldc
+stloc
+br
+
+ldc
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance valuetype [mscorlib]System
+stloc
+ldloca
+call       instance !0 valuetype [mscorlib]System
+stloc
+ldloc
+ldloc
+ceq
+ldc
+ceq
+stloc
+ldarg
+ldfld      class [PresentationFramework]System
+ldarg
+ldloc
+brfalse
+
+ldloc
+br
+
+ldc
+call       instance valuetype [PresentationCore]System
+callvirt   instance void [PresentationCore]System
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="844" endline="851"><![CDATA[
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+callvirt   instance void [WindowsBase]System
+nop
+ldarg
+ldarg
+ldfld      class [mscorlib]System
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance int32 [PresentationFramework]System
+callvirt   instance !0 class [mscorlib]System
+ldarg
+ldfld      valuetype ASXGui
+call       valuetype ASXGui
+valuetype ASXGui
+stfld      valuetype ASXGui
+ldarg
+call       instance void ASXGui
+nop
+ldarg
+ldfld      class [WindowsBase]System
+ldc
+callvirt   instance void [WindowsBase]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="852" endline="871"><![CDATA[
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/Play-Up
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldstr      "Images/Play
+ldc
+newobj     instance void [System]System
+valuetype [System]System
+newobj     instance void [PresentationCore]System
+callvirt   instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Edit.xaml.cs" startline="883" endline="899"><![CDATA[
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+brtrue
+
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+ldc
+ceq
+br
+
+ldc
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+nop
+br
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+callvirt   instance bool [PresentationCore]System
+stloc
+ldloc
+brtrue
+
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+ldarg
+ldfld      class [PresentationFramework]System
+ldc
+callvirt   instance void [PresentationCore]System
+nop
+nop
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\About.xaml.cs" startline="123" endline="129"><![CDATA[
+nop
+ldarg
+ldarg
+call       instance void [PresentationFramework]System
+nop
+ldarg
+newobj     instance void [PresentationFramework]System
+call       instance native int [PresentationFramework]System
+stloc
+ldloc
+call       class [PresentationCore]System
+ldarg
+ldftn      instance native int ASXGui
+int32,
+native int,
+native int,
+bool&)
+newobj     instance void [PresentationCore]System
+native int)
+callvirt   instance void [PresentationCore]System
+nop
+ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\About.xaml.cs" startline="130" endline="143"><![CDATA[
+nop
+ldarg
+ldc
+ceq
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+nop
+ldc
+stloc
+ldloca
+call       int32 ASXGui
+pop
+ldarg
+ldloc
+ldc
+cgt
+stfld      bool ASXGui
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       class [PresentationCore]System
+call       instance void [PresentationFramework]System
+nop
+br
+
+ldarg
+call       class [PresentationCore]System
+call       instance void [PresentationFramework]System
+nop
+ldarg
+ldfld      bool ASXGui
+ldc
+ceq
+stloc
+ldloc
+brtrue
+
+ldarg
+call       void ASXGui
+nop
+ldarg
+ldc
+stind
+nop
+ldsfld     native int [mscorlib]System
+stloc
+br
+
+ldloc
+ret
+]]></source>
+</source_elements></project>

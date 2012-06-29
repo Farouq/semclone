@@ -1,0 +1,10 @@
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\bin\Debug\MandelbrotFractals.exe.config
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\bin\Debug\MandelbrotFractals.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\bin\Debug\MandelbrotFractals.pdb
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\obj\Debug\Microsoft.Pcp.Pfx.InteractiveFractal.MainForm.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\obj\Debug\Samples.Properties.Resources.resources
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\obj\Debug\MandelbrotFractals.exe
+C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\MandelbrotFractals\MandelbrotFractals_CSharp\obj\Debug\MandelbrotFractals.pdb

@@ -1,0 +1,1895 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       12 (0xc)
+    .maxstack  8
+    IL_0000:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::.ctor()
+    IL_0005:  stsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.My.MyApplication::__ENCList
+    IL_000a:  nop
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       243 (0xf3)
+    .maxstack  4
+    .locals init (int32 V_0,
+             int32 V_1,
+             class [mscorlib]System.WeakReference V_2,
+             class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> V_3,
+             bool V_4,
+             int32 V_5,
+             bool V_6,
+             bool V_7,
+             int32 V_8)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.My.MyApplication::__ENCList
+    IL_0006:  stloc.3
+    IL_0007:  ldc.i4.0
+    IL_0008:  stloc.s    V_4
+    IL_000a:  nop
+    .try
+    {
+      IL_000b:  ldloc.3
+      IL_000c:  ldloca.s   V_4
+      IL_000e:  call       void [mscorlib]System.Threading.Monitor::Enter(object,
+                                                                          bool&)
+      IL_0013:  nop
+      IL_0014:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.My.MyApplication::__ENCList
+      IL_0019:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_001e:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.My.MyApplication::__ENCList
+      IL_0023:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Capacity()
+      IL_0028:  ceq
+      IL_002a:  stloc.s    V_6
+      IL_002c:  ldloc.s    V_6
+      IL_002e:  brfalse    IL_00c4
+
+      IL_0033:  ldc.i4.0
+      IL_0034:  stloc.0
+      IL_0035:  ldc.i4.0
+      IL_0036:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.My.MyApplication::__ENCList
+      IL_003b:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_0040:  ldc.i4.1
+      IL_0041:  sub.ovf
+      IL_0042:  stloc.s    V_5
+      IL_0044:  stloc.1
+      IL_0045:  br.s       IL_008e
+
+      IL_0047:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.My.MyApplication::__ENCList
+      IL_004c:  ldloc.1
+      IL_004d:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Item(int32)
+      IL_0052:  stloc.2
+      IL_0053:  ldloc.2
+      IL_0054:  callvirt   instance bool [mscorlib]System.WeakReference::get_IsAlive()
+      IL_0059:  stloc.s    V_6
+      IL_005b:  ldloc.s    V_6
+      IL_005d:  brfalse.s  IL_0088
+
+      IL_005f:  ldloc.1
+      IL_0060:  ldloc.0
+      IL_0061:  ceq
+      IL_0063:  ldc.i4.0
+      IL_0064:  ceq
+      IL_0066:  stloc.s    V_7
+      IL_0068:  ldloc.s    V_7
+      IL_006a:  brfalse.s  IL_0083
+
+      IL_006c:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.My.MyApplication::__ENCList
+      IL_0071:  ldloc.0
+      IL_0072:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.My.MyApplication::__ENCList
+      IL_0077:  ldloc.1
+      IL_0078:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Item(int32)
+      IL_007d:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::set_Item(int32,
+                                                                                                                                           !0)
+      IL_0082:  nop
+      IL_0083:  nop
+      IL_0084:  ldloc.0
+      IL_0085:  ldc.i4.1
+      IL_0086:  add.ovf
+      IL_0087:  stloc.0
+      IL_0088:  nop
+      IL_0089:  nop
+      IL_008a:  ldloc.1
+      IL_008b:  ldc.i4.1
+      IL_008c:  add.ovf
+      IL_008d:  stloc.1
+      IL_008e:  ldloc.1
+      IL_008f:  ldloc.s    V_5
+      IL_0091:  stloc.s    V_8
+      IL_0093:  ldloc.s    V_8
+      IL_0095:  ble.s      IL_0047
+
+      IL_0097:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.My.MyApplication::__ENCList
+      IL_009c:  ldloc.0
+      IL_009d:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.My.MyApplication::__ENCList
+      IL_00a2:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_00a7:  ldloc.0
+      IL_00a8:  sub.ovf
+      IL_00a9:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::RemoveRange(int32,
+                                                                                                                                              int32)
+      IL_00ae:  nop
+      IL_00af:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.My.MyApplication::__ENCList
+      IL_00b4:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.My.MyApplication::__ENCList
+      IL_00b9:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_00be:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::set_Capacity(int32)
+      IL_00c3:  nop
+      IL_00c4:  nop
+      IL_00c5:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.My.MyApplication::__ENCList
+      IL_00ca:  ldarg.0
+      IL_00cb:  call       object [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+      IL_00d0:  newobj     instance void [mscorlib]System.WeakReference::.ctor(object)
+      IL_00d5:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::Add(!0)
+      IL_00da:  nop
+      IL_00db:  nop
+      IL_00dc:  leave.s    IL_00f0
+
+    }  // end .try
+    finally
+    {
+      IL_00de:  nop
+      IL_00df:  ldloc.s    V_4
+      IL_00e1:  stloc.s    V_7
+      IL_00e3:  ldloc.s    V_7
+      IL_00e5:  brfalse.s  IL_00ee
+
+      IL_00e7:  ldloc.3
+      IL_00e8:  call       void [mscorlib]System.Threading.Monitor::Exit(object)
+      IL_00ed:  nop
+      IL_00ee:  nop
+      IL_00ef:  endfinally
+    }  // end handler
+    IL_00f0:  nop
+    IL_00f1:  nop
+    IL_00f2:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [mscorlib]System.STAThreadAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 02 00 00 00 00 00 ) 
+    // Code size       32 (0x20)
+    .maxstack  2
+    .language '{3A12D0B8-C26C-11D0-B442-00A0244A1DD2}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+    IL_0000:  nop
+    IL_0001:  nop
+    .try
+    {
+      IL_0002:  call       bool [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase::get_UseCompatibleTextRendering()
+      IL_0007:  call       void [System.Windows.Forms]System.Windows.Forms.Application::SetCompatibleTextRenderingDefault(bool)
+      IL_000c:  nop
+      IL_000d:  leave.s    IL_0011
+
+    }  // end .try
+    finally
+    {
+      IL_000f:  nop
+      IL_0010:  endfinally
+    }  // end handler
+    IL_0011:  nop
+    IL_0012:  call       class NQueens_VisualBasic.My.MyApplication NQueens_VisualBasic.My.MyProject::get_Application()
+    IL_0017:  ldarg.0
+    IL_0018:  callvirt   instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase::Run(string[])
+    IL_001d:  nop
+    IL_001e:  nop
+    IL_001f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Application.Designer.vb" startline="25" endline="31"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       50 (0x32)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.0
+    IL_0003:  call       instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase::.ctor(valuetype [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.AuthenticationMode)
+    IL_0008:  nop
+    IL_0009:  ldarg.0
+    IL_000a:  call       void NQueens_VisualBasic.My.MyApplication::__ENCAddToList(object)
+    IL_000f:  nop
+    IL_0010:  ldarg.0
+    IL_0011:  ldc.i4.0
+    IL_0012:  callvirt   instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase::set_IsSingleInstance(bool)
+    IL_0017:  nop
+    IL_0018:  ldarg.0
+    IL_0019:  ldc.i4.1
+    IL_001a:  callvirt   instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase::set_EnableVisualStyles(bool)
+    IL_001f:  nop
+    IL_0020:  ldarg.0
+    IL_0021:  ldc.i4.1
+    IL_0022:  callvirt   instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase::set_SaveMySettingsOnExit(bool)
+    IL_0027:  nop
+    IL_0028:  ldarg.0
+    IL_0029:  ldc.i4.0
+    IL_002a:  callvirt   instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase::set_ShutdownStyle(valuetype [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.ShutdownMode)
+    IL_002f:  nop
+    IL_0030:  nop
+    IL_0031:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Application.Designer.vb" startline="32" endline="36"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       20 (0x14)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       class NQueens_VisualBasic.My.MyProject/MyForms NQueens_VisualBasic.My.MyProject::get_Forms()
+    IL_0007:  callvirt   instance class NQueens_VisualBasic.MainForm NQueens_VisualBasic.My.MyProject/MyForms::get_MainForm()
+    IL_000c:  callvirt   instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase::set_MainForm(class [System.Windows.Forms]System.Windows.Forms.Form)
+    IL_0011:  nop
+    IL_0012:  nop
+    IL_0013:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.Devices.Computer::.ctor()
+    IL_0007:  nop
+    IL_0008:  nop
+    IL_0009:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       52 (0x34)
+    .maxstack  8
+    IL_0000:  newobj     instance void class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class NQueens_VisualBasic.My.MyComputer>::.ctor()
+    IL_0005:  stsfld     class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class NQueens_VisualBasic.My.MyComputer> NQueens_VisualBasic.My.MyProject::m_ComputerObjectProvider
+    IL_000a:  newobj     instance void class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class NQueens_VisualBasic.My.MyApplication>::.ctor()
+    IL_000f:  stsfld     class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class NQueens_VisualBasic.My.MyApplication> NQueens_VisualBasic.My.MyProject::m_AppObjectProvider
+    IL_0014:  newobj     instance void class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User>::.ctor()
+    IL_0019:  stsfld     class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User> NQueens_VisualBasic.My.MyProject::m_UserObjectProvider
+    IL_001e:  newobj     instance void class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class NQueens_VisualBasic.My.MyProject/MyForms>::.ctor()
+    IL_0023:  stsfld     class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class NQueens_VisualBasic.My.MyProject/MyForms> NQueens_VisualBasic.My.MyProject::m_MyFormsObjectProvider
+    IL_0028:  newobj     instance void class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class NQueens_VisualBasic.My.MyProject/MyWebServices>::.ctor()
+    IL_002d:  stsfld     class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class NQueens_VisualBasic.My.MyProject/MyWebServices> NQueens_VisualBasic.My.MyProject::m_MyWebServicesObjectProvider
+    IL_0032:  nop
+    IL_0033:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class NQueens_VisualBasic.My.MyComputer Computer)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class NQueens_VisualBasic.My.MyComputer> NQueens_VisualBasic.My.MyProject::m_ComputerObjectProvider
+    IL_0006:  callvirt   instance !0 class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class NQueens_VisualBasic.My.MyComputer>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class NQueens_VisualBasic.My.MyApplication Application)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class NQueens_VisualBasic.My.MyApplication> NQueens_VisualBasic.My.MyProject::m_AppObjectProvider
+    IL_0006:  callvirt   instance !0 class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class NQueens_VisualBasic.My.MyApplication>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User User)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User> NQueens_VisualBasic.My.MyProject::m_UserObjectProvider
+    IL_0006:  callvirt   instance !0 class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.User>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class NQueens_VisualBasic.My.MyProject/MyForms Forms)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class NQueens_VisualBasic.My.MyProject/MyForms> NQueens_VisualBasic.My.MyProject::m_MyFormsObjectProvider
+    IL_0006:  callvirt   instance !0 class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class NQueens_VisualBasic.My.MyProject/MyForms>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       16 (0x10)
+    .maxstack  1
+    .locals init ([0] class NQueens_VisualBasic.My.MyProject/MyWebServices WebServices)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class NQueens_VisualBasic.My.MyProject/MyWebServices> NQueens_VisualBasic.My.MyProject::m_MyWebServicesObjectProvider
+    IL_0006:  callvirt   instance !0 class NQueens_VisualBasic.My.MyProject/ThreadSafeObjectProvider`1<class NQueens_VisualBasic.My.MyProject/MyWebServices>::get_GetInstance()
+    IL_000b:  stloc.0
+    IL_000c:  br.s       IL_000e
+
+    IL_000e:  ldloc.0
+    IL_000f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       12 (0xc)
+    .maxstack  8
+    IL_0000:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::.ctor()
+    IL_0005:  stsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.MainForm::__ENCList
+    IL_000a:  nop
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="18" endline="18"><![CDATA[
+  {
+    // Code size       58 (0x3a)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::.ctor()
+    IL_0006:  nop
+    IL_0007:  ldarg.0
+    IL_0008:  ldarg.0
+    IL_0009:  dup
+    IL_000a:  ldvirtftn  instance void NQueens_VisualBasic.MainForm::MainForm_Load(object,
+                                                                                   class [mscorlib]System.EventArgs)
+    IL_0010:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_0015:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::add_Load(class [mscorlib]System.EventHandler)
+    IL_001a:  nop
+    IL_001b:  ldarg.0
+    IL_001c:  call       void NQueens_VisualBasic.MainForm::__ENCAddToList(object)
+    IL_0021:  nop
+    IL_0022:  ldarg.0
+    IL_0023:  ldc.r8     0.0
+    IL_002c:  stfld      float64 NQueens_VisualBasic.MainForm::_max
+    IL_0031:  ldarg.0
+    IL_0032:  callvirt   instance void NQueens_VisualBasic.MainForm::InitializeComponent()
+    IL_0037:  nop
+    IL_0038:  nop
+    IL_0039:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       243 (0xf3)
+    .maxstack  4
+    .locals init (int32 V_0,
+             int32 V_1,
+             class [mscorlib]System.WeakReference V_2,
+             class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> V_3,
+             bool V_4,
+             int32 V_5,
+             bool V_6,
+             bool V_7,
+             int32 V_8)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.MainForm::__ENCList
+    IL_0006:  stloc.3
+    IL_0007:  ldc.i4.0
+    IL_0008:  stloc.s    V_4
+    IL_000a:  nop
+    .try
+    {
+      IL_000b:  ldloc.3
+      IL_000c:  ldloca.s   V_4
+      IL_000e:  call       void [mscorlib]System.Threading.Monitor::Enter(object,
+                                                                          bool&)
+      IL_0013:  nop
+      IL_0014:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.MainForm::__ENCList
+      IL_0019:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_001e:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.MainForm::__ENCList
+      IL_0023:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Capacity()
+      IL_0028:  ceq
+      IL_002a:  stloc.s    V_6
+      IL_002c:  ldloc.s    V_6
+      IL_002e:  brfalse    IL_00c4
+
+      IL_0033:  ldc.i4.0
+      IL_0034:  stloc.0
+      IL_0035:  ldc.i4.0
+      IL_0036:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.MainForm::__ENCList
+      IL_003b:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_0040:  ldc.i4.1
+      IL_0041:  sub.ovf
+      IL_0042:  stloc.s    V_5
+      IL_0044:  stloc.1
+      IL_0045:  br.s       IL_008e
+
+      IL_0047:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.MainForm::__ENCList
+      IL_004c:  ldloc.1
+      IL_004d:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Item(int32)
+      IL_0052:  stloc.2
+      IL_0053:  ldloc.2
+      IL_0054:  callvirt   instance bool [mscorlib]System.WeakReference::get_IsAlive()
+      IL_0059:  stloc.s    V_6
+      IL_005b:  ldloc.s    V_6
+      IL_005d:  brfalse.s  IL_0088
+
+      IL_005f:  ldloc.1
+      IL_0060:  ldloc.0
+      IL_0061:  ceq
+      IL_0063:  ldc.i4.0
+      IL_0064:  ceq
+      IL_0066:  stloc.s    V_7
+      IL_0068:  ldloc.s    V_7
+      IL_006a:  brfalse.s  IL_0083
+
+      IL_006c:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.MainForm::__ENCList
+      IL_0071:  ldloc.0
+      IL_0072:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.MainForm::__ENCList
+      IL_0077:  ldloc.1
+      IL_0078:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Item(int32)
+      IL_007d:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::set_Item(int32,
+                                                                                                                                           !0)
+      IL_0082:  nop
+      IL_0083:  nop
+      IL_0084:  ldloc.0
+      IL_0085:  ldc.i4.1
+      IL_0086:  add.ovf
+      IL_0087:  stloc.0
+      IL_0088:  nop
+      IL_0089:  nop
+      IL_008a:  ldloc.1
+      IL_008b:  ldc.i4.1
+      IL_008c:  add.ovf
+      IL_008d:  stloc.1
+      IL_008e:  ldloc.1
+      IL_008f:  ldloc.s    V_5
+      IL_0091:  stloc.s    V_8
+      IL_0093:  ldloc.s    V_8
+      IL_0095:  ble.s      IL_0047
+
+      IL_0097:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.MainForm::__ENCList
+      IL_009c:  ldloc.0
+      IL_009d:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.MainForm::__ENCList
+      IL_00a2:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_00a7:  ldloc.0
+      IL_00a8:  sub.ovf
+      IL_00a9:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::RemoveRange(int32,
+                                                                                                                                              int32)
+      IL_00ae:  nop
+      IL_00af:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.MainForm::__ENCList
+      IL_00b4:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.MainForm::__ENCList
+      IL_00b9:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::get_Count()
+      IL_00be:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::set_Capacity(int32)
+      IL_00c3:  nop
+      IL_00c4:  nop
+      IL_00c5:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference> NQueens_VisualBasic.MainForm::__ENCList
+      IL_00ca:  ldarg.0
+      IL_00cb:  call       object [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+      IL_00d0:  newobj     instance void [mscorlib]System.WeakReference::.ctor(object)
+      IL_00d5:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [mscorlib]System.WeakReference>::Add(!0)
+      IL_00da:  nop
+      IL_00db:  nop
+      IL_00dc:  leave.s    IL_00f0
+
+    }  // end .try
+    finally
+    {
+      IL_00de:  nop
+      IL_00df:  ldloc.s    V_4
+      IL_00e1:  stloc.s    V_7
+      IL_00e3:  ldloc.s    V_7
+      IL_00e5:  brfalse.s  IL_00ee
+
+      IL_00e7:  ldloc.3
+      IL_00e8:  call       void [mscorlib]System.Threading.Monitor::Exit(object)
+      IL_00ed:  nop
+      IL_00ee:  nop
+      IL_00ef:  endfinally
+    }  // end handler
+    IL_00f0:  nop
+    IL_00f1:  nop
+    IL_00f2:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="7" endline="15"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       49 (0x31)
+    .maxstack  2
+    .locals init ([0] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  nop
+    .try
+    {
+      IL_0002:  ldarg.1
+      IL_0003:  brfalse.s  IL_000d
+
+      IL_0005:  ldarg.0
+      IL_0006:  ldfld      class [System]System.ComponentModel.IContainer NQueens_VisualBasic.MainForm::components
+      IL_000b:  brtrue.s   IL_0010
+
+      IL_000d:  ldc.i4.0
+      IL_000e:  br.s       IL_0011
+
+      IL_0010:  ldc.i4.1
+      IL_0011:  stloc.0
+      IL_0012:  ldloc.0
+      IL_0013:  brfalse.s  IL_0021
+
+      IL_0015:  ldarg.0
+      IL_0016:  ldfld      class [System]System.ComponentModel.IContainer NQueens_VisualBasic.MainForm::components
+      IL_001b:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_0020:  nop
+      IL_0021:  nop
+      IL_0022:  leave.s    IL_002e
+
+    }  // end .try
+    finally
+    {
+      IL_0024:  nop
+      IL_0025:  ldarg.0
+      IL_0026:  ldarg.1
+      IL_0027:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::Dispose(bool)
+      IL_002c:  nop
+      IL_002d:  endfinally
+    }  // end handler
+    IL_002e:  nop
+    IL_002f:  nop
+    IL_0030:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="16" endline="118"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       1371 (0x55b)
+    .maxstack  6
+    .locals init ([0] class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea ChartArea3,
+             [1] class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series Series3,
+             [2] object[] VB$t_array$S0,
+             [3] valuetype [System.Drawing]System.Drawing.Point VB$t_struct$N0,
+             [4] valuetype [System.Drawing]System.Drawing.Point VB$t_struct$S1,
+             [5] valuetype [System.Windows.Forms]System.Windows.Forms.Padding VB$t_struct$N2,
+             [6] valuetype [System.Windows.Forms]System.Windows.Forms.Padding VB$t_struct$S3,
+             [7] valuetype [System.Drawing]System.Drawing.Size VB$t_struct$N4,
+             [8] valuetype [System.Drawing]System.Drawing.Size VB$t_struct$S5,
+             [9] valuetype [System.Drawing]System.Drawing.Color VB$t_struct$N6,
+             [10] valuetype [System.Drawing]System.Drawing.SizeF VB$t_struct$N7,
+             [11] valuetype [System.Drawing]System.Drawing.SizeF VB$t_struct$S8)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  newobj     instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::.ctor()
+    IL_000c:  stloc.1
+    IL_000d:  ldarg.0
+    IL_000e:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::.ctor()
+    IL_0013:  callvirt   instance void NQueens_VisualBasic.MainForm::set_cbNumQueens(class [System.Windows.Forms]System.Windows.Forms.ComboBox)
+    IL_0018:  nop
+    IL_0019:  ldarg.0
+    IL_001a:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.ProgressBar::.ctor()
+    IL_001f:  callvirt   instance void NQueens_VisualBasic.MainForm::set_progressBar1(class [System.Windows.Forms]System.Windows.Forms.ProgressBar)
+    IL_0024:  nop
+    IL_0025:  ldarg.0
+    IL_0026:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Button::.ctor()
+    IL_002b:  callvirt   instance void NQueens_VisualBasic.MainForm::set_btnSolve(class [System.Windows.Forms]System.Windows.Forms.Button)
+    IL_0030:  nop
+    IL_0031:  ldarg.0
+    IL_0032:  newobj     instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::.ctor()
+    IL_0037:  callvirt   instance void NQueens_VisualBasic.MainForm::set_chart1(class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart)
+    IL_003c:  nop
+    IL_003d:  ldarg.0
+    IL_003e:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_0043:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::BeginInit()
+    IL_0048:  nop
+    IL_0049:  ldarg.0
+    IL_004a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::SuspendLayout()
+    IL_004f:  nop
+    IL_0050:  ldarg.0
+    IL_0051:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_VisualBasic.MainForm::get_cbNumQueens()
+    IL_0056:  ldc.i4.3
+    IL_0057:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::set_AutoCompleteMode(valuetype [System.Windows.Forms]System.Windows.Forms.AutoCompleteMode)
+    IL_005c:  nop
+    IL_005d:  ldarg.0
+    IL_005e:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_VisualBasic.MainForm::get_cbNumQueens()
+    IL_0063:  ldc.i4     0x100
+    IL_0068:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::set_AutoCompleteSource(valuetype [System.Windows.Forms]System.Windows.Forms.AutoCompleteSource)
+    IL_006d:  nop
+    IL_006e:  ldarg.0
+    IL_006f:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_VisualBasic.MainForm::get_cbNumQueens()
+    IL_0074:  ldstr      "Microsoft Sans Serif"
+    IL_0079:  ldc.r4     14.
+    IL_007e:  ldc.i4.0
+    IL_007f:  ldc.i4.3
+    IL_0080:  ldc.i4.0
+    IL_0081:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle,
+                                                                                  valuetype [System.Drawing]System.Drawing.GraphicsUnit,
+                                                                                  uint8)
+    IL_0086:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_008b:  nop
+    IL_008c:  ldarg.0
+    IL_008d:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_VisualBasic.MainForm::get_cbNumQueens()
+    IL_0092:  ldc.i4.1
+    IL_0093:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListControl::set_FormattingEnabled(bool)
+    IL_0098:  nop
+    IL_0099:  ldarg.0
+    IL_009a:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_VisualBasic.MainForm::get_cbNumQueens()
+    IL_009f:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox/ObjectCollection [System.Windows.Forms]System.Windows.Forms.ComboBox::get_Items()
+    IL_00a4:  ldc.i4.8
+    IL_00a5:  newarr     [mscorlib]System.Object
+    IL_00aa:  stloc.2
+    IL_00ab:  ldloc.2
+    IL_00ac:  ldc.i4.0
+    IL_00ad:  ldstr      "8"
+    IL_00b2:  stelem.ref
+    IL_00b3:  nop
+    IL_00b4:  ldloc.2
+    IL_00b5:  ldc.i4.1
+    IL_00b6:  ldstr      "9"
+    IL_00bb:  stelem.ref
+    IL_00bc:  nop
+    IL_00bd:  ldloc.2
+    IL_00be:  ldc.i4.2
+    IL_00bf:  ldstr      "10"
+    IL_00c4:  stelem.ref
+    IL_00c5:  nop
+    IL_00c6:  ldloc.2
+    IL_00c7:  ldc.i4.3
+    IL_00c8:  ldstr      "11"
+    IL_00cd:  stelem.ref
+    IL_00ce:  nop
+    IL_00cf:  ldloc.2
+    IL_00d0:  ldc.i4.4
+    IL_00d1:  ldstr      "12"
+    IL_00d6:  stelem.ref
+    IL_00d7:  nop
+    IL_00d8:  ldloc.2
+    IL_00d9:  ldc.i4.5
+    IL_00da:  ldstr      "13"
+    IL_00df:  stelem.ref
+    IL_00e0:  nop
+    IL_00e1:  ldloc.2
+    IL_00e2:  ldc.i4.6
+    IL_00e3:  ldstr      "14"
+    IL_00e8:  stelem.ref
+    IL_00e9:  nop
+    IL_00ea:  ldloc.2
+    IL_00eb:  ldc.i4.7
+    IL_00ec:  ldstr      "15"
+    IL_00f1:  stelem.ref
+    IL_00f2:  nop
+    IL_00f3:  ldloc.2
+    IL_00f4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox/ObjectCollection::AddRange(object[])
+    IL_00f9:  nop
+    IL_00fa:  ldarg.0
+    IL_00fb:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_VisualBasic.MainForm::get_cbNumQueens()
+    IL_0100:  ldloca.s   VB$t_struct$S1
+    IL_0102:  ldc.i4.s   13
+    IL_0104:  ldc.i4.s   14
+    IL_0106:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_010b:  nop
+    IL_010c:  ldloc.s    VB$t_struct$S1
+    IL_010e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0113:  nop
+    IL_0114:  ldarg.0
+    IL_0115:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_VisualBasic.MainForm::get_cbNumQueens()
+    IL_011a:  ldloca.s   VB$t_struct$S3
+    IL_011c:  ldc.i4.4
+    IL_011d:  ldc.i4.5
+    IL_011e:  ldc.i4.4
+    IL_011f:  ldc.i4.5
+    IL_0120:  call       instance void [System.Windows.Forms]System.Windows.Forms.Padding::.ctor(int32,
+                                                                                                 int32,
+                                                                                                 int32,
+                                                                                                 int32)
+    IL_0125:  nop
+    IL_0126:  ldloc.s    VB$t_struct$S3
+    IL_0128:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Margin(valuetype [System.Windows.Forms]System.Windows.Forms.Padding)
+    IL_012d:  nop
+    IL_012e:  ldarg.0
+    IL_012f:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_VisualBasic.MainForm::get_cbNumQueens()
+    IL_0134:  ldstr      "cbNumQueens"
+    IL_0139:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_013e:  nop
+    IL_013f:  ldarg.0
+    IL_0140:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_VisualBasic.MainForm::get_cbNumQueens()
+    IL_0145:  ldloca.s   VB$t_struct$S5
+    IL_0147:  ldc.i4.s   56
+    IL_0149:  ldc.i4.s   32
+    IL_014b:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0150:  nop
+    IL_0151:  ldloc.s    VB$t_struct$S5
+    IL_0153:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0158:  nop
+    IL_0159:  ldarg.0
+    IL_015a:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_VisualBasic.MainForm::get_cbNumQueens()
+    IL_015f:  ldc.i4.s   10
+    IL_0161:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0166:  nop
+    IL_0167:  ldarg.0
+    IL_0168:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_VisualBasic.MainForm::get_cbNumQueens()
+    IL_016d:  ldstr      "12"
+    IL_0172:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::set_Text(string)
+    IL_0177:  nop
+    IL_0178:  ldarg.0
+    IL_0179:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_VisualBasic.MainForm::get_progressBar1()
+    IL_017e:  ldc.i4.s   13
+    IL_0180:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_0185:  nop
+    IL_0186:  ldarg.0
+    IL_0187:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_VisualBasic.MainForm::get_progressBar1()
+    IL_018c:  ldloca.s   VB$t_struct$S1
+    IL_018e:  ldc.i4     0xc6
+    IL_0193:  ldc.i4.s   14
+    IL_0195:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_019a:  nop
+    IL_019b:  ldloc.s    VB$t_struct$S1
+    IL_019d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_01a2:  nop
+    IL_01a3:  ldarg.0
+    IL_01a4:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_VisualBasic.MainForm::get_progressBar1()
+    IL_01a9:  ldloca.s   VB$t_struct$S3
+    IL_01ab:  ldc.i4.4
+    IL_01ac:  ldc.i4.5
+    IL_01ad:  ldc.i4.4
+    IL_01ae:  ldc.i4.5
+    IL_01af:  call       instance void [System.Windows.Forms]System.Windows.Forms.Padding::.ctor(int32,
+                                                                                                 int32,
+                                                                                                 int32,
+                                                                                                 int32)
+    IL_01b4:  nop
+    IL_01b5:  ldloc.s    VB$t_struct$S3
+    IL_01b7:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Margin(valuetype [System.Windows.Forms]System.Windows.Forms.Padding)
+    IL_01bc:  nop
+    IL_01bd:  ldarg.0
+    IL_01be:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_VisualBasic.MainForm::get_progressBar1()
+    IL_01c3:  ldstr      "progressBar1"
+    IL_01c8:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_01cd:  nop
+    IL_01ce:  ldarg.0
+    IL_01cf:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_VisualBasic.MainForm::get_progressBar1()
+    IL_01d4:  ldloca.s   VB$t_struct$S5
+    IL_01d6:  ldc.i4     0x211
+    IL_01db:  ldc.i4.s   35
+    IL_01dd:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_01e2:  nop
+    IL_01e3:  ldloc.s    VB$t_struct$S5
+    IL_01e5:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_01ea:  nop
+    IL_01eb:  ldarg.0
+    IL_01ec:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_VisualBasic.MainForm::get_progressBar1()
+    IL_01f1:  ldc.i4.2
+    IL_01f2:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ProgressBar::set_Style(valuetype [System.Windows.Forms]System.Windows.Forms.ProgressBarStyle)
+    IL_01f7:  nop
+    IL_01f8:  ldarg.0
+    IL_01f9:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_VisualBasic.MainForm::get_progressBar1()
+    IL_01fe:  ldc.i4.s   9
+    IL_0200:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0205:  nop
+    IL_0206:  ldarg.0
+    IL_0207:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_VisualBasic.MainForm::get_progressBar1()
+    IL_020c:  ldc.i4.0
+    IL_020d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Visible(bool)
+    IL_0212:  nop
+    IL_0213:  ldarg.0
+    IL_0214:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button NQueens_VisualBasic.MainForm::get_btnSolve()
+    IL_0219:  ldstr      "Microsoft Sans Serif"
+    IL_021e:  ldc.r4     14.
+    IL_0223:  ldc.i4.0
+    IL_0224:  ldc.i4.3
+    IL_0225:  ldc.i4.0
+    IL_0226:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle,
+                                                                                  valuetype [System.Drawing]System.Drawing.GraphicsUnit,
+                                                                                  uint8)
+    IL_022b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_0230:  nop
+    IL_0231:  ldarg.0
+    IL_0232:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button NQueens_VisualBasic.MainForm::get_btnSolve()
+    IL_0237:  ldloca.s   VB$t_struct$S1
+    IL_0239:  ldc.i4.s   78
+    IL_023b:  ldc.i4.s   14
+    IL_023d:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0242:  nop
+    IL_0243:  ldloc.s    VB$t_struct$S1
+    IL_0245:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_024a:  nop
+    IL_024b:  ldarg.0
+    IL_024c:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button NQueens_VisualBasic.MainForm::get_btnSolve()
+    IL_0251:  ldloca.s   VB$t_struct$S3
+    IL_0253:  ldc.i4.4
+    IL_0254:  ldc.i4.5
+    IL_0255:  ldc.i4.4
+    IL_0256:  ldc.i4.5
+    IL_0257:  call       instance void [System.Windows.Forms]System.Windows.Forms.Padding::.ctor(int32,
+                                                                                                 int32,
+                                                                                                 int32,
+                                                                                                 int32)
+    IL_025c:  nop
+    IL_025d:  ldloc.s    VB$t_struct$S3
+    IL_025f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Margin(valuetype [System.Windows.Forms]System.Windows.Forms.Padding)
+    IL_0264:  nop
+    IL_0265:  ldarg.0
+    IL_0266:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button NQueens_VisualBasic.MainForm::get_btnSolve()
+    IL_026b:  ldstr      "btnSolve"
+    IL_0270:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0275:  nop
+    IL_0276:  ldarg.0
+    IL_0277:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button NQueens_VisualBasic.MainForm::get_btnSolve()
+    IL_027c:  ldloca.s   VB$t_struct$S5
+    IL_027e:  ldc.i4.s   112
+    IL_0280:  ldc.i4.s   35
+    IL_0282:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0287:  nop
+    IL_0288:  ldloc.s    VB$t_struct$S5
+    IL_028a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_028f:  nop
+    IL_0290:  ldarg.0
+    IL_0291:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button NQueens_VisualBasic.MainForm::get_btnSolve()
+    IL_0296:  ldc.i4.8
+    IL_0297:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_029c:  nop
+    IL_029d:  ldarg.0
+    IL_029e:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button NQueens_VisualBasic.MainForm::get_btnSolve()
+    IL_02a3:  ldstr      "Solve"
+    IL_02a8:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_Text(string)
+    IL_02ad:  nop
+    IL_02ae:  ldarg.0
+    IL_02af:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button NQueens_VisualBasic.MainForm::get_btnSolve()
+    IL_02b4:  ldc.i4.1
+    IL_02b5:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_UseVisualStyleBackColor(bool)
+    IL_02ba:  nop
+    IL_02bb:  ldarg.0
+    IL_02bc:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_02c1:  ldc.i4.s   15
+    IL_02c3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Anchor(valuetype [System.Windows.Forms]System.Windows.Forms.AnchorStyles)
+    IL_02c8:  nop
+    IL_02c9:  ldarg.0
+    IL_02ca:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_02cf:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_WhiteSmoke()
+    IL_02d4:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::set_BackColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_02d9:  nop
+    IL_02da:  ldarg.0
+    IL_02db:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_02e0:  ldc.i4.6
+    IL_02e1:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::set_BackGradientStyle(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.GradientStyle)
+    IL_02e6:  nop
+    IL_02e7:  ldloc.0
+    IL_02e8:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisX()
+    IL_02ed:  ldc.i4.0
+    IL_02ee:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::set_IsLabelAutoFit(bool)
+    IL_02f3:  nop
+    IL_02f4:  ldloc.0
+    IL_02f5:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisX()
+    IL_02fa:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::get_LabelStyle()
+    IL_02ff:  ldstr      "Microsoft Sans Serif"
+    IL_0304:  ldc.r4     12.
+    IL_0309:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32)
+    IL_030e:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_0313:  nop
+    IL_0314:  ldloc.0
+    IL_0315:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisY()
+    IL_031a:  ldc.i4.0
+    IL_031b:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::set_IsLabelAutoFit(bool)
+    IL_0320:  nop
+    IL_0321:  ldloc.0
+    IL_0322:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisY()
+    IL_0327:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::get_LabelStyle()
+    IL_032c:  ldstr      "Microsoft Sans Serif"
+    IL_0331:  ldc.r4     12.
+    IL_0336:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32)
+    IL_033b:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_0340:  nop
+    IL_0341:  ldloc.0
+    IL_0342:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisY()
+    IL_0347:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::get_LabelStyle()
+    IL_034c:  ldstr      "F2"
+    IL_0351:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.LabelStyle::set_Format(string)
+    IL_0356:  nop
+    IL_0357:  ldloc.0
+    IL_0358:  ldc.i4     0xff
+    IL_035d:  ldc.i4     0xff
+    IL_0362:  ldc.i4     0xc0
+    IL_0367:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::FromArgb(int32,
+                                                                                                                       int32,
+                                                                                                                       int32)
+    IL_036c:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::set_BackColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_0371:  nop
+    IL_0372:  ldloc.0
+    IL_0373:  ldc.i4.4
+    IL_0374:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::set_BackGradientStyle(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.GradientStyle)
+    IL_0379:  nop
+    IL_037a:  ldloc.0
+    IL_037b:  ldc.i4     0xff
+    IL_0380:  ldc.i4     0xe0
+    IL_0385:  ldc.i4     0xc0
+    IL_038a:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::FromArgb(int32,
+                                                                                                                       int32,
+                                                                                                                       int32)
+    IL_038f:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::set_BackSecondaryColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_0394:  nop
+    IL_0395:  ldloc.0
+    IL_0396:  ldstr      "ChartArea1"
+    IL_039b:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::set_Name(string)
+    IL_03a0:  nop
+    IL_03a1:  ldarg.0
+    IL_03a2:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_03a7:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartAreaCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_ChartAreas()
+    IL_03ac:  ldloc.0
+    IL_03ad:  callvirt   instance void class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea>::Add(!0)
+    IL_03b2:  nop
+    IL_03b3:  ldarg.0
+    IL_03b4:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_03b9:  ldloca.s   VB$t_struct$S1
+    IL_03bb:  ldc.i4.s   13
+    IL_03bd:  ldc.i4.s   56
+    IL_03bf:  call       instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_03c4:  nop
+    IL_03c5:  ldloc.s    VB$t_struct$S1
+    IL_03c7:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_03cc:  nop
+    IL_03cd:  ldarg.0
+    IL_03ce:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_03d3:  ldloca.s   VB$t_struct$S3
+    IL_03d5:  ldc.i4.4
+    IL_03d6:  ldc.i4.5
+    IL_03d7:  ldc.i4.4
+    IL_03d8:  ldc.i4.5
+    IL_03d9:  call       instance void [System.Windows.Forms]System.Windows.Forms.Padding::.ctor(int32,
+                                                                                                 int32,
+                                                                                                 int32,
+                                                                                                 int32)
+    IL_03de:  nop
+    IL_03df:  ldloc.s    VB$t_struct$S3
+    IL_03e1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Margin(valuetype [System.Windows.Forms]System.Windows.Forms.Padding)
+    IL_03e6:  nop
+    IL_03e7:  ldarg.0
+    IL_03e8:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_03ed:  ldstr      "chart1"
+    IL_03f2:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_03f7:  nop
+    IL_03f8:  ldarg.0
+    IL_03f9:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_03fe:  ldc.i4.0
+    IL_03ff:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::set_Palette(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartColorPalette)
+    IL_0404:  nop
+    IL_0405:  ldloc.1
+    IL_0406:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_MintCream()
+    IL_040b:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_BackSecondaryColor(valuetype [System.Drawing]System.Drawing.Color)
+    IL_0410:  nop
+    IL_0411:  ldloc.1
+    IL_0412:  ldstr      "ChartArea1"
+    IL_0417:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::set_ChartArea(string)
+    IL_041c:  nop
+    IL_041d:  ldloc.1
+    IL_041e:  ldstr      "DrawingStyle=Cylinder, LabelStyle=Top"
+    IL_0423:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_CustomProperties(string)
+    IL_0428:  nop
+    IL_0429:  ldloc.1
+    IL_042a:  ldstr      "Microsoft Sans Serif"
+    IL_042f:  ldc.r4     12.
+    IL_0434:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32)
+    IL_0439:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_043e:  nop
+    IL_043f:  ldloc.1
+    IL_0440:  ldstr      "chartSeries1"
+    IL_0445:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::set_Name(string)
+    IL_044a:  nop
+    IL_044b:  ldloc.1
+    IL_044c:  ldc.i4.7
+    IL_044d:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::set_XValueType(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartValueType)
+    IL_0452:  nop
+    IL_0453:  ldloc.1
+    IL_0454:  ldc.i4.1
+    IL_0455:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::set_YValueType(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartValueType)
+    IL_045a:  nop
+    IL_045b:  ldarg.0
+    IL_045c:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_0461:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_0466:  ldloc.1
+    IL_0467:  callvirt   instance void class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::Add(!0)
+    IL_046c:  nop
+    IL_046d:  ldarg.0
+    IL_046e:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_0473:  ldloca.s   VB$t_struct$S5
+    IL_0475:  ldc.i4     0x2ca
+    IL_047a:  ldc.i4     0x1a4
+    IL_047f:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0484:  nop
+    IL_0485:  ldloc.s    VB$t_struct$S5
+    IL_0487:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_048c:  nop
+    IL_048d:  ldarg.0
+    IL_048e:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_0493:  ldc.i4.7
+    IL_0494:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0499:  nop
+    IL_049a:  ldarg.0
+    IL_049b:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_04a0:  ldc.i4.2
+    IL_04a1:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::set_TextAntiAliasingQuality(valuetype [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality)
+    IL_04a6:  nop
+    IL_04a7:  ldarg.0
+    IL_04a8:  ldloca.s   VB$t_struct$S8
+    IL_04aa:  ldc.r4     6.
+    IL_04af:  ldc.r4     13.
+    IL_04b4:  call       instance void [System.Drawing]System.Drawing.SizeF::.ctor(float32,
+                                                                                   float32)
+    IL_04b9:  nop
+    IL_04ba:  ldloc.s    VB$t_struct$S8
+    IL_04bc:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::set_AutoScaleDimensions(valuetype [System.Drawing]System.Drawing.SizeF)
+    IL_04c1:  nop
+    IL_04c2:  ldarg.0
+    IL_04c3:  ldc.i4.1
+    IL_04c4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::set_AutoScaleMode(valuetype [System.Windows.Forms]System.Windows.Forms.AutoScaleMode)
+    IL_04c9:  nop
+    IL_04ca:  ldarg.0
+    IL_04cb:  ldloca.s   VB$t_struct$S5
+    IL_04cd:  ldc.i4     0x2e4
+    IL_04d2:  ldc.i4     0x1ea
+    IL_04d7:  call       instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_04dc:  nop
+    IL_04dd:  ldloc.s    VB$t_struct$S5
+    IL_04df:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Form::set_ClientSize(valuetype [System.Drawing]System.Drawing.Size)
+    IL_04e4:  nop
+    IL_04e5:  ldarg.0
+    IL_04e6:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_04eb:  ldarg.0
+    IL_04ec:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_VisualBasic.MainForm::get_cbNumQueens()
+    IL_04f1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_04f6:  nop
+    IL_04f7:  ldarg.0
+    IL_04f8:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_04fd:  ldarg.0
+    IL_04fe:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_VisualBasic.MainForm::get_progressBar1()
+    IL_0503:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0508:  nop
+    IL_0509:  ldarg.0
+    IL_050a:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_050f:  ldarg.0
+    IL_0510:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button NQueens_VisualBasic.MainForm::get_btnSolve()
+    IL_0515:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_051a:  nop
+    IL_051b:  ldarg.0
+    IL_051c:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0521:  ldarg.0
+    IL_0522:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_0527:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_052c:  nop
+    IL_052d:  ldarg.0
+    IL_052e:  ldstr      "MainForm"
+    IL_0533:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0538:  nop
+    IL_0539:  ldarg.0
+    IL_053a:  ldstr      "NQueens"
+    IL_053f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Form::set_Text(string)
+    IL_0544:  nop
+    IL_0545:  ldarg.0
+    IL_0546:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_054b:  callvirt   instance void [System]System.ComponentModel.ISupportInitialize::EndInit()
+    IL_0550:  nop
+    IL_0551:  ldarg.0
+    IL_0552:  ldc.i4.0
+    IL_0553:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::ResumeLayout(bool)
+    IL_0558:  nop
+    IL_0559:  nop
+    IL_055a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [System.Windows.Forms]System.Windows.Forms.ComboBox V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_VisualBasic.MainForm::_cbNumQueens
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_VisualBasic.MainForm::_cbNumQueens
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [System.Windows.Forms]System.Windows.Forms.ProgressBar V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_VisualBasic.MainForm::_progressBar1
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_VisualBasic.MainForm::_progressBar1
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [System.Windows.Forms]System.Windows.Forms.Button V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_VisualBasic.MainForm::_btnSolve
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       83 (0x53)
+    .maxstack  2
+    .locals init (class [mscorlib]System.EventHandler V_0,
+             bool V_1)
+    IL_0000:  ldarg.0
+    IL_0001:  dup
+    IL_0002:  ldvirtftn  instance void NQueens_VisualBasic.MainForm::btnSolve_Click(object,
+                                                                                    class [mscorlib]System.EventArgs)
+    IL_0008:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_000d:  stloc.0
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_VisualBasic.MainForm::_btnSolve
+    IL_0014:  ldnull
+    IL_0015:  ceq
+    IL_0017:  ldc.i4.0
+    IL_0018:  ceq
+    IL_001a:  stloc.1
+    IL_001b:  ldloc.1
+    IL_001c:  brfalse.s  IL_002b
+
+    IL_001e:  ldarg.0
+    IL_001f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_VisualBasic.MainForm::_btnSolve
+    IL_0024:  ldloc.0
+    IL_0025:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::remove_Click(class [mscorlib]System.EventHandler)
+    IL_002a:  nop
+    IL_002b:  nop
+    IL_002c:  ldarg.0
+    IL_002d:  ldarg.1
+    IL_002e:  stfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_VisualBasic.MainForm::_btnSolve
+    IL_0033:  ldarg.0
+    IL_0034:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_VisualBasic.MainForm::_btnSolve
+    IL_0039:  ldnull
+    IL_003a:  ceq
+    IL_003c:  ldc.i4.0
+    IL_003d:  ceq
+    IL_003f:  stloc.1
+    IL_0040:  ldloc.1
+    IL_0041:  brfalse.s  IL_0050
+
+    IL_0043:  ldarg.0
+    IL_0044:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Button NQueens_VisualBasic.MainForm::_btnSolve
+    IL_0049:  ldloc.0
+    IL_004a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::add_Click(class [mscorlib]System.EventHandler)
+    IL_004f:  nop
+    IL_0050:  nop
+    IL_0051:  nop
+    IL_0052:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::_chart1
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::_chart1
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.vb" startline="20" endline="23"><![CDATA[
+  {
+    // Code size       21 (0x15)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       class [mscorlib]System.Threading.Tasks.TaskScheduler [mscorlib]System.Threading.Tasks.TaskScheduler::FromCurrentSynchronizationContext()
+    IL_0007:  stfld      class [mscorlib]System.Threading.Tasks.TaskScheduler NQueens_VisualBasic.MainForm::_uiScheduler
+    IL_000c:  ldarg.0
+    IL_000d:  callvirt   instance void NQueens_VisualBasic.MainForm::SetupPoints()
+    IL_0012:  nop
+    IL_0013:  nop
+    IL_0014:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.vb" startline="24" endline="32"><![CDATA[
+  {
+    // Code size       273 (0x111)
+    .maxstack  7
+    .locals init ([0] object[] VB$t_array$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.0
+    IL_0003:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_0008:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_000d:  ldc.i4.0
+    IL_000e:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::get_Item(int32)
+    IL_0013:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::get_Points()
+    IL_0018:  ldarg.0
+    IL_0019:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_001e:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_0023:  ldc.i4.0
+    IL_0024:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::get_Item(int32)
+    IL_0029:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::get_Points()
+    IL_002e:  ldstr      "Serial"
+    IL_0033:  ldc.i4.1
+    IL_0034:  newarr     [mscorlib]System.Object
+    IL_0039:  stloc.0
+    IL_003a:  ldloc.0
+    IL_003b:  ldc.i4.0
+    IL_003c:  ldc.r8     0.0
+    IL_0045:  box        [mscorlib]System.Double
+    IL_004a:  stelem.ref
+    IL_004b:  nop
+    IL_004c:  ldloc.0
+    IL_004d:  callvirt   instance int32 [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection::AddXY(object,
+                                                                                                                                                           object[])
+    IL_0052:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint>::get_Item(int32)
+    IL_0057:  stfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint NQueens_VisualBasic.MainForm::_serial
+    IL_005c:  ldarg.0
+    IL_005d:  ldarg.0
+    IL_005e:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_0063:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_0068:  ldc.i4.0
+    IL_0069:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::get_Item(int32)
+    IL_006e:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::get_Points()
+    IL_0073:  ldarg.0
+    IL_0074:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_0079:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.SeriesCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_Series()
+    IL_007e:  ldc.i4.0
+    IL_007f:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series>::get_Item(int32)
+    IL_0084:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Series::get_Points()
+    IL_0089:  ldstr      "Parallel"
+    IL_008e:  ldc.i4.1
+    IL_008f:  newarr     [mscorlib]System.Object
+    IL_0094:  stloc.0
+    IL_0095:  ldloc.0
+    IL_0096:  ldc.i4.0
+    IL_0097:  ldc.r8     0.0
+    IL_00a0:  box        [mscorlib]System.Double
+    IL_00a5:  stelem.ref
+    IL_00a6:  nop
+    IL_00a7:  ldloc.0
+    IL_00a8:  callvirt   instance int32 [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCollection::AddXY(object,
+                                                                                                                                                           object[])
+    IL_00ad:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint>::get_Item(int32)
+    IL_00b2:  stfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint NQueens_VisualBasic.MainForm::_parallel
+    IL_00b7:  ldarg.0
+    IL_00b8:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_00bd:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartAreaCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_ChartAreas()
+    IL_00c2:  ldc.i4.0
+    IL_00c3:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea>::get_Item(int32)
+    IL_00c8:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisY()
+    IL_00cd:  ldc.r8     0.0
+    IL_00d6:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::set_Minimum(float64)
+    IL_00db:  nop
+    IL_00dc:  ldarg.0
+    IL_00dd:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_00e2:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartAreaCollection [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::get_ChartAreas()
+    IL_00e7:  ldc.i4.0
+    IL_00e8:  callvirt   instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea>::get_Item(int32)
+    IL_00ed:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.ChartArea::get_AxisY()
+    IL_00f2:  ldc.r8     10.
+    IL_00fb:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Axis::set_Maximum(float64)
+    IL_0100:  nop
+    IL_0101:  ldarg.0
+    IL_0102:  callvirt   instance void NQueens_VisualBasic.MainForm::ClearPointValues()
+    IL_0107:  nop
+    IL_0108:  ldarg.0
+    IL_0109:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::Invalidate()
+    IL_010e:  nop
+    IL_010f:  nop
+    IL_0110:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.vb" startline="33" endline="45"><![CDATA[
+  {
+    // Code size       150 (0x96)
+    .maxstack  4
+    .locals init ([0] class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint Point,
+             [1] class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint[] VB$t_array$S0,
+             [2] int32 VB$t_i4$L0,
+             [3] class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint[] VB$t_array$L1,
+             [4] class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint VB$t_ref$L0,
+             [5] object[] VB$t_array$S2,
+             [6] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldc.i4.2
+    IL_0002:  newarr     [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint
+    IL_0007:  stloc.1
+    IL_0008:  ldloc.1
+    IL_0009:  ldc.i4.0
+    IL_000a:  ldarg.0
+    IL_000b:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint NQueens_VisualBasic.MainForm::_serial
+    IL_0010:  stelem.ref
+    IL_0011:  nop
+    IL_0012:  ldloc.1
+    IL_0013:  ldc.i4.1
+    IL_0014:  ldarg.0
+    IL_0015:  ldfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint NQueens_VisualBasic.MainForm::_parallel
+    IL_001a:  stelem.ref
+    IL_001b:  nop
+    IL_001c:  ldloc.1
+    IL_001d:  stloc.3
+    IL_001e:  ldc.i4.0
+    IL_001f:  stloc.2
+    IL_0020:  br.s       IL_007c
+
+    IL_0022:  ldloc.3
+    IL_0023:  ldloc.2
+    IL_0024:  ldelem.ref
+    IL_0025:  stloc.0
+    IL_0026:  ldloc.0
+    IL_0027:  stloc.s    VB$t_ref$L0
+    IL_0029:  ldloc.s    VB$t_ref$L0
+    IL_002b:  ldc.i4.1
+    IL_002c:  newarr     [mscorlib]System.Object
+    IL_0031:  stloc.s    VB$t_array$S2
+    IL_0033:  ldloc.s    VB$t_array$S2
+    IL_0035:  ldc.i4.0
+    IL_0036:  ldc.i4.0
+    IL_0037:  box        [mscorlib]System.Int32
+    IL_003c:  stelem.ref
+    IL_003d:  nop
+    IL_003e:  ldloc.s    VB$t_array$S2
+    IL_0040:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint::SetValueY(object[])
+    IL_0045:  nop
+    IL_0046:  ldloc.s    VB$t_ref$L0
+    IL_0048:  ldstr      ""
+    IL_004d:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_ToolTip(string)
+    IL_0052:  nop
+    IL_0053:  ldloc.s    VB$t_ref$L0
+    IL_0055:  ldstr      ""
+    IL_005a:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_Label(string)
+    IL_005f:  nop
+    IL_0060:  ldloc.s    VB$t_ref$L0
+    IL_0062:  ldloc.0
+    IL_0063:  callvirt   instance class [System.Drawing]System.Drawing.Font [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::get_Font()
+    IL_0068:  ldc.i4.1
+    IL_0069:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(class [System.Drawing]System.Drawing.Font,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle)
+    IL_006e:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPointCustomProperties::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_0073:  nop
+    IL_0074:  ldnull
+    IL_0075:  stloc.s    VB$t_ref$L0
+    IL_0077:  ldloc.2
+    IL_0078:  ldc.i4.1
+    IL_0079:  add.ovf
+    IL_007a:  stloc.2
+    IL_007b:  nop
+    IL_007c:  ldloc.2
+    IL_007d:  ldloc.3
+    IL_007e:  ldlen
+    IL_007f:  conv.ovf.i4
+    IL_0080:  clt
+    IL_0082:  stloc.s    VB$CG$t_bool$S0
+    IL_0084:  ldloc.s    VB$CG$t_bool$S0
+    IL_0086:  brtrue.s   IL_0022
+
+    IL_0088:  ldarg.0
+    IL_0089:  callvirt   instance class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart NQueens_VisualBasic.MainForm::get_chart1()
+    IL_008e:  callvirt   instance void [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.Chart::Invalidate()
+    IL_0093:  nop
+    IL_0094:  nop
+    IL_0095:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.vb" startline="46" endline="76"><![CDATA[
+  {
+    // Code size       151 (0x97)
+    .maxstack  3
+    .locals init ([0] class NQueens_VisualBasic.MainForm/_Closure$__1 $VB$Closure_ClosureVariable_2F_71,
+             [1] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void NQueens_VisualBasic.MainForm/_Closure$__1::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  ldarg.0
+    IL_0009:  stfld      class NQueens_VisualBasic.MainForm NQueens_VisualBasic.MainForm/_Closure$__1::$VB$Me
+    IL_000e:  ldloc.0
+    IL_000f:  ldc.i4.0
+    IL_0010:  stfld      int32 NQueens_VisualBasic.MainForm/_Closure$__1::$VB$Local_numQueens
+    IL_0015:  ldarg.0
+    IL_0016:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox NQueens_VisualBasic.MainForm::get_cbNumQueens()
+    IL_001b:  callvirt   instance string [System.Windows.Forms]System.Windows.Forms.ComboBox::get_Text()
+    IL_0020:  ldloc.0
+    IL_0021:  ldflda     int32 NQueens_VisualBasic.MainForm/_Closure$__1::$VB$Local_numQueens
+    IL_0026:  call       bool [mscorlib]System.Int32::TryParse(string,
+                                                               int32&)
+    IL_002b:  ldc.i4.0
+    IL_002c:  ceq
+    IL_002e:  stloc.1
+    IL_002f:  ldloc.1
+    IL_0030:  brfalse.s  IL_0035
+
+    IL_0032:  nop
+    IL_0033:  br.s       IL_0095
+
+    IL_0035:  ldarg.0
+    IL_0036:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button NQueens_VisualBasic.MainForm::get_btnSolve()
+    IL_003b:  ldc.i4.0
+    IL_003c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Enabled(bool)
+    IL_0041:  nop
+    IL_0042:  ldarg.0
+    IL_0043:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_VisualBasic.MainForm::get_progressBar1()
+    IL_0048:  ldc.i4.1
+    IL_0049:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Visible(bool)
+    IL_004e:  nop
+    IL_004f:  ldarg.0
+    IL_0050:  callvirt   instance void NQueens_VisualBasic.MainForm::ClearPointValues()
+    IL_0055:  nop
+    IL_0056:  ldarg.0
+    IL_0057:  ldc.r8     0.0
+    IL_0060:  stfld      float64 NQueens_VisualBasic.MainForm::_max
+    IL_0065:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_006a:  ldloc.0
+    IL_006b:  dup
+    IL_006c:  ldvirtftn  instance void NQueens_VisualBasic.MainForm/_Closure$__1::_Lambda$__2()
+    IL_0072:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_0077:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action)
+    IL_007c:  ldarg.0
+    IL_007d:  dup
+    IL_007e:  ldvirtftn  instance void NQueens_VisualBasic.MainForm::_Lambda$__1(class [mscorlib]System.Threading.Tasks.Task)
+    IL_0084:  newobj     instance void class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task>::.ctor(object,
+                                                                                                                           native int)
+    IL_0089:  ldarg.0
+    IL_008a:  ldfld      class [mscorlib]System.Threading.Tasks.TaskScheduler NQueens_VisualBasic.MainForm::_uiScheduler
+    IL_008f:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.Task::ContinueWith(class [mscorlib]System.Action`1<class [mscorlib]System.Threading.Tasks.Task>,
+                                                                                                                                  class [mscorlib]System.Threading.Tasks.TaskScheduler)
+    IL_0094:  pop
+    IL_0095:  nop
+    IL_0096:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.vb" startline="77" endline="90"><![CDATA[
+  {
+    // Code size       66 (0x42)
+    .maxstack  5
+    .locals init ([0] class NQueens_VisualBasic.MainForm/_Closure$__2 $VB$Closure_ClosureVariable_4E_4B)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void NQueens_VisualBasic.MainForm/_Closure$__2::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  ldarg.1
+    IL_0009:  stfld      class [System.Windows.Forms.DataVisualization]System.Windows.Forms.DataVisualization.Charting.DataPoint NQueens_VisualBasic.MainForm/_Closure$__2::$VB$Local_point
+    IL_000e:  ldloc.0
+    IL_000f:  ldarg.2
+    IL_0010:  stfld      float64 NQueens_VisualBasic.MainForm/_Closure$__2::$VB$Local_seconds
+    IL_0015:  ldloc.0
+    IL_0016:  ldarg.0
+    IL_0017:  stfld      class NQueens_VisualBasic.MainForm NQueens_VisualBasic.MainForm/_Closure$__2::$VB$Me
+    IL_001c:  call       class [mscorlib]System.Threading.Tasks.TaskFactory [mscorlib]System.Threading.Tasks.Task::get_Factory()
+    IL_0021:  ldloc.0
+    IL_0022:  dup
+    IL_0023:  ldvirtftn  instance void NQueens_VisualBasic.MainForm/_Closure$__2::_Lambda$__5()
+    IL_0029:  newobj     instance void [mscorlib]System.Action::.ctor(object,
+                                                                      native int)
+    IL_002e:  call       valuetype [mscorlib]System.Threading.CancellationToken [mscorlib]System.Threading.CancellationToken::get_None()
+    IL_0033:  ldc.i4.0
+    IL_0034:  ldarg.0
+    IL_0035:  ldfld      class [mscorlib]System.Threading.Tasks.TaskScheduler NQueens_VisualBasic.MainForm::_uiScheduler
+    IL_003a:  callvirt   instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.TaskFactory::StartNew(class [mscorlib]System.Action,
+                                                                                                                                     valuetype [mscorlib]System.Threading.CancellationToken,
+                                                                                                                                     valuetype [mscorlib]System.Threading.Tasks.TaskCreationOptions,
+                                                                                                                                     class [mscorlib]System.Threading.Tasks.TaskScheduler)
+    IL_003f:  pop
+    IL_0040:  nop
+    IL_0041:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.vb" startline="91" endline="96"><![CDATA[
+  {
+    // Code size       25 (0x19)
+    .maxstack  1
+    .locals init ([0] class [System]System.Diagnostics.Stopwatch sw,
+             [1] valuetype [mscorlib]System.TimeSpan Time)
+    IL_0000:  nop
+    IL_0001:  call       class [System]System.Diagnostics.Stopwatch [System]System.Diagnostics.Stopwatch::StartNew()
+    IL_0006:  stloc.0
+    IL_0007:  ldarg.0
+    IL_0008:  callvirt   instance void [mscorlib]System.Action::Invoke()
+    IL_000d:  nop
+    IL_000e:  ldloc.0
+    IL_000f:  callvirt   instance valuetype [mscorlib]System.TimeSpan [System]System.Diagnostics.Stopwatch::get_Elapsed()
+    IL_0014:  stloc.1
+    IL_0015:  br.s       IL_0017
+
+    IL_0017:  ldloc.1
+    IL_0018:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\MainForm.vb" startline="71" endline="75"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       56 (0x38)
+    .maxstack  2
+    .locals init ([0] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ProgressBar NQueens_VisualBasic.MainForm::get_progressBar1()
+    IL_0007:  ldc.i4.0
+    IL_0008:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Visible(bool)
+    IL_000d:  nop
+    IL_000e:  ldarg.0
+    IL_000f:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Button NQueens_VisualBasic.MainForm::get_btnSolve()
+    IL_0014:  ldc.i4.1
+    IL_0015:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Enabled(bool)
+    IL_001a:  nop
+    IL_001b:  ldarg.1
+    IL_001c:  callvirt   instance bool [mscorlib]System.Threading.Tasks.Task::get_IsFaulted()
+    IL_0021:  stloc.0
+    IL_0022:  ldloc.0
+    IL_0023:  brfalse.s  IL_0036
+
+    IL_0025:  ldarg.1
+    IL_0026:  callvirt   instance class [mscorlib]System.AggregateException [mscorlib]System.Threading.Tasks.Task::get_Exception()
+    IL_002b:  callvirt   instance string [mscorlib]System.AggregateException::ToString()
+    IL_0030:  call       valuetype [System.Windows.Forms]System.Windows.Forms.DialogResult [System.Windows.Forms]System.Windows.Forms.MessageBox::Show(string)
+    IL_0035:  pop
+    IL_0036:  nop
+    IL_0037:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Resources.Designer.vb" startline="39" endline="45"><![CDATA[
+  {
+    // Code size       59 (0x3b)
+    .maxstack  2
+    .locals init ([0] class [mscorlib]System.Resources.ResourceManager ResourceManager,
+             [1] class [mscorlib]System.Resources.ResourceManager temp,
+             [2] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Resources.ResourceManager NQueens_VisualBasic.My.Resources.Resources::resourceMan
+    IL_0006:  ldnull
+    IL_0007:  call       bool [mscorlib]System.Object::ReferenceEquals(object,
+                                                                       object)
+    IL_000c:  stloc.2
+    IL_000d:  ldloc.2
+    IL_000e:  brfalse.s  IL_0030
+
+    IL_0010:  ldstr      "NQueens_VisualBasic.Resources"
+    IL_0015:  ldtoken    NQueens_VisualBasic.My.Resources.Resources
+    IL_001a:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_001f:  callvirt   instance class [mscorlib]System.Reflection.Assembly [mscorlib]System.Type::get_Assembly()
+    IL_0024:  newobj     instance void [mscorlib]System.Resources.ResourceManager::.ctor(string,
+                                                                                         class [mscorlib]System.Reflection.Assembly)
+    IL_0029:  stloc.1
+    IL_002a:  ldloc.1
+    IL_002b:  stsfld     class [mscorlib]System.Resources.ResourceManager NQueens_VisualBasic.My.Resources.Resources::resourceMan
+    IL_0030:  nop
+    IL_0031:  ldsfld     class [mscorlib]System.Resources.ResourceManager NQueens_VisualBasic.My.Resources.Resources::resourceMan
+    IL_0036:  stloc.0
+    IL_0037:  br.s       IL_0039
+
+    IL_0039:  ldloc.0
+    IL_003a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Resources.Designer.vb" startline="46" endline="56"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Globalization.CultureInfo Culture)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [mscorlib]System.Globalization.CultureInfo NQueens_VisualBasic.My.Resources.Resources::resourceCulture
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Resources.Designer.vb" startline="57" endline="59"><![CDATA[
+  {
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  stsfld     class [mscorlib]System.Globalization.CultureInfo NQueens_VisualBasic.My.Resources.Resources::resourceCulture
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Settings.Designer.vb" startline="23" endline="29"><![CDATA[
+  {
+    // Code size       37 (0x25)
+    .maxstack  8
+    IL_0000:  newobj     instance void NQueens_VisualBasic.My.MySettings::.ctor()
+    IL_0005:  call       class [System]System.Configuration.SettingsBase [System]System.Configuration.SettingsBase::Synchronized(class [System]System.Configuration.SettingsBase)
+    IL_000a:  castclass  NQueens_VisualBasic.My.MySettings
+    IL_000f:  stsfld     class NQueens_VisualBasic.My.MySettings NQueens_VisualBasic.My.MySettings::defaultInstance
+    IL_0014:  newobj     instance void [mscorlib]System.Object::.ctor()
+    IL_0019:  call       object [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+    IL_001e:  stsfld     object NQueens_VisualBasic.My.MySettings::addedHandlerLockObject
+    IL_0023:  nop
+    IL_0024:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Settings.Designer.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [System]System.Configuration.ApplicationSettingsBase::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Settings.Designer.vb" startline="30" endline="36"><![CDATA[
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 02 00 00 00 00 00 ) 
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       29 (0x1d)
+    .maxstack  1
+    .locals init ([0] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  call       class NQueens_VisualBasic.My.MyApplication NQueens_VisualBasic.My.MyProject::get_Application()
+    IL_0006:  callvirt   instance bool [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase::get_SaveMySettingsOnExit()
+    IL_000b:  stloc.0
+    IL_000c:  ldloc.0
+    IL_000d:  brfalse.s  IL_001a
+
+    IL_000f:  call       class NQueens_VisualBasic.My.MySettings NQueens_VisualBasic.My.MySettingsProperty::get_Settings()
+    IL_0014:  callvirt   instance void [System]System.Configuration.ApplicationSettingsBase::Save()
+    IL_0019:  nop
+    IL_001a:  nop
+    IL_001b:  nop
+    IL_001c:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Settings.Designer.vb" startline="37" endline="54"><![CDATA[
+  {
+    // Code size       109 (0x6d)
+    .maxstack  3
+    .locals init ([0] class NQueens_VisualBasic.My.MySettings Default,
+             [1] object VB$t_ref$L0,
+             [2] bool VB$t_bool$L0,
+             [3] bool VB$CG$t_bool$S0)
+    IL_0000:  nop
+    IL_0001:  ldsfld     bool NQueens_VisualBasic.My.MySettings::addedHandler
+    IL_0006:  ldc.i4.0
+    IL_0007:  ceq
+    IL_0009:  stloc.3
+    IL_000a:  ldloc.3
+    IL_000b:  brfalse.s  IL_0062
+
+    IL_000d:  nop
+    IL_000e:  ldsfld     object NQueens_VisualBasic.My.MySettings::addedHandlerLockObject
+    IL_0013:  stloc.1
+    IL_0014:  ldloc.1
+    IL_0015:  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ObjectFlowControl::CheckForSyncLockOnValueType(object)
+    IL_001a:  nop
+    IL_001b:  ldc.i4.0
+    IL_001c:  stloc.2
+    IL_001d:  nop
+    .try
+    {
+      IL_001e:  ldloc.1
+      IL_001f:  ldloca.s   VB$t_bool$L0
+      IL_0021:  call       void [mscorlib]System.Threading.Monitor::Enter(object,
+                                                                          bool&)
+      IL_0026:  nop
+      IL_0027:  ldsfld     bool NQueens_VisualBasic.My.MySettings::addedHandler
+      IL_002c:  ldc.i4.0
+      IL_002d:  ceq
+      IL_002f:  stloc.3
+      IL_0030:  ldloc.3
+      IL_0031:  brfalse.s  IL_0050
+
+      IL_0033:  call       class NQueens_VisualBasic.My.MyApplication NQueens_VisualBasic.My.MyProject::get_Application()
+      IL_0038:  ldnull
+      IL_0039:  ldftn      void NQueens_VisualBasic.My.MySettings::AutoSaveSettings(object,
+                                                                                    class [mscorlib]System.EventArgs)
+      IL_003f:  newobj     instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.ShutdownEventHandler::.ctor(object,
+                                                                                                                                      native int)
+      IL_0044:  callvirt   instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase::add_Shutdown(class [Microsoft.VisualBasic]Microsoft.VisualBasic.ApplicationServices.ShutdownEventHandler)
+      IL_0049:  nop
+      IL_004a:  ldc.i4.1
+      IL_004b:  stsfld     bool NQueens_VisualBasic.My.MySettings::addedHandler
+      IL_0050:  nop
+      IL_0051:  nop
+      IL_0052:  leave.s    IL_0062
+
+    }  // end .try
+    finally
+    {
+      IL_0054:  ldloc.2
+      IL_0055:  stloc.3
+      IL_0056:  ldloc.3
+      IL_0057:  brfalse.s  IL_0060
+
+      IL_0059:  ldloc.1
+      IL_005a:  call       void [mscorlib]System.Threading.Monitor::Exit(object)
+      IL_005f:  nop
+      IL_0060:  nop
+      IL_0061:  endfinally
+    }  // end handler
+    IL_0062:  nop
+    IL_0063:  ldsfld     class NQueens_VisualBasic.My.MySettings NQueens_VisualBasic.My.MySettings::defaultInstance
+    IL_0068:  stloc.0
+    IL_0069:  br.s       IL_006b
+
+    IL_006b:  ldloc.0
+    IL_006c:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\My Project\Settings.Designer.vb" startline="55" endline="70"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class NQueens_VisualBasic.My.MySettings Settings)
+    IL_0000:  nop
+    IL_0001:  call       class NQueens_VisualBasic.My.MySettings NQueens_VisualBasic.My.MySettings::get_Default()
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\NQueens.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+    IL_0007:  nop
+    IL_0008:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\NQueens.vb" startline="18" endline="20"><![CDATA[
+  {
+    // Code size       17 (0x11)
+    .maxstack  1
+    .locals init ([0] int32 Sequential)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  newobj     instance void NQueens_VisualBasic.NQueensSolver/NQueensState::.ctor(int32)
+    IL_0007:  callvirt   instance int32 NQueens_VisualBasic.NQueensSolver/NQueensState::CountSolutions()
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\NQueens.vb" startline="21" endline="31"><![CDATA[
+  {
+    // Code size       86 (0x56)
+    .maxstack  3
+    .locals init ([0] int32 Parallel,
+             [1] class NQueens_VisualBasic.NQueensSolver/NQueensState[] statesAfterOneMove,
+             [2] int32 row,
+             [3] int32 VB$t_i4$L0,
+             [4] int32 VB$CG$t_i4$S0)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.1
+    IL_0003:  sub.ovf
+    IL_0004:  ldc.i4.1
+    IL_0005:  add.ovf
+    IL_0006:  newarr     NQueens_VisualBasic.NQueensSolver/NQueensState
+    IL_000b:  stloc.1
+    IL_000c:  ldc.i4.0
+    IL_000d:  ldarg.0
+    IL_000e:  ldc.i4.1
+    IL_000f:  sub.ovf
+    IL_0010:  stloc.3
+    IL_0011:  stloc.2
+    IL_0012:  br.s       IL_002d
+
+    IL_0014:  ldloc.1
+    IL_0015:  ldloc.2
+    IL_0016:  ldarg.0
+    IL_0017:  newobj     instance void NQueens_VisualBasic.NQueensSolver/NQueensState::.ctor(int32)
+    IL_001c:  stelem.ref
+    IL_001d:  nop
+    IL_001e:  ldloc.1
+    IL_001f:  ldloc.2
+    IL_0020:  ldelem.ref
+    IL_0021:  ldloc.2
+    IL_0022:  callvirt   instance bool NQueens_VisualBasic.NQueensSolver/NQueensState::PlaceQueen(int32)
+    IL_0027:  pop
+    IL_0028:  nop
+    IL_0029:  ldloc.2
+    IL_002a:  ldc.i4.1
+    IL_002b:  add.ovf
+    IL_002c:  stloc.2
+    IL_002d:  ldloc.2
+    IL_002e:  ldloc.3
+    IL_002f:  stloc.s    VB$CG$t_i4$S0
+    IL_0031:  ldloc.s    VB$CG$t_i4$S0
+    IL_0033:  ble.s      IL_0014
+
+    IL_0035:  ldloc.1
+    IL_0036:  call       class [System.Core]System.Linq.ParallelQuery`1<!!0> [System.Core]System.Linq.ParallelEnumerable::AsParallel<class NQueens_VisualBasic.NQueensSolver/NQueensState>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+    IL_003b:  ldnull
+    IL_003c:  ldftn      int32 NQueens_VisualBasic.NQueensSolver::_Lambda$__6(class NQueens_VisualBasic.NQueensSolver/NQueensState)
+    IL_0042:  newobj     instance void class [mscorlib]System.Func`2<class NQueens_VisualBasic.NQueensSolver/NQueensState,int32>::.ctor(object,
+                                                                                                                                        native int)
+    IL_0047:  call       class [System.Core]System.Linq.ParallelQuery`1<!!1> [System.Core]System.Linq.ParallelEnumerable::Select<class NQueens_VisualBasic.NQueensSolver/NQueensState,int32>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                                                             class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_004c:  call       int32 [System.Core]System.Linq.ParallelEnumerable::Sum(class [System.Core]System.Linq.ParallelQuery`1<int32>)
+    IL_0051:  stloc.0
+    IL_0052:  br.s       IL_0054
+
+    IL_0054:  ldloc.0
+    IL_0055:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\NQueens.vb" startline="30" endline="30"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] int32 _Lambda$__6)
+    IL_0000:  ldarg.0
+    IL_0001:  callvirt   instance int32 NQueens_VisualBasic.NQueensSolver/NQueensState::CountSolutions()
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\NQueens.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\NQueens.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\NQueens.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\NQueens\NQueens_VisualBasic\NQueens.vb" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+]]></source>
+</source_elements></project>

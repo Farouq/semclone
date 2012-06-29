@@ -1,0 +1,672 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="21" endline="105"><![CDATA[
+  {
+    .entrypoint
+    // Code size       217 (0xd9)
+    .maxstack  3
+    .locals init ([0] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  br         IL_00d2
+
+    IL_0006:  nop
+    IL_0007:  ldsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate5'
+    IL_000c:  brtrue.s   IL_0021
+
+    IL_000e:  ldnull
+    IL_000f:  ldftn      float64 Program::'<Main>b__0'()
+    IL_0015:  newobj     instance void class [mscorlib]System.Func`1<float64>::.ctor(object,
+                                                                                     native int)
+    IL_001a:  stsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate5'
+    IL_001f:  br.s       IL_0021
+
+    IL_0021:  ldsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate5'
+    IL_0026:  call       void Program::Time<float64>(class [mscorlib]System.Func`1<!!0>)
+    IL_002b:  nop
+    IL_002c:  ldsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate6'
+    IL_0031:  brtrue.s   IL_0046
+
+    IL_0033:  ldnull
+    IL_0034:  ldftn      float64 Program::'<Main>b__1'()
+    IL_003a:  newobj     instance void class [mscorlib]System.Func`1<float64>::.ctor(object,
+                                                                                     native int)
+    IL_003f:  stsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate6'
+    IL_0044:  br.s       IL_0046
+
+    IL_0046:  ldsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate6'
+    IL_004b:  call       void Program::Time<float64>(class [mscorlib]System.Func`1<!!0>)
+    IL_0050:  nop
+    IL_0051:  ldsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate7'
+    IL_0056:  brtrue.s   IL_006b
+
+    IL_0058:  ldnull
+    IL_0059:  ldftn      float64 Program::'<Main>b__2'()
+    IL_005f:  newobj     instance void class [mscorlib]System.Func`1<float64>::.ctor(object,
+                                                                                     native int)
+    IL_0064:  stsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate7'
+    IL_0069:  br.s       IL_006b
+
+    IL_006b:  ldsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate7'
+    IL_0070:  call       void Program::Time<float64>(class [mscorlib]System.Func`1<!!0>)
+    IL_0075:  nop
+    IL_0076:  ldsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate8'
+    IL_007b:  brtrue.s   IL_0090
+
+    IL_007d:  ldnull
+    IL_007e:  ldftn      float64 Program::'<Main>b__3'()
+    IL_0084:  newobj     instance void class [mscorlib]System.Func`1<float64>::.ctor(object,
+                                                                                     native int)
+    IL_0089:  stsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate8'
+    IL_008e:  br.s       IL_0090
+
+    IL_0090:  ldsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate8'
+    IL_0095:  call       void Program::Time<float64>(class [mscorlib]System.Func`1<!!0>)
+    IL_009a:  nop
+    IL_009b:  ldsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate9'
+    IL_00a0:  brtrue.s   IL_00b5
+
+    IL_00a2:  ldnull
+    IL_00a3:  ldftn      float64 Program::'<Main>b__4'()
+    IL_00a9:  newobj     instance void class [mscorlib]System.Func`1<float64>::.ctor(object,
+                                                                                     native int)
+    IL_00ae:  stsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate9'
+    IL_00b3:  br.s       IL_00b5
+
+    IL_00b5:  ldsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate9'
+    IL_00ba:  call       void Program::Time<float64>(class [mscorlib]System.Func`1<!!0>)
+    IL_00bf:  nop
+    IL_00c0:  ldstr      "----"
+    IL_00c5:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_00ca:  nop
+    IL_00cb:  call       string [mscorlib]System.Console::ReadLine()
+    IL_00d0:  pop
+    IL_00d1:  nop
+    IL_00d2:  ldc.i4.1
+    IL_00d3:  stloc.0
+    IL_00d4:  br         IL_0006
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="37" endline="41"><![CDATA[
+  {
+    // Code size       48 (0x30)
+    .maxstack  3
+    .locals init ([0] class [System]System.Diagnostics.Stopwatch sw,
+             [1] !!T result)
+    IL_0000:  nop
+    IL_0001:  call       class [System]System.Diagnostics.Stopwatch [System]System.Diagnostics.Stopwatch::StartNew()
+    IL_0006:  stloc.0
+    IL_0007:  ldarg.0
+    IL_0008:  callvirt   instance !0 class [mscorlib]System.Func`1<!!T>::Invoke()
+    IL_000d:  stloc.1
+    IL_000e:  ldloc.0
+    IL_000f:  callvirt   instance valuetype [mscorlib]System.TimeSpan [System]System.Diagnostics.Stopwatch::get_Elapsed()
+    IL_0014:  box        [mscorlib]System.TimeSpan
+    IL_0019:  ldstr      ": "
+    IL_001e:  ldloc.1
+    IL_001f:  box        !!T
+    IL_0024:  call       string [mscorlib]System.String::Concat(object,
+                                                                object,
+                                                                object)
+    IL_0029:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_002e:  nop
+    IL_002f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="42" endline="50"><![CDATA[
+  {
+    // Code size       103 (0x67)
+    .maxstack  4
+    .locals init ([0] class Program/'<>c__DisplayClasse' 'CS$<>8__localsf',
+             [1] float64 CS$1$0000)
+    IL_0000:  newobj     instance void Program/'<>c__DisplayClasse'::.ctor()
+    IL_0005:  stloc.0
+    IL_0006:  nop
+    IL_0007:  ldloc.0
+    IL_0008:  ldc.r8     1.e-008
+    IL_0011:  stfld      float64 Program/'<>c__DisplayClasse'::step
+    IL_0016:  ldc.i4.0
+    IL_0017:  ldc.i4     0x5f5e100
+    IL_001c:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> [System.Core]System.Linq.Enumerable::Range(int32,
+                                                                                                                                    int32)
+    IL_0021:  ldloc.0
+    IL_0022:  ldftn      instance class '<>f__AnonymousType0`2'<int32,float64> Program/'<>c__DisplayClasse'::'<SerialLinqPi>b__b'(int32)
+    IL_0028:  newobj     instance void class [mscorlib]System.Func`2<int32,class '<>f__AnonymousType0`2'<int32,float64>>::.ctor(object,
+                                                                                                                                native int)
+    IL_002d:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<int32,class '<>f__AnonymousType0`2'<int32,float64>>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                       class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_0032:  ldsfld     class [mscorlib]System.Func`2<class '<>f__AnonymousType0`2'<int32,float64>,float64> Program::'CS$<>9__CachedAnonymousMethodDelegated'
+    IL_0037:  brtrue.s   IL_004c
+
+    IL_0039:  ldnull
+    IL_003a:  ldftn      float64 Program::'<SerialLinqPi>b__c'(class '<>f__AnonymousType0`2'<int32,float64>)
+    IL_0040:  newobj     instance void class [mscorlib]System.Func`2<class '<>f__AnonymousType0`2'<int32,float64>,float64>::.ctor(object,
+                                                                                                                                  native int)
+    IL_0045:  stsfld     class [mscorlib]System.Func`2<class '<>f__AnonymousType0`2'<int32,float64>,float64> Program::'CS$<>9__CachedAnonymousMethodDelegated'
+    IL_004a:  br.s       IL_004c
+
+    IL_004c:  ldsfld     class [mscorlib]System.Func`2<class '<>f__AnonymousType0`2'<int32,float64>,float64> Program::'CS$<>9__CachedAnonymousMethodDelegated'
+    IL_0051:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<class '<>f__AnonymousType0`2'<int32,float64>,float64>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                                                         class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_0056:  call       float64 [System.Core]System.Linq.Enumerable::Sum(class [mscorlib]System.Collections.Generic.IEnumerable`1<float64>)
+    IL_005b:  ldloc.0
+    IL_005c:  ldfld      float64 Program/'<>c__DisplayClasse'::step
+    IL_0061:  mul
+    IL_0062:  stloc.1
+    IL_0063:  br.s       IL_0065
+
+    IL_0065:  ldloc.1
+    IL_0066:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="51" endline="59"><![CDATA[
+  {
+    // Code size       103 (0x67)
+    .maxstack  4
+    .locals init ([0] class Program/'<>c__DisplayClass14' 'CS$<>8__locals15',
+             [1] float64 CS$1$0000)
+    IL_0000:  newobj     instance void Program/'<>c__DisplayClass14'::.ctor()
+    IL_0005:  stloc.0
+    IL_0006:  nop
+    IL_0007:  ldloc.0
+    IL_0008:  ldc.r8     1.e-008
+    IL_0011:  stfld      float64 Program/'<>c__DisplayClass14'::step
+    IL_0016:  ldc.i4.0
+    IL_0017:  ldc.i4     0x5f5e100
+    IL_001c:  call       class [System.Core]System.Linq.ParallelQuery`1<int32> [System.Core]System.Linq.ParallelEnumerable::Range(int32,
+                                                                                                                                  int32)
+    IL_0021:  ldloc.0
+    IL_0022:  ldftn      instance class '<>f__AnonymousType0`2'<int32,float64> Program/'<>c__DisplayClass14'::'<ParallelLinqPi>b__11'(int32)
+    IL_0028:  newobj     instance void class [mscorlib]System.Func`2<int32,class '<>f__AnonymousType0`2'<int32,float64>>::.ctor(object,
+                                                                                                                                native int)
+    IL_002d:  call       class [System.Core]System.Linq.ParallelQuery`1<!!1> [System.Core]System.Linq.ParallelEnumerable::Select<int32,class '<>f__AnonymousType0`2'<int32,float64>>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                                                     class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_0032:  ldsfld     class [mscorlib]System.Func`2<class '<>f__AnonymousType0`2'<int32,float64>,float64> Program::'CS$<>9__CachedAnonymousMethodDelegate13'
+    IL_0037:  brtrue.s   IL_004c
+
+    IL_0039:  ldnull
+    IL_003a:  ldftn      float64 Program::'<ParallelLinqPi>b__12'(class '<>f__AnonymousType0`2'<int32,float64>)
+    IL_0040:  newobj     instance void class [mscorlib]System.Func`2<class '<>f__AnonymousType0`2'<int32,float64>,float64>::.ctor(object,
+                                                                                                                                  native int)
+    IL_0045:  stsfld     class [mscorlib]System.Func`2<class '<>f__AnonymousType0`2'<int32,float64>,float64> Program::'CS$<>9__CachedAnonymousMethodDelegate13'
+    IL_004a:  br.s       IL_004c
+
+    IL_004c:  ldsfld     class [mscorlib]System.Func`2<class '<>f__AnonymousType0`2'<int32,float64>,float64> Program::'CS$<>9__CachedAnonymousMethodDelegate13'
+    IL_0051:  call       class [System.Core]System.Linq.ParallelQuery`1<!!1> [System.Core]System.Linq.ParallelEnumerable::Select<class '<>f__AnonymousType0`2'<int32,float64>,float64>(class [System.Core]System.Linq.ParallelQuery`1<!!0>,
+                                                                                                                                                                                       class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_0056:  call       float64 [System.Core]System.Linq.ParallelEnumerable::Sum(class [System.Core]System.Linq.ParallelQuery`1<float64>)
+    IL_005b:  ldloc.0
+    IL_005c:  ldfld      float64 Program/'<>c__DisplayClass14'::step
+    IL_0061:  mul
+    IL_0062:  stloc.1
+    IL_0063:  br.s       IL_0065
+
+    IL_0065:  ldloc.1
+    IL_0066:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="60" endline="72"><![CDATA[
+  {
+    // Code size       96 (0x60)
+    .maxstack  5
+    .locals init ([0] float64 sum,
+             [1] float64 step,
+             [2] int32 i,
+             [3] float64 x,
+             [4] float64 CS$1$0000,
+             [5] bool CS$4$0001)
+    IL_0000:  nop
+    IL_0001:  ldc.r8     0.0
+    IL_000a:  stloc.0
+    IL_000b:  ldc.r8     1.e-008
+    IL_0014:  stloc.1
+    IL_0015:  ldc.i4.0
+    IL_0016:  stloc.2
+    IL_0017:  br.s       IL_0048
+
+    IL_0019:  nop
+    IL_001a:  ldloc.2
+    IL_001b:  conv.r8
+    IL_001c:  ldc.r8     0.5
+    IL_0025:  add
+    IL_0026:  ldloc.1
+    IL_0027:  mul
+    IL_0028:  stloc.3
+    IL_0029:  ldloc.0
+    IL_002a:  ldc.r8     4.
+    IL_0033:  ldc.r8     1.
+    IL_003c:  ldloc.3
+    IL_003d:  ldloc.3
+    IL_003e:  mul
+    IL_003f:  add
+    IL_0040:  div
+    IL_0041:  add
+    IL_0042:  stloc.0
+    IL_0043:  nop
+    IL_0044:  ldloc.2
+    IL_0045:  ldc.i4.1
+    IL_0046:  add
+    IL_0047:  stloc.2
+    IL_0048:  ldloc.2
+    IL_0049:  ldc.i4     0x5f5e100
+    IL_004e:  clt
+    IL_0050:  stloc.s    CS$4$0001
+    IL_0052:  ldloc.s    CS$4$0001
+    IL_0054:  brtrue.s   IL_0019
+
+    IL_0056:  ldloc.1
+    IL_0057:  ldloc.0
+    IL_0058:  mul
+    IL_0059:  stloc.s    CS$1$0000
+    IL_005b:  br.s       IL_005d
+
+    IL_005d:  ldloc.s    CS$1$0000
+    IL_005f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="73" endline="86"><![CDATA[
+  {
+    // Code size       133 (0x85)
+    .maxstack  7
+    .locals init ([0] class Program/'<>c__DisplayClass1b' 'CS$<>8__locals1c',
+             [1] float64 CS$1$0000)
+    IL_0000:  newobj     instance void Program/'<>c__DisplayClass1b'::.ctor()
+    IL_0005:  stloc.0
+    IL_0006:  nop
+    IL_0007:  ldloc.0
+    IL_0008:  ldc.r8     0.0
+    IL_0011:  stfld      float64 Program/'<>c__DisplayClass1b'::sum
+    IL_0016:  ldloc.0
+    IL_0017:  ldc.r8     1.e-008
+    IL_0020:  stfld      float64 Program/'<>c__DisplayClass1b'::step
+    IL_0025:  ldloc.0
+    IL_0026:  newobj     instance void [mscorlib]System.Object::.ctor()
+    IL_002b:  stfld      object Program/'<>c__DisplayClass1b'::monitor
+    IL_0030:  ldc.i4.0
+    IL_0031:  ldc.i4     0x5f5e100
+    IL_0036:  ldsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate1a'
+    IL_003b:  brtrue.s   IL_0050
+
+    IL_003d:  ldnull
+    IL_003e:  ldftn      float64 Program::'<ParallelPi>b__17'()
+    IL_0044:  newobj     instance void class [mscorlib]System.Func`1<float64>::.ctor(object,
+                                                                                     native int)
+    IL_0049:  stsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate1a'
+    IL_004e:  br.s       IL_0050
+
+    IL_0050:  ldsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate1a'
+    IL_0055:  ldloc.0
+    IL_0056:  ldftn      instance float64 Program/'<>c__DisplayClass1b'::'<ParallelPi>b__18'(int32,
+                                                                                             class [mscorlib]System.Threading.Tasks.ParallelLoopState,
+                                                                                             float64)
+    IL_005c:  newobj     instance void class [mscorlib]System.Func`4<int32,class [mscorlib]System.Threading.Tasks.ParallelLoopState,float64,float64>::.ctor(object,
+                                                                                                                                                            native int)
+    IL_0061:  ldloc.0
+    IL_0062:  ldftn      instance void Program/'<>c__DisplayClass1b'::'<ParallelPi>b__19'(float64)
+    IL_0068:  newobj     instance void class [mscorlib]System.Action`1<float64>::.ctor(object,
+                                                                                       native int)
+    IL_006d:  call       valuetype [mscorlib]System.Threading.Tasks.ParallelLoopResult [mscorlib]System.Threading.Tasks.Parallel::For<float64>(int32,
+                                                                                                                                               int32,
+                                                                                                                                               class [mscorlib]System.Func`1<!!0>,
+                                                                                                                                               class [mscorlib]System.Func`4<int32,class [mscorlib]System.Threading.Tasks.ParallelLoopState,!!0,!!0>,
+                                                                                                                                               class [mscorlib]System.Action`1<!!0>)
+    IL_0072:  pop
+    IL_0073:  ldloc.0
+    IL_0074:  ldfld      float64 Program/'<>c__DisplayClass1b'::step
+    IL_0079:  ldloc.0
+    IL_007a:  ldfld      float64 Program/'<>c__DisplayClass1b'::sum
+    IL_007f:  mul
+    IL_0080:  stloc.1
+    IL_0081:  br.s       IL_0083
+
+    IL_0083:  ldloc.1
+    IL_0084:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="87" endline="104"><![CDATA[
+  {
+    // Code size       138 (0x8a)
+    .maxstack  6
+    .locals init ([0] class Program/'<>c__DisplayClass22' 'CS$<>8__locals23',
+             [1] float64 CS$1$0000)
+    IL_0000:  newobj     instance void Program/'<>c__DisplayClass22'::.ctor()
+    IL_0005:  stloc.0
+    IL_0006:  nop
+    IL_0007:  ldloc.0
+    IL_0008:  ldc.r8     0.0
+    IL_0011:  stfld      float64 Program/'<>c__DisplayClass22'::sum
+    IL_0016:  ldloc.0
+    IL_0017:  ldc.r8     1.e-008
+    IL_0020:  stfld      float64 Program/'<>c__DisplayClass22'::step
+    IL_0025:  ldloc.0
+    IL_0026:  newobj     instance void [mscorlib]System.Object::.ctor()
+    IL_002b:  stfld      object Program/'<>c__DisplayClass22'::monitor
+    IL_0030:  ldc.i4.0
+    IL_0031:  ldc.i4     0x5f5e100
+    IL_0036:  call       class [mscorlib]System.Collections.Concurrent.OrderablePartitioner`1<class [mscorlib]System.Tuple`2<int32,int32>> [mscorlib]System.Collections.Concurrent.Partitioner::Create(int32,
+                                                                                                                                                                                                       int32)
+    IL_003b:  ldsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate21'
+    IL_0040:  brtrue.s   IL_0055
+
+    IL_0042:  ldnull
+    IL_0043:  ldftn      float64 Program::'<ParallelPartitionerPi>b__1e'()
+    IL_0049:  newobj     instance void class [mscorlib]System.Func`1<float64>::.ctor(object,
+                                                                                     native int)
+    IL_004e:  stsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate21'
+    IL_0053:  br.s       IL_0055
+
+    IL_0055:  ldsfld     class [mscorlib]System.Func`1<float64> Program::'CS$<>9__CachedAnonymousMethodDelegate21'
+    IL_005a:  ldloc.0
+    IL_005b:  ldftn      instance float64 Program/'<>c__DisplayClass22'::'<ParallelPartitionerPi>b__1f'(class [mscorlib]System.Tuple`2<int32,int32>,
+                                                                                                        class [mscorlib]System.Threading.Tasks.ParallelLoopState,
+                                                                                                        float64)
+    IL_0061:  newobj     instance void class [mscorlib]System.Func`4<class [mscorlib]System.Tuple`2<int32,int32>,class [mscorlib]System.Threading.Tasks.ParallelLoopState,float64,float64>::.ctor(object,
+                                                                                                                                                                                                  native int)
+    IL_0066:  ldloc.0
+    IL_0067:  ldftn      instance void Program/'<>c__DisplayClass22'::'<ParallelPartitionerPi>b__20'(float64)
+    IL_006d:  newobj     instance void class [mscorlib]System.Action`1<float64>::.ctor(object,
+                                                                                       native int)
+    IL_0072:  call       valuetype [mscorlib]System.Threading.Tasks.ParallelLoopResult [mscorlib]System.Threading.Tasks.Parallel::ForEach<class [mscorlib]System.Tuple`2<int32,int32>,float64>(class [mscorlib]System.Collections.Concurrent.Partitioner`1<!!0>,
+                                                                                                                                                                                               class [mscorlib]System.Func`1<!!1>,
+                                                                                                                                                                                               class [mscorlib]System.Func`4<!!0,class [mscorlib]System.Threading.Tasks.ParallelLoopState,!!1,!!1>,
+                                                                                                                                                                                               class [mscorlib]System.Action`1<!!1>)
+    IL_0077:  pop
+    IL_0078:  ldloc.0
+    IL_0079:  ldfld      float64 Program/'<>c__DisplayClass22'::step
+    IL_007e:  ldloc.0
+    IL_007f:  ldfld      float64 Program/'<>c__DisplayClass22'::sum
+    IL_0084:  mul
+    IL_0085:  stloc.1
+    IL_0086:  br.s       IL_0088
+
+    IL_0088:  ldloc.1
+    IL_0089:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="24" endline="105"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  1
+    .locals init ([0] float64 CS$1$0000)
+    IL_0000:  call       float64 Program::SerialLinqPi()
+    IL_0005:  stloc.0
+    IL_0006:  br.s       IL_0008
+
+    IL_0008:  ldloc.0
+    IL_0009:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="25" endline="105"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  1
+    .locals init ([0] float64 CS$1$0000)
+    IL_0000:  call       float64 Program::ParallelLinqPi()
+    IL_0005:  stloc.0
+    IL_0006:  br.s       IL_0008
+
+    IL_0008:  ldloc.0
+    IL_0009:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="26" endline="105"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  1
+    .locals init ([0] float64 CS$1$0000)
+    IL_0000:  call       float64 Program::SerialPi()
+    IL_0005:  stloc.0
+    IL_0006:  br.s       IL_0008
+
+    IL_0008:  ldloc.0
+    IL_0009:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="27" endline="105"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  1
+    .locals init ([0] float64 CS$1$0000)
+    IL_0000:  call       float64 Program::ParallelPi()
+    IL_0005:  stloc.0
+    IL_0006:  br.s       IL_0008
+
+    IL_0008:  ldloc.0
+    IL_0009:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="28" endline="105"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       10 (0xa)
+    .maxstack  1
+    .locals init ([0] float64 CS$1$0000)
+    IL_0000:  call       float64 Program::ParallelPartitionerPi()
+    IL_0005:  stloc.0
+    IL_0006:  br.s       IL_0008
+
+    IL_0008:  ldloc.0
+    IL_0009:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="49" endline="105"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       38 (0x26)
+    .maxstack  4
+    .locals init ([0] float64 CS$1$0000)
+    IL_0000:  ldc.r8     4.
+    IL_0009:  ldc.r8     1.
+    IL_0012:  ldarg.0
+    IL_0013:  callvirt   instance !1 class '<>f__AnonymousType0`2'<int32,float64>::get_x()
+    IL_0018:  ldarg.0
+    IL_0019:  callvirt   instance !1 class '<>f__AnonymousType0`2'<int32,float64>::get_x()
+    IL_001e:  mul
+    IL_001f:  add
+    IL_0020:  div
+    IL_0021:  stloc.0
+    IL_0022:  br.s       IL_0024
+
+    IL_0024:  ldloc.0
+    IL_0025:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="58" endline="105"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       38 (0x26)
+    .maxstack  4
+    .locals init ([0] float64 CS$1$0000)
+    IL_0000:  ldc.r8     4.
+    IL_0009:  ldc.r8     1.
+    IL_0012:  ldarg.0
+    IL_0013:  callvirt   instance !1 class '<>f__AnonymousType0`2'<int32,float64>::get_x()
+    IL_0018:  ldarg.0
+    IL_0019:  callvirt   instance !1 class '<>f__AnonymousType0`2'<int32,float64>::get_x()
+    IL_001e:  mul
+    IL_001f:  add
+    IL_0020:  div
+    IL_0021:  stloc.0
+    IL_0022:  br.s       IL_0024
+
+    IL_0024:  ldloc.0
+    IL_0025:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="80" endline="105"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       14 (0xe)
+    .maxstack  1
+    .locals init ([0] float64 CS$1$0000)
+    IL_0000:  ldc.r8     0.0
+    IL_0009:  stloc.0
+    IL_000a:  br.s       IL_000c
+
+    IL_000c:  ldloc.0
+    IL_000d:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="94" endline="105"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       14 (0xe)
+    .maxstack  1
+    .locals init ([0] float64 CS$1$0000)
+    IL_0000:  ldc.r8     0.0
+    IL_0009:  stloc.0
+    IL_000a:  br.s       IL_000c
+
+    IL_000c:  ldloc.0
+    IL_000d:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       21 (0x15)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ldarg.0
+    IL_0007:  ldarg.1
+    IL_0008:  stfld      !0 class '<>f__AnonymousType0`2'<!'<i>j__TPar',!'<x>j__TPar'>::'<i>i__Field'
+    IL_000d:  ldarg.0
+    IL_000e:  ldarg.2
+    IL_000f:  stfld      !1 class '<>f__AnonymousType0`2'<!'<i>j__TPar',!'<x>j__TPar'>::'<x>i__Field'
+    IL_0014:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (!'<i>j__TPar' V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      !0 class '<>f__AnonymousType0`2'<!'<i>j__TPar',!'<x>j__TPar'>::'<i>i__Field'
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (!'<x>j__TPar' V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      !1 class '<>f__AnonymousType0`2'<!'<i>j__TPar',!'<x>j__TPar'>::'<x>i__Field'
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       89 (0x59)
+    .maxstack  2
+    .locals init (class [mscorlib]System.Text.StringBuilder V_0,
+             string V_1)
+    IL_0000:  newobj     instance void [mscorlib]System.Text.StringBuilder::.ctor()
+    IL_0005:  stloc.0
+    IL_0006:  ldloc.0
+    IL_0007:  ldstr      "{ i = "
+    IL_000c:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(string)
+    IL_0011:  pop
+    IL_0012:  ldloc.0
+    IL_0013:  ldarg.0
+    IL_0014:  ldfld      !0 class '<>f__AnonymousType0`2'<!'<i>j__TPar',!'<x>j__TPar'>::'<i>i__Field'
+    IL_0019:  box        !'<i>j__TPar'
+    IL_001e:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(object)
+    IL_0023:  pop
+    IL_0024:  ldloc.0
+    IL_0025:  ldstr      ", x = "
+    IL_002a:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(string)
+    IL_002f:  pop
+    IL_0030:  ldloc.0
+    IL_0031:  ldarg.0
+    IL_0032:  ldfld      !1 class '<>f__AnonymousType0`2'<!'<i>j__TPar',!'<x>j__TPar'>::'<x>i__Field'
+    IL_0037:  box        !'<x>j__TPar'
+    IL_003c:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(object)
+    IL_0041:  pop
+    IL_0042:  ldloc.0
+    IL_0043:  ldstr      " }"
+    IL_0048:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::Append(string)
+    IL_004d:  pop
+    IL_004e:  ldloc.0
+    IL_004f:  callvirt   instance string [mscorlib]System.Object::ToString()
+    IL_0054:  stloc.1
+    IL_0055:  br.s       IL_0057
+
+    IL_0057:  ldloc.1
+    IL_0058:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       64 (0x40)
+    .maxstack  3
+    .locals init (class '<>f__AnonymousType0`2'<!'<i>j__TPar',!'<x>j__TPar'> V_0,
+             bool V_1)
+    IL_0000:  ldarg.1
+    IL_0001:  isinst     class '<>f__AnonymousType0`2'<!'<i>j__TPar',!'<x>j__TPar'>
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  brfalse.s  IL_003a
+
+    IL_000a:  call       class [mscorlib]System.Collections.Generic.EqualityComparer`1<!0> class [mscorlib]System.Collections.Generic.EqualityComparer`1<!'<i>j__TPar'>::get_Default()
+    IL_000f:  ldarg.0
+    IL_0010:  ldfld      !0 class '<>f__AnonymousType0`2'<!'<i>j__TPar',!'<x>j__TPar'>::'<i>i__Field'
+    IL_0015:  ldloc.0
+    IL_0016:  ldfld      !0 class '<>f__AnonymousType0`2'<!'<i>j__TPar',!'<x>j__TPar'>::'<i>i__Field'
+    IL_001b:  callvirt   instance bool class [mscorlib]System.Collections.Generic.EqualityComparer`1<!'<i>j__TPar'>::Equals(!0,
+                                                                                                                            !0)
+    IL_0020:  brfalse.s  IL_003a
+
+    IL_0022:  call       class [mscorlib]System.Collections.Generic.EqualityComparer`1<!0> class [mscorlib]System.Collections.Generic.EqualityComparer`1<!'<x>j__TPar'>::get_Default()
+    IL_0027:  ldarg.0
+    IL_0028:  ldfld      !1 class '<>f__AnonymousType0`2'<!'<i>j__TPar',!'<x>j__TPar'>::'<x>i__Field'
+    IL_002d:  ldloc.0
+    IL_002e:  ldfld      !1 class '<>f__AnonymousType0`2'<!'<i>j__TPar',!'<x>j__TPar'>::'<x>i__Field'
+    IL_0033:  callvirt   instance bool class [mscorlib]System.Collections.Generic.EqualityComparer`1<!'<x>j__TPar'>::Equals(!0,
+                                                                                                                            !0)
+    IL_0038:  br.s       IL_003b
+
+    IL_003a:  ldc.i4.0
+    IL_003b:  stloc.1
+    IL_003c:  br.s       IL_003e
+
+    IL_003e:  ldloc.1
+    IL_003f:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\book codes\couples\C#,C++,F#,VB\ComputePi\ComputePi_CSharp\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       62 (0x3e)
+    .maxstack  3
+    .locals init (int32 V_0,
+             int32 V_1)
+    IL_0000:  ldc.i4     0xbb113aec
+    IL_0005:  stloc.0
+    IL_0006:  ldc.i4     0xa5555529
+    IL_000b:  ldloc.0
+    IL_000c:  mul
+    IL_000d:  call       class [mscorlib]System.Collections.Generic.EqualityComparer`1<!0> class [mscorlib]System.Collections.Generic.EqualityComparer`1<!'<i>j__TPar'>::get_Default()
+    IL_0012:  ldarg.0
+    IL_0013:  ldfld      !0 class '<>f__AnonymousType0`2'<!'<i>j__TPar',!'<x>j__TPar'>::'<i>i__Field'
+    IL_0018:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.EqualityComparer`1<!'<i>j__TPar'>::GetHashCode(!0)
+    IL_001d:  add
+    IL_001e:  stloc.0
+    IL_001f:  ldc.i4     0xa5555529
+    IL_0024:  ldloc.0
+    IL_0025:  mul
+    IL_0026:  call       class [mscorlib]System.Collections.Generic.EqualityComparer`1<!0> class [mscorlib]System.Collections.Generic.EqualityComparer`1<!'<x>j__TPar'>::get_Default()
+    IL_002b:  ldarg.0
+    IL_002c:  ldfld      !1 class '<>f__AnonymousType0`2'<!'<i>j__TPar',!'<x>j__TPar'>::'<x>i__Field'
+    IL_0031:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.EqualityComparer`1<!'<x>j__TPar'>::GetHashCode(!0)
+    IL_0036:  add
+    IL_0037:  stloc.0
+    IL_0038:  ldloc.0
+    IL_0039:  stloc.1
+    IL_003a:  br.s       IL_003c
+
+    IL_003c:  ldloc.1
+    IL_003d:  ret
+]]></source>
+</source_elements></project>

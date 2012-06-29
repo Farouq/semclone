@@ -1,0 +1,5 @@
+C:\Users\faa634\Desktop\book codes\F#\Code\Data and DataTypes\bin\Debug\Data_and_DataTypes.dll
+C:\Users\faa634\Desktop\book codes\F#\Code\Data and DataTypes\bin\Debug\Data_and_DataTypes.pdb
+C:\Users\faa634\Desktop\book codes\F#\Code\Data and DataTypes\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\faa634\Desktop\book codes\F#\Code\Data and DataTypes\obj\Debug\Data_and_DataTypes.dll
+C:\Users\faa634\Desktop\book codes\F#\Code\Data and DataTypes\obj\Debug\Data_and_DataTypes.pdb
