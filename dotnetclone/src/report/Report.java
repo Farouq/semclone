@@ -45,7 +45,7 @@ public class Report {
 	public static void parseSimCad(Configuration config, String rawFunctionsFileName) throws IOException{
 
 
-		String outputFileAddress=config.reportAddress+"CloneReportt.xml";
+		String outputFileAddress=config.reportAddress+"\\SimCadCloneReport.xml";
 
 	
 		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputFileAddress));
@@ -210,7 +210,7 @@ public class Report {
 					bufferedWriter.newLine();
 					bufferedWriter.flush();
 					bufferedWriter.close();		
-					System.out.println("Report genarated");
+					System.out.println("Report genarated look for the file: SimCadCloneReport.xml");
 
 
 

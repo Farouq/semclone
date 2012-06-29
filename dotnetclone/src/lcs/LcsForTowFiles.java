@@ -1,5 +1,6 @@
 package lcs;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -67,19 +68,19 @@ public class LcsForTowFiles {
 		for(int v =0; v<200;v++){
 			for(int c =0; c<200;c++){
 
-				//System.out.print(v+"    ");					//		if(vbcode.get(v).size()<1000 && cscode.get(c).size()<1000)
+				//System.out.print(v+"    ");				//		if(vbcode.get(v).size()<1000 && cscode.get(c).size()<1000)
 				{
 
 					double d=(double)LCSAlgorithm(vbcode.get(v),cscode.get(c)).size()*2/(vbcode.get(v).size()+cscode.get(c).size());
 					//	if(Integer.parseInt(vbdata.get(v).get(2))-Integer.parseInt(vbdata.get(v).get(1) )> 20 && d>0.4 &&	(Integer.parseInt(csdata.get(c).get(2))-Integer.parseInt(csdata.get(c).get(1))>20 ))
-			
-				
-				
-						System.out.println("==========================================================================================================================================");
 
-						System.out.println(d );
-						// 				    out.write(i+"	"+d+"\n");	
-								
+
+
+					System.out.println("==========================================================================================================================================");
+
+					System.out.println(d );
+					// 				    out.write(i+"	"+d+"\n");
+
 
 				}
 
@@ -97,6 +98,128 @@ public class LcsForTowFiles {
 
 
 
+	}
+
+	public static void lcs (String filename)throws Exception	
+	{ 
+		Configuration config=Configuration.loadFromFile();
+		String outputFileAddress=config.reportAddress+"\\LCSCloneReport.xml";
+		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputFileAddress));
+		bufferedWriter.write("<clones>");
+		bufferedWriter.newLine();
+
+		parse(filename,filename);
+
+
+
+		for(int v =0; v<vbcode.size()-1;v++){
+			for(int c =v+1; c<cscode.size();c++){
+
+				if(vbcode.get(v).size()<1000 && cscode.get(c).size()<1000)
+				{
+					double d=(double)LCSAlgorithm(vbcode.get(v),cscode.get(c)).size()*2/(vbcode.get(v).size()+cscode.get(c).size());
+					//System.out.println(d );
+					//out.write(i+"	"+d+"\n");
+
+					if (d>=config.threshold){
+						// write to report
+						bufferedWriter.write( "<clone_pair>");
+						bufferedWriter.newLine();
+						System.out.println(d );
+						// first fragment
+						bufferedWriter.write( "<clone_fragment file=\""+vbdata.get(v).get(0)+"\" startline=\""+ vbdata.get(v).get(1) +"\" endline=\""+ vbdata.get(v).get(2)+"\">");
+						bufferedWriter.newLine();
+						bufferedWriter.write("<![CDATA["+ getsource( config, vbdata.get(v).get(0), vbdata.get(v).get(1))+"]]>");
+						bufferedWriter.newLine();
+						bufferedWriter.write("</clone_fragment>");
+						bufferedWriter.newLine();
+						//second fragment
+						bufferedWriter.write( "<clone_fragment file=\""+csdata.get(c).get(0)+"\" startline=\""+ csdata.get(c).get(1) +"\" endline=\""+ csdata.get(c).get(2)+"\">");
+						bufferedWriter.newLine();
+						bufferedWriter.write("<![CDATA["+getsource( config, csdata.get(c).get(0), csdata.get(c).get(1))+"]]>");
+						bufferedWriter.newLine();
+						bufferedWriter.write("</clone_fragment>");
+						bufferedWriter.newLine();
+						//close pair
+						bufferedWriter.write("</clone_pair>");
+						bufferedWriter.newLine();
+					}
+
+				}
+
+			}	 
+		}
+
+
+
+		// close file		
+		bufferedWriter.write("</clones>");
+		bufferedWriter.newLine();
+		bufferedWriter.flush();
+		bufferedWriter.close();		
+
+		System.out.println("Report Generated look for file:  LCSCloneReport.xml");
+
+	}
+
+	public static String getsource(Configuration config, String fileName, String startLine) throws IOException{
+
+		String source=null;
+		DocumentBuilderFactory dbfs = DocumentBuilderFactory.newInstance();
+		try{
+			DocumentBuilder dbs = dbfs.newDocumentBuilder();
+
+			Document docs = dbs.parse(config.disassebledAddress+"\\allFiles.xml_0_source.xml");
+			docs.getDocumentElement().normalize();
+
+
+			Element roots = docs.getDocumentElement();
+
+
+
+			NodeList nls = roots.getElementsByTagName("source_elements");
+
+			//		System.out.println(nls.getLength());
+
+			if(nls.getLength()>0){
+				NodeList sourceLists = nls.item(0).getChildNodes();
+
+
+
+				boolean found=false;
+				int k=0;
+
+
+				while(!found && k<sourceLists.getLength()){
+					Node sources = sourceLists.item(k);
+					k++;
+					if (sources.getNodeType() != Node.ELEMENT_NODE) 
+						continue;
+
+					String files = sources.getAttributes().getNamedItem("file").getFirstChild().getNodeValue();
+					String startlines = sources.getAttributes().getNamedItem("startline").getFirstChild().getNodeValue();
+					String endlines = sources.getAttributes().getNamedItem("endline").getFirstChild().getNodeValue();
+					String contents = sources.getFirstChild().getTextContent();
+
+					if(fileName.equals(files) && startLine.equals(startlines))
+					{
+						found=true;
+						source=contents;
+					
+					}
+
+				}
+			}
+			
+		
+	
+	}
+
+	catch (Exception e) {
+		e.printStackTrace();
+
+	}
+		return source;
 	}
 
 

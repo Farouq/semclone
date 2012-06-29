@@ -1,5 +1,5 @@
 "C:\Program Files\Microsoft Visual Studio 8\SDK\v2.0\Bin"
-0.5
+0.6
 5.0
-1
-testcases/mono
+3
+testcases/itext
