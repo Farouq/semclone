@@ -25,6 +25,8 @@ public class Starter_Preparation_Step1 {
 		
 		System.out.println("Now copy SourceCode files into: " +config.sourceCodeAddress); 
 		System.out.println("Now copy Bytecode files into: " +config.byteCodeAddress); 
+		System.out.println(config.comparisonMethod);
+		
 	}
 	
 	

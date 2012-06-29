@@ -20,7 +20,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         try {
-            getFiles("C:/Users/faa634/Documents/Visual Studio 2010/Projects/"); // path of system to study
+            getFiles("C:/Users/faa634/Documents/Visual Studio 2010/Projects/asxgui/"); // path of system to study
         } catch (Exception e) {//Catch exception if any
             System.err.println("Error: " + e.getMessage());
         }
@@ -51,7 +51,7 @@ public class Main {
         String line = null;
 
         while ((line = input.readLine()) != null) {
-            System.out.println(line);
+        //    System.out.println(line);
             output.add(line);
         }
 

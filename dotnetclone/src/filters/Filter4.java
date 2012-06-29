@@ -77,7 +77,7 @@ public class Filter4 {
 
 		in.close();
 		out.close();
-		System.out.println("Filter4 done");
+	//	System.out.println("Filter4 done");
 	}
 	
 	
@@ -207,6 +207,58 @@ public class Filter4 {
 		in.close();
 		out.close();
 		System.out.println("Filter7 done");
+	}
+	
+	
+	
+	
+	public static void filter8(String fileName) throws Exception {
+
+		String newFileName = fileName.subSequence(0, fileName.lastIndexOf('.'))+ "_8.xml";
+		File newf = new File(newFileName);
+		if (newf.exists())
+			newf.delete();
+
+		BufferedReader in = new BufferedReader(new FileReader(fileName));
+		PrintWriter out = new PrintWriter(new FileWriter(newf));
+
+		String lin;
+	
+
+		while ((lin = in.readLine()) != null)
+		{
+
+		
+			lin=lin.trim();
+			if(!lin.startsWith("<"))
+			{
+				
+			int k= lin.indexOf(".");
+			if(k>0)
+				lin = lin.substring(0,k);
+
+			k=lin.indexOf(" ");
+			if(k>0)
+					lin = lin.substring(0,k);
+
+				if(lin.trim().startsWith("int")||
+						lin.trim().startsWith("float")||
+						lin.trim().startsWith("string")||
+						lin.trim().startsWith("bool")||
+						lin.trim().startsWith("uint")||
+						lin.trim().startsWith("IL_")
+
+						)
+					continue;
+			
+			}
+			out.println(lin);
+		//	System.out.println(lin);
+		}
+
+		in.close();
+		out.close();
+	//	System.out.println("Filter8 done");
 	}
 	
 	

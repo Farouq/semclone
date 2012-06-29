@@ -29,7 +29,7 @@ import ca.usask.cs.srlab.util.XMLUtil;
 
 public class SimhashCloneTest6e {
 
-	static int simThreshold = 20;
+	public static int simThreshold = 16;
 	
 	static boolean strictOnMembership = false;
 	static double clusterMembershipRatio = 0.9;	//for a candidate item, it is the ratio of how many items are matched are matched vs total items in a cluster 
@@ -486,6 +486,30 @@ public class SimhashCloneTest6e {
 						deviation = -1;
 					}	
 					simThreshold2 = 13;
+					break;
+				case 20:
+					if(searchItem.loc < 6){
+						deviation = -13;
+					}else if(searchItem.loc < 8){
+						deviation = -12;
+					}else if(searchItem.loc < 10){
+						deviation = -11;
+					}else if(searchItem.loc < 20){
+						deviation = -10;
+					}else if(searchItem.loc < 30){
+						deviation = -9;
+					}else if(searchItem.loc < 40){
+						deviation = -8;
+					}else if(searchItem.loc < 50){
+						deviation = -7;
+					}else if(searchItem.loc < 100){
+						deviation = -6;
+					}else if(searchItem.loc < 200){
+						deviation = -5;
+					}else if(searchItem.loc < 400){
+						deviation = -4;
+					}
+					simThreshold2 = 20;
 					break;
 				}
 				

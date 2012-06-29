@@ -22,6 +22,13 @@ public class Configuration {
 
 	//default !!!
 	public float min_threshold=5.0f;
+	
+	/*  default comparison method is SimCad
+	 *  1 for SimCad
+	 *  2 for LCS (Longest Common Subsequent)
+	 *  3 for levenshtien distance
+	 */
+	public int comparisonMethod=1;
 
  
 	 public static Configuration loadFromFile() throws Exception
@@ -32,7 +39,8 @@ public class Configuration {
 		 config.disassembeler_EXE_path=items.get(0);
 		 config.threshold=Float.parseFloat(items.get(1));
 		 config.min_threshold=Float.parseFloat(items.get(2));
-		 String projectAddress=items.get(3);
+		 config.comparisonMethod=Integer.parseInt(items.get(3));
+		 String projectAddress=items.get(4);
 		 
 		 	config.sourceCodeAddress=projectAddress+"/0_SourceCode";
 		 	config.byteCodeAddress=projectAddress+"/1_ByteCodes";

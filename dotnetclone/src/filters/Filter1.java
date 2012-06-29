@@ -40,7 +40,7 @@ public class Filter1 {
 
 		in.close();
 		out.close();
-		System.out.println("Filter1 done");
+	//	System.out.println("Filter1 done");
 	}
 
 }
