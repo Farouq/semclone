@@ -80,7 +80,6 @@ public class LcsForTowFiles {
 
 					System.out.println(d );
 					// 				    out.write(i+"	"+d+"\n");
-
 
 				}
 
@@ -125,7 +124,7 @@ public class LcsForTowFiles {
 						// write to report
 						bufferedWriter.write( "<clone_pair>");
 						bufferedWriter.newLine();
-						System.out.println(d );
+						//System.out.println(d );
 						// first fragment
 						bufferedWriter.write( "<clone_fragment file=\""+vbdata.get(v).get(0)+"\" startline=\""+ vbdata.get(v).get(1) +"\" endline=\""+ vbdata.get(v).get(2)+"\">");
 						bufferedWriter.newLine();

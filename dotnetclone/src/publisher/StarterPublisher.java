@@ -469,7 +469,22 @@ public class StarterPublisher {
 						out_lines_source.add("<source file=\""+currentSourceFileAddress+"\" startline=\""+methoBlockStartLine+"\" endline=\""+methoBlockEndLine+"\"><![CDATA[");
 						for(String llll : methodBlockBuffer_source)
 						{
-							out_lines_source.add(llll);
+					        StringBuffer out = new StringBuffer(); // Used to hold the output.
+					        char current; // Used to reference the current character.
+
+					        if (llll == null || ("".equals(llll))) continue;
+					        for (int ii = 0; ii < llll.length(); ii++) {
+					            current = llll.charAt(ii); // NOTE: No IndexOutOfBoundsException caught here; it should not happen.
+					            if ((current == 0x9) ||
+					                (current == 0xA) ||
+					                (current == 0xD) ||
+					                ((current >= 0x20) && (current <= 0xD7FF)) ||
+					                ((current >= 0xE000) && (current <= 0xFFFD)) ||
+					                ((current >= 0x10000) && (current <= 0x10FFFF)))
+					                out.append(current);
+					        }
+					       
+							out_lines_source.add(out.toString());
 						}
 						out_lines_source.add("]]></source>");
 					}
