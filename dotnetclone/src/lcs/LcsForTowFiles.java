@@ -102,12 +102,21 @@ public class LcsForTowFiles {
 	public static void lcs (String filename)throws Exception	
 	{ 
 		Configuration config=Configuration.loadFromFile();
-		String outputFileAddress=config.reportAddress+"\\LCSCloneReport.xml";
+		String outputFileAddress=config.reportAddress+"\\LCSSameLanguageCloneReport.xml";
 		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputFileAddress));
 		bufferedWriter.write("<clones>");
 		bufferedWriter.newLine();
 
+		String outputFileAddress2=config.reportAddress+"\\LCSCrossLanguageCloneReport.xml";
+		BufferedWriter bufferedWriter2 = new BufferedWriter(new FileWriter(outputFileAddress2));
+		bufferedWriter2.write("<clones>");
+		bufferedWriter2.newLine();
+
+
 		parse(filename,filename);
+		
+		int nSameLanguage=0;
+		int nCrossLanguage=0;
 
 
 
@@ -122,26 +131,57 @@ public class LcsForTowFiles {
 
 					if (d>=config.threshold){
 						// write to report
-						bufferedWriter.write( "<clone_pair>");
-						bufferedWriter.newLine();
-						//System.out.println(d );
-						// first fragment
-						bufferedWriter.write( "<clone_fragment file=\""+vbdata.get(v).get(0)+"\" startline=\""+ vbdata.get(v).get(1) +"\" endline=\""+ vbdata.get(v).get(2)+"\">");
-						bufferedWriter.newLine();
-						bufferedWriter.write("<![CDATA["+ getsource( config, vbdata.get(v).get(0), vbdata.get(v).get(1))+"]]>");
-						bufferedWriter.newLine();
-						bufferedWriter.write("</clone_fragment>");
-						bufferedWriter.newLine();
-						//second fragment
-						bufferedWriter.write( "<clone_fragment file=\""+csdata.get(c).get(0)+"\" startline=\""+ csdata.get(c).get(1) +"\" endline=\""+ csdata.get(c).get(2)+"\">");
-						bufferedWriter.newLine();
-						bufferedWriter.write("<![CDATA["+getsource( config, csdata.get(c).get(0), csdata.get(c).get(1))+"]]>");
-						bufferedWriter.newLine();
-						bufferedWriter.write("</clone_fragment>");
-						bufferedWriter.newLine();
-						//close pair
-						bufferedWriter.write("</clone_pair>");
-						bufferedWriter.newLine();
+						//check if cross-language clones
+						if(vbdata.get(v).get(0).endsWith(".cs")&&csdata.get(c).get(0).endsWith(".vb") || vbdata.get(v).get(0).endsWith(".vb")&&csdata.get(c).get(0).endsWith(".cs")){
+
+							//write to a separate file for cross language clone
+							bufferedWriter2.write( "<clone_pair>");
+							bufferedWriter2.newLine();
+							//System.out.println(d );
+							// first fragment
+							bufferedWriter2.write( "<clone_fragment file=\""+vbdata.get(v).get(0)+"\" startline=\""+ vbdata.get(v).get(1) +"\" endline=\""+ vbdata.get(v).get(2)+"\">");
+							bufferedWriter2.newLine();
+							bufferedWriter2.write("<![CDATA["+ getsource( config, vbdata.get(v).get(0), vbdata.get(v).get(1))+"]]>");
+							bufferedWriter2.newLine();
+							bufferedWriter2.write("</clone_fragment>");
+							bufferedWriter2.newLine();
+							//second fragment
+							bufferedWriter2.write( "<clone_fragment file=\""+csdata.get(c).get(0)+"\" startline=\""+ csdata.get(c).get(1) +"\" endline=\""+ csdata.get(c).get(2)+"\">");
+							bufferedWriter2.newLine();
+							bufferedWriter2.write("<![CDATA["+getsource( config, csdata.get(c).get(0), csdata.get(c).get(1))+"]]>");
+							bufferedWriter2.newLine();
+							bufferedWriter2.write("</clone_fragment>");
+							bufferedWriter2.newLine();
+							//close pair
+							bufferedWriter2.write("</clone_pair>");
+							bufferedWriter2.newLine();
+							nCrossLanguage++;
+
+						}else
+						{
+							// same language clones
+							bufferedWriter.write( "<clone_pair>");
+							bufferedWriter.newLine();
+							//System.out.println(d );
+							// first fragment
+							bufferedWriter.write( "<clone_fragment file=\""+vbdata.get(v).get(0)+"\" startline=\""+ vbdata.get(v).get(1) +"\" endline=\""+ vbdata.get(v).get(2)+"\">");
+							bufferedWriter.newLine();
+							bufferedWriter.write("<![CDATA["+ getsource( config, vbdata.get(v).get(0), vbdata.get(v).get(1))+"]]>");
+							bufferedWriter.newLine();
+							bufferedWriter.write("</clone_fragment>");
+							bufferedWriter.newLine();
+							//second fragment
+							bufferedWriter.write( "<clone_fragment file=\""+csdata.get(c).get(0)+"\" startline=\""+ csdata.get(c).get(1) +"\" endline=\""+ csdata.get(c).get(2)+"\">");
+							bufferedWriter.newLine();
+							bufferedWriter.write("<![CDATA["+getsource( config, csdata.get(c).get(0), csdata.get(c).get(1))+"]]>");
+							bufferedWriter.newLine();
+							bufferedWriter.write("</clone_fragment>");
+							bufferedWriter.newLine();
+							//close pair
+							bufferedWriter.write("</clone_pair>");
+							bufferedWriter.newLine();
+							nSameLanguage++;
+						}
 					}
 
 				}
@@ -157,7 +197,17 @@ public class LcsForTowFiles {
 		bufferedWriter.flush();
 		bufferedWriter.close();		
 
-		System.out.println("Report Generated look for file:  LCSCloneReport.xml");
+		bufferedWriter2.write("</clones>");
+		bufferedWriter2.newLine();
+		bufferedWriter2.flush();
+		bufferedWriter2.close();	
+
+		System.out.print("Report Generated look for files:  LCSSameLanguageCloneReport.xml");
+		System.out.println("and   LCSCrossLanguageCloneReport.xml");
+		System.out.println("The number of cross-language clone pairs are: "+nCrossLanguage );
+		System.out.println("The number of same-language clone pairs are : "+nSameLanguage);
+		
+		
 
 	}
 
@@ -204,20 +254,20 @@ public class LcsForTowFiles {
 					{
 						found=true;
 						source=contents;
-					
+
 					}
 
 				}
 			}
-			
-		
-	
-	}
 
-	catch (Exception e) {
-		e.printStackTrace();
 
-	}
+
+		}
+
+		catch (Exception e) {
+			e.printStackTrace();
+
+		}
 		return source;
 	}
 
