@@ -27,7 +27,6 @@ public class Configuration {
 	 *  1 for SimCad
 	 *  2 for LCS (Longest Common Subsequent)
 	 *  3 for levenshtien distance
-	 *  from second machine -test
 	 */
 	public int comparisonMethod=1;
 
