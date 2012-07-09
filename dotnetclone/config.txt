@@ -1,5 +1,5 @@
 "C:\Program Files\Microsoft Visual Studio 8\SDK\v2.0\Bin"
-0.6
+0.7
 5.0
-3
-testcases/itext
+1
+testcases/asxgui

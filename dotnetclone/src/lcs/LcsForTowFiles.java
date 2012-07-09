@@ -102,12 +102,12 @@ public class LcsForTowFiles {
 	public static void lcs (String filename)throws Exception	
 	{ 
 		Configuration config=Configuration.loadFromFile();
-		String outputFileAddress=config.reportAddress+"\\LCSSameLanguageCloneReport.xml";
+		String outputFileAddress=config.reportAddress+"\\LCSSameLanguageCloneReport"+ config.threshold+".xml";
 		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputFileAddress));
 		bufferedWriter.write("<clones>");
 		bufferedWriter.newLine();
 
-		String outputFileAddress2=config.reportAddress+"\\LCSCrossLanguageCloneReport.xml";
+		String outputFileAddress2=config.reportAddress+"\\LCSCrossLanguageCloneReport"+ config.threshold+".xml";
 		BufferedWriter bufferedWriter2 = new BufferedWriter(new FileWriter(outputFileAddress2));
 		bufferedWriter2.write("<clones>");
 		bufferedWriter2.newLine();

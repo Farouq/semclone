@@ -30357,7 +30357,7 @@
     IL_03a2:  stfld      bool ASXGui.About::_contentLoaded
     IL_03a7:  ret
 ]]></source>
-<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="24" endline="27"><![CDATA[
   {
     // Code size       20 (0x14)
     .maxstack  5
@@ -30379,7 +30379,7 @@
     IL_0012:  ldloc.0
     IL_0013:  ret
 ]]></source>
-<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="28" endline="34"><![CDATA[
   {
     // Code size       17 (0x11)
     .maxstack  6
@@ -30402,7 +30402,7 @@
     IL_000f:  ldloc.0
     IL_0010:  ret
 ]]></source>
-<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="35" endline="41"><![CDATA[
   {
     // Code size       16 (0x10)
     .maxstack  8
@@ -30423,7 +30423,7 @@
     IL_000e:  nop
     IL_000f:  ret
 ]]></source>
-<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="42" endline="51"><![CDATA[
   {
     // Code size       51 (0x33)
     .maxstack  8
@@ -30462,7 +30462,7 @@
     IL_0031:  ldloc.0
     IL_0032:  ret
 ]]></source>
-<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="52" endline="58"><![CDATA[
   {
     // Code size       11 (0xb)
     .maxstack  8

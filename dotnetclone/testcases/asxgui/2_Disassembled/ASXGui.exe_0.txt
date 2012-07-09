@@ -81,7 +81,7 @@
 .stackreserve 0x00100000
 .subsystem 0x0002       // WINDOWS_GUI
 .corflags 0x00000003    //  ILONLY 32BITREQUIRED
-// Image base: 0x042E0000
+// Image base: 0x04160000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -29709,38 +29709,38 @@
     IL_0694:  stfld      class [PresentationFramework]System.Windows.Controls.Button ASXGui.MainForm::cmdUp
 //000103:              Progress</Button>
 //000104:         <Grid Grid.Column="1" Margin="11.525,58.544,11.432,91.456" Name="page2" Visibility="Hidden">
-//000105:             <Grid.RowDefinitions>
-//000106:                 <RowDefinition Height="36*" MinHeight="5" />
-//000107:                 <RowDefinition Height="19*" MinHeight="18"/>
-//000108:                 <RowDefinition Height="15*" MinHeight="15"/>
-//000109:                 <RowDefinition Height="19*"/>
-//000110:                 <RowDefinition Height="15*"/>
-//000111:                 <RowDefinition Height="19*"/>
-//000112:                 <RowDefinition Height="15*"/>
+//000105:             <Grid.ColumnDefinitions>
+//000106:                 <ColumnDefinition Width="77*" />
+//000107:                 <ColumnDefinition Width="390*" />
+//000108:             </Grid.ColumnDefinitions>
+//000109:             <Grid.RowDefinitions>
+//000110:                 <RowDefinition Height="36*" MinHeight="5" />
+//000111:                 <RowDefinition Height="19*" MinHeight="18"/>
+//000112:                 <RowDefinition Height="15*" MinHeight="15"/>
 //000113:                 <RowDefinition Height="19*"/>
 //000114:                 <RowDefinition Height="15*"/>
-//000115:                 <RowDefinition Height="40*" MinHeight="40" />
-//000116:             </Grid.RowDefinitions>
-//000117:             <Rectangle Name="Progress" Grid.RowSpan="10" />
-//000118:             <Label Margin="0,-0.111,0,0" Name="lblCurrentJob">Current Job:</Label>
-//000119:             <ProgressBar Grid.Row="1" Margin="77,3,23,3" Name="videoprogress" />
-//000120:             <Label Grid.Row="1" HorizontalAlignment="Left" Margin="13.216,0,0,0" Name="lblVideo" Padding="0" VerticalContentAlignment="Center" Width="35.37" Height="16.101" Grid.RowSpan="2" VerticalAlignment="Top">Video:</Label>
-//000121:             <Label Grid.Row="2" Margin="77,0.001,0,0" Name="lblVF" Padding="0" HorizontalAlignment="Left" Width="51.475" VerticalContentAlignment="Center">Frame #:</Label>
-//000122:             <Label Grid.Row="2" Margin="133,0,170.772,0" Name="lblVideoFrame" Padding="0" VerticalContentAlignment="Center" />
-//000123:             <Label Grid.Row="2" Margin="0,0,119.677,0" Name="lblVT" Padding="0" HorizontalAlignment="Right" Width="51.443" VerticalContentAlignment="Center">Time Left:</Label>
-//000124:             <Label Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,23,0" Name="lblVTime" Padding="0" Width="87" VerticalContentAlignment="Center" />
-//000125:             <Label Grid.Row="4" HorizontalAlignment="Right" Margin="0,0,23,0" Name="lblPass2Time" Padding="0" Width="87" VerticalContentAlignment="Center" />
-//000126:             <Label Grid.Row="3" Margin="133,0,170.772,0.211" Name="lblAudioFrame" Padding="0" VerticalContentAlignment="Center" Height="15" Grid.RowSpan="2" VerticalAlignment="Bottom" />
-//000127:             <Label Grid.Row="6" HorizontalAlignment="Right" Margin="0,0,23,0" Name="lblAudioTime" Padding="0" Width="87" VerticalContentAlignment="Center" />
-//000128:             <ProgressBar Grid.Row="7" Margin="77,3,23,3" Name="muxing" />
-//000129:             <Label Grid.Row="7" HorizontalAlignment="Left" Margin="13.216,0.186,0,0.595" Name="lblMux" Padding="0" VerticalContentAlignment="Center" Width="61.784">Finishing:</Label>
-//000130:             <Label Grid.Row="8" HorizontalAlignment="Right" Margin="0,0,23,0" Name="lblMuxTIme" Padding="0" Width="87" VerticalContentAlignment="Center" />
-//000131:             <Label Grid.Row="9" HorizontalContentAlignment="Right" Name="lblOutFile" VerticalContentAlignment="Bottom" Padding="12"></Label>
-//000132:             <ProgressBar Margin="77,2.789,23,3.211" Name="audioprogress" Grid.Row="3" />
-//000133:             <Label HorizontalAlignment="Left" Margin="13.216,0,0,1.935" Name="lblAudio" Padding="0" VerticalContentAlignment="Center" Width="35.37" Grid.Row="3">Audio:</Label>
-//000134:             <Label Grid.RowSpan="2" HorizontalAlignment="Left" Margin="77,18.789,0,0.211" Name="lblAF" Padding="0" VerticalContentAlignment="Center" Width="51.475" Grid.Row="3">Progress:</Label>
-//000135:         </Grid>
-//000136:         <Button Height="23" Margin="237.5,0,0,61.447" Name="cmdUp" VerticalAlignment="Bottom" Click="cmdUp_Click" Grid.Column="1" HorizontalAlignment="Left" Width="27.745">
+//000115:                 <RowDefinition Height="19*"/>
+//000116:                 <RowDefinition Height="15*"/>
+//000117:                 <RowDefinition Height="19*"/>
+//000118:                 <RowDefinition Height="15*"/>
+//000119:                 <RowDefinition Height="40*" MinHeight="40" />
+//000120:             </Grid.RowDefinitions>
+//000121:             <Rectangle Name="Progress" Grid.RowSpan="10" Grid.ColumnSpan="2" />
+//000122:             <Label Margin="0,-0.111,0,0" Name="lblCurrentJob" Grid.ColumnSpan="2">Current Job:</Label>
+//000123:             <ProgressBar Grid.Row="1" Margin="0,3,23,3" Name="videoprogress" Grid.Column="1" />
+//000124:             <Label Grid.Row="1" HorizontalAlignment="Left" Margin="13,0,0,0" Name="lblVideo" Padding="0" VerticalContentAlignment="Center" Width="35.37" Height="16.101" VerticalAlignment="Top">Video:</Label>
+//000125:             <Label Grid.Row="2" Margin="0,0.001,0,0" Name="lblVF" Padding="0" HorizontalAlignment="Left" Width="51.475" VerticalContentAlignment="Center" Grid.Column="1">Frame #:</Label>
+//000126:             <Label Grid.Row="2" Margin="56,0,171,0" Name="lblVideoFrame" Padding="0" VerticalContentAlignment="Center" Grid.Column="1" />
+//000127:             <Label Grid.Row="2" Margin="0,0,120,0" Name="lblVT" Padding="0" HorizontalAlignment="Right" Width="51.443" VerticalContentAlignment="Center" Grid.Column="1">Time Left:</Label>
+//000128:             <Label Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,23,0" Name="lblVTime" Padding="0" Width="87" VerticalContentAlignment="Center" Grid.Column="1" />
+//000129:             <Label Grid.Row="4" HorizontalAlignment="Right" Margin="0,0,23,0" Name="lblPass2Time" Padding="0" Width="87" VerticalContentAlignment="Center" Grid.Column="1" />
+//000130:             <Label Grid.Row="3" Margin="56,0,171,0.211" Name="lblAudioFrame" Padding="0" VerticalContentAlignment="Center" Height="15" Grid.RowSpan="2" VerticalAlignment="Bottom" Grid.Column="1" />
+//000131:             <Label Grid.Row="6" HorizontalAlignment="Right" Margin="0,0,23,0" Name="lblAudioTime" Padding="0" Width="87" VerticalContentAlignment="Center" Grid.Column="1" />
+//000132:             <ProgressBar Grid.Row="7" Margin="0,3,23,3" Name="muxing" Grid.Column="1" />
+//000133:             <Label Grid.Row="7" HorizontalAlignment="Left" Margin="13,0.186,0,0.595" Name="lblMux" Padding="0" VerticalContentAlignment="Center" Width="61.784">Finishing:</Label>
+//000134:             <Label Grid.Row="8" HorizontalAlignment="Right" Margin="0,0,23,0" Name="lblMuxTIme" Padding="0" Width="87" VerticalContentAlignment="Center" Grid.Column="1" />
+//000135:             <Label Grid.Row="9" HorizontalContentAlignment="Right" Name="lblOutFile" VerticalContentAlignment="Bottom" Padding="12" Grid.ColumnSpan="2"></Label>
+//000136:             <ProgressBar Margin="0,2.789,23,3.211" Name="audioprogress" Grid.Row="3" Grid.Column="1" />
     IL_0699:  ldarg.0
     IL_069a:  ldfld      class [PresentationFramework]System.Windows.Controls.Button ASXGui.MainForm::cmdUp
     IL_069f:  ldarg.0
@@ -29756,9 +29756,9 @@
     IL_06b4:  ldarg.2
     IL_06b5:  castclass  [PresentationFramework]System.Windows.Controls.Button
     IL_06ba:  stfld      class [PresentationFramework]System.Windows.Controls.Button ASXGui.MainForm::cmdDown
-//000137:             <Image Source="/ASXGui;component/Images/Up.png"></Image>
-//000138:         </Button>
-//000139:         <Button Margin="272.5,0,0,61.447" Name="cmdDown" Height="23" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="26.293" Click="cmdDown_Click">
+//000137:             <Label HorizontalAlignment="Left" Margin="13,0,0,1.935" Name="lblAudio" Padding="0" VerticalContentAlignment="Center" Width="35.37" Grid.Row="3">Audio:</Label>
+//000138:             <Label Grid.RowSpan="2" HorizontalAlignment="Left" Margin="0,18.789,0,0.211" Name="lblAF" Padding="0" VerticalContentAlignment="Center" Width="51.475" Grid.Row="3" Grid.Column="1">Progress:</Label>
+//000139:         </Grid>
     IL_06bf:  ldarg.0
     IL_06c0:  ldfld      class [PresentationFramework]System.Windows.Controls.Button ASXGui.MainForm::cmdDown
     IL_06c5:  ldarg.0
@@ -39465,7 +39465,9 @@
     .maxstack  5
     .locals init ([0] object CS$1$0000)
 // Source File 'C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs' 
+//000024:         protected override object CreateInstance(System.Type type, System.Globalization.CultureInfo culture) {
     IL_0000:  nop
+//000025:             return System.Activator.CreateInstance(type, ((System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic) 
     IL_0001:  ldarg.1
     IL_0002:  ldc.i4     0x234
     IL_0007:  ldnull
@@ -39479,6 +39481,8 @@
     IL_000f:  stloc.0
     IL_0010:  br.s       IL_0012
 
+//000026:                             | (System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.CreateInstance)), null, null, culture);
+//000027:         }
     IL_0012:  ldloc.0
     IL_0013:  ret
   } // end of method GeneratedInternalTypeHelper::CreateInstance
@@ -39491,7 +39495,13 @@
     // Code size       17 (0x11)
     .maxstack  6
     .locals init ([0] object CS$1$0000)
+//000028:         
+//000029:         /// <summary>
+//000030:         /// GetPropertyValue
+//000031:         /// </summary>
+//000032:         protected override object GetPropertyValue(System.Reflection.PropertyInfo propertyInfo, object target, System.Globalization.CultureInfo culture) {
     IL_0000:  nop
+//000033:             return propertyInfo.GetValue(target, System.Reflection.BindingFlags.Default, null, null, culture);
     IL_0001:  ldarg.1
     IL_0002:  ldarg.2
     IL_0003:  ldc.i4.0
@@ -39506,6 +39516,7 @@
     IL_000c:  stloc.0
     IL_000d:  br.s       IL_000f
 
+//000034:         }
     IL_000f:  ldloc.0
     IL_0010:  ret
   } // end of method GeneratedInternalTypeHelper::GetPropertyValue
@@ -39518,7 +39529,13 @@
   {
     // Code size       16 (0x10)
     .maxstack  8
+//000035:         
+//000036:         /// <summary>
+//000037:         /// SetPropertyValue
+//000038:         /// </summary>
+//000039:         protected override void SetPropertyValue(System.Reflection.PropertyInfo propertyInfo, object target, object value, System.Globalization.CultureInfo culture) {
     IL_0000:  nop
+//000040:             propertyInfo.SetValue(target, value, System.Reflection.BindingFlags.Default, null, null, culture);
     IL_0001:  ldarg.1
     IL_0002:  ldarg.2
     IL_0003:  ldarg.3
@@ -39533,6 +39550,7 @@
                                                                                           object[],
                                                                                           class [mscorlib]System.Globalization.CultureInfo)
     IL_000e:  nop
+//000041:         }
     IL_000f:  ret
   } // end of method GeneratedInternalTypeHelper::SetPropertyValue
 
@@ -39545,7 +39563,13 @@
     .maxstack  8
     .locals init ([0] class [mscorlib]System.Delegate CS$1$0000,
              [1] object[] CS$0$0001)
+//000042:         
+//000043:         /// <summary>
+//000044:         /// CreateDelegate
+//000045:         /// </summary>
+//000046:         protected override System.Delegate CreateDelegate(System.Type delegateType, object target, string handler) {
     IL_0000:  nop
+//000047:             return ((System.Delegate)(target.GetType().InvokeMember("_CreateDelegate", (System.Reflection.BindingFlags.InvokeMethod 
     IL_0001:  ldarg.2
     IL_0002:  callvirt   instance class [mscorlib]System.Type [mscorlib]System.Object::GetType()
     IL_0007:  ldstr      "_CreateDelegate"
@@ -39575,6 +39599,10 @@
     IL_002e:  stloc.0
     IL_002f:  br.s       IL_0031
 
+//000048:                             | (System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)), null, target, new object[] {
+//000049:                         delegateType,
+//000050:                         handler}, null)));
+//000051:         }
     IL_0031:  ldloc.0
     IL_0032:  ret
   } // end of method GeneratedInternalTypeHelper::CreateDelegate
@@ -39586,13 +39614,20 @@
   {
     // Code size       11 (0xb)
     .maxstack  8
+//000052:         
+//000053:         /// <summary>
+//000054:         /// AddEventHandler
+//000055:         /// </summary>
+//000056:         protected override void AddEventHandler(System.Reflection.EventInfo eventInfo, object target, System.Delegate handler) {
     IL_0000:  nop
+//000057:             eventInfo.AddEventHandler(target, handler);
     IL_0001:  ldarg.1
     IL_0002:  ldarg.2
     IL_0003:  ldarg.3
     IL_0004:  callvirt   instance void [mscorlib]System.Reflection.EventInfo::AddEventHandler(object,
                                                                                               class [mscorlib]System.Delegate)
     IL_0009:  nop
+//000058:         }
     IL_000a:  ret
   } // end of method GeneratedInternalTypeHelper::AddEventHandler
 

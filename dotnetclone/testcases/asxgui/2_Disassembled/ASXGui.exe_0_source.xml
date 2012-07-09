@@ -5828,6 +5828,10 @@
                  Click="cmdPage2_Click" Visibility="Hidden" Background="{StaticResource FadedControl}">
               Progress</Button>
          <Grid Grid.Column="1" Margin="11.525,58.544,11.432,91.456" Name="page2" Visibility="Hidden">
+             <Grid.ColumnDefinitions>
+                 <ColumnDefinition Width="77*" />
+                 <ColumnDefinition Width="390*" />
+             </Grid.ColumnDefinitions>
              <Grid.RowDefinitions>
                  <RowDefinition Height="36*" MinHeight="5" />
                  <RowDefinition Height="19*" MinHeight="18"/>
@@ -5840,29 +5844,25 @@
                  <RowDefinition Height="15*"/>
                  <RowDefinition Height="40*" MinHeight="40" />
              </Grid.RowDefinitions>
-             <Rectangle Name="Progress" Grid.RowSpan="10" />
-             <Label Margin="0,-0.111,0,0" Name="lblCurrentJob">Current Job
-             <ProgressBar Grid.Row="1" Margin="77,3,23,3" Name="videoprogress" />
-             <Label Grid.Row="1" HorizontalAlignment="Left" Margin="13.216,0,0,0" Name="lblVideo" Padding="0" VerticalContentAlignment="Center" Width="35.37" Height="16.101" Grid.RowSpan="2" VerticalAlignment="Top">Video
-             <Label Grid.Row="2" Margin="77,0.001,0,0" Name="lblVF" Padding="0" HorizontalAlignment="Left" Width="51.475" VerticalContentAlignment="Center">Frame #
-             <Label Grid.Row="2" Margin="133,0,170.772,0" Name="lblVideoFrame" Padding="0" VerticalContentAlignment="Center" />
-             <Label Grid.Row="2" Margin="0,0,119.677,0" Name="lblVT" Padding="0" HorizontalAlignment="Right" Width="51.443" VerticalContentAlignment="Center">Time Left
-             <Label Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,23,0" Name="lblVTime" Padding="0" Width="87" VerticalContentAlignment="Center" />
-             <Label Grid.Row="4" HorizontalAlignment="Right" Margin="0,0,23,0" Name="lblPass2Time" Padding="0" Width="87" VerticalContentAlignment="Center" />
-             <Label Grid.Row="3" Margin="133,0,170.772,0.211" Name="lblAudioFrame" Padding="0" VerticalContentAlignment="Center" Height="15" Grid.RowSpan="2" VerticalAlignment="Bottom" />
-             <Label Grid.Row="6" HorizontalAlignment="Right" Margin="0,0,23,0" Name="lblAudioTime" Padding="0" Width="87" VerticalContentAlignment="Center" />
-             <ProgressBar Grid.Row="7" Margin="77,3,23,3" Name="muxing" />
-             <Label Grid.Row="7" HorizontalAlignment="Left" Margin="13.216,0.186,0,0.595" Name="lblMux" Padding="0" VerticalContentAlignment="Center" Width="61.784">Finishing
-             <Label Grid.Row="8" HorizontalAlignment="Right" Margin="0,0,23,0" Name="lblMuxTIme" Padding="0" Width="87" VerticalContentAlignment="Center" />
-             <Label Grid.Row="9" HorizontalContentAlignment="Right" Name="lblOutFile" VerticalContentAlignment="Bottom" Padding="12"></Label>
-             <ProgressBar Margin="77,2.789,23,3.211" Name="audioprogress" Grid.Row="3" />
-             <Label HorizontalAlignment="Left" Margin="13.216,0,0,1.935" Name="lblAudio" Padding="0" VerticalContentAlignment="Center" Width="35.37" Grid.Row="3">Audio
-             <Label Grid.RowSpan="2" HorizontalAlignment="Left" Margin="77,18.789,0,0.211" Name="lblAF" Padding="0" VerticalContentAlignment="Center" Width="51.475" Grid.Row="3">Progress
+             <Rectangle Name="Progress" Grid.RowSpan="10" Grid.ColumnSpan="2" />
+             <Label Margin="0,-0.111,0,0" Name="lblCurrentJob" Grid.ColumnSpan="2">Current Job
+             <ProgressBar Grid.Row="1" Margin="0,3,23,3" Name="videoprogress" Grid.Column="1" />
+             <Label Grid.Row="1" HorizontalAlignment="Left" Margin="13,0,0,0" Name="lblVideo" Padding="0" VerticalContentAlignment="Center" Width="35.37" Height="16.101" VerticalAlignment="Top">Video
+             <Label Grid.Row="2" Margin="0,0.001,0,0" Name="lblVF" Padding="0" HorizontalAlignment="Left" Width="51.475" VerticalContentAlignment="Center" Grid.Column="1">Frame #
+             <Label Grid.Row="2" Margin="56,0,171,0" Name="lblVideoFrame" Padding="0" VerticalContentAlignment="Center" Grid.Column="1" />
+             <Label Grid.Row="2" Margin="0,0,120,0" Name="lblVT" Padding="0" HorizontalAlignment="Right" Width="51.443" VerticalContentAlignment="Center" Grid.Column="1">Time Left
+             <Label Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,23,0" Name="lblVTime" Padding="0" Width="87" VerticalContentAlignment="Center" Grid.Column="1" />
+             <Label Grid.Row="4" HorizontalAlignment="Right" Margin="0,0,23,0" Name="lblPass2Time" Padding="0" Width="87" VerticalContentAlignment="Center" Grid.Column="1" />
+             <Label Grid.Row="3" Margin="56,0,171,0.211" Name="lblAudioFrame" Padding="0" VerticalContentAlignment="Center" Height="15" Grid.RowSpan="2" VerticalAlignment="Bottom" Grid.Column="1" />
+             <Label Grid.Row="6" HorizontalAlignment="Right" Margin="0,0,23,0" Name="lblAudioTime" Padding="0" Width="87" VerticalContentAlignment="Center" Grid.Column="1" />
+             <ProgressBar Grid.Row="7" Margin="0,3,23,3" Name="muxing" Grid.Column="1" />
+             <Label Grid.Row="7" HorizontalAlignment="Left" Margin="13,0.186,0,0.595" Name="lblMux" Padding="0" VerticalContentAlignment="Center" Width="61.784">Finishing
+             <Label Grid.Row="8" HorizontalAlignment="Right" Margin="0,0,23,0" Name="lblMuxTIme" Padding="0" Width="87" VerticalContentAlignment="Center" Grid.Column="1" />
+             <Label Grid.Row="9" HorizontalContentAlignment="Right" Name="lblOutFile" VerticalContentAlignment="Bottom" Padding="12" Grid.ColumnSpan="2"></Label>
+             <ProgressBar Margin="0,2.789,23,3.211" Name="audioprogress" Grid.Row="3" Grid.Column="1" />
+             <Label HorizontalAlignment="Left" Margin="13,0,0,1.935" Name="lblAudio" Padding="0" VerticalContentAlignment="Center" Width="35.37" Grid.Row="3">Audio
+             <Label Grid.RowSpan="2" HorizontalAlignment="Left" Margin="0,18.789,0,0.211" Name="lblAF" Padding="0" VerticalContentAlignment="Center" Width="51.475" Grid.Row="3" Grid.Column="1">Progress
          </Grid>
-         <Button Height="23" Margin="237.5,0,0,61.447" Name="cmdUp" VerticalAlignment="Bottom" Click="cmdUp_Click" Grid.Column="1" HorizontalAlignment="Left" Width="27.745">
-             <Image Source="/ASXGui;component/Images/Up.png"></Image>
-         </Button>
-         <Button Margin="272.5,0,0,61.447" Name="cmdDown" Height="23" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Width="26.293" Click="cmdDown_Click">
 ]]></source>
 <source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\MainForm.xaml.cs" startline="34" endline="87"><![CDATA[
          public static bool interlaced, boolUpdate = true, profile, noprofiles, edit,
@@ -7763,15 +7763,50 @@
              <Hyperlink Name="TSMuxer" Click="TSMuxer_Click">TSMuxer</Hyperlink> <LineBreak/>
              <Hyperlink Name="x264" Click="x264_Click">x264</Hyperlink>
 ]]></source>
-<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="24" endline="27"><![CDATA[
+         protected override object CreateInstance(System.Type type, System.Globalization.CultureInfo culture) {
+             return System.Activator.CreateInstance(type, ((System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic) 
+                             | (System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.CreateInstance)), null, null, culture);
+         }
 ]]></source>
-<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="28" endline="34"><![CDATA[
+         
+         /// <summary>
+         /// GetPropertyValue
+         /// </summary>
+         protected override object GetPropertyValue(System.Reflection.PropertyInfo propertyInfo, object target, System.Globalization.CultureInfo culture) {
+             return propertyInfo.GetValue(target, System.Reflection.BindingFlags.Default, null, null, culture);
+         }
 ]]></source>
-<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="35" endline="41"><![CDATA[
+         
+         /// <summary>
+         /// SetPropertyValue
+         /// </summary>
+         protected override void SetPropertyValue(System.Reflection.PropertyInfo propertyInfo, object target, object value, System.Globalization.CultureInfo culture) {
+             propertyInfo.SetValue(target, value, System.Reflection.BindingFlags.Default, null, null, culture);
+         }
 ]]></source>
-<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="42" endline="51"><![CDATA[
+         
+         /// <summary>
+         /// CreateDelegate
+         /// </summary>
+         protected override System.Delegate CreateDelegate(System.Type delegateType, object target, string handler) {
+             return ((System.Delegate)(target.GetType().InvokeMember("_CreateDelegate", (System.Reflection.BindingFlags.InvokeMethod 
+                             | (System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)), null, target, new object[] {
+                         delegateType,
+                         handler}, null)));
+         }
 ]]></source>
-<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="52" endline="58"><![CDATA[
+         
+         /// <summary>
+         /// AddEventHandler
+         /// </summary>
+         protected override void AddEventHandler(System.Reflection.EventInfo eventInfo, object target, System.Delegate handler) {
+             eventInfo.AddEventHandler(target, handler);
+         }
 ]]></source>
 <source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="2147483647" endline="2147483647"><![CDATA[
 ]]></source>

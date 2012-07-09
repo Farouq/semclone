@@ -1,0 +1,851 @@
+<clones>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="257" endline="266">
+<![CDATA[
+ 
+         private void cmdTemp_Click(object sender, RoutedEventArgs e)
+         {
+             folderbrowser.SelectedPath = tempdir;
+             if (folderbrowser.ShowDialog() != System.Windows.Forms.DialogResult.Cancel)
+             {
+                 tempdir = folderbrowser.SelectedPath;
+                 txtTemp.Text = tempdir;
+             }
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.Designer.vb" startline="3008" endline="3016">
+<![CDATA[
+ 
+     Sub ChkABitrateCheckedChanged(ByVal sender As Object, ByVal e As EventArgs)
+         cboABitrate.Visible = chkABitrate.Checked
+         editVid.CustomABitrate = chkABitrate.Checked
+         If editVid.usetracks = False Then Exit Sub
+         Dim newtrack As track = edittracklist.Item(currenttrack)
+         newtrack.custombitrate = chkABitrate.Checked
+         edittracklist.Item(currenttrack) = newtrack
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="286" endline="295">
+<![CDATA[
+ 
+         private void cmdLog_Click(object sender, RoutedEventArgs e)
+         {
+             folderbrowser.SelectedPath = logdir;
+             if (folderbrowser.ShowDialog() != System.Windows.Forms.DialogResult.Cancel)
+             {
+                 logdir = folderbrowser.SelectedPath;
+                 txtLog.Text = logdir;
+             }
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.Designer.vb" startline="3008" endline="3016">
+<![CDATA[
+ 
+     Sub ChkABitrateCheckedChanged(ByVal sender As Object, ByVal e As EventArgs)
+         cboABitrate.Visible = chkABitrate.Checked
+         editVid.CustomABitrate = chkABitrate.Checked
+         If editVid.usetracks = False Then Exit Sub
+         Dim newtrack As track = edittracklist.Item(currenttrack)
+         newtrack.custombitrate = chkABitrate.Checked
+         edittracklist.Item(currenttrack) = newtrack
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Properties\Resources.Designer.cs" startline="34" endline="46">
+<![CDATA[
+         
+         /// <summary>
+         ///   Returns the cached ResourceManager instance used by this class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 if (object.ReferenceEquals(resourceMan, null)) {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\My Project\Resources.Designer.vb" startline="40" endline="46">
+<![CDATA[
+             Get
+                 If Object.ReferenceEquals(resourceMan, Nothing) Then
+                     Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("ASXGui.Resources", GetType(Resources).Assembly)
+                     resourceMan = temp
+                 End If
+                 Return resourceMan
+             End Get
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ImportProfile.xaml.cs" startline="141" endline="150">
+<![CDATA[
+ 
+         private void optFile_Checked(object sender, RoutedEventArgs e)
+         {
+             if (this.IsLoaded)
+             {
+                 txtText.IsEnabled = false;
+                 txtFile.IsEnabled = true;
+                 cmdOpen.IsEnabled = true;
+             }
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\My Project\Application.Designer.vb" startline="25" endline="31">
+<![CDATA[
+         Public Sub New()
+             MyBase.New(Global.Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.Windows)
+             Me.IsSingleInstance = false
+             Me.EnableVisualStyles = true
+             Me.SaveMySettingsOnExit = true
+             Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
+         End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\ExportProfile.xaml.cs" startline="110" endline="119">
+<![CDATA[
+ 
+         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+         {
+             this.DragMove();
+         }
+ 
+         private void Window_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+         {
+             bool stop = false;
+             if (cboSettings.IsMouseOver) stop = true;
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\My Project\Application.Designer.vb" startline="25" endline="31">
+<![CDATA[
+         Public Sub New()
+             MyBase.New(Global.Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.Windows)
+             Me.IsSingleInstance = false
+             Me.EnableVisualStyles = true
+             Me.SaveMySettingsOnExit = true
+             Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
+         End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\MainForm.xaml.cs" startline="567" endline="697">
+<![CDATA[
+ 
+         public static video Set_defaults(video editvid)
+         {
+             editvid.MKV = false;
+             editvid.iPod = false;
+             editvid.remuxaudio = false;
+             editvid.passes = 2;
+             editvid.CQ = false;
+             editvid.quality = 0;
+             editvid.CustomSize = false;
+             editvid.UseAspect = false;
+             editvid.aspectRatio = 16 / 9;
+             editvid.customX = 0;
+             editvid.customY = 0;
+             editvid.MaxSize = false;
+             editvid.maxX = 0;
+             editvid.maxY = 0;
+             editvid.autocrop = false;
+             editvid.CustomCrop = false;
+             editvid.cropL = 0;
+             editvid.cropR = 0;
+             editvid.cropT = 0;
+             editvid.cropB = 0;
+             editvid.Deinterlace = false;
+             editvid.DoubleFPS = false;
+             editvid.fieldorder = "TFF";
+             editvid.CustomBitrate = false;
+             editvid.CustomABitrate = false;
+             editvid.aBitrate = 192;
+             editvid.vBitrate = 0;
+             editvid.Downmix = false;
+             editvid.EnforceProfile = false;
+             editvid.x264profile = "High";
+             editvid.x264level = 0;
+             editvid.usemaxrate = false;
+             editvid.maxBitrate = 0;
+             editvid.usetargetsize = false;
+             editvid.changefps = false;
+             editvid.customFPS = 23.976;
+             editvid.filesize = 0;
+             editvid.filesizebytes = "MiB";
+             editvid.directshow = false;
+             editvid.upscale = false;
+             editvid.AAC = false;
+             editvid.blackbars = false;
+             editvid.UseOAspect = false;
+             editvid.oAspect = 16 / 9;
+             editvid.NoResize = false;
+             editvid.NoAudio = false;
+             editvid.usesubs = false;
+             editvid.fastpass1 = false;
+             editvid.remuxvideo = false;
+             editvid.ADirectshow = false;
+             editvid.bluray = false;
+             editvid.AACMode = 0;
+             editvid.forcesample = false;
+             editvid.outputsample = 48000;
+             editvid.fpspitch = true;
+ 
+             editvid.deblocking = true;
+             editvid.chroma = true;
+             editvid.pyramid = 2;
+             editvid.rdo = true;
+             editvid.weighted = true;
+             editvid.bidirectional = true;
+             editvid.adct = true;
+             editvid.i4x4 = true;
+             editvid.p4x4 = true;
+             editvid.i8x8 = true;
+             editvid.p8x8 = true;
+             editvid.b8x8 = true;
+             editvid.pnsr = false;
+             editvid.ssim = false;
+             editvid.interlaced = false;
+             editvid.mixed = true;
+             editvid.cabac = true;
+             editvid.dct = false;
+             editvid.pskip = true;
+             editvid.strength = 0;
+             editvid.thresh = 0;
+             editvid.buffer = 0;
+             editvid.blur = 20;
+             editvid.range = 24;
+             editvid.scene = 40;
+             editvid.minQ = 1;
+             editvid.maxQ = 51;
+             editvid.maxQD = 4;
+             editvid.chromaQP = 0;
+             editvid.bframes = 3;
+             editvid.bias = 0;
+             editvid.keyframe = 250;
+             editvid.gop = 25;
+             editvid.noise = 0;
+             editvid.threads = 0;
+             editvid.refframes = 3;
+             editvid.aqmode = 1;
+             editvid.algorithm = 1;
+             editvid.subpixel = 6;
+             editvid.bmode = 1;
+             editvid.trellis = 1;
+             editvid.adaptive = 1;
+             editvid.inter = 21;
+             editvid.intra = 11;
+             editvid.ibuffer = 0.9;
+             editvid.variance = 1;
+             editvid.QC = 0.6;
+             editvid.blurq = 0.5;
+             editvid.iandp = 1.4;
+             editvid.pandb = 1.3;
+             editvid.psyrd = 1;
+             editvid.psytrellis = 0;
+             editvid.stats = "video.stats";
+             editvid.aqstrength = 1;
+             editvid.fullrange = false;
+             editvid.partitions = "All";
+             editvid.lookahead = 40;
+             editvid.mbtree = true;
+             editvid.psychovisual = false;
+             editvid.preset = 4;
+             editvid.tuning = "Default";
+             editvid.custom = "";
+             editvid.slices = 0;
+             editvid.maxslice = 0;
+             editvid.maxslicembs = 0;
+             editvid.weightp = 2;
+             editvid.scenecut = true;
+             editvid.aud = false;
+             editvid.nalhrd = false;
+ 
+             return editvid;
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ProfileUpdater.vb" startline="281" endline="409">
+<![CDATA[
+     Function Set_defaults(ByVal editvid As video) As video
+         editvid.MKV = False
+         editvid.iPod = False
+         editvid.remuxaudio = False
+         editvid.onepass = False
+         editvid.CQ = False
+         editvid.Quality = 0
+         editvid.CustomSize = False
+         editvid.UseAspect = False
+         editvid.AspectRatio = 16 / 9
+         editvid.CustomX = 0
+         editvid.CustomY = 0
+         editvid.MaxSize = False
+         editvid.MaxX = 0
+         editvid.MaxY = 0
+         editvid.autocrop = False
+         editvid.CustomCrop = False
+         editvid.CropL = 0
+         editvid.CropR = 0
+         editvid.CropT = 0
+         editvid.CropB = 0
+         editvid.Deinterlace = False
+         editvid.DoubleFPS = False
+         editvid.fieldorder = "TFF"
+         editvid.CustomBitrate = False
+         editvid.CustomABitrate = False
+         editvid.ABitrate = 192
+         editvid.VBitrate = 0
+         editvid.Downmix = False
+         editvid.EnforceProfile = False
+         editvid.X264Profile = "High"
+         editvid.x264level = 0
+         editvid.usemaxrate = False
+         editvid.maxbitrate = 0
+         editvid.usetargetsize = False
+         editvid.changefps = False
+         editvid.customfps = 23.976
+         editvid.filesize = 0
+         editvid.filesizebytes = "MiB"
+         editvid.directshow = False
+         editvid.upscale = False
+         editvid.AAC = False
+         editvid.blackbars = False
+         editvid.UseOAspect = False
+         editvid.OAspect = 16 / 9
+         editvid.NoResize = False
+         editvid.NoAudio = False
+         editvid.usesubs = False
+         editvid.fastpass1 = False
+         editvid.remuxvideo = False
+         editvid.ADirectshow = False
+         editvid.bluray = False
+         editvid.AACMode = 0
+         editvid.forcesample = False
+         editvid.samplerate = 48000
+ 
+         editvid.deblocking = True
+         editvid.chroma = True
+         editvid.pyramid = 2
+         editvid.rdo = True
+         editvid.weighted = True
+         editvid.bidirectional = True
+         editvid.adct = True
+         editvid.i4x4 = True
+         editvid.p4x4 = True
+         editvid.i8x8 = True
+         editvid.p8x8 = True
+         editvid.b8x8 = True
+         editvid.pnsr = False
+         editvid.ssim = False
+         editvid.interlaced = False
+         editvid.mixed = True
+         editvid.cabac = True
+         editvid.dct = False
+         editvid.pskip = True
+         editvid.fullrange = False
+         editvid.strength = 0
+         editvid.thresh = 0
+         editvid.buffer = 0
+         editvid.blur = 20
+         editvid.range = 24
+         editvid.scene = 40
+         editvid.minQ = 1
+         editvid.maxQ = 51
+         editvid.MaxQD = 4
+         editvid.chromaQP = 0
+         editvid.bframes = 3
+         editvid.bias = 0
+         editvid.keyframe = 250
+         editvid.gop = 25
+         editvid.noise = 0
+         editvid.threads = 0
+         editvid.refframes = 3
+         editvid.aqmode = 1
+         editvid.algorithm = 1
+         editvid.subpixel = 6
+         editvid.bmode = 1
+         editvid.trellis = 1
+         editvid.adaptive = 1
+         editvid.inter = 21
+         editvid.intra = 11
+         editvid.ibuffer = 0.9
+         editvid.variance = 1
+         editvid.QC = 0.6
+         editvid.blurq = 0.5
+         editvid.iandp = 1.4
+         editvid.pandb = 1.3
+         editvid.psyrd = 1
+         editvid.psytrellis = 0
+         editvid.stats = "video.stats"
+         editvid.aqstrength = 1
+         editvid.fullrange = False
+         editvid.partitions = "All"
+         editvid.lookahead = 40
+         editvid.mbtree = True
+         editvid.psychovisual = False
+         editvid.preset = 4
+         editvid.tuning = "Default"
+         editvid.custom = ""
+         editvid.slices = 0
+         editvid.maxslice = 0
+         editvid.maxslicembs = 0
+         editvid.weightp = 2
+         editvid.scenecut = True
+         editvid.aud = False
+         editvid.nalhrd = False
+ 
+         Return editvid
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\MainForm.xaml.cs" startline="758" endline="765">
+<![CDATA[
+ 
+         private void profile_updater()
+         {
+             setBlur(true);
+             Updating frmUpdating = new Updating();
+             frmUpdating.ShowDialog();
+             setBlur(false);
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" startline="2934" endline="2941">
+<![CDATA[
+ 
+     Private Sub ExportProfileToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExportProfileToolStripMenuItem1.Click
+         Dim frmExport As New ExportProfile
+         Me.Enabled = False
+         frmExport.ShowDialog()
+         Me.Enabled = True
+ 
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\MainForm.xaml.cs" startline="1597" endline="1609">
+<![CDATA[
+ 
+         public static string randomstring(int size)
+         {
+             StringBuilder builder = new StringBuilder();
+             Random rnd = new Random();
+             Char ch;
+             for (int i = 0; i < size; i++)
+             {
+                 ch = Convert.ToChar(Convert.ToInt32(26 * rnd.NextDouble() + 64));
+                 builder.Append(ch);
+             }
+             for (int i = 0; i < size; i++)
+             {
+                 ch = Convert.ToChar(Convert.ToInt32(26 * rnd.NextDouble() + 64));
+                 builder.Append(ch);
+             }
+             return builder.ToString().ToLower();
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" startline="527" endline="541">
+<![CDATA[
+ 	
+ 	Private Function RandomString(size As Integer, lowerCase As Boolean) As String
+ 		   Dim builder As New system.Text.StringBuilder()
+ 		   Dim random As New Random()
+ 		   Dim ch As Char
+ 		   Dim i As Integer
+ 		   For i = 0 To size - 1
+ 		      ch = Convert.ToChar(Convert.ToInt32((26 * random.NextDouble() + 65)))
+ 		      builder.Append(ch)
+ 		   Next
+ 		   If lowerCase Then
+ 		      Return builder.ToString().ToLower()
+ 		   End If
+ 		   Return builder.ToString()
+ 	End Function 'RandomString 
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\MainForm.xaml.cs" startline="1597" endline="1609">
+<![CDATA[
+ 
+         public static string randomstring(int size)
+         {
+             StringBuilder builder = new StringBuilder();
+             Random rnd = new Random();
+             Char ch;
+             for (int i = 0; i < size; i++)
+             {
+                 ch = Convert.ToChar(Convert.ToInt32(26 * rnd.NextDouble() + 64));
+                 builder.Append(ch);
+             }
+             for (int i = 0; i < size; i++)
+             {
+                 ch = Convert.ToChar(Convert.ToInt32(26 * rnd.NextDouble() + 64));
+                 builder.Append(ch);
+             }
+             return builder.ToString().ToLower();
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" startline="3139" endline="3153">
+<![CDATA[
+ 
+     Function RandomString(ByVal size As Integer, ByVal lowerCase As Boolean) As String
+         Dim builder As New system.Text.StringBuilder()
+         Dim random As New Random()
+         Dim ch As Char
+         Dim i As Integer
+         For i = 0 To size - 1
+             ch = Convert.ToChar(Convert.ToInt32((26 * random.NextDouble() + 65)))
+             builder.Append(ch)
+         Next
+         If lowerCase Then
+             Return builder.ToString().ToLower()
+         End If
+         Return builder.ToString()
+     End Function 'RandomString 
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\MainForm.xaml.cs" startline="1597" endline="1609">
+<![CDATA[
+ 
+         public static string randomstring(int size)
+         {
+             StringBuilder builder = new StringBuilder();
+             Random rnd = new Random();
+             Char ch;
+             for (int i = 0; i < size; i++)
+             {
+                 ch = Convert.ToChar(Convert.ToInt32(26 * rnd.NextDouble() + 64));
+                 builder.Append(ch);
+             }
+             for (int i = 0; i < size; i++)
+             {
+                 ch = Convert.ToChar(Convert.ToInt32(26 * rnd.NextDouble() + 64));
+                 builder.Append(ch);
+             }
+             return builder.ToString().ToLower();
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" startline="1123" endline="1137">
+<![CDATA[
+ 	
+ 	Private Function RandomString(size As Integer, lowerCase As Boolean) As String
+ 		   Dim builder As New system.Text.StringBuilder()
+ 		   Dim random As New Random()
+ 		   Dim ch As Char
+ 		   Dim i As Integer
+ 		   For i = 0 To size - 1
+ 		      ch = Convert.ToChar(Convert.ToInt32((26 * random.NextDouble() + 65)))
+ 		      builder.Append(ch)
+ 		   Next
+ 		   If lowerCase Then
+ 		      Return builder.ToString().ToLower()
+ 		   End If
+ 		   Return builder.ToString()
+ 	End Function 'RandomString 
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\MainForm.xaml.cs" startline="1597" endline="1609">
+<![CDATA[
+ 
+         public static string randomstring(int size)
+         {
+             StringBuilder builder = new StringBuilder();
+             Random rnd = new Random();
+             Char ch;
+             for (int i = 0; i < size; i++)
+             {
+                 ch = Convert.ToChar(Convert.ToInt32(26 * rnd.NextDouble() + 64));
+                 builder.Append(ch);
+             }
+             for (int i = 0; i < size; i++)
+             {
+                 ch = Convert.ToChar(Convert.ToInt32(26 * rnd.NextDouble() + 64));
+                 builder.Append(ch);
+             }
+             return builder.ToString().ToLower();
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" startline="832" endline="845">
+<![CDATA[
+     Private Function RandomString(ByVal size As Integer, ByVal lowerCase As Boolean) As String
+         Dim builder As New system.Text.StringBuilder()
+         Dim random As New Random()
+         Dim ch As Char
+         Dim i As Integer
+         For i = 0 To size - 1
+             ch = Convert.ToChar(Convert.ToInt32((26 * random.NextDouble() + 65)))
+             builder.Append(ch)
+         Next
+         If lowerCase Then
+             Return builder.ToString().ToLower()
+         End If
+         Return builder.ToString()
+     End Function 'RandomString 
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\MainForm.xaml.cs" startline="1619" endline="1654">
+<![CDATA[
+ 
+         public static video videoinfo(video editvid)
+         {
+             string path = editvid.path;
+             editvid.avs = path.Substring(path.Length - 3, 3).ToLower() == "avs";
+             //Generate unique job key (Over 200 billion possibilities)
+             if (editvid.key == "")
+             {
+                 bool used = false;
+                 while (!used)
+                 {
+                     editvid.key = randomstring(8);
+                     used = false;
+                     for (int i = 0; i < videolist.Count; i++)
+                         if (videolist[i].key == editvid.key)
+                             used = true;
+                     for (int i = 0; i < videolist.Count; i++)
+                         if (videolist[i].key == editvid.key)
+                             used = true;
+                 }
+                 while (!used)
+                 {
+                     editvid.key = randomstring(8);
+                     used = false;
+                     for (int i = 0; i < videolist.Count; i++)
+                         if (videolist[i].key == editvid.key)
+                             used = true;
+                 }
+             }
+ 
+             //Generate videoinfo file for current job
+             if (editvid.avs)
+             {
+                 editvid.avsaudio = 0;
+                 shell.StartInfo.Arguments = " /c ECHO y | avs2avi \"" + editvid.path + "\" \"" + tempDir + "\\avs2avi.avi\" && mediainfo \"" + tempDir + "\\avs2avi.avi\" \"--Language=file
+                 shell.Start();
+                 shell.WaitForExit();
+             }
+             else
+             {
+                 shell.StartInfo.Arguments = " /c mediainfo \"" + editvid.path + "\" \"--Language=file
+                 shell.Start();
+                 shell.WaitForExit();
+             }
+             editvid.videoinfo = tempDir + "\\" + editvid.key + ".videoinfo";
+             return editvid;
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" startline="542" endline="564">
+<![CDATA[
+ 	
+ 	Function VideoInfo() as String
+ 		Dim count As Integer, used As Boolean
+ 		If mid(editvid.video.ToLower,len(editvid.video)-2,3) = "avs" Then editVid.avs=True Else editvid.avs=False
+ 		If editvid.key="" Then
+ 			keygen
+ 			editvid.key=randomstring(8,True)
+ 			used=False		
+ 			For count = 0 To videolist.Count-1
+ 				if videolist.Item(count).key=editvid.key then used=true
+ 			Next
+ 			If used=True Then GoTo keygen
+ 		End If
+ 		If editvid.avs=True Then
+ 			editvid.avsaudio=0
+ 			io.Directory.SetCurrentDirectory(tooldir)
+             Shell("cmd /c ECHO y  | avs2avi " & """" & editVid.Video & """" & " " & """" & tempDir & "\avs2avi.avi" & """" & " && mediainfo " & """" & tempDir & "\avs2avi.avi" & """" & " " & """" & "--Language=file
+ 		Else
+ 			io.Directory.SetCurrentDirectory(tooldir)
+             Shell("cmd /c mediainfo " & """" & editVid.Video & """" & " " & """" & "--Language=file
+ 		End If
+ 		Return tempdir & "\" & editvid.key & ".videoinfo"		
+ 	End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\MainForm.xaml.cs" startline="1619" endline="1654">
+<![CDATA[
+ 
+         public static video videoinfo(video editvid)
+         {
+             string path = editvid.path;
+             editvid.avs = path.Substring(path.Length - 3, 3).ToLower() == "avs";
+             //Generate unique job key (Over 200 billion possibilities)
+             if (editvid.key == "")
+             {
+                 bool used = false;
+                 while (!used)
+                 {
+                     editvid.key = randomstring(8);
+                     used = false;
+                     for (int i = 0; i < videolist.Count; i++)
+                         if (videolist[i].key == editvid.key)
+                             used = true;
+                     for (int i = 0; i < videolist.Count; i++)
+                         if (videolist[i].key == editvid.key)
+                             used = true;
+                 }
+                 while (!used)
+                 {
+                     editvid.key = randomstring(8);
+                     used = false;
+                     for (int i = 0; i < videolist.Count; i++)
+                         if (videolist[i].key == editvid.key)
+                             used = true;
+                 }
+             }
+ 
+             //Generate videoinfo file for current job
+             if (editvid.avs)
+             {
+                 editvid.avsaudio = 0;
+                 shell.StartInfo.Arguments = " /c ECHO y | avs2avi \"" + editvid.path + "\" \"" + tempDir + "\\avs2avi.avi\" && mediainfo \"" + tempDir + "\\avs2avi.avi\" \"--Language=file
+                 shell.Start();
+                 shell.WaitForExit();
+             }
+             else
+             {
+                 shell.StartInfo.Arguments = " /c mediainfo \"" + editvid.path + "\" \"--Language=file
+                 shell.Start();
+                 shell.WaitForExit();
+             }
+             editvid.videoinfo = tempDir + "\\" + editvid.key + ".videoinfo";
+             return editvid;
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" startline="3154" endline="3176">
+<![CDATA[
+ 
+     Function VideoInfo() As String
+         Dim count As Integer, used As Boolean
+         If mid(editvid.video.ToLower, len(editvid.video) - 2, 3) = "avs" Then editVid.avs = True Else editvid.avs = False
+         If editvid.key = "" Then
+ keygen
+             editvid.key = randomstring(8, True)
+             used = False
+             For count = 0 To videolist.Count - 1
+                 If videolist.Item(count).key = editvid.key Then used = True
+             Next
+             If used = True Then GoTo keygen
+         End If
+         If editVid.avs = True Then
+             editVid.avsaudio = 0
+             IO.Directory.SetCurrentDirectory(toolDir)
+             Shell("cmd /c ECHO y  | avs2avi " & """" & editVid.Video & """" & " " & """" & tempDir & "\avs2avi.avi" & """" & " && mediainfo " & """" & tempDir & "\avs2avi.avi" & """" & " " & """" & "--Language=file
+         Else
+             IO.Directory.SetCurrentDirectory(toolDir)
+             Shell("cmd /c mediainfo " & """" & editVid.Video & """" & " " & """" & "--Language=file
+         End If
+         Return tempdir & "\" & editvid.key & ".videoinfo"
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\MainForm.xaml.cs" startline="2944" endline="2953">
+<![CDATA[
+ 
+         private void Import_Click(object sender, RoutedEventArgs e)
+         {
+             ImportProfile ip = new ImportProfile();
+             setBlur(true);
+             ip.ShowDialog();
+             setBlur(false);
+             profileList = load_profiles();
+             Update_Profiles();
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" startline="2934" endline="2941">
+<![CDATA[
+ 
+     Private Sub ExportProfileToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExportProfileToolStripMenuItem1.Click
+         Dim frmExport As New ExportProfile
+         Me.Enabled = False
+         frmExport.ShowDialog()
+         Me.Enabled = True
+ 
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\MainForm.xaml.cs" startline="2954" endline="2961">
+<![CDATA[
+ 
+         private void Export_Click(object sender, RoutedEventArgs e)
+         {
+             ExportProfile ep = new ExportProfile();
+             setBlur(true);
+             ep.ShowDialog();
+             setBlur(false);
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" startline="2934" endline="2941">
+<![CDATA[
+ 
+     Private Sub ExportProfileToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExportProfileToolStripMenuItem1.Click
+         Dim frmExport As New ExportProfile
+         Me.Enabled = False
+         frmExport.ShowDialog()
+         Me.Enabled = True
+ 
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\MainForm.xaml.cs" startline="3001" endline="3008">
+<![CDATA[
+ 
+         private void About_Click(object sender, RoutedEventArgs e)
+         {
+             setBlur(true);
+             About frmAbout = new About();
+             frmAbout.ShowDialog();
+             setBlur(false);
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" startline="2934" endline="2941">
+<![CDATA[
+ 
+     Private Sub ExportProfileToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExportProfileToolStripMenuItem1.Click
+         Dim frmExport As New ExportProfile
+         Me.Enabled = False
+         frmExport.ShowDialog()
+         Me.Enabled = True
+ 
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+</clones>

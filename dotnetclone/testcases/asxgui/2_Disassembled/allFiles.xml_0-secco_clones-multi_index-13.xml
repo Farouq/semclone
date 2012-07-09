@@ -608,7 +608,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="429" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="6" pcid="787" startline="419"><![CDATA[
+<clone_fragment endline="429" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="6" pcid="793" startline="419"><![CDATA[
 nop
 ldsflda
 ldfld
@@ -668,7 +668,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="572" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="13" pcid="721" startline="507"><![CDATA[
+<clone_fragment endline="572" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="13" pcid="727" startline="507"><![CDATA[
 nop
 newobj
 stloc
@@ -1286,639 +1286,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2587" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="405" startline="2520"><![CDATA[
-nop
-newobj
-stloc
-ldloc
-callvirt
-nop
-ldarg
-ldc
-callvirt
-nop
-ldloc
-callvirt
-nop
-ldarg
-callvirt
-ldc
-callvirt
-nop
-ldsfld
-ldstr
-call
-ldc
-newobj
-call
-newobj
-stloc
-ldarg
-callvirt
-callvirt
-stloc
-ldsflda
-ldfld
-ldsflda
-ldfld
-call
-ldc
-sub
-ldc
-call
-callvirt
-stloc
-ldloc
-ldc
-ldc
-call
-ldstr
-ldc
-call
-ldc
-ceq
-ldloc
-ldc
-ldc
-call
-ldstr
-ldc
-call
-ldc
-ceq
-ldc
-ceq
-and
-stloc
-ldloc
-brfalse
-ldc
-stloc
-ldloc
-ldstr
-ldc
-call
-ldc
-ceq
-ldloc
-ldstr
-ldc
-call
-ldc
-ceq
-or
-ldloc
-ldstr
-ldc
-call
-ldc
-ceq
-or
-ldloc
-ldstr
-ldc
-call
-ldc
-ceq
-or
-ldarg
-callvirt
-callvirt
-ldc
-ceq
-and
-stloc
-ldloc
-brfalse
-ldc
-stloc
-br
-nop
-ldc
-stloc
-ldloc
-stloc
-ldloc
-brfalse
-ldloc
-ldstr
-ldsfld
-ldstr
-call
-callvirt
-nop
-ldloc
-ldc
-ceq
-stloc
-ldloc
-brfalse
-ldloc
-ldc
-ceq
-stloc
-ldloc
-brfalse
-ldloc
-ldc
-newarr
-stloc
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsflda
-ldfld
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsflda
-ldfld
-call
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-call
-callvirt
-nop
-br
-nop
-ldloc
-ldstr
-ldsflda
-ldfld
-ldstr
-call
-callvirt
-nop
-br
-nop
-ldloc
-ldstr
-ldsfld
-ldstr
-call
-callvirt
-nop
-ldloc
-ldstr
-ldsflda
-ldfld
-ldstr
-call
-callvirt
-nop
-nop
-ldloc
-ldstr
-ldsfld
-ldstr
-call
-callvirt
-nop
-ldloc
-ldstr
-callvirt
-nop
-ldloc
-ldstr
-callvirt
-nop
-ldloc
-callvirt
-nop
-ldsfld
-call
-nop
-ldc
-newarr
-stloc
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsfld
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsfld
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsfld
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsfld
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsfld
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsflda
-ldfld
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-call
-ldc
-ldc
-ldc
-call
-pop
-ldsfld
-ldstr
-call
-call
-nop
-ldsfld
-ldstr
-call
-call
-nop
-ldsfld
-ldstr
-ldsflda
-ldfld
-ldstr
-call
-call
-stloc
-br
-call
-nop
-ldloc
-callvirt
-stloc
-nop
-ldloc
-ldc
-ldc
-call
-stloc
-nop
-ldloc
-ldstr
-ldc
-call
-ldc
-ceq
-stloc
-ldloc
-brfalse
-nop
-ldsflda
-ldloc
-ldc
-ldloc
-callvirt
-ldc
-sub
-call
-call
-call
-conv
-stfld
-br
-nop
-ldloc
-ldstr
-ldc
-call
-ldc
-ceq
-stloc
-ldloc
-brfalse
-nop
-ldsflda
-ldloc
-ldc
-ldloc
-callvirt
-ldc
-sub
-call
-call
-call
-conv
-stfld
-br
-nop
-ldloc
-ldstr
-ldc
-call
-ldc
-ceq
-stloc
-ldloc
-brfalse
-nop
-ldloc
-ldc
-ldloc
-callvirt
-ldc
-sub
-call
-stloc
-ldc
-stloc
-ldc
-ldloc
-call
-stloc
-stloc
-br
-ldloc
-ldloc
-ldc
-call
-ldstr
-ldc
-call
-ldc
-ceq
-ldloc
-ldloc
-ldc
-call
-ldstr
-ldc
-call
-ldc
-ceq
-or
-stloc
-ldloc
-brfalse
-ldloc
-ldc
-ldloc
-ldc
-sub
-call
-call
-ldloc
-ldloc
-ldc
-add
-ldloc
-call
-ldc
-sub
-call
-call
-div
-conv
-stloc
-nop
-nop
-ldloc
-ldc
-add
-stloc
-ldloc
-ldloc
-stloc
-ldloc
-ble
-ldloc
-ldc
-ceq
-stloc
-ldloc
-brfalse
-ldloc
-call
-conv
-stloc
-ldsflda
-ldfld
-ldsflda
-ldfld
-div
-ldloc
-mul
-stloc
-ldsflda
-ldloc
-stfld
-ldsflda
-ldfld
-stloc
-ldloc
-brfalse
-ldarg
-callvirt
-ldloc
-conv
-ldc
-call
-call
-callvirt
-nop
-ldsflda
-ldfld
-conv
-ldc
-call
-ldsflda
-ldfld
-conv
-ldsflda
-ldfld
-conv
-div
-ldc
-call
-ceq
-ldc
-ceq
-stloc
-ldloc
-brfalse
-ldsflda
-ldsflda
-ldfld
-ldsflda
-ldfld
-mul
-conv
-ldsflda
-ldfld
-conv
-ldsflda
-ldfld
-conv
-div
-div
-conv
-stfld
-ldsflda
-ldfld
-conv
-ldc
-sub
-call
-ldc
-clt
-stloc
-ldloc
-brfalse
-ldsflda
-ldc
-stfld
-ldsflda
-ldfld
-conv
-ldc
-sub
-call
-ldc
-clt
-stloc
-ldloc
-brfalse
-ldsflda
-ldc
-stfld
-ldsflda
-ldfld
-conv
-ldc
-sub
-call
-ldc
-clt
-stloc
-ldloc
-brfalse
-ldsflda
-ldc
-stfld
-ldsflda
-ldfld
-conv
-ldc
-sub
-call
-ldc
-clt
-stloc
-ldloc
-brfalse
-ldsflda
-ldc
-stfld
-ldsflda
-ldfld
-conv
-ldc
-sub
-call
-ldc
-clt
-stloc
-ldloc
-brfalse
-ldsflda
-ldc
-stfld
-nop
-nop
-ldloc
-callvirt
-ldc
-cgt
-stloc
-ldloc
-brtrue
-ldloc
-callvirt
-nop
-ldsfld
-ldstr
-ldsflda
-ldfld
-ldstr
-call
-call
-nop
-ldsflda
-ldc
-stfld
-ldarg
-callvirt
-ldc
-callvirt
-nop
-ldarg
-ldc
-callvirt
-nop
-ldloc
-callvirt
-nop
-nop
-ret
-]]></clone_fragment>
-<clone_fragment endline="4003" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="587" startline="3936"><![CDATA[
+<clone_fragment endline="2587" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="411" startline="2520"><![CDATA[
 nop
 newobj
 stloc
@@ -2550,7 +1918,639 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="6142" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="13" pcid="623" startline="6128"><![CDATA[
+<clone_fragment endline="4003" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="593" startline="3936"><![CDATA[
+nop
+newobj
+stloc
+ldloc
+callvirt
+nop
+ldarg
+ldc
+callvirt
+nop
+ldloc
+callvirt
+nop
+ldarg
+callvirt
+ldc
+callvirt
+nop
+ldsfld
+ldstr
+call
+ldc
+newobj
+call
+newobj
+stloc
+ldarg
+callvirt
+callvirt
+stloc
+ldsflda
+ldfld
+ldsflda
+ldfld
+call
+ldc
+sub
+ldc
+call
+callvirt
+stloc
+ldloc
+ldc
+ldc
+call
+ldstr
+ldc
+call
+ldc
+ceq
+ldloc
+ldc
+ldc
+call
+ldstr
+ldc
+call
+ldc
+ceq
+ldc
+ceq
+and
+stloc
+ldloc
+brfalse
+ldc
+stloc
+ldloc
+ldstr
+ldc
+call
+ldc
+ceq
+ldloc
+ldstr
+ldc
+call
+ldc
+ceq
+or
+ldloc
+ldstr
+ldc
+call
+ldc
+ceq
+or
+ldloc
+ldstr
+ldc
+call
+ldc
+ceq
+or
+ldarg
+callvirt
+callvirt
+ldc
+ceq
+and
+stloc
+ldloc
+brfalse
+ldc
+stloc
+br
+nop
+ldc
+stloc
+ldloc
+stloc
+ldloc
+brfalse
+ldloc
+ldstr
+ldsfld
+ldstr
+call
+callvirt
+nop
+ldloc
+ldc
+ceq
+stloc
+ldloc
+brfalse
+ldloc
+ldc
+ceq
+stloc
+ldloc
+brfalse
+ldloc
+ldc
+newarr
+stloc
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsflda
+ldfld
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsflda
+ldfld
+call
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+call
+callvirt
+nop
+br
+nop
+ldloc
+ldstr
+ldsflda
+ldfld
+ldstr
+call
+callvirt
+nop
+br
+nop
+ldloc
+ldstr
+ldsfld
+ldstr
+call
+callvirt
+nop
+ldloc
+ldstr
+ldsflda
+ldfld
+ldstr
+call
+callvirt
+nop
+nop
+ldloc
+ldstr
+ldsfld
+ldstr
+call
+callvirt
+nop
+ldloc
+ldstr
+callvirt
+nop
+ldloc
+ldstr
+callvirt
+nop
+ldloc
+callvirt
+nop
+ldsfld
+call
+nop
+ldc
+newarr
+stloc
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsfld
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsfld
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsfld
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsfld
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsfld
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsflda
+ldfld
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+call
+ldc
+ldc
+ldc
+call
+pop
+ldsfld
+ldstr
+call
+call
+nop
+ldsfld
+ldstr
+call
+call
+nop
+ldsfld
+ldstr
+ldsflda
+ldfld
+ldstr
+call
+call
+stloc
+br
+call
+nop
+ldloc
+callvirt
+stloc
+nop
+ldloc
+ldc
+ldc
+call
+stloc
+nop
+ldloc
+ldstr
+ldc
+call
+ldc
+ceq
+stloc
+ldloc
+brfalse
+nop
+ldsflda
+ldloc
+ldc
+ldloc
+callvirt
+ldc
+sub
+call
+call
+call
+conv
+stfld
+br
+nop
+ldloc
+ldstr
+ldc
+call
+ldc
+ceq
+stloc
+ldloc
+brfalse
+nop
+ldsflda
+ldloc
+ldc
+ldloc
+callvirt
+ldc
+sub
+call
+call
+call
+conv
+stfld
+br
+nop
+ldloc
+ldstr
+ldc
+call
+ldc
+ceq
+stloc
+ldloc
+brfalse
+nop
+ldloc
+ldc
+ldloc
+callvirt
+ldc
+sub
+call
+stloc
+ldc
+stloc
+ldc
+ldloc
+call
+stloc
+stloc
+br
+ldloc
+ldloc
+ldc
+call
+ldstr
+ldc
+call
+ldc
+ceq
+ldloc
+ldloc
+ldc
+call
+ldstr
+ldc
+call
+ldc
+ceq
+or
+stloc
+ldloc
+brfalse
+ldloc
+ldc
+ldloc
+ldc
+sub
+call
+call
+ldloc
+ldloc
+ldc
+add
+ldloc
+call
+ldc
+sub
+call
+call
+div
+conv
+stloc
+nop
+nop
+ldloc
+ldc
+add
+stloc
+ldloc
+ldloc
+stloc
+ldloc
+ble
+ldloc
+ldc
+ceq
+stloc
+ldloc
+brfalse
+ldloc
+call
+conv
+stloc
+ldsflda
+ldfld
+ldsflda
+ldfld
+div
+ldloc
+mul
+stloc
+ldsflda
+ldloc
+stfld
+ldsflda
+ldfld
+stloc
+ldloc
+brfalse
+ldarg
+callvirt
+ldloc
+conv
+ldc
+call
+call
+callvirt
+nop
+ldsflda
+ldfld
+conv
+ldc
+call
+ldsflda
+ldfld
+conv
+ldsflda
+ldfld
+conv
+div
+ldc
+call
+ceq
+ldc
+ceq
+stloc
+ldloc
+brfalse
+ldsflda
+ldsflda
+ldfld
+ldsflda
+ldfld
+mul
+conv
+ldsflda
+ldfld
+conv
+ldsflda
+ldfld
+conv
+div
+div
+conv
+stfld
+ldsflda
+ldfld
+conv
+ldc
+sub
+call
+ldc
+clt
+stloc
+ldloc
+brfalse
+ldsflda
+ldc
+stfld
+ldsflda
+ldfld
+conv
+ldc
+sub
+call
+ldc
+clt
+stloc
+ldloc
+brfalse
+ldsflda
+ldc
+stfld
+ldsflda
+ldfld
+conv
+ldc
+sub
+call
+ldc
+clt
+stloc
+ldloc
+brfalse
+ldsflda
+ldc
+stfld
+ldsflda
+ldfld
+conv
+ldc
+sub
+call
+ldc
+clt
+stloc
+ldloc
+brfalse
+ldsflda
+ldc
+stfld
+ldsflda
+ldfld
+conv
+ldc
+sub
+call
+ldc
+clt
+stloc
+ldloc
+brfalse
+ldsflda
+ldc
+stfld
+nop
+nop
+ldloc
+callvirt
+ldc
+cgt
+stloc
+ldloc
+brtrue
+ldloc
+callvirt
+nop
+ldsfld
+ldstr
+ldsflda
+ldfld
+ldstr
+call
+call
+nop
+ldsflda
+ldc
+stfld
+ldarg
+callvirt
+ldc
+callvirt
+nop
+ldarg
+ldc
+callvirt
+nop
+ldloc
+callvirt
+nop
+nop
+ret
+]]></clone_fragment>
+<clone_fragment endline="6142" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="13" pcid="629" startline="6128"><![CDATA[
 nop
 ldarg
 callvirt
@@ -2648,7 +2648,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2706" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="4" pcid="821" startline="2692"><![CDATA[
+<clone_fragment endline="2706" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="4" pcid="827" startline="2692"><![CDATA[
 nop
 ldarg
 callvirt
@@ -2747,7 +2747,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2708" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="9" pcid="407" startline="2588"><![CDATA[
+<clone_fragment endline="2708" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="9" pcid="413" startline="2588"><![CDATA[
 nop
 ldarg
 ldfld
@@ -3428,7 +3428,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="4123" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="589" startline="4004"><![CDATA[
+<clone_fragment endline="4123" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="595" startline="4004"><![CDATA[
 nop
 ldarg
 ldfld
@@ -4109,7 +4109,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1122" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="2" pcid="731" startline="1004"><![CDATA[
+<clone_fragment endline="1122" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="2" pcid="737" startline="1004"><![CDATA[
 nop
 ldarg
 ldfld
@@ -6153,7 +6153,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3180" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="14" pcid="427" startline="3142"><![CDATA[
+<clone_fragment endline="3180" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="14" pcid="433" startline="3142"><![CDATA[
 nop
 ldarg
 callvirt
@@ -6459,7 +6459,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2990" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="537" startline="2952"><![CDATA[
+<clone_fragment endline="2990" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="543" startline="2952"><![CDATA[
 nop
 ldarg
 callvirt
@@ -6765,7 +6765,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="4362" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="4" pcid="601" startline="4257"><![CDATA[
+<clone_fragment endline="4362" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="4" pcid="607" startline="4257"><![CDATA[
 nop
 newobj
 stloc
@@ -7632,7 +7632,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="623" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="4" pcid="375" startline="565"><![CDATA[
+<clone_fragment endline="623" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="4" pcid="381" startline="565"><![CDATA[
 nop
 newobj
 stloc
@@ -7955,7 +7955,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3235" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="559" startline="3177"><![CDATA[
+<clone_fragment endline="3235" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="565" startline="3177"><![CDATA[
 nop
 newobj
 stloc
@@ -8655,7 +8655,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="81" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ExportProfile.vb" hamdist="12" pcid="461" startline="31"><![CDATA[
+<clone_fragment endline="81" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ExportProfile.vb" hamdist="12" pcid="467" startline="31"><![CDATA[
 nop
 ldarg
 callvirt
@@ -9414,7 +9414,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="6076" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="16" pcid="615" startline="6022"><![CDATA[
+<clone_fragment endline="6076" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="16" pcid="621" startline="6022"><![CDATA[
 nop
 ldarg
 callvirt
@@ -9808,7 +9808,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3452" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="7" pcid="441" startline="3445"><![CDATA[
+<clone_fragment endline="3452" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="7" pcid="447" startline="3445"><![CDATA[
 nop
 ldarg
 callvirt
@@ -9853,7 +9853,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1351" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="0" pcid="741" startline="1344"><![CDATA[
+<clone_fragment endline="1351" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="0" pcid="747" startline="1344"><![CDATA[
 nop
 ldarg
 callvirt
@@ -9956,7 +9956,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1443" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="13" pcid="397" startline="1338"><![CDATA[
+<clone_fragment endline="1443" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="13" pcid="403" startline="1338"><![CDATA[
 nop
 ldsfld
 ldstr
@@ -11345,7 +11345,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3225" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="13" pcid="429" startline="3181"><![CDATA[
+<clone_fragment endline="3225" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="13" pcid="435" startline="3181"><![CDATA[
 nop
 ldstr
 ldc
@@ -11618,7 +11618,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2396" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="515" startline="2352"><![CDATA[
+<clone_fragment endline="2396" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="521" startline="2352"><![CDATA[
 nop
 ldstr
 ldc
@@ -11891,7 +11891,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="99" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ImportProfile.vb" hamdist="5" pcid="469" startline="41"><![CDATA[
+<clone_fragment endline="99" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ImportProfile.vb" hamdist="5" pcid="475" startline="41"><![CDATA[
 nop
 ldarg
 callvirt
@@ -12824,7 +12824,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3141" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="10" pcid="425" startline="3033"><![CDATA[
+<clone_fragment endline="3141" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="10" pcid="431" startline="3033"><![CDATA[
 nop
 newobj
 stloc
@@ -13700,7 +13700,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="6600" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="14" pcid="649" startline="6567"><![CDATA[
+<clone_fragment endline="6600" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="14" pcid="655" startline="6567"><![CDATA[
 nop
 ldarg
 callvirt
@@ -14068,7 +14068,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2640" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="15" pcid="813" startline="2585"><![CDATA[
+<clone_fragment endline="2640" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="15" pcid="819" startline="2585"><![CDATA[
 nop
 ldarg
 callvirt
@@ -14468,7 +14468,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3357" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="15" pcid="435" startline="3285"><![CDATA[
+<clone_fragment endline="3357" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="15" pcid="441" startline="3285"><![CDATA[
 nop
 newobj
 stloc
@@ -14941,7 +14941,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="6351" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="641" startline="6281"><![CDATA[
+<clone_fragment endline="6351" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="647" startline="6281"><![CDATA[
 nop
 newobj
 stloc
@@ -15414,7 +15414,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="6612" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="11" pcid="651" startline="6601"><![CDATA[
+<clone_fragment endline="6612" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="11" pcid="657" startline="6601"><![CDATA[
 nop
 ldarg
 callvirt
@@ -15478,7 +15478,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="4494" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="847" startline="4483"><![CDATA[
+<clone_fragment endline="4494" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="853" startline="4483"><![CDATA[
 nop
 ldarg
 callvirt
@@ -15542,7 +15542,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="6127" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="11" pcid="621" startline="6112"><![CDATA[
+<clone_fragment endline="6127" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="11" pcid="627" startline="6112"><![CDATA[
 nop
 ldarg
 callvirt
@@ -15673,7 +15673,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2691" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="2" pcid="819" startline="2676"><![CDATA[
+<clone_fragment endline="2691" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="2" pcid="825" startline="2676"><![CDATA[
 nop
 ldarg
 callvirt
@@ -15810,7 +15810,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="6096" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="10" pcid="617" startline="6077"><![CDATA[
+<clone_fragment endline="6096" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="10" pcid="623" startline="6077"><![CDATA[
 nop
 ldarg
 callvirt
@@ -16000,7 +16000,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2660" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="815" startline="2641"><![CDATA[
+<clone_fragment endline="2660" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="821" startline="2641"><![CDATA[
 nop
 ldarg
 callvirt
@@ -16300,7 +16300,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="6111" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="12" pcid="619" startline="6097"><![CDATA[
+<clone_fragment endline="6111" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="12" pcid="625" startline="6097"><![CDATA[
 nop
 ldarg
 callvirt
@@ -16453,7 +16453,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2902" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="11" pcid="413" startline="2893"><![CDATA[
+<clone_fragment endline="2902" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="11" pcid="419" startline="2893"><![CDATA[
 nop
 ldarg
 ldsflda
@@ -16519,7 +16519,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3138" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="553" startline="3128"><![CDATA[
+<clone_fragment endline="3138" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="559" startline="3128"><![CDATA[
 nop
 ldarg
 ldsflda
@@ -17270,7 +17270,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2749" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="13" pcid="409" startline="2709"><![CDATA[
+<clone_fragment endline="2749" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="13" pcid="415" startline="2709"><![CDATA[
 nop
 ldarg
 ldc
@@ -17446,7 +17446,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="4165" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="591" startline="4124"><![CDATA[
+<clone_fragment endline="4165" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="597" startline="4124"><![CDATA[
 nop
 ldarg
 ldc
@@ -17622,7 +17622,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="613" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="2" pcid="723" startline="573"><![CDATA[
+<clone_fragment endline="613" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="2" pcid="729" startline="573"><![CDATA[
 nop
 ldarg
 ldc
@@ -17788,7 +17788,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3093" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="12" pcid="549" startline="3061"><![CDATA[
+<clone_fragment endline="3093" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="12" pcid="555" startline="3061"><![CDATA[
 nop
 ldsfld
 ldc
@@ -18029,7 +18029,7 @@ brfalse
 call
 ret
 ]]></clone_fragment>
-<clone_fragment endline="655" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="11" pcid="727" startline="633"><![CDATA[
+<clone_fragment endline="655" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="11" pcid="733" startline="633"><![CDATA[
 nop
 ldsflda
 ldfld
@@ -18260,258 +18260,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="564" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="1" pcid="373" startline="542"><![CDATA[
-nop
-ldsflda
-ldfld
-callvirt
-ldsflda
-ldfld
-call
-ldc
-sub
-ldc
-call
-ldstr
-ldc
-call
-ldc
-ceq
-stloc
-ldloc
-brfalse
-ldsflda
-ldc
-stfld
-br
-nop
-ldsflda
-ldc
-stfld
-ldsflda
-ldfld
-ldstr
-ldc
-call
-ldc
-ceq
-stloc
-ldloc
-brfalse
-nop
-nop
-ldsflda
-ldarg
-ldc
-ldc
-callvirt
-stfld
-ldc
-stloc
-ldc
-ldsfld
-callvirt
-ldc
-sub
-stloc
-stloc
-br
-ldsfld
-ldloc
-callvirt
-stloc
-ldloca
-ldfld
-ldsflda
-ldfld
-ldc
-call
-ldc
-ceq
-stloc
-ldloc
-brfalse
-ldc
-stloc
-nop
-ldloc
-ldc
-add
-stloc
-ldloc
-ldloc
-stloc
-ldloc
-ble
-ldloc
-stloc
-ldloc
-brfalse
-br
-nop
-ldsflda
-ldfld
-stloc
-ldloc
-brfalse
-ldsflda
-ldc
-stfld
-ldsfld
-call
-nop
-ldc
-newarr
-stloc
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsflda
-ldfld
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsfld
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsfld
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsfld
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsfld
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsflda
-ldfld
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-call
-ldc
-ldc
-ldc
-call
-pop
-br
-nop
-ldsfld
-call
-nop
-ldc
-newarr
-stloc
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsflda
-ldfld
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsfld
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsfld
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-ldc
-ldsflda
-ldfld
-stelem
-nop
-ldloc
-ldc
-ldstr
-stelem
-nop
-ldloc
-call
-ldc
-ldc
-ldc
-call
-pop
-nop
-ldsfld
-ldstr
-ldsflda
-ldfld
-ldstr
-call
-stloc
-br
-ldloc
-ret
-]]></clone_fragment>
-<clone_fragment endline="3176" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="557" startline="3154"><![CDATA[
+<clone_fragment endline="564" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="1" pcid="379" startline="542"><![CDATA[
 nop
 ldsflda
 ldfld
@@ -18762,7 +18511,258 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1227" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="7" pcid="735" startline="1138"><![CDATA[
+<clone_fragment endline="3176" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="563" startline="3154"><![CDATA[
+nop
+ldsflda
+ldfld
+callvirt
+ldsflda
+ldfld
+call
+ldc
+sub
+ldc
+call
+ldstr
+ldc
+call
+ldc
+ceq
+stloc
+ldloc
+brfalse
+ldsflda
+ldc
+stfld
+br
+nop
+ldsflda
+ldc
+stfld
+ldsflda
+ldfld
+ldstr
+ldc
+call
+ldc
+ceq
+stloc
+ldloc
+brfalse
+nop
+nop
+ldsflda
+ldarg
+ldc
+ldc
+callvirt
+stfld
+ldc
+stloc
+ldc
+ldsfld
+callvirt
+ldc
+sub
+stloc
+stloc
+br
+ldsfld
+ldloc
+callvirt
+stloc
+ldloca
+ldfld
+ldsflda
+ldfld
+ldc
+call
+ldc
+ceq
+stloc
+ldloc
+brfalse
+ldc
+stloc
+nop
+ldloc
+ldc
+add
+stloc
+ldloc
+ldloc
+stloc
+ldloc
+ble
+ldloc
+stloc
+ldloc
+brfalse
+br
+nop
+ldsflda
+ldfld
+stloc
+ldloc
+brfalse
+ldsflda
+ldc
+stfld
+ldsfld
+call
+nop
+ldc
+newarr
+stloc
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsflda
+ldfld
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsfld
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsfld
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsfld
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsfld
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsflda
+ldfld
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+call
+ldc
+ldc
+ldc
+call
+pop
+br
+nop
+ldsfld
+call
+nop
+ldc
+newarr
+stloc
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsflda
+ldfld
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsfld
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsfld
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+ldc
+ldsflda
+ldfld
+stelem
+nop
+ldloc
+ldc
+ldstr
+stelem
+nop
+ldloc
+call
+ldc
+ldc
+ldc
+call
+pop
+nop
+ldsfld
+ldstr
+ldsflda
+ldfld
+ldstr
+call
+stloc
+br
+ldloc
+ret
+]]></clone_fragment>
+<clone_fragment endline="1227" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="7" pcid="741" startline="1138"><![CDATA[
 nop
 newobj
 stloc
@@ -19910,7 +19910,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3493" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="11" pcid="443" startline="3457"><![CDATA[
+<clone_fragment endline="3493" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="11" pcid="449" startline="3457"><![CDATA[
 nop
 ldarg
 callvirt
@@ -20290,7 +20290,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1292" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="13" pcid="737" startline="1228"><![CDATA[
+<clone_fragment endline="1292" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="13" pcid="743" startline="1228"><![CDATA[
 nop
 newobj
 stloc
@@ -20738,7 +20738,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="632" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="5" pcid="725" startline="614"><![CDATA[
+<clone_fragment endline="632" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="5" pcid="731" startline="614"><![CDATA[
 nop
 newobj
 stloc
@@ -20868,7 +20868,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2675" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="14" pcid="817" startline="2661"><![CDATA[
+<clone_fragment endline="2675" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="14" pcid="823" startline="2661"><![CDATA[
 nop
 ldarg
 callvirt
@@ -21029,7 +21029,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2904" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="8" pcid="531" startline="2860"><![CDATA[
+<clone_fragment endline="2904" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="8" pcid="537" startline="2860"><![CDATA[
 nop
 ldsfld
 callvirt
@@ -21338,7 +21338,7 @@ bge
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="260" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="775" startline="216"><![CDATA[
+<clone_fragment endline="260" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="781" startline="216"><![CDATA[
 nop
 ldsfld
 callvirt
@@ -21647,7 +21647,7 @@ bge
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1072" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="13" pcid="379" startline="1031"><![CDATA[
+<clone_fragment endline="1072" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="13" pcid="385" startline="1031"><![CDATA[
 nop
 ldloca
 initobj
@@ -21962,7 +21962,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3870" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="575" startline="3829"><![CDATA[
+<clone_fragment endline="3870" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="581" startline="3829"><![CDATA[
 nop
 ldloca
 initobj
@@ -22277,7 +22277,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="215" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="12" pcid="773" startline="154"><![CDATA[
+<clone_fragment endline="215" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="12" pcid="779" startline="154"><![CDATA[
 nop
 ldarg
 callvirt
@@ -22636,7 +22636,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="153" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="3" pcid="771" startline="86"><![CDATA[
+<clone_fragment endline="153" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="3" pcid="777" startline="86"><![CDATA[
 nop
 ldarg
 callvirt
@@ -23022,7 +23022,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2859" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="6" pcid="529" startline="2826"><![CDATA[
+<clone_fragment endline="2859" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="6" pcid="535" startline="2826"><![CDATA[
 nop
 ldarg
 ldarg
@@ -23373,7 +23373,7 @@ pop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3576" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="16" pcid="449" startline="3559"><![CDATA[
+<clone_fragment endline="3576" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="16" pcid="455" startline="3559"><![CDATA[
 nop
 ldstr
 stloc
@@ -23499,7 +23499,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3444" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="10" pcid="439" startline="3394"><![CDATA[
+<clone_fragment endline="3444" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="10" pcid="445" startline="3394"><![CDATA[
 nop
 ldsfld
 ldstr
@@ -23825,7 +23825,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1343" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="0" pcid="739" startline="1293"><![CDATA[
+<clone_fragment endline="1343" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="0" pcid="745" startline="1293"><![CDATA[
 nop
 ldsfld
 ldstr
@@ -24151,7 +24151,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="6566" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="1" pcid="647" startline="6515"><![CDATA[
+<clone_fragment endline="6566" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="1" pcid="653" startline="6515"><![CDATA[
 nop
 ldsfld
 ldstr
@@ -24483,7 +24483,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="239" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="18" pcid="339" startline="202"><![CDATA[
+<clone_fragment endline="239" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="18" pcid="345" startline="202"><![CDATA[
 nop
 ldarg
 callvirt
@@ -24940,7 +24940,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="278" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="341" startline="240"><![CDATA[
+<clone_fragment endline="278" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="347" startline="240"><![CDATA[
 nop
 ldarg
 callvirt
@@ -25397,7 +25397,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="993" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="495" startline="954"><![CDATA[
+<clone_fragment endline="993" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="501" startline="954"><![CDATA[
 nop
 ldarg
 callvirt
@@ -25854,7 +25854,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1031" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="497" startline="994"><![CDATA[
+<clone_fragment endline="1031" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="503" startline="994"><![CDATA[
 nop
 ldarg
 callvirt
@@ -28362,7 +28362,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3915" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="15" pcid="581" startline="3906"><![CDATA[
+<clone_fragment endline="3915" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="15" pcid="587" startline="3906"><![CDATA[
 nop
 ldarg
 callvirt
@@ -28433,7 +28433,7 @@ ble
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="451" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="791" startline="441"><![CDATA[
+<clone_fragment endline="451" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="797" startline="441"><![CDATA[
 nop
 ldarg
 callvirt
@@ -28558,7 +28558,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1624" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="21" pcid="503" startline="1572"><![CDATA[
+<clone_fragment endline="1624" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="21" pcid="509" startline="1572"><![CDATA[
 nop
 ldarg
 callvirt
@@ -29007,7 +29007,7 @@ callvirt
 pop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="340" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.vb" hamdist="9" pcid="871" startline="324"><![CDATA[
+<clone_fragment endline="340" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.vb" hamdist="9" pcid="877" startline="324"><![CDATA[
 nop
 nop
 ldsflda
@@ -29108,7 +29108,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="219" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="7" pcid="481" startline="99"><![CDATA[
+<clone_fragment endline="219" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="7" pcid="487" startline="99"><![CDATA[
 nop
 ldarg
 ldfld
@@ -29737,7 +29737,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="506" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="3" pcid="719" startline="449"><![CDATA[
+<clone_fragment endline="506" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="3" pcid="725" startline="449"><![CDATA[
 nop
 ldarg
 ldfld
@@ -29988,7 +29988,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="48" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Updating.vb" hamdist="13" pcid="753" startline="23"><![CDATA[
+<clone_fragment endline="48" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Updating.vb" hamdist="13" pcid="759" startline="23"><![CDATA[
 nop
 ldarg
 callvirt
@@ -30146,7 +30146,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="418" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="15" pcid="785" startline="385"><![CDATA[
+<clone_fragment endline="418" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="15" pcid="791" startline="385"><![CDATA[
 nop
 nop
 ldarg
@@ -30442,7 +30442,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2892" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="23" pcid="411" startline="2750"><![CDATA[
+<clone_fragment endline="2892" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="23" pcid="417" startline="2750"><![CDATA[
 nop
 ldarg
 ldfld
@@ -31297,7 +31297,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2937" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="5" pcid="533" startline="2905"><![CDATA[
+<clone_fragment endline="2937" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="5" pcid="539" startline="2905"><![CDATA[
 nop
 ldarg
 ldc
@@ -31457,7 +31457,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="323" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.vb" hamdist="4" pcid="869" startline="289"><![CDATA[
+<clone_fragment endline="323" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.vb" hamdist="4" pcid="875" startline="289"><![CDATA[
 nop
 ldarg
 callvirt
@@ -31637,7 +31637,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="541" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="16" pcid="371" startline="527"><![CDATA[
+<clone_fragment endline="541" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="16" pcid="377" startline="527"><![CDATA[
 nop
 newobj
 stloc
@@ -31690,7 +31690,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3153" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="555" startline="3139"><![CDATA[
+<clone_fragment endline="3153" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="561" startline="3139"><![CDATA[
 nop
 newobj
 stloc
@@ -31743,7 +31743,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1137" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="0" pcid="733" startline="1123"><![CDATA[
+<clone_fragment endline="1137" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="0" pcid="739" startline="1123"><![CDATA[
 nop
 newobj
 stloc
@@ -31796,7 +31796,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="845" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="797" startline="832"><![CDATA[
+<clone_fragment endline="845" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="803" startline="832"><![CDATA[
 nop
 newobj
 stloc
@@ -31916,7 +31916,7 @@ endfinally
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="562" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Updating.vb" hamdist="11" pcid="759" startline="555"><![CDATA[
+<clone_fragment endline="562" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Updating.vb" hamdist="11" pcid="765" startline="555"><![CDATA[
 nop
 ldarg
 callvirt
@@ -31961,7 +31961,7 @@ ble
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2998" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="3" pcid="539" startline="2991"><![CDATA[
+<clone_fragment endline="2998" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="3" pcid="545" startline="2991"><![CDATA[
 nop
 ldc
 ldsfld
@@ -32017,7 +32017,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2906" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="827" startline="2899"><![CDATA[
+<clone_fragment endline="2906" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="833" startline="2899"><![CDATA[
 nop
 ldc
 ldsfld
@@ -32073,7 +32073,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3924" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="10" pcid="583" startline="3916"><![CDATA[
+<clone_fragment endline="3924" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="10" pcid="589" startline="3916"><![CDATA[
 nop
 newobj
 stloc
@@ -32112,7 +32112,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3004" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="9" pcid="421" startline="2988"><![CDATA[
+<clone_fragment endline="3004" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="9" pcid="427" startline="2988"><![CDATA[
 nop
 ldarg
 callvirt
@@ -32171,7 +32171,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2825" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="527" startline="2809"><![CDATA[
+<clone_fragment endline="2825" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="533" startline="2809"><![CDATA[
 nop
 ldarg
 callvirt
@@ -32232,7 +32232,7 @@ ret
 ]]></clone_fragment>
 </clone_group>
 <clone_group groupid="1" nfragments="24">
-<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\About.vb" hamdist="0" pcid="273" startline="11"><![CDATA[
+<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\About.vb" hamdist="0" pcid="279" startline="11"><![CDATA[
 nop
 ldarg
 call
@@ -32246,7 +32246,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\AVSWAV.vb" hamdist="0" pcid="317" startline="11"><![CDATA[
+<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\AVSWAV.vb" hamdist="0" pcid="323" startline="11"><![CDATA[
 nop
 ldarg
 call
@@ -32260,7 +32260,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Checking.vb" hamdist="0" pcid="323" startline="11"><![CDATA[
+<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Checking.vb" hamdist="0" pcid="329" startline="11"><![CDATA[
 nop
 ldarg
 call
@@ -32274,7 +32274,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Crop.vb" hamdist="0" pcid="329" startline="11"><![CDATA[
+<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Crop.vb" hamdist="0" pcid="335" startline="11"><![CDATA[
 nop
 ldarg
 call
@@ -32288,7 +32288,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MPEG.vb" hamdist="0" pcid="659" startline="11"><![CDATA[
+<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MPEG.vb" hamdist="0" pcid="665" startline="11"><![CDATA[
 nop
 ldarg
 call
@@ -32302,7 +32302,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Player.vb" hamdist="0" pcid="685" startline="11"><![CDATA[
+<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Player.vb" hamdist="0" pcid="691" startline="11"><![CDATA[
 nop
 ldarg
 call
@@ -32316,7 +32316,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="19" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="6" pcid="715" startline="12"><![CDATA[
+<clone_fragment endline="19" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="6" pcid="721" startline="12"><![CDATA[
 nop
 ldarg
 call
@@ -32333,7 +32333,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ImportProfile.vb" hamdist="5" pcid="467" startline="11"><![CDATA[
+<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ImportProfile.vb" hamdist="5" pcid="473" startline="11"><![CDATA[
 nop
 ldarg
 call
@@ -32354,7 +32354,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Profiles.vb" hamdist="0" pcid="691" startline="11"><![CDATA[
+<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Profiles.vb" hamdist="0" pcid="697" startline="11"><![CDATA[
 nop
 ldarg
 call
@@ -32375,7 +32375,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Updating.vb" hamdist="0" pcid="751" startline="11"><![CDATA[
+<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Updating.vb" hamdist="0" pcid="757" startline="11"><![CDATA[
 nop
 ldarg
 call
@@ -32470,7 +32470,7 @@ call
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ExportProfile.vb" hamdist="11" pcid="457" startline="11"><![CDATA[
+<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ExportProfile.vb" hamdist="11" pcid="463" startline="11"><![CDATA[
 nop
 ldarg
 call
@@ -32498,7 +32498,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Options.vb" hamdist="0" pcid="671" startline="11"><![CDATA[
+<clone_fragment endline="18" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Options.vb" hamdist="0" pcid="677" startline="11"><![CDATA[
 nop
 ldarg
 call
@@ -32526,7 +32526,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="19" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.vb" hamdist="0" pcid="855" startline="12"><![CDATA[
+<clone_fragment endline="19" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.vb" hamdist="0" pcid="861" startline="12"><![CDATA[
 nop
 ldarg
 call
@@ -32689,7 +32689,7 @@ ret
 ]]></clone_fragment>
 </clone_group>
 <clone_group groupid="2" nfragments="117">
-<clone_fragment endline="149" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ProfileUpdater.Designer.vb" hamdist="0" pcid="697" startline="16"><![CDATA[
+<clone_fragment endline="149" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ProfileUpdater.Designer.vb" hamdist="0" pcid="703" startline="16"><![CDATA[
 nop
 ldarg
 newobj
@@ -33243,7 +33243,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="6151" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="13" pcid="625" startline="6143"><![CDATA[
+<clone_fragment endline="6151" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="13" pcid="631" startline="6143"><![CDATA[
 nop
 newobj
 stloc
@@ -33267,7 +33267,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2915" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="829" startline="2907"><![CDATA[
+<clone_fragment endline="2915" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="835" startline="2907"><![CDATA[
 nop
 newobj
 stloc
@@ -33328,7 +33328,7 @@ callvirt
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="159" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ImportProfile.Designer.vb" hamdist="9" pcid="465" startline="29"><![CDATA[
+<clone_fragment endline="159" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ImportProfile.Designer.vb" hamdist="9" pcid="471" startline="29"><![CDATA[
 nop
 ldtoken
 call
@@ -33862,7 +33862,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="4370" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="7" pcid="603" startline="4363"><![CDATA[
+<clone_fragment endline="4370" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="7" pcid="609" startline="4363"><![CDATA[
 nop
 ldarg
 callvirt
@@ -33942,7 +33942,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="181" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ExportProfile.Designer.vb" hamdist="7" pcid="455" startline="29"><![CDATA[
+<clone_fragment endline="181" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ExportProfile.Designer.vb" hamdist="7" pcid="461" startline="29"><![CDATA[
 nop
 ldtoken
 call
@@ -34576,7 +34576,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2879" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="7" pcid="823" startline="2707"><![CDATA[
+<clone_fragment endline="2879" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="7" pcid="829" startline="2707"><![CDATA[
 nop
 newobj
 stloc
@@ -35645,7 +35645,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2898" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="8" pcid="825" startline="2880"><![CDATA[
+<clone_fragment endline="2898" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="8" pcid="831" startline="2880"><![CDATA[
 nop
 ldsfld
 stloc
@@ -35748,7 +35748,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="93" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Updating.Designer.vb" hamdist="6" pcid="749" startline="29"><![CDATA[
+<clone_fragment endline="93" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Updating.Designer.vb" hamdist="6" pcid="755" startline="29"><![CDATA[
 nop
 ldarg
 newobj
@@ -35987,7 +35987,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1814" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="5" pcid="509" startline="1664"><![CDATA[
+<clone_fragment endline="1814" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="5" pcid="515" startline="1664"><![CDATA[
 nop
 newobj
 stloc
@@ -36905,7 +36905,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1981" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.Designer.vb" hamdist="10" pcid="853" startline="1884"><![CDATA[
+<clone_fragment endline="1981" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.Designer.vb" hamdist="10" pcid="859" startline="1884"><![CDATA[
 nop
 ldarg
 callvirt
@@ -36934,7 +36934,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="262" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.vb" hamdist="9" pcid="865" startline="254"><![CDATA[
+<clone_fragment endline="262" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.vb" hamdist="9" pcid="871" startline="254"><![CDATA[
 nop
 ldarg
 callvirt
@@ -36984,7 +36984,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="324" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="2" pcid="347" startline="312"><![CDATA[
+<clone_fragment endline="324" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="2" pcid="353" startline="312"><![CDATA[
 nop
 ldarg
 callvirt
@@ -37039,7 +37039,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="337" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="349" startline="325"><![CDATA[
+<clone_fragment endline="337" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="355" startline="325"><![CDATA[
 nop
 ldarg
 callvirt
@@ -37094,7 +37094,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="858" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="799" startline="846"><![CDATA[
+<clone_fragment endline="858" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="805" startline="846"><![CDATA[
 nop
 ldarg
 callvirt
@@ -37149,7 +37149,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="871" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="801" startline="859"><![CDATA[
+<clone_fragment endline="871" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="807" startline="859"><![CDATA[
 nop
 ldarg
 callvirt
@@ -37204,7 +37204,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="114" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="5" pcid="283" startline="105"><![CDATA[
+<clone_fragment endline="114" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="5" pcid="289" startline="105"><![CDATA[
 nop
 ldarg
 callvirt
@@ -37268,7 +37268,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3032" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="4" pcid="423" startline="3015"><![CDATA[
+<clone_fragment endline="3032" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="4" pcid="429" startline="3015"><![CDATA[
 nop
 ldsflda
 ldfld
@@ -37338,7 +37338,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="508" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="4" pcid="295" startline="502"><![CDATA[
+<clone_fragment endline="508" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="4" pcid="301" startline="502"><![CDATA[
 nop
 ldarg
 callvirt
@@ -37367,7 +37367,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2415" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="3" pcid="519" startline="2409"><![CDATA[
+<clone_fragment endline="2415" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="3" pcid="525" startline="2409"><![CDATA[
 nop
 ldarg
 callvirt
@@ -37398,7 +37398,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="501" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="4" pcid="293" startline="494"><![CDATA[
+<clone_fragment endline="501" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="4" pcid="299" startline="494"><![CDATA[
 nop
 ldarg
 callvirt
@@ -37428,7 +37428,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="438" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="363" startline="431"><![CDATA[
+<clone_fragment endline="438" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="369" startline="431"><![CDATA[
 nop
 ldarg
 callvirt
@@ -37458,7 +37458,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="446" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="365" startline="439"><![CDATA[
+<clone_fragment endline="446" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="371" startline="439"><![CDATA[
 nop
 ldarg
 callvirt
@@ -37488,7 +37488,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="242" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="485" startline="235"><![CDATA[
+<clone_fragment endline="242" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="491" startline="235"><![CDATA[
 nop
 ldarg
 callvirt
@@ -37518,7 +37518,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="250" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="487" startline="243"><![CDATA[
+<clone_fragment endline="250" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="493" startline="243"><![CDATA[
 nop
 ldarg
 callvirt
@@ -37548,7 +37548,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3373" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="9" pcid="437" startline="3363"><![CDATA[
+<clone_fragment endline="3373" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="9" pcid="443" startline="3363"><![CDATA[
 nop
 ldsflda
 ldfld
@@ -37589,7 +37589,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="6372" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="643" startline="6362"><![CDATA[
+<clone_fragment endline="6372" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="649" startline="6362"><![CDATA[
 nop
 ldsflda
 ldfld
@@ -37630,7 +37630,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3009" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="2" pcid="541" startline="2999"><![CDATA[
+<clone_fragment endline="3009" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="2" pcid="547" startline="2999"><![CDATA[
 nop
 ldarg
 callvirt
@@ -37672,7 +37672,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="333" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="9" pcid="781" startline="322"><![CDATA[
+<clone_fragment endline="333" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="9" pcid="787" startline="322"><![CDATA[
 nop
 newobj
 stloc
@@ -37714,7 +37714,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="278" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.vb" hamdist="13" pcid="867" startline="271"><![CDATA[
+<clone_fragment endline="278" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.vb" hamdist="13" pcid="873" startline="271"><![CDATA[
 nop
 ldarg
 callvirt
@@ -37772,7 +37772,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3024" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="3" pcid="545" startline="3018"><![CDATA[
+<clone_fragment endline="3024" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="3" pcid="551" startline="3018"><![CDATA[
 nop
 ldarg
 callvirt
@@ -37835,7 +37835,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="87" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="8" pcid="281" startline="78"><![CDATA[
+<clone_fragment endline="87" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="8" pcid="287" startline="78"><![CDATA[
 nop
 ldarg
 callvirt
@@ -37910,7 +37910,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3017" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="8" pcid="543" startline="3010"><![CDATA[
+<clone_fragment endline="3017" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="8" pcid="549" startline="3010"><![CDATA[
 nop
 ldarg
 callvirt
@@ -37986,7 +37986,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="298" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="6" pcid="343" startline="279"><![CDATA[
+<clone_fragment endline="298" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="6" pcid="349" startline="279"><![CDATA[
 nop
 ldarg
 callvirt
@@ -38085,7 +38085,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3645" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="563" startline="3629"><![CDATA[
+<clone_fragment endline="3645" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="569" startline="3629"><![CDATA[
 nop
 ldarg
 callvirt
@@ -38184,7 +38184,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="418" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="6" pcid="359" startline="407"><![CDATA[
+<clone_fragment endline="418" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="6" pcid="365" startline="407"><![CDATA[
 nop
 ldarg
 callvirt
@@ -38310,7 +38310,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="430" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="361" startline="419"><![CDATA[
+<clone_fragment endline="430" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="367" startline="419"><![CDATA[
 nop
 ldarg
 callvirt
@@ -38436,7 +38436,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1651" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="505" startline="1640"><![CDATA[
+<clone_fragment endline="1651" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="511" startline="1640"><![CDATA[
 nop
 ldarg
 callvirt
@@ -38562,7 +38562,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1663" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="507" startline="1652"><![CDATA[
+<clone_fragment endline="1663" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="513" startline="1652"><![CDATA[
 nop
 ldarg
 callvirt
@@ -38688,7 +38688,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="478" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="3" pcid="289" startline="464"><![CDATA[
+<clone_fragment endline="478" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="3" pcid="295" startline="464"><![CDATA[
 nop
 ldarg
 callvirt
@@ -38813,7 +38813,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="493" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="0" pcid="291" startline="479"><![CDATA[
+<clone_fragment endline="493" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="0" pcid="297" startline="479"><![CDATA[
 nop
 ldarg
 callvirt
@@ -38938,7 +38938,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="6232" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="5" pcid="635" startline="6219"><![CDATA[
+<clone_fragment endline="6232" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="5" pcid="641" startline="6219"><![CDATA[
 nop
 ldarg
 callvirt
@@ -39082,7 +39082,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="248" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.vb" hamdist="6" pcid="863" startline="235"><![CDATA[
+<clone_fragment endline="248" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.vb" hamdist="6" pcid="869" startline="235"><![CDATA[
 nop
 ldarg
 callvirt
@@ -39247,7 +39247,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="67" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\TSMuxer.Designer.vb" hamdist="10" pcid="745" startline="16"><![CDATA[
+<clone_fragment endline="67" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\TSMuxer.Designer.vb" hamdist="10" pcid="751" startline="16"><![CDATA[
 nop
 ldtoken
 call
@@ -39435,7 +39435,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="68" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\AVC.Designer.vb" hamdist="0" pcid="311" startline="16"><![CDATA[
+<clone_fragment endline="68" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\AVC.Designer.vb" hamdist="0" pcid="317" startline="16"><![CDATA[
 nop
 ldtoken
 call
@@ -39627,7 +39627,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="4389" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="7" pcid="605" startline="4371"><![CDATA[
+<clone_fragment endline="4389" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="7" pcid="611" startline="4371"><![CDATA[
 nop
 ldarg
 callvirt
@@ -39806,7 +39806,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3284" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="6" pcid="433" startline="3262"><![CDATA[
+<clone_fragment endline="3284" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="6" pcid="439" startline="3262"><![CDATA[
 nop
 ldarg
 callvirt
@@ -40004,7 +40004,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="6276" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="639" startline="6254"><![CDATA[
+<clone_fragment endline="6276" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="645" startline="6254"><![CDATA[
 nop
 ldarg
 callvirt
@@ -40202,7 +40202,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="90" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Profiles.Designer.vb" hamdist="7" pcid="689" startline="29"><![CDATA[
+<clone_fragment endline="90" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Profiles.Designer.vb" hamdist="7" pcid="695" startline="29"><![CDATA[
 nop
 ldarg
 newobj
@@ -40432,7 +40432,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="77" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="9" pcid="279" startline="6"><![CDATA[
+<clone_fragment endline="77" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="9" pcid="285" startline="6"><![CDATA[
 nop
 ldloca
 initobj
@@ -40767,7 +40767,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="930" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="11" pcid="803" startline="876"><![CDATA[
+<clone_fragment endline="930" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="11" pcid="809" startline="876"><![CDATA[
 nop
 ldarg
 callvirt
@@ -41201,7 +41201,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3016" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.Designer.vb" hamdist="13" pcid="477" startline="3008"><![CDATA[
+<clone_fragment endline="3016" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.Designer.vb" hamdist="13" pcid="483" startline="3008"><![CDATA[
 nop
 ldarg
 callvirt
@@ -41245,7 +41245,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="392" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="14" pcid="357" startline="382"><![CDATA[
+<clone_fragment endline="392" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="14" pcid="363" startline="382"><![CDATA[
 nop
 ldarg
 callvirt
@@ -41306,7 +41306,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2408" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="517" startline="2397"><![CDATA[
+<clone_fragment endline="2408" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="523" startline="2397"><![CDATA[
 nop
 ldarg
 callvirt
@@ -41367,7 +41367,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2982" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="17" pcid="419" startline="2969"><![CDATA[
+<clone_fragment endline="2982" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="17" pcid="425" startline="2969"><![CDATA[
 nop
 ldarg
 ldfld
@@ -41435,7 +41435,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="234" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="483" startline="220"><![CDATA[
+<clone_fragment endline="234" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="489" startline="220"><![CDATA[
 nop
 ldarg
 ldfld
@@ -41503,7 +41503,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1280" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="9" pcid="391" startline="1160"><![CDATA[
+<clone_fragment endline="1280" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="9" pcid="397" startline="1160"><![CDATA[
 nop
 ldarg
 ldc
@@ -42307,7 +42307,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3797" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="1" pcid="569" startline="3685"><![CDATA[
+<clone_fragment endline="3797" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="1" pcid="575" startline="3685"><![CDATA[
 nop
 ldarg
 ldc
@@ -43078,7 +43078,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1288" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="6" pcid="393" startline="1281"><![CDATA[
+<clone_fragment endline="1288" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="6" pcid="399" startline="1281"><![CDATA[
 nop
 ldsflda
 ldfld
@@ -43127,7 +43127,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1039" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="499" startline="1032"><![CDATA[
+<clone_fragment endline="1039" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="505" startline="1032"><![CDATA[
 nop
 ldsflda
 ldfld
@@ -43176,7 +43176,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="43" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Options.vb" hamdist="10" pcid="673" startline="23"><![CDATA[
+<clone_fragment endline="43" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Options.vb" hamdist="10" pcid="679" startline="23"><![CDATA[
 nop
 ldarg
 callvirt
@@ -43315,7 +43315,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3127" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="12" pcid="551" startline="3094"><![CDATA[
+<clone_fragment endline="3127" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="12" pcid="557" startline="3094"><![CDATA[
 nop
 ldarg
 ldsfld
@@ -43432,7 +43432,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="73" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\AVSWAV.Designer.vb" hamdist="10" pcid="315" startline="29"><![CDATA[
+<clone_fragment endline="73" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\AVSWAV.Designer.vb" hamdist="10" pcid="321" startline="29"><![CDATA[
 nop
 ldarg
 newobj
@@ -43599,7 +43599,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="78" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MPEG.Designer.vb" hamdist="0" pcid="657" startline="29"><![CDATA[
+<clone_fragment endline="78" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MPEG.Designer.vb" hamdist="0" pcid="663" startline="29"><![CDATA[
 nop
 ldtoken
 call
@@ -43789,7 +43789,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="131" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.vb" hamdist="19" pcid="859" startline="125"><![CDATA[
+<clone_fragment endline="131" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.vb" hamdist="19" pcid="865" startline="125"><![CDATA[
 nop
 ldarg
 callvirt
@@ -43822,7 +43822,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3007" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.Designer.vb" hamdist="1" pcid="475" startline="2810"><![CDATA[
+<clone_fragment endline="3007" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.Designer.vb" hamdist="1" pcid="481" startline="2810"><![CDATA[
 nop
 ldarg
 callvirt
@@ -43860,7 +43860,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="352" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="1" pcid="351" startline="342"><![CDATA[
+<clone_fragment endline="352" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="1" pcid="357" startline="342"><![CDATA[
 nop
 ldarg
 callvirt
@@ -43944,7 +43944,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="311" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="17" pcid="345" startline="299"><![CDATA[
+<clone_fragment endline="311" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="17" pcid="351" startline="299"><![CDATA[
 nop
 ldarg
 callvirt
@@ -44035,7 +44035,7 @@ callvirt
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="366" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="19" pcid="353" startline="353"><![CDATA[
+<clone_fragment endline="366" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="19" pcid="359" startline="353"><![CDATA[
 nop
 ldarg
 callvirt
@@ -44175,7 +44175,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="381" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="355" startline="367"><![CDATA[
+<clone_fragment endline="381" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="361" startline="367"><![CDATA[
 nop
 ldarg
 callvirt
@@ -44315,7 +44315,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="264" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="489" startline="251"><![CDATA[
+<clone_fragment endline="264" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="495" startline="251"><![CDATA[
 nop
 ldarg
 callvirt
@@ -44455,7 +44455,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="278" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="491" startline="265"><![CDATA[
+<clone_fragment endline="278" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="497" startline="265"><![CDATA[
 nop
 ldarg
 callvirt
@@ -44595,7 +44595,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3261" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="431" startline="3245"><![CDATA[
+<clone_fragment endline="3261" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="437" startline="3245"><![CDATA[
 nop
 ldarg
 callvirt
@@ -44765,7 +44765,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="6253" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="637" startline="6238"><![CDATA[
+<clone_fragment endline="6253" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="643" startline="6238"><![CDATA[
 nop
 ldarg
 callvirt
@@ -44973,7 +44973,7 @@ callvirt
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3890" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="11" pcid="577" startline="3871"><![CDATA[
+<clone_fragment endline="3890" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="11" pcid="583" startline="3871"><![CDATA[
 nop
 ldarg
 ldc
@@ -45085,7 +45085,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1129" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="1" pcid="385" startline="1111"><![CDATA[
+<clone_fragment endline="1129" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="1" pcid="391" startline="1111"><![CDATA[
 nop
 ldarg
 ldc
@@ -45220,7 +45220,7 @@ callvirt
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="124" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.vb" hamdist="15" pcid="857" startline="20"><![CDATA[
+<clone_fragment endline="124" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.vb" hamdist="15" pcid="863" startline="20"><![CDATA[
 nop
 ldarg
 callvirt
@@ -45906,7 +45906,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="308" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\About.Designer.vb" hamdist="12" pcid="271" startline="29"><![CDATA[
+<clone_fragment endline="308" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\About.Designer.vb" hamdist="12" pcid="277" startline="29"><![CDATA[
 nop
 ldtoken
 call
@@ -47424,7 +47424,7 @@ call
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3655" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="9" pcid="565" startline="3646"><![CDATA[
+<clone_fragment endline="3655" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="9" pcid="571" startline="3646"><![CDATA[
 nop
 ldarg
 callvirt
@@ -47482,7 +47482,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="530" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="17" pcid="297" startline="520"><![CDATA[
+<clone_fragment endline="530" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="17" pcid="303" startline="520"><![CDATA[
 nop
 newobj
 stloc
@@ -47512,7 +47512,7 @@ pop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="526" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="369" startline="516"><![CDATA[
+<clone_fragment endline="526" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="375" startline="516"><![CDATA[
 nop
 newobj
 stloc
@@ -47542,7 +47542,7 @@ pop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2431" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="521" startline="2420"><![CDATA[
+<clone_fragment endline="2431" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="527" startline="2420"><![CDATA[
 nop
 newobj
 stloc
@@ -47628,7 +47628,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1144" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="14" pcid="387" startline="1130"><![CDATA[
+<clone_fragment endline="1144" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="14" pcid="393" startline="1130"><![CDATA[
 nop
 ldarg
 ldfld
@@ -47710,7 +47710,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3813" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="571" startline="3798"><![CDATA[
+<clone_fragment endline="3813" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="577" startline="3798"><![CDATA[
 nop
 ldarg
 ldfld
@@ -47792,7 +47792,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1101" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="5" pcid="383" startline="1081"><![CDATA[
+<clone_fragment endline="1101" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="5" pcid="389" startline="1081"><![CDATA[
 nop
 ldarg
 ldfld
@@ -47983,7 +47983,7 @@ brfalse
 call
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3675" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="567" startline="3656"><![CDATA[
+<clone_fragment endline="3675" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="573" startline="3656"><![CDATA[
 nop
 ldarg
 ldfld
@@ -48407,7 +48407,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1159" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="17" pcid="389" startline="1145"><![CDATA[
+<clone_fragment endline="1159" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="17" pcid="395" startline="1145"><![CDATA[
 nop
 ldarg
 ldfld
@@ -48495,7 +48495,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3828" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="573" startline="3814"><![CDATA[
+<clone_fragment endline="3828" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="579" startline="3814"><![CDATA[
 nop
 ldarg
 ldfld
@@ -48583,7 +48583,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2941" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="18" pcid="833" startline="2934"><![CDATA[
+<clone_fragment endline="2941" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="18" pcid="839" startline="2934"><![CDATA[
 nop
 newobj
 stloc
@@ -48601,7 +48601,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="4252" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="6" pcid="599" startline="4245"><![CDATA[
+<clone_fragment endline="4252" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="6" pcid="605" startline="4245"><![CDATA[
 nop
 newobj
 stloc
@@ -48622,7 +48622,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="6177" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="629" startline="6170"><![CDATA[
+<clone_fragment endline="6177" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="635" startline="6170"><![CDATA[
 nop
 newobj
 stloc
@@ -48643,7 +48643,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2953" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="835" startline="2946"><![CDATA[
+<clone_fragment endline="2953" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="841" startline="2946"><![CDATA[
 nop
 newobj
 stloc
@@ -48688,7 +48688,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="46" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Player.Designer.vb" hamdist="8" pcid="683" startline="29"><![CDATA[
+<clone_fragment endline="46" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Player.Designer.vb" hamdist="8" pcid="689" startline="29"><![CDATA[
 nop
 ldarg
 callvirt
@@ -48766,7 +48766,7 @@ callvirt
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="6169" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="22" pcid="627" startline="6152"><![CDATA[
+<clone_fragment endline="6169" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="22" pcid="633" startline="6152"><![CDATA[
 nop
 ldsfld
 stloc
@@ -48824,7 +48824,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2933" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="831" startline="2916"><![CDATA[
+<clone_fragment endline="2933" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="837" startline="2916"><![CDATA[
 nop
 ldsfld
 stloc
@@ -48884,7 +48884,7 @@ ret
 ]]></clone_fragment>
 </clone_group>
 <clone_group groupid="3" nfragments="5">
-<clone_fragment endline="4482" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="845" startline="3138"><![CDATA[
+<clone_fragment endline="4482" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="851" startline="3138"><![CDATA[
 nop
 call
 call
@@ -59335,7 +59335,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1571" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="10" pcid="501" startline="1044"><![CDATA[
+<clone_fragment endline="1571" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="10" pcid="507" startline="1044"><![CDATA[
 nop
 call
 stloc
@@ -63010,7 +63010,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="448" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="16" pcid="717" startline="24"><![CDATA[
+<clone_fragment endline="448" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.vb" hamdist="16" pcid="723" startline="24"><![CDATA[
 nop
 ldc
 conv
@@ -65978,7 +65978,7 @@ brfalse
 call
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2351" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="14" pcid="809" startline="967"><![CDATA[
+<clone_fragment endline="2351" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="14" pcid="815" startline="967"><![CDATA[
 nop
 call
 call
@@ -77146,7 +77146,7 @@ pop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="5788" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="611" startline="4425"><![CDATA[
+<clone_fragment endline="5788" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="617" startline="4425"><![CDATA[
 nop
 call
 call
@@ -88333,7 +88333,7 @@ ret
 ]]></clone_fragment>
 </clone_group>
 <clone_group groupid="5" nfragments="6">
-<clone_fragment endline="2809" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.Designer.vb" hamdist="0" pcid="473" startline="29"><![CDATA[
+<clone_fragment endline="2809" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.Designer.vb" hamdist="0" pcid="479" startline="29"><![CDATA[
 nop
 ldarg
 newobj
@@ -101456,7 +101456,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="830" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Options.Designer.vb" hamdist="1" pcid="669" startline="29"><![CDATA[
+<clone_fragment endline="830" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Options.Designer.vb" hamdist="1" pcid="675" startline="29"><![CDATA[
 nop
 ldtoken
 call
@@ -105191,7 +105191,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2067" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.Designer.vb" hamdist="1" pcid="333" startline="29"><![CDATA[
+<clone_fragment endline="2067" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.Designer.vb" hamdist="1" pcid="339" startline="29"><![CDATA[
 nop
 ldarg
 newobj
@@ -114988,7 +114988,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1115" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.Designer.vb" hamdist="3" pcid="277" startline="16"><![CDATA[
+<clone_fragment endline="1115" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.Designer.vb" hamdist="3" pcid="283" startline="16"><![CDATA[
 nop
 ldarg
 newobj
@@ -120696,7 +120696,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="698" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.Designer.vb" hamdist="2" pcid="765" startline="29"><![CDATA[
+<clone_fragment endline="698" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.Designer.vb" hamdist="2" pcid="771" startline="29"><![CDATA[
 nop
 ldarg
 newobj
@@ -123660,7 +123660,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1883" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.Designer.vb" hamdist="4" pcid="851" startline="29"><![CDATA[
+<clone_fragment endline="1883" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\x264.Designer.vb" hamdist="4" pcid="857" startline="29"><![CDATA[
 nop
 ldarg
 newobj
@@ -133852,7 +133852,7 @@ ret
 ]]></clone_fragment>
 </clone_group>
 <clone_group groupid="7" nfragments="2">
-<clone_fragment endline="28" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="335" startline="21"><![CDATA[
+<clone_fragment endline="28" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="341" startline="21"><![CDATA[
 nop
 ldarg
 call
@@ -133901,7 +133901,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="45" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="767" startline="38"><![CDATA[
+<clone_fragment endline="45" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="773" startline="38"><![CDATA[
 nop
 ldarg
 call
@@ -134447,7 +134447,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="98" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="11" pcid="479" startline="91"><![CDATA[
+<clone_fragment endline="98" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="11" pcid="485" startline="91"><![CDATA[
 nop
 ldarg
 call
@@ -134558,7 +134558,7 @@ ret
 ]]></clone_fragment>
 </clone_group>
 <clone_group groupid="10" nfragments="4">
-<clone_fragment endline="201" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="337" startline="29"><![CDATA[
+<clone_fragment endline="201" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="343" startline="29"><![CDATA[
 nop
 ldc
 ldsfld
@@ -136633,7 +136633,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="1993" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="511" startline="1821"><![CDATA[
+<clone_fragment endline="1993" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="517" startline="1821"><![CDATA[
 nop
 ldc
 ldsfld
@@ -138708,7 +138708,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="554" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Updating.vb" hamdist="0" pcid="757" startline="401"><![CDATA[
+<clone_fragment endline="554" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Updating.vb" hamdist="0" pcid="763" startline="401"><![CDATA[
 nop
 ldstr
 stloc
@@ -140658,7 +140658,7 @@ nop
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="901" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ProfileUpdater.vb" hamdist="11" pcid="709" startline="751"><![CDATA[
+<clone_fragment endline="901" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ProfileUpdater.vb" hamdist="11" pcid="715" startline="751"><![CDATA[
 nop
 ldstr
 stloc
@@ -143187,7 +143187,7 @@ ret
 ]]></clone_fragment>
 </clone_group>
 <clone_group groupid="12" nfragments="5">
-<clone_fragment endline="1292" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="0" pcid="307" startline="1165"><![CDATA[
+<clone_fragment endline="1292" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" hamdist="0" pcid="313" startline="1165"><![CDATA[
 nop
 ldsflda
 ldc
@@ -143564,7 +143564,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3707" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="451" startline="3581"><![CDATA[
+<clone_fragment endline="3707" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" hamdist="0" pcid="457" startline="3581"><![CDATA[
 nop
 ldsflda
 ldc
@@ -143941,7 +143941,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="6499" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="645" startline="6373"><![CDATA[
+<clone_fragment endline="6499" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="651" startline="6373"><![CDATA[
 nop
 ldsflda
 ldc
@@ -144318,7 +144318,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="689" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Updating.vb" hamdist="0" pcid="761" startline="563"><![CDATA[
+<clone_fragment endline="689" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Updating.vb" hamdist="0" pcid="767" startline="563"><![CDATA[
 nop
 ldsflda
 ldc
@@ -144695,7 +144695,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="3122" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="841" startline="2996"><![CDATA[
+<clone_fragment endline="3122" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="847" startline="2996"><![CDATA[
 nop
 ldsflda
 ldc
@@ -145454,7 +145454,7 @@ br
 ldloc
 ret
 ]]></clone_fragment>
-<clone_fragment endline="409" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ProfileUpdater.vb" hamdist="0" pcid="703" startline="281"><![CDATA[
+<clone_fragment endline="409" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\ProfileUpdater.vb" hamdist="0" pcid="709" startline="281"><![CDATA[
 nop
 ldarga
 ldc
@@ -145836,7 +145836,7 @@ ret
 ]]></clone_fragment>
 </clone_group>
 <clone_group groupid="14" nfragments="2">
-<clone_fragment endline="6021" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="613" startline="5789"><![CDATA[
+<clone_fragment endline="6021" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" hamdist="0" pcid="619" startline="5789"><![CDATA[
 nop
 ldsflda
 ldfld
@@ -147630,7 +147630,7 @@ stfld
 nop
 ret
 ]]></clone_fragment>
-<clone_fragment endline="2584" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="811" startline="2352"><![CDATA[
+<clone_fragment endline="2584" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" hamdist="0" pcid="817" startline="2352"><![CDATA[
 nop
 ldsflda
 ldfld
@@ -149426,7 +149426,7 @@ ret
 ]]></clone_fragment>
 </clone_group>
 <clone_group groupid="15" nfragments="2">
-<clone_fragment endline="486" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.Designer.vb" hamdist="0" pcid="713" startline="29"><![CDATA[
+<clone_fragment endline="486" file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Testing.Designer.vb" hamdist="0" pcid="719" startline="29"><![CDATA[
 nop
 ldarg
 newobj

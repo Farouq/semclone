@@ -1,0 +1,651 @@
+<clones>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\EVO.xaml.cs" startline="27" endline="33">
+<![CDATA[
+ 
+         private void Window_Loaded(object sender, RoutedEventArgs e)
+         {
+             timer.Interval = TimeSpan.FromMilliseconds(100);
+             timer.Tick += new EventHandler(timer_Tick);
+             timer.IsEnabled = true;
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" startline="4245" endline="4252">
+<![CDATA[
+ 
+     Sub OptionsToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles optionsToolStripMenuItem.Click
+         Dim frmOptions As New Options
+         frmOptions.Show()
+         boolEdit = True
+         Me.Enabled = False
+         tmrOptions.Enabled = True
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\EVO.xaml.cs" startline="27" endline="33">
+<![CDATA[
+ 
+         private void Window_Loaded(object sender, RoutedEventArgs e)
+         {
+             timer.Interval = TimeSpan.FromMilliseconds(100);
+             timer.Tick += new EventHandler(timer_Tick);
+             timer.IsEnabled = true;
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" startline="6170" endline="6177">
+<![CDATA[
+ 
+     Private Sub ExportProfileToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExportProfileToolStripMenuItem.Click
+         Dim frmExport As New ExportProfile
+         frmExport.Show()
+         boolEdit = True
+         Me.Enabled = False
+         tmrImport.Enabled = True
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\EVO.xaml.cs" startline="27" endline="33">
+<![CDATA[
+ 
+         private void Window_Loaded(object sender, RoutedEventArgs e)
+         {
+             timer.Interval = TimeSpan.FromMilliseconds(100);
+             timer.Tick += new EventHandler(timer_Tick);
+             timer.IsEnabled = true;
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" startline="2946" endline="2953">
+<![CDATA[
+ 
+     Private Sub OptionsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OptionsToolStripMenuItem.Click
+         Dim frmOptions As New Options
+         frmOptions.Show()
+         boolEdit = True
+         Me.Enabled = False
+         tmrOptions.Enabled = True
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="136" endline="145">
+<![CDATA[
+ 
+         private void optCustomTemp_Checked(object sender, RoutedEventArgs e)
+         {
+             if (this.IsLoaded)
+             {
+                 bool c = (bool)optCustomTemp.IsChecked;
+                 txtTemp.IsEnabled = c;
+                 cmdTemp.IsEnabled = c;
+             }
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\My Project\Application.Designer.vb" startline="25" endline="31">
+<![CDATA[
+         Public Sub New()
+             MyBase.New(Global.Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.Windows)
+             Me.IsSingleInstance = false
+             Me.EnableVisualStyles = true
+             Me.SaveMySettingsOnExit = true
+             Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
+         End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="146" endline="155">
+<![CDATA[
+ 
+         private void optCustomOutput_Checked(object sender, RoutedEventArgs e)
+         {
+             if (this.IsLoaded)
+             {
+                 bool c = (bool)optCustomOutput.IsChecked;
+                 txtOutput.IsEnabled = c;
+                 cmdOutput.IsEnabled = c;
+             }
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\My Project\Application.Designer.vb" startline="25" endline="31">
+<![CDATA[
+         Public Sub New()
+             MyBase.New(Global.Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.Windows)
+             Me.IsSingleInstance = false
+             Me.EnableVisualStyles = true
+             Me.SaveMySettingsOnExit = true
+             Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
+         End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="156" endline="165">
+<![CDATA[
+ 
+         private void optCustomLog_Checked(object sender, RoutedEventArgs e)
+         {
+             if (this.IsLoaded)
+             {
+                 bool c = (bool)optCustomLog.IsChecked;
+                 txtLog.IsEnabled = c;
+                 cmdLog.IsEnabled = c;
+             }
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\My Project\Application.Designer.vb" startline="25" endline="31">
+<![CDATA[
+         Public Sub New()
+             MyBase.New(Global.Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.Windows)
+             Me.IsSingleInstance = false
+             Me.EnableVisualStyles = true
+             Me.SaveMySettingsOnExit = true
+             Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
+         End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="179" endline="189">
+<![CDATA[
+ 
+         private void optMPGOff_Checked(object sender, RoutedEventArgs e)
+         {
+             if (this.IsLoaded)
+             {
+                 bool c = (bool)optMPGOn.IsChecked;
+                 chkVOB.IsEnabled = c;
+                 chkMPG.IsEnabled = c;
+                 lblMPG.IsEnabled = c;
+             }
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\My Project\Application.Designer.vb" startline="25" endline="31">
+<![CDATA[
+         Public Sub New()
+             MyBase.New(Global.Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.Windows)
+             Me.IsSingleInstance = false
+             Me.EnableVisualStyles = true
+             Me.SaveMySettingsOnExit = true
+             Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
+         End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="179" endline="189">
+<![CDATA[
+ 
+         private void optMPGOff_Checked(object sender, RoutedEventArgs e)
+         {
+             if (this.IsLoaded)
+             {
+                 bool c = (bool)optMPGOn.IsChecked;
+                 chkVOB.IsEnabled = c;
+                 chkMPG.IsEnabled = c;
+                 lblMPG.IsEnabled = c;
+             }
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" startline="494" endline="501">
+<![CDATA[
+ 
+     Private Sub RadioButton2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+         lblBitrate.Visible = False
+         txtBitrate.Visible = False
+         chkFileSize.Enabled = True
+         txtFileSize.Enabled = True
+         cboFileSize.Enabled = True
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="179" endline="189">
+<![CDATA[
+ 
+         private void optMPGOff_Checked(object sender, RoutedEventArgs e)
+         {
+             if (this.IsLoaded)
+             {
+                 bool c = (bool)optMPGOn.IsChecked;
+                 chkVOB.IsEnabled = c;
+                 chkMPG.IsEnabled = c;
+                 lblMPG.IsEnabled = c;
+             }
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" startline="431" endline="438">
+<![CDATA[
+ 	
+     Sub OptCustomBitrateCheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles optCustomBitrate.CheckedChanged
+         lblBitrate.Visible = True
+         txtBitrate.Visible = True
+         chkFileSize.Enabled = False
+         txtFileSize.Enabled = False
+         cboFileSize.Enabled = False
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="179" endline="189">
+<![CDATA[
+ 
+         private void optMPGOff_Checked(object sender, RoutedEventArgs e)
+         {
+             if (this.IsLoaded)
+             {
+                 bool c = (bool)optMPGOn.IsChecked;
+                 chkVOB.IsEnabled = c;
+                 chkMPG.IsEnabled = c;
+                 lblMPG.IsEnabled = c;
+             }
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" startline="439" endline="446">
+<![CDATA[
+ 	
+     Sub OptAutoBitrateCheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles optAutoBitrate.CheckedChanged
+         lblBitrate.Visible = False
+         txtBitrate.Visible = False
+         chkFileSize.Enabled = True
+         txtFileSize.Enabled = True
+         cboFileSize.Enabled = True
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="179" endline="189">
+<![CDATA[
+ 
+         private void optMPGOff_Checked(object sender, RoutedEventArgs e)
+         {
+             if (this.IsLoaded)
+             {
+                 bool c = (bool)optMPGOn.IsChecked;
+                 chkVOB.IsEnabled = c;
+                 chkMPG.IsEnabled = c;
+                 lblMPG.IsEnabled = c;
+             }
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" startline="235" endline="242">
+<![CDATA[
+ 	
+     Sub OptCustomBitrateCheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles optCustomBitrate.CheckedChanged
+         lblBitrate.Visible = True
+         txtBitrate.Visible = True
+         chkFileSize.Enabled = False
+         txtFileSize.Enabled = False
+         cboFileSize.Enabled = False
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="179" endline="189">
+<![CDATA[
+ 
+         private void optMPGOff_Checked(object sender, RoutedEventArgs e)
+         {
+             if (this.IsLoaded)
+             {
+                 bool c = (bool)optMPGOn.IsChecked;
+                 chkVOB.IsEnabled = c;
+                 chkMPG.IsEnabled = c;
+                 lblMPG.IsEnabled = c;
+             }
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" startline="243" endline="250">
+<![CDATA[
+ 	
+     Sub OptAutoBitrateCheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles optAutoBitrate.CheckedChanged
+         lblBitrate.Visible = False
+         txtBitrate.Visible = False
+         chkFileSize.Enabled = True
+         txtFileSize.Enabled = True
+         cboFileSize.Enabled = True
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="190" endline="198">
+<![CDATA[
+ 
+         private void optAVCOff_Checked(object sender, RoutedEventArgs e)
+         {
+             if (this.IsLoaded)
+             {
+                 bool c = (bool)optAVCOn.IsChecked;
+                 chkAVC.IsEnabled = c;
+             }
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Options.vb" startline="109" endline="115">
+<![CDATA[
+ 	
+     Sub LblClearLinkClicked(ByVal sender As Object, ByVal e As LinkLabelLinkClickedEventArgs) Handles lblClear.LinkClicked
+         If MsgBox("Warning! Clearing the temporary files will also clear your job queue!" & vbNewLine & vbNewLine & "Proceed?" & vbNewLine & vbNewLine & "The following type of files will be deleted
+         IO.Directory.SetCurrentDirectory(tempDir)
+         Shell("cmd /c del *.videoinfo *.audioinfo *.d2v *.dga *.trackinfo *.ac3 *.wav *.dts *.aac *.mp* *.jpg *.pcm *.avs *.meta *.264", AppWinStyle.Hide, True)
+         videoList.Clear()
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="267" endline="278">
+<![CDATA[
+ 
+         private void clear_temp()
+         {
+             Process del = new Process();
+             del.StartInfo.WorkingDirectory = MainForm.tempDir;
+             del.StartInfo.UseShellExecute = false;
+             del.StartInfo.CreateNoWindow = true;
+             del.StartInfo.FileName = "cmd.exe";
+             del.StartInfo.Arguments = "/c ECHO y | del *.*";
+             del.Start();
+             MainForm.videolist.Clear();
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" startline="494" endline="501">
+<![CDATA[
+ 
+     Private Sub RadioButton2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+         lblBitrate.Visible = False
+         txtBitrate.Visible = False
+         chkFileSize.Enabled = True
+         txtFileSize.Enabled = True
+         cboFileSize.Enabled = True
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="267" endline="278">
+<![CDATA[
+ 
+         private void clear_temp()
+         {
+             Process del = new Process();
+             del.StartInfo.WorkingDirectory = MainForm.tempDir;
+             del.StartInfo.UseShellExecute = false;
+             del.StartInfo.CreateNoWindow = true;
+             del.StartInfo.FileName = "cmd.exe";
+             del.StartInfo.Arguments = "/c ECHO y | del *.*";
+             del.Start();
+             MainForm.videolist.Clear();
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Append.vb" startline="502" endline="508">
+<![CDATA[
+ 
+     Private Sub chkProfile_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkProfile.CheckedChanged
+         cboProfile.Visible = chkProfile.Checked
+         lblProfile.Visible = chkProfile.Checked
+         cboLevel.Visible = chkProfile.Checked
+         calculate = True
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="267" endline="278">
+<![CDATA[
+ 
+         private void clear_temp()
+         {
+             Process del = new Process();
+             del.StartInfo.WorkingDirectory = MainForm.tempDir;
+             del.StartInfo.UseShellExecute = false;
+             del.StartInfo.CreateNoWindow = true;
+             del.StartInfo.FileName = "cmd.exe";
+             del.StartInfo.Arguments = "/c ECHO y | del *.*";
+             del.Start();
+             MainForm.videolist.Clear();
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" startline="431" endline="438">
+<![CDATA[
+ 	
+     Sub OptCustomBitrateCheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles optCustomBitrate.CheckedChanged
+         lblBitrate.Visible = True
+         txtBitrate.Visible = True
+         chkFileSize.Enabled = False
+         txtFileSize.Enabled = False
+         cboFileSize.Enabled = False
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="267" endline="278">
+<![CDATA[
+ 
+         private void clear_temp()
+         {
+             Process del = new Process();
+             del.StartInfo.WorkingDirectory = MainForm.tempDir;
+             del.StartInfo.UseShellExecute = false;
+             del.StartInfo.CreateNoWindow = true;
+             del.StartInfo.FileName = "cmd.exe";
+             del.StartInfo.Arguments = "/c ECHO y | del *.*";
+             del.Start();
+             MainForm.videolist.Clear();
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Edit.vb" startline="439" endline="446">
+<![CDATA[
+ 	
+     Sub OptAutoBitrateCheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles optAutoBitrate.CheckedChanged
+         lblBitrate.Visible = False
+         txtBitrate.Visible = False
+         chkFileSize.Enabled = True
+         txtFileSize.Enabled = True
+         cboFileSize.Enabled = True
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="267" endline="278">
+<![CDATA[
+ 
+         private void clear_temp()
+         {
+             Process del = new Process();
+             del.StartInfo.WorkingDirectory = MainForm.tempDir;
+             del.StartInfo.UseShellExecute = false;
+             del.StartInfo.CreateNoWindow = true;
+             del.StartInfo.FileName = "cmd.exe";
+             del.StartInfo.Arguments = "/c ECHO y | del *.*";
+             del.Start();
+             MainForm.videolist.Clear();
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" startline="235" endline="242">
+<![CDATA[
+ 	
+     Sub OptCustomBitrateCheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles optCustomBitrate.CheckedChanged
+         lblBitrate.Visible = True
+         txtBitrate.Visible = True
+         chkFileSize.Enabled = False
+         txtFileSize.Enabled = False
+         cboFileSize.Enabled = False
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="267" endline="278">
+<![CDATA[
+ 
+         private void clear_temp()
+         {
+             Process del = new Process();
+             del.StartInfo.WorkingDirectory = MainForm.tempDir;
+             del.StartInfo.UseShellExecute = false;
+             del.StartInfo.CreateNoWindow = true;
+             del.StartInfo.FileName = "cmd.exe";
+             del.StartInfo.Arguments = "/c ECHO y | del *.*";
+             del.Start();
+             MainForm.videolist.Clear();
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" startline="243" endline="250">
+<![CDATA[
+ 	
+     Sub OptAutoBitrateCheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles optAutoBitrate.CheckedChanged
+         lblBitrate.Visible = False
+         txtBitrate.Visible = False
+         chkFileSize.Enabled = True
+         txtFileSize.Enabled = True
+         cboFileSize.Enabled = True
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="267" endline="278">
+<![CDATA[
+ 
+         private void clear_temp()
+         {
+             Process del = new Process();
+             del.StartInfo.WorkingDirectory = MainForm.tempDir;
+             del.StartInfo.UseShellExecute = false;
+             del.StartInfo.CreateNoWindow = true;
+             del.StartInfo.FileName = "cmd.exe";
+             del.StartInfo.Arguments = "/c ECHO y | del *.*";
+             del.Start();
+             MainForm.videolist.Clear();
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" startline="2409" endline="2415">
+<![CDATA[
+ 
+     Sub ChkRemuxCheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles chkRemuxVideo.CheckedChanged
+         VideoFrame.Enabled = Not (chkRemuxVideo.Checked And chkRemuxVideo.Visible)
+         codecFrame.Enabled = Not (chkRemuxVideo.Checked And chkRemuxVideo.Visible)
+ 
+ 
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="267" endline="278">
+<![CDATA[
+ 
+         private void clear_temp()
+         {
+             Process del = new Process();
+             del.StartInfo.WorkingDirectory = MainForm.tempDir;
+             del.StartInfo.UseShellExecute = false;
+             del.StartInfo.CreateNoWindow = true;
+             del.StartInfo.FileName = "cmd.exe";
+             del.StartInfo.Arguments = "/c ECHO y | del *.*";
+             del.Start();
+             MainForm.videolist.Clear();
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\MainForm.vb" startline="2999" endline="3009">
+<![CDATA[
+ 
+     Sub CmdSaveVideoClick(ByVal sender As Object, ByVal e As EventArgs) Handles cmdSaveVideo.Click
+         saveVideo.FileName = txtOutFile.Text
+         If optMP4.Checked = True Then
+             saveVideo.Filter = "MP4 Files|*.mp4|All Files|*.*"
+         Else
+             saveVideo.Filter = "MKV Files|*.mkv|All Files|*.*"
+         End If
+         saveVideo.ShowDialog()
+         txtOutFile.Text = saveVideo.FileName
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="267" endline="278">
+<![CDATA[
+ 
+         private void clear_temp()
+         {
+             Process del = new Process();
+             del.StartInfo.WorkingDirectory = MainForm.tempDir;
+             del.StartInfo.UseShellExecute = false;
+             del.StartInfo.CreateNoWindow = true;
+             del.StartInfo.FileName = "cmd.exe";
+             del.StartInfo.Arguments = "/c ECHO y | del *.*";
+             del.Start();
+             MainForm.videolist.Clear();
+         }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\Wizard.vb" startline="322" endline="333">
+<![CDATA[
+ 
+     Sub LblOptionsLinkClicked(ByVal sender As Object, ByVal e As LinkLabelLinkClickedEventArgs)
+         Dim frmOptions As New Options
+         frmOptions.Show()
+         Me.Enabled = False
+         Do While frmOptions.Visible
+             Application.DoEvents()
+         Loop
+         Do While frmOptions.Visible
+             Application.DoEvents()
+         Loop
+         Me.Enabled = True
+         If videoList.Count = 0 Then lstVideos.Items.Clear()
+         Me.Select()
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\Options.xaml.cs" startline="267" endline="278">
+<![CDATA[
+ 
+         private void clear_temp()
+         {
+             Process del = new Process();
+             del.StartInfo.WorkingDirectory = MainForm.tempDir;
+             del.StartInfo.UseShellExecute = false;
+             del.StartInfo.CreateNoWindow = true;
+             del.StartInfo.FileName = "cmd.exe";
+             del.StartInfo.Arguments = "/c ECHO y | del *.*";
+             del.Start();
+             MainForm.videolist.Clear();
+         }
+]]>
+</clone_fra

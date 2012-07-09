@@ -6091,6 +6091,36 @@
              return IntPtr.Zero;
          }
 ]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="28" endline="34"><![CDATA[
+         
+         /// <summary>
+         /// GetPropertyValue
+         /// </summary>
+         protected override object GetPropertyValue(System.Reflection.PropertyInfo propertyInfo, object target, System.Globalization.CultureInfo culture) {
+             return propertyInfo.GetValue(target, System.Reflection.BindingFlags.Default, null, null, culture);
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="35" endline="41"><![CDATA[
+         
+         /// <summary>
+         /// SetPropertyValue
+         /// </summary>
+         protected override void SetPropertyValue(System.Reflection.PropertyInfo propertyInfo, object target, object value, System.Globalization.CultureInfo culture) {
+             propertyInfo.SetValue(target, value, System.Reflection.BindingFlags.Default, null, null, culture);
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\C# Rewrite - WPF\Trunk\ASXGui\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" startline="42" endline="51"><![CDATA[
+         
+         /// <summary>
+         /// CreateDelegate
+         /// </summary>
+         protected override System.Delegate CreateDelegate(System.Type delegateType, object target, string handler) {
+             return ((System.Delegate)(target.GetType().InvokeMember("_CreateDelegate", (System.Reflection.BindingFlags.InvokeMethod 
+                             | (System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)), null, target, new object[] {
+                         delegateType,
+                         handler}, null)));
+         }
+]]></source>
 <source file="C:\Users\faa634\Desktop\c vb\AxsGui\asxgui\VB.NET - current\Trunk\My Project\Application.Designer.vb" startline="25" endline="31"><![CDATA[
          Public Sub New()
              MyBase.New(Global.Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.Windows)
