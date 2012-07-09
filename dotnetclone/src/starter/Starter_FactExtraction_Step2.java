@@ -16,6 +16,7 @@ public class Starter_FactExtraction_Step2 {
 	 * @param args
 	 * @throws Exception 
 	 * Push test
+	 * is connected
 	 */
 	public static void main(String[] args) throws Exception {
 
