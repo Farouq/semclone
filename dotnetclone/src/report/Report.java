@@ -45,20 +45,25 @@ public class Report {
 	public static void parseSimCad(Configuration config, String rawFunctionsFileName) throws IOException{
 
 
-		String outputFileAddress=config.reportAddress+"\\SimCadCloneReport.xml";
+		String outputFileAddress=config.reportAddress+"\\SimCadSameLanguageClone"+SimhashCloneTest6e.simThreshold+".xml";
+		String outputFileAddress2=config.reportAddress+"\\SimCadCrossLanguageClone"+SimhashCloneTest6e.simThreshold+".xml";
 
-	
+
 		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputFileAddress));
+		BufferedWriter bufferedWriter2 = new BufferedWriter(new FileWriter(outputFileAddress2));
 
 		File fileName = new File(rawFunctionsFileName);
 
+		int nCrossLanguage=0;
+		int nVb=0;
+		int nCs=0;
 
 		DocumentBuilderFactory dbfs = DocumentBuilderFactory.newInstance();
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		try{
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			DocumentBuilder dbs = dbfs.newDocumentBuilder();
-		
+
 			Document docs = dbs.parse(config.disassebledAddress+"\\allFiles.xml_0_source.xml");
 			docs.getDocumentElement().normalize();
 			Document doc = db.parse(fileName);
@@ -68,8 +73,11 @@ public class Report {
 			Element root = doc.getDocumentElement();
 
 
-			bufferedWriter.write("<clones  nfragments=\""+root.getAttribute("nfragments")+"\" ngroups=\""+root.getAttribute("ngroups")+"\">");
+			bufferedWriter.write("<clones  >");
 			bufferedWriter.newLine();
+
+			bufferedWriter2.write("<clones  >");
+			bufferedWriter2.newLine();
 
 			System.out.println("number of fragments= "+root.getAttribute("nfragments")+"   ngroups= "+root.getAttribute("ngroups"));
 			System.out.println("Csharpe        "+" vb\t"+"Jsharpe\t "+ "CPP\t"+" Fsharpe");
@@ -105,7 +113,7 @@ public class Report {
 
 						String groupid = groupNode.getAttributes().getNamedItem("groupid").getFirstChild().getNodeValue();
 						String nfragments = groupNode.getAttributes().getNamedItem("nfragments").getFirstChild().getNodeValue();
-						
+
 
 
 						NodeList sourceList = nl.item(group).getChildNodes();
@@ -139,7 +147,7 @@ public class Report {
 							if( file.endsWith(".cpp")) cpp++;
 							if( file.endsWith(".fs")) fs++;
 							if( file.endsWith(".java")) js++;
-						
+
 							boolean found=false;
 							int k=0;
 
@@ -158,16 +166,16 @@ public class Report {
 								if(file.equals(files) && startline.equals(startlines))
 								{
 									found=true;
-								
+
 									current.add(files);
 									current.add(startlines);
 									current.add(endlines);
 									current.add(contents);
-					
+
 									// to show the size of byte code vs. source code
 									//String []bytecode = content.split("\n");
 									//String []sourcecode = contents.split("\n");
-									
+
 									//System.out.println(bytecode.length+"	"+sourcecode.length);
 								}
 							}
@@ -175,33 +183,68 @@ public class Report {
 
 							sourceCodeData.add(current);
 							items++;
-					
 
-					
+
+
 
 						}
 						// write group	
 
-						bufferedWriter.write( "<clone_group groupid=\""+groupid+"\" nfragments=\""+ nfragments +"\" Csharpe_files=\""+ cs+"\" vb_files=\""+ vb+"\" Jsharpe_files=\""+ js+"\" CPP_files=\""+ cpp+"\" Fsharpe_files=\""+ fs+"\">");
-						bufferedWriter.newLine();
-						System.out.println( cs+" \t\t"+ vb+" \t "+ js+" \t\t"+ cpp+" \t "+ fs);
-						
-						for(int z=0;z<sourceCodeData.size();z++)
+
+						if(sourceCodeData.get(0).get(0).endsWith(".cs")&&sourceCodeData.get(1).get(0).endsWith(".vb") || sourceCodeData.get(0).get(0).endsWith(".vb")&&sourceCodeData.get(1).get(0).endsWith(".cs")){
+
+
+							bufferedWriter2.write( "<clone_pair groupid=\""+groupid+"\" nfragments=\""+ nfragments +"\" Csharpe_files=\""+ cs+"\" vb_files=\""+ vb+"\" Jsharpe_files=\""+ js+"\" CPP_files=\""+ cpp+"\" Fsharpe_files=\""+ fs+"\">");
+							bufferedWriter2.newLine();
+							//	System.out.println( cs+" \t\t"+ vb+" \t "+ js+" \t\t"+ cpp+" \t "+ fs);
+
+							for(int z=0;z<sourceCodeData.size();z++)
+							{
+
+								bufferedWriter2.write( "<clone_fragment file=\""+sourceCodeData.get(z).get(0)+"\" startline=\""+ sourceCodeData.get(z).get(1) +"\" endline=\""+ sourceCodeData.get(z).get(2)+"\">");
+								bufferedWriter2.newLine();
+								bufferedWriter2.write("<![CDATA["+sourceCodeData.get(z).get(3)+"]]>");
+								bufferedWriter2.newLine();
+								bufferedWriter2.write("</clone_fragment>");
+								bufferedWriter2.newLine();
+
+
+							}
+
+							nCrossLanguage++;
+							bufferedWriter2.write("</clone_pair>");
+							bufferedWriter2.newLine();
+						} else
 						{
+							bufferedWriter.write( "<clone_pair groupid=\""+groupid+"\" nfragments=\""+ nfragments +"\" Csharpe_files=\""+ cs+"\" vb_files=\""+ vb+"\" Jsharpe_files=\""+ js+"\" CPP_files=\""+ cpp+"\" Fsharpe_files=\""+ fs+"\">");
+							bufferedWriter.newLine();
+							//		System.out.println( cs+" \t\t"+ vb+" \t "+ js+" \t\t"+ cpp+" \t "+ fs);
+
+							for(int z=0;z<sourceCodeData.size();z++)
+							{
+
+								bufferedWriter.write( "<clone_fragment file=\""+sourceCodeData.get(z).get(0)+"\" startline=\""+ sourceCodeData.get(z).get(1) +"\" endline=\""+ sourceCodeData.get(z).get(2)+"\">");
+								bufferedWriter.newLine();
+								bufferedWriter.write("<![CDATA["+sourceCodeData.get(z).get(3)+"]]>");
+								bufferedWriter.newLine();
+								bufferedWriter.write("</clone_fragment>");
+								bufferedWriter.newLine();
+
+							}
 							
-							bufferedWriter.write( "<clone_fragment file=\""+sourceCodeData.get(z).get(0)+"\" startline=\""+ sourceCodeData.get(z).get(1) +"\" endline=\""+ sourceCodeData.get(z).get(2)+"\">");
-							bufferedWriter.newLine();
-							bufferedWriter.write("<![CDATA["+sourceCodeData.get(z).get(3)+"]]>");
-							bufferedWriter.newLine();
-							bufferedWriter.write("</clone_fragment>");
-							bufferedWriter.newLine();
+
+							if(sourceCodeData.get(0).get(0).endsWith(".cs")&&sourceCodeData.get(1).get(0).endsWith(".cs"))
+								nCs++;
+							else
+								nVb++;
 							
+
+						//	nSameLanguage++;
+							bufferedWriter.write("</clone_pair>");
+							bufferedWriter.newLine();
+
+
 						}
-
-						
-
-						bufferedWriter.write("</clone_group>");
-						bufferedWriter.newLine();
 
 					}
 
@@ -210,6 +253,17 @@ public class Report {
 					bufferedWriter.newLine();
 					bufferedWriter.flush();
 					bufferedWriter.close();		
+
+					bufferedWriter2.write("</clones>");
+					bufferedWriter2.newLine();
+					bufferedWriter2.flush();
+					bufferedWriter2.close();	
+
+					System.out.println("The number of cross-language clone pairs are: "+nCrossLanguage );
+					System.out.println("The number of same-language Vb-clone pairs are : "+nVb);
+					System.out.println("The number of same-language CS-clone pairs are : "+nCs);
+
+
 					System.out.println("Report genarated look for the file: SimCadCloneReport.xml");
 
 

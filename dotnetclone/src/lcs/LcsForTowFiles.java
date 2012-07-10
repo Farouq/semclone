@@ -101,6 +101,43 @@ public class LcsForTowFiles {
 
 	public static void lcs (String filename)throws Exception	
 	{ 
+		
+		int l10=0;
+		int l9=0;
+		int l8=0;
+		int l7=0;
+		int l6=0;
+		int l5=0;
+		int l4=0;
+		int l3=0;
+		int l2=0;
+		int l1=0;
+		int l0=0;
+
+		int lc10=0;
+		int lc9=0;
+		int lc8=0;
+		int lc7=0;
+		int lc6=0;
+		int lc5=0;
+		int lc4=0;
+		int lc3=0;
+		int lc2=0;
+		int lc1=0;
+		int lc0=0;
+
+		int lv10=0;
+		int lv9=0;
+		int lv8=0;
+		int lv7=0;
+		int lv6=0;
+		int lv5=0;
+		int lv4=0;
+		int lv3=0;
+		int lv2=0;
+		int lv1=0;
+		int lv0=0;
+		
 		Configuration config=Configuration.loadFromFile();
 		String outputFileAddress=config.reportAddress+"\\LCSSameLanguageCloneReport"+ config.threshold+".xml";
 		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputFileAddress));
@@ -128,8 +165,86 @@ public class LcsForTowFiles {
 					double d=(double)LCSAlgorithm(vbcode.get(v),cscode.get(c)).size()*2/(vbcode.get(v).size()+cscode.get(c).size());
 					//System.out.println(d );
 					//out.write(i+"	"+d+"\n");
+					
+					if(vbdata.get(v).get(0).endsWith(".cs")&&csdata.get(c).get(0).endsWith(".vb") || vbdata.get(v).get(0).endsWith(".vb")&&csdata.get(c).get(0).endsWith(".cs")){
+						if (d==1)
+							l10++;
+						 if(d>=0.9)
+							l9++;
+						 if(d>=0.8)
+							l8++;
+						 if (d>=0.7)
+							l7++;
+						 if(d>=0.6)
+							l6++;
+						 if(d>=0.5)
+							l5++;
+						 if(d>=0.4)
+							l4++;
+						 if(d>=0.3)
+							l3++;
+						 if(d>=0.2)
+							l2++;
+						 if(d>=0.1)
+							l1++;
+						 if(d>=0.0)
+							l0++;
 
-					if (d>=config.threshold){
+					}
+					else{
+						if(vbdata.get(v).get(0).endsWith(".cs")&&csdata.get(c).get(0).endsWith(".cs") ){
+
+							if (d==1)
+								lc10++;
+							 if(d>=0.9)
+								lc9++;
+							 if(d>=0.8)
+								lc8++;
+							if (d>=0.7)
+								lc7++;
+							 if(d>=0.6)
+								lc6++;
+							 if(d>=0.5)
+								lc5++;
+							 if(d>=0.4)
+								lc4++;
+							 if(d>=0.3)
+								lc3++;
+							 if(d>=0.2)
+								lc2++;
+							 if(d>=0.1)
+								lc1++;
+							 if(d>=0.0)
+								lc0++;
+						}else
+						{
+							if (d==1)
+								lv10++;
+							 if(d>=0.9)
+								lv9++;
+							 if(d>=0.8)
+								lv8++;
+							if (d>=0.7)
+								lv7++;
+							 if(d>=0.6)
+								lv6++;
+							 if(d>=0.5)
+								lv5++;
+							 if(d>=0.4)
+								lv4++;
+							 if(d>=0.3)
+								lv3++;
+							 if(d>=0.2)
+								lv2++;
+							 if(d>=0.1)
+								lv1++;
+							 if(d>=0.0)
+								lv0++;
+
+						}
+					}
+
+/*					if (d>=config.threshold){
 						// write to report
 						//check if cross-language clones
 						if(vbdata.get(v).get(0).endsWith(".cs")&&csdata.get(c).get(0).endsWith(".vb") || vbdata.get(v).get(0).endsWith(".vb")&&csdata.get(c).get(0).endsWith(".cs")){
@@ -182,7 +297,7 @@ public class LcsForTowFiles {
 							bufferedWriter.newLine();
 							nSameLanguage++;
 						}
-					}
+					}*/
 
 				}
 
@@ -207,6 +322,51 @@ public class LcsForTowFiles {
 		System.out.println("The number of cross-language clone pairs are: "+nCrossLanguage );
 		System.out.println("The number of same-language clone pairs are : "+nSameLanguage);
 		
+
+		System.out.println("####################################################################################");
+		System.out.println("Cross Language Clones");
+		System.out.println("Sim\t"+"Number of Clone Pairs");
+		System.out.println("1.0\t"+l10);
+		System.out.println("0.9\t"+l9);
+		System.out.println("0.8\t"+l8);
+		System.out.println("0.7\t"+l7);
+		System.out.println("0.6\t"+l6);
+		System.out.println("0.5\t"+l5);
+		System.out.println("0.4\t"+l4);
+		System.out.println("0.3\t"+l3);
+		System.out.println("0.2\t"+l2);
+		System.out.println("0.1\t"+l1);
+		System.out.println("0.0\t"+l0);
+
+		System.out.println("####################################################################################");
+		System.out.println("CS  Language Clones");
+		System.out.println("Sim\t"+"Number of Clone Pairs");
+		System.out.println("1.0\t"+lc10);
+		System.out.println("0.9\t"+lc9);
+		System.out.println("0.8\t"+lc8);
+		System.out.println("0.7\t"+lc7);
+		System.out.println("0.6\t"+lc6);
+		System.out.println("0.5\t"+lc5);
+		System.out.println("0.4\t"+lc4);
+		System.out.println("0.3\t"+lc3);
+		System.out.println("0.2\t"+lc2);
+		System.out.println("0.1\t"+lc1);
+		System.out.println("0.0\t"+lc0);
+
+		System.out.println("####################################################################################");
+		System.out.println("VB Language Clones");
+		System.out.println("Sim\t"+"Number of Clone Pairs");
+		System.out.println("1.0\t"+lv10);
+		System.out.println("0.9\t"+lv9);
+		System.out.println("0.8\t"+lv8);
+		System.out.println("0.7\t"+lv7);
+		System.out.println("0.6\t"+lv6);
+		System.out.println("0.5\t"+lv5);
+		System.out.println("0.4\t"+lv4);
+		System.out.println("0.3\t"+lv3);
+		System.out.println("0.2\t"+lv2);
+		System.out.println("0.1\t"+lv1);
+		System.out.println("0.0\t"+lv0);
 		
 
 	}
